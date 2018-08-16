@@ -22,6 +22,8 @@ return [
         'redirect'                     => '/admin',
     ],
 
+    'prefix' => 'admin',
+    
     /*
     |--------------------------------------------------------------------------
     | Controllers config
@@ -209,11 +211,17 @@ return [
 
     // Here you can specify additional assets you would like to be included in the master.blade
     'additional_css' => [
+        // 'css/now-ui-dashboard.css'
         //'css/custom.css',
     ],
 
     'additional_js' => [
         //'js/custom.js',
+        // 'js/core/popper.min.js',
+        // 'js/plugins/bootstrap-notify.js',
+        // 'js/plugins/chartjs.js',
+        // 'js/plugins/perfect-scrollbar.jquery.min.js',
+        // 'js/now-ui-dashboard.js',
     ],
 
     'googlemaps' => [
