@@ -18,7 +18,23 @@ class UsersTableSeeder extends Seeder
 
             User::create([
                 'name'           => 'Admin',
-                'email'          => 'admin@admin.com',
+                'email'          => 'info@bourbon-digital.com',
+                'password'       => bcrypt('password'),
+                'remember_token' => str_random(60),
+                'role_id'        => $role->id,
+            ]);
+
+            User::create([
+                'name'           => 'Support',
+                'email'          => 'support@bourbon-digital.com',
+                'password'       => bcrypt('password'),
+                'remember_token' => str_random(60),
+                'role_id'        => $role->id,
+            ]);
+
+            User::create([
+                'name'           => 'Administrateur',
+                'email'          => 'c.monel@investis-dom.com ',
                 'password'       => bcrypt('password'),
                 'remember_token' => str_random(60),
                 'role_id'        => $role->id,

@@ -23,7 +23,7 @@ return [
     ],
 
     'prefix' => 'admin',
-    
+
     /*
     |--------------------------------------------------------------------------
     | Controllers config
@@ -149,26 +149,30 @@ return [
     'dashboard' => [
         // Add custom list items to navbar's dropdown
         'navbar_items' => [
-            'Profile' => [
+            'Profil' => [
                 'route'      => 'voyager.profile',
                 'classes'    => 'class-full-of-rum',
                 'icon_class' => 'voyager-person',
             ],
-            'Home' => [
+            'Accueil' => [
                 'route'        => '/',
                 'icon_class'   => 'voyager-home',
                 'target_blank' => true,
             ],
-            'Logout' => [
+            'Déconnexion' => [
                 'route'      => 'voyager.logout',
                 'icon_class' => 'voyager-power',
             ],
         ],
 
         'widgets' => [
-          'TCG\\Voyager\\Widgets\\UserDimmer',
-          'TCG\\Voyager\\Widgets\\PostDimmer',
-          'TCG\\Voyager\\Widgets\\PageDimmer',
+          // 'TCG\\Voyager\\Widgets\\UserDimmer',
+          // App\Widgets\TestDimmer::class,
+          App\Widgets\ContactDimmer::class,
+          App\Widgets\InvestissementDimmer::class,
+          App\Widgets\CGPDimmer::class,
+          App\Widgets\ReservationDimmer::class,
+          App\Widgets\FournisseurDimmer::class,
         ],
 
     ],
