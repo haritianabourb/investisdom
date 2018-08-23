@@ -18,12 +18,12 @@ class CreateContact extends Migration
             $table->string("fistname");
             $table->string("lastname");
             $table->string("address_1");
-            $table->string("address_2");
+            $table->string("address_2")->nullable();
             $table->integer("postal_code");
             $table->text("city");
-            $table->timestamp("born_on");
-            $table->text("born_in");
-            $table->text("born_in_postal");
+            $table->timestamp("born_on")->nullable();
+            $table->text("born_in")->nullable();
+            $table->text("born_in_postal")->nullable();
             $table->timestamps();
         });
 

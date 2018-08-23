@@ -16,9 +16,9 @@ class LinkContactWithAddresses extends Migration
         Schema::create('contact_addresses', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('contact_id')->unsigned();
-            $table->foreign('contact_id')->references('id')->on('contacts');
+            // $table->foreign('contact_id')->references('id')->on('contacts');
             $table->integer('address_id')->unsigned();
-            $table->foreign('address_id')->references('id')->on('addresses');
+            // $table->foreign('address_id')->references('id')->on('addresses');
             $table->timestamps();
         });
     }
