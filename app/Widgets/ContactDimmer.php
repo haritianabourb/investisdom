@@ -32,7 +32,7 @@ class ContactDimmer extends BaseDimmer
           'text'   => '',
           'button' => [
             'text' => 'Voir tous les contacts',
-            'link' => '#',
+            'link' => route('voyager.contacts.index'),
           ],
           // 'text'   => __('voyager::dimmer.user_text', ['count' => $count, 'string' => Str::lower($string)]),
           // 'button' => [
