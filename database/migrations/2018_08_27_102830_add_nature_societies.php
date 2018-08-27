@@ -26,7 +26,7 @@ class AddNatureSocieties extends Migration
     public function down()
     {
         Schema::table('entities', function (Blueprint $table) {
-            //
+            $table->dropColumn('nature_entities_id');
         });
     }
 }

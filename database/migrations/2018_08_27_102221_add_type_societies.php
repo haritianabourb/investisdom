@@ -26,7 +26,7 @@ class AddTypeSocieties extends Migration
     public function down()
     {
         Schema::table('entities', function (Blueprint $table) {
-            //
+            $table->dropColumn('type_entities_id');
         });
     }
 }
