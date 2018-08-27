@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateNatureSocieties extends Migration
+class CreateRegistrationSocieties extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateNatureSocieties extends Migration
      */
     public function up()
     {
-        Schema::create('nature_entities', function (Blueprint $table) {
+        Schema::create('registration_entities', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('description')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ class CreateNatureSocieties extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('nature_entities');
+        Schema::dropIfExists('registration_entities');
     }
 }
