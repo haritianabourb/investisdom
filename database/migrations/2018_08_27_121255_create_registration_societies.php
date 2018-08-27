@@ -15,6 +15,8 @@ class CreateRegistrationSocieties extends Migration
     {
         Schema::create('registration_entities', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }

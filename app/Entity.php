@@ -15,4 +15,8 @@ class Entity extends Model
     return $this->belongsTo(TypeEntity::class);
   }
 
+  public function registrationEntitiesId(){
+    return $this->belongsTo(RegistrationEntity::class);
+  }
+
 }
