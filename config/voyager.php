@@ -22,6 +22,8 @@ return [
         'redirect'                     => '/admin',
     ],
 
+    'prefix' => 'admin',
+
     /*
     |--------------------------------------------------------------------------
     | Controllers config
@@ -147,26 +149,30 @@ return [
     'dashboard' => [
         // Add custom list items to navbar's dropdown
         'navbar_items' => [
-            'Profile' => [
+            'Profil' => [
                 'route'      => 'voyager.profile',
                 'classes'    => 'class-full-of-rum',
                 'icon_class' => 'voyager-person',
             ],
-            'Home' => [
+            'Accueil' => [
                 'route'        => '/',
                 'icon_class'   => 'voyager-home',
                 'target_blank' => true,
             ],
-            'Logout' => [
+            'Déconnexion' => [
                 'route'      => 'voyager.logout',
                 'icon_class' => 'voyager-power',
             ],
         ],
 
         'widgets' => [
-          'TCG\\Voyager\\Widgets\\UserDimmer',
-          'TCG\\Voyager\\Widgets\\PostDimmer',
-          'TCG\\Voyager\\Widgets\\PageDimmer',
+          // 'TCG\\Voyager\\Widgets\\UserDimmer',
+          // App\Widgets\TestDimmer::class,
+          App\Widgets\ContactDimmer::class,
+          App\Widgets\InvestissementDimmer::class,
+          App\Widgets\CGPDimmer::class,
+          App\Widgets\ReservationDimmer::class,
+          App\Widgets\FournisseurDimmer::class,
         ],
 
     ],
@@ -209,11 +215,17 @@ return [
 
     // Here you can specify additional assets you would like to be included in the master.blade
     'additional_css' => [
+        // 'css/now-ui-dashboard.css'
         //'css/custom.css',
     ],
 
     'additional_js' => [
         //'js/custom.js',
+        // 'js/core/popper.min.js',
+        // 'js/plugins/bootstrap-notify.js',
+        // 'js/plugins/chartjs.js',
+        // 'js/plugins/perfect-scrollbar.jquery.min.js',
+        // 'js/now-ui-dashboard.js',
     ],
 
     'googlemaps' => [
