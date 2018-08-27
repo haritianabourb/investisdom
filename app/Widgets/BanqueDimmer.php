@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use TCG\Voyager\Facades\Voyager;
 
-class CGPDimmer extends BaseDimmer
+class BanqueDimmer extends BaseDimmer
 {
     /**
      * The configuration array.

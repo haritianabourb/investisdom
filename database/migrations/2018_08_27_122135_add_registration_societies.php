@@ -14,7 +14,7 @@ class AddRegistrationSocieties extends Migration
     public function up()
     {
         Schema::table('entities', function (Blueprint $table) {
-            //
+            $table->integer("registration_entities_id");
         });
     }
 
@@ -26,7 +26,7 @@ class AddRegistrationSocieties extends Migration
     public function down()
     {
         Schema::table('entities', function (Blueprint $table) {
-            //
+            $table->dropColumn('registration_entities_id');
         });
     }
 }
