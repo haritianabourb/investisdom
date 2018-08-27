@@ -36,6 +36,6 @@ class CreateSocieties extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('societies');
+        Schema::dropIfExists('entities');
     }
 }

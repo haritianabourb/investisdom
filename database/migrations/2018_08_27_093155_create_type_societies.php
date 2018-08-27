@@ -13,7 +13,7 @@ class CreateTypeSocieties extends Migration
      */
     public function up()
     {
-        Schema::create('typentities', function (Blueprint $table) {
+        Schema::create('type_entities', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->string('description')->nullable();
@@ -28,6 +28,6 @@ class CreateTypeSocieties extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('typentities');
+        Schema::dropIfExists('type_entities');
     }
 }

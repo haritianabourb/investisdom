@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 
-class Society extends Model
+class TypeEntity extends Model
 {
-    
+
 }
