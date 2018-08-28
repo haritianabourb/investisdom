@@ -24,10 +24,10 @@ class RolesTableSeeder extends Seeder
                 ])->save();
         }
 
-        $role = Role::firstOrNew(['name' => 'administrateur']);
+        $role = Role::firstOrNew(['name' => 'investisdom']);
         if (!$role->exists) {
             $role->fill([
-                    'display_name' => 'investis',
+                    'display_name' => 'Administrateur',
                 ])->save();
         }
     }
