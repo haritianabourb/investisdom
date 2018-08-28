@@ -17,10 +17,10 @@ class CreateContact extends Migration
             $table->increments('id');
             $table->string("fistname");
             $table->string("lastname");
-            $table->string("address_1");
+            $table->string("address_1")->nullable();
             $table->string("address_2")->nullable();
-            $table->integer("postal_code");
-            $table->text("city");
+            $table->integer("postal_code")->nullable();
+            $table->text("city")->nullable();
             $table->timestamp("born_on")->nullable();
             $table->text("born_in")->nullable();
             $table->text("born_in_postal")->nullable();

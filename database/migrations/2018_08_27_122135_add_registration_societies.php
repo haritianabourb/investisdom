@@ -14,7 +14,7 @@ class AddRegistrationSocieties extends Migration
     public function up()
     {
         Schema::table('entities', function (Blueprint $table) {
-            $table->integer("registration_entities_id");
+            $table->integer("registration_entities_id")->nullable();
         });
     }
 

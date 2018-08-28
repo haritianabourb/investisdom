@@ -18,12 +18,12 @@ class CreateSocieties extends Migration
             $table->string('name');
             $table->string('registered_key');
             $table->string("address_1");
-            $table->string("address_2");
-            $table->integer("postal_code");
-            $table->text("city");
+            $table->string("address_2")->nullable();
+            $table->integer("postal_code")->nullable();
+            $table->text("city")->nullable();
             // $table->boolean('have_tva');
             // $table->boolean('is_holding');
-            $table->timestamp('started_at');
+            $table->timestamp('started_at')->nullable();
             $table->timestamps();
         });
 

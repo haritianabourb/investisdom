@@ -15,9 +15,9 @@ class AddMissingFieldsSocieties extends Migration
     {
         Schema::table('entities', function (Blueprint $table) {
             $table->string('capital');
-            $table->string('registration_city');
-            $table->string('ape_key');
-            $table->string('etablishment_code');
+            $table->string('registration_city')->nullable();
+            $table->string('ape_key')->nullable();
+            $table->string('etablishment_code')->nullable();
         });
     }
 
