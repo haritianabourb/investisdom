@@ -16,6 +16,8 @@ class AddMissingFieldsSocieties extends Migration
         Schema::table('entities', function (Blueprint $table) {
             $table->string('capital');
             $table->string('registration_city');
+            $table->string('ape_key');
+            $table->string('etablishment_code');
         });
     }
 
@@ -27,7 +29,10 @@ class AddMissingFieldsSocieties extends Migration
     public function down()
     {
         Schema::table('entities', function (Blueprint $table) {
-            //
+            $table->dropColumn('capital');
+            $table->dropColumn('registration_city');
+            $table->dropColumn('ape_key');
+            $table->dropColumn('etablishment_code');
         });
     }
 }
