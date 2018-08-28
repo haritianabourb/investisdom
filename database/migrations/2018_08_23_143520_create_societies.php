@@ -21,8 +21,8 @@ class CreateSocieties extends Migration
             $table->string("address_2");
             $table->integer("postal_code");
             $table->text("city");
-            $table->boolean('have_tva');
-            $table->boolean('is_holding');
+            // $table->boolean('have_tva');
+            // $table->boolean('is_holding');
             $table->timestamp('started_at');
             $table->timestamps();
         });
