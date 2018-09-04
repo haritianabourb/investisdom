@@ -55,7 +55,44 @@
             @endforeach
             </optgroup>
         </select>
-				<button class="btn btn-success col-md-2"> Add a customer </button>
-			</div>
+				<button type="button" class="btn btn-success add col-md-2"> Add a customer </button>
+		</div>
+		<div class="modal modal-success fade" tabindex="-1" id="delete_modal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="{{ __('voyager::generic.close') }}">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">
+                        <i class="voyager-trash"></i> {{ __('voyager::generic.delete_question') }} {{ $dataType->display_name_singular }}?
+                    </h4>
+                </div>
+								<form action="#" id="add_form" method="POST">
+                <div class="modal-body">
+										{{ method_field("POST") }}
+										<h5>here some contact field</h5>
+										{{ csrf_field() }}
+
+								</div>
+                <div class="modal-footer">
+                    <input type="submit" class="btn btn-success pull-right add-confirm" value="{{ __('voyager::generic.delete_this_confirm') }} {{ $dataType->display_name_singular }}">
+                    <button type="button" class="btn btn-default pull-right" data-dismiss="modal">{{ __('voyager::generic.cancel') }}</button>
+                </div>
+							</form>
+            </div>
+        </div>
+    </div>
+
 @endif
+
+@section('javascript')
+    <!-- DataTables -->
+    <script>
+        $(document).on('click', '.add', function (e) {
+            $('#add_form').action = '#';
+            $('#delete_modal').modal('show');
+        });
+    </script>
+@stop
 {{-- @dd($row, $options, $dataType, $dataTypeContent) --}}
