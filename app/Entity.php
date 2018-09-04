@@ -19,4 +19,8 @@ class Entity extends Model
     return $this->belongsTo(RegistrationEntity::class);
   }
 
+  public function contactId(){
+    return $this->hasOne(Contact::class);
+  }
+
 }
