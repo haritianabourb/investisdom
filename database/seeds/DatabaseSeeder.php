@@ -14,7 +14,7 @@ class DatabaseSeeder extends Seeder
         // InvestisSpecific
         $this->call(TypeEntitiesSeeder::class);
         $this->call(NatureEntitiesSeeder::class);
-        // $this->call(RegistrationEntitiesSeeder::class);
+        $this->call(RegistrationEntitiesSeeder::class);
 
         // Voyager Specific
         // SNC
