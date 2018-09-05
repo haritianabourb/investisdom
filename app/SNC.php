@@ -14,42 +14,9 @@ class SNC extends Entity
 
       static::addGlobalScope(function($query){
         // TODO please let me know what's a snc :D :D
-        return $query;
+        $query->where('type_entities_id', 2);
+        // return $query;
       });
     }
-
-  //////////////////////////////////////////
-
-  // public function scopeInvestisDOM($query){
-  //   return $query;
-  // }
-  //
-  // public function scopeLocataire($query){
-  //   return $query;
-  // }
-  //
-  // public function scopeFournisseur($query){
-  //   return $query;
-  // }
-  //
-  // public function scopeInvestisseur($query){
-  //   return $query;
-  // }
-  //
-  // public function scopeApporteurAffaire($query){
-  //   return $query;
-  // }
-  //
-  // public function scopeBanque($query){
-  //   return $query;
-  // }
-  //
-  // public function scopeCGP($query){
-  //   return $query;
-  // }
-  //
-  // public function scopeSNC($query){
-  //   return $query;
-  // }
 
 }
