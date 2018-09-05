@@ -26,16 +26,16 @@
             <?php
             $relationshipListMethod = camel_case($row->field) . 'List';
             if (method_exists($dataTypeContent, $relationshipListMethod)) {
-                $relationshipOptions = $dataTypeContent->$relationshipListMethod();
+                $contacts = $dataTypeContent->$relationshipListMethod();
             } else {
                 $relationshipClass = $dataTypeContent->{camel_case($row->field)}()->getRelated();
                 if (isset($options->relationship->where)) {
-                    $relationshipOptions = $relationshipClass::where(
+                    $contacts = $relationshipClass::where(
                         $options->relationship->where[0],
                         $options->relationship->where[1]
                     )->get();
                 } else {
-                    $relationshipOptions = $relationshipClass::all();
+                    $contacts = $relationshipClass::all();
                 }
             }
 
@@ -50,49 +50,29 @@
             ?>
 
             <optgroup label="{{ __('voyager::database.relationship.relationship') }}">
-            @foreach($relationshipOptions as $relationshipOption)
-                <option value="{{ $relationshipOption->{$options->relationship->key} }}" @if($default == $relationshipOption->{$options->relationship->key} && $selected_value === NULL){{ 'selected="selected"' }}@endif @if($selected_value == $relationshipOption->{$options->relationship->key}){{ 'selected="selected"' }}@endif>{{ $relationshipOption->{$options->relationship->label} }}</option>
+            @foreach($contacts as $contact)
+                <option value="{{ $contact->{$options->relationship->key} }}" @if($default == $contact->{$options->relationship->key} && $selected_value === NULL){{ 'selected="selected"' }}@endif @if($selected_value == $contact->{$options->relationship->key}){{ 'selected="selected"' }}@endif>
+									{{ $contact->full_name }}
+								</option>
             @endforeach
             </optgroup>
         </select>
-				<button type="button" class="btn btn-success add col-md-2"> Add a customer </button>
+				<button type="button" class="btn btn-default add col-md-2"> Ajouter un contact </button>
 		</div>
-		<div class="modal modal-success fade" tabindex="-1" id="delete_modal" role="dialog">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="{{ __('voyager::generic.close') }}">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h4 class="modal-title">
-                        <i class="voyager-trash"></i> {{ __('voyager::generic.delete_question') }} {{ $dataType->display_name_singular }}?
-                    </h4>
-                </div>
-								<form action="#" id="add_form" method="POST">
-                <div class="modal-body">
-										{{ method_field("POST") }}
-										<h5>here some contact field</h5>
-										{{ csrf_field() }}
-
-								</div>
-                <div class="modal-footer">
-                    <input type="submit" class="btn btn-success pull-right add-confirm" value="{{ __('voyager::generic.delete_this_confirm') }} {{ $dataType->display_name_singular }}">
-                    <button type="button" class="btn btn-default pull-right" data-dismiss="modal">{{ __('voyager::generic.cancel') }}</button>
-                </div>
-							</form>
-            </div>
-        </div>
-    </div>
-
 @endif
 
 @section('javascript')
     <!-- DataTables -->
     <script>
         $(document).on('click', '.add', function (e) {
-            $('#add_form').action = '#';
-            $('#delete_modal').modal('show');
+            $('#add_form').action = '{{ route('voyager.contacts.create') }}';
+            $('#add_contact_modal').modal('show');
         });
+
+				$(document).on('click', '.add-confirm', function(e){
+					console.log($('#add_form'));
+					$('#add_contact_modal').modal('hide');
+				});
     </script>
 @stop
 {{-- @dd($row, $options, $dataType, $dataTypeContent) --}}
