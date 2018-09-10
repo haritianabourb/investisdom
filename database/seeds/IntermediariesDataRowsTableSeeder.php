@@ -20,16 +20,4 @@ class IntermediariesDataRowsTableSeeder extends InvestisSeeder
         }
     }
 
-    /**
-     * [dataRow description].
-     *
-     * @param [type] $type  [description]
-     * @param [type] $field [description]
-     *
-     * @return [type] [description]
-     */
-    protected function dataRow($type, $fields)
-    {
-        return new DataRow($fields->put('data_type_id', $type->id)->toArray());
-    }
 }
