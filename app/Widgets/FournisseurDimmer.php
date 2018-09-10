@@ -52,7 +52,7 @@ class FournisseurDimmer extends BaseDimmer
      */
     public function shouldBeDisplayed()
     {
-        // return true;
-        return Auth::user()->can('browse', \App\Supplier::class );
+        return true;
+        // return Auth::user()->can('browse', \App\Supplier::class );
     }
 }

@@ -52,7 +52,7 @@ class CGPDimmer extends BaseDimmer
      */
     public function shouldBeDisplayed()
     {
-        // return true;
-        return Auth::user()->can('browse', \App\CGP::class );
+        return true;
+        // return Auth::user()->can('browse', \App\CGP::class );
     }
 }

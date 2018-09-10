@@ -52,7 +52,7 @@ class InvestissementDimmer extends BaseDimmer
      */
     public function shouldBeDisplayed()
     {
-        // return true;
-        return Auth::user()->can('browse', \App\Investor::class );
+        return true;
+        // return Auth::user()->can('browse', \App\Investor::class );
     }
 }
