@@ -4,7 +4,7 @@ use Illuminate\Database\Seeder;
 use TCG\Voyager\Models\DataRow;
 use TCG\Voyager\Models\DataType;
 
-class InvestorsDataRowsTableSeeder extends Seeder
+class InvestorsDataRowsTableSeeder extends InvestisSeeder
 {
     /**
      * Auto generated seed file.

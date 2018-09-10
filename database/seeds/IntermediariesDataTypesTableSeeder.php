@@ -1,9 +1,6 @@
 <?php
 
-use Illuminate\Database\Seeder;
-use TCG\Voyager\Models\DataType;
-
-class IntermediariesDataTypesTableSeeder extends Seeder
+class IntermediariesDataTypesTableSeeder extends InvestisSeeder
 {
     /**
      * Auto generated seed file.
@@ -16,26 +13,14 @@ class IntermediariesDataTypesTableSeeder extends Seeder
               'name'                  => 'intermediaries',
                 'display_name_singular' => 'Apporteur d\'Affaire',
                 'display_name_plural'   => 'Apporteurs d\'Affaire',
-                'icon'                  => 'voyager-person',
+                'icon'                  => 'voyager-tag',
                 'model_name'            => 'App\\Intermediary',
                 'policy_name'           => '',
                 'controller'            => '',
                 'generate_permissions'  => 1,
-                'description'           => 'Conseiller en Gestion de Patrimoine',
+                'description'           => 'Apporteur d\'affaire et assimilés',
             ])->save();
         }
     }
 
-    /**
-     * [dataType description].
-     *
-     * @param [type] $field [description]
-     * @param [type] $for   [description]
-     *
-     * @return [type] [description]
-     */
-    protected function dataType($field, $for)
-    {
-        return DataType::firstOrNew([$field => $for]);
-    }
 }

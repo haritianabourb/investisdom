@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Models\DataType;
 
-class InvestorsDataTypesTableSeeder extends Seeder
+class InvestorsDataTypesTableSeeder extends InvestisSeeder
 {
     /**
      * Auto generated seed file.
@@ -16,26 +16,14 @@ class InvestorsDataTypesTableSeeder extends Seeder
               'name'                  => 'investors',
                 'display_name_singular' => 'Investisseur',
                 'display_name_plural'   => 'Investisseurs',
-                'icon'                  => 'voyager-person',
+                'icon'                  => 'voyager-medal-rank-star',
                 'model_name'            => 'App\\Investor',
                 'policy_name'           => '',
                 'controller'            => '',
                 'generate_permissions'  => 1,
-                'description'           => 'Conseiller en Gestion de Patrimoine',
+                'description'           => 'Investisseurs',
             ])->save();
         }
     }
 
-    /**
-     * [dataType description].
-     *
-     * @param [type] $field [description]
-     * @param [type] $for   [description]
-     *
-     * @return [type] [description]
-     */
-    protected function dataType($field, $for)
-    {
-        return DataType::firstOrNew([$field => $for]);
-    }
 }

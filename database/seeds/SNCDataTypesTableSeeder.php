@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Models\DataType;
 
-class SNCDataTypesTableSeeder extends Seeder
+class SNCDataTypesTableSeeder extends InvestisSeeder
 {
     /**
      * Auto generated seed file.
@@ -16,7 +16,7 @@ class SNCDataTypesTableSeeder extends Seeder
               'name'                  => 'sncs',
                 'display_name_singular' => 'SNC',
                 'display_name_plural'   => 'SNC',
-                'icon'                  => 'voyager-person',
+                'icon'                  => 'voyager-wallet',
                 'model_name'            => 'App\\SNC',
                 'policy_name'           => '',
                 'controller'            => '',
@@ -26,16 +26,4 @@ class SNCDataTypesTableSeeder extends Seeder
         }
     }
 
-    /**
-     * [dataType description].
-     *
-     * @param [type] $field [description]
-     * @param [type] $for   [description]
-     *
-     * @return [type] [description]
-     */
-    protected function dataType($field, $for)
-    {
-        return DataType::firstOrNew([$field => $for]);
-    }
 }

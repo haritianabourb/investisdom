@@ -1,9 +1,6 @@
 <?php
 
-use Illuminate\Database\Seeder;
-use TCG\Voyager\Models\DataType;
-
-class CGPDataTypesTableSeeder extends Seeder
+class CGPDataTypesTableSeeder extends InvestisSeeder
 {
     /**
      * Auto generated seed file.
@@ -16,7 +13,7 @@ class CGPDataTypesTableSeeder extends Seeder
               'name'                  => 'cgps',
                 'display_name_singular' => 'CGP',
                 'display_name_plural'   => 'CGP',
-                'icon'                  => 'voyager-person',
+                'icon'                  => 'voyager-bookmark',
                 'model_name'            => 'App\\CGP',
                 'policy_name'           => '',
                 'controller'            => '',
@@ -26,16 +23,4 @@ class CGPDataTypesTableSeeder extends Seeder
         }
     }
 
-    /**
-     * [dataType description].
-     *
-     * @param [type] $field [description]
-     * @param [type] $for   [description]
-     *
-     * @return [type] [description]
-     */
-    protected function dataType($field, $for)
-    {
-        return DataType::firstOrNew([$field => $for]);
-    }
 }

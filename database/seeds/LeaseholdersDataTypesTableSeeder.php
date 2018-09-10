@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Models\DataType;
 
-class LeaseholdersDataTypesTableSeeder extends Seeder
+class LeaseholdersDataTypesTableSeeder extends InvestisSeeder
 {
     /**
      * Auto generated seed file.
@@ -16,26 +16,14 @@ class LeaseholdersDataTypesTableSeeder extends Seeder
               'name'                  => 'leaseholders',
                 'display_name_singular' => 'Locataire',
                 'display_name_plural'   => 'Locataires',
-                'icon'                  => 'voyager-person',
+                'icon'                  => 'voyager-archive',
                 'model_name'            => 'App\\Leaseholder',
                 'policy_name'           => '',
                 'controller'            => '',
                 'generate_permissions'  => 1,
-                'description'           => 'Conseiller en Gestion de Patrimoine',
+                'description'           => 'Locataires',
             ])->save();
         }
     }
 
-    /**
-     * [dataType description].
-     *
-     * @param [type] $field [description]
-     * @param [type] $for   [description]
-     *
-     * @return [type] [description]
-     */
-    protected function dataType($field, $for)
-    {
-        return DataType::firstOrNew([$field => $for]);
-    }
 }

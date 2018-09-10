@@ -33,38 +33,4 @@ class Entity extends Model
     return $query;
   }
 
-  //////////////////////////////////////////
-
-  public function scopeInvestisDOM($query){
-    return $query;
-  }
-
-  public function scopeLocataire($query){
-    return $query;
-  }
-
-  public function scopeFournisseur($query){
-    return $query;
-  }
-
-  public function scopeInvestisseur($query){
-    return $query;
-  }
-
-  public function scopeApporteurAffaire($query){
-    return $query;
-  }
-
-  public function scopeBanque($query){
-    return $query;
-  }
-
-  public function scopeCGP($query){
-    return $query;
-  }
-
-  public function scopeSNC($query){
-    return $query;
-  }
-
 }

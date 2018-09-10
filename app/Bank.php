@@ -13,9 +13,10 @@ class Bank extends Entity
       parent::boot();
 
       static::addGlobalScope(function($query){
-        // TODO please let me know what's a snc :D :D
-        $query->where('type_entities_id', 8);
-        // return $query;
+
+        $typeEntity = TypeEntity::where('name', 'Banque')->firstOrFail();
+        $query->where('type_entities_id', $typeEntity->id);
+        
       });
     }
 
