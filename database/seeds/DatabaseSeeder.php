@@ -27,18 +27,18 @@ class DatabaseSeeder extends Seeder
         // $this->call(CGPPermissionsTableSeeder::class);
         // // Intermediaries
         // $this->call(IntermediariesDataTypesTableSeeder::class);
-        $this->call(IntermediariesDataRowsTableSeeder::class);
-        $this->call(IntermediariesPermissionsTableSeeder::class);
-        // Investors
-        $this->call(InvestorsDataTypesTableSeeder::class);
-        $this->call(InvestorsDataRowsTableSeeder::class);
-        $this->call(InvestorsPermissionsTableSeeder::class);
-        // Leaseholders
-        $this->call(LeaseholdersDataTypesTableSeeder::class);
-        $this->call(LeaseholdersDataRowsTableSeeder::class);
-        $this->call(LeaseholdersPermissionsTableSeeder::class);
-        // SNC
-        $this->call(SNCDataTypesTableSeeder::class);
+        // $this->call(IntermediariesDataRowsTableSeeder::class);
+        // $this->call(IntermediariesPermissionsTableSeeder::class);
+        // // Investors
+        // $this->call(InvestorsDataTypesTableSeeder::class);
+        // $this->call(InvestorsDataRowsTableSeeder::class);
+        // $this->call(InvestorsPermissionsTableSeeder::class);
+        // // Leaseholders
+        // $this->call(LeaseholdersDataTypesTableSeeder::class);
+        // $this->call(LeaseholdersDataRowsTableSeeder::class);
+        // $this->call(LeaseholdersPermissionsTableSeeder::class);
+        // // SNC
+        // $this->call(SNCDataTypesTableSeeder::class);
         $this->call(SNCDataRowsTableSeeder::class);
         $this->call(SNCPermissionsTableSeeder::class);
         // Suppliers
