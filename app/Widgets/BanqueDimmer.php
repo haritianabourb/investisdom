@@ -53,6 +53,6 @@ class BanqueDimmer extends BaseDimmer
     public function shouldBeDisplayed()
     {
         return true;
-        // return Auth::user()->can('browse', \App\Contact::class );
+        return Auth::user()->can('browse', \App\Bank::class );
     }
 }
