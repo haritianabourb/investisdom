@@ -12,21 +12,21 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // InvestisSpecific
-        $this->call(TypeEntitiesSeeder::class);
-        $this->call(NatureEntitiesSeeder::class);
-        $this->call(RegistrationEntitiesSeeder::class);
-
-        // Voyager Specific
-        // Banks
-        $this->call(BanksDataTypesTableSeeder::class);
-        $this->call(BanksDataRowsTableSeeder::class);
-        $this->call(BanksPermissionsTableSeeder::class);
-        // CGP
-        $this->call(CGPDataTypesTableSeeder::class);
-        $this->call(CGPDataRowsTableSeeder::class);
-        $this->call(CGPPermissionsTableSeeder::class);
-        // Intermediaries
-        $this->call(IntermediariesDataTypesTableSeeder::class);
+        // $this->call(TypeEntitiesSeeder::class);
+        // $this->call(NatureEntitiesSeeder::class);
+        // $this->call(RegistrationEntitiesSeeder::class);
+        //
+        // // Voyager Specific
+        // // Banks
+        // $this->call(BanksDataTypesTableSeeder::class);
+        // $this->call(BanksDataRowsTableSeeder::class);
+        // $this->call(BanksPermissionsTableSeeder::class);
+        // // CGP
+        // $this->call(CGPDataTypesTableSeeder::class);
+        // $this->call(CGPDataRowsTableSeeder::class);
+        // $this->call(CGPPermissionsTableSeeder::class);
+        // // Intermediaries
+        // $this->call(IntermediariesDataTypesTableSeeder::class);
         $this->call(IntermediariesDataRowsTableSeeder::class);
         $this->call(IntermediariesPermissionsTableSeeder::class);
         // Investors
