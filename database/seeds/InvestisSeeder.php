@@ -24,6 +24,7 @@ class InvestisSeeder extends Seeder
      */
     protected function dataRow($type, $fields)
     {
+      dd($type);
       $typeEntity = TypeEntity::where('name', $type->display_name_singular)->firstOrFail();
 
       if($fields->get('field') == 'type_entities_id'){
