@@ -14,7 +14,7 @@ class Intermediary extends Entity
 
       static::addGlobalScope(function($query){
 
-        $typeEntity = TypeEntity::where('name', 'Apporteur Affaire')->firstOrFail();
+        $typeEntity = TypeEntity::where('name', 'Apporteur d\'Affaire')->firstOrFail();
         $query->where('type_entities_id', $typeEntity->id);
 
       });
