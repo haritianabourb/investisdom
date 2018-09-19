@@ -37,19 +37,19 @@ class AddRegistrationSocieties extends Migration
      */
     public function down()
     {
-      $entities = [
-        // 'entities',
-        'sncs',
-        'leaseholders',
-        'investors',
-        'cgps',
-        'intermediaries',
-        'suppliers'
-      ];
-      foreach ($entities as $e) {
-        Schema::table($e, function (Blueprint $table) {
-            $table->dropColumn('registration_entities_id');
-        });
-      }
+      // $entities = [
+      //   // 'entities',
+      //   'sncs',
+      //   'leaseholders',
+      //   'investors',
+      //   'cgps',
+      //   'intermediaries',
+      //   'suppliers'
+      // ];
+      // foreach ($entities as $e) {
+      //   Schema::table($e, function (Blueprint $table) {
+      //       $table->dropColumn('registration_entities_id');
+      //   });
+      // }
     }
 }
