@@ -13,9 +13,21 @@ class AddNatureSocieties extends Migration
      */
     public function up()
     {
-        Schema::table('entities', function (Blueprint $table) {
+
+      $entities = [
+        // 'entities',
+        'sncs',
+        'leaseholders',
+        'investors',
+        'cgps',
+        'intermediaries',
+        'suppliers'
+      ];
+      foreach ($entities as $e) {
+        Schema::table($e, function (Blueprint $table) {
             $table->integer("nature_entities_id");
         });
+      }
     }
 
     /**
@@ -25,8 +37,19 @@ class AddNatureSocieties extends Migration
      */
     public function down()
     {
+      $entities = [
+        // 'entities',
+        'sncs',
+        'leaseholders',
+        'investors',
+        'cgps',
+        'intermediaries',
+        'suppliers'
+      ];
+      foreach ($entities as $e) {
         Schema::table('entities', function (Blueprint $table) {
             $table->dropColumn('nature_entities_id');
         });
+      }
     }
 }

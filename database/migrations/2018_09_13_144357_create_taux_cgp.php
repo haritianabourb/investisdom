@@ -16,6 +16,7 @@ class CreateTauxCgp extends Migration
         Schema::create('taux_cgp', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('cgps_id');
+            $table->integer('type_contrat_id');
             $table->float('mois_1');
             $table->float('mois_2');
             $table->float('mois_3');

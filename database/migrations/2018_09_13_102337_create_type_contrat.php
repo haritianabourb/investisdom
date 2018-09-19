@@ -17,7 +17,7 @@ class CreateTypeContrat extends Migration
             $table->increments('id');
             $table->string('nom');
             $table->string('description');
-            $table->float('taux');
+            // $table->float('taux');
             // $table->string('slug');
             $table->timestamps();
         });

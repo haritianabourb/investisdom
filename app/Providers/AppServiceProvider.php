@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Reservation;
+use App\Observers\ReservationObserver;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Voyager;
@@ -16,7 +18,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-        Voyager::useModel('SNC', \App\SNC::class);
+        // Voyager::useModel('SNC', \App\SNC::class);
+
+        Reservation::observe(ReservationObserver::class);
     }
 
     /**

@@ -12,9 +12,9 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // InvestisSpecific
-        // $this->call(TypeEntitiesSeeder::class);
-        // $this->call(NatureEntitiesSeeder::class);
-        // $this->call(RegistrationEntitiesSeeder::class);
+        $this->call(TypeEntitiesSeeder::class);
+        $this->call(NatureEntitiesSeeder::class);
+        $this->call(RegistrationEntitiesSeeder::class);
         //
         // // Voyager Specific
         // // Banks
@@ -39,11 +39,11 @@ class DatabaseSeeder extends Seeder
         // $this->call(LeaseholdersPermissionsTableSeeder::class);
         // // SNC
         // $this->call(SNCDataTypesTableSeeder::class);
-        $this->call(SNCDataRowsTableSeeder::class);
-        $this->call(SNCPermissionsTableSeeder::class);
+        // $this->call(SNCDataRowsTableSeeder::class);
+        // $this->call(SNCPermissionsTableSeeder::class);
         // Suppliers
-        $this->call(SuppliersDataTypesTableSeeder::class);
-        $this->call(SuppliersDataRowsTableSeeder::class);
-        $this->call(SuppliersPermissionsTableSeeder::class);
+        // $this->call(SuppliersDataTypesTableSeeder::class);
+        // $this->call(SuppliersDataRowsTableSeeder::class);
+        // $this->call(SuppliersPermissionsTableSeeder::class);
     }
 }

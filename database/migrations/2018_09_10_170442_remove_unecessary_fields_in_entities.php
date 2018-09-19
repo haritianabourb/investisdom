@@ -14,8 +14,9 @@ class RemoveUnecessaryFieldsInEntities extends Migration
     public function up()
     {
         Schema::table('entities', function (Blueprint $table) {
-          $table->dropColumn('have_tva');
-          $table->dropColumn('is_holding');
+          // $table->dropColumn('have_tva');
+          // $table->dropColumn('is_holding');
+          return;
         });
     }
 

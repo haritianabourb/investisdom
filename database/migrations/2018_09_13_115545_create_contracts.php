@@ -13,7 +13,7 @@ class CreateContracts extends Migration
      */
     public function up()
     {
-        Schema::create('contrats', function (Blueprint $table) {
+        Schema::create('reservations', function (Blueprint $table) {
             $table->increments('id');
             $table->string('identifiant');
             $table->float('montant_reduction');
@@ -26,6 +26,12 @@ class CreateContracts extends Migration
             $table->integer('nbr_snc');
             $table->boolean('assistance_juridique');
             $table->string('secteurs_activite');
+            $table->float('taux_rentabilite')->nullable();
+            $table->float('apport')->nullable();
+            $table->float('montant_commission_cgp')->nullable();
+            $table->float('gain_brut')->nullable();
+            $table->float('taux_reservation')->nullable();
+
             $table->timestamps();
         });
     }

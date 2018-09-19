@@ -13,9 +13,22 @@ class AddTypeSocieties extends Migration
      */
     public function up()
     {
-        Schema::table('entities', function (Blueprint $table) {
+        $entities = [
+          // 'entities',
+          'sncs',
+          'leaseholders',
+          'investors',
+          'cgps',
+          'intermediaries',
+          'suppliers'
+        ];
+
+        foreach ($entities as $e) {
+          // code...
+          Schema::table($e, function (Blueprint $table) {
             $table->integer("type_entities_id");
-        });
+          });
+        }
     }
 
     /**
@@ -25,8 +38,20 @@ class AddTypeSocieties extends Migration
      */
     public function down()
     {
-        Schema::table('entities', function (Blueprint $table) {
+      $entities = [
+        // 'entities',
+        'sncs',
+        'leaseholders',
+        'investors',
+        'cgps',
+        'intermediaries',
+        'suppliers'
+      ];
+
+      foreach ($entities as $e) {
+        Schema::table($e, function (Blueprint $table) {
             $table->dropColumn('type_entities_id');
         });
+      }
     }
 }
