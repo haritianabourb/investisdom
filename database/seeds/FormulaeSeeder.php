@@ -3,7 +3,7 @@
 use App\TypeContrat;
 use Illuminate\Database\Seeder;
 
-class TypeEntitiesSeeder extends Seeder
+class FormulaeSeeder extends Seeder
 {
     /**
      * Seed the application's database.
