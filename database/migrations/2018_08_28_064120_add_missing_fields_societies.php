@@ -39,11 +39,22 @@ class AddMissingFieldsSocieties extends Migration
      */
     public function down()
     {
-        // Schema::table('entities', function (Blueprint $table) {
-        //     $table->dropColumn('capital');
-        //     $table->dropColumn('registration_city');
-        //     $table->dropColumn('ape_key');
-        //     $table->dropColumn('etablishment_code');
-        // });
+      $entities = [
+        // 'entities',
+        // 'sncs',
+        'leaseholders',
+        // 'investors',
+        'cgps',
+        'intermediaries',
+        'suppliers'
+      ];
+      foreach ($entities as $e) {
+        Schema::table($e, function (Blueprint $table) {
+            $table->dropColumn('capital');
+            $table->dropColumn('registration_city');
+            $table->dropColumn('ape_key');
+            $table->dropColumn('etablishment_code');
+        });
+      }
     }
 }
