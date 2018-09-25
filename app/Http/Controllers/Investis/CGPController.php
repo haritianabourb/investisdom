@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Investis;
 
 use Illuminate\Http\Request;
 use \App\CGP;
+use Fpdf;
+use Voyager;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -14,6 +16,9 @@ class CGPController extends VoyagerBaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function generatePDF(Request $request, CGP $cgp){
+      // $canBrowsePost = Voyager::can('browse_cgps');
+      $this->authorize('browse', $cgp);
+      // dd($canBrowsePost);
       // XXX FIELD RESUP
       // $compte="test compte";
       $nom = $cgp->name;
