@@ -1,27 +1,19 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+namespace App\Http\Controllers\Investis;
 
-Route::get('/', function () {
-    return view('theme::index');
-});
+use Illuminate\Http\Request;
+use \App\CGP;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
+class CGPController extends VoyagerBaseController
+{
+    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-
-    Route::get('mypdf', function() {
-      $cgp = \App\CGP::where('id', 2)->firstOrFail();
-
+    public function generatePDF(Request $request, CGP $cgp){
       // XXX FIELD RESUP
       // $compte="test compte";
       $nom = $cgp->name;
@@ -133,6 +125,6 @@ Route::group(['prefix' => 'admin'], function () {
       Fpdf::write(5,utf8_decode("Offre CONFORT sur des dossiers de plein droit :\n\n- De janvier à fin mars, le taux de commercialisation sera de 25% incluant la rentabilité offerte aux investisseurs et votre rémunération plafonnée à 7%.\n- D'avril à fin juin, le taux de commercialisation sera de 23% incluant la rentabilité offerte aux investisseurs et votre rémunération plafonnée à 7%.\n- De juillet à fin septembre, le taux de commercialisation sera de 21% incluant la rentabilité offerte aux investisseurs et votre rémunération plafonnée à 7%.\n- D'octobre à fin décembre, le taux de commercialisation sera de 19% incluant la rentabilité offerte aux investisseurs et votre rémunération plafonnée à 7%.\n\n"));
       Fpdf::write(5,utf8_decode("Offre SERENITE + sur des dossiers de plein droit : (produit mutualisé sur 3 à 5 SNC, avec assurance garantissant la perte financière et fiscale)\n\n- De janvier à fin mars, le taux de commercialisation sera de 21% incluant la rentabilité offerte aux investisseurs et votre rémunération plafonnée à 7%.\n- D'avril à fin juin, le taux de commercialisation sera de 19% incluant la rentabilité offerte aux investisseurs et votre rémunération plafonnée à 7%.\n- De juillet à fin septembre, le taux de commercialisation sera de 17% incluant la rentabilité offerte aux investisseurs et votre rémunération plafonnée à 7%.\n- D'octobre à fin décembre, le taux de commercialisation sera de 15% incluant la rentabilité offerte aux investisseurs et votre rémunération plafonnée à 7%.\n\n"));
       Fpdf::Output("Contrat_de_partenariat_$nom.pdf","D");
-    });
+    }
 
-});
+}

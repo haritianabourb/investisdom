@@ -9,19 +9,19 @@ class Entity extends Model
 {
 
   public function natureEntitiesId(){
-    return $this->belongsTo(NatureEntity::class);
+    return $this->belongsTo(NatureEntity::class, 'nature_entities_id', 'id');
   }
 
   public function typeEntitiesId(){
-    return $this->belongsTo(TypeEntity::class);
+    return $this->belongsTo(TypeEntity::class, 'type_entities_id', 'id');
   }
 
   public function registrationEntitiesId(){
-    return $this->belongsTo(RegistrationEntity::class);
+    return $this->belongsTo(RegistrationEntity::class, 'registration_entities_id', 'id');
   }
 
   public function contactId(){
-    return $this->belongsTo(Contact::class);
+    return $this->belongsTo(Contact::class, 'contact_id', 'id');
   }
 
   //////////////////////////////////////////
