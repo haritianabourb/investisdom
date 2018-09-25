@@ -107,7 +107,7 @@ if (starts_with(Auth::user()->avatar, 'http://') || starts_with(Auth::user()->av
     </div>
 </div>
 @include('voyager::partials.app-footer')
-
+@yield('footer')
 <!-- Javascript Libs -->
 
 
