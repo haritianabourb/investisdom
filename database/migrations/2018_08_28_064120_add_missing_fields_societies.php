@@ -14,8 +14,6 @@ class AddMissingFieldsSocieties extends Migration
     public function up()
     {
       $entities = [
-        // 'entities',
-        // 'sncs',
         'leaseholders',
         'investors',
         'cgps',
