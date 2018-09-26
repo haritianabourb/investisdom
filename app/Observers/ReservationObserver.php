@@ -16,6 +16,7 @@ class ReservationObserver
      */
     public function saving(Reservation $reservation)
     {
+        $reservation->identifiant = "Folder_Test".rand(1,999);
         $this->calculate($reservation);
     }
 
@@ -64,6 +65,7 @@ class ReservationObserver
     }
 
     protected function calculate(Reservation $reservation){
+
       $mandat_start = (new Carbon($reservation->mandat_start_at));
       $mandat_mois = "mois_$mandat_start->month";
 
@@ -77,7 +79,6 @@ class ReservationObserver
       // TODO make renta correctly
       $commission_cgp = $reservation->commission_cgp/100;
 
-      $reservation->identifiant = "Folder_Test".rand(1,999);
       // $taux_renta =  - $reservation->commision_cgp;
       //
       $taux_renta =  $taux_mois - $commission_cgp;
