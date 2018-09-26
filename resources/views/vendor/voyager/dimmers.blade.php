@@ -14,4 +14,12 @@ $surfix = '</div>';
 <div class="clearfix container-fluid row">
     {!! $prefix.$dimmers->setSeparator($surfix.$prefix)->display().$surfix !!}
 </div>
+<hr/>
 @endif
+<div class="clearfix container-fluid row">
+  <div class="panel">
+
+    {!! menu('dashboard') !!}
+
+  </div>
+</div>

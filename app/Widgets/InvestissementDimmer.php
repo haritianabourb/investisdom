@@ -6,6 +6,7 @@ use TCG\Voyager\Widgets\BaseDimmer;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use TCG\Voyager\Facades\Voyager;
+use App\Investor;
 
 class InvestissementDimmer extends BaseDimmer
 {
@@ -23,7 +24,7 @@ class InvestissementDimmer extends BaseDimmer
     public function run()
     {
 
-      $count = rand('0', '10');
+      $count = Investor::count();
       $string = ' Investisseurs';
 
       return view('voyager::dimmer', array_merge($this->config, [
@@ -32,7 +33,7 @@ class InvestissementDimmer extends BaseDimmer
           'text'   => 'en cours de développement',
           'button' => [
             'text' => "Voir mes {$string}",
-            'link' => '#',
+            'link' => route('voyager.investors.index'),
           ],
           // 'text'   => __('voyager::dimmer.user_text', ['count' => $count, 'string' => Str::lower($string)]),
           // 'button' => [
@@ -52,6 +53,6 @@ class InvestissementDimmer extends BaseDimmer
     public function shouldBeDisplayed()
     {
         return true;
-        // return Auth::user()->can('browse', \App\Contact::class );
+        // return Auth::user()->can('browse', \App\Investor::class );
     }
 }

@@ -32,9 +32,10 @@ class UsersTableSeeder extends Seeder
                 'role_id'        => $role->id,
             ]);
 
+            $role = Role::where('name', 'investisdom')->firstOrFail();
             User::create([
                 'name'           => 'Administrateur',
-                'email'          => 'c.monel@investis-dom.com ',
+                'email'          => 'c.monel@investis-dom.com',
                 'password'       => bcrypt('password'),
                 'remember_token' => str_random(60),
                 'role_id'        => $role->id,
