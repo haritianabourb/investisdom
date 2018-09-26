@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Mandat extends Model
 {
+  protected $table="mandat";
+  
   const MANDAT_SIMPLIFIE = "SIMPLIFIE";
   const MANDAT_STANDARD = "STANDARD";
 
