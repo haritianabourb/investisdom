@@ -23,8 +23,11 @@ namespace App\Services;
 			// $this->term_years = $mandat->nombre_periode/12;
 			$this->terms = 12;
 			// TODO show interest?
-			$this->period = $this->nbr_period = $this->terms * $this->term_years;
-
+			if($this->mandat->complement_financement == self::CASH){
+				$this->period = $this->nbr_period;
+			}else{
+				$this->period = $this->nbr_period = $this->terms * $this->term_years;
+			}
 			$this->taux_pret = ($mandat->taux_pret/100.0) / $this->terms;
 
 			$this->processCalc();

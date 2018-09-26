@@ -52,6 +52,17 @@ class CreateSocieties extends Migration
             // $table->boolean('have_tva');
             // $table->boolean('is_holding');
             $table->timestamp('started_at')->nullable();
+            // {
+            //   "options" : {
+            //     "industrie":"Industrie"
+            //     "artisanat":"Artisanat"
+            //     "tourisme":"Tourisme"
+            //     "énergie":"Energie"
+            //     "tp, transport, construction":"TP, Transport, Construction"
+            //     "logement social":"Logement social"
+            //     "indifférent":"Indifférent"
+            //   }
+            // }
             $table->timestamps();
         });
 
