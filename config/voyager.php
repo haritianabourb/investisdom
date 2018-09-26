@@ -228,7 +228,8 @@ return [
         // 'js/plugins/perfect-scrollbar.jquery.min.js',
         // 'js/now-ui-dashboard.js',
         'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment-with-locales.js',
-        'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js'
+        'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js',
+        'https://cdn.jsdelivr.net/npm/formdata-polyfill@3.0.12/formdata.min.js'
     ],
 
     'googlemaps' => [
