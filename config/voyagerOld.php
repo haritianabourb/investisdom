@@ -215,13 +215,13 @@ return [
 
     // Here you can specify additional assets you would like to be included in the master.blade
     'additional_css' => [
-        'https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css',
+        'https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css'
         // 'css/now-ui-dashboard.css'
-        'css/custom.css'
+        //'css/custom.css',
     ],
 
     'additional_js' => [
-        'js/custom.js',
+        //'js/custom.js',
         // 'js/core/popper.min.js',
         // 'js/plugins/bootstrap-notify.js',
         // 'js/plugins/chartjs.js',
