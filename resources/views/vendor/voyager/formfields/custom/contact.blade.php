@@ -1,6 +1,6 @@
 @include('voyager::formfields.select_dropdown')
 
-<button type="button" class="btn btn-default add col-md-2"> Ajouter un contact </button>
+<button type="button" class="btn btn-default btn-block add"> Ajouter un contact </button>
 
 @section('footer')
 	<div class="modal modal-success fade" tabindex="-1" id="add_contact_modal" role="dialog">
@@ -18,35 +18,54 @@
 							<form action="#" id="add_form" method="POST">
 								<div class="modal-body">
 										{{ method_field("POST") }}
-										<h5>here some contact field</h5>
 											<!-- Adding / Editing -->
 											<!-- GET THE DISPLAY OPTIONS -->
 											<div class="form-group  col-md-12">
-												<label for="name">Fistname</label>
-												<input required="" class="form-control" name="fistname" placeholder="Fistname" value="" type="text">
+												<label for="name">Nom*</label>
+												<input required class="form-control" name="fistname" placeholder="Nom" value="" type="text">
 											</div>
 											<!-- GET THE DISPLAY OPTIONS -->
 											<div class="form-group  col-md-12">
 
-													<label for="name">Lastname</label>
-													<input required="" class="form-control" name="lastname" placeholder="Lastname" value="" type="text">
+													<label for="name">Prénom*</label>
+													<input required class="form-control" name="lastname" placeholder="Prénom" value="" type="text">
 											</div>
 											<!-- GET THE DISPLAY OPTIONS -->
 											<div class="form-group  col-md-12">
 
-												<label for="name">Born On</label>
-												<input required="" class="form-control datepicker" name="born_on" value="" type="datetime">
+													<label for="address_1">Adresse*</label>
+													<input required class="form-control" name="address_1" placeholder="Adresse" value="" type="text">
+											</div>	
+											<!-- GET THE DISPLAY OPTIONS -->
+											<div class="form-group  col-md-12">
+
+													<label for="postal_code">Code Postal*</label>
+													<input required class="form-control" name="postal_code" placeholder="Code Postal" value="" type="number" pattern="\d*">
 											</div>
 											<!-- GET THE DISPLAY OPTIONS -->
 											<div class="form-group  col-md-12">
-												<label for="name">Born In</label>
-												<input required="" class="form-control" name="born_in" placeholder="Born In" value="" type="text">
+
+													<label for="city">Ville*</label>
+													<input required class="form-control" name="city" placeholder="Ville" value="" type="text">
+											</div>																																	
+											<!-- GET THE DISPLAY OPTIONS -->
+											<div class="form-group  col-md-12">
+
+												<label for="name">Né(e) le</label>
+												<input class="form-control datepicker" name="born_on" value="" type="datetime">
+											</div>
+											<!-- GET THE DISPLAY OPTIONS -->
+											<div class="form-group  col-md-12">
+												<label for="name">Lieu de Naissance</label>
+												<input class="form-control" name="born_in" placeholder="Lieu de Naissance" value="" type="text">
 											</div>
 											<!-- GET THE DISPLAY OPTIONS -->
 											<div class="form-group  col-md-12">
 												<label for="name">CP Naissance</label>
-												<input required="" class="form-control" name="born_in_postal" placeholder="CP Naissance" value="" type="text">
+												<input class="form-control" name="born_in_postal" placeholder="CP Naissance" value="" type="text">
 											</div>
+
+											<input type="submit" style="display:none;">
 										{{ csrf_field() }}
 
 								</div>
@@ -64,13 +83,56 @@
     <!-- DataTables -->
     <script>
         $(document).on('click', '.add', function (e) {
-            $('#add_form').action = '{{ route('voyager.contacts.create') }}';
+			// $('#add_form').action = '{{ route('voyager.contacts.create') }}';
+			$('#add_form')[0].reset();
             $('#add_contact_modal').modal('show');
-        });
+		});
+		
+		$('#add_form').submit(function(e) {
+			e.preventDefault();
+			var formdata = $(this).serializeArray();
+			var data = {};
+			$(formdata).each(function(index, obj){
+				data[obj.name] = obj.value;
+			});
+			console.log(data);
+			
+			$.ajax({
+				type: "POST",
+				url: "/admin/contacts",
+				data: data,
+				success: function (response) {
+					console.log(response);
+					$('[name=contact_id] optgroup[label=Relationship]')
+						.append($("<option></option>")
+						.attr("value",response.data.id)
+						.text(response.data.fistname)
+						.prop('selected', true) );
+
+					$('[name=contact_id]').select2("destroy");
+					$('[name=contact_id]').select2();
+					$('#add_contact_modal').modal('hide');
+				},
+
+				error: function() {
+					alert("Une erreur est survenue. Veuillez vérifier vos données et réessayer.");
+				}
+				
+				});
+		});
 
 				$(document).on('click', '.add-confirm', function(e){
-					console.log($('#add_form'));
-					$('#add_contact_modal').modal('hide');
+					// console.log($('#add_form'));
+					// $('#add_contact_modal').modal('hide');
+					if (!$('#add_form')[0].checkValidity()) {
+							console.log("FORM HAS NOT BEEN VALIDATED");
+							$('#add_form').find(':submit').click();
+					}	
+					
+					else {
+						$('#add_form').find(':submit').click();
+					}
+
 				});
     </script>
 @stop
