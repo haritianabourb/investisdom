@@ -20,4 +20,18 @@ class SNC extends Entity
     //   });
     // }
 
+    public function gerantId(){
+        return $this->belongsTo(Contact::class, 'contact_id', 'id');
+    }
+
+
+    public function associeFirst(){
+        return $this->belongsTo(Contact::class, 'contact_id', 'id');
+    }
+
+    public function associeSecond(){
+        return $this->belongsTo(Contact::class, 'contact_id', 'id');
+    }
+
+
 }
