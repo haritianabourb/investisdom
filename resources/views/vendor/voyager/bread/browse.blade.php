@@ -157,7 +157,8 @@
                                                 @elseif($row->type == 'text_area')
                                                     @include('voyager::multilingual.input-hidden-bread-browse')
                                                     <div class="readmore">{{ mb_strlen( $data->{$row->field} ) > 200 ? mb_substr($data->{$row->field}, 0, 200) . ' ...' : $data->{$row->field} }}</div>
-                                                @elseif($row->type == 'file' && !empty($data->{$row->field}) )
+                                                @elseif($row->type == 'file')
+                                                  @if(!empty($data->{$row->field}))
                                                     @include('voyager::multilingual.input-hidden-bread-browse')
                                                     @if(json_decode($data->{$row->field}))
                                                         @foreach(json_decode($data->{$row->field}) as $file)
@@ -171,6 +172,9 @@
                                                             Download
                                                         </a>
                                                     @endif
+                                                  @else
+                                                    <span class="label label-warning">En Attente</span>
+                                                  @endif
                                                 @elseif($row->type == 'rich_text_box')
                                                     @include('voyager::multilingual.input-hidden-bread-browse')
                                                     <div class="readmore">{{ mb_strlen( strip_tags($data->{$row->field}, '<b><i><u>') ) > 200 ? mb_substr(strip_tags($data->{$row->field}, '<b><i><u>'), 0, 200) . ' ...' : strip_tags($data->{$row->field}, '<b><i><u>') }}</div>
