@@ -1,6 +1,6 @@
 @include('voyager::formfields.select_dropdown')
 
-<button type="button" class="btn btn-default btn-block add"> Ajouter un contact </button>
+<button type="button" class="btn btn-default btn-block add"> Ajouter un {{$row->display_name}} </button>
 
 @section('footer')
 	<div class="modal modal-success fade" tabindex="-1" id="add_contact_modal" role="dialog">
@@ -11,7 +11,7 @@
 											<span aria-hidden="true">&times;</span>
 									</button>
 									<h4 class="modal-title">
-											<i class="voyager-add"></i> Ajouter un nouveau contact
+											<i class="voyager-add"></i> Ajouter un nouveau {{$row->display_name}}
 											{{-- <i class="voyager-trash"></i> {{ __('voyager::generic.delete_question') }} {{ $dataType->display_name_singular }}? --}}
 									</h4>
 							</div>
@@ -35,7 +35,7 @@
 
 													<label for="address_1">Adresse*</label>
 													<input required class="form-control" name="address_1" placeholder="Adresse" value="" type="text">
-											</div>	
+											</div>
 											<!-- GET THE DISPLAY OPTIONS -->
 											<div class="form-group  col-md-12">
 
@@ -47,7 +47,7 @@
 
 													<label for="city">Ville*</label>
 													<input required class="form-control" name="city" placeholder="Ville" value="" type="text">
-											</div>																																	
+											</div>
 											<!-- GET THE DISPLAY OPTIONS -->
 											<div class="form-group  col-md-12">
 
@@ -70,7 +70,7 @@
 
 								</div>
 								<div class="modal-footer">
-										<input type="button" class="btn btn-primary pull-right add-confirm" value="Ajouter un contact">
+										<input type="button" class="btn btn-primary pull-right add-confirm" value="Ajouter un {{$row->display_name}}">
 										<button type="button" class="btn btn-default pull-right" data-dismiss="modal">{{ __('voyager::generic.cancel') }}</button>
 								</div>
 						</form>
@@ -87,7 +87,7 @@
 			$('#add_form')[0].reset();
             $('#add_contact_modal').modal('show');
 		});
-		
+
 		$('#add_form').submit(function(e) {
 			e.preventDefault();
 			var formdata = $(this).serializeArray();
@@ -96,7 +96,7 @@
 				data[obj.name] = obj.value;
 			});
 			console.log(data);
-			
+
 			$.ajax({
 				type: "POST",
 				url: "/admin/contacts",
@@ -117,7 +117,7 @@
 				error: function() {
 					alert("Une erreur est survenue. Veuillez vérifier vos données et réessayer.");
 				}
-				
+
 				});
 		});
 
@@ -127,8 +127,8 @@
 					if (!$('#add_form')[0].checkValidity()) {
 							console.log("FORM HAS NOT BEEN VALIDATED");
 							$('#add_form').find(':submit').click();
-					}	
-					
+					}
+
 					else {
 						$('#add_form').find(':submit').click();
 					}
