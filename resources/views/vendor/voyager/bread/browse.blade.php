@@ -88,6 +88,8 @@
                                 </thead>
                                 <tbody>
                                     @foreach($dataTypeContent as $data)
+
+
                                     <tr>
                                         @can('delete',app($dataType->model_name))
                                             <td>
@@ -96,6 +98,11 @@
                                         @endcan
                                         @foreach($dataType->browseRows as $row)
                                             <td>
+                                                @if($loop->first)
+                                                  @can('read',app($dataType->model_name))
+                                                  <a href="{{ route('voyager.'.$dataType->slug.'.show', [$dataType->name => $data]) }}">
+                                                  @endcan
+                                                @endif
                                                 <?php $options = json_decode($row->details); ?>
                                                 @if($row->type == 'image')
                                                     <img src="@if( !filter_var($data->{$row->field}, FILTER_VALIDATE_URL)){{ Voyager::image( $data->{$row->field} ) }}@else{{ $data->{$row->field} }}@endif" style="width:100px">
@@ -180,6 +187,11 @@
                                                 @else
                                                     @include('voyager::multilingual.input-hidden-bread-browse')
                                                     <span>{{ $data->{$row->field} }}</span>
+                                                @endif
+                                                @if($loop->first)
+                                                  @can('read',app($dataType->model_name))
+                                                  </a>
+                                                  @endcan
                                                 @endif
                                             </td>
                                         @endforeach
