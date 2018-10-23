@@ -1,3 +1,4 @@
+{{-- {{dd($row)}} --}}
 <!-- DataTables -->
 <script>
     $(document).on('click', '.add', function (e) {
@@ -32,7 +33,7 @@ $('#add_form').submit(function(e) {
         //   .text(response.data.{{$options->relationship->label}})
         //   .prop('selected', true) );
         //
-        $('[name={{$row->field}}]').append(newOption).trigger('change');
+        $('[name="{{$row->field}}@if(str_is("select_multiple", $row->type))[]@endif"]').append(newOption).trigger('change');
 
         // XXX keep it if in edge it doesn't work
         // $('[name={{$row->field}}]').select2("destroy");
