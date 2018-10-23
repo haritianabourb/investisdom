@@ -1,4 +1,4 @@
-@include('voyager::formfields.select_dropdown')
+@include('voyager::formfields.select_multiple')
 
 <button type="button" class="btn btn-default btn-block add"> Ajouter un {{$row->display_name}} </button>
 
@@ -7,5 +7,6 @@
 @stop
 
 @section('javascript')
-	@include('voyager::partials.custom.modals.contact.add-script')
+  @include('voyager::partials.custom.modals.contact.add-script')
 @stop
+{{-- @dd($row, $options, $dataType, $dataTypeContent) --}}
