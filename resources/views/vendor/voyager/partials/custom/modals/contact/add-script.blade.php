@@ -26,18 +26,8 @@ $('#add_form').submit(function(e) {
         // create the new options
         var newOption = new Option(response.data.{{$options->relationship->label}}, response.data.{{$options->relationship->key}}, true, true);
 
-        // XXX keep it if in edge it doesn't work
-        // $('[name={{$row->field}}] optgroup')
-        //   .append($("<option></option>")
-        //   .attr("value",response.data.{{$options->relationship->key}})
-        //   .text(response.data.{{$options->relationship->label}})
-        //   .prop('selected', true) );
-        //
         $('[name="{{$row->field}}@if(str_is("select_multiple", $row->type))[]@endif"]').append(newOption).trigger('change');
 
-        // XXX keep it if in edge it doesn't work
-        // $('[name={{$row->field}}]').select2("destroy");
-        // $('[name={{$row->field}}]').select2();
         $('#add_contact_modal').modal('hide');
       }
     },

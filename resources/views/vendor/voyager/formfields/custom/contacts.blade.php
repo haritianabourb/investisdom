@@ -1,4 +1,8 @@
-@include('voyager::formfields.select_multiple')
+@if(str_is("select_multiple", $row->type))
+	@include('voyager::formfields.select_multiple')
+@else
+	@include('voyager::formfields.select_dropdown')
+@endif
 
 <button type="button" class="btn btn-default btn-block add"> Ajouter un {{$row->display_name}} </button>
 
