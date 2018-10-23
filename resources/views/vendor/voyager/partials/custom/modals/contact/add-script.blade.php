@@ -21,10 +21,10 @@ $('#add_form').submit(function(e) {
     data: data,
     success: function (response) {
       console.log(response);
-      $('[name={{$row->field}}] @if(array_has($options, "relationship"))optgroup[label=Relationship]@endif')
+      $('[name={{$row->field}}] optgroup')
         .append($("<option></option>")
-        .attr("value",response.data.id)
-        .text(response.data.fistname)
+        .attr("value",response.data.{{$options->relationship->key}})
+        .text(response.data.{{$options->relationship->label}})
         .prop('selected', true) );
 
       $('[name={{$row->field}}]').select2("destroy");
