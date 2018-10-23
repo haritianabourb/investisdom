@@ -20,16 +20,25 @@ $('#add_form').submit(function(e) {
     url: "/admin/contacts",
     data: data,
     success: function (response) {
-      console.log(response);
-      $('[name={{$row->field}}] optgroup')
-        .append($("<option></option>")
-        .attr("value",response.data.{{$options->relationship->key}})
-        .text(response.data.{{$options->relationship->label}})
-        .prop('selected', true) );
+      if(response.success){
+        // ok is success
+        // create the new options
+        var newOption = new Option(response.data.{{$options->relationship->label}}, response.data.{{$options->relationship->key}}, true, true);
 
-      $('[name={{$row->field}}]').select2("destroy");
-      $('[name={{$row->field}}]').select2();
-      $('#add_contact_modal').modal('hide');
+        // XXX keep it if in edge it doesn't work
+        // $('[name={{$row->field}}] optgroup')
+        //   .append($("<option></option>")
+        //   .attr("value",response.data.{{$options->relationship->key}})
+        //   .text(response.data.{{$options->relationship->label}})
+        //   .prop('selected', true) );
+        //
+        $('[name={{$row->field}}]').append(newOption).trigger('change');
+
+        // XXX keep it if in edge it doesn't work
+        // $('[name={{$row->field}}]').select2("destroy");
+        // $('[name={{$row->field}}]').select2();
+        $('#add_contact_modal').modal('hide');
+      }
     },
 
     error: function() {
