@@ -13,7 +13,7 @@ class SNC extends Entity
     const ACTIVE = "ACTIVE";
     const MARKETING_OFF = "MARKETING_OFF";
     const MARKETING_ON = "MARKETING_ON";
-    const OUTSTOCK = "OUTSTOCK";
+    const CLOSE = "CLOSE";
 
     public function gerantId(){
         return $this->belongsTo(Contact::class, 'contact_id', 'id');
