@@ -8,17 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class SNC extends Entity
 {
     protected $table = 'sncs';
-    //
-    // public static function boot(){
-    //   parent::boot();
-    //
-    //   static::addGlobalScope(function($query){
-    //
-    //     $typeEntity = TypeEntity::where('name', 'SNC')->firstOrFail();
-    //     $query->where('type_entities_id', $typeEntity->id);
-    //
-    //   });
-    // }
+
+    const IN_STOCK = "IN_STOCK";
+    const ACTIVE = "ACTIVE";
+    const MARKETING_OFF = "MARKETING_OFF";
+    const MARKETING_ON = "MARKETING_ON";
+    const OUTSTOCK = "OUTSTOCK";
 
     public function gerantId(){
         return $this->belongsTo(Contact::class, 'contact_id', 'id');
