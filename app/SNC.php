@@ -9,6 +9,11 @@ class SNC extends Entity
 {
     protected $table = 'sncs';
 
+    protected $fillable = [
+      "name",
+      "type_entities_id"
+    ];
+
     const IN_STOCK = "IN_STOCK";
     const ACTIVE = "ACTIVE";
     const MARKETING_OFF = "MARKETING_OFF";

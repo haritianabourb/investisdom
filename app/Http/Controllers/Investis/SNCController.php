@@ -14,8 +14,32 @@ class SNCController extends VoyagerBaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     //
     public function bulkCreate(Request $request){
+      $sncs = [];
       // TODO make the batch work
-      dd($request->all());
+      if($nbr_snc = $request->input('nbr_snc')){
+        $prefix = $request->input('prefix');
+        for ($i=0; $i < $nbr_snc; $i++) {
+           // $prefix."_".
+           $lastId = SNC::get()->last()->id + 1;
+           $snc = SNC::create([
+             'name' => "$prefix $lastId",
+             'type_entities_id' => 2
+           ]);
+          $sncs[] = $snc->name;
+        }
+      }
+
+      $message = "Liste des SNC créé <br/>";
+      foreach ($sncs as $snc) {
+        $message .= "- ".$snc."<br/>";
+      }
+
+      return redirect()
+          ->route("voyager.sncs.index")
+          ->with([
+              'message'    => $message,
+              'alert-type' => 'success',
+          ]);
     }
 
 }
