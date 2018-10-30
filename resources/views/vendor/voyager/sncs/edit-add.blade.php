@@ -140,7 +140,7 @@
 
                 </div>
 
-
+                @if(!is_null($dataTypeContent->getKey()))
             <div class="col-lg-2 col-md-4 col-sm-6">
               <!-- form start -->
               <form role="form"
@@ -196,6 +196,7 @@
           </div>
         </form>
           </div>
+        @endif
         </div>
     </div>
 
