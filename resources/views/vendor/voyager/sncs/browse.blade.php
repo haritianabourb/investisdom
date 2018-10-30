@@ -258,6 +258,7 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+    @include('voyager::partials.custom.modals.sncs.bulk-add')
 @stop
 
 @section('css')
@@ -299,10 +300,6 @@
                 $('input[name="row_id"]').prop('checked', $(this).prop('checked'));
             });
 
-            $('.btn-add-batch').on('click', function(e) {
-              //TODO need modal to open in order to batch
-            })
-
         });
 
 
@@ -312,4 +309,6 @@
             $('#delete_modal').modal('show');
         });
     </script>
+
+    @include('voyager::partials.custom.modals.sncs.bulk-add-script')
 @stop
