@@ -11,7 +11,8 @@
             <a href="{{ route('voyager.'.$dataType->slug.'.create') }}" class="btn btn-success btn-add-new">
                 <i class="voyager-plus"></i> <span>{{ __('voyager::generic.add_new') }}</span>
             </a>
-            <a href="{{ route('voyager.'.$dataType->slug.'.create') }}" class="btn btn-info btn-add-new">
+            {{-- <a href="{{ route('voyager.'.$dataType->slug.'.batch_create') }}" class="btn btn-info btn-add-new"> --}}
+            <a href="#" class="btn btn-primary btn-add-batch">
                 <i class="voyager-plus"></i> <span>batch create</span>
             </a>
         @endcan
@@ -297,6 +298,11 @@
             $('.select_all').on('click', function(e) {
                 $('input[name="row_id"]').prop('checked', $(this).prop('checked'));
             });
+
+            $('.btn-add-batch').on('click', function(e) {
+              //TODO need modal to open in order to batch
+            })
+
         });
 
 
