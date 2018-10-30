@@ -11,11 +11,10 @@ use \App\SNC;
 
 class SNCController extends VoyagerBaseController
 {
-    // use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     //
-    public function index(Request $request){
-      dd(explode('.', $request->route()->getName()));
-      return parent::index($request);
+    public function bulkCreate(Request $request){
+      // TODO make the batch work
     }
 
 }
