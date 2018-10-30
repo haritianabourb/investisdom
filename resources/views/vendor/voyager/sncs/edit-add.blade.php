@@ -17,7 +17,11 @@
 @section('content')
     <div class="page-content edit-add container-fluid">
         <div class="row">
+          @if(is_null($dataTypeContent->getKey()))
             <div class="col-md-12">
+          @else
+            <div class="col-lg-10 col-md-8 col-sm-6">
+          @endif
                 <div class="panel panel-bordered">
                     <!-- form start -->
                     <form role="form"
@@ -80,7 +84,6 @@
                               </div>
                             @endforeach
                           @else
-                            <div class="col-lg-10 col-md-8 col-sm-6">
                               <h3>{{$dataTypeContent->name}}</h3>
                               @php
                                 $dataTypeRows = $dataType->editRows
@@ -118,15 +121,6 @@
                                   @endif
                                 </div>
                               @endforeach
-                            </div>
-                            <div class="col-lg-2 col-md-4 col-sm-6 bg-info" style="padding: 10px; height: 100%">
-                              <h4>Résumé</h4>
-                              @php
-                                $dataTypeRow = $dataType->editRows->where('field', 'status')->first();
-                              @endphp
-                              <label for="name">{{ $dataTypeRow->display_name }}</label>
-                              {!! app('voyager')->formField($dataTypeRow, $dataType, $dataTypeContent) !!}
-                            </div>
                           @endif
                         </div><!-- panel-body -->
 
@@ -134,7 +128,7 @@
                             <button type="submit" class="btn btn-primary save">{{ __('voyager::generic.save') }}</button>
                         </div>
                     </form>
-
+                  </div>
                     <iframe id="form_target" name="form_target" style="display:none"></iframe>
                     <form id="my_form" action="{{ route('voyager.upload') }}" target="form_target" method="post"
                             enctype="multipart/form-data" style="width:0;height:0;overflow:hidden">
@@ -143,8 +137,65 @@
                         <input type="hidden" name="type_slug" id="type_slug" value="{{ $dataType->slug }}">
                         {{ csrf_field() }}
                     </form>
+
                 </div>
+
+
+            <div class="col-lg-2 col-md-4 col-sm-6">
+              <!-- form start -->
+              <form role="form"
+                      class="form-edit-add"
+                      action="{{ route('voyager.'.$dataType->slug.'.update', $dataTypeContent->getKey()) }}"
+                      method="POST" enctype="multipart/form-data">
+                  <!-- PUT Method if we are editing -->
+                  @if(!is_null($dataTypeContent->getKey()))
+                      {{ method_field("PUT") }}
+                  @endif
+              <div class="panel pnael-info panel-bordered">
+                <!-- CSRF TOKEN -->
+                {{ csrf_field() }}
+
+                <div class="panel-body">
+              <h4>Résumé</h4>
+              @php
+                $dataTypeRow = $dataType->editRows->where('field', 'status')->first();
+                $options = json_decode($dataTypeRow->details);
+                $display_options = isset($options->display) ? $options->display : NULL;
+
+                $option_value = "";
+                $option_display = "";
+
+                switch ($dataTypeContent->{$dataTypeRow->field}){
+                  case(\App\SNC::ACTIVE):
+                    $option_value = \App\SNC::MARKETING_OFF;
+                    $option_display = $options->options->{\App\SNC::MARKETING_OFF};
+                    break;
+                  case(\App\SNC::MARKETING_OFF):
+                    $option_value = \App\SNC::MARKETING_ON;
+                    $option_display = $options->options->{\App\SNC::MARKETING_ON};
+                    break;
+                  case(\App\SNC::MARKETING_ON):
+                    $option_value = \App\SNC::CLOSE;
+                    $option_display = $options->options->{\App\SNC::CLOSE};
+                    break;
+                  case(\App\SNC::IN_STOCK):
+                    $option_value = \App\SNC::ACTIVE;
+                    $option_display = $options->options->{\App\SNC::ACTIVE};
+                    break;
+                }
+              @endphp
+              {{-- {{dd($options->options->{$dataTypeContent->{$dataTypeRow->field} }, $options->options->{\App\SNC::ACTIVE})}} --}}
+              <label for="{{$dataTypeRow->field}}">{{ $dataTypeRow->display_name }}: <strong>{{ $options->options->{$dataTypeContent->{$dataTypeRow->field} } }} </strong></label>
+              <br/>
+              <input type="hidden" name="{{$dataTypeRow->field}}" value="{{$option_value}}">
+              <button type="submit" class="btn btn-info btn-block save">
+                {{$option_display}}
+              </button>
+              {{-- {!! app('voyager')->formField($dataTypeRow, $dataType, $dataTypeContent) !!} --}}
             </div>
+          </div>
+        </form>
+          </div>
         </div>
     </div>
 
@@ -230,6 +281,9 @@
 
                 $('#confirm_delete_modal').modal('hide');
             });
+
+
+
             $('[data-toggle="tooltip"]').tooltip();
         });
     </script>
