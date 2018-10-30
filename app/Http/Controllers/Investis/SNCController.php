@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Investis;
 
 use Illuminate\Http\Request;
 use \App\SNC;
-// use Illuminate\Foundation\Bus\DispatchesJobs;
-// use Illuminate\Routing\Controller as BaseController;
-// use Illuminate\Foundation\Validation\ValidatesRequests;
-// use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class SNCController extends VoyagerBaseController
 {
@@ -15,6 +15,7 @@ class SNCController extends VoyagerBaseController
     //
     public function bulkCreate(Request $request){
       // TODO make the batch work
+      dd($request->all());
     }
 
 }

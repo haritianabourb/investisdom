@@ -1,4 +1,4 @@
-<div class="modal modal-success fade" tabindex="-1" id="add_contact_modal" role="dialog">
+<div class="modal modal-success fade" tabindex="-1" id="bulk_add_modal" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -10,8 +10,8 @@
                     {{-- <i class="voyager-trash"></i> {{ __('voyager::generic.delete_question') }} {{ $dataType->display_name_singular }}? --}}
                 </h4>
             </div>
-            <form action="{{route('voyager.sncs.bulk-add')}}" id="add_form" method="POST">
-            <form action="#" id="add_form" method="POST">
+            <form action="{{route('admin.sncs.bulk-add')}}" id="add_form" method="POST">
+            {{-- <form action="#" id="add_form" method="POST"> --}}
               <div class="modal-body">
                   {{ method_field("POST") }}
                     <!-- Adding / Editing -->
@@ -37,7 +37,7 @@
 
               </div>
               <div class="modal-footer">
-                  <input type="button" class="btn btn-primary pull-right add-confirm" value="Ajouter un {{$row->display_name}}">
+                  <input type="submit" class="btn btn-primary pull-right add-confirm" value="Ajouter un {{$row->display_name}}">
                   <button type="button" class="btn btn-default pull-right" data-dismiss="modal">{{ __('voyager::generic.cancel') }}</button>
               </div>
           </form>
