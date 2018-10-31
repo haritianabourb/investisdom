@@ -24,4 +24,8 @@ class Investor extends Entity
     //   return $this->hasOne(CGP::class);
     // }
 
+    public function contactAttached(){
+      return $this->belongsTo(Contact::class, 'contact_id', 'id');
+    }
+
 }
