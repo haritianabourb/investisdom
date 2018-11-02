@@ -2,10 +2,12 @@
 
 namespace App\Providers;
 
-use App\Reservation;
 use App\Mandat;
+use App\Reservation;
+use App\SNC;
 use App\Observers\MandatObserver;
 use App\Observers\ReservationObserver;
+use App\Observers\SNCObserver;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use App\Services\InvestisPDF;
@@ -29,11 +31,11 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Schema::defaultStringLength(191);
         // Voyager::useModel('SNC', \App\SNC::class);
 
         Reservation::observe(ReservationObserver::class);
         Mandat::observe(MandatObserver::class);
+        SNC::observe(SNCObserver::class);
     }
 
     /**
