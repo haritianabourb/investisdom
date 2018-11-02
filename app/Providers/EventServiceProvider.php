@@ -2,6 +2,14 @@
 
 namespace App\Providers;
 
+
+use App\Mandat;
+use App\Reservation;
+use App\SNC;
+use App\Observers\MandatObserver;
+use App\Observers\ReservationObserver;
+use App\Observers\SNCObserver;
+
 use Illuminate\Support\Facades\Event;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
@@ -26,7 +34,9 @@ class EventServiceProvider extends ServiceProvider
     public function boot()
     {
         parent::boot();
-
+        Reservation::observe(ReservationObserver::class);
+        Mandat::observe(MandatObserver::class);
+        SNC::observe(SNCObserver::class);
         //
     }
 }

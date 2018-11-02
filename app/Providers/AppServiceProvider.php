@@ -2,14 +2,9 @@
 
 namespace App\Providers;
 
-use App\Mandat;
-use App\Reservation;
-use App\SNC;
-use App\Observers\MandatObserver;
-use App\Observers\ReservationObserver;
-use App\Observers\SNCObserver;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\Validator;
 use App\Services\InvestisPDF;
 
 use Voyager;
@@ -33,9 +28,7 @@ class AppServiceProvider extends ServiceProvider
     {
         // Voyager::useModel('SNC', \App\SNC::class);
 
-        Reservation::observe(ReservationObserver::class);
-        Mandat::observe(MandatObserver::class);
-        SNC::observe(SNCObserver::class);
+        Validator::extend('siren', '\App\Validators\SIRENValidator@validate');
     }
 
     /**
