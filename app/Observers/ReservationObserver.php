@@ -39,8 +39,7 @@ class ReservationObserver
           ."/".$reservation->id;
 
         $reservation->save();
-        // if(is_null($reservation->identifiant))
-        // $reservation->identifiant = "Folder_Test".rand(1,999);
+
     }
 
     /**
