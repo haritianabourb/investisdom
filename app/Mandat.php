@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Mandat extends Model
 {
   protected $table="mandat";
-  
+
   const MANDAT_SIMPLIFIE = "SIMPLIFIE";
   const MANDAT_STANDARD = "STANDARD";
 
@@ -17,10 +17,10 @@ class Mandat extends Model
 
 
   function leaseholderId(){
-    return $this->belongsTo(Leaseholder::class);
+    return $this->belongsTo(Leaseholder::class, "leaseholder_id", "id");
   }
 
   function supplierId(){
-    return $this->belongsTo(Supplier::class);
+    return $this->belongsTo(Supplier::class, "supplier_id", "id");
   }
 }
