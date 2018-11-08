@@ -187,6 +187,52 @@
             $('[data-toggle="tooltip"]').tooltip();
 
             //CUSTOM
+
+            var elementsCash=[
+                "[name=ouverture_compte_bank]",
+                "[name=bank]",
+                "[name=nombre_periode]",
+                "[name=periodicite]",
+                "[name=duree_pret]",
+                "[name=taux_pret]",
+                "[name=duree_pret_periode]"
+            ].join(", "); //getting selector string for jQuery
+
+            var elementsLoan=[
+                "[name=montant_echeance]"
+            ].join(", "); //getting selector string for jQuery
+
+            $("[name=complement_financement]").change(function() {
+              console.log("change: "+this.value)
+                if (this.value=="CASH") {
+                    $(elementsCash)
+                    .parent().show("fast");
+
+                    $(elementsLoan)
+                    .parent().hide("fast");
+                    // $("[name=capital]").prop("required", true);
+                }
+
+                if (this.value=="LOAN") {
+                  $(elementsCash)
+                  .parent().hide("fast");
+
+                  $(elementsLoan)
+                  .parent().show("fast");
+                }
+            });
+
+            if ($("[name=complement_financement]").val()=="CASH") { //setting default visibility
+                $("#option-complement-financement-1").click();
+                $("#option-complement-financement-2").click();
+            }
+
+            if ($("[name=complement_financement]").val()=="LOAN") { //setting default visibility
+                $("#option-complement-financement-2").click();
+                $("#option-complement-financement-1").click();
+            }
+
+            console.log('here');
         });
     </script>
 @stop
