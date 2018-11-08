@@ -202,8 +202,13 @@
                 "[name=montant_echeance]"
             ].join(", "); //getting selector string for jQuery
 
+            var elementsSegment=[
+                "[name=emission_co2_materiel]"
+            ].join(", "); //getting selector string for jQuery
+
+
+
             $("[name=complement_financement]").change(function() {
-              console.log("change: "+this.value)
                 if (this.value=="CASH") {
                     $(elementsCash)
                     .parent().show("fast");
@@ -231,8 +236,7 @@
                 $("#option-complement-financement-2").click();
                 $("#option-complement-financement-1").click();
             }
-
-            console.log('here');
+            
         });
     </script>
 @stop
