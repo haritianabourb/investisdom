@@ -227,6 +227,17 @@
                 }
             });
 
+            $("[name=segment_materiel]").change(function() {
+              if (this.value=="1") {
+                  $(elementsSegment)
+                  .parent().show("fast");
+                  // $("[name=capital]").prop("required", true);
+              }else{
+                $(elementsSegment)
+                .parent().hide("fast");
+              }
+            });
+
             if ($("[name=complement_financement]").val()=="CASH") { //setting default visibility
                 $("#option-complement-financement-1").click();
                 $("#option-complement-financement-2").click();
@@ -236,7 +247,10 @@
                 $("#option-complement-financement-2").click();
                 $("#option-complement-financement-1").click();
             }
-            
+
+
+            $("#option-segment-materiel-"+$("[name=segment_materiel]").val()).click();
+
         });
     </script>
 @stop
