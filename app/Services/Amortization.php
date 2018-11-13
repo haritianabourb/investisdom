@@ -11,6 +11,9 @@ namespace App\Services;
 		const CASH = 'CASH';
 		const BANK = 'LOAN';
 
+		const TVA_NPR = 8.5/100;
+		const TVA = 8.5/100;
+
 		public function __construct($mandat){
 
 			$this->mandat = $mandat;
@@ -53,6 +56,8 @@ namespace App\Services;
 				))->toJson();
 
 			$this->mandat->van_paiement = collect($this->schedule)->toJson();
+
+			dd($this->mandat, self::TVA, self::TVA_NPR);
 
 			return $this->mandat;
 		}
@@ -138,9 +143,9 @@ namespace App\Services;
 
 			return array (
 				'term_pay' => $this->term_pay,
-				'term_pay_ttc' => $this->term_pay*1.085,
+				'term_pay_ttc' => $this->term_pay*(1 + self::TVA),
 				'total_pay' => $total_pay,
-				'total_vat' => $total_pay*0.085,
+				'total_vat' => $total_pay*(self::TVA),
 				'total_interest' => $total_interest,
 				'legal_fee' => $legal_fee,
 				'annexe_fee' => $annexe_fee
@@ -157,7 +162,7 @@ namespace App\Services;
 			// XXX En attente des discussion de l'assemblée.
 			// Regle applicable jusqu'en 2019
 			// Attente sur la suppression de la TVA NPR (abrupt ou non);
-			$npr_vat = $this->mandat->montant_ht * 0.085;
+			$npr_vat = $this->mandat->montant_ht * self::TVA_NPR;
 
 			$total_vat = $npr_vat + $this->mandat->tva_investissement;
 			// TODO subvention choice + subvention amount +  deduction amount
@@ -170,7 +175,8 @@ namespace App\Services;
 				+ $this->mandat->deduction_base
 			);
 
-			$ri_amount = $tax_base*0.4412;
+			// $ri_amount = $tax_base*0.4412;
+			$ri_amount = $tax_base*$this->mandat->ri_amount_type_id;
 
 			$ht_amount = $this->mandat->montant_ht
 			 + $this->mandat->fraix_defiscalisable
@@ -215,15 +221,6 @@ namespace App\Services;
 				'retrocession' => $retrocession,
 			);
 		}
-
-		// public function getSNCAmout(){
-		// 	// =((H26*C28)*C32)+H18+H20
-		// 	$snc_amount = (($this->taxe_base['tax_base']*0.4412)*$this->)
-		//
-		// }
-
-		// public function getRateTaxBase(){
-		// }
 
 		public function getSchedule()
 		{
