@@ -2,17 +2,17 @@
 
 namespace App\Services;
 
+use App\Services\VAT;
+use App\Services\Funding;
+
 	class Amortization
 	{
 
 		private $mandat;
 		private $collection;
 
-		const CASH = 'CASH';
-		const BANK = 'LOAN';
-
-		const TVA_NPR = 8.5/100;
-		const TVA = 8.5/100;
+		// const CASH = 'CASH';
+		// const BANK = 'LOAN';
 
 		public function __construct($mandat){
 
@@ -22,7 +22,7 @@ namespace App\Services;
 			// $this->term_years = $mandat->nombre_periode/12;
 			$this->terms = 12;
 			// TODO show interest?
-			if($this->mandat->complement_financement == self::CASH){
+			if($this->mandat->complement_financement == Funding::CASH){
 				$this->period = $this->nbr_period;
 			}else{
 				$this->period = $this->nbr_period = $this->terms * $this->term_years;
@@ -57,7 +57,7 @@ namespace App\Services;
 
 			$this->mandat->van_paiement = collect($this->schedule)->toJson();
 
-			dd($this->mandat, self::TVA, self::TVA_NPR);
+			dd($this->mandat, VAT::TVA, VAT::TVA_NPR);
 
 			return $this->mandat;
 		}
@@ -82,7 +82,7 @@ namespace App\Services;
 		private function calculate()
 		{
 
-			if($this->mandat->complement_financement == self::BANK){
+			if($this->mandat->complement_financement == Funding::BANK){
 
 				$deno = 1.0 - 1.0 / pow((1+ $this->taux_pret),$this->period);
 				$this->term_pay = ($this->loan_amount * $this->taux_pret) / $deno;
@@ -91,7 +91,7 @@ namespace App\Services;
 				$this->balance = round($this->loan_amount - $this->principal, 2);
 			}
 
-			if($this->mandat->complement_financement == self::CASH){
+			if($this->mandat->complement_financement == Funding::CASH){
 
 				$this->term_pay = $this->loan_amount/$this->period;
 				$interest = 0;
@@ -143,9 +143,9 @@ namespace App\Services;
 
 			return array (
 				'term_pay' => $this->term_pay,
-				'term_pay_ttc' => $this->term_pay*(1 + self::TVA),
+				'term_pay_ttc' => $this->term_pay*(1 + VAT::TVA),
 				'total_pay' => $total_pay,
-				'total_vat' => $total_pay*(self::TVA),
+				'total_vat' => $total_pay*(VAT::TVA),
 				'total_interest' => $total_interest,
 				'legal_fee' => $legal_fee,
 				'annexe_fee' => $annexe_fee
@@ -162,7 +162,7 @@ namespace App\Services;
 			// XXX En attente des discussion de l'assemblée.
 			// Regle applicable jusqu'en 2019
 			// Attente sur la suppression de la TVA NPR (abrupt ou non);
-			$npr_vat = $this->mandat->montant_ht * self::TVA_NPR;
+			$npr_vat = $this->mandat->montant_ht * VAT::TVA_NPR;
 
 			$total_vat = $npr_vat + $this->mandat->tva_investissement;
 			// TODO subvention choice + subvention amount +  deduction amount
@@ -225,7 +225,7 @@ namespace App\Services;
 		public function getSchedule()
 		{
 			$schedule = array();
-			if($this->mandat->complement_financement == self::CASH){
+			if($this->mandat->complement_financement == Funding::CASH){
 				for($this->period = 0; $this->period <= $this->nbr_period; $this->period++){
 					array_push($schedule, $this->calculate());
 
