@@ -1,11 +1,7 @@
 <?php
 
 namespace App\Services;
-	/**
-	 * AMORTIZATION CALCULATOR
-	 * @author PRANEETH NIDARSHAN
-	 * @version V1.0
-	 */
+
 	class Amortization
 	{
 
@@ -35,27 +31,15 @@ namespace App\Services;
 		}
 
 		public function processCalc(){
-			// TODO Process calc with mandat status
 
-			// XXX SHOW SOME TODOS
-			// CORRECT WITH CALC
 			$this->taxe_base = $this->getTaxBase();
-			// XXX SHOW SOME TODOS
-			// CORRECT WITH CALC
 			$this->loan_amount = $this->getLoanAmount();
-			// CORRECT WITH CALC
 			$this->summary = $this->getSummary();
-			// TODO CORRECT WITH CALC
 			$this->schedule = $this->getSchedule();
-
-			// DONE
 			$this->npv = $this->getNPV();
-			// XXX Is there any SNC Amount Calculation
-			// $this->snc_amount = $this->getSNCAmout();
 
-			// $this->rate_tax_base -> $this->getRateTaxBase();
 			$this->loan_amount = $this->getLoanAmount();
-			// DONE
+
 			$this->net_intake = $this->getNetIntake();
 			$this->other = $this->getOther();
 
@@ -69,21 +53,6 @@ namespace App\Services;
 				))->toJson();
 
 			$this->mandat->van_paiement = collect($this->schedule)->toJson();
-
-			// $results = array(
-			// 		'summary' => $this->summary,
-			// 		'taxe_base' => $this->taxe_base,
-			// 		'loan_amount' => $this->loan_amount,
-			// 		'npv' => $this->npv,
-			// 		'net_intake' => $this->net_intake,
-			// 		'other' => $this->other,
-			// 	);
-			// $this->collection = collect(
-			// 	array(
-			// 		'results'=>$results,
-			// 		'schedule' => $this->schedule
-			// 	)
-			// );
 
 			return $this->mandat;
 		}
@@ -185,6 +154,9 @@ namespace App\Services;
 		 */
 		public function getTaxBase(){
 
+			// XXX En attente des discussion de l'assemblée.
+			// Regle applicable jusqu'en 2019
+			// Attente sur la suppression de la TVA NPR (abrupt ou non);
 			$npr_vat = $this->mandat->montant_ht * 0.085;
 
 			$total_vat = $npr_vat + $this->mandat->tva_investissement;
@@ -314,18 +286,10 @@ namespace App\Services;
 		  return $npv;
 		}
 
-		// public function getJSON()
-		// {
-		// 	return json_encode($this->collection);
-		// }
-		//
 		public function getMandat(){
 			return $this->mandat;
 		}
-		//
-		// public function toObject(){
-		// 	 return json_decode(json_encode($this->collection), FALSE);
-		// }
+
 
 	}
 
