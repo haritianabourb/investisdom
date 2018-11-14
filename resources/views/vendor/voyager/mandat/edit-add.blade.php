@@ -48,323 +48,322 @@
                             <!-- Adding / Editing -->
                             @php
                                 $dataTypeRows = $dataType->{(!is_null($dataTypeContent->getKey()) ? 'editRows' : 'addRows' )};
-                                $referenceRows = $dataTypeRows->filter(function($item, $key){
-                                    // dd($item->field, $key);
-                                    return in_array(
-                                      $item->field,
-                                      [
-                                        'nature_mandat',
-                                        'type_defiscalisation',
-                                        'duree_mandat',
-                                        'autre_duree_mandat',
-                                        'ri_amount_type_id',
-                                        'renouvellement',
-                                        'motivation',
-                                        'complement_financement',
-                                        'agrement'
-                                      ]);
-                                });
-                                $dataTypeRows = $dataTypeRows->diff($referenceRows);
-
-                                $uDataTypeRows = collect([
-                                    collect([
-                                      "label" => "Référencement d'une nouvelle proposition commerciale",
-                                      "rows" => $referenceRows
-                                    ])
-                                ]);
-
-
-                                // Locataire field $referenceRows
-                                $referenceRows = $dataTypeRows->filter(function($item, $key){
-                                  // dd($item->field, $key);
-                                  return in_array(
-                                    $item->field,
-                                    [
-                                      'leaseholder_id',
-                                      'ape_locataire'
-                                    ]);
-                                  });
-                                  $dataTypeRows = $dataTypeRows->diff($referenceRows);
-
-                                  $uDataTypeRows->push(
-                                    collect([
-                                      "label" => "Locataire",
-                                      "rows" => $referenceRows
-                                    ])
-                                  );
-
-                                // Fournisseur field $referenceRows
-                                $referenceRows = $dataTypeRows->filter(function($item, $key){
-                                  // dd($item->field, $key);
-                                  return in_array(
-                                    $item->field,
-                                    [
-                                      'supplier_id',
-                                    ]);
-                                  });
-                                  $dataTypeRows = $dataTypeRows->diff($referenceRows);
-
-                                  $uDataTypeRows->push(
-                                    collect([
-                                      "label" => "Fournisseur",
-                                      "rows" => $referenceRows
-                                    ])
-                                  );
-                                // Materiel field $referenceRows
-                                $referenceRows = $dataTypeRows->filter(function($item, $key){
-                                  // dd($item->field, $key);
-                                  return in_array(
-                                    $item->field,
-                                    [
-                                      "segment_materiel",
-                                      // "montant_ht",
-                                      // "is_remplacement",
-                                      // "montant_remplacement",
-                                      // "is_assurance",
-                                      // "is_reprise_fournisseur",
-                                      // "montant_reprise_fournisseur",
-                                      // "prevision_livraison",
-                                      "emission_co2_materiel",
-                                      "immatriculation_materiel",
-                                      "genre_vehicle",
-                                      "marque_vehicle",
-                                      "type_vehicle",
-                                      "divers_materiel",
-                                      "description_materiel",
-                                    ]);
-                                  });
-                                  $dataTypeRows = $dataTypeRows->diff($referenceRows);
-
-                                  $uDataTypeRows->push(
-                                    collect([
-                                      "label" => "Description du Materiel",
-                                      "rows" => $referenceRows
-                                    ])
-                                  );
-
-                                // Prix field $referenceRows
-                                $referenceRows = $dataTypeRows->filter(function($item, $key){
-                                  // dd($item->field, $key);
-                                  return in_array(
-                                    $item->field,
-                                    [
-                                      "montant_ht",
-                                      // "is_remplacement",
-                                      // "montant_remplacement",
-                                      // "is_assurance",
-                                      // "is_reprise_fournisseur",
-                                      // "montant_reprise_fournisseur",
-                                      // "prevision_livraison",
-                                    ]);
-                                  });
-                                  $dataTypeRows = $dataTypeRows->diff($referenceRows);
-
-                                  $uDataTypeRows->push(
-                                    collect([
-                                      "label" => "Prix",
-                                      "rows" => $referenceRows
-                                    ])
-                                  );
-                                // Remplacement field
-                                $referenceRows = $dataTypeRows->filter(function($item, $key){
-                                  // dd($item->field, $key);
-                                  return in_array(
-                                    $item->field,
-                                    [
-                                      "is_remplacement",
-                                      "montant_remplacement",
-
-                                    ]);
-                                  });
-                                $dataTypeRows = $dataTypeRows->diff($referenceRows);
-
-                                $uDataTypeRows->push(
-                                  collect([
-                                    "label" => "Valeur de remplacement",
-                                    "rows" => $referenceRows
-                                  ])
-                                );
-
-                                // Assurance field
-                                $referenceRows = $dataTypeRows->filter(function($item, $key){
-                                  // dd($item->field, $key);
-                                  return in_array(
-                                    $item->field,
-                                    [
-                                      "is_assurance",
-                                    ]);
-                                  });
-                                $dataTypeRows = $dataTypeRows->diff($referenceRows);
-
-                                $uDataTypeRows->push(
-                                  collect([
-                                    "label" => "Assurance Matériel",
-                                    "rows" => $referenceRows
-                                  ])
-                                );
-
-                                // Reprise field
-                                $referenceRows = $dataTypeRows->filter(function($item, $key){
-                                  // dd($item->field, $key);
-                                  return in_array(
-                                    $item->field,
-                                    [
-                                      "is_reprise_fournisseur",
-                                      "montant_reprise_fournisseur",
-                                    ]);
-                                  });
-                                $dataTypeRows = $dataTypeRows->diff($referenceRows);
-
-                                $uDataTypeRows->push(
-                                  collect([
-                                    "label" => "Reprise fournisseur",
-                                    "rows" => $referenceRows
-                                  ])
-                                );
-                                // Date livraison field
-                                $referenceRows = $dataTypeRows->filter(function($item, $key){
-                                  // dd($item->field, $key);
-                                  return in_array(
-                                    $item->field,
-                                    [
-                                      "prevision_livraison",
-                                    ]);
-                                  });
-                                $dataTypeRows = $dataTypeRows->diff($referenceRows);
-
-                                $uDataTypeRows->push(
-                                  collect([
-                                    "label" => "Date de livraison",
-                                    "rows" => $referenceRows
-                                  ])
-                                );
-                                // TODO Financement field $referenceRows
-                                $referenceRows = $dataTypeRows->filter(function($item, $key){
-                                  // dd($item->field, $key);
-                                  return in_array(
-                                    $item->field,
-                                    [
-                                      "apport_locataire",
-                                      "apport_snc",
-                                      "is_subvention",
-                                      "type_subvention",
-                                      "other_subvention",
-                                      "montant_subvention",
-                                      "montant_compl_fin",
-                                      "taux_retro",
-                                      "montant_frais_tenue_compte",
-                                      "ouverture_compte_bank",
-                                    ]);
-                                  });
-                                  $dataTypeRows = $dataTypeRows->diff($referenceRows);
-
-                                  $uDataTypeRows->push(
-                                    collect([
-                                      "label" => "Financement",
-                                      "rows" => $referenceRows
-                                    ])
-                                  );
-
-                                // TODO Banque field $referenceRows
-                                $referenceRows = $dataTypeRows->filter(function($item, $key){
-                                  // dd($item->field, $key);
-                                  return in_array(
-                                    $item->field,
-                                    [
-                                      "bank",
-                                      "nombre_periode",
-                                      "periodicite",
-                                      "duree_pret",
-                                      "taux_pret",
-                                      "duree_pret_periode",
-                                      "montant_echeance",
-                                      "is_assurance_invalidite",
-                                    ]);
-                                  });
-                                  $dataTypeRows = $dataTypeRows->diff($referenceRows);
-
-                                  $uDataTypeRows->push(
-                                    collect([
-                                      "label" => "Banque",
-                                      "rows" => $referenceRows
-                                    ])
-                                  );
-                                // TODO Contrat field $referenceRows
-                                $referenceRows = $dataTypeRows->filter(function($item, $key){
-                                  // dd($item->field, $key);
-                                  return in_array(
-                                    $item->field,
-                                    [
-                                      "tva_loyer",
-                                      "fact_loyer",
-                                      "methode_payment",
-                                      "hono_jur",
-                                      "remise_jur",
-                                      "cfe_tax",
-                                      "cfe_remise",
-                                    ]);
-                                  });
-                                  $dataTypeRows = $dataTypeRows->diff($referenceRows);
-
-                                  $uDataTypeRows->push(
-                                    collect([
-                                      "label" => "Contrat de location",
-                                      "rows" => $referenceRows
-                                    ])
-                                  );
-                                // TODO File field $referenceRows
-                                $referenceRows = $dataTypeRows->filter(function($item, $key){
-                                  // dd($item->field, $key);
-                                  return !in_array(
-                                    $item->field,
-                                    [
-                                      "resultats",
-                                      "van_paiement",
-                                    ]);
-                                  });
-                                $dataTypeRows = $dataTypeRows->diff($referenceRows);
-
-                                $uDataTypeRows->push(
-                                  collect([
-                                    "label" => "Autre champs",
-                                    "rows" => $referenceRows
-                                  ])
-                                );
-
-                                if(!is_null($dataTypeContent->getKey())){
-                                  // TODO File field $referenceRows
-                                  $referenceRows = $dataTypeRows->filter(function($item, $key){
-                                    // dd($item->field, $key);
-                                    return in_array(
-                                      $item->field,
-                                      [
-                                        "resultats",
-                                        "van_paiement",
-                                      ]);
-                                    });
-                                  $dataTypeRows = $dataTypeRows->diff($referenceRows);
-
-                                  $uDataTypeRows->push(
-                                    collect([
-                                      "label" => "Résultat",
-                                      "rows" => $referenceRows
-                                    ])
-                                  );
-                                }
+                                // $referenceRows = $dataTypeRows->filter(function($item, $key){
+                                //     // dd($item->field, $key);
+                                //     return in_array(
+                                //       $item->field,
+                                //       [
+                                //         'nature_mandat',
+                                //         'type_defiscalisation',
+                                //         'duree_mandat',
+                                //         'autre_duree_mandat',
+                                //         'ri_amount_type_id',
+                                //         'renouvellement',
+                                //         'motivation',
+                                //         'complement_financement',
+                                //         'agrement'
+                                //       ]);
+                                // });
+                                // $dataTypeRows = $dataTypeRows->diff($referenceRows);
+                                //
+                                // $uDataTypeRows = collect([
+                                //     collect([
+                                //       "label" => "Référencement d'une nouvelle proposition commerciale",
+                                //       "rows" => $referenceRows
+                                //     ])
+                                // ]);
+                                //
+                                //
+                                // // Locataire field $referenceRows
+                                // $referenceRows = $dataTypeRows->filter(function($item, $key){
+                                //   // dd($item->field, $key);
+                                //   return in_array(
+                                //     $item->field,
+                                //     [
+                                //       'leaseholder_id',
+                                //       'ape_locataire'
+                                //     ]);
+                                //   });
+                                //   $dataTypeRows = $dataTypeRows->diff($referenceRows);
+                                //
+                                //   $uDataTypeRows->push(
+                                //     collect([
+                                //       "label" => "Locataire",
+                                //       "rows" => $referenceRows
+                                //     ])
+                                //   );
+                                //
+                                // // Fournisseur field $referenceRows
+                                // $referenceRows = $dataTypeRows->filter(function($item, $key){
+                                //   // dd($item->field, $key);
+                                //   return in_array(
+                                //     $item->field,
+                                //     [
+                                //       'supplier_id',
+                                //     ]);
+                                //   });
+                                //   $dataTypeRows = $dataTypeRows->diff($referenceRows);
+                                //
+                                //   $uDataTypeRows->push(
+                                //     collect([
+                                //       "label" => "Fournisseur",
+                                //       "rows" => $referenceRows
+                                //     ])
+                                //   );
+                                // // Materiel field $referenceRows
+                                // $referenceRows = $dataTypeRows->filter(function($item, $key){
+                                //   // dd($item->field, $key);
+                                //   return in_array(
+                                //     $item->field,
+                                //     [
+                                //       "segment_materiel",
+                                //       // "montant_ht",
+                                //       // "is_remplacement",
+                                //       // "montant_remplacement",
+                                //       // "is_assurance",
+                                //       // "is_reprise_fournisseur",
+                                //       // "montant_reprise_fournisseur",
+                                //       // "prevision_livraison",
+                                //       "emission_co2_materiel",
+                                //       "immatriculation_materiel",
+                                //       "genre_vehicle",
+                                //       "marque_vehicle",
+                                //       "type_vehicle",
+                                //       "divers_materiel",
+                                //       "description_materiel",
+                                //     ]);
+                                //   });
+                                //   $dataTypeRows = $dataTypeRows->diff($referenceRows);
+                                //
+                                //   $uDataTypeRows->push(
+                                //     collect([
+                                //       "label" => "Description du Materiel",
+                                //       "rows" => $referenceRows
+                                //     ])
+                                //   );
+                                //
+                                // // Prix field $referenceRows
+                                // $referenceRows = $dataTypeRows->filter(function($item, $key){
+                                //   // dd($item->field, $key);
+                                //   return in_array(
+                                //     $item->field,
+                                //     [
+                                //       "montant_ht",
+                                //       // "is_remplacement",
+                                //       // "montant_remplacement",
+                                //       // "is_assurance",
+                                //       // "is_reprise_fournisseur",
+                                //       // "montant_reprise_fournisseur",
+                                //       // "prevision_livraison",
+                                //     ]);
+                                //   });
+                                //   $dataTypeRows = $dataTypeRows->diff($referenceRows);
+                                //
+                                //   $uDataTypeRows->push(
+                                //     collect([
+                                //       "label" => "Prix",
+                                //       "rows" => $referenceRows
+                                //     ])
+                                //   );
+                                // // Remplacement field
+                                // $referenceRows = $dataTypeRows->filter(function($item, $key){
+                                //   // dd($item->field, $key);
+                                //   return in_array(
+                                //     $item->field,
+                                //     [
+                                //       "is_remplacement",
+                                //       "montant_remplacement",
+                                //
+                                //     ]);
+                                //   });
+                                // $dataTypeRows = $dataTypeRows->diff($referenceRows);
+                                //
+                                // $uDataTypeRows->push(
+                                //   collect([
+                                //     "label" => "Valeur de remplacement",
+                                //     "rows" => $referenceRows
+                                //   ])
+                                // );
+                                //
+                                // // Assurance field
+                                // $referenceRows = $dataTypeRows->filter(function($item, $key){
+                                //   // dd($item->field, $key);
+                                //   return in_array(
+                                //     $item->field,
+                                //     [
+                                //       "is_assurance",
+                                //     ]);
+                                //   });
+                                // $dataTypeRows = $dataTypeRows->diff($referenceRows);
+                                //
+                                // $uDataTypeRows->push(
+                                //   collect([
+                                //     "label" => "Assurance Matériel",
+                                //     "rows" => $referenceRows
+                                //   ])
+                                // );
+                                //
+                                // // Reprise field
+                                // $referenceRows = $dataTypeRows->filter(function($item, $key){
+                                //   // dd($item->field, $key);
+                                //   return in_array(
+                                //     $item->field,
+                                //     [
+                                //       "is_reprise_fournisseur",
+                                //       "montant_reprise_fournisseur",
+                                //     ]);
+                                //   });
+                                // $dataTypeRows = $dataTypeRows->diff($referenceRows);
+                                //
+                                // $uDataTypeRows->push(
+                                //   collect([
+                                //     "label" => "Reprise fournisseur",
+                                //     "rows" => $referenceRows
+                                //   ])
+                                // );
+                                // // Date livraison field
+                                // $referenceRows = $dataTypeRows->filter(function($item, $key){
+                                //   // dd($item->field, $key);
+                                //   return in_array(
+                                //     $item->field,
+                                //     [
+                                //       "prevision_livraison",
+                                //     ]);
+                                //   });
+                                // $dataTypeRows = $dataTypeRows->diff($referenceRows);
+                                //
+                                // $uDataTypeRows->push(
+                                //   collect([
+                                //     "label" => "Date de livraison",
+                                //     "rows" => $referenceRows
+                                //   ])
+                                // );
+                                // // TODO Financement field $referenceRows
+                                // $referenceRows = $dataTypeRows->filter(function($item, $key){
+                                //   // dd($item->field, $key);
+                                //   return in_array(
+                                //     $item->field,
+                                //     [
+                                //       "apport_locataire",
+                                //       "apport_snc",
+                                //       "is_subvention",
+                                //       "type_subvention",
+                                //       "other_subvention",
+                                //       "montant_subvention",
+                                //       "montant_compl_fin",
+                                //       "taux_retro",
+                                //       "montant_frais_tenue_compte",
+                                //       "ouverture_compte_bank",
+                                //     ]);
+                                //   });
+                                //   $dataTypeRows = $dataTypeRows->diff($referenceRows);
+                                //
+                                //   $uDataTypeRows->push(
+                                //     collect([
+                                //       "label" => "Financement",
+                                //       "rows" => $referenceRows
+                                //     ])
+                                //   );
+                                //
+                                // // TODO Banque field $referenceRows
+                                // $referenceRows = $dataTypeRows->filter(function($item, $key){
+                                //   // dd($item->field, $key);
+                                //   return in_array(
+                                //     $item->field,
+                                //     [
+                                //       "bank",
+                                //       "nombre_periode",
+                                //       "periodicite",
+                                //       "duree_pret",
+                                //       "taux_pret",
+                                //       "duree_pret_periode",
+                                //       "montant_echeance",
+                                //       "is_assurance_invalidite",
+                                //     ]);
+                                //   });
+                                //   $dataTypeRows = $dataTypeRows->diff($referenceRows);
+                                //
+                                //   $uDataTypeRows->push(
+                                //     collect([
+                                //       "label" => "Banque",
+                                //       "rows" => $referenceRows
+                                //     ])
+                                //   );
+                                // // TODO Contrat field $referenceRows
+                                // $referenceRows = $dataTypeRows->filter(function($item, $key){
+                                //   // dd($item->field, $key);
+                                //   return in_array(
+                                //     $item->field,
+                                //     [
+                                //       "tva_loyer",
+                                //       "fact_loyer",
+                                //       "methode_payment",
+                                //       "hono_jur",
+                                //       "remise_jur",
+                                //       "cfe_tax",
+                                //       "cfe_remise",
+                                //     ]);
+                                //   });
+                                //   $dataTypeRows = $dataTypeRows->diff($referenceRows);
+                                //
+                                //   $uDataTypeRows->push(
+                                //     collect([
+                                //       "label" => "Contrat de location",
+                                //       "rows" => $referenceRows
+                                //     ])
+                                //   );
+                                // // TODO File field $referenceRows
+                                // $referenceRows = $dataTypeRows->filter(function($item, $key){
+                                //   // dd($item->field, $key);
+                                //   return !in_array(
+                                //     $item->field,
+                                //     [
+                                //       "resultats",
+                                //       "van_paiement",
+                                //     ]);
+                                //   });
+                                // $dataTypeRows = $dataTypeRows->diff($referenceRows);
+                                //
+                                // $uDataTypeRows->push(
+                                //   collect([
+                                //     "label" => "Autre champs",
+                                //     "rows" => $referenceRows
+                                //   ])
+                                // );
+                                //
+                                // if(!is_null($dataTypeContent->getKey())){
+                                //   // TODO File field $referenceRows
+                                //   $referenceRows = $dataTypeRows->filter(function($item, $key){
+                                //     // dd($item->field, $key);
+                                //     return in_array(
+                                //       $item->field,
+                                //       [
+                                //         "resultats",
+                                //         "van_paiement",
+                                //       ]);
+                                //     });
+                                //   $dataTypeRows = $dataTypeRows->diff($referenceRows);
+                                //
+                                //   $uDataTypeRows->push(
+                                //     collect([
+                                //       "label" => "Résultat",
+                                //       "rows" => $referenceRows
+                                //     ])
+                                //   );
+                                // }
                             @endphp
-                            @foreach($uDataTypeRows as $dataTyperow)
+                            {{-- @foreach($uDataTypeRows as $dataTyperow)
                               <h3>{{ $dataTyperow->get('label') }}</h3>
                               <hr/>
-                              <div class="col-md-12">
-                            {{-- @foreach($dataTypeRows as $row) --}}
-                            @foreach($dataTyperow->get('rows') as $row)
+                              <div class="col-md-12"> --}}
+                            @foreach($dataTypeRows as $row)                            
                                 <!-- GET THE DISPLAY OPTIONS -->
                                 @php
                                     $options = json_decode($row->details);
                                     $display_options = isset($options->display) ? $options->display : NULL;
                                 @endphp
                                 @if ($options && isset($options->legend) && isset($options->legend->text))
-                                    <legend class="text-{{$options->legend->align or 'center'}}" style="background-color: {{$options->legend->bgcolor or '#f0f0f0'}};padding: 5px;">{{$options->legend->text}}</legend>
+                                    <legend class="text-{{$options->legend->align or 'center'}}" style="color: {{$options->legend->color or '#333'}};background-color: {{$options->legend->bgcolor or '#f0f0f0'}};padding: 5px; padding-left: 15px; display:inline-block">{{$options->legend->text}}</legend>
                                 @endif
                                 <div class="form-group @if($row->type == 'hidden') hidden @endif col-md-{{ $display_options->width or 12 }}" @if(isset($display_options->id)){{ "id=$display_options->id" }}@endif>
                                 @if ($options && isset($options->formfields_custom))
@@ -387,9 +386,9 @@
                                 @endif
                               </div>
                             @endforeach
-                          </div>
+                          {{-- </div> --}}
                           <hr/>
-                          @endforeach
+                          {{-- @endforeach --}}
 
                         </div><!-- panel-body -->
 
