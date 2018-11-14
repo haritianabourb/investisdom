@@ -68,6 +68,9 @@
                                 // TODO Locataire field $referenceRows
                                 // TODO Fournisseur field $referenceRows
                                 // TODO Materiel field $referenceRows
+                                // TODO Financement field $referenceRows
+                                // TODO Contrat field $referenceRows
+                                // TODO File field $referenceRows
                                 // dd($dataTypeRows, $referenceRows, $dataTypeRows->diff($referenceRows));
                                 //
                                 //
