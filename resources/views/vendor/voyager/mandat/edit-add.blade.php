@@ -66,31 +66,171 @@
                                 });
                                 $dataTypeRows = $dataTypeRows->diff($referenceRows);
 
-                                $dataTypeRows = collect([
+                                $uDataTypeRows = collect([
                                     collect([
                                       "label" => "Référencement d'une nouvelle proposition commerciale",
                                       "rows" => $referenceRows
                                     ])
                                 ]);
 
-                                // $dataTypeRows->each(function($item, $key){
-                                //   dump($item, $item->get('label'));
-                                // });
 
-                                // dd($dataTypeRows);
-                                // TODO Locataire field $referenceRows
-                                // TODO Fournisseur field $referenceRows
-                                // TODO Materiel field $referenceRows
+                                // Locataire field $referenceRows
+                                $referenceRows = $dataTypeRows->filter(function($item, $key){
+                                  // dd($item->field, $key);
+                                  return in_array(
+                                    $item->field,
+                                    [
+                                      'leaseholder_id',
+                                      'ape_locataire'
+                                    ]);
+                                  });
+                                  $dataTypeRows = $dataTypeRows->diff($referenceRows);
+
+                                  $uDataTypeRows->push(
+                                    collect([
+                                      "label" => "Locataire",
+                                      "rows" => $referenceRows
+                                    ])
+                                  );
+
+                                // Fournisseur field $referenceRows
+                                $referenceRows = $dataTypeRows->filter(function($item, $key){
+                                  // dd($item->field, $key);
+                                  return in_array(
+                                    $item->field,
+                                    [
+                                      'supplier_id',
+                                    ]);
+                                  });
+                                  $dataTypeRows = $dataTypeRows->diff($referenceRows);
+
+                                  $uDataTypeRows->push(
+                                    collect([
+                                      "label" => "Fournisseur",
+                                      "rows" => $referenceRows
+                                    ])
+                                  );
+                                // Materiel field $referenceRows
+                                $referenceRows = $dataTypeRows->filter(function($item, $key){
+                                  // dd($item->field, $key);
+                                  return in_array(
+                                    $item->field,
+                                    [
+                                      "segment_materiel",
+                                      // "montant_ht",
+                                      // "is_remplacement",
+                                      // "montant_remplacement",
+                                      // "is_assurance",
+                                      // "is_reprise_fournisseur",
+                                      // "montant_reprise_fournisseur",
+                                      // "prevision_livraison",
+                                      "emission_co2_materiel",
+                                      "immatriculation_materiel",
+                                      "genre_vehicle",
+                                      "marque_vehicle",
+                                      "type_vehicle",
+                                      "divers_materiel",
+                                      "description_materiel",
+                                    ]);
+                                  });
+                                  $dataTypeRows = $dataTypeRows->diff($referenceRows);
+
+                                  $uDataTypeRows->push(
+                                    collect([
+                                      "label" => "Description du Materiel",
+                                      "rows" => $referenceRows
+                                    ])
+                                  );
+
+                                // Prix field $referenceRows
+                                $referenceRows = $dataTypeRows->filter(function($item, $key){
+                                  // dd($item->field, $key);
+                                  return in_array(
+                                    $item->field,
+                                    [
+                                      "montant_ht",
+                                      // "is_remplacement",
+                                      // "montant_remplacement",
+                                      // "is_assurance",
+                                      // "is_reprise_fournisseur",
+                                      // "montant_reprise_fournisseur",
+                                      // "prevision_livraison",
+                                    ]);
+                                  });
+                                  $dataTypeRows = $dataTypeRows->diff($referenceRows);
+
+                                  $uDataTypeRows->push(
+                                    collect([
+                                      "label" => "Prix",
+                                      "rows" => $referenceRows
+                                    ])
+                                  );
+                                // Remplacement field
+                                $referenceRows = $dataTypeRows->filter(function($item, $key){
+                                  // dd($item->field, $key);
+                                  return in_array(
+                                    $item->field,
+                                    [
+                                      "is_remplacement",
+                                      "montant_remplacement",
+
+                                    ]);
+                                  });
+                                $dataTypeRows = $dataTypeRows->diff($referenceRows);
+
+                                $uDataTypeRows->push(
+                                  collect([
+                                    "label" => "Valeur de remplacement",
+                                    "rows" => $referenceRows
+                                  ])
+                                );
+
+                                // Assurance field
+                                $referenceRows = $dataTypeRows->filter(function($item, $key){
+                                  // dd($item->field, $key);
+                                  return in_array(
+                                    $item->field,
+                                    [
+                                      "is_assurance",
+                                    ]);
+                                  });
+                                $dataTypeRows = $dataTypeRows->diff($referenceRows);
+
+                                $uDataTypeRows->push(
+                                  collect([
+                                    "label" => "Assurance Matériel",
+                                    "rows" => $referenceRows
+                                  ])
+                                );
+
+                                // Reprise field
+                                $referenceRows = $dataTypeRows->filter(function($item, $key){
+                                  // dd($item->field, $key);
+                                  return in_array(
+                                    $item->field,
+                                    [
+                                      "is_reprise_fournisseur",
+                                      "montant_reprise_fournisseur",
+                                    ]);
+                                  });
+                                $dataTypeRows = $dataTypeRows->diff($referenceRows);
+
+                                $uDataTypeRows->push(
+                                  collect([
+                                    "label" => "Reprise fournisseur",
+                                    "rows" => $referenceRows
+                                  ])
+                                );
                                 // TODO Financement field $referenceRows
                                 // TODO Contrat field $referenceRows
                                 // TODO File field $referenceRows
-                                // dd($dataTypeRows, $referenceRows, $dataTypeRows->diff($referenceRows));
                                 //
                                 //
                             @endphp
-                            @foreach($dataTypeRows as $dataTyperow)
+                            @foreach($uDataTypeRows as $dataTyperow)
                               <h3>{{ $dataTyperow->get('label') }}</h3>
                               <hr/>
+                              <div class="col-md-12">
                             {{-- @foreach($dataTypeRows as $row) --}}
                             @foreach($dataTyperow->get('rows') as $row)
                                 <!-- GET THE DISPLAY OPTIONS -->
@@ -122,6 +262,8 @@
                                 @endif
                               </div>
                             @endforeach
+                          </div>
+                          <hr/>
                           @endforeach
 
                         </div><!-- panel-body -->
