@@ -32,6 +32,7 @@
             <div class="col-md-12">
 
                 <div class="panel panel-bordered" style="padding-bottom:5px;">
+                  <div class="panel-body" style="padding-top:10px;">
                     <!-- form start -->
                     @foreach($dataType->readRows as $row)
                         @php $rowDetails = json_decode($row->details);
@@ -39,13 +40,18 @@
                                 $rowDetails=new stdClass();
                                 $rowDetails->options=new stdClass();
                          }
+
+
+                             $display_options = isset($rowDetails->display) ? $rowDetails->display : NULL;
                         @endphp
+                          @if ($rowDetails && isset($rowDetails->legend) && isset($rowDetails->legend->text))
 
-                        <div class="panel-heading" style="border-bottom:0;">
-                            <h3 class="panel-title">{{ $row->display_name }}</h3>
-                        </div>
-
-                        <div class="panel-body" style="padding-top:0;">
+                            <div class="col-md-12" style="border-bottom:0;">
+                            <h3 class="text-{{$rowDetails->legend->align or 'center'}}" style="color: {{$rowDetails->legend->color or '#333'}};background-color: {{$rowDetails->legend->bgcolor or '#f0f0f0'}};padding: 5px; padding-left: 15px;">{{$rowDetails->legend->text}}</h3>
+                            </div>
+                          @endif
+                          <div class="col-md-{{ $display_options->width or 12 }}" @if(isset($display_options->id)){{ "id=$display_options->id" }}@endif>
+                            <h5>{{ $row->display_name }}</h5>
                             @if($row->type == "image")
                                 <img class="img-responsive"
                                      src="{{ filter_var($dataTypeContent->{$row->field}, FILTER_VALIDATE_URL) ? $dataTypeContent->{$row->field} : Voyager::image($dataTypeContent->{$row->field}) }}">
@@ -120,11 +126,12 @@
                                 @include('voyager::multilingual.input-hidden-bread-read')
                                 <p>{{ $dataTypeContent->{$row->field} }}</p>
                             @endif
-                        </div><!-- panel-body -->
                         @if(!$loop->last)
-                            <hr style="margin:0;">
+                            {{-- <hr style="margin:0;"> --}}
                         @endif
+                      </div>
                     @endforeach
+                  </div><!-- panel-body -->
 
                 </div>
             </div>
