@@ -48,9 +48,32 @@
                             <!-- Adding / Editing -->
                             @php
                                 $dataTypeRows = $dataType->{(!is_null($dataTypeContent->getKey()) ? 'editRows' : 'addRows' )};
+                                $referenceRows = $dataTypeRows->filter(function($item, $key){
+                                    // dd($item->field, $key);
+                                    return in_array(
+                                      $item->field,
+                                      [
+                                        'nature_mandat',
+                                        'type_defiscalisation',
+                                        'duree_mandat',
+                                        'autre_duree_mandat',
+                                        'ri_amount_type_id',
+                                        'renouvellement',
+                                        'motivation',
+                                        'complement_financement',
+                                        'agrement'
+                                      ]);
+                                });
+                                $dataTypeRows = $dataTypeRows->diff($referenceRows);
+                                // TODO Locataire field $referenceRows
+                                // TODO Fournisseur field $referenceRows
+                                // TODO Materiel field $referenceRows
+                                // dd($dataTypeRows, $referenceRows, $dataTypeRows->diff($referenceRows));
+                                //
+                                //
                             @endphp
-
-                            @foreach($dataTypeRows as $row)
+                            @foreach($referenceRows as $row)
+                            {{-- @foreach($dataTypeRows as $row) --}}
                                 <!-- GET THE DISPLAY OPTIONS -->
                                 @php
                                     $options = json_decode($row->details);
