@@ -65,6 +65,19 @@
                                       ]);
                                 });
                                 $dataTypeRows = $dataTypeRows->diff($referenceRows);
+
+                                $dataTypeRows = collect([
+                                    collect([
+                                      "label" => "Référencement d'une nouvelle proposition commerciale",
+                                      "rows" => $referenceRows
+                                    ])
+                                ]);
+
+                                // $dataTypeRows->each(function($item, $key){
+                                //   dump($item, $item->get('label'));
+                                // });
+
+                                // dd($dataTypeRows);
                                 // TODO Locataire field $referenceRows
                                 // TODO Fournisseur field $referenceRows
                                 // TODO Materiel field $referenceRows
@@ -75,8 +88,11 @@
                                 //
                                 //
                             @endphp
-                            @foreach($referenceRows as $row)
+                            @foreach($dataTypeRows as $dataTyperow)
+                              <h3>{{ $dataTyperow->get('label') }}</h3>
+                              <hr/>
                             {{-- @foreach($dataTypeRows as $row) --}}
+                            @foreach($dataTyperow->get('rows') as $row)
                                 <!-- GET THE DISPLAY OPTIONS -->
                                 @php
                                     $options = json_decode($row->details);
@@ -106,6 +122,7 @@
                                 @endif
                               </div>
                             @endforeach
+                          @endforeach
 
                         </div><!-- panel-body -->
 
