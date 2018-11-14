@@ -221,11 +221,136 @@
                                     "rows" => $referenceRows
                                   ])
                                 );
+                                // Date livraison field
+                                $referenceRows = $dataTypeRows->filter(function($item, $key){
+                                  // dd($item->field, $key);
+                                  return in_array(
+                                    $item->field,
+                                    [
+                                      "prevision_livraison",
+                                    ]);
+                                  });
+                                $dataTypeRows = $dataTypeRows->diff($referenceRows);
+
+                                $uDataTypeRows->push(
+                                  collect([
+                                    "label" => "Date de livraison",
+                                    "rows" => $referenceRows
+                                  ])
+                                );
                                 // TODO Financement field $referenceRows
+                                $referenceRows = $dataTypeRows->filter(function($item, $key){
+                                  // dd($item->field, $key);
+                                  return in_array(
+                                    $item->field,
+                                    [
+                                      "apport_locataire",
+                                      "apport_snc",
+                                      "is_subvention",
+                                      "type_subvention",
+                                      "other_subvention",
+                                      "montant_subvention",
+                                      "montant_compl_fin",
+                                      "taux_retro",
+                                      "montant_frais_tenue_compte",
+                                      "ouverture_compte_bank",
+                                    ]);
+                                  });
+                                  $dataTypeRows = $dataTypeRows->diff($referenceRows);
+
+                                  $uDataTypeRows->push(
+                                    collect([
+                                      "label" => "Financement",
+                                      "rows" => $referenceRows
+                                    ])
+                                  );
+
+                                // TODO Banque field $referenceRows
+                                $referenceRows = $dataTypeRows->filter(function($item, $key){
+                                  // dd($item->field, $key);
+                                  return in_array(
+                                    $item->field,
+                                    [
+                                      "bank",
+                                      "nombre_periode",
+                                      "periodicite",
+                                      "duree_pret",
+                                      "taux_pret",
+                                      "duree_pret_periode",
+                                      "montant_echeance",
+                                      "is_assurance_invalidite",
+                                    ]);
+                                  });
+                                  $dataTypeRows = $dataTypeRows->diff($referenceRows);
+
+                                  $uDataTypeRows->push(
+                                    collect([
+                                      "label" => "Banque",
+                                      "rows" => $referenceRows
+                                    ])
+                                  );
                                 // TODO Contrat field $referenceRows
+                                $referenceRows = $dataTypeRows->filter(function($item, $key){
+                                  // dd($item->field, $key);
+                                  return in_array(
+                                    $item->field,
+                                    [
+                                      "tva_loyer",
+                                      "fact_loyer",
+                                      "methode_payment",
+                                      "hono_jur",
+                                      "remise_jur",
+                                      "cfe_tax",
+                                      "cfe_remise",
+                                    ]);
+                                  });
+                                  $dataTypeRows = $dataTypeRows->diff($referenceRows);
+
+                                  $uDataTypeRows->push(
+                                    collect([
+                                      "label" => "Contrat de location",
+                                      "rows" => $referenceRows
+                                    ])
+                                  );
                                 // TODO File field $referenceRows
-                                //
-                                //
+                                $referenceRows = $dataTypeRows->filter(function($item, $key){
+                                  // dd($item->field, $key);
+                                  return !in_array(
+                                    $item->field,
+                                    [
+                                      "resultats",
+                                      "van_paiement",
+                                    ]);
+                                  });
+                                $dataTypeRows = $dataTypeRows->diff($referenceRows);
+
+                                $uDataTypeRows->push(
+                                  collect([
+                                    "label" => "Autre champs",
+                                    "rows" => $referenceRows
+                                  ])
+                                );
+
+                                if(!is_null($dataTypeContent->getKey())){
+                                  // TODO File field $referenceRows
+                                  $referenceRows = $dataTypeRows->filter(function($item, $key){
+                                    // dd($item->field, $key);
+                                    return in_array(
+                                      $item->field,
+                                      [
+                                        "resultats",
+                                        "van_paiement",
+                                      ]);
+                                    });
+                                  $dataTypeRows = $dataTypeRows->diff($referenceRows);
+
+                                  $uDataTypeRows->push(
+                                    collect([
+                                      "label" => "Résultat",
+                                      "rows" => $referenceRows
+                                    ])
+                                  );
+                                }
                             @endphp
                             @foreach($uDataTypeRows as $dataTyperow)
                               <h3>{{ $dataTyperow->get('label') }}</h3>
