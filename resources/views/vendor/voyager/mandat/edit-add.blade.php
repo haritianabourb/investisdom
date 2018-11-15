@@ -194,7 +194,7 @@
 
             //CUSTOM
 
-            var elementsCash=[
+            var elementsLoan=[
                 "[name=ouverture_compte_bank]",
                 "[name=bank]",
                 "[name=nombre_periode]",
@@ -204,7 +204,7 @@
                 "[name=duree_pret_periode]"
             ].join(", "); //getting selector string for jQuery
 
-            var elementsLoan=[
+            var elementsCash=[
                 "[name=montant_echeance]"
             ].join(", "); //getting selector string for jQuery
 
@@ -245,13 +245,13 @@
             });
 
             if ($("[name=complement_financement]").val()=="CASH") { //setting default visibility
-                $("#option-complement-financement-1").click();
                 $("#option-complement-financement-2").click();
+                $("#option-complement-financement-1").click();
             }
 
             if ($("[name=complement_financement]").val()=="LOAN") { //setting default visibility
-                $("#option-complement-financement-2").click();
                 $("#option-complement-financement-1").click();
+                $("#option-complement-financement-2").click();
             }
 
 
