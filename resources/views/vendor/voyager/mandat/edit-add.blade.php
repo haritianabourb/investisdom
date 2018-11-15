@@ -215,7 +215,8 @@
             ].join(", "); //getting selector string for jQuery
 
             var elementsSegment=[
-                "[name=emission_co2_materiel]"
+                "[name=emission_co2_materiel]",
+                "[name=plafonnement_vp]"
             ].join(", "); //getting selector string for jQuery
 
 
