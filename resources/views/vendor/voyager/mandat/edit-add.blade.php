@@ -239,7 +239,7 @@
                 }
             });
 
-            $("[name=segment_materiel]").change(function() {
+            $("[name=segment_materiel]").on("select2:select", function() {
               if (this.value=="1") {
                   $(elementsSegment)
                   .parent().show("fast");
@@ -248,6 +248,7 @@
                 $(elementsSegment)
                 .parent().hide("fast");
               }
+              // debugger;
             });
 
             if ($("[name=complement_financement]").val()=="CASH") { //setting default visibility
