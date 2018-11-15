@@ -43,6 +43,9 @@
                              $display_options = isset($rowDetails->display) ? $rowDetails->display : NULL;
                         @endphp
                           @if ($rowDetails && isset($rowDetails->section) && isset($rowDetails->section->text))
+                            @php
+                              $sectionOpened = true;
+                            @endphp
                             @if(!$loop->first)
                               </div>
                             @endif
@@ -131,8 +134,8 @@
                                 @include('voyager::multilingual.input-hidden-bread-read')
                                 <p>{{ $dataTypeContent->{$row->field} }}</p>
                             @endif
-                        @if(!$loop->last)
-                            {{-- <hr style="margin:0;"> --}}
+                        @if(isset($sectionOpened) && $sectionOpened && $loop->last)
+                          </div>
                         @endif
                         </div>
                     @endforeach
