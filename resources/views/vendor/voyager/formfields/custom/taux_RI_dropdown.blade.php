@@ -1,6 +1,6 @@
-<div class="form-group col-md-4">
-    <label for="name"> Taux de réduction d'impôt :</label>
-    <select name="ri_amount" size="1" class="form-control select2">
+{{-- <div class="form-group col-md-4"> --}}
+    {{-- <label for="name"> Taux de réduction d'impôt :</label> --}}
+    <select name="ri_amount_type_id" size="1" class="form-control select2">
         <optgroup label="PLEIN DROIT | RUN - MAR - GUA">
           <option value="44.12">Normal : 44,12%</option>
           <option value="61.77">Rénovation hôtelière : 61,77%</option>
@@ -51,4 +51,4 @@
         <option value="50">Logement social : 50,00%</option>
         </optgroup>
     </select>
-</div>
+{{-- </div> --}}

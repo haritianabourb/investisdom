@@ -22,4 +22,8 @@ Route::group(['prefix' => 'admin'], function () {
       Route::get('/{cgp}/generate-convention', 'Investis\CGPController@generatePDF')->name('admin.cgps.generate-convention');
     });
 
+    Route::group(['prefix' => 'scns'], function(){
+      Route::post('/bulk', 'Investis\SNCController@bulkCreate')->name('admin.sncs.bulk-add');
+    });
+
 });

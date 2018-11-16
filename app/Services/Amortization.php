@@ -1,19 +1,18 @@
 <?php
 
 namespace App\Services;
-	/**
-	 * AMORTIZATION CALCULATOR
-	 * @author PRANEETH NIDARSHAN
-	 * @version V1.0
-	 */
+
+use App\Services\VAT;
+use App\Services\Funding;
+
 	class Amortization
 	{
 
 		private $mandat;
 		private $collection;
 
-		const CASH = 'CASH';
-		const BANK = 'LOAN';
+		// const CASH = 'CASH';
+		// const BANK = 'LOAN';
 
 		public function __construct($mandat){
 
@@ -23,7 +22,7 @@ namespace App\Services;
 			// $this->term_years = $mandat->nombre_periode/12;
 			$this->terms = 12;
 			// TODO show interest?
-			if($this->mandat->complement_financement == self::CASH){
+			if($this->mandat->complement_financement == Funding::CASH){
 				$this->period = $this->nbr_period;
 			}else{
 				$this->period = $this->nbr_period = $this->terms * $this->term_years;
@@ -35,27 +34,15 @@ namespace App\Services;
 		}
 
 		public function processCalc(){
-			// TODO Process calc with mandat status
 
-			// XXX SHOW SOME TODOS
-			// CORRECT WITH CALC
 			$this->taxe_base = $this->getTaxBase();
-			// XXX SHOW SOME TODOS
-			// CORRECT WITH CALC
 			$this->loan_amount = $this->getLoanAmount();
-			// CORRECT WITH CALC
 			$this->summary = $this->getSummary();
-			// TODO CORRECT WITH CALC
 			$this->schedule = $this->getSchedule();
-
-			// DONE
 			$this->npv = $this->getNPV();
-			// XXX Is there any SNC Amount Calculation
-			// $this->snc_amount = $this->getSNCAmout();
 
-			// $this->rate_tax_base -> $this->getRateTaxBase();
 			$this->loan_amount = $this->getLoanAmount();
-			// DONE
+
 			$this->net_intake = $this->getNetIntake();
 			$this->other = $this->getOther();
 
@@ -70,20 +57,7 @@ namespace App\Services;
 
 			$this->mandat->van_paiement = collect($this->schedule)->toJson();
 
-			// $results = array(
-			// 		'summary' => $this->summary,
-			// 		'taxe_base' => $this->taxe_base,
-			// 		'loan_amount' => $this->loan_amount,
-			// 		'npv' => $this->npv,
-			// 		'net_intake' => $this->net_intake,
-			// 		'other' => $this->other,
-			// 	);
-			// $this->collection = collect(
-			// 	array(
-			// 		'results'=>$results,
-			// 		'schedule' => $this->schedule
-			// 	)
-			// );
+			dd($this->mandat, VAT::TVA, VAT::TVA_NPR);
 
 			return $this->mandat;
 		}
@@ -108,7 +82,7 @@ namespace App\Services;
 		private function calculate()
 		{
 
-			if($this->mandat->complement_financement == self::BANK){
+			if($this->mandat->complement_financement == Funding::BANK){
 
 				$deno = 1.0 - 1.0 / pow((1+ $this->taux_pret),$this->period);
 				$this->term_pay = ($this->loan_amount * $this->taux_pret) / $deno;
@@ -117,7 +91,7 @@ namespace App\Services;
 				$this->balance = round($this->loan_amount - $this->principal, 2);
 			}
 
-			if($this->mandat->complement_financement == self::CASH){
+			if($this->mandat->complement_financement == Funding::CASH){
 
 				$this->term_pay = $this->loan_amount/$this->period;
 				$interest = 0;
@@ -169,9 +143,9 @@ namespace App\Services;
 
 			return array (
 				'term_pay' => $this->term_pay,
-				'term_pay_ttc' => $this->term_pay*1.085,
+				'term_pay_ttc' => $this->term_pay*(1 + VAT::TVA),
 				'total_pay' => $total_pay,
-				'total_vat' => $total_pay*0.085,
+				'total_vat' => $total_pay*(VAT::TVA),
 				'total_interest' => $total_interest,
 				'legal_fee' => $legal_fee,
 				'annexe_fee' => $annexe_fee
@@ -185,7 +159,10 @@ namespace App\Services;
 		 */
 		public function getTaxBase(){
 
-			$npr_vat = $this->mandat->montant_ht * 0.085;
+			// XXX En attente des discussion de l'assemblée.
+			// Regle applicable jusqu'en 2019
+			// Attente sur la suppression de la TVA NPR (abrupt ou non);
+			$npr_vat = $this->mandat->montant_ht * VAT::TVA_NPR;
 
 			$total_vat = $npr_vat + $this->mandat->tva_investissement;
 			// TODO subvention choice + subvention amount +  deduction amount
@@ -198,7 +175,8 @@ namespace App\Services;
 				+ $this->mandat->deduction_base
 			);
 
-			$ri_amount = $tax_base*0.4412;
+			// $ri_amount = $tax_base*0.4412;
+			$ri_amount = $tax_base*$this->mandat->ri_amount_type_id;
 
 			$ht_amount = $this->mandat->montant_ht
 			 + $this->mandat->fraix_defiscalisable
@@ -244,19 +222,10 @@ namespace App\Services;
 			);
 		}
 
-		// public function getSNCAmout(){
-		// 	// =((H26*C28)*C32)+H18+H20
-		// 	$snc_amount = (($this->taxe_base['tax_base']*0.4412)*$this->)
-		//
-		// }
-
-		// public function getRateTaxBase(){
-		// }
-
 		public function getSchedule()
 		{
 			$schedule = array();
-			if($this->mandat->complement_financement == self::CASH){
+			if($this->mandat->complement_financement == Funding::CASH){
 				for($this->period = 0; $this->period <= $this->nbr_period; $this->period++){
 					array_push($schedule, $this->calculate());
 
@@ -314,18 +283,10 @@ namespace App\Services;
 		  return $npv;
 		}
 
-		// public function getJSON()
-		// {
-		// 	return json_encode($this->collection);
-		// }
-		//
 		public function getMandat(){
 			return $this->mandat;
 		}
-		//
-		// public function toObject(){
-		// 	 return json_decode(json_encode($this->collection), FALSE);
-		// }
+
 
 	}
 

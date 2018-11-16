@@ -4,7 +4,7 @@
 
 @section('page_header')
     <h1 class="page-title">
-        <i class="{{ $dataType->icon }}"></i> {{ __('voyager::generic.viewing') }} {{ ucfirst($dataType->display_name_singular) }} &nbsp;
+      <i class="{{ $dataType->icon }}"></i> {{ __('voyager::generic.viewing') }} {{ ucfirst($dataType->display_name_singular) }} &nbsp;
 
         @can('edit', $dataTypeContent)
         <a href="{{ route('voyager.'.$dataType->slug.'.edit', $dataTypeContent->getKey()) }}" class="btn btn-info">
@@ -29,35 +29,92 @@
 @section('content')
     <div class="page-content read container-fluid">
         <div class="row">
+          <div class="col-md-6">
+            <div class="panel panel-bordered">
+              <div class="panel-heading" style="border-bottom:0;">
+                  <h3 class="panel-title">{{ $dataTypeContent->name }}</h3>
+              </div>
+              <div class="panel-body">
+                @php
+                  $dataTypeRow = $dataType->editRows->where('field', 'status')->first();
+                  $options = json_decode($dataTypeRow->details);
+                  $display_options = isset($options->display) ? $options->display : NULL;
+
+                  $option_value = "";
+                  $option_display = "";
+
+                  switch ($dataTypeContent->{$dataTypeRow->field}){
+                    case(\App\SNC::ACTIVE):
+                      $option_value = \App\SNC::MARKETING_OFF;
+                      $option_display = $options->options->{\App\SNC::MARKETING_OFF};
+                      break;
+                    case(\App\SNC::MARKETING_OFF):
+                      $option_value = \App\SNC::MARKETING_ON;
+                      $option_display = $options->options->{\App\SNC::MARKETING_ON};
+                      break;
+                    case(\App\SNC::MARKETING_ON):
+                      $option_value = \App\SNC::CLOSE;
+                      $option_display = $options->options->{\App\SNC::CLOSE};
+                      break;
+                    case(\App\SNC::IN_STOCK):
+                      $option_value = \App\SNC::ACTIVE;
+                      $option_display = $options->options->{\App\SNC::ACTIVE};
+                      break;
+                  }
+                @endphp
+                <p> {{ $options->options->{$dataTypeContent->{$dataTypeRow->field} } }} </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="panel panel-bordered">
+              <div class="panel-body">
+                @if($dataTypeContent->status !== \App\SNC::IN_STOCK)
+                  <p>Total des investissement: {{$dataTypeContent->total_invest}}</p>
+                  <p>Total des Montant RI: {{$dataTypeContent->ri_amount}}</p>
+                  <p>Total des honoraires: {{$dataTypeContent->total_hono}}</p>
+                  <p>Total des comission CGP: {{$dataTypeContent->total_comm_cgp}}</p>
+                @else
+                  <p class="well">SNC en stock, <a href="{{ route('voyager.'.$dataType->slug.'.edit', $dataTypeContent->getKey()) }}" class="btn btn-link">veuillez l'activer pour continuer</a></p>
+                @endif
+              </div>
+          </div>
+          </div>
+        </div>
+        <div class="row">
             <div class="col-md-12">
 
                 <div class="panel panel-bordered" style="padding-bottom:5px;">
-                  <div class="panel-body" style="padding-top:10px;">
                     <!-- form start -->
-                    @foreach($dataType->readRows as $row)
+                    @foreach($dataType->readRows->filter(function($item, $key){
+                      return !in_array($item->field, [
+                        "id",
+                        "status",
+                        "name",
+                        "total_invest",
+                        "tax_rate",
+                        "total_amount_ri",
+                        "total_net_intake",
+                        "total_hono",
+                        "total_comm_cgp",
+                        "total_comm_app",
+                        "total_get",
+                        "investors_tax_reservation",
+                        "investors_tax_proposition"
+                      ]);
+                      // return $item->field !== 'status';
+                    }) as $row)
                         @php $rowDetails = json_decode($row->details);
                          if($rowDetails === null){
                                 $rowDetails=new stdClass();
                                 $rowDetails->options=new stdClass();
                          }
-
-
-                             $display_options = isset($rowDetails->display) ? $rowDetails->display : NULL;
                         @endphp
-                        @if ($rowDetails && isset($rowDetails->section) && isset($rowDetails->section->text))
-                          @php
-                            $sectionOpened = true;
-                          @endphp
-                          @if(!$loop->first)
-                            </div>
-                          @endif
-                            <div class="row">
-                          <div class="col-md-12" style="border-bottom:0;">
-                            <h3 class="text-{{$rowDetails->section->align or 'center'}}" style="color: {{$rowDetails->section->color or '#333'}};background-color: {{$rowDetails->section->bgcolor or '#f0f0f0'}};padding: 5px; padding-left: 15px;">{{$rowDetails->section->text}}</h3>
-                          </div>
-                        @endif
-                          <div class="col-md-{{ $display_options->width or 12 }}" @if(isset($display_options->id)){{ "id=$display_options->id" }}@endif>
-                            <h5>{{ $row->display_name }}</h5>
+                        <div class="panel-heading" style="border-bottom:0;">
+                            <h3 class="panel-title">{{ $row->display_name }}</h3>
+                        </div>
+
+                        <div class="panel-body" style="padding-top:0;">
                             @if($row->type == "image")
                                 <img class="img-responsive"
                                      src="{{ filter_var($dataTypeContent->{$row->field}, FILTER_VALIDATE_URL) ? $dataTypeContent->{$row->field} : Voyager::image($dataTypeContent->{$row->field}) }}">
@@ -132,12 +189,11 @@
                                 @include('voyager::multilingual.input-hidden-bread-read')
                                 <p>{{ $dataTypeContent->{$row->field} }}</p>
                             @endif
-                            @if(isset($sectionOpened) && $sectionOpened && $loop->last)
-                              </div>
-                            @endif
-                      </div>
+                        </div><!-- panel-body -->
+                        @if(!$loop->last)
+                            <hr style="margin:0;">
+                        @endif
                     @endforeach
-                  </div><!-- panel-body -->
 
                 </div>
             </div>

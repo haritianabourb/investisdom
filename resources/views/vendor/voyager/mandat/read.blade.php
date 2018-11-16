@@ -40,25 +40,27 @@
                                 $rowDetails=new stdClass();
                                 $rowDetails->options=new stdClass();
                          }
-
-
                              $display_options = isset($rowDetails->display) ? $rowDetails->display : NULL;
                         @endphp
-                        @if ($rowDetails && isset($rowDetails->section) && isset($rowDetails->section->text))
-                          @php
-                            $sectionOpened = true;
-                          @endphp
-                          @if(!$loop->first)
+                          @if ($rowDetails && isset($rowDetails->section) && isset($rowDetails->section->text))
+                            @php
+                              $sectionOpened = true;
+                            @endphp
+                            @if(!$loop->first)
+                              </div>
+                            @endif
+                              <div class="row">
+                            <div class="col-md-12" style="border-bottom:0;">
+                              <h3 class="text-{{$rowDetails->section->align or 'center'}}" style="color: {{$rowDetails->section->color or '#333'}};background-color: {{$rowDetails->section->bgcolor or '#f0f0f0'}};padding: 5px; padding-left: 15px;">{{$rowDetails->section->text}}</h3>
                             </div>
                           @endif
-                            <div class="row">
-                          <div class="col-md-12" style="border-bottom:0;">
-                            <h3 class="text-{{$rowDetails->section->align or 'center'}}" style="color: {{$rowDetails->section->color or '#333'}};background-color: {{$rowDetails->section->bgcolor or '#f0f0f0'}};padding: 5px; padding-left: 15px;">{{$rowDetails->section->text}}</h3>
-                          </div>
-                        @endif
                           <div class="col-md-{{ $display_options->width or 12 }}" @if(isset($display_options->id)){{ "id=$display_options->id" }}@endif>
                             <h5>{{ $row->display_name }}</h5>
-                            @if($row->type == "image")
+                            @if($row->field == 'van_paiement')
+                              @include('voyager::formfields.custom.mandat_van_paiement')
+                            @elseif($row->field == 'resultats')
+                              @include('voyager::formfields.custom.mandat_resultat')
+                            @elseif($row->type == "image")
                                 <img class="img-responsive"
                                      src="{{ filter_var($dataTypeContent->{$row->field}, FILTER_VALIDATE_URL) ? $dataTypeContent->{$row->field} : Voyager::image($dataTypeContent->{$row->field}) }}">
                             @elseif($row->type == 'multiple_images')
@@ -132,10 +134,10 @@
                                 @include('voyager::multilingual.input-hidden-bread-read')
                                 <p>{{ $dataTypeContent->{$row->field} }}</p>
                             @endif
-                            @if(isset($sectionOpened) && $sectionOpened && $loop->last)
-                              </div>
-                            @endif
-                      </div>
+                        @if(isset($sectionOpened) && $sectionOpened && $loop->last)
+                          </div>
+                        @endif
+                        </div>
                     @endforeach
                   </div><!-- panel-body -->
 

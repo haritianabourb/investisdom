@@ -8,15 +8,48 @@ use Carbon\Carbon;
 
 class ReservationObserver
 {
+
+
+
     /**
      * Handle the contract "creating" event.
      *
      * @param  \App\Reservation  $reservation
      * @return void
      */
+      public function creating(Reservation $reservation)
+    {
+        $reservation->identifiant = "ATTEMPTID";
+    }
+
+    /**
+     * Handle the contract "created" event.
+     *
+     * @param  \App\Reservation  $reservation
+     * @return void
+     */
+      public function created(Reservation $reservation)
+    {
+        // dd($reservation);
+        $date = (new Carbon($reservation->created_at))->format("Ymd");
+        $reservation->identifiant =
+          substr(preg_replace('/\s/', '', $reservation->investorsId->name), 0, 3)
+          .substr(preg_replace('/\s/', '', $reservation->cgpsId->name), -3)
+          ."-".$date
+          ."/".$reservation->id;
+
+        $reservation->save();
+
+    }
+
+    /**
+     * Handle the contract "saving" event.
+     *
+     * @param  \App\Reservation  $reservation
+     * @return void
+     */
     public function saving(Reservation $reservation)
     {
-        $reservation->identifiant = "Folder_Test".rand(1,999);
         $this->calculate($reservation);
     }
 

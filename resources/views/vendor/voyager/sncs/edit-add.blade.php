@@ -17,8 +17,11 @@
 @section('content')
     <div class="page-content edit-add container-fluid">
         <div class="row">
+          @if(is_null($dataTypeContent->getKey()))
             <div class="col-md-12">
-
+          @else
+            <div class="col-lg-10 col-md-8 col-sm-6">
+          @endif
                 <div class="panel panel-bordered">
                     <!-- form start -->
                     <form role="form"
@@ -34,7 +37,7 @@
                         {{ csrf_field() }}
 
                         <div class="panel-body">
-
+                          @if(is_null($dataTypeContent->getKey()))
                             @if (count($errors) > 0)
                                 <div class="alert alert-danger">
                                     <ul>
@@ -57,13 +60,7 @@
                                     $display_options = isset($options->display) ? $options->display : NULL;
                                 @endphp
                                 @if ($options && isset($options->legend) && isset($options->legend->text))
-                                  @if(!$loop->first)
-                                    </div>
-                                  @endif
-                                    <div class="row">
-                                      <div class="col-md-12">
-                                        <legend class="text-{{$options->legend->align or 'center'}}" style="color: {{$options->legend->color or '#333'}};background-color: {{$options->legend->bgcolor or '#f0f0f0'}};padding: 5px; padding-left: 15px; display:inline-block">{{$options->legend->text}}</legend>
-                                      </div>
+                                    <legend class="text-{{$options->legend->align or 'center'}}" style="background-color: {{$options->legend->bgcolor or '#f0f0f0'}};padding: 5px;">{{$options->legend->text}}</legend>
                                 @endif
                                 <div class="form-group @if($row->type == 'hidden') hidden @endif col-md-{{ $display_options->width or 12 }}" @if(isset($display_options->id)){{ "id=$display_options->id" }}@endif>
                                 @if ($options && isset($options->formfields_custom))
@@ -86,14 +83,52 @@
                                 @endif
                               </div>
                             @endforeach
+                          @else
+                              <h3>{{$dataTypeContent->name}}</h3>
+                              @php
+                                $dataTypeRows = $dataType->editRows
+                                  ->filter(function($item, $key){
+                                    return $item->field !== 'status';
+                                  });
+                              @endphp
+                              @foreach($dataTypeRows as $row)
+                                  <!-- GET THE DISPLAY OPTIONS -->
+                                  @php
+                                      $options = json_decode($row->details);
+                                      $display_options = isset($options->display) ? $options->display : NULL;
+                                  @endphp
+                                  @if ($options && isset($options->legend) && isset($options->legend->text))
+                                      <legend class="text-{{$options->legend->align or 'center'}}" style="background-color: {{$options->legend->bgcolor or '#f0f0f0'}};padding: 5px;">{{$options->legend->text}}</legend>
+                                  @endif
+                                  <div class="form-group @if($row->type == 'hidden') hidden @endif col-md-{{ $display_options->width or 12 }}" @if(isset($display_options->id)){{ "id=$display_options->id" }}@endif>
+                                  @if ($options && isset($options->formfields_custom))
+                                      {{ $row->slugify }}
+                                      <label for="name">{{ $row->display_name }}</label>
+                                      @include('voyager::formfields.custom.' . $options->formfields_custom)
+                                  @else
+                                          {{ $row->slugify }}
+                                          <label for="name">{{ $row->display_name }}</label>
+                                          @include('voyager::multilingual.input-hidden-bread-edit-add')
+                                          @if($row->type == 'relationship')
+                                              @include('voyager::formfields.relationship')
+                                          @else
+                                              {!! app('voyager')->formField($row, $dataType, $dataTypeContent) !!}
+                                          @endif
 
+                                          @foreach (app('voyager')->afterFormFields($row, $dataType, $dataTypeContent) as $after)
+                                              {!! $after->handle($row, $dataType, $dataTypeContent) !!}
+                                          @endforeach
+                                  @endif
+                                </div>
+                              @endforeach
+                          @endif
                         </div><!-- panel-body -->
 
                         <div class="panel-footer">
                             <button type="submit" class="btn btn-primary save">{{ __('voyager::generic.save') }}</button>
                         </div>
                     </form>
-
+                  </div>
                     <iframe id="form_target" name="form_target" style="display:none"></iframe>
                     <form id="my_form" action="{{ route('voyager.upload') }}" target="form_target" method="post"
                             enctype="multipart/form-data" style="width:0;height:0;overflow:hidden">
@@ -104,7 +139,64 @@
                     </form>
 
                 </div>
+
+                @if(!is_null($dataTypeContent->getKey()))
+            <div class="col-lg-2 col-md-4 col-sm-6">
+              <!-- form start -->
+              <form role="form"
+                      class="form-edit-add"
+                      action="{{ route('voyager.'.$dataType->slug.'.update', $dataTypeContent->getKey()) }}"
+                      method="POST" enctype="multipart/form-data">
+                  <!-- PUT Method if we are editing -->
+                  @if(!is_null($dataTypeContent->getKey()))
+                      {{ method_field("PUT") }}
+                  @endif
+              <div class="panel pnael-info panel-bordered">
+                <!-- CSRF TOKEN -->
+                {{ csrf_field() }}
+
+                <div class="panel-body">
+              <h4>Résumé</h4>
+              @php
+                $dataTypeRow = $dataType->editRows->where('field', 'status')->first();
+                $options = json_decode($dataTypeRow->details);
+                $display_options = isset($options->display) ? $options->display : NULL;
+
+                $option_value = "";
+                $option_display = "";
+
+                switch ($dataTypeContent->{$dataTypeRow->field}){
+                  case(\App\SNC::ACTIVE):
+                    $option_value = \App\SNC::MARKETING_OFF;
+                    $option_display = $options->options->{\App\SNC::MARKETING_OFF};
+                    break;
+                  case(\App\SNC::MARKETING_OFF):
+                    $option_value = \App\SNC::MARKETING_ON;
+                    $option_display = $options->options->{\App\SNC::MARKETING_ON};
+                    break;
+                  case(\App\SNC::MARKETING_ON):
+                    $option_value = \App\SNC::CLOSE;
+                    $option_display = $options->options->{\App\SNC::CLOSE};
+                    break;
+                  case(\App\SNC::IN_STOCK):
+                    $option_value = \App\SNC::ACTIVE;
+                    $option_display = $options->options->{\App\SNC::ACTIVE};
+                    break;
+                }
+              @endphp
+              {{-- {{dd($options->options->{$dataTypeContent->{$dataTypeRow->field} }, $options->options->{\App\SNC::ACTIVE})}} --}}
+              <label for="{{$dataTypeRow->field}}">{{ $dataTypeRow->display_name }}: <strong>{{ $options->options->{$dataTypeContent->{$dataTypeRow->field} } }} </strong></label>
+              <br/>
+              <input type="hidden" name="{{$dataTypeRow->field}}" value="{{$option_value}}">
+              <button type="submit" class="btn btn-info btn-block save">
+                {{$option_display}}
+              </button>
+              {{-- {!! app('voyager')->formField($dataTypeRow, $dataType, $dataTypeContent) !!} --}}
             </div>
+          </div>
+        </form>
+          </div>
+        @endif
         </div>
     </div>
 
@@ -190,6 +282,9 @@
 
                 $('#confirm_delete_modal').modal('hide');
             });
+
+
+
             $('[data-toggle="tooltip"]').tooltip();
         });
     </script>

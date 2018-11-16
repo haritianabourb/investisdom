@@ -49,7 +49,10 @@
                             @php
                                 $dataTypeRows = $dataType->{(!is_null($dataTypeContent->getKey()) ? 'editRows' : 'addRows' )};
                             @endphp
-
+                            {{-- @foreach($uDataTypeRows as $dataTyperow)
+                              <h3>{{ $dataTyperow->get('label') }}</h3>
+                              <hr/>
+                              <div class="col-md-12"> --}}
                             @foreach($dataTypeRows as $row)
                                 <!-- GET THE DISPLAY OPTIONS -->
                                 @php
@@ -86,6 +89,9 @@
                                 @endif
                               </div>
                             @endforeach
+                          {{-- </div> --}}
+                          <hr/>
+                          {{-- @endforeach --}}
 
                         </div><!-- panel-body -->
 
@@ -191,6 +197,74 @@
                 $('#confirm_delete_modal').modal('hide');
             });
             $('[data-toggle="tooltip"]').tooltip();
+
+            //CUSTOM
+
+            var elementsLoan=[
+                "[name=ouverture_compte_bank]",
+                "[name=bank]",
+                "[name=nombre_periode]",
+                "[name=periodicite]",
+                "[name=duree_pret]",
+                "[name=taux_pret]",
+                "[name=duree_pret_periode]"
+            ].join(", "); //getting selector string for jQuery
+
+            var elementsCash=[
+                "[name=montant_echeance]"
+            ].join(", "); //getting selector string for jQuery
+
+            var elementsSegment=[
+                "[name=emission_co2_materiel]",
+                "[name=plafonnement_vp]"
+            ].join(", "); //getting selector string for jQuery
+
+
+
+            $("[name=complement_financement]").change(function() {
+                if (this.value=="CASH") {
+                    $(elementsCash)
+                    .parent().show("fast");
+
+                    $(elementsLoan)
+                    .parent().hide("fast");
+                    // $("[name=capital]").prop("required", true);
+                }
+
+                if (this.value=="LOAN") {
+                  $(elementsCash)
+                  .parent().hide("fast");
+
+                  $(elementsLoan)
+                  .parent().show("fast");
+                }
+            });
+
+            $("[name=segment_materiel]").on("select2:select", function() {
+              if (this.value=="1") {
+                  $(elementsSegment)
+                  .parent().show("fast");
+                  // $("[name=capital]").prop("required", true);
+              }else{
+                $(elementsSegment)
+                .parent().hide("fast");
+              }
+              // debugger;
+            });
+
+            if ($("[name=complement_financement]").val()=="CASH") { //setting default visibility
+                $("#option-complement-financement-2").click();
+                $("#option-complement-financement-1").click();
+            }
+
+            if ($("[name=complement_financement]").val()=="LOAN") { //setting default visibility
+                $("#option-complement-financement-1").click();
+                $("#option-complement-financement-2").click();
+            }
+
+
+            $("#option-segment-materiel-"+$("[name=segment_materiel]").val()).click();
+
         });
     </script>
 @stop
