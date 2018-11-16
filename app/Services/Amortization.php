@@ -57,7 +57,7 @@ use App\Services\Funding;
 
 			$this->mandat->van_paiement = collect($this->schedule)->toJson();
 
-			dd($this->mandat, VAT::TVA, VAT::TVA_NPR);
+			//dd($this->mandat, VAT::TVA, VAT::TVA_NPR);
 
 			return $this->mandat;
 		}
