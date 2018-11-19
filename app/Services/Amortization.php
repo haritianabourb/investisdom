@@ -214,7 +214,6 @@ use App\Services\Funding;
 			// Apport Net
 			$net_intake = $this->mandat->apport_snc - $this->taxe_base['total_vat'];
 
-
 			return array(
 				'net_intake' => $net_intake,
 				'numerateur' => $numerateur,
