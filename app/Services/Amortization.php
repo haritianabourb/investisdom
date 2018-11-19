@@ -176,7 +176,7 @@ use App\Services\Funding;
 			);
 
 			// $ri_amount = $tax_base*0.4412;
-			$ri_amount = $tax_base*$this->mandat->ri_amount_type_id;
+			$ri_amount = $tax_base*($this->mandat->ri_amount_type_id/100);
 
 			$ht_amount = $this->mandat->montant_ht
 			 + $this->mandat->fraix_defiscalisable
@@ -207,11 +207,11 @@ use App\Services\Funding;
 		}
 
 		public function getNetIntake(){
-			// var_dump($this->inputs['snc_amount'],$this->taxe_base['total_vat']);
+
 			$numerateur = $this->taxe_base['tax_base'] - $this->npv;
 			$retrocession = $numerateur/$this->taxe_base['ri_amount'];
-			// Apport Net
 
+			// Apport Net
 			$net_intake = $this->mandat->apport_snc - $this->taxe_base['total_vat'];
 
 
