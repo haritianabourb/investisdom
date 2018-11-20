@@ -35,8 +35,8 @@ class MandatController extends VoyagerBaseController
         "tva_npr",
       ],
       "ri_amount" => [
-        "tax_base",
         "tva_npr",
+        "tax_base",
       ],
       "ttc_amount" => [
         "ht_amount",

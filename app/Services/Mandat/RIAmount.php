@@ -15,7 +15,6 @@ use App\Services\AbstractField;
 		];
 
 		public function process(){
-			// dd($this);
 			return $this->parameters->get('tax_base')*($this->parameters->get('ri_amount_type_id')/100);
 		}
 

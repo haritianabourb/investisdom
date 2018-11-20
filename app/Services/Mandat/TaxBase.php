@@ -18,11 +18,12 @@ use App\Services\AbstractField;
 		];
 
 		public function process(){
+			// dd($this);
 			return (
 					$this->parameters->get('montant_ht')
 				- $this->parameters->get('fraix_defiscalisable')
 			) - (
-					$this->parameters->get('npr_vat')
+					$this->parameters->get('tva_npr')
 				+ $this->parameters->get('montant_subvention')
 				+ $this->parameters->get('deduction_base')
 			);
