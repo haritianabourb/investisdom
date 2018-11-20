@@ -35,7 +35,7 @@ use App\Services\Funding;
 		}
 
 		public function processCalc(){
-			// TODO extract this
+			
 			$this->taxe_base = $this->getTaxBase();
 			$this->loan_amount = $this->getLoanAmount();
 			$this->summary = $this->getSummary();

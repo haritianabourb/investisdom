@@ -16,7 +16,7 @@ use App\Services\AbstractField;
 		];
 
 		public function process(){
-			return $this->parameters->get('ht_amount') + $this->parameters->get('tva_investissement');
+			return $this->parameters->get('montant_ht') + $this->parameters->get('tva_investissement');
 		}
 
 	}
