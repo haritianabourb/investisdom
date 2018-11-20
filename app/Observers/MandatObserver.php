@@ -51,15 +51,21 @@ class MandatObserver
      */
     public function saving(Mandat $mandat)
     {
-      // XXX Collecte donnée
-      //
-      // TODO status watchdog
-      $armotization = new Amortization($mandat);
-      $mandat = $armotization->getMandat();
-
-      $mandat->resultats;
-      $mandat->van_paiement;
-      // dd(json_decode($mandat->resultats), json_decode($mandat->van_paiement));
-
+      $mandat = $this->processCalculation($mandat);
     }
+
+    /**
+     * Process all calculations for Mandat
+     * @param  Mandat $mandat the current mandat
+     * @return Mandat         [description]
+     */
+    protected function processCalculation(Mandat $mandat){
+      $armotization = new Amortization($mandat);
+      $mandat = $armotization->processCalc();
+
+      return $mandat;
+    }
+
+
+
 }

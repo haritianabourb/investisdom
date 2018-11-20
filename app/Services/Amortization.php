@@ -16,6 +16,7 @@ use App\Services\Funding;
 
 		public function __construct($mandat){
 
+			// TODO deport this to mandat
 			$this->mandat = $mandat;
 			// get term periode in years
 			$this->term_years = $mandat->duree_pret/12;
@@ -29,12 +30,12 @@ use App\Services\Funding;
 			}
 			$this->taux_pret = ($mandat->taux_pret/100.0) / $this->terms;
 
-			$this->processCalc();
+			// $this->processCalc();
 
 		}
 
 		public function processCalc(){
-
+			// TODO extract this
 			$this->taxe_base = $this->getTaxBase();
 			$this->loan_amount = $this->getLoanAmount();
 			$this->summary = $this->getSummary();
@@ -60,23 +61,6 @@ use App\Services\Funding;
 			//dd($this->mandat, VAT::TVA, VAT::TVA_NPR);
 
 			return $this->mandat;
-		}
-
-		private function validate($data) {
-			$data_format = array(
-				// 'loan_amount' 	=> 0,
-				'term_years' 	=> 0,
-				'interest' 		=> 0,
-				'terms' 		=> 0
-				);
-
-			$validate_data = array_diff_key($data_format,$data);
-
-			if(empty($validate_data)) {
-				return true;
-			}else{
-				return false;
-			}
 		}
 
 		private function calculate()
