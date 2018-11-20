@@ -27,6 +27,7 @@ class MandatController extends VoyagerBaseController
       "ri_amount" => \App\Services\Mandat\RIAmount::class,
       "ht_amount" => \App\Services\Mandat\HTAmount::class,
       "ttc_amount" => \App\Services\Mandat\TTCAmount::class,
+      "loan_amount" => \App\Services\Mandat\LoanAmount::class,
     ];
 
     protected $calculationsQueues = [
@@ -40,6 +41,10 @@ class MandatController extends VoyagerBaseController
       "ttc_amount" => [
         "ht_amount",
       ],
+      "loan_amount" => [
+        "ht_amount",
+        "ttc_amount"
+      ]
     ];
 
     public function calculate(Request $request, $field=null){
@@ -68,8 +73,6 @@ class MandatController extends VoyagerBaseController
           $calculation->addField(new $this->calculationsServices[$field_queue]($mandat));
         }
       }
-
-
 
       $calculation->addField(new $this->calculationsServices[$field]($mandat));
       $return = $calculation->processCalculation();
