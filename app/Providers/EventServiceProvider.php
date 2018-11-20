@@ -21,12 +21,12 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'App\Events\Mandat\CalculateMontantTTC' => [
-            'App\Listeners\ProcessCalculationMontantTTC',
-        ],
-        'App\Events\Mandat\CalculateTVANPR' => [
-            'App\Listeners\ProcessCalculationTVANPR',
-        ],
+        // 'App\Events\Mandat\CalculateMontantTTC' => [
+        //     'App\Listeners\ProcessCalculationMontantTTC',
+        // ],
+        // 'App\Events\Mandat\CalculateTVANPR' => [
+        //     'App\Listeners\ProcessCalculationTVANPR',
+        // ],
     ];
 
     /**
