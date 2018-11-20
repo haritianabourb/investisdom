@@ -9,6 +9,8 @@ use App\Services\FieldContract;
 		private $collection;
 		private $return;
 
+		private $lastResult;
+
 		public function __construct(){
 			$this->collection = collect([]);
 			$this->return = collect([]);
@@ -34,12 +36,12 @@ use App\Services\FieldContract;
 
 		public function processCalculation(){
     	$this->collection->each(function($item, $key){
-				// dd($this->collection, $this->collection->last(), $item === $this->collection->last());
-				//XXX show last
-				$this->return->put($key, $item->validate()? $item->process() : $item->errors());
-				if($item !== $this->collection->last() && $item->validate()){
-					$this->collection->last()->addParameters([$key => $item->process()]);
+				if(!is_null($this->lastResult)){
+					$item->addParameters($this->lastResult);
 				}
+
+				$this->return->put($key, $item->validate()? $item->process() : $item->errors());
+				$this->lastResult = [$key => $item->process()];
 
 			});
 
