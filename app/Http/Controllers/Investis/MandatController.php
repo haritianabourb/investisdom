@@ -38,7 +38,7 @@ class MandatController extends VoyagerBaseController
       "retrocession" => \App\Services\Mandat\Retrocession::class,
       "net_intake" => \App\Services\Mandat\NetIntake::class,
       "retrocession_net" => \App\Services\Mandat\RetrocessionNet::class,
-
+      "all" => null
     ];
 
     protected $calculationsQueues = [
@@ -94,6 +94,15 @@ class MandatController extends VoyagerBaseController
       "retrocession_net" => [
         "ri_amount",
         "retrocession"
+      ],
+      "all" => [
+        "tva_npr",
+        "interest",
+        "total_pay",
+        "total_interest",
+        "retrocession",
+        "net_intake",
+        "retrocession_net",
       ]
     ];
 
@@ -120,7 +129,8 @@ class MandatController extends VoyagerBaseController
       $fields_queue = $this->preProcessing($field);
 
       foreach ($fields_queue as $field_queue) {
-        $calculation->addField(new $this->calculationsServices[$field_queue]($mandat));
+        if(!is_null($this->calculationsServices[$field_queue]))
+          $calculation->addField(new $this->calculationsServices[$field_queue]($mandat));
       }
       $return = $calculation->processCalculation();
 
