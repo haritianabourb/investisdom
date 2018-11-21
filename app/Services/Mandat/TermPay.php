@@ -13,14 +13,14 @@ use App\Services\AbstractField;
 		protected $name = "term_pay";
 		protected $validations = [
 			"complement_financement" => "required",
-			"taux_pret" => "required",
+			"tx_pret" => "required",
 			"period" => "required"
 		];
 
 		public function process(){
 			if($this->parameters->get('complement_financement') == Funding::BANK){
-				$deno = 1.0 - 1.0 / pow((1+ ($this->parameters->get('taux_pret')/100)),$this->parameters->get('period'));
-				return ($this->parameters->get('loan_amount') * ($this->parameters->get('taux_pret')/100)) / $deno;
+				$deno = 1.0 - 1.0 / pow((1+ ($this->parameters->get('taux_pret'))),$this->parameters->get('period'));
+				return ($this->parameters->get('loan_amount') * ($this->parameters->get('taux_pret'))) / $deno;
 
 				// $interest = round($this->loan_amount * $this->taux_pret, 2);
 				//
