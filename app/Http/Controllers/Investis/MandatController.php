@@ -28,6 +28,10 @@ class MandatController extends VoyagerBaseController
       "term_pay" => \App\Services\Mandat\TermPay::class,
       "term_pay_ttc" => \App\Services\Mandat\TermPayTTC::class,
       "interest" => \App\Services\Mandat\Interest::class,
+      "total_pay" => \App\Services\Mandat\TotalPay::class,
+      "total_interest" => \App\Services\Mandat\TotalInterest::class,
+      "annexe_fee" => \App\Services\Mandat\AnnexeFee::class,
+      "juridical_fee" => \App\Services\Mandat\JuridicalFee::class,
     ];
 
     protected $calculationsQueues = [
@@ -55,6 +59,13 @@ class MandatController extends VoyagerBaseController
       ],
       "interest" => [
         "term_pay"
+      ],
+      "total_pay" => [
+        "term_years",
+        "term_pay",
+      ],
+      "total_interest" => [
+        "total_pay",
       ]
     ];
 
@@ -81,13 +92,9 @@ class MandatController extends VoyagerBaseController
       $fields_queue = $this->preProcessing($field);
 
       foreach ($fields_queue as $field_queue) {
-        // code...
         $calculation->addField(new $this->calculationsServices[$field_queue]($mandat));
       }
-
       $return = $calculation->processCalculation();
-
-      // dd($return);
 
       return response()
         ->json([
