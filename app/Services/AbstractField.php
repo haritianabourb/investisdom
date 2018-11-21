@@ -37,6 +37,10 @@ abstract class AbstractField implements FieldContract{
 		}
 	}
 
+	public function validationsFields(){
+		return array_keys($this->validations)?? false;
+	}
+
 
 
 }
