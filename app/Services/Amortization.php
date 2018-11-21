@@ -43,6 +43,7 @@ use App\Services\Funding;
 			$this->summary = $this->getSummary();
 			// XXX calculation field checked
 			$this->schedule = $this->getSchedule();
+			// XXX calculation field checked
 			$this->npv = $this->getNPV();
 
 			$this->loan_amount = $this->getLoanAmount();

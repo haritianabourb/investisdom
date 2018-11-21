@@ -33,6 +33,7 @@ class MandatController extends VoyagerBaseController
       "annexe_fee" => \App\Services\Mandat\AnnexeFee::class,
       "juridical_fee" => \App\Services\Mandat\JuridicalFee::class,
       "schedule" => \App\Services\Mandat\Schedule::class,
+      "van_paiement" => \App\Services\Mandat\VANPaiement::class,
     ];
 
     protected $calculationsQueues = [
@@ -70,7 +71,10 @@ class MandatController extends VoyagerBaseController
       ],
       "schedule" => [
         "loan_amount"
-      ]
+      ],
+      "van_paiement" => [
+        "schedule",
+      ],
     ];
 
     public function calculate(Request $request, $field=null){
