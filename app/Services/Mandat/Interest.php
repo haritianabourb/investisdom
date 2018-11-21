@@ -19,7 +19,7 @@ use App\Services\AbstractField;
 
 		public function process(){
 			if($this->parameters->get('complement_financement') == Funding::BANK){
-				return $this->parameters->get('loan_amount') * $this->parameters->get('taux_pret') / 100;
+				return $this->parameters->get('loan_amount') * $this->parameters->get('tx_pret')/100;
 				//
 				// $this->principal = round($this->term_pay - $interest, 2);
 				//
