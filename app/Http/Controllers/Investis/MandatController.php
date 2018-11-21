@@ -38,34 +38,22 @@ class MandatController extends VoyagerBaseController
         "tva_npr",
       ],
       "ri_amount" => [
-        "tva_npr",
         "tax_base",
       ],
       "ttc_amount" => [
         "ht_amount",
       ],
       "loan_amount" => [
-        "ht_amount",
         "ttc_amount"
       ],
       "term_pay" => [
         "taux_pret",
-        "ht_amount",
-        "ttc_amount",
         "loan_amount",
       ],
       "term_pay_ttc" => [
-        "taux_pret",
-        "ht_amount",
-        "ttc_amount",
-        "loan_amount",
         "term_pay"
       ],
       "interest" => [
-        "taux_pret",
-        "ht_amount",
-        "ttc_amount",
-        "loan_amount",
         "term_pay"
       ]
     ];
@@ -90,15 +78,16 @@ class MandatController extends VoyagerBaseController
           ]);
       }
 
-      // XXX Pre-proccessing
-      if(array_has($this->calculationsQueues, $field)){
-        foreach ($this->calculationsQueues[$field] as $field_queue) {
-          $calculation->addField(new $this->calculationsServices[$field_queue]($mandat));
-        }
+      $fields_queue = $this->preProcessing($field);
+
+      foreach ($fields_queue as $field_queue) {
+        // code...
+        $calculation->addField(new $this->calculationsServices[$field_queue]($mandat));
       }
 
-      $calculation->addField(new $this->calculationsServices[$field]($mandat));
       $return = $calculation->processCalculation();
+
+      // dd($return);
 
       return response()
         ->json([
@@ -106,6 +95,16 @@ class MandatController extends VoyagerBaseController
           'parameter' => request()->all(),
           'results' => collect($return->all()),
         ]);
+    }
+
+    private function preProcessing($field, $fieldsToProcessing = []){
+      if(array_has($this->calculationsQueues, $field)){
+        foreach ($this->calculationsQueues[$field] as $field_queue) {
+          $fieldsToProcessing = $this->preProcessing($field_queue, $fieldsToProcessing);
+        }
+      }
+      $fieldsToProcessing[] = $field;
+      return $fieldsToProcessing;
     }
 
 }
