@@ -43,7 +43,9 @@ use App\Services\FieldContract;
 
 				// If Validate, Calculate or send Errors
 				$result = $item->validate()? $item->process() : $item->errors();
-
+				if(!$item->validate()){
+					dd($item->name(), $item->errors());
+				}
 				// Add this to the return variable
 				$this->return->put($key, $result);
 

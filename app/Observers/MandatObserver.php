@@ -6,10 +6,14 @@ use App\Mandat;
 // use App\TauxCGP;
 use App\Services\Amortization;
 use Carbon\Carbon;
+use \App\Http\Traits\HasFieldsToCalculate;
 
 
 class MandatObserver
 {
+    use HasFieldsToCalculate;
+
+    protected $calculate_name = "mandat";
 
     /**
      * Handle the contract "creating" event.
@@ -51,7 +55,18 @@ class MandatObserver
      */
     public function saving(Mandat $mandat)
     {
-      $mandat = $this->processCalculation($mandat);
+      $request = request()->all();
+
+      // FIXME some field doesn't exist, we have to change it ASPA
+      $request['tx_pret'] = $request['taux_pret'];
+      $request['nbr_period'] = $request['duree_pret_periode'];
+
+      $calculation = $this->calculateField($request, 'all');
+      $return = $calculation;
+
+      // dd($return);
+      $mandat->resultats = $return;
+      $mandat->van_paiement = $return->pop('schedule');
     }
 
     /**

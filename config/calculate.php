@@ -49,6 +49,7 @@ return [
             "ttc_amount"
           ],
           "term_pay" => [
+            "period",
             "taux_pret",
             "loan_amount",
           ],
@@ -72,24 +73,21 @@ return [
             "schedule",
           ],
           "retrocession" => [
-            "tax_base",
+            "ri_amount",
             "van_paiement",
-            "ri_amount"
           ],
           "net_intake" => [
             "total_vat"
           ],
           "retrocession_net" => [
-            "ri_amount",
             "retrocession"
           ],
           "all" => [
             "tva_npr",
             "interest",
-            "total_pay",
             "total_interest",
-            "retrocession",
             "net_intake",
+            "retrocession",
             "retrocession_net",
           ],
         ],

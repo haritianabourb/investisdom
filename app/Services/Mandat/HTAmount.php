@@ -14,7 +14,7 @@ use App\Services\AbstractField;
 			"montant_ht" => "required",
 			"fraix_defiscalisable" => "required",
 			"montant_frais_tenue_compte" => "required",
-			"carte_grise" => "required",
+			"carte_grise" => "nullable",
 		];
 
 		public function process(){

@@ -12,13 +12,13 @@ use App\Services\AbstractField;
 		protected $name = "tax_base";
 		protected $validations = [
 			"montant_ht" => "required",
-			"fraix_defiscalisable" => "required",
-			"montant_subvention" => "required",
-			"deduction_base" => "required",
+			"fraix_defiscalisable" => "nullable",
+			"montant_subvention" => "nullable",
+			"deduction_base" => "nullable",
 		];
 
 		public function process(){
-			// dd($this);
+
 			return (
 					$this->parameters->get('montant_ht')
 				- $this->parameters->get('fraix_defiscalisable')

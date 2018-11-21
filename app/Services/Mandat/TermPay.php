@@ -13,8 +13,7 @@ use App\Services\AbstractField;
 		protected $name = "term_pay";
 		protected $validations = [
 			"complement_financement" => "required",
-			"tx_pret" => "required",
-			"period" => "required"
+			"tx_pret" => "required"
 		];
 
 		public function process(){
