@@ -35,9 +35,11 @@ use App\Services\Funding;
 		}
 
 		public function processCalc(){
-
+			// XXX calulation in checked
 			$this->taxe_base = $this->getTaxBase();
+			// XXX calculation field checked
 			$this->loan_amount = $this->getLoanAmount();
+			// XXX calculation field checked
 			$this->summary = $this->getSummary();
 			$this->schedule = $this->getSchedule();
 			$this->npv = $this->getNPV();
