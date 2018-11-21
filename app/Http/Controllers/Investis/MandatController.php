@@ -28,6 +28,8 @@ class MandatController extends VoyagerBaseController
       "ht_amount" => \App\Services\Mandat\HTAmount::class,
       "ttc_amount" => \App\Services\Mandat\TTCAmount::class,
       "loan_amount" => \App\Services\Mandat\LoanAmount::class,
+      "term_pay" => \App\Services\Mandat\TermPay::class,
+      "interest" => \App\Services\Mandat\Interest::class,
     ];
 
     protected $calculationsQueues = [
@@ -44,6 +46,17 @@ class MandatController extends VoyagerBaseController
       "loan_amount" => [
         "ht_amount",
         "ttc_amount"
+      ],
+      "term_pay" => [
+        "ht_amount",
+        "ttc_amount",
+        "loan_amount"
+      ],
+      "interest" => [
+        "ht_amount",
+        "ttc_amount",
+        "loan_amount",
+        "term_pay"
       ]
     ];
 

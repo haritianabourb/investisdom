@@ -40,8 +40,10 @@ use App\Services\FieldContract;
 					$item->addParameters($this->lastResult);
 				}
 
-				$this->return->put($key, $item->validate()? $item->process() : $item->errors());
-				$this->lastResult = [$key => $item->process()];
+				$result = $item->validate()? $item->process() : $item->errors();
+
+				$this->return->put($key, $result);
+				$this->lastResult = [$key => $item->validate() ? $result : null];
 
 			});
 

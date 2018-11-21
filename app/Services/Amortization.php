@@ -35,7 +35,7 @@ use App\Services\Funding;
 		}
 
 		public function processCalc(){
-			
+
 			$this->taxe_base = $this->getTaxBase();
 			$this->loan_amount = $this->getLoanAmount();
 			$this->summary = $this->getSummary();
@@ -70,16 +70,22 @@ use App\Services\Funding;
 
 				$deno = 1.0 - 1.0 / pow((1+ $this->taux_pret),$this->period);
 				$this->term_pay = ($this->loan_amount * $this->taux_pret) / $deno;
+
 				$interest = round($this->loan_amount * $this->taux_pret, 2);
+
 				$this->principal = round($this->term_pay - $interest, 2);
+
 				$this->balance = round($this->loan_amount - $this->principal, 2);
 			}
 
 			if($this->mandat->complement_financement == Funding::CASH){
 
 				$this->term_pay = $this->loan_amount/$this->period;
+
 				$interest = 0;
+
 				$this->principal = round($this->term_pay, 2);
+
 				$this->balance = round($this->loan_amount - ($this->period * $this->principal), 2);
 
 			}
@@ -139,6 +145,7 @@ use App\Services\Funding;
 		/**
 		 * get all taxe for base amount
 		 * (base eligible et taxe)
+		 * XXX Added it to service
 		 * @return array base taxe
 		 */
 		public function getTaxBase(){
@@ -181,6 +188,7 @@ use App\Services\Funding;
 
 		/**
 		 * Return loan investissement, (reste a financer)
+		 * XXX Added it to Service
 		 * @return float the loan amount
 		 */
 		public function getLoanAmount(){
