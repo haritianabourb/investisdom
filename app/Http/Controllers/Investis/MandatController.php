@@ -15,13 +15,9 @@ class MandatController extends VoyagerBaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    protected $validations = [
-      "montant_ttc" => [
-        "montant_ht" => "required",
-      ],
-    ];
-
     protected $calculationsServices = [
+      "term_years" => \App\Services\Mandat\Term_Years::class,
+      "period" => \App\Services\Mandat\Period::class,
       "tva_npr" => \App\Services\Mandat\TVANPR::class,
       "tax_base" => \App\Services\Mandat\TaxBase::class,
       "ri_amount" => \App\Services\Mandat\RIAmount::class,
@@ -33,6 +29,9 @@ class MandatController extends VoyagerBaseController
     ];
 
     protected $calculationsQueues = [
+      "period" => [
+        "term_years",
+      ],
       "tax_base" => [
         "tva_npr",
       ],
