@@ -48,7 +48,10 @@ use App\Services\Funding;
 
 			$this->loan_amount = $this->getLoanAmount();
 
+			// XXX calculation field checked
 			$this->net_intake = $this->getNetIntake();
+
+			// XXX calculation field checked
 			$this->other = $this->getOther();
 
 			$this->mandat->resultats = collect(array(

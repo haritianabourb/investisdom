@@ -20,6 +20,7 @@ class MandatController extends VoyagerBaseController
       "period" => \App\Services\Mandat\Period::class,
       "taux_pret" => \App\Services\Mandat\TauxPret::class,
       "tva_npr" => \App\Services\Mandat\TVANPR::class,
+      "total_vat" => \App\Services\Mandat\TotalVAT::class,
       "tax_base" => \App\Services\Mandat\TaxBase::class,
       "ri_amount" => \App\Services\Mandat\RIAmount::class,
       "ht_amount" => \App\Services\Mandat\HTAmount::class,
@@ -34,6 +35,10 @@ class MandatController extends VoyagerBaseController
       "juridical_fee" => \App\Services\Mandat\JuridicalFee::class,
       "schedule" => \App\Services\Mandat\Schedule::class,
       "van_paiement" => \App\Services\Mandat\VANPaiement::class,
+      "retrocession" => \App\Services\Mandat\Retrocession::class,
+      "net_intake" => \App\Services\Mandat\NetIntake::class,
+      "retrocession_net" => \App\Services\Mandat\RetrocessionNet::class,
+
     ];
 
     protected $calculationsQueues = [
@@ -42,6 +47,9 @@ class MandatController extends VoyagerBaseController
       ],
       "tax_base" => [
         "tva_npr",
+      ],
+      "total_vat" => [
+        "tva_npr"
       ],
       "ri_amount" => [
         "tax_base",
@@ -75,6 +83,18 @@ class MandatController extends VoyagerBaseController
       "van_paiement" => [
         "schedule",
       ],
+      "retrocession" => [
+        "tax_base",
+        "van_paiement",
+        "ri_amount"
+      ],
+      "net_intake" => [
+        "total_vat"
+      ],
+      "retrocession_net" => [
+        "ri_amount",
+        "retrocession"
+      ]
     ];
 
     public function calculate(Request $request, $field=null){
