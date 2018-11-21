@@ -64,9 +64,8 @@ class MandatObserver
       $calculation = $this->calculateField($request, 'all');
       $return = $calculation;
 
-      // dd($return);
-      $mandat->resultats = $return;
-      $mandat->van_paiement = $return->pop('schedule');
+      $mandat->van_paiement = json_encode($return->only(['schedule'])->first());
+      $mandat->resultats = $return->except(['schedule']);
     }
 
     /**

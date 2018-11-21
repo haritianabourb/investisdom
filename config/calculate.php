@@ -84,6 +84,9 @@ return [
           ],
           "all" => [
             "tva_npr",
+            "term_pay_ttc",
+            "juridical_fee",
+            "annexe_fee",
             "interest",
             "total_interest",
             "net_intake",

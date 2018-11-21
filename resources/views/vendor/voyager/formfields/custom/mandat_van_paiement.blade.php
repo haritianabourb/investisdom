@@ -5,6 +5,7 @@
 $van_paiements = json_decode($dataTypeContent->{$row->field});
 // var_dump($van_paiements);
 ?>
+{{-- {{ dd($dataTypeContent->{$row->field}) }} --}}
 
 <table class="table table-responsive table-bordered table-stripped">
   <thead>
