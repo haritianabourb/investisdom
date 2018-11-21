@@ -37,13 +37,18 @@ use App\Services\FieldContract;
 		public function processCalculation(){
     	$this->collection->each(function($item, $key){
 				if(!is_null($this->lastResult)){
+					// Add Last Calculate Field In Next Calculations
 					$item->addParameters($this->lastResult);
 				}
 
+				// If Validate, Calculate or send Errors
 				$result = $item->validate()? $item->process() : $item->errors();
 
+				// Add this to the return variable
 				$this->return->put($key, $result);
-				$this->lastResult = [$key => $item->validate() ? $result : null];
+
+				//Add the last calculation on the results queue
+				$this->lastResult[$key] = $item->validate() ? $result : null;
 
 			});
 
