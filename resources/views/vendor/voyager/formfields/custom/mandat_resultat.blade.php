@@ -16,7 +16,7 @@ $resultat = json_decode($dataTypeContent->{$row->field});
       <hr/>
       <p class="lead">Montant TTC: {{number_format($resultat->ttc_amount, 2, ",", " ")}} &euro;</p>
       <hr/>
-      <p class="lead text-primary">Apport Net: {{number_format($resultat->net_intake, 2, ",", " ")}} &euro;</p>
+      <p class="lead text-primary">Apport Net: {{number_format($resultat->apport_net, 2, ",", " ")}} &euro;</p>
       <p class="lead text-primary">Taux de rétrocession: {{number_format($resultat->retrocession*100, 2, ",", " ")}} %</p>
 
       <table class="table table-responsive table-stripped">
@@ -29,29 +29,29 @@ $resultat = json_decode($dataTypeContent->{$row->field});
             <td class="font-weight-bold">Echeance T.T.C.</td>
             <td class="text-right">{{number_format($resultat->term_pay_ttc, 2, ",", " ")}} &euro;</td>
           </tr>
-          <tr>
+          {{-- <tr>
             <td class="font-weight-bold">Fraix Judiciaire</td>
             <td class="text-right">{{number_format($resultat->juridical_fee, 2, ",", " ")}} &euro;</td>
           </tr>
           <tr>
             <td class="font-weight-bold">Fraix Annexe</td>
             <td class="text-right">{{number_format($resultat->annexe_fee, 2, ",", " ")}} &euro;</td>
-          </tr>
+          </tr> --}}
           <tr>
             <td class="font-weight-bold">Taxe Globale</td>
             <td class="text-right">{{number_format($resultat->total_vat, 2, ",", " ")}} &euro;</td>
           </tr>
           <tr>
-            <td class="font-weight-bold">Paiement à terme</td>
+            <td class="font-weight-bold">Total des échéances</td>
             <td class="text-right">{{number_format($resultat->total_pay, 2, ",", " ")}} &euro;</td>
           </tr>
-          <tr>
+          {{-- <tr>
             <td class="font-weight-bold">Interêt à terme</td>
             <td class="text-right">{{number_format($resultat->total_interest, 2, ",", " ")}} &euro;</td>
-          </tr>
+          </tr> --}}
         </tbody>
       </table>
-      <p class="lead text-primary">Valeur Nette Actuelle de l'investissement: {{number_format($resultat->van_paiement, 2, ",", " ")}} &euro;</p>
+      <p class="lead text-primary">Valeur actualisée des débours: {{number_format($resultat->van_paiement, 2, ",", " ")}} &euro;</p>
       {{-- <p>Retrocession net: {{number_format($resultat->retrocession_net, 2, ",", " ")}} &euro;</p> --}}
   </div>
 

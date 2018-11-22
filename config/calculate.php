@@ -26,6 +26,8 @@ return [
           "juridical_fee" => \App\Services\Mandat\JuridicalFee::class,
           "schedule" => \App\Services\Mandat\Schedule::class,
           "van_paiement" => \App\Services\Mandat\VANPaiement::class,
+          "numerateur_van" => \App\Services\Mandat\NumerateurVAN::class,
+          "vpm" => \App\Services\Mandat\VPM::class,
           "retrocession" => \App\Services\Mandat\Retrocession::class,
           "apport_net" => \App\Services\Mandat\NetIntake::class,
           "taux_retrocession" => \App\Services\Mandat\TauxRetrocession::class,
@@ -79,6 +81,9 @@ return [
           "van_paiement" => [
             "schedule",
           ],
+          "numerateur_van" => [
+            "van_paiement",
+          ],
           "retrocession" => [
             "ri_amount",
             "van_paiement",
@@ -109,6 +114,8 @@ return [
             "total_interest",
             "apport_net",
             "van_paiement",
+            "numerateur_van",
+            "vpm",
             "apport_bd",
             "apport_investissement",
             "taux_retrocession",
