@@ -54,7 +54,7 @@ use App\Services\FieldContract;
 
 			});
 
-			return $this->return;
+			return $this->return->sortKeys();
 		}
 
 

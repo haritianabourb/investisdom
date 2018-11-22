@@ -61,11 +61,10 @@ class MandatObserver
       $request['tx_pret'] = $request['taux_pret'];
       $request['nbr_period'] = $request['duree_pret_periode'];
 
-      $calculation = $this->calculateField($request, 'all');
-      $return = $calculation;
+      $results = $this->calculateField($request, 'all');
 
-      $mandat->van_paiement = json_encode($return->only(['schedule'])->first());
-      $mandat->resultats = $return->except(['schedule']);
+      $mandat->van_paiement = json_encode($results->only(['schedule'])->first());
+      $mandat->resultats = $results->except(['schedule']);
     }
 
     /**
