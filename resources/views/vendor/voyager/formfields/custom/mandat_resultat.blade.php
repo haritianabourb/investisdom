@@ -7,7 +7,7 @@ $resultat = json_decode($dataTypeContent->{$row->field});
 <div class="panel panel-primary panel-bordered">
   <div class="panel-body">
       <p class="lead">Montant du credit: {{number_format($resultat->loan_amount, 2, ",", " ")}} &euro;</p>
-      <p class="lead">Base éligible: {{number_format($resultat->tax_base, 2, ",", " ")}} &euro;</p>
+      <p class="lead">Base éligible: {{number_format($resultat->base_defiscalisable, 2, ",", " ")}} &euro;</p>
       <hr/>
       <p class="lead">TVA NPR: {{number_format($resultat->tva_npr, 2, ",", " ")}} &euro;</p>
       <p class="lead">Montant H.T.: {{number_format($resultat->ht_amount, 2, ",", " ")}} &euro;</p>
