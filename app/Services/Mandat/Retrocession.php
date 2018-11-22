@@ -18,7 +18,7 @@ use App\Services\AbstractField;
 		// ];
 
 		public function process(){
-			$numerateur = $this->parameters->get('tax_base') - $this->parameters->get('van_paiement');
+			$numerateur = $this->parameters->get('base_defiscalisable') - $this->parameters->get('van_paiement');
 			return $numerateur/$this->parameters->get('ri_amount');
 		}
 

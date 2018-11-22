@@ -9,7 +9,7 @@ use App\Services\AbstractField;
 	class TaxBase extends AbstractField
 	{
 
-		protected $name = "tax_base";
+		protected $name = "base_defiscalisable";
 		protected $validations = [
 			"montant_ht" => "required",
 			"fraix_defiscalisable" => "nullable",

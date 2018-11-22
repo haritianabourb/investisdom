@@ -7,10 +7,10 @@ use App\Services\Funding;
 use App\Services\AbstractField;
 
 
-	class NetIntake extends AbstractField
+	class ApportBD extends AbstractField
 	{
 
-		protected $name = "apport_net";
+		protected $name = "apport_bd";
 		// protected $validations = [
 		// 	"complement_financement" => "required",
 		// 	"taux_pret" => "required",
@@ -18,7 +18,8 @@ use App\Services\AbstractField;
 		// ];
 
 		public function process(){
-			return $this->parameters->get('apport_snc') - $this->parameters->get('total_vat');
+			// dd($this);
+			return $this->parameters->get('apport_net')/$this->parameters->get('base_defiscalisable');
 		}
 
 	}

@@ -9,7 +9,9 @@ return [
           "taux_pret" => \App\Services\Mandat\TauxPret::class,
           "tva_npr" => \App\Services\Mandat\TVANPR::class,
           "total_vat" => \App\Services\Mandat\TotalVAT::class,
-          "tax_base" => \App\Services\Mandat\TaxBase::class,
+          "base_defiscalisable" => \App\Services\Mandat\TaxBase::class,
+          "apport_bd" => \App\Services\Mandat\ApportBD::class,
+          "apport_investissement" => \App\Services\Mandat\ApportInvestissement::class,
           "ri_amount" => \App\Services\Mandat\RIAmount::class,
           "ht_amount" => \App\Services\Mandat\HTAmount::class,
           "ttc_amount" => \App\Services\Mandat\TTCAmount::class,
@@ -24,7 +26,8 @@ return [
           "schedule" => \App\Services\Mandat\Schedule::class,
           "van_paiement" => \App\Services\Mandat\VANPaiement::class,
           "retrocession" => \App\Services\Mandat\Retrocession::class,
-          "net_intake" => \App\Services\Mandat\NetIntake::class,
+          "apport_net" => \App\Services\Mandat\NetIntake::class,
+          "taux_retrocession" => \App\Services\Mandat\TauxRetrocession::class,
           "retrocession_net" => \App\Services\Mandat\RetrocessionNet::class,
           "all" => null
         ],
@@ -33,14 +36,14 @@ return [
           "period" => [
             "term_years",
           ],
-          "tax_base" => [
+          "base_defiscalisable" => [
             "tva_npr",
           ],
           "total_vat" => [
             "tva_npr"
           ],
           "ri_amount" => [
-            "tax_base",
+            "base_defiscalisable",
           ],
           "ttc_amount" => [
             "ht_amount",
@@ -76,11 +79,21 @@ return [
             "ri_amount",
             "van_paiement",
           ],
-          "net_intake" => [
+          "apport_net" => [
             "total_vat"
           ],
           "retrocession_net" => [
             "retrocession"
+          ],
+          "apport_bd" => [
+            "ri_amount",
+            "base_defiscalisable",
+          ],
+          "apport_investissement" => [
+            "ht_amount",
+          ],
+          "taux_retrocession" => [
+            "apport_bd",
           ],
           "all" => [
             "tva_npr",
@@ -89,7 +102,11 @@ return [
             "annexe_fee",
             "interest",
             "total_interest",
-            "net_intake",
+            "apport_net",
+            "van_paiement",
+            "apport_bd",
+            "apport_investissement",
+            "taux_retrocession",
             "retrocession",
             "retrocession_net",
           ],

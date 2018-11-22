@@ -15,7 +15,7 @@ use App\Services\AbstractField;
 		];
 
 		public function process(){
-			return $this->parameters->get('tax_base')*($this->parameters->get('ri_amount_type_id')/100);
+			return $this->parameters->get('base_defiscalisable')*($this->parameters->get('ri_amount_type_id')/100);
 		}
 
 	}
