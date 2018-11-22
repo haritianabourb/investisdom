@@ -13,6 +13,7 @@ return [
           "apport_bd" => \App\Services\Mandat\ApportBD::class,
           "apport_investissement" => \App\Services\Mandat\ApportInvestissement::class,
           "ri_amount" => \App\Services\Mandat\RIAmount::class,
+          "ri_amount_percent" => \App\Services\Mandat\RIAmountPercent::class,
           "ht_amount" => \App\Services\Mandat\HTAmount::class,
           "ttc_amount" => \App\Services\Mandat\TTCAmount::class,
           "loan_amount" => \App\Services\Mandat\LoanAmount::class,
@@ -44,6 +45,9 @@ return [
           ],
           "ri_amount" => [
             "base_defiscalisable",
+          ],
+          "ri_amount_percent" => [
+            "ri_amount",
           ],
           "ttc_amount" => [
             "ht_amount",
@@ -100,6 +104,7 @@ return [
             "term_pay_ttc",
             "juridical_fee",
             "annexe_fee",
+            "ri_amount_percent",
             "interest",
             "total_interest",
             "apport_net",
