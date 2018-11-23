@@ -37,10 +37,10 @@ $resultat = json_decode($dataTypeContent->{$row->field});
             <td class="font-weight-bold">Fraix Annexe</td>
             <td class="text-right">{{number_format($resultat->annexe_fee, 2, ",", " ")}} &euro;</td>
           </tr> --}}
-          <tr>
+          {{-- <tr>
             <td class="font-weight-bold">Taxe Globale</td>
             <td class="text-right">{{number_format($resultat->total_vat, 2, ",", " ")}} &euro;</td>
-          </tr>
+          </tr> --}}
           <tr>
             <td class="font-weight-bold">Total des échéances</td>
             <td class="text-right">{{number_format($resultat->total_pay, 2, ",", " ")}} &euro;</td>
