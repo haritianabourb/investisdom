@@ -12,7 +12,7 @@ use App\Services\AbstractField;
 
 		protected $name = "ttc_amount";
 		protected $validations = [
-			"tva_investissement" => "required",
+			"tva_investissement" => "nullable",
 		];
 
 		public function process(){
