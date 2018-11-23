@@ -28,7 +28,7 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::group(['prefix' => 'mandat'], function(){
       Route::get('/calculate/{field}', 'Investis\MandatController@calculate')->name('admin.mandat.api.calculate');
-      Route::get('/{mandat}/calculate/{field}', 'Investis\MandatController@calculate')->name('admin.mandat.calculate');
+      Route::get('/{mandat}/calculate/{field}', 'Investis\MandatController@calculate')->name('admin.mandat.edit.calculate');
     });
 
 });

@@ -100,7 +100,7 @@
                                         @php($var_js .= "[name=$field_name]".(!$loop->last?",":""))
                                       @endforeach
                                       $('{{$var_js}}').on("change", function(event){
-                                        $.getJSON("{{route("admin.mandat.calculate", ["mandat" => $dataTypeContent->id, "field" => $row->field])}}",
+                                        $.getJSON("{{route("admin.mandat.".(!is_null($dataTypeContent->getKey()) ? 'edit' : 'api').".calculate", ["mandat" => $dataTypeContent->id, "field" => $row->field])}}",
                                           {
                                             @foreach ($fields as $field_name)
                                             "{{$field_name}}" : $('[name={{$field_name}}]').val() @if(!$loop->last),@endif
