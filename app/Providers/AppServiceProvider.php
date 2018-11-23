@@ -4,8 +4,10 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use App\Services\InvestisPDF;
+
 
 use Voyager;
 
@@ -27,8 +29,9 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         // Voyager::useModel('SNC', \App\SNC::class);
-
         Validator::extend('siren', '\App\Validators\SIRENValidator@validate');
+        DB::getDoctrineSchemaManager()->getDatabasePlatform()->registerDoctrineTypeMapping('status_pages', 'text');
+        DB::getDoctrineSchemaManager()->getDatabasePlatform()->registerDoctrineTypeMapping('post_status', 'text');
     }
 
     /**
