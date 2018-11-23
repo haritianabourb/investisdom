@@ -12,8 +12,8 @@ use App\Services\AbstractField;
 		protected $name = "ht_amount";
 		protected $validations = [
 			"montant_ht" => "required",
-			"fraix_defiscalisable" => "required",
-			"montant_frais_tenue_compte" => "required",
+			"fraix_defiscalisable" => "nullable",
+			"montant_frais_tenue_compte" => "nullable",
 			"carte_grise" => "nullable",
 		];
 
