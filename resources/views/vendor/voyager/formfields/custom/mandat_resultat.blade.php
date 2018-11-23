@@ -12,7 +12,7 @@ $resultat = json_decode($dataTypeContent->{$row->field});
       <p class="lead">TVA NPR: {{number_format($resultat->tva_npr, 2, ",", " ")}} &euro;</p>
       <p class="lead">Montant H.T.: {{number_format($resultat->ht_amount, 2, ",", " ")}} &euro;</p>
       <hr/>
-      <p class="lead text-primary">Retour sur Investissement: {{number_format($resultat->ri_amount, 2, ",", " ")}} &euro;</p>
+      <p class="lead text-primary">R&eacute;duction d'impôt: {{number_format($resultat->ri_amount, 2, ",", " ")}} &euro;</p>
       <hr/>
       <p class="lead">Montant TTC: {{number_format($resultat->ttc_amount, 2, ",", " ")}} &euro;</p>
       <hr/>
