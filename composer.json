@@ -19,7 +19,8 @@
         "niklasravnsborg/laravel-pdf": "^2.0",
         "orangehill/iseed": "^2.6",
         "tcg/voyager": "^1.1",
-        "voyager-themes": "^0.13.0"
+        "voyager-themes": "^0.13.0",
+        "markrogoyski/math-php": "0.*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",
