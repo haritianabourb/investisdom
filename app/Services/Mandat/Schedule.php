@@ -5,7 +5,7 @@ namespace App\Services\Mandat;
 use App\Services\VAT;
 use App\Services\Funding;
 use App\Services\AbstractField;
-
+use MathPHP\Finance;
 
 	class Schedule extends AbstractField
 	{
@@ -15,21 +15,20 @@ use App\Services\AbstractField;
 		public function process(){
 
 			$this->initSchedule();
-			$this->calculate();
+			// $this->calculate();
 
 			$schedule = array();
-			if($this->parameters->get('complement_financement') == Funding::CASH){
-				for($this->period = 1; $this->period <= $this->nbr_period; $this->period++){
-					array_push($schedule, $this->calculate());
 
-				}
-			}
-			else{
-				while($this->balance > 0){
-					array_push($schedule, $this->calculate());
-					$this->loan_amount = $this->balance;
-					$this->period--;
-				}
+			//DG : Apport locataire
+			array_push($schedule, array (
+				'payment' 	=> (float)$this->parameters->get('apport_locataire'),
+				'interest' 	=> 0,
+				'principal' => 0,
+				'balance' 	=> 0,
+			));
+
+			for($this->period = 1; $this->period <= $this->nbr_period; $this->period++){
+				array_push($schedule, $this->calculate());
 			}
 
 			return $schedule;
@@ -37,23 +36,13 @@ use App\Services\AbstractField;
 		}
 
 		private function initSchedule(){
-			$this->term_years = $this->parameters->get('duree_pret')/12;
 			$this->terms = 12;
-
-			if($this->parameters->get('complement_financement') == Funding::CASH){
-
-				$this->period = 0;
-				$this->nbr_period = $this->terms * $this->term_years;
-
-			}else{
-
-				$this->period = $this->nbr_period = $this->terms * $this->term_years;
-
-			}
-
-			$this->taux_pret = ($this->parameters->get('tx_pret')/100.0) / $this->terms;
+			$this->term_years = $this->parameters->get('duree_pret')/$this->terms;
+			$this->nbr_period = $this->terms * $this->term_years;
+			$this->taux_pret = $this->parameters->get('taux_pret');
 			$this->loan_amount = $this->parameters->get('loan_amount');
 			$this->term_pay = $this->parameters->get('term_pay');
+
 		}
 
 		private function calculate()
@@ -61,9 +50,9 @@ use App\Services\AbstractField;
 
 			if($this->parameters->get('complement_financement') == Funding::BANK){
 
-				$interest = round($this->loan_amount * $this->taux_pret, 3, PHP_ROUND_HALF_ODD);
-				$this->principal = round($this->term_pay - $interest, 3, PHP_ROUND_HALF_ODD);
-				$this->balance = round($this->loan_amount - $this->principal, 3, PHP_ROUND_HALF_ODD);
+				$interest = abs(Finance::ipmt($this->taux_pret, $this->period, $this->nbr_period,$this->loan_amount, 0, false));
+				$this->principal = abs(Finance::ppmt($this->taux_pret, $this->period, $this->nbr_period,$this->loan_amount, 0, false));
+				$this->balance = round(($this->balance ?? $this->loan_amount) - $this->principal, 2);
 
 			}
 
@@ -71,7 +60,7 @@ use App\Services\AbstractField;
 
 				$interest = 0;
 				$this->principal = round($this->term_pay, 2);
-				$this->balance = round($this->loan_amount - ($this->period * $this->principal), 2);
+				$this->balance = round($this->loan_amount - ($this->period * $this->term_pay), 2);
 
 			}
 
