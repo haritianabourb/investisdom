@@ -8,6 +8,7 @@ return [
           "period" => \App\Services\Mandat\Period::class,
           "taux_pret" => \App\Services\Mandat\TauxPret::class,
           "tva_npr" => \App\Services\Mandat\TVANPR::class,
+          "tva_loyer" => \App\Services\Mandat\TVALoyer::class,
           "total_vat" => \App\Services\Mandat\TotalVAT::class,
           "base_defiscalisable" => \App\Services\Mandat\TaxBase::class,
           "apport_bd" => \App\Services\Mandat\ApportBD::class,
@@ -73,6 +74,9 @@ return [
             "term_years",
             "term_pay",
           ],
+          "tva_loyer" => [
+            "term_pay"
+          ],
           "total_interest" => [
             "total_pay",
           ],
@@ -120,6 +124,7 @@ return [
             "van_paiement",
             "numerateur_van",
             "vpm",
+            "tva_loyer",
             "apport_bd",
             "apport_investissement",
             "taux_retrocession",
