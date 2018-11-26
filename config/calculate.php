@@ -31,6 +31,7 @@ return [
           "retrocession" => \App\Services\Mandat\Retrocession::class,
           "apport_net" => \App\Services\Mandat\NetIntake::class,
           "taux_retrocession" => \App\Services\Mandat\TauxRetrocession::class,
+          "taux_base_eligible" => \App\Services\Mandat\TauxBaseEligible::class,
           "retrocession_net" => \App\Services\Mandat\RetrocessionNet::class,
           "all" => null
         ],
@@ -104,6 +105,9 @@ return [
           "taux_retrocession" => [
             "apport_bd",
           ],
+          'taux_base_eligible' => [
+            'base_defiscalisable'
+          ],
           "all" => [
             "tva_npr",
             "term_pay_ttc",
@@ -119,6 +123,7 @@ return [
             "apport_bd",
             "apport_investissement",
             "taux_retrocession",
+            "taux_base_eligible",
             "retrocession",
             "retrocession_net",
           ],
