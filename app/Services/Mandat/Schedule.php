@@ -41,10 +41,14 @@ use App\Services\AbstractField;
 			$this->terms = 12;
 
 			if($this->parameters->get('complement_financement') == Funding::CASH){
+
 				$this->period = 0;
 				$this->nbr_period = $this->terms * $this->term_years;
+
 			}else{
+
 				$this->period = $this->nbr_period = $this->terms * $this->term_years;
+
 			}
 
 			$this->taux_pret = ($this->parameters->get('tx_pret')/100.0) / $this->terms;
@@ -56,23 +60,17 @@ use App\Services\AbstractField;
 		{
 
 			if($this->parameters->get('complement_financement') == Funding::BANK){
-				// dd($this->taux_pret, $this->period);
-				// $deno = 1.0 - 1.0 / pow((1+ $this->taux_pret),$this->period);
 
 				$interest = round($this->loan_amount * $this->taux_pret, 3, PHP_ROUND_HALF_ODD);
-
 				$this->principal = round($this->term_pay - $interest, 3, PHP_ROUND_HALF_ODD);
-
 				$this->balance = round($this->loan_amount - $this->principal, 3, PHP_ROUND_HALF_ODD);
-				// dd($deno, $this->term_pay, $interest, $this->principal, $this->balance);
+
 			}
 
 			if($this->parameters->get('complement_financement') == Funding::CASH){
 
 				$interest = 0;
-
 				$this->principal = round($this->term_pay, 2);
-
 				$this->balance = round($this->loan_amount - ($this->period * $this->principal), 2);
 
 			}
