@@ -27,19 +27,8 @@ use MathPHP\Finance;
 		  }
 
 
+
 			return Finance::npv($this->parameters->get('taux_pret'), $npv);
-
-			// dd(
-			// 	$pmt = Finance::pmt($this->parameters->get('taux_pret'), $this->parameters->get('duree_pret'),$this->parameters->get('loan_amount'), 0, false),
-			// 	$ipmt = Finance::ipmt($this->parameters->get('taux_pret'), 1, $this->parameters->get('duree_pret'),$this->parameters->get('loan_amount'), 0, false),
-			// 	$ppmt = Finance::ppmt($this->parameters->get('taux_pret'), 1, $this->parameters->get('duree_pret'),$this->parameters->get('loan_amount'), 0, false),
-			// 	$periods = Finance::periods($this->parameters->get('taux_pret'), $pmt, $this->parameters->get('loan_amount'), 0, false),
-			// 	$aer = Finance::aer($this->parameters->get('tx_pret')/100, 12),
-			// 	$pv = Finance::pv($this->parameters->get('taux_pret'), $periods, abs($pmt),0, false),
-			// 	$fv = Finance::fv($this->parameters->get('taux_pret'), $periods, abs($pmt),  $this->parameters->get('loan_amount'), true)
-			//
-			// );
-
 
 		}
 

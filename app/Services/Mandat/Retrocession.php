@@ -11,11 +11,6 @@ use App\Services\AbstractField;
 	{
 
 		protected $name = "retrocession";
-		// protected $validations = [
-		// 	"complement_financement" => "required",
-		// 	"taux_pret" => "required",
-		// 	"period" => "required"
-		// ];
 
 		public function process(){
 			$numerateur = $this->parameters->get('base_defiscalisable') - $this->parameters->get('van_paiement');
