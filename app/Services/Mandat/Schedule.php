@@ -19,7 +19,7 @@ use App\Services\AbstractField;
 
 			$schedule = array();
 			if($this->parameters->get('complement_financement') == Funding::CASH){
-				for($this->period = 0; $this->period <= $this->nbr_period; $this->period++){
+				for($this->period = 1; $this->period <= $this->nbr_period; $this->period++){
 					array_push($schedule, $this->calculate());
 
 				}
@@ -44,7 +44,9 @@ use App\Services\AbstractField;
 			$this->terms = 12;
 			// TODO show interest?
 			if($this->parameters->get('complement_financement') == Funding::CASH){
-				$this->period = $this->nbr_period =$this->parameters->get('nbr_period');
+				$this->period = 0;
+				$this->nbr_period = $this->terms * $this->term_years;
+				// dump($this->nbr_period, $this->parameters->get('nbr_period'), $this->parameters->get('duree_pret'));
 			}else{
 				$this->period = $this->nbr_period = $this->terms * $this->term_years;
 			}
@@ -72,8 +74,7 @@ use App\Services\AbstractField;
 
 			if($this->parameters->get('complement_financement') == Funding::CASH){
 
-				$this->term_pay = $this->loan_amount/$this->period;
-
+				$this->term_pay = $this->loan_amount/$this->nbr_period;
 				$interest = 0;
 
 				$this->principal = round($this->term_pay, 2);
