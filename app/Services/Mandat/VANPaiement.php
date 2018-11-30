@@ -6,6 +6,7 @@ use App\Services\VAT;
 use App\Services\Funding;
 use App\Services\AbstractField;
 use MathPHP\Finance;
+use Carbon\Carbon;
 
 
 	class VANPaiement extends AbstractField
@@ -14,21 +15,20 @@ use MathPHP\Finance;
 		protected $name = "van_paiement";
 
 		public function process(){
-			// $this->period = 0;
-			// $npv=0;
-			// $rate = $this->parameters->get('taux_pret');
+
 			$cashflows = $this->parameters->get('schedule');
-			// // INVESTISSEMENT DE DEPART
+
 			$npv = [];
 			// array_push($npv,$this->parameters->get('apport_locataire'));
-		  foreach($cashflows as $cf) {
+		  foreach($cashflows as $k => $cf) {
+				if($k == 0) continue;
 				// CALCUL DU VAN POUR CHAQUE PERIODE
 		    array_push($npv, $cf['payment']);
 		  }
 
 
 
-			return Finance::npv($this->parameters->get('taux_pret'), $npv);
+			return Finance::npv($this->parameters->get('taux_pret'), $npv) + $cashflows[0]['payment'];
 
 		}
 
