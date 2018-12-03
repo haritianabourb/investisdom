@@ -6,6 +6,7 @@ use App\Services\VAT;
 use App\Services\Funding;
 use App\Services\AbstractField;
 use MathPHP\Finance;
+use Carbon\Carbon;
 
 	class Schedule extends AbstractField
 	{
@@ -22,7 +23,7 @@ use MathPHP\Finance;
 			//DG : Apport locataire
 			array_push($schedule, array (
 				'payment' 	=> (float)$this->parameters->get('apport_locataire'),
-				'interest' 	=> 0,
+				'interet' 	=> 0,
 				'principal' => 0,
 				'balance' 	=> 0,
 			));
@@ -40,8 +41,8 @@ use MathPHP\Finance;
 			$this->term_years = $this->parameters->get('duree_pret')/$this->terms;
 			$this->nbr_period = $this->terms * $this->term_years;
 			$this->taux_pret = $this->parameters->get('taux_pret');
-			$this->loan_amount = $this->parameters->get('loan_amount');
-			$this->term_pay = $this->parameters->get('term_pay');
+			$this->montant_compl_fin = $this->parameters->get('montant_compl_fin');
+			$this->echeance_loyer = $this->parameters->get('echeance_loyer');
 
 		}
 
@@ -50,23 +51,23 @@ use MathPHP\Finance;
 
 			if($this->parameters->get('complement_financement') == Funding::BANK){
 
-				$interest = abs(Finance::ipmt($this->taux_pret, $this->period, $this->nbr_period,$this->loan_amount, 0, false));
-				$this->principal = abs(Finance::ppmt($this->taux_pret, $this->period, $this->nbr_period,$this->loan_amount, 0, false));
-				$this->balance = round(($this->balance ?? $this->loan_amount) - $this->principal, 2);
+				$interet = abs(Finance::ipmt($this->taux_pret, $this->period, $this->nbr_period,$this->montant_compl_fin, 0, false));
+				$this->principal = abs(Finance::ppmt($this->taux_pret, $this->period, $this->nbr_period,$this->montant_compl_fin, 0, false));
+				$this->balance = round(($this->balance ?? $this->montant_compl_fin) - $this->principal, 2);
 
 			}
 
 			if($this->parameters->get('complement_financement') == Funding::CASH){
 
-				$interest = 0;
-				$this->principal = round($this->term_pay, 2);
-				$this->balance = round($this->loan_amount - ($this->period * $this->term_pay), 2);
+				$interet = 0;
+				$this->principal = round($this->echeance_loyer, 2);
+				$this->balance = round($this->montant_compl_fin - ($this->period * $this->echeance_loyer), 2);
 
 			}
 
 			return array (
-				'payment' 	=> $this->term_pay,
-				'interest' 	=> $interest,
+				'payment' 	=> $this->echeance_loyer,
+				'interet' 	=> $interet,
 				'principal' => $this->principal,
 				'balance' 	=> $this->balance,
 				);

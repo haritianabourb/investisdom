@@ -10,7 +10,7 @@ use App\Services\AbstractField;
 	class TotalPay extends AbstractField
 	{
 
-		protected $name = "total_pay";
+		protected $name = "montant_total_loyer";
 		// protected $validations = [
 		// 	"complement_financement" => "required",
 		// 	"taux_pret" => "required",
@@ -18,7 +18,7 @@ use App\Services\AbstractField;
 		// ];
 
 		public function process(){
-			return $this->parameters->get('term_pay') *  12 * $this->parameters->get('term_years');
+			return $this->parameters->get('echeance_loyer') *  12 * $this->parameters->get('term_years');
 		}
 
 	}

@@ -9,7 +9,7 @@ use App\Services\AbstractField;
 	class RIAmount extends AbstractField
 	{
 
-		protected $name = "ri_amount";
+		protected $name = "montant_reduction_impot";
 		protected $validations = [
 			"ri_amount_type_id" => "required",
 		];

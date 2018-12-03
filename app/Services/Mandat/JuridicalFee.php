@@ -10,7 +10,7 @@ use App\Services\AbstractField;
 	class JuridicalFee extends AbstractField
 	{
 
-		protected $name = "juridical_fee";
+		protected $name = "hono_jur";
 		// protected $validations = [
 		// 	"complement_financement" => "required",
 		// 	"taux_pret" => "required",
@@ -18,7 +18,6 @@ use App\Services\AbstractField;
 		// ];
 
 		public function process(){
-			// XXX Frais CFE Et taxe annexe
 			// TODO show if entered
 			// XXX Honoraire juridique
 			if($this->parameters->get('montant_ht') <= 30000){

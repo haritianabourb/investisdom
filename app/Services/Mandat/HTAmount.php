@@ -9,7 +9,7 @@ use App\Services\AbstractField;
 	class HTAmount extends AbstractField
 	{
 
-		protected $name = "ht_amount";
+		protected $name = "montant_ht_mandat";
 		protected $validations = [
 			"montant_ht" => "required",
 			"fraix_defiscalisable" => "nullable",

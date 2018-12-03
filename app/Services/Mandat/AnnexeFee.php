@@ -10,7 +10,7 @@ use App\Services\AbstractField;
 	class AnnexeFee extends AbstractField
 	{
 
-		protected $name = "annexe_fee";
+		protected $name = "cfe_tax";
 		// protected $validations = [
 		// 	"complement_financement" => "required",
 		// 	"taux_pret" => "required",

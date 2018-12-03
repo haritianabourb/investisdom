@@ -14,7 +14,7 @@ use App\Services\AbstractField;
 
 		public function process(){
 
-			$t = $this->parameters->get('term_pay') * $this->parameters->get('duree_pret');
+			$t = $this->parameters->get('echeance_loyer') * $this->parameters->get('duree_pret');
 
 			return $t*VAT::TVA;
 		}

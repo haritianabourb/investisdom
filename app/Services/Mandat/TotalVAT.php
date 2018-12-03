@@ -10,7 +10,7 @@ use App\Services\AbstractField;
 	class TotalVAT extends AbstractField
 	{
 
-		protected $name = "total_vat";
+		protected $name = "montant_total_tva";
 		// protected $validations = [
 		// 	"complement_financement" => "required",
 		// 	"taux_pret" => "required",

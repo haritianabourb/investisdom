@@ -19,7 +19,7 @@ use App\Services\AbstractField;
 
 		public function process(){
 			// dd($this);
-			return $this->parameters->get('apport_snc')/$this->parameters->get('ht_amount');
+			return $this->parameters->get('apport_snc')/$this->parameters->get('montant_ht_mandat');
 		}
 
 	}

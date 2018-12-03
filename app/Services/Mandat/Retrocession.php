@@ -14,7 +14,7 @@ use App\Services\AbstractField;
 
 		public function process(){
 			$numerateur = $this->parameters->get('base_defiscalisable') - $this->parameters->get('van_paiement');
-			return $numerateur/$this->parameters->get('ri_amount');
+			return $numerateur/$this->parameters->get('montant_reduction_impot');
 		}
 
 	}

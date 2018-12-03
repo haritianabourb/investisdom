@@ -10,7 +10,7 @@ use App\Services\AbstractField;
 	class TauxRetrocession extends AbstractField
 	{
 
-		protected $name = "taux_retrocession";
+		protected $name = "taux_retro";
 		// protected $validations = [
 		// 	"complement_financement" => "required",
 		// 	"taux_pret" => "required",

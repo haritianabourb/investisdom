@@ -18,7 +18,7 @@ use App\Services\AbstractField;
 		// ];
 
 		public function process(){
-			return $this->parameters->get('ri_amount')*$this->parameters->get('retrocession');
+			return $this->parameters->get('montant_reduction_impot')*$this->parameters->get('retrocession');
 		}
 
 	}

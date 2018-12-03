@@ -10,7 +10,7 @@ use App\Services\AbstractField;
 	class TermPayTTC extends AbstractField
 	{
 
-		protected $name = "term_pay_ttc";
+		protected $name = "echeance_loyer_ttc";
 		// protected $validations = [
 		// 	"complement_financement" => "required",
 		// 	"tx_pret" => "required",
@@ -18,7 +18,7 @@ use App\Services\AbstractField;
 		// ];
 
 		public function process(){
-			return $this->parameters->get('term_pay')*(1 + VAT::TVA);
+			return $this->parameters->get('echeance_loyer')*(1 + VAT::TVA);
 		}
 
 	}

@@ -10,7 +10,7 @@ use App\Services\AbstractField;
 	class TotalInterest extends AbstractField
 	{
 
-		protected $name = "total_interest";
+		protected $name = "total_interet";
 		// protected $validations = [
 		// 	"complement_financement" => "required",
 		// 	"taux_pret" => "required",
@@ -18,7 +18,7 @@ use App\Services\AbstractField;
 		// ];
 
 		public function process(){
-			return $this->parameters->get('total_pay') - $this->parameters->get('loan_amount');
+			return $this->parameters->get('montant_total_loyer') - $this->parameters->get('montant_compl_fin');
 		}
 
 	}

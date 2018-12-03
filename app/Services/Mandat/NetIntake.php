@@ -18,7 +18,7 @@ use App\Services\AbstractField;
 		// ];
 
 		public function process(){
-			return $this->parameters->get('apport_snc') - $this->parameters->get('total_vat');
+			return $this->parameters->get('apport_snc') - $this->parameters->get('montant_total_tva');
 		}
 
 	}

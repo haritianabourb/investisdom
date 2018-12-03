@@ -10,7 +10,7 @@ use App\Services\AbstractField;
 	class Interest extends AbstractField
 	{
 
-		protected $name = "interest";
+		protected $name = "interet";
 		// protected $validations = [
 		// 	"complement_financement" => "required",
 		// 	"taux_pret" => "required",
@@ -19,20 +19,20 @@ use App\Services\AbstractField;
 
 		public function process(){
 			if($this->parameters->get('complement_financement') == Funding::BANK){
-				return $this->parameters->get('loan_amount') * $this->parameters->get('tx_pret')/100;
+				return $this->parameters->get('montant_compl_fin') * $this->parameters->get('tx_pret')/100;
 				//
-				// $this->principal = round($this->term_pay - $interest, 2);
+				// $this->principal = round($this->echeance_loyer - $interet, 2);
 				//
-				// $this->balance = round($this->loan_amount - $this->principal, 2);
+				// $this->balance = round($this->montant_compl_fin - $this->principal, 2);
 			}
 
 			if($this->parameters->get('complement_financement') == Funding::CASH){
 
 				return 0;
 				//
-				// $this->principal = round($this->term_pay, 2);
+				// $this->principal = round($this->echeance_loyer, 2);
 				//
-				// $this->balance = round($this->loan_amount - ($this->period * $this->principal), 2);
+				// $this->balance = round($this->montant_compl_fin - ($this->period * $this->principal), 2);
 
 			}
 

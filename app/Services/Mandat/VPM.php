@@ -14,7 +14,7 @@ use MathPHP\Finance;
 
 		public function process(){
 
-			return abs(Finance::pmt($this->parameters->get('taux_pret'), $this->parameters->get('duree_pret'),$this->parameters->get('loan_amount'), 0, true));
+			return abs(Finance::pmt($this->parameters->get('taux_pret'), $this->parameters->get('duree_pret'),$this->parameters->get('montant_compl_fin'), 0, true));
 
 		}
 
