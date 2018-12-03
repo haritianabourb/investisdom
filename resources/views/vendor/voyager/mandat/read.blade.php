@@ -134,6 +134,8 @@
                                 @include('voyager::multilingual.input-hidden-bread-read')
                                 @if(isset($display_options->percent) && $display_options->percent)
                                     @include('voyager::partials.custom.percent')
+                                @elseif(is_null($dataTypeContent->{$row->field}))
+                                    <p class="label label-warning">Non renseign&eacute;</p>
                                 @else
                                   <p>{{ $dataTypeContent->{$row->field} }}</p>
                                 @endif
