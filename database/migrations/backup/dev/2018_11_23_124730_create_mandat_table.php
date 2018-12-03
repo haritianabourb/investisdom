@@ -15,20 +15,20 @@ class CreateMandatTable extends Migration {
 		Schema::create('mandat', function(Blueprint $table)
 		{
 			$table->integer('id', true);
-			$table->string('identifiant', 191);
+			$table->string('identifiant');
 			$table->integer('leaseholder_id');
-			$table->string('nature_mandat', 191);
+			$table->string('nature_mandat');
 			$table->integer('duree_mandat');
-			$table->string('type_defiscalisation', 191);
+			$table->string('type_defiscalisation');
 			$table->string('ri_amount_type_id');
-			$table->string('renouvellement', 191);
-			$table->string('complement_financement', 191);
+			$table->string('renouvellement');
+			$table->string('complement_financement');
 			$table->boolean('agrement');
 			$table->integer('supplier_id')->nullable();
 			$table->integer('segment_materiel')->nullable();
 			$table->boolean('emission_co2_materiel')->nullable();
 			$table->text('divers_materiel')->nullable();
-			$table->string('immatriculation_materiel', 191)->nullable();
+			$table->string('immatriculation_materiel')->nullable();
 			$table->text('description_materiel')->nullable();
 			$table->float('montant_ht', 10, 0)->default('0');
 			$table->float('carte_grise', 10, 0)->default('0');
@@ -44,11 +44,13 @@ class CreateMandatTable extends Migration {
 			$table->date('prevision_livraison')->nullable();
 			$table->float('apport_locataire', 10, 0)->default('0');
 			$table->float('apport_snc', 10, 0)->default('0');
+			$table->float('apport_bd', 10, 0)->default('0');
+			$table->float('apport_investissement', 10, 0)->default('0');
 			$table->boolean('is_subvention')->default(0);
-			$table->string('type_subvention', 191)->nullable()->default('');
+			$table->string('type_subvention')->nullable()->default('');
 			$table->float('montant_frais_tenue_compte', 10, 0)->default('75');
 			$table->integer('nombre_periode')->default(1);
-			$table->string('periodicite', 191)->default('MENSUELLE');
+			$table->string('periodicite')->default('MENSUELLE');
 			$table->integer('duree_pret')->default(60);
 			$table->float('taux_pret', 10, 0)->default('5.6');
 			$table->integer('duree_pret_periode')->default(60);
@@ -79,6 +81,24 @@ class CreateMandatTable extends Migration {
 			$table->string('remise_jur')->nullable();
 			$table->string('cfe_tax')->nullable();
 			$table->string('cfe_remise')->nullable();
+			$table->string('montant_ht_mandat')->nullable();
+			$table->string('montant_ttc_mandat')->nullable();
+			$table->string('apport_net')->nullable();
+			$table->string('numerateur_van')->nullable();
+			$table->string('retrocession')->nullable();
+			$table->string('retrocession_net')->nullable();
+			$table->string('montant_reduction_impot')->nullable();
+			$table->string('montant_reduction_impot_percent')->nullable();
+			$table->string('taux_base_eligible')->nullable();
+			// $table->string('taux_retrocession')->nullable();
+			$table->string('base_defiscalisable')->nullable();
+			$table->string('echeance_loyer')->nullable();
+			$table->string('echeance_loyer_ttc')->nullable();
+			$table->string('montant_total_loyer')->nullable();
+			$table->string('montant_total_tva')->nullable();
+			$table->string('total_interet')->nullable();
+			$table->text('schedule')->nullable();
+			$table->text('vpm')->nullable();
 		});
 	}
 

@@ -44,6 +44,7 @@ class DatabaseSeeder extends Seeder
         $this->call(DevInvestisVoyagerThemeOptionsTableSeeder::class);
         $this->call(DevInvestisCgpsTableSeeder::class);
         $this->call(DevInvestisSncsTableSeeder::class);
-        $this->call(DevInvestisMandatTableSeeder::class);
+        // $this->call(DevInvestisMandatTableSeeder::class);
+        $this->call(ResetSequenceTableSeeder::class);
     }
 }
