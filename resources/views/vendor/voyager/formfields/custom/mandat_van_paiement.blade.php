@@ -27,14 +27,14 @@ $van_paiements = json_decode($dataTypeContent->{$row->field});
     @foreach ($van_paiements as $van_paiement)
       <?php
         $total_payment += $van_paiement->payment;
-        $total_interest += $van_paiement->interest;
+        $total_interest += $van_paiement->interet;
         $total_balance += $van_paiement->principal;
         $total_principal +=  $van_paiement->balance;
       ?>
       <tr>
         <td class="text-center">{{$loop->iteration}}</td>
         <td class="text-center">{{number_format($van_paiement->payment, 2, ",", " ")}} &euro;</td>
-        <td class="text-center">{{number_format($van_paiement->interest, 2, ",", " ")}} &euro;</td>
+        <td class="text-center">{{number_format($van_paiement->interet, 2, ",", " ")}} &euro;</td>
         <td class="text-center">{{number_format($van_paiement->principal, 2, ",", " ")}} &euro;</td>
         <td class="text-center">{{number_format($van_paiement->balance, 2, ",", " ")}} &euro;</td>
       </tr>

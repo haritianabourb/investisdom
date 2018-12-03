@@ -56,7 +56,7 @@
                           @endif
                           <div class="col-md-{{ $display_options->width or 12 }}" @if(isset($display_options->id)){{ "id=$display_options->id" }}@endif>
                             <h5>{{ $row->display_name }}</h5>
-                            @if($row->field == 'van_paiement')
+                            @if($row->field == 'schedule')
                               @include('voyager::formfields.custom.mandat_van_paiement')
                             @elseif($row->field == 'resultats')
                               @include('voyager::formfields.custom.mandat_resultat')
