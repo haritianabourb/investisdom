@@ -130,7 +130,11 @@
                                 @endif
                             @else
                                 @include('voyager::multilingual.input-hidden-bread-read')
-                                <p>{{ $dataTypeContent->{$row->field} }}</p>
+                                @if(isset($display_options->percent) && $display_options->percent)
+                                    @include('voyager::partials.custom.percent')
+                                @else
+                                  <p>{{ $dataTypeContent->{$row->field} }}</p>
+                                @endif
                             @endif
                             @if(isset($sectionOpened) && $sectionOpened && $loop->last)
                               </div>
