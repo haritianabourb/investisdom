@@ -9,29 +9,29 @@ return [
           "taux_pret" => \App\Services\Mandat\TauxPret::class,
           "tva_npr" => \App\Services\Mandat\TVANPR::class,
           "tva_loyer" => \App\Services\Mandat\TVALoyer::class,
-          "total_vat" => \App\Services\Mandat\TotalVAT::class,
+          "montant_total_tva" => \App\Services\Mandat\TotalVAT::class,
           "base_defiscalisable" => \App\Services\Mandat\TaxBase::class,
           "apport_bd" => \App\Services\Mandat\ApportBD::class,
           "apport_investissement" => \App\Services\Mandat\ApportInvestissement::class,
-          "ri_amount" => \App\Services\Mandat\RIAmount::class,
-          "ri_amount_percent" => \App\Services\Mandat\RIAmountPercent::class,
-          "ht_amount" => \App\Services\Mandat\HTAmount::class,
-          "ttc_amount" => \App\Services\Mandat\TTCAmount::class,
-          "loan_amount" => \App\Services\Mandat\LoanAmount::class,
-          "term_pay" => \App\Services\Mandat\TermPay::class,
-          "term_pay_ttc" => \App\Services\Mandat\TermPayTTC::class,
-          "interest" => \App\Services\Mandat\Interest::class,
-          "total_pay" => \App\Services\Mandat\TotalPay::class,
-          "total_interest" => \App\Services\Mandat\TotalInterest::class,
-          "annexe_fee" => \App\Services\Mandat\AnnexeFee::class,
-          "juridical_fee" => \App\Services\Mandat\JuridicalFee::class,
+          "montant_reduction_impot" => \App\Services\Mandat\RIAmount::class,
+          "montant_reduction_impot_percent" => \App\Services\Mandat\RIAmountPercent::class,
+          "montant_ht_mandat" => \App\Services\Mandat\HTAmount::class,
+          "montant_ttc_mandat" => \App\Services\Mandat\TTCAmount::class,
+          "montant_compl_fin" => \App\Services\Mandat\LoanAmount::class,
+          "echeance_loyer" => \App\Services\Mandat\TermPay::class,
+          "echeance_loyer_ttc" => \App\Services\Mandat\TermPayTTC::class,
+          "interet" => \App\Services\Mandat\Interest::class,
+          "montant_total_loyer" => \App\Services\Mandat\TotalPay::class,
+          "total_interet" => \App\Services\Mandat\TotalInterest::class,
+          "cfe_tax" => \App\Services\Mandat\AnnexeFee::class,
+          "hono_jur" => \App\Services\Mandat\JuridicalFee::class,
           "schedule" => \App\Services\Mandat\Schedule::class,
           "van_paiement" => \App\Services\Mandat\VANPaiement::class,
           "numerateur_van" => \App\Services\Mandat\NumerateurVAN::class,
           "vpm" => \App\Services\Mandat\VPM::class,
           "retrocession" => \App\Services\Mandat\Retrocession::class,
           "apport_net" => \App\Services\Mandat\NetIntake::class,
-          "taux_retrocession" => \App\Services\Mandat\TauxRetrocession::class,
+          "taux_retro" => \App\Services\Mandat\TauxRetrocession::class,
           "taux_base_eligible" => \App\Services\Mandat\TauxBaseEligible::class,
           "retrocession_net" => \App\Services\Mandat\RetrocessionNet::class,
           "all" => null
@@ -44,44 +44,44 @@ return [
           "base_defiscalisable" => [
             "tva_npr",
           ],
-          "total_vat" => [
+          "montant_total_tva" => [
             "tva_npr"
           ],
-          "ri_amount" => [
+          "montant_reduction_impot" => [
             "base_defiscalisable",
           ],
-          "ri_amount_percent" => [
-            "ri_amount",
+          "montant_reduction_impot_percent" => [
+            "montant_reduction_impot",
           ],
-          "ttc_amount" => [
-            "ht_amount",
+          "montant_ttc_mandat" => [
+            "montant_ht_mandat",
           ],
-          "loan_amount" => [
-            "ttc_amount"
+          "montant_compl_fin" => [
+            "montant_ttc_mandat"
           ],
-          "term_pay" => [
+          "echeance_loyer" => [
             "period",
             "taux_pret",
-            "loan_amount",
+            "montant_compl_fin",
           ],
-          "term_pay_ttc" => [
-            "term_pay"
+          "echeance_loyer_ttc" => [
+            "echeance_loyer"
           ],
-          "interest" => [
-            "term_pay"
+          "interet" => [
+            "echeance_loyer"
           ],
-          "total_pay" => [
+          "montant_total_loyer" => [
             "term_years",
-            "term_pay",
+            "echeance_loyer",
           ],
           "tva_loyer" => [
-            "term_pay"
+            "echeance_loyer"
           ],
-          "total_interest" => [
-            "total_pay",
+          "total_interet" => [
+            "montant_total_loyer",
           ],
           "schedule" => [
-            "loan_amount"
+            "montant_compl_fin"
           ],
           "van_paiement" => [
             "schedule",
@@ -90,23 +90,23 @@ return [
             "van_paiement",
           ],
           "retrocession" => [
-            "ri_amount",
+            "montant_reduction_impot",
             "van_paiement",
           ],
           "apport_net" => [
-            "total_vat"
+            "montant_total_tva"
           ],
           "retrocession_net" => [
             "retrocession"
           ],
           "apport_bd" => [
-            "ri_amount",
+            "montant_reduction_impot",
             "base_defiscalisable",
           ],
           "apport_investissement" => [
-            "ht_amount",
+            "montant_ht_mandat",
           ],
-          "taux_retrocession" => [
+          "taux_retro" => [
             "apport_bd",
           ],
           'taux_base_eligible' => [
@@ -114,12 +114,12 @@ return [
           ],
           "all" => [
             "tva_npr",
-            "term_pay_ttc",
-            "juridical_fee",
-            "annexe_fee",
-            "ri_amount_percent",
-            "interest",
-            "total_interest",
+            "echeance_loyer_ttc",
+            "hono_jur",
+            "cfe_tax",
+            "montant_reduction_impot_percent",
+            "interet",
+            "total_interet",
             "apport_net",
             "van_paiement",
             "numerateur_van",
@@ -127,7 +127,7 @@ return [
             "tva_loyer",
             "apport_bd",
             "apport_investissement",
-            "taux_retrocession",
+            "taux_retro",
             "taux_base_eligible",
             "retrocession",
             "retrocession_net",
