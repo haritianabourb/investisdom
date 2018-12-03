@@ -63,8 +63,20 @@ class MandatObserver
 
       $results = $this->calculateField($request, 'all');
 
-      $mandat->van_paiement = json_encode($results->only(['schedule'])->first());
-      $mandat->resultats = $results->except(['schedule']);
+
+      $results->each(function ($item, $key) use ($mandat){
+        if(array_has($mandat->toArray(), $key)){
+          $mandat->$key = $item;
+        }
+      });
+
+      $mandat->schedule = json_encode($mandat->schedule);
+      $mandat->taux_pret = $request['tx_pret'];
+
+      // dd($results, $mandat);
+      //
+      $mandat->van_paiement = json_encode($results->only(['van_paiement'])->first());
+      $mandat->resultats = $results;
     }
 
     /**
