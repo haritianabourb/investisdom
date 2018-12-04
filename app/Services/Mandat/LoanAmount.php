@@ -12,6 +12,7 @@ use App\Services\AbstractField;
 
 		protected $name = "montant_compl_fin";
 		protected $validations = [
+			"montant_ht" => "required",
 			"apport_snc" => "required",
 			"apport_locataire" => "required",
 		];
