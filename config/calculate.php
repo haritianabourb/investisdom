@@ -56,9 +56,6 @@ return [
           "montant_ttc_mandat" => [
             "montant_ht_mandat",
           ],
-          "montant_compl_fin" => [
-            "montant_ttc_mandat"
-          ],
           "echeance_loyer" => [
             "period",
             "taux_pret",
