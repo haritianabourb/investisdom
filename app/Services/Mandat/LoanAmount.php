@@ -17,7 +17,7 @@ use App\Services\AbstractField;
 		];
 
 		public function process(){
-			return  $this->parameters->get('montant_ttc_mandat')-( $this->parameters->get("apport_snc") + $this->parameters->get('apport_locataire'));
+			return  $this->parameters->get('montant_ht')-( $this->parameters->get("apport_snc") + $this->parameters->get('apport_locataire'));
 		}
 
 	}
