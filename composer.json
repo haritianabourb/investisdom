@@ -20,6 +20,8 @@
         "orangehill/iseed": "^2.6",
         "tcg/voyager": "^1.1",
         "voyager-themes": "^0.13.0",
+        "nesbot/carbon": "2.5.1 as 1.35.0",
+        "kylekatarnls/laravel-carbon-2": "^1.0.0",
         "markrogoyski/math-php": "0.*"
     },
     "require-dev": {

@@ -2,12 +2,13 @@
 
 namespace App\Services;
 
-use Codedge\Fpdf\Fpdf\Fpdf;
+// use Codedge\Fpdf\Fpdf\Fpdf;
+use Mpdf\Mpdf as Fpdf;
 use Voyager;
 
 class InvestisPDF extends FPDF {
 
-  function Header()
+  function Header($content = '')
   	{
       // Logo
       $this->Image(resource_path('assets/images/logo2.jpg'),10,6,72);
