@@ -312,14 +312,11 @@
                     "[name=type_vehicle]"
                 ].join(", "); //getting selector string for jQuery
 
-                $("[name=immatriculation_materiel]").change(function() {
-                  console.log(this.value);
-                    if (this.value=="Oui") { //Oui, show fields
+                $("[name=immatriculation_materiel]").on("change", function() {
+                    if (this.value == 1) { //Oui, show fields
                         $(immatriculationMaterielementsToHide)
                         .parent().show("fast");
-                    }
-
-                    else { //otherwise, hide fields
+                    } else { //otherwise, hide fields
                         $(immatriculationMaterielementsToHide).val("")
                         .parent().hide("fast");
                     }
