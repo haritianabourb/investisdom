@@ -180,7 +180,7 @@
     <!-- End Delete File Modal -->
 @stop
 
-@section('javascript')
+@push('javascript')
     <script>
         var params = {}
         var $image
@@ -303,9 +303,34 @@
                 $("#option-complement-financement-2").click();
             }
 
+            // function Task2_HideImmatriculationMandat() {
+            //     if (!(window.location.href.indexOf("mandat")!=-1))
+            //         return;
+                var immatriculationMaterielementsToHide=[
+                    "[name=genre_vehicle]",
+                    "[name=marque_vehicle]",
+                    "[name=type_vehicle]"
+                ].join(", "); //getting selector string for jQuery
+
+                $("[name=immatriculation_materiel]").change(function() {
+                  console.log(this.value);
+                    if (this.value=="Oui") { //Oui, show fields
+                        $(immatriculationMaterielementsToHide)
+                        .parent().show("fast");
+                    }
+
+                    else { //otherwise, hide fields
+                        $(immatriculationMaterielementsToHide).val("")
+                        .parent().hide("fast");
+                    }
+                });
+
+                $("[name=immatriculation_materiel]").trigger('change');
+            // }
+
 
             $("#option-segment-materiel-"+$("[name=segment_materiel]").val()).click();
 
         });
     </script>
-@stop
+@endpush
