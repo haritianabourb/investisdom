@@ -79,6 +79,10 @@
                                         @include('voyager::multilingual.input-hidden-bread-edit-add')
                                         @if($row->type == 'relationship')
                                             @include('voyager::formfields.relationship')
+                                        @elseif (isset($options->calculate) && $options->calculate && isset($options->manual) && $options->manual)
+                                          @include('voyager::formfields.custom.calculate_manual')
+                                        @elseif (isset($options->calculate) && $options->calculate)
+                                          @include('voyager::formfields.custom.calculate')
                                         @else
                                             {!! app('voyager')->formField($row, $dataType, $dataTypeContent) !!}
                                         @endif
@@ -88,47 +92,6 @@
                                         @endforeach
                                 @endif
                               </div>
-
-                              @isset($options->calculate)
-                                @if($options->calculate)
-                                  @php($service = config("calculate.{$dataType->slug}.services.{$row->field}"))
-                                  @php($fields = (new $service)->validationsFields())
-                                  @push('javascript')
-                                    <script>
-                                      @php($var_js = "")
-                                      @foreach ($fields as $field_name)
-                                        @php($var_js .= "[name=$field_name]".(!$loop->last?",":""))
-                                      @endforeach
-                                      $('{{$var_js}}').on("change", function(event){
-                                        $.getJSON("{{route("admin.mandat.".(!is_null($dataTypeContent->getKey()) ? 'edit' : 'api').".calculate", ["mandat" => $dataTypeContent->id, "field" => $row->field])}}",
-                                          {
-                                            @foreach ($fields as $field_name)
-                                            "{{$field_name}}" : $('[name={{$field_name}}]').val() @if(!$loop->last),@endif
-                                            @endforeach
-                                          },
-                                          function(data) {
-                                            if(typeof data.results.{{$row->field}} === 'object'){
-                                              $("[name={{$row->field}}]").attr("value", 0);
-                                              for(error_field in data.results.{{$row->field}}){
-                                                var errorMsg = "<span><strong>{{$row->display_name}}:</strong> "+error_field+"</span>";
-                                                errorMsg += "<ul>";
-                                                for(error_msg of data.results.{{$row->field}}[error_field]){
-                                                  errorMsg += "<li>"+error_msg+"</li>";
-                                                }
-                                                errorMsg += "</ul>";
-                                              }
-                                              toastr.error(errorMsg);
-                                            }else{
-                                              toastr.info("{{$row->field}} = "+data.results.{{$row->field}});
-                                              $("[name={{$row->field}}]").attr("value", data.results.{{$row->field}});
-                                            }
-                                          }
-                                        );
-                                      });
-                                    </script>
-                                  @endpush
-                                @endif
-                              @endisset
                             @endforeach
                           {{-- </div> --}}
                           <hr/>
