@@ -34,7 +34,7 @@ return [
           "taux_retro" => \App\Services\Mandat\TauxRetrocession::class,
           "taux_base_eligible" => \App\Services\Mandat\TauxBaseEligible::class,
           "retrocession_net" => \App\Services\Mandat\RetrocessionNet::class,
-          "all" => null
+          "all" => \App\Services\Mandat\All::class,
         ],
 
         "queues" => [
