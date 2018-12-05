@@ -21,7 +21,6 @@ class MandatController extends VoyagerBaseController
     public function calculate(Request $request, Mandat $mandat, $field=null){
 
       $mandat = $request->all();
-
       $calculation = $this->calculateField($mandat, $field);
       $return = $calculation;
 

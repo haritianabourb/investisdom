@@ -12,9 +12,12 @@ use App\Services\FieldContract;
 		private $lastResult;
 
 		public function __construct(){
+			//TODO make unique to operate
 			$this->collection = collect([]);
 			$this->return = collect([]);
+
 		}
+
 
 		public function countFields(){
     	return $this->collection->count();
