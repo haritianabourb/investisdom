@@ -62,32 +62,6 @@ function Task5_HideFieldsForMandat() {
 
 }
 
-
-function Task2_HideImmatriculationMandat() {
-    if (!(window.location.href.indexOf("mandat")!=-1))
-        return;
-    var elementsToHide=[
-        "[name=genre_vehicle]",
-        "[name=marque_vehicle]",
-        "[name=type_vehicle]"
-    ].join(", "); //getting selector string for jQuery
-
-    $("[name=immatriculation_materiel]").change(function() {
-        if (this.value=="Oui") { //Oui, show fields
-            $(elementsToHide)
-            .parent().show("fast");
-        }
-
-        else { //otherwise, hide fields
-            $(elementsToHide).val("")
-            .parent().hide("fast");
-        }
-    });
-
-    $("[name=immatriculation_materiel]").trigger('change');
-}
-
-
 function Task4_IsReplacement() {
     if (!(window.location.href.indexOf("mandat")!=-1))
         return;
@@ -110,8 +84,6 @@ function Task4_IsReplacement() {
     $("[name=is_remplacement]").trigger('change'); //setting default visibility
 
 }
-
-
 
 function Task4_IsRepriseFournisseur() {
     if (!(window.location.href.indexOf("mandat")!=-1))
@@ -136,37 +108,10 @@ function Task4_IsRepriseFournisseur() {
 
 }
 
-
-// function Task3_MandatRenouvellement() {
-//     if (!(window.location.href.indexOf("mandat")!=-1))
-//         return;
-//     var elementsToHide=[
-//         "[name=motivation]"
-//     ].join(", "); //getting selector string for jQuery
-//
-//     $("[name=renouvellement]").change(function() {
-//         if (this.value=="2") { //Motivé, show fields
-//             $(elementsToHide)
-//             .parent().fadeTo("fast",1);
-//         }
-//
-//         else { //otherwise, hide fields
-//             $(elementsToHide).val("")
-//             .parent().fadeTo("fast",0);
-//         }
-//     });
-//
-//     $("[name=renouvellement]").trigger('change');
-// }
-
-
-
 $(document).ready(function() {
 
         Task6_HideFieldsForInvestorsAndIntermediaries();
         Task5_HideFieldsForMandat();
         Task4_IsReplacement();
         Task4_IsRepriseFournisseur();
-        // Task3_MandatRenouvellement();
-        Task2_HideImmatriculationMandat();
 });
