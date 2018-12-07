@@ -81,8 +81,8 @@ use App\Services\FieldContract;
 					// dump($pool[$field->name()]);
 		      foreach ($pool[$field->name()] as $field_queue) {
 						$field_queue = $this->validateField($field_queue);
-						if($this->parameters->has("manual_{$field_queue->name()}") && ($this->parameters->get("manual_{$field_queue->name()}") === "false")){
-		        	$fieldsToProcessing = $this->preProcessing($field_queue, $fieldsToProcessing);
+						if(!$this->parameters->has("manual_{$field_queue->name()}") || ($this->parameters->has("manual_{$field_queue->name()}") && ($this->parameters->get("manual_{$field_queue->name()}") === "false"))){
+							$fieldsToProcessing = $this->preProcessing($field_queue, $fieldsToProcessing);
 						}
 		      }
 		    }

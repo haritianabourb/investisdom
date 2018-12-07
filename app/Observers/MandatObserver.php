@@ -70,7 +70,7 @@ class MandatObserver
         }
       });
 
-      $mandat->schedule = json_encode($mandat->schedule);
+      $mandat->schedule = json_encode($mandat->schedule?? "");
       $mandat->taux_pret = $request['tx_pret'];
 
       // dd($results, $mandat);
