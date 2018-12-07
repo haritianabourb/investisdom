@@ -24,8 +24,8 @@ class CreateDataTypesTable extends Migration {
 			$table->string('policy_name')->nullable();
 			$table->string('controller')->nullable();
 			$table->string('description')->nullable();
-			$table->smallInteger('generate_permissions')->default('0::smallint');
-			$table->smallInteger('server_side')->default('0::smallint');
+			$table->smallInteger('generate_permissions')->default('0');
+			$table->smallInteger('server_side')->default('0');
 			$table->text('details')->nullable();
 			$table->timestamps();
 		});
