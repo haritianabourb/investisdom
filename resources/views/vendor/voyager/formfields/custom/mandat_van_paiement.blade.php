@@ -3,10 +3,11 @@
 // XXX $dataTypeContent equals to model
 // XXX $row represent field type in BREAD (here "resultats" from model)
 $van_paiements = json_decode($dataTypeContent->{$row->field});
-// var_dump($van_paiements);
+// var_dump($dataTypeContent->{$row->field}, $van_paiements);
 ?>
 {{-- {{ dd($dataTypeContent->{$row->field}) }} --}}
 
+@if(is_array($van_paiements))
 <table class="table table-responsive table-bordered table-stripped">
   <thead>
     <tr>
@@ -24,6 +25,7 @@ $van_paiements = json_decode($dataTypeContent->{$row->field});
     <?php
       $total_payment = $total_interest = $total_balance = $total_principal =  0;
     ?>
+
     @foreach ($van_paiements as $van_paiement)
       <?php
         $total_payment += $van_paiement->payment;
@@ -48,5 +50,5 @@ $van_paiements = json_decode($dataTypeContent->{$row->field});
     </tr>
   </tbody>
 </table>
-
+@endif
 @endif

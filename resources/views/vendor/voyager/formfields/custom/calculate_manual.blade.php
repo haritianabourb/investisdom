@@ -52,6 +52,7 @@
               }else{
                 toastr.info("{{$row->field}} = "+data.results.{{$row->field}});
                 $("[name={{$row->field}}]").attr("value", data.results.{{$row->field}});
+                $("[name={{$row->field}}]").text(data.results.{{$row->field}});
               }
             }
           );
