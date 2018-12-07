@@ -1,6 +1,6 @@
 <div class="input-group">
     <span class="input-group-addon">
-      <input type="checkbox" id="manual_{{$row->field}}" aria-label="Manual">
+      <input type="checkbox" id="manual_{{$row->field}}" name="manual_{{$row->field}}" aria-label="Manual">
     </span>
     <input @if($row->required == 1) required @endif disabled type="text" class="form-control disabled" name="{{ $row->field }}"
       placeholder="{{ isset($options->placeholder)? old($row->field, $options->placeholder): $row->display_name }}"
@@ -13,6 +13,7 @@
   @if($options->calculate)
     @php($service = config("calculate.{$dataType->slug}.services.{$row->field}"))
     @php($fields = (new $service)->validationsFields())
+    @php($queueFields = config("calculate.{$dataType->slug}.queues.{$row->field}"))
     @push('javascript')
       <script>
         @php($var_js = "")
@@ -20,15 +21,21 @@
           @php($var_js .= "[name=$field_name]".(!$loop->last?",":""))
         @endforeach
         $('{{$var_js}}').on("change", function(event){
-          if($('#manual_{{$row->field}}').attr("checked", true)){
+          if($('#manual_{{$row->field}}').prop("checked")){
             event.preventDefault();
             return false;
           }
           $.getJSON("{{route("admin.mandat.".(!is_null($dataTypeContent->getKey()) ? 'edit' : 'api').".calculate", ["mandat" => $dataTypeContent->id, "field" => $row->field])}}",
             {
               @foreach ($fields as $field_name)
-              "{{$field_name}}" : $('[name={{$field_name}}]').val() @if(!$loop->last),@endif
+              "{{$field_name}}" : $('[name={{$field_name}}]').val() @if(!$loop->last || (!is_null($queueFields) && count($queueFields))),@endif
               @endforeach
+              @if(!is_null($queueFields))
+                @foreach ($queueFields as $field_name)
+                "{{$field_name}}" : $('[name=manual_{{$field_name}}]').prop('checked')? $('[name={{$field_name}}]').val() : '',
+                "manual_{{$field_name}}" : $('[name=manual_{{$field_name}}]').prop('checked') @if(!$loop->last),@endif
+                @endforeach
+              @endif
             },
             function(data) {
               if(typeof data.results.{{$row->field}} === 'object'){
