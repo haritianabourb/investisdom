@@ -48,3 +48,10 @@
 </div>
 <!--  End Modal for {{$relationshipDataType->name}} -->
 @endpush
+
+
+@push('javascript')
+<script>
+  $.fn.modal.Constructor.prototype.enforceFocus = function () {};
+</script>
+@endpush
