@@ -9,12 +9,12 @@
 
 $('#add_form_{{$relationshipDataType->name}}').submit(function(e) {
   e.preventDefault();
+  var $elem = $('#add_form_{{$dataType->name}}');
   var formdata = $(this).serializeArray();
   var data = {};
   $(formdata).each(function(index, obj){
     data[obj.name] = obj.value;
   });
-  console.log(data);
 
   $.ajax({
     type: "POST",
@@ -26,7 +26,7 @@ $('#add_form_{{$relationshipDataType->name}}').submit(function(e) {
         // create the new options
         var newOption = new Option(response.data.{{$options->relationship->label}}, response.data.{{$options->relationship->key}}, true, true);
 
-        $('[name="{{$row->field}}@if(str_is("select_multiple", $row->type))[]@endif"]').append(newOption).trigger('change');
+        $('#'+$elem.prop('id')+' [name="{{$row->field}}@if(str_is("select_multiple", $row->type))[]@endif"]').append(newOption).trigger('change');
 
         $('#add_{{$relationshipDataType->name}}_modal').modal('hide');
       }

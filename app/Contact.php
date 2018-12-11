@@ -9,6 +9,7 @@ class Contact extends Model
 {
 
   public $additional_attributes = ['full_name'];
+  protected $appends = ['full_name'];
 
   public function getFullNameAttribute()
   {
