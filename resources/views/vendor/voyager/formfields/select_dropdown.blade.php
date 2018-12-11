@@ -10,9 +10,6 @@
         @else
             <?php $selected_value = old($row->field); ?>
         @endif
-        {{-- @if(isset($options->relationship->modal) && $options->relationship->modal)
-          <div class="form-group">
-        @endif --}}
 
         <select class="form-control select2" name="{{ $row->field }}">
             <?php $default = (isset($options->default) && !isset($dataTypeContent->{$row->field})) ? $options->default : null; ?>
@@ -66,9 +63,11 @@
             });
           @endphp
           <button type="button" id="modal_{{$relationshipDataType->name}}" class="btn btn-default btn-block"> Ajouter un {{$row->display_name}} </button>
-          @include('voyager::partials.custom.modal')
 
 
+          @push('footer')
+            @include('voyager::partials.custom.modal')
+          @endpush
 
           @push('javascript')
             @include('voyager::partials.custom.modal-script')
