@@ -1,6 +1,9 @@
 @php
   $relationshipDataType = app('voyager')->model('DataType')->where('model_name', '=', get_class($relationshipClass))->first();
-  $relationshipDataTypeRows = $relationshipDataType->{(!is_null($dataTypeContent->getKey()) ? 'editRows' : 'addRows' )};
+  $relationshipDataTypeRows = $relationshipDataType->addRows->filter(function($item, $key){
+    $details = json_decode($item->details);
+    return isset($details->modal) && $details->modal;
+  });
 @endphp
 
 <div class="modal modal-success fade" tabindex="-1" id="add_contact_modal" role="dialog">
