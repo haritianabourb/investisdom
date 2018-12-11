@@ -55,9 +55,14 @@
             @endforeach
             </optgroup>
         </select>
+        @if(isset($options->modal))
+          <button type="button" class"btn btn-default btn-block add"> Ajouter un {{$row->display_name}} </button>
+        @endif
     @else
         <select class="form-control select2" name="{{ $row->field }}"></select>
     @endif
+
+
 @else
     <?php $selected_value = (isset($dataTypeContent->{$row->field}) && !is_null(old($row->field, $dataTypeContent->{$row->field}))) ? old($row->field, $dataTypeContent->{$row->field}) : old($row->field); ?>
     <select class="form-control select2" name="{{ $row->field }}">
