@@ -1,13 +1,13 @@
-{{-- {{dd($row)}} --}}
+{{-- {{dd($row, $dataTypeContent, $relationshipDataType, $dataTypeContent->{$row->field})}} --}}
 <!-- DataTables -->
 <script>
-    $(document).on('click', '.add', function (e) {
+    $(document).on('click', '#modal_{{$relationshipDataType->name}}', function (e) {
   // $('#add_form').action = '{{ route('voyager.contacts.create') }}';
-  $('#add_form')[0].reset();
-        $('#add_contact_modal').modal('show');
+  $('#add_form_{{$relationshipDataType->name}}')[0].reset();
+        $('#add_{{$relationshipDataType->name}}_modal').modal('show');
 });
 
-$('#add_form').submit(function(e) {
+$('#add_form_{{$relationshipDataType->name}}').submit(function(e) {
   e.preventDefault();
   var formdata = $(this).serializeArray();
   var data = {};
@@ -18,7 +18,7 @@ $('#add_form').submit(function(e) {
 
   $.ajax({
     type: "POST",
-    url: "/admin/contacts",
+    url: "/admin/{{$relationshipDataType->slug}}",
     data: data,
     success: function (response) {
       if(response.success){
@@ -28,28 +28,18 @@ $('#add_form').submit(function(e) {
 
         $('[name="{{$row->field}}@if(str_is("select_multiple", $row->type))[]@endif"]').append(newOption).trigger('change');
 
-        $('#add_contact_modal').modal('hide');
+        $('#add_{{$relationshipDataType->name}}_modal').modal('hide');
       }
     },
 
-    error: function() {
-      alert("Une erreur est survenue. Veuillez vérifier vos données et réessayer.");
+    error: function(response) {
+      console.log(response);
     }
 
     });
 });
 
     $(document).on('click', '.add-confirm', function(e){
-      // console.log($('#add_form'));
-      // $('#add_contact_modal').modal('hide');
-      if (!$('#add_form')[0].checkValidity()) {
-          console.log("FORM HAS NOT BEEN VALIDATED");
-          $('#add_form').find(':submit').click();
-      }
-
-      else {
-        $('#add_form').find(':submit').click();
-      }
-
+        $(this).parents('form').find(':submit').click();
     });
 </script>

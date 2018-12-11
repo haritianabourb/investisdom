@@ -59,8 +59,23 @@
             </optgroup>
         </select>
         @if(isset($options->relationship->modal) && $options->relationship->modal)
-          <button type="button" class="btn btn-default btn-block add"> Ajouter un {{$row->display_name}} </button>
-          @include('voyager::partials.custom.modal')
+          @php
+            $relationshipDataType = app('voyager')->model('DataType')->where('model_name', '=', get_class($relationshipClass))->first();
+            // dd($relationshipDataType);
+            $relationshipDataTypeRows = $relationshipDataType->addRows->filter(function($item, $key){
+              $details = json_decode($item->details);
+              return isset($details->modal) && $details->modal;
+            });
+          @endphp
+          <button type="button" id="modal_{{$relationshipDataType->name}}" class="btn btn-default btn-block"> Ajouter un {{$row->display_name}} </button>
+
+          @push('javascript')
+          	@include('voyager::partials.custom.modal-script')
+          @endpush
+
+          @push('footer')
+            @include('voyager::partials.custom.modal')
+          @endpush
         @endif
     @else
         <select class="form-control select2" name="{{ $row->field }}"></select>
