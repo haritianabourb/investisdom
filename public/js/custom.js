@@ -114,4 +114,12 @@ $(document).ready(function() {
         Task5_HideFieldsForMandat();
         Task4_IsReplacement();
         Task4_IsRepriseFournisseur();
+
+        $(document).on('show.bs.modal', '.modal', function (event) {
+            var zIndex = 1040 + (10 * $('.modal:visible').length);
+            $(this).css('z-index', zIndex);
+            setTimeout(function() {
+                $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
+            }, 0);
+        });
 });
