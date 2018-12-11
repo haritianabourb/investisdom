@@ -1,8 +1,8 @@
 function Task6_HideFieldsForInvestorsAndIntermediaries() {
-    if (!(window.location.href.indexOf("investors")!=-1 ||
-        window.location.href.indexOf("intermediaries")!=-1))
+    if (!(window.location.href.indexOf("investors") != -1 ||
+            window.location.href.indexOf("intermediaries") != -1))
         return;
-    var elementsToHide=[
+    var elementsToHide = [
         "[name=name]",
         "[name=registration_entities_id]",
         "[name=registration_city]",
@@ -13,34 +13,30 @@ function Task6_HideFieldsForInvestorsAndIntermediaries() {
     ].join(", "); //getting selector string for jQuery
     $("[name=nature_entities_id]").change(function() {
 
-        if (this.value=="2") { //Société, show fields
+        if (this.value == "2") { //Société, show fields
             $(elementsToHide)
-            .parent().show("fast");
+                .parent().show("fast");
             // $("[name=capital]").prop("required", true);
-        }
-
-        else { //otherwise, hide fields
+        } else { //otherwise, hide fields
             $(elementsToHide).val("")
-            .parent().hide("fast");
+                .parent().hide("fast");
             // $("[name=capital]").prop("required", false);
         }
     });
 
-    if ($("[name=nature_entities_id]").val()=="2") { //setting default visibility
+    if ($("[name=nature_entities_id]").val() == "2") { //setting default visibility
         $("#option-nature-entities-id-1").click();
         $("#option-nature-entities-id-2").click();
-    }
-
-    else {
+    } else {
         $("#option-nature-entities-id-2").click();
         $("#option-nature-entities-id-1").click();
     }
 }
 
 function Task5_HideFieldsForMandat() {
-    if (!(window.location.href.indexOf("mandat")!=-1))
+    if (!(window.location.href.indexOf("mandat") != -1))
         return;
-    var elementsToHide=[
+    var elementsToHide = [
         "[name=type_subvention]",
         "[name=montant_subvention]",
         "[name=other_subvention]"
@@ -49,12 +45,10 @@ function Task5_HideFieldsForMandat() {
     $("[name=is_subvention]").change(function() {
         if (this.checked) { //Oui, show fields
             $(elementsToHide)
-            .parent().show("fast");
-        }
-
-        else { //otherwise, hide fields
+                .parent().show("fast");
+        } else { //otherwise, hide fields
             $(elementsToHide).val("")
-            .parent().hide("fast");
+                .parent().hide("fast");
         }
     });
 
@@ -63,21 +57,19 @@ function Task5_HideFieldsForMandat() {
 }
 
 function Task4_IsReplacement() {
-    if (!(window.location.href.indexOf("mandat")!=-1))
+    if (!(window.location.href.indexOf("mandat") != -1))
         return;
-    var elementsToHide=[
+    var elementsToHide = [
         "[name=montant_remplacement]"
     ].join(", "); //getting selector string for jQuery
 
     $("[name=is_remplacement]").change(function() {
         if (this.checked) { //Oui, show fields
             $(elementsToHide)
-            .parent().fadeTo("fast",1);
-        }
-
-        else { //otherwise, hide fields
+                .parent().fadeTo("fast", 1);
+        } else { //otherwise, hide fields
             $(elementsToHide).val("")
-            .parent().fadeTo("fast",0);
+                .parent().fadeTo("fast", 0);
         }
     });
 
@@ -86,21 +78,19 @@ function Task4_IsReplacement() {
 }
 
 function Task4_IsRepriseFournisseur() {
-    if (!(window.location.href.indexOf("mandat")!=-1))
+    if (!(window.location.href.indexOf("mandat") != -1))
         return;
-    var elementsToHide=[
+    var elementsToHide = [
         "[name=montant_reprise_fournisseur]"
     ].join(", "); //getting selector string for jQuery
 
     $("[name=is_reprise_fournisseur]").change(function() {
         if (this.checked) { //Oui, show fields
             $(elementsToHide)
-            .parent().fadeTo("fast",1);
-        }
-
-        else { //otherwise, hide fields
+                .parent().fadeTo("fast", 1);
+        } else { //otherwise, hide fields
             $(elementsToHide).val("")
-            .parent().fadeTo("fast",0);
+                .parent().fadeTo("fast", 0);
         }
     });
 
@@ -110,16 +100,24 @@ function Task4_IsRepriseFournisseur() {
 
 $(document).ready(function() {
 
-        Task6_HideFieldsForInvestorsAndIntermediaries();
-        Task5_HideFieldsForMandat();
-        Task4_IsReplacement();
-        Task4_IsRepriseFournisseur();
+    Task6_HideFieldsForInvestorsAndIntermediaries();
+    Task5_HideFieldsForMandat();
+    Task4_IsReplacement();
+    Task4_IsRepriseFournisseur();
 
-        $(document).on('show.bs.modal', '.modal', function (event) {
-            var zIndex = 1040 + (10 * $('.modal:visible').length);
-            $(this).css('z-index', zIndex);
-            setTimeout(function() {
-                $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
-            }, 0);
-        });
+    $(document).on('hidden.bs.modal', '.modal', function (event) {
+      if($('.modal.in').length > 0){
+        $('body').addClass('modal-open');
+      }
+      // $('.modal.in').css('overflow-y', 'auto');
+    });
+
+    $(document).on('show.bs.modal', '.modal', function (event) {
+        var zIndex = 1040 + (10 * $('.modal:visible').length);
+        $(this).css('z-index', zIndex);
+        setTimeout(function() {
+            $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
+        }, 0);
+    });
+
 });
