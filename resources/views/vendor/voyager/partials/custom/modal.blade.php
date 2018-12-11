@@ -36,10 +36,9 @@
             </div>
           </div>
           @endforeach
-          <input type="submit" style="display:none;">
           {{ csrf_field() }}
           <div class="modal-footer">
-              <input type="button" class="btn btn-primary pull-right add-confirm" value="{{ __('voyager::generic.add') }}">
+              <input type="submit" class="btn btn-primary pull-right add-confirm" value="{{ __('voyager::generic.add') }}">
               <button type="button" class="btn btn-default pull-right" data-dismiss="modal">{{ __('voyager::generic.cancel') }}</button>
           </div>
         </div>

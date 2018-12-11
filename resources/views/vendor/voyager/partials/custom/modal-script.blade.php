@@ -33,11 +33,7 @@
       error: function(response) {
         console.log(response);
       }
-
     });
   });
 
-  $(document).on('click', '.add-confirm', function(e){
-      $(this).parents('form').find(':submit').click();
-  });
 </script>
