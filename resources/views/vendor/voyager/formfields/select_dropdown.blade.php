@@ -59,8 +59,8 @@
             </optgroup>
         </select>
         @if(isset($options->relationship->modal) && $options->relationship->modal)
-          <button type="button" class"btn btn-default btn-block add"> Ajouter un {{$row->display_name}} </button>
-          </div>
+          <button type="button" class="btn btn-default btn-block add"> Ajouter un {{$row->display_name}} </button>
+          @include('voyager::partials.custom.modal')
         @endif
     @else
         <select class="form-control select2" name="{{ $row->field }}"></select>
