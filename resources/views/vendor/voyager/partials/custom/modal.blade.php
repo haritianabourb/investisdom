@@ -1,4 +1,4 @@
-<div class="modal modal-success fade" tabindex="-1" id="add_{{$relationshipDataType->name}}_modal" role="dialog">
+<div class="modal modal-success fade" tabindex="-1" id="{{$relationshipDataType->name}}_edit_add" role="dialog">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
