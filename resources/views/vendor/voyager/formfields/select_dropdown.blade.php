@@ -11,6 +11,9 @@
         @else
             <?php $selected_value = old($row->field); ?>
         @endif
+        @if(isset($options->relationship->modal) && $options->relationship->modal)
+          <div class="form-group">
+        @endif
 
         <select class="form-control select2" name="{{ $row->field }}">
             <?php $default = (isset($options->default) && !isset($dataTypeContent->{$row->field})) ? $options->default : null; ?>
@@ -55,8 +58,9 @@
             @endforeach
             </optgroup>
         </select>
-        @if(isset($options->modal))
+        @if(isset($options->relationship->modal) && $options->relationship->modal)
           <button type="button" class"btn btn-default btn-block add"> Ajouter un {{$row->display_name}} </button>
+          </div>
         @endif
     @else
         <select class="form-control select2" name="{{ $row->field }}"></select>
