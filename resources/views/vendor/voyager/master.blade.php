@@ -136,6 +136,7 @@ if (starts_with(Auth::user()->avatar, 'http://') || starts_with(Auth::user()->av
     @endif
 </script>
 @yield('javascript')
+@stack('javascript')
 
 @if(!empty(config('voyager.additional_js')))<!-- Additional Javascript -->
     @foreach(config('voyager.additional_js') as $js)<script type="text/javascript" src="{{ asset($js) }}"></script>@endforeach

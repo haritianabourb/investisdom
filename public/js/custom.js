@@ -1,6 +1,6 @@
 function Task6_HideFieldsForInvestorsAndIntermediaries() {
     if (!(window.location.href.indexOf("investors")!=-1 ||
-        window.location.href.indexOf("intermediaries")!=-1))    
+        window.location.href.indexOf("intermediaries")!=-1))
         return;
     var elementsToHide=[
         "[name=name]",
@@ -12,11 +12,11 @@ function Task6_HideFieldsForInvestorsAndIntermediaries() {
         "[name=etablishment_code]"
     ].join(", "); //getting selector string for jQuery
     $("[name=nature_entities_id]").change(function() {
-        
+
         if (this.value=="2") { //Société, show fields
             $(elementsToHide)
-            .parent().show("fast");          
-            // $("[name=capital]").prop("required", true);  
+            .parent().show("fast");
+            // $("[name=capital]").prop("required", true);
         }
 
         else { //otherwise, hide fields
@@ -33,13 +33,13 @@ function Task6_HideFieldsForInvestorsAndIntermediaries() {
 
     else {
         $("#option-nature-entities-id-2").click();
-        $("#option-nature-entities-id-1").click();        
+        $("#option-nature-entities-id-1").click();
     }
 }
 
 function Task5_HideFieldsForMandat() {
-    if (!(window.location.href.indexOf("mandat")!=-1))    
-        return;    
+    if (!(window.location.href.indexOf("mandat")!=-1))
+        return;
     var elementsToHide=[
         "[name=type_subvention]",
         "[name=montant_subvention]",
@@ -49,7 +49,7 @@ function Task5_HideFieldsForMandat() {
     $("[name=is_subvention]").change(function() {
         if (this.checked) { //Oui, show fields
             $(elementsToHide)
-            .parent().show("fast");          
+            .parent().show("fast");
         }
 
         else { //otherwise, hide fields
@@ -62,35 +62,9 @@ function Task5_HideFieldsForMandat() {
 
 }
 
-
-function Task2_HideImmatriculationMandat() {
-    if (!(window.location.href.indexOf("mandat")!=-1))    
-        return;    
-    var elementsToHide=[
-        "[name=genre_vehicle]",
-        "[name=marque_vehicle]",
-        "[name=type_vehicle]"
-    ].join(", "); //getting selector string for jQuery
-
-    $("[name=immatriculation_materiel]").change(function() {
-        if (this.value=="Oui") { //Oui, show fields
-            $(elementsToHide)
-            .parent().show("fast");          
-        }
-
-        else { //otherwise, hide fields
-            $(elementsToHide).val("")
-            .parent().hide("fast");
-        }
-    });
-
-    $("[name=immatriculation_materiel]").trigger('change');
-}
-
-
 function Task4_IsReplacement() {
-    if (!(window.location.href.indexOf("mandat")!=-1))    
-        return;    
+    if (!(window.location.href.indexOf("mandat")!=-1))
+        return;
     var elementsToHide=[
         "[name=montant_remplacement]"
     ].join(", "); //getting selector string for jQuery
@@ -98,12 +72,12 @@ function Task4_IsReplacement() {
     $("[name=is_remplacement]").change(function() {
         if (this.checked) { //Oui, show fields
             $(elementsToHide)
-            .parent().fadeTo("fast",1);        
+            .parent().fadeTo("fast",1);
         }
 
         else { //otherwise, hide fields
             $(elementsToHide).val("")
-            .parent().fadeTo("fast",0); 
+            .parent().fadeTo("fast",0);
         }
     });
 
@@ -111,11 +85,9 @@ function Task4_IsReplacement() {
 
 }
 
-
-
 function Task4_IsRepriseFournisseur() {
-    if (!(window.location.href.indexOf("mandat")!=-1))    
-        return;    
+    if (!(window.location.href.indexOf("mandat")!=-1))
+        return;
     var elementsToHide=[
         "[name=montant_reprise_fournisseur]"
     ].join(", "); //getting selector string for jQuery
@@ -123,12 +95,12 @@ function Task4_IsRepriseFournisseur() {
     $("[name=is_reprise_fournisseur]").change(function() {
         if (this.checked) { //Oui, show fields
             $(elementsToHide)
-            .parent().fadeTo("fast",1);        
+            .parent().fadeTo("fast",1);
         }
 
         else { //otherwise, hide fields
             $(elementsToHide).val("")
-            .parent().fadeTo("fast",0); 
+            .parent().fadeTo("fast",0);
         }
     });
 
@@ -136,37 +108,10 @@ function Task4_IsRepriseFournisseur() {
 
 }
 
-
-function Task3_MandatRenouvellement() {
-    if (!(window.location.href.indexOf("mandat")!=-1))    
-        return;    
-    var elementsToHide=[
-        "[name=motivation]"
-    ].join(", "); //getting selector string for jQuery
-
-    $("[name=renouvellement]").change(function() {
-        if (this.value=="2") { //Motivé, show fields
-            $(elementsToHide)
-            .parent().fadeTo("fast",1);          
-        }
-
-        else { //otherwise, hide fields
-            $(elementsToHide).val("")
-            .parent().fadeTo("fast",0);   
-        }
-    });
-
-    $("[name=renouvellement]").trigger('change');
-}
-
-
-
 $(document).ready(function() {
 
         Task6_HideFieldsForInvestorsAndIntermediaries();
         Task5_HideFieldsForMandat();
         Task4_IsReplacement();
         Task4_IsRepriseFournisseur();
-        Task3_MandatRenouvellement();
-        Task2_HideImmatriculationMandat();
 });

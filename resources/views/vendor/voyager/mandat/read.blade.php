@@ -56,10 +56,10 @@
                           @endif
                           <div class="col-md-{{ $display_options->width or 12 }}" @if(isset($display_options->id)){{ "id=$display_options->id" }}@endif>
                             <h5>{{ $row->display_name }}</h5>
-                            @if($row->field == 'van_paiement')
+                            @if($row->field == 'schedule')
                               @include('voyager::formfields.custom.mandat_van_paiement')
-                            @elseif($row->field == 'resultats')
-                              @include('voyager::formfields.custom.mandat_resultat')
+                            {{-- @elseif($row->field == 'resultats')
+                              @include('voyager::formfields.custom.mandat_resultat') --}}
                             @elseif($row->type == "image")
                                 <img class="img-responsive"
                                      src="{{ filter_var($dataTypeContent->{$row->field}, FILTER_VALIDATE_URL) ? $dataTypeContent->{$row->field} : Voyager::image($dataTypeContent->{$row->field}) }}">
@@ -132,7 +132,13 @@
                                 @endif
                             @else
                                 @include('voyager::multilingual.input-hidden-bread-read')
-                                <p>{{ $dataTypeContent->{$row->field} }}</p>
+                                @if(isset($display_options->percent) && $display_options->percent)
+                                    @include('voyager::partials.custom.percent')
+                                @elseif(is_null($dataTypeContent->{$row->field}))
+                                    <p class="label label-warning">Non renseign&eacute;</p>
+                                @else
+                                  <p>{{ $dataTypeContent->{$row->field} }}</p>
+                                @endif
                             @endif
                         @if(isset($sectionOpened) && $sectionOpened && $loop->last)
                           </div>

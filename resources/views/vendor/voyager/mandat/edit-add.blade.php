@@ -79,6 +79,10 @@
                                         @include('voyager::multilingual.input-hidden-bread-edit-add')
                                         @if($row->type == 'relationship')
                                             @include('voyager::formfields.relationship')
+                                        @elseif (isset($options->calculate) && $options->calculate && isset($options->manual) && $options->manual)
+                                          @include('voyager::formfields.custom.calculate_manual')
+                                        @elseif (isset($options->calculate) && $options->calculate)
+                                          @include('voyager::formfields.custom.calculate')
                                         @else
                                             {!! app('voyager')->formField($row, $dataType, $dataTypeContent) !!}
                                         @endif
@@ -139,7 +143,7 @@
     <!-- End Delete File Modal -->
 @stop
 
-@section('javascript')
+@push('javascript')
     <script>
         var params = {}
         var $image
@@ -262,9 +266,31 @@
                 $("#option-complement-financement-2").click();
             }
 
+            // function Task2_HideImmatriculationMandat() {
+            //     if (!(window.location.href.indexOf("mandat")!=-1))
+            //         return;
+                var immatriculationMaterielementsToHide=[
+                    "[name=genre_vehicle]",
+                    "[name=marque_vehicle]",
+                    "[name=type_vehicle]"
+                ].join(", "); //getting selector string for jQuery
+
+                $("[name=immatriculation_materiel]").on("change", function() {
+                    if (this.value == 1) { //Oui, show fields
+                        $(immatriculationMaterielementsToHide)
+                        .parent().show("fast");
+                    } else { //otherwise, hide fields
+                        $(immatriculationMaterielementsToHide).val("")
+                        .parent().hide("fast");
+                    }
+                });
+
+                $("[name=immatriculation_materiel]").trigger('change');
+            // }
+
 
             $("#option-segment-materiel-"+$("[name=segment_materiel]").val()).click();
 
         });
     </script>
-@stop
+@endpush

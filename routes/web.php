@@ -26,4 +26,9 @@ Route::group(['prefix' => 'admin'], function () {
       Route::post('/bulk', 'Investis\SNCController@bulkCreate')->name('admin.sncs.bulk-add');
     });
 
+    Route::group(['prefix' => 'mandat'], function(){
+      Route::get('/calculate/{field}', 'Investis\MandatController@calculate')->name('admin.mandat.api.calculate');
+      Route::get('/{mandat}/calculate/{field}', 'Investis\MandatController@calculate')->name('admin.mandat.edit.calculate');
+    });
+
 });

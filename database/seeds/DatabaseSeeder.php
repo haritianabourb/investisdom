@@ -11,39 +11,40 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // InvestisSpecific
-        $this->call(TypeEntitiesSeeder::class);
-        $this->call(NatureEntitiesSeeder::class);
-        $this->call(RegistrationEntitiesSeeder::class);
-        //
-        // // Voyager Specific
-        // // Banks
-        // $this->call(BanksDataTypesTableSeeder::class);
-        // $this->call(BanksDataRowsTableSeeder::class);
-        // $this->call(BanksPermissionsTableSeeder::class);
-        // // CGP
-        // $this->call(CGPDataTypesTableSeeder::class);
-        // $this->call(CGPDataRowsTableSeeder::class);
-        // $this->call(CGPPermissionsTableSeeder::class);
-        // // Intermediaries
-        // $this->call(IntermediariesDataTypesTableSeeder::class);
-        // $this->call(IntermediariesDataRowsTableSeeder::class);
-        // $this->call(IntermediariesPermissionsTableSeeder::class);
-        // // Investors
-        // $this->call(InvestorsDataTypesTableSeeder::class);
-        // $this->call(InvestorsDataRowsTableSeeder::class);
-        // $this->call(InvestorsPermissionsTableSeeder::class);
-        // // Leaseholders
-        // $this->call(LeaseholdersDataTypesTableSeeder::class);
-        // $this->call(LeaseholdersDataRowsTableSeeder::class);
-        // $this->call(LeaseholdersPermissionsTableSeeder::class);
-        // // SNC
-        // $this->call(SNCDataTypesTableSeeder::class);
-        // $this->call(SNCDataRowsTableSeeder::class);
-        // $this->call(SNCPermissionsTableSeeder::class);
-        // Suppliers
-        // $this->call(SuppliersDataTypesTableSeeder::class);
-        // $this->call(SuppliersDataRowsTableSeeder::class);
-        // $this->call(SuppliersPermissionsTableSeeder::class);
+        $this->call(AddressesTableSeeder::class);
+        $this->call(BanksTableSeeder::class);
+        $this->call(CategoriesTableSeeder::class);
+        $this->call(ContactAddressesTableSeeder::class);
+        $this->call(ContactsTableSeeder::class);
+        $this->call(DataTypesTableSeeder::class);
+        $this->call(DataRowsTableSeeder::class);
+        $this->call(MenusTableSeeder::class);
+        $this->call(IntermediariesTableSeeder::class);
+        $this->call(MenuItemsTableSeeder::class);
+        $this->call(NatureEntitiesTableSeeder::class);
+        $this->call(PagesTableSeeder::class);
+        $this->call(LeaseholdersTableSeeder::class);
+        $this->call(InvestorsTableSeeder::class);
+        $this->call(PasswordResetsTableSeeder::class);
+        $this->call(PostsTableSeeder::class);
+        $this->call(RegistrationEntitiesTableSeeder::class);
+        $this->call(SettingsTableSeeder::class);
+        $this->call(SuppliersTableSeeder::class);
+        $this->call(TauxCgpTableSeeder::class);
+        $this->call(ReservationsTableSeeder::class);
+        $this->call(TranslationsTableSeeder::class);
+        $this->call(TypeContratsTableSeeder::class);
+        $this->call(TypeEntitiesTableSeeder::class);
+        $this->call(PermissionsTableSeeder::class);
+        $this->call(RolesTableSeeder::class);
+        $this->call(PermissionRoleTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
+        $this->call(UserRolesTableSeeder::class);
+        $this->call(VoyagerThemesTableSeeder::class);
+        $this->call(VoyagerThemeOptionsTableSeeder::class);
+        $this->call(CgpsTableSeeder::class);
+        $this->call(SncsTableSeeder::class);
+        $this->call(MandatTableSeeder::class);
+        $this->call(ResetSequenceTableSeeder::class);
     }
 }
