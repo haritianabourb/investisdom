@@ -4,12 +4,12 @@
     $(document).on('click', '#modal_{{$relationshipDataType->name}}', function (e) {
   // $('#add_form').action = '{{ route('voyager.contacts.create') }}';
   $('#add_form_{{$relationshipDataType->name}}')[0].reset();
-        $('#add_{{$relationshipDataType->name}}_modal').modal('show');
+        $('#{{$relationshipDataType->name}}_edit_add').modal('show');
 });
 
 $('#add_form_{{$relationshipDataType->name}}').submit(function(e) {
   e.preventDefault();
-  var $elem = $('#add_form_{{$dataType->name}}');
+  var $elem = $('#{{$dataType->name}}_edit_add');
   var formdata = $(this).serializeArray();
   var data = {};
   $(formdata).each(function(index, obj){
@@ -28,7 +28,7 @@ $('#add_form_{{$relationshipDataType->name}}').submit(function(e) {
 
         $('#'+$elem.prop('id')+' [name="{{$row->field}}@if(str_is("select_multiple", $row->type))[]@endif"]').append(newOption).trigger('change');
 
-        $('#add_{{$relationshipDataType->name}}_modal').modal('hide');
+        $('#{{$relationshipDataType->name}}_edit_add').modal('hide');
       }
     },
 
