@@ -1,4 +1,4 @@
-<!-- Modal {{$relationshipDataType->name}} -->
+<!-- Modal {{$relationshipDataType->name}} Scripting-->
 <script>
   $(document).on('click', '#modal_{{$relationshipDataType->name}}', function (e) {
     $('#add_form_{{$relationshipDataType->name}}')[0].reset();
@@ -20,20 +20,21 @@
       data: data,
       success: function (response) {
         if(response.success){
-          // ok is success
-          // create the new options
           var newOption = new Option(response.data.{{$options->relationship->label}}, response.data.{{$options->relationship->key}}, true, true);
-
           $('#'+$elem.prop('id')+' [name="{{$row->field}}@if(str_is("select_multiple", $row->type))[]@endif"]').append(newOption).trigger('change');
-
           $('#{{$relationshipDataType->name}}_edit_add').modal('hide');
+        }else{
+          toastr.error("error on form creation, we're on!");
+          console.log(response);
         }
       },
 
       error: function(response) {
+        toastr.error("error on serve, we're on!");
         console.log(response);
       }
     });
   });
 
 </script>
+<!-- End Modal {{$relationshipDataType->name}} Scripting-->
