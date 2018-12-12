@@ -22,6 +22,7 @@
                 <div class="panel panel-bordered">
                     <!-- form start -->
                     <form role="form"
+                            id="{{$dataType->name}}_edit_add"
                             class="form-edit-add"
                             action="@if(!is_null($dataTypeContent->getKey())){{ route('voyager.'.$dataType->slug.'.update', $dataTypeContent->getKey()) }}@else{{ route('voyager.'.$dataType->slug.'.store') }}@endif"
                             method="POST" enctype="multipart/form-data">
@@ -49,10 +50,6 @@
                             @php
                                 $dataTypeRows = $dataType->{(!is_null($dataTypeContent->getKey()) ? 'editRows' : 'addRows' )};
                             @endphp
-                            {{-- @foreach($uDataTypeRows as $dataTyperow)
-                              <h3>{{ $dataTyperow->get('label') }}</h3>
-                              <hr/>
-                              <div class="col-md-12"> --}}
                             @foreach($dataTypeRows as $row)
                                 <!-- GET THE DISPLAY OPTIONS -->
                                 @php
@@ -74,22 +71,21 @@
                                     <label for="name">{{ $row->display_name }}</label>
                                     @include('voyager::formfields.custom.' . $options->formfields_custom)
                                 @else
-                                        {{ $row->slugify }}
-                                        <label for="name">{{ $row->display_name }}</label>
-                                        @include('voyager::multilingual.input-hidden-bread-edit-add')
-                                        @if($row->type == 'relationship')
-                                            @include('voyager::formfields.relationship')
-                                        @elseif (isset($options->calculate) && $options->calculate && isset($options->manual) && $options->manual)
-                                          @include('voyager::formfields.custom.calculate_manual')
-                                        @elseif (isset($options->calculate) && $options->calculate)
-                                          @include('voyager::formfields.custom.calculate')
-                                        @else
-                                            {!! app('voyager')->formField($row, $dataType, $dataTypeContent) !!}
-                                        @endif
-
-                                        @foreach (app('voyager')->afterFormFields($row, $dataType, $dataTypeContent) as $after)
-                                            {!! $after->handle($row, $dataType, $dataTypeContent) !!}
-                                        @endforeach
+                                    {{ $row->slugify }}
+                                    <label for="name">{{ $row->display_name }}</label>
+                                    @include('voyager::multilingual.input-hidden-bread-edit-add')
+                                    @if($row->type == 'relationship')
+                                        @include('voyager::formfields.relationship')
+                                    @elseif (isset($options->calculate) && $options->calculate && isset($options->manual) && $options->manual)
+                                      @include('voyager::formfields.custom.calculate_manual')
+                                    @elseif (isset($options->calculate) && $options->calculate)
+                                      @include('voyager::formfields.custom.calculate')
+                                    @else
+                                        {!! app('voyager')->formField($row, $dataType, $dataTypeContent) !!}
+                                    @endif
+                                    @foreach (app('voyager')->afterFormFields($row, $dataType, $dataTypeContent) as $after)
+                                        {!! $after->handle($row, $dataType, $dataTypeContent) !!}
+                                    @endforeach
                                 @endif
                               </div>
                             @endforeach
