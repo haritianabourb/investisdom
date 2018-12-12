@@ -38,77 +38,6 @@ return [
         ],
 
         "queues" => [
-          "period" => [
-            "term_years",
-          ],
-          "base_defiscalisable" => [
-            "tva_npr",
-          ],
-          "montant_total_tva" => [
-            "tva_npr"
-          ],
-          "montant_reduction_impot" => [
-            "base_defiscalisable",
-          ],
-          "montant_reduction_impot_percent" => [
-            "montant_reduction_impot",
-          ],
-          "montant_ttc_mandat" => [
-            "montant_ht_mandat",
-          ],
-          "echeance_loyer" => [
-            "period",
-            "taux_pret",
-            "montant_compl_fin",
-          ],
-          "echeance_loyer_ttc" => [
-            "echeance_loyer"
-          ],
-          "interet" => [
-            "echeance_loyer"
-          ],
-          "montant_total_loyer" => [
-            "term_years",
-            "echeance_loyer",
-          ],
-          "tva_loyer" => [
-            "echeance_loyer"
-          ],
-          "total_interet" => [
-            "montant_total_loyer",
-          ],
-          "schedule" => [
-            "montant_compl_fin"
-          ],
-          "van_paiement" => [
-            "schedule",
-          ],
-          "numerateur_van" => [
-            "van_paiement",
-          ],
-          "retrocession" => [
-            "montant_reduction_impot",
-            "van_paiement",
-          ],
-          "apport_net" => [
-            "montant_total_tva"
-          ],
-          "retrocession_net" => [
-            "retrocession"
-          ],
-          "apport_bd" => [
-            "montant_reduction_impot",
-            "base_defiscalisable",
-          ],
-          "apport_investissement" => [
-            "montant_ht_mandat",
-          ],
-          "taux_retro" => [
-            "apport_bd",
-          ],
-          'taux_base_eligible' => [
-            'base_defiscalisable'
-          ],
           "all" => [
             "tva_npr",
             "echeance_loyer_ttc",
@@ -128,6 +57,77 @@ return [
             "taux_base_eligible",
             "retrocession",
             "retrocession_net",
+          ],
+          "apport_net" => [
+            "montant_total_tva"
+          ],
+          "apport_bd" => [
+            "montant_reduction_impot",
+            "base_defiscalisable",
+          ],
+          "apport_investissement" => [
+            "montant_ht_mandat",
+          ],
+          "base_defiscalisable" => [
+            "tva_npr",
+          ],
+          "echeance_loyer" => [
+            "period",
+            "taux_pret",
+            "montant_compl_fin",
+          ],
+          "echeance_loyer_ttc" => [
+            "echeance_loyer"
+          ],
+          "interet" => [
+            "echeance_loyer"
+          ],
+          "montant_total_tva" => [
+            "tva_npr"
+          ],
+          "montant_reduction_impot" => [
+            "base_defiscalisable",
+          ],
+          "montant_reduction_impot_percent" => [
+            "montant_reduction_impot",
+          ],
+          "montant_ttc_mandat" => [
+            "montant_ht_mandat",
+          ],
+          "montant_total_loyer" => [
+            "term_years",
+            "echeance_loyer",
+          ],
+          "numerateur_van" => [
+            "van_paiement",
+          ],
+          "period" => [
+            "term_years",
+          ],
+          "retrocession" => [
+            "montant_reduction_impot",
+            "van_paiement",
+          ],
+          "retrocession_net" => [
+            "retrocession"
+          ],
+          "schedule" => [
+            "montant_compl_fin"
+          ],
+          "taux_retro" => [
+            "apport_bd",
+          ],
+          'taux_base_eligible' => [
+            'base_defiscalisable'
+          ],
+          "total_interet" => [
+            "montant_total_loyer",
+          ],
+          "tva_loyer" => [
+            "echeance_loyer"
+          ],
+          "van_paiement" => [
+            "schedule",
           ],
         ],
       ],
