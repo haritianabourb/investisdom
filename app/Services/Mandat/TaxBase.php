@@ -15,6 +15,9 @@ use App\Services\AbstractField;
 			"fraix_defiscalisable" => "nullable",
 			"montant_subvention" => "nullable",
 			"deduction_base" => "nullable",
+			"is_remplacement" => "nullable",
+			"renouvellement" => "required_if:is_remplacement,on|nullable",
+			"montant_remplacement" => "required_if:is_remplacement,on|required_if:renouvellement,1|nullable"
 		];
 
 		public function process(){
@@ -26,6 +29,7 @@ use App\Services\AbstractField;
 					$this->parameters->get('tva_npr')
 				+ $this->parameters->get('montant_subvention')
 				+ $this->parameters->get('deduction_base')
+				+ $this->parameters->get('is_remplacement') && ($this->parameters->get('renouvellement') == 1) ? $this->parameters->get('montant_remplacement') : 0
 			);
 		}
 
