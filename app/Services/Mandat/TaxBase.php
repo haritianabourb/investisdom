@@ -27,9 +27,8 @@ use App\Services\AbstractField;
 				- $this->parameters->get('fraix_defiscalisable')
 			) - (
 					$this->parameters->get('tva_npr')
-				+ $this->parameters->get('montant_subvention')
-				+ $this->parameters->get('deduction_base')
-				+ $this->parameters->get('is_remplacement') && ($this->parameters->get('renouvellement') == 1) ? $this->parameters->get('montant_remplacement') : 0
+				// + $this->parameters->get('montant_subvention')
+				+ floatval($this->parameters->get('is_remplacement') == "on" && ($this->parameters->get('renouvellement') == 1) ? $this->parameters->get('montant_remplacement') : 0)
 			);
 		}
 
