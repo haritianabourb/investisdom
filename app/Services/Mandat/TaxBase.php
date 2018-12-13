@@ -16,11 +16,13 @@ use App\Services\AbstractField;
 			"montant_subvention" => "nullable",
 			"deduction_base" => "nullable",
 			"is_remplacement" => "nullable",
-			"renouvellement" => "required_if:is_remplacement,on|nullable",
-			"montant_remplacement" => "required_if:is_remplacement,on|required_if:renouvellement,1|nullable"
+			"renouvellement" => "required_if:is_remplacement,true|nullable",
+			"montant_remplacement" => "nullable"
 		];
 
 		public function process(){
+
+			$isReplacement = $this->parameters->get('is_remplacement') === "true" ? true : false;
 
 			return (
 					$this->parameters->get('montant_ht')
@@ -28,7 +30,7 @@ use App\Services\AbstractField;
 			) - (
 					$this->parameters->get('tva_npr')
 				// + $this->parameters->get('montant_subvention')
-				+ floatval($this->parameters->get('is_remplacement') == "on" && ($this->parameters->get('renouvellement') == 1) ? $this->parameters->get('montant_remplacement') : 0)
+				+ floatval($isReplacement && ($this->parameters->get('renouvellement') == 1) ? $this->parameters->get('montant_remplacement') : 0)
 			);
 		}
 
