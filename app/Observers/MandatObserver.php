@@ -5,9 +5,12 @@ namespace App\Observers;
 use App\Mandat;
 // use App\TauxCGP;
 use App\Services\Amortization;
-use Carbon\Carbon;
 use \App\Http\Traits\HasFieldsToCalculate;
 
+use Carbon\Carbon;
+
+use DB;
+use Schema;
 
 class MandatObserver
 {
@@ -37,14 +40,14 @@ class MandatObserver
     {
         // dd($mandat->leaseholderId);
         $date = (new Carbon($mandat->created_at))->format("Ymd");
-        $mandat->identifiant =
+        $identifiant =
           substr(preg_replace('/\s/', '', $mandat->leaseholderId->name), 0, 3)
           .substr(preg_replace('/\s/', '', $mandat->supplierId->name), -3)
           ."-".$date
           ."/".$mandat->id;
 
-        $mandat->save();
-
+          // XXX little hack to not thrown the saving event for calculations
+          DB::table($mandat->getTable())->where('id', $mandat->id)->update(['identifiant' => $identifiant]);
     }
 
     /**
@@ -63,9 +66,10 @@ class MandatObserver
 
       $results = $this->calculateField($request, 'all');
 
-
-      $results->each(function ($item, $key) use ($mandat){
-        if(array_has($mandat->toArray(), $key)){
+      $columns = Schema::getColumnListing($mandat->getTable());
+      
+      $results->each(function ($item, $key) use ($mandat, $columns){
+        if(in_array($key, $columns)){
           $mandat->$key = $item;
         }
       });
@@ -73,9 +77,6 @@ class MandatObserver
       $mandat->schedule = json_encode($mandat->schedule?? "");
       $mandat->taux_pret = $request['tx_pret'];
 
-      // dd($results, $mandat);
-      //
-      $mandat->van_paiement = json_encode($results->only(['van_paiement'])->first());
       $mandat->resultats = $results;
     }
 
