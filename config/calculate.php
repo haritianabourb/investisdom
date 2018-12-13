@@ -21,6 +21,7 @@ return [
           "montant_total_tva" => \App\Services\Mandat\TotalVAT::class,
           "montant_ttc_mandat" => \App\Services\Mandat\TTCAmount::class,
           "montant_compl_fin" => \App\Services\Mandat\LoanAmount::class,
+          "montant_ttc" => \App\Services\Mandat\TTCAmount::class,
           "numerateur_van" => \App\Services\Mandat\NumerateurVAN::class,
           "period" => \App\Services\Mandat\Period::class,
           "retrocession" => \App\Services\Mandat\Retrocession::class,
