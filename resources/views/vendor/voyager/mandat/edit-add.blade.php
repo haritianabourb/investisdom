@@ -287,6 +287,22 @@
 
             $("#option-segment-materiel-"+$("[name=segment_materiel]").val()).click();
 
+            var elementsSubvention=[
+                "[name=other_subvention]"
+            ].join(", "); //getting selector string for jQuery
+
+            $("[name=type_subvention]").on("select2:select", function() {
+              if (this.value=="autres") {
+                  $(elementsSubvention)
+                  .parent().show("fast");
+              }else{
+                $(elementsSubvention)
+                .parent().hide("fast");
+              }
+              // debugger;
+            });
+
+            $("#option-segment-materiel-"+$("[name=type_subvention]").trigger('change');
         });
     </script>
 @endpush
