@@ -61,8 +61,10 @@
               $details = json_decode($item->details);
               return isset($details->modal) && $details->modal;
             });
+            // TODO make this configurable in option later with an id in a display modal BREAD configuration.
+            $modal_id = "{$relationshipDataType->name}_edit_add_".random_int(100000, 999999);
           @endphp
-          <button type="button" id="modal_{{$relationshipDataType->name}}" class="btn btn-default btn-block"> Ajouter un {{$row->display_name}} </button>
+          <button type="button" id="modal_{{$modal_id}}" class="btn btn-default btn-block"> Ajouter un {{$row->display_name}} </button>
 
 
           @push('footer')
