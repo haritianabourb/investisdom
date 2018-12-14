@@ -2,8 +2,6 @@
 
 namespace App\Services\Mandat;
 
-use App\Services\VAT;
-use App\Services\Funding;
 use App\Services\AbstractField;
 
 	class TaxBase extends AbstractField
@@ -26,7 +24,7 @@ use App\Services\AbstractField;
 
 			return (
 					$this->parameters->get('montant_ht')
-				- $this->parameters->get('fraix_defiscalisable')
+				+ $this->parameters->get('fraix_defiscalisable')
 			) - (
 					$this->parameters->get('tva_npr')
 				// + $this->parameters->get('montant_subvention')
