@@ -1,6 +1,6 @@
 @push('footer')
 <!-- Start modal for {{$relationshipDataType->name}} -->
-<div class="modal modal-success fade" tabindex="-1" id="{{$relationshipDataType->name}}_edit_add" role="dialog">
+<div class="modal modal-success fade" tabindex="-1" id="{{$modal_id}}" role="dialog">
   <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -12,7 +12,7 @@
           </h4>
         </div>
         <!-- !modal-header -->
-        <form action="#" id="add_form_{{$relationshipDataType->name}}" method="POST">
+        <form action="#" id="add_form_{{$modal_id}}" method="POST">
           <div class="modal-body">
           {{ method_field("POST") }}
           <!-- Adding / Editing -->
