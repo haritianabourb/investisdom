@@ -261,31 +261,42 @@
                 $("#option-complement-financement-1").click();
                 $("#option-complement-financement-2").click();
             }
+            var immatriculationMaterielementsToHide=[
+                "[name=genre_vehicle]",
+                "[name=marque_vehicle]",
+                "[name=type_vehicle]"
+            ].join(", "); //getting selector string for jQuery
 
-            // function Task2_HideImmatriculationMandat() {
-            //     if (!(window.location.href.indexOf("mandat")!=-1))
-            //         return;
-                var immatriculationMaterielementsToHide=[
-                    "[name=genre_vehicle]",
-                    "[name=marque_vehicle]",
-                    "[name=type_vehicle]"
-                ].join(", "); //getting selector string for jQuery
+            $("[name=immatriculation_materiel]").on("change", function() {
+                if (this.value == 1) { //Oui, show fields
+                    $(immatriculationMaterielementsToHide)
+                    .parent().show("fast");
+                } else { //otherwise, hide fields
+                    $(immatriculationMaterielementsToHide).val("")
+                    .parent().hide("fast");
+                }
+            });
 
-                $("[name=immatriculation_materiel]").on("change", function() {
-                    if (this.value == 1) { //Oui, show fields
-                        $(immatriculationMaterielementsToHide)
-                        .parent().show("fast");
-                    } else { //otherwise, hide fields
-                        $(immatriculationMaterielementsToHide).val("")
-                        .parent().hide("fast");
-                    }
-                });
-
-                $("[name=immatriculation_materiel]").trigger('change');
-            // }
-
+            $("[name=immatriculation_materiel]").trigger('change');
 
             $("#option-segment-materiel-"+$("[name=segment_materiel]").val()).click();
+
+            var elementIsSubvention = [
+                "[name=type_subvention]",
+                "[name=montant_subvention]",
+                "[name=other_subvention]"
+            ].join(", "); //getting selector string for jQuery
+
+            $("[name=is_subvention]").change(function() {
+                if (this.checked) { //Oui, show fields
+                    $(elementIsSubvention)
+                        .parent().show("fast");
+                    $("[name=type_subvention]").trigger("change").trigger("select2:select");
+                } else { //otherwise, hide fields
+                    $(elementIsSubvention).val("")
+                        .parent().hide("fast");
+                }
+            });
 
             var elementsSubvention=[
                 "[name=other_subvention]"
@@ -302,7 +313,8 @@
               // debugger;
             });
 
-            $("#option-segment-materiel-"+$("[name=type_subvention]").trigger('change');
+            $("[name=is_subvention]").trigger('change'); //setting default visibility
+            $("[name=type_subvention]").trigger("change").trigger("select2:select");
         });
     </script>
 @endpush
