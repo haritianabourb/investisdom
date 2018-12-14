@@ -77,7 +77,6 @@ function Task4_IsRepriseFournisseur() {
 $(document).ready(function() {
 
     Task6_HideFieldsForInvestorsAndIntermediaries();
-    Task5_HideFieldsForMandat();
     Task4_IsReplacement();
     Task4_IsRepriseFournisseur();
 
