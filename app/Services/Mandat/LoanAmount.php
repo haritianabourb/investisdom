@@ -13,12 +13,13 @@ use App\Services\AbstractField;
 		protected $name = "montant_compl_fin";
 		protected $validations = [
 			"montant_ht" => "required",
-			"apport_snc" => "required",
-			"apport_locataire" => "required",
+			"fraix_defiscalisable" => "nullable",
+			"apport_snc" => "nullable",
+			"apport_locataire" => "nullable",
 		];
 
 		public function process(){
-			return  $this->parameters->get('montant_ht')-( $this->parameters->get("apport_snc") + $this->parameters->get('apport_locataire'));
+			return  $this->parameters->get('montant_ht') + $this->parameters->get('fraix_defiscalisable')-( $this->parameters->get("apport_snc") + $this->parameters->get('apport_locataire'));
 		}
 
 	}
