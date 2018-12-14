@@ -32,30 +32,6 @@ function Task6_HideFieldsForInvestorsAndIntermediaries() {
         $("#option-nature-entities-id-1").click();
     }
 }
-
-function Task5_HideFieldsForMandat() {
-    if (!(window.location.href.indexOf("mandat") != -1))
-        return;
-    var elementsToHide = [
-        "[name=type_subvention]",
-        "[name=montant_subvention]",
-        "[name=other_subvention]"
-    ].join(", "); //getting selector string for jQuery
-
-    $("[name=is_subvention]").change(function() {
-        if (this.checked) { //Oui, show fields
-            $(elementsToHide)
-                .parent().show("fast");
-        } else { //otherwise, hide fields
-            $(elementsToHide).val("")
-                .parent().hide("fast");
-        }
-    });
-
-    $("[name=is_subvention]").trigger('change'); //setting default visibility
-
-}
-
 function Task4_IsReplacement() {
     if (!(window.location.href.indexOf("mandat") != -1))
         return;
