@@ -42,9 +42,9 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
       // $this->app->singleton('fpdf', function()
-      $this->app->extend('fpdf' , function() {
-        return new InvestisPDF(config('fpdf.orientation'), config('fpdf.unit'), config('fpdf.size'));
-      });
+      // $this->app->extend('fpdf' , function() {
+      //   return new InvestisPDF(config('fpdf.orientation'), config('fpdf.unit'), config('fpdf.size'));
+      // });
       // });
     }
 
@@ -56,6 +56,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return [InvestisPDF::class];
+        // return [InvestisPDF::class];
     }
 }

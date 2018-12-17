@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Investis;
 use Illuminate\Http\Request;
 use \App\CGP;
 use Fpdf;
+use Mpdf\Mpdf;
 use Voyager;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -130,6 +131,42 @@ class CGPController extends VoyagerBaseController
       Fpdf::write(5,utf8_decode("Offre CONFORT sur des dossiers de plein droit :\n\n- De janvier à fin mars, le taux de commercialisation sera de 25% incluant la rentabilité offerte aux investisseurs et votre rémunération plafonnée à 7%.\n- D'avril à fin juin, le taux de commercialisation sera de 23% incluant la rentabilité offerte aux investisseurs et votre rémunération plafonnée à 7%.\n- De juillet à fin septembre, le taux de commercialisation sera de 21% incluant la rentabilité offerte aux investisseurs et votre rémunération plafonnée à 7%.\n- D'octobre à fin décembre, le taux de commercialisation sera de 19% incluant la rentabilité offerte aux investisseurs et votre rémunération plafonnée à 7%.\n\n"));
       Fpdf::write(5,utf8_decode("Offre SERENITE + sur des dossiers de plein droit : (produit mutualisé sur 3 à 5 SNC, avec assurance garantissant la perte financière et fiscale)\n\n- De janvier à fin mars, le taux de commercialisation sera de 21% incluant la rentabilité offerte aux investisseurs et votre rémunération plafonnée à 7%.\n- D'avril à fin juin, le taux de commercialisation sera de 19% incluant la rentabilité offerte aux investisseurs et votre rémunération plafonnée à 7%.\n- De juillet à fin septembre, le taux de commercialisation sera de 17% incluant la rentabilité offerte aux investisseurs et votre rémunération plafonnée à 7%.\n- D'octobre à fin décembre, le taux de commercialisation sera de 15% incluant la rentabilité offerte aux investisseurs et votre rémunération plafonnée à 7%.\n\n"));
       Fpdf::Output("Contrat_de_partenariat_$nom.pdf","D");
+    }
+
+    public function generateMPDF(Request $request, CGP $cgp){
+      $this->authorize('browse', $cgp);
+
+      $nom = $cgp->name;
+      $adresse = $cgp->address_1." ".($cgp->address_2?:"");
+      $cgpville = $cgp->city;
+      $cgpcp = $cgp->postal_code;
+
+      $forme_juridique = $cgp->juridical_registration;
+      $immatriculation = $cgp->registrationEntitiesId->description;
+      $nom_representant = $cgp->contactId->firstname;
+      $prenom = $cgp->contactId->lastname;
+
+      $dateconvention = date ("d-m-Y");
+      $fonction = $cgp->contact_status;
+      $civilite = "M.";
+      $siret = $cgp->registered_key;
+      $capital = $cgp->capital;
+      $lieu_immatriculation = $cgp->registration_city;
+      $madate = date ("d-m-Y");
+      $annee=date("Y", strtotime($madate));
+
+      $mpdf = new Mpdf();
+
+      $headerHtml = view('pdf.investis.header')->render();
+      $mpdf->SetHTMLHeader($headerHtml);
+      $bodyHtml = view('pdf.investis.body')->render();
+      $mpdf->WriteHTML($bodyHtml);
+      $mpdf->Output();
+      dd('stop');
+
+      // return $test->stream('document.pdf');
+
+
     }
 
 }
