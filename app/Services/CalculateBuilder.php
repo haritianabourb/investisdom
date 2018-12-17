@@ -66,15 +66,15 @@ use App\Services\FieldContract;
 		public function queueField($field) {
 			$fields_queue = $this->preProcessing($field);
 
-	    foreach ($fields_queue as $field_queue) {
-	      if(!is_null($field_queue))
-	        $this->addField($field_queue->name(), false);
-	    }
+
+			foreach ($fields_queue as $field_queue) {
+			  if(!is_null($field_queue))
+				$this->addField($field_queue->name(), false);
+			}
 
 		}
 
 		public function preProcessing($field, $fieldsToProcessing = []){
-
 	    try {
 
 		    if(array_has($pool = config("calculate.{$this->name()}.queues"), $field->name())){
@@ -88,7 +88,8 @@ use App\Services\FieldContract;
 		    }
 
 			} catch (\Error $e) {
-				return ['error' => "an error occur on the calculation",];
+	    		dump(['error' => "an error occur on the calculation", "field" => $field->name(), $pool[$field->name()]]);
+				return ['error' => "an error occur on the calculation", "field" => $field->name()];
 			}
 	    $fieldsToProcessing[] = $field;
 	    return $fieldsToProcessing;

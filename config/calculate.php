@@ -33,6 +33,7 @@ return [
           "term_years" => \App\Services\Mandat\Term_Years::class,
           "tva_npr" => \App\Services\Mandat\TVANPR::class,
           "tva_loyer" => \App\Services\Mandat\TVALoyer::class,
+          "tva_investissement" => \App\Services\Mandat\TVAInvestissement::class,
           "total_interet" => \App\Services\Mandat\TotalInterest::class,
           "van_paiement" => \App\Services\Mandat\VANPaiement::class,
           "vpm" => \App\Services\Mandat\VPM::class,
@@ -82,6 +83,9 @@ return [
           ],
           "interet" => [
             "echeance_loyer"
+          ],
+          "montant_compl_fin" => [
+            "tva_investissement"
           ],
           "montant_total_tva" => [
             "tva_npr"
