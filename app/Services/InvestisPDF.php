@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
-// use Codedge\Fpdf\Fpdf\Fpdf;
-use Mpdf\Mpdf as Fpdf;
+ use Codedge\Fpdf\Fpdf\Fpdf;
+//use Mpdf\Mpdf as Fpdf;
 use Voyager;
 
 class InvestisPDF extends FPDF {
