@@ -84,9 +84,9 @@ return [
           "interet" => [
             "echeance_loyer"
           ],
-          "montant_compl_fin" => [
-            "tva_investissement"
-          ],
+//          "montant_compl_fin" => [
+//            "tva_investissement"
+//          ],
           "montant_total_tva" => [
             "tva_npr"
           ],

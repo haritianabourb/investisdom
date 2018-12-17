@@ -19,6 +19,7 @@ use App\Services\AbstractField;
 			"apport_snc" => "nullable",
 			"apport_locataire" => "nullable",
 			"montant_subvention" => "nullable",
+			"tva_investissement" => "nullable",
 		];
 
 		public function process(){
