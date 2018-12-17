@@ -89,7 +89,6 @@ class CalculateBuilder
         try {
 
             if (array_has($pool = config("calculate.{$this->name()}.queues"), $field->name())) {
-                // dump($pool[$field->name()]);
                 foreach ($pool[$field->name()] as $field_queue) {
                     $field_queue = $this->validateField($field_queue);
                     if (!$this->parameters->has("manual_{$field_queue->name()}") || ($this->parameters->has("manual_{$field_queue->name()}") && ($this->parameters->get("manual_{$field_queue->name()}") === "false"))) {
@@ -99,6 +98,7 @@ class CalculateBuilder
             }
 
         } catch (\Error $e) {
+            //TODO make the field a correct error
             return ['error' => "an error occur on the calculation", "field" => $field->name()];
         }
         $fieldsToProcessing[] = $field;
@@ -116,8 +116,6 @@ class CalculateBuilder
             return false;
         }
 
-        // dd(new $fieldService[$field]($this->parameters->toArray()));
-        // dd($fieldService, $field, $this->parameters, $fieldService[$field]);
         return $fieldService[$field] ? new $fieldService[$field]($this->parameters->toArray()) : false;
     }
 
