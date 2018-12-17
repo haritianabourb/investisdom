@@ -136,30 +136,30 @@ class CGPController extends VoyagerBaseController
     public function generateMPDF(Request $request, CGP $cgp){
       $this->authorize('browse', $cgp);
 
-      $nom = $cgp->name;
-      $adresse = $cgp->address_1." ".($cgp->address_2?:"");
-      $cgpville = $cgp->city;
-      $cgpcp = $cgp->postal_code;
+      $data['nom'] = $cgp->name;
+      $data['adresse'] = $cgp->address_1." ".($cgp->address_2?:"");
+      $data['cgpville'] = $cgp->city;
+      $data['cgpcp'] = $cgp->postal_code;
 
-      $forme_juridique = $cgp->juridical_registration;
-      $immatriculation = $cgp->registrationEntitiesId->description;
-      $nom_representant = $cgp->contactId->firstname;
-      $prenom = $cgp->contactId->lastname;
+      $data['forme_juridique'] = $cgp->juridical_registration;
+      $data['immatriculation'] = $cgp->registrationEntitiesId->description;
+      $data['nom_representant'] = $cgp->contactId->firstname;
+      $data['prenom'] = $cgp->contactId->lastname;
 
-      $dateconvention = date ("d-m-Y");
-      $fonction = $cgp->contact_status;
-      $civilite = "M.";
-      $siret = $cgp->registered_key;
-      $capital = $cgp->capital;
-      $lieu_immatriculation = $cgp->registration_city;
-      $madate = date ("d-m-Y");
-      $annee=date("Y", strtotime($madate));
+      $data['dateconvention'] = date ("d-m-Y");
+      $data['fonction'] = $cgp->contact_status;
+      $data['civilite'] = "M.";
+      $data['siret'] = $cgp->registered_key;
+      $data['capital'] = $cgp->capital;
+      $data['lieu_immatriculation'] = $cgp->registration_city;
+      $data['madate'] = date ("d-m-Y");
+      $data['annee']=date("Y", strtotime(date ("d-m-Y")));
 
       $mpdf = new Mpdf();
 
       $headerHtml = view('pdf.investis.header')->render();
       $mpdf->SetHTMLHeader($headerHtml);
-      $bodyHtml = view('pdf.investis.body')->render();
+      $bodyHtml = view('pdf.investis.body', $data)->render();
       $mpdf->WriteHTML($bodyHtml);
       $mpdf->Output();
       dd('stop');
