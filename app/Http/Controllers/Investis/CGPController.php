@@ -158,8 +158,11 @@ class CGPController extends VoyagerBaseController
       $mpdf = new Mpdf();
 
       $headerHtml = view('pdf.investis.header')->render();
+      $headerHtml = view('pdf.investis.header')->render();
       $mpdf->SetHTMLHeader($headerHtml);
       $bodyHtml = view('pdf.investis.body', $data)->render();
+      // return view('pdf.investis.header');
+      // return view('pdf.investis.body', $data);
       $mpdf->WriteHTML($bodyHtml);
       $mpdf->Output();
       dd('stop');
