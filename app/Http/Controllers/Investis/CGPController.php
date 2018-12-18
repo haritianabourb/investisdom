@@ -156,7 +156,7 @@ class CGPController extends VoyagerBaseController
       $data['annee']=date("Y", strtotime(date ("d-m-Y")));
 
       $pdf = PDF::loadView('pdf.investis.body', $data);
-      return $pdf->stream('document.pdf');
+      return $pdf->stream('Contrat_de_partenariat_'.$cgp->name.'.pdf');
       // $mpdf = new Mpdf();
 
       // $headerHtml = view('pdf.investis.header')->render();
