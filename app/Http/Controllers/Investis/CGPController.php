@@ -155,22 +155,9 @@ class CGPController extends VoyagerBaseController
       $data['madate'] = date ("d-m-Y");
       $data['annee']=date("Y", strtotime(date ("d-m-Y")));
 
-      $pdf = PDF::loadView('pdf.investis.body', $data);
-      return $pdf->stream('Contrat_de_partenariat_'.$cgp->name.'.pdf');
-      // $mpdf = new Mpdf();
+      $pdf = PDF::loadView('pdf.cgps.convention', $data);
 
-      // $headerHtml = view('pdf.investis.header')->render();
-      // $mpdf->SetHTMLHeader($headerHtml);
-      // $bodyHtml = view('pdf.investis.body', $data)->render();
-      // // return view('pdf.investis.header');
-      // // return view('pdf.investis.body', $data);
-      // $mpdf->WriteHTML($bodyHtml);
-      // $mpdf->Output();
-      dd('stop');
-
-      // return $test->stream('document.pdf');
-
-
+      return $pdf->download('Contrat_de_partenariat_'.$cgp->name.'.pdf');
     }
 
 }

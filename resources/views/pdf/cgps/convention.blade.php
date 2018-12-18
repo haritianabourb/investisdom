@@ -1,3 +1,5 @@
+@extends('pdf.layout')
+@push('css')
 <style>
     #body {
         font-family: 'Arial';
@@ -57,31 +59,9 @@
     .row {
         overflow: auto;
     }
-    @page {
-        header: page-header;
-        footer: page-footer;
-    }
-    @page {
-        /* margin: 120px 1.5cm 80px 1.5cm; */
-        margin-top: 120px;
-    }
 </style>
-<htmlpageheader name="page-header">
-    <img src="{{ asset('images/logo2.jpg') }}" style="height: 80px" alt="logo">
-</htmlpageheader>
-<htmlpagefooter name="page-footer">
-    <div style="margin-top: 25px;">
-        <hr style="border-top: 1px solid rgb(0,0,0);">
-        <div style="font-size: 8px; text-align: center;">
-            INVESTIS DEFISCALISATION OUTRE MER, SAS au capital de 10 000 euros, immatriculée au RCS de Saint Denis
-            sous le numméro 820 090 652
-        </div>
-
-        <div style="font-size: 8px; text-align: center; margin-top: 5pt;">
-            62 Boulevard du chaudron - 97490 - SAINTE CLOTILDE
-        </div>
-    </div>
-</htmlpagefooter>
+@endpush
+@section('body')
 <div id="body">
     <h1 class="title">
         CONTRAT DE PARTENARIAT EN VUE DE LA PRESENTATION D'INVESTISSEURS
@@ -325,3 +305,4 @@
     - D'avril à fin juin, le taux de commercialisation sera de 19% incluant la rentabilité offerte aux investisseurs et votre rémunération plafonnée à 7%.<br>- De juillet à fin septembre, le taux de commercialisation sera de 17% incluant la rentabilité offerte aux investisseurs et votre rémunération plafonnée à 7%.<br>- D'octobre à fin décembre, le taux de commercialisation sera de 15% incluant la rentabilité offerte aux investisseurs et votre rémunération plafonnée à 7%.
     </p>
 </div>
+@endsection
