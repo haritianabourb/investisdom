@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "133a233ffe9288ed26453568ac0716ae",
+    "content-hash": "43c3a950932baea9b62c8f5dfcc03fe7",
     "packages": [
         {
             "name": "arrilot/laravel-widgets",
@@ -2091,21 +2091,21 @@
         },
         {
             "name": "niklasravnsborg/laravel-pdf",
-            "version": "v2.0.3",
+            "version": "v3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/niklasravnsborg/laravel-pdf.git",
-                "reference": "be7aff3077392f23a3508ae38775efa53b3dd677"
+                "reference": "e53a72dd44aa6e91aa0bf3ba7839e55491c0d150"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/niklasravnsborg/laravel-pdf/zipball/be7aff3077392f23a3508ae38775efa53b3dd677",
-                "reference": "be7aff3077392f23a3508ae38775efa53b3dd677",
+                "url": "https://api.github.com/repos/niklasravnsborg/laravel-pdf/zipball/e53a72dd44aa6e91aa0bf3ba7839e55491c0d150",
+                "reference": "e53a72dd44aa6e91aa0bf3ba7839e55491c0d150",
                 "shasum": ""
             },
             "require": {
                 "mpdf/mpdf": "^7.0",
-                "php": ">=5.6"
+                "php": ">=7.0"
             },
             "type": "library",
             "extra": {
@@ -2133,7 +2133,7 @@
                 "mpdf",
                 "pdf"
             ],
-            "time": "2018-04-05T13:54:13+00:00"
+            "time": "2018-11-08T10:40:58+00:00"
         },
         {
             "name": "orangehill/iseed",

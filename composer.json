@@ -16,11 +16,11 @@
         "larapack/voyager-hooks": "^1.0",
         "laravel/framework": "5.6.*",
         "laravel/tinker": "^1.0",
-        "niklasravnsborg/laravel-pdf": "^2.0",
+        "markrogoyski/math-php": "0.*",
+        "niklasravnsborg/laravel-pdf": "^3.0",
         "orangehill/iseed": "^2.6",
         "tcg/voyager": "^1.1",
-        "voyager-themes": "^0.13.0",
-        "markrogoyski/math-php": "0.*"
+        "voyager-themes": "^0.13.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",

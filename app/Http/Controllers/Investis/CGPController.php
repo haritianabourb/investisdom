@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Investis;
 use Illuminate\Http\Request;
 use \App\CGP;
 use Fpdf;
-use Mpdf\Mpdf;
+use PDF;
 use Voyager;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -155,19 +155,17 @@ class CGPController extends VoyagerBaseController
       $data['madate'] = date ("d-m-Y");
       $data['annee']=date("Y", strtotime(date ("d-m-Y")));
 
-      $mpdf = new Mpdf(['setAutoTopMargin' => 'pad', 'setAutoBottomMargin' => 'pad']);
+      $pdf = PDF::loadView('pdf.investis.body', $data);
+      return $pdf->stream('document.pdf');
+      // $mpdf = new Mpdf();
 
-      $headerHtml = view('pdf.investis.header')->render();
-      $mpdf->SetHTMLHeader($headerHtml);
-      $footerHtml = view('pdf.investis.footer')->render();
-      $mpdf->SetHTMLFooter( $footerHtml);
-        //   dd($data);
-      $bodyHtml = view('pdf.investis.body', $data)->render();
-      // return view('pdf.investis.header');
-      // return view('pdf.investis.body', $data);
-      $mpdf->WriteHTML($bodyHtml);
-      
-      $mpdf->Output();
+      // $headerHtml = view('pdf.investis.header')->render();
+      // $mpdf->SetHTMLHeader($headerHtml);
+      // $bodyHtml = view('pdf.investis.body', $data)->render();
+      // // return view('pdf.investis.header');
+      // // return view('pdf.investis.body', $data);
+      // $mpdf->WriteHTML($bodyHtml);
+      // $mpdf->Output();
       dd('stop');
 
       // return $test->stream('document.pdf');
