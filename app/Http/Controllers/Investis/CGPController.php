@@ -155,15 +155,18 @@ class CGPController extends VoyagerBaseController
       $data['madate'] = date ("d-m-Y");
       $data['annee']=date("Y", strtotime(date ("d-m-Y")));
 
-      $mpdf = new Mpdf();
+      $mpdf = new Mpdf(['setAutoTopMargin' => 'pad', 'setAutoBottomMargin' => 'pad']);
 
       $headerHtml = view('pdf.investis.header')->render();
-      $headerHtml = view('pdf.investis.header')->render();
       $mpdf->SetHTMLHeader($headerHtml);
+      $footerHtml = view('pdf.investis.footer')->render();
+      $mpdf->SetHTMLFooter( $footerHtml);
+        //   dd($data);
       $bodyHtml = view('pdf.investis.body', $data)->render();
       // return view('pdf.investis.header');
       // return view('pdf.investis.body', $data);
       $mpdf->WriteHTML($bodyHtml);
+      
       $mpdf->Output();
       dd('stop');
 
