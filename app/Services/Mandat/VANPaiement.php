@@ -2,13 +2,13 @@
 
 namespace App\Services\Mandat;
 
-use App\Services\VAT;
-use App\Services\Funding;
 use App\Services\AbstractField;
 use MathPHP\Finance;
-use Carbon\Carbon;
 
-
+	/**
+	 * Class VANPaiement, the NPV of the project, deffered the calculation to MathPHP\Finance package
+	 * @package App\Services\Mandat
+	 */
 	class VANPaiement extends AbstractField
 	{
 
@@ -20,18 +20,14 @@ use Carbon\Carbon;
 
 			$npv = [];
 			// array_push($npv,$this->parameters->get('apport_locataire'));
-		  foreach($cashflows as $k => $cf) {
+			foreach($cashflows as $k => $cf) {
 				if($k == 0) continue;
 				// CALCUL DU VAN POUR CHAQUE PERIODE
-		    array_push($npv, $cf['payment']);
-		  }
-
-
+				array_push($npv, $cf['payment']);
+			}
 
 			return Finance::npv($this->parameters->get('taux_pret'), $npv) + $cashflows[0]['payment'];
 
 		}
 
 	}
-
-	?>

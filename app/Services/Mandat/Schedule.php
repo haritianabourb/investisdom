@@ -2,25 +2,45 @@
 
 namespace App\Services\Mandat;
 
-use App\Services\VAT;
 use App\Services\Funding;
 use App\Services\AbstractField;
 use MathPHP\Finance;
-use Carbon\Carbon;
 
+	/**
+	 * Class Schedule, loan amount planning schedule
+	 *
+	 * make it with the loan amount field paremeters
+	 *
+	 * return an array of field:
+	 *	- 'payment' 	: payment at the period,
+	 *	- 'interet' 	: interest of the loan payment,
+	 *	- 'principal' : the real payment of the loan, equal to payment minus interest,
+	 *	- 'balance' 	: rest of payment a this period,
+	 *
+	 * @package App\Services\Mandat
+	 */
 	class Schedule extends AbstractField
 	{
 
 		protected $name = "schedule";
 
+		protected $validations = [
+			"apport_locataire" => "nullable",
+			"duree_pret" => "nullable",
+			"taux_pret" => "nullable",
+			"complement_financement" => "nullable",
+		];
+
+		/**
+		 * @return array|mixed return the schedule of a period
+		 */
 		public function process(){
 
 			$this->initSchedule();
-			// $this->calculate();
 
 			$schedule = array();
 
-			//DG : Apport locataire
+			//TODO Important!!! add the starting date for the period, in order to have a better payment
 			array_push($schedule, array (
 				'payment' 	=> (float)$this->parameters->get('apport_locataire'),
 				'interet' 	=> 0,
@@ -36,6 +56,9 @@ use Carbon\Carbon;
 
 		}
 
+		/**
+		 * init schedule variables
+		 */
 		private function initSchedule(){
 			$this->terms = 12;
 			$this->term_years = $this->parameters->get('duree_pret')/$this->terms;
@@ -46,6 +69,9 @@ use Carbon\Carbon;
 
 		}
 
+		/**
+		 * @return array the loan payment summary at a period
+		 */
 		private function calculate()
 		{
 

@@ -6,7 +6,18 @@ use App\Services\VAT;
 use App\Services\Funding;
 use App\Services\AbstractField;
 
-
+	/**
+	 * Class LoanAmount, hte loan amount calculation, show the amount of the rest to be financed
+	 *
+	 * calculation:
+	 *
+	 * iAMount = ht_amount + tax_free_charge + non_tax_free_charge + vehicle_matriculation_charge + investment_fee
+	 * aAmount = snc_amount + leaseholder_amount + subvention_amount
+	 *
+	 * loan_amount = iAmount - aAmount;
+	 *
+	 * @package App\Services\Mandat
+	 */
 	class LoanAmount extends AbstractField
 	{
 
@@ -22,10 +33,16 @@ use App\Services\AbstractField;
 			"tva_investissement" => "nullable",
 		];
 
+		/**
+		 * @return mixed the loan amount
+		 */
 		public function process(){
 			return  $this->iAmount() - $this->aAmount();
 		}
 
+		/**
+		 * @return mixed all of the cost of the loan
+		 */
 		private function iAmount(){
 			return $this->parameters->get('montant_ht')
 				+ $this->parameters->get('fraix_defiscalisable')
@@ -34,6 +51,9 @@ use App\Services\AbstractField;
 				+ $this->parameters->get('tva_investissement');
 		}
 
+		/**
+		 * @return mixed all of contribution amount
+		 */
 		private function aAmount(){
 
 			return  $this->parameters->get("apport_snc")

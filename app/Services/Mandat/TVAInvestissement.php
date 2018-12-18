@@ -5,7 +5,13 @@ namespace App\Services\Mandat;
 use App\Services\VAT;
 use App\Services\AbstractField;
 
-
+    /**
+     * Class TVAInvestissement, the investment tax fee
+     *
+     * calculation:
+     * investment_tax_fee = tax_free_base * VAT
+     * @package App\Services\Mandat
+     */
 	class TVAInvestissement extends AbstractField
 	{
 
