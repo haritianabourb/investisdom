@@ -6,7 +6,6 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
-use App\Services\InvestisPDF;
 
 
 use Voyager;
@@ -41,11 +40,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-      // $this->app->singleton('fpdf', function()
-      $this->app->extend('fpdf' , function() {
-        return new InvestisPDF(config('fpdf.orientation'), config('fpdf.unit'), config('fpdf.size'));
-      });
-      // });
+        //
     }
 
 
@@ -56,6 +51,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return [InvestisPDF::class];
+        //
     }
 }
