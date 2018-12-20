@@ -10,7 +10,6 @@
     "require": {
         "php": "^7.1.3",
         "barryvdh/laravel-ide-helper": "dev-master",
-        "codedge/laravel-fpdf": "^1.2",
         "doctrine/dbal": "^2.8",
         "fideloper/proxy": "^4.0",
         "larapack/hooks": "^1.0",

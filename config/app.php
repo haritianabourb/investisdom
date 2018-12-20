@@ -150,7 +150,7 @@ return [
         /*
          * Package Service Providers...
          */
-         Codedge\Fpdf\FpdfServiceProvider::class,
+         niklasravnsborg\LaravelPdf\PdfServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -213,7 +213,7 @@ return [
         /**
          * Package Aliases
          */
-        'Fpdf' => Codedge\Fpdf\Facades\Fpdf::class,
+        'PDF' => niklasravnsborg\LaravelPdf\Facades\Pdf::class
 
     ],
 
