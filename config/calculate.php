@@ -66,7 +66,7 @@ return [
                 "montant_total_tva"
             ],
             "apport_bd" => [
-                "montant_reduction_impot",
+                "apport_net",
                 "base_defiscalisable",
             ],
             "apport_investissement" => [
