@@ -106,6 +106,7 @@ return [
                 "echeance_loyer",
             ],
             "numerateur_van" => [
+                "montant_ht_mandat",
                 "van_paiement",
             ],
             "period" => [
