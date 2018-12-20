@@ -18,7 +18,7 @@ class NetIntake extends AbstractField
     protected $name = "apport_net";
     protected $validations = [
         "apport_snc",
-    ]
+    ];
 
     public function process()
     {
