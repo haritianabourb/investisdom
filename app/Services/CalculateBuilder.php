@@ -80,8 +80,12 @@ class CalculateBuilder
 
 
         foreach ($fields_queue as $field_queue) {
-            if (!is_null($field_queue))
-                $this->addField($field_queue->name(), false);
+            try{
+                if (!is_null($field_queue))
+                    $this->addField($field_queue->name(), false);
+            }catch(\Error $e){
+                throw $e;
+            }
         }
 
     }
