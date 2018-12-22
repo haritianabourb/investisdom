@@ -17,7 +17,7 @@ $van_paiements = json_decode($dataTypeContent->{$row->field});
       <td># periode</td>
       <td class="text-center">paiement</td>
       <td class="text-center">interet</td>
-      <td class="text-center">principal</td>
+      <td class="text-center">capital</td>
       <td class="text-center">balance</td>
     </tr>
   </thead>
@@ -39,7 +39,7 @@ $van_paiements = json_decode($dataTypeContent->{$row->field});
       <?php
         $total_payment += $van_paiement->payment;
         $total_interest += $van_paiement->interet;
-        $total_balance += $van_paiement->capital??$van_paiement->capital?? 0;
+        $total_balance += $van_paiement->capital??$van_paiement->principal?? 0;
         $total_principal +=  $van_paiement->balance;
       ?>
       <tr>
@@ -48,7 +48,7 @@ $van_paiements = json_decode($dataTypeContent->{$row->field});
         @endisset
         <td class="text-center">{{number_format($van_paiement->payment, 2, ",", " ")}} &euro;</td>
         <td class="text-center">{{number_format($van_paiement->interet, 2, ",", " ")}} &euro;</td>
-        <td class="text-center">{{number_format($van_paiement->capital??$van_paiement->capital?? 0, 2, ",", " ")}} &euro;</td>
+        <td class="text-center">{{number_format($van_paiement->capital??$van_paiement->principal?? 0, 2, ",", " ")}} &euro;</td>
         <td class="text-center">{{number_format($van_paiement->balance, 2, ",", " ")}} &euro;</td>
       </tr>
     @endforeach

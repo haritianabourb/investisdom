@@ -86,8 +86,8 @@ class Schedule extends AbstractField
 
         if ($this->parameters->get('complement_financement') == Funding::BANK) {
 
-            $interet = abs(Finance::ipmt($this->taux_pret, $this->period, $this->nbr_period, $this->montant_compl_fin, 0, false));
-            $this->capital = abs(Finance::ppmt($this->taux_pret, $this->period, $this->nbr_period, $this->montant_compl_fin, 0, false));
+            $interet = abs(Finance::ipmt($this->taux_pret/12/100, $this->period, $this->nbr_period, $this->montant_compl_fin, 0, false));
+            $this->capital = abs(Finance::ppmt($this->taux_pret/12/100, $this->period, $this->nbr_period, $this->montant_compl_fin, 0, false));
             $this->balance = round(($this->balance ?? $this->montant_compl_fin) - $this->capital, 2);
 
         }
