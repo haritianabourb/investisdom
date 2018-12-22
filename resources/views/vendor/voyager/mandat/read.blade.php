@@ -224,7 +224,7 @@
                                 </tr>
                                 <tr>
                                     <td>Fraix Non Eligibles:</td><td class="text-right">{{$dataTypeContent->fraix_non_defiscalisable}}</td>
-                                    <td>Subvention:</td><td class="text-right">{{$dataTypeContent->montant_subvention ?? 0}}</td>
+                                    <td>Subvention:</td><td class="text-right">{{($dataTypeContent->montant_subvention ?? 0) }}</td>
                                 </tr>
                                 <tr>
                                     <td>Carte Grise:</td><td class="text-right">{{$dataTypeContent->carte_grise}}</td>
@@ -235,7 +235,7 @@
                                     <td>Base Eligible:</td><td class="text-right">{{$dataTypeContent->base_defiscalisable}}</td>
                                 </tr>
                                 <tr>
-                                    <td>Taux de Reduction:</td><td class="text-right">{{$dataTypeContent->ri_amount_type_id?? 0}}</td>
+                                    <td>Taux de Reduction:</td><td class="text-right">{{number_format($dataTypeContent->ri_amount_type_id ?? 0, 2, ',', ' ')}} %</td>
                                     <td>Montant T.T.C:</td><td class="text-right">{{$dataTypeContent->montant_ttc_mandat}}</td>
                                 </tr>
                                 <tr>
@@ -243,8 +243,8 @@
                                     <td>y compris l'avance de TVA de :</td><td class="text-right">{{$dataTypeContent->montant_ttc_mandat}}</td>
                                 </tr>
                                 <tr>
-                                    <td>Taux de Retrocession:</td><td class="text-right">{{$dataTypeContent->retrocession?? 0}}</td>
-                                    <td>Taux sur base eligible:</td><td class="text-right">{{$dataTypeContent->taux_base_eligible}}</td>
+                                    <td>Taux de Retrocession:</td><td class="text-right">{{number_format(($dataTypeContent->retrocession?? 0) * 100, 2, ',', " ")}} %</td>
+                                    <td>Taux sur base eligible:</td><td class="text-right">{{number_format(($dataTypeContent->taux_base_eligible ?? 0) * 100, 2, ',', " ")}} %</td>
                                 </tr>
                                 <tr>
                                     <td>Financement:</td><td class="text-right">{{$dataTypeContent->complement_financement}}</td>
