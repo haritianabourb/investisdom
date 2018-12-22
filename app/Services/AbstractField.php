@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use Illuminate\Support\Collection;
 use Validator;
 
 /**
@@ -20,14 +21,17 @@ abstract class AbstractField implements FieldContract{
      */
 	protected $validations = [];
 
+    /**
+     * @var  Collection parameters : Parameters of the calculation's process
+     */
+	protected $parameters;
 
     /**
      * AbstractField constructor.
-     * @param array|null $parameters calculation variables
+     * @param array|\Traversable $parameters calculation variables
      */
-	public function __construct($parameters = null){
-		$this->parameters = collect([]);
-		$this->addParameters($parameters);
+	public function __construct(iterable $parameters = []){
+		$this->parameters = Collection::make($parameters);
 	}
 
     /**
@@ -36,6 +40,13 @@ abstract class AbstractField implements FieldContract{
 	public function name(){
         if(is_null($this->name)) throw new \Error("This Class doesn't have a valid name");
 		return $this->name;
+	}
+
+	/**
+     * @return string name
+     */
+	public function parameters(){
+		return $this->parameters;
 	}
 
     /**
@@ -60,14 +71,12 @@ abstract class AbstractField implements FieldContract{
 
 
     /**
-     * @param array|mixed $parameters add parameters to the calculation
+     * @param array|Traversable $parameters add parameters to the calculation
      */
-	public function addParameters($parameters){
-		if(is_array($parameters)){
-			collect($parameters)->each(function($item, $key){
-				$this->parameters->put($key, $item);
-			});
-		}
+	public function addParameters(iterable $parameters){
+        collect($parameters)->each(function($item, $key){
+            $this->parameters->put($key, $item);
+        });
 	}
 
     /**

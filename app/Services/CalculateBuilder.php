@@ -66,10 +66,12 @@ class CalculateBuilder
     public function processCalculation($field)
     {
         if ($this->addField($field)) {
-            return $this->calculate()->processCalculation($field);
+            try{
+                return $this->calculate()->processCalculation($field);
+            }catch(\Exception $e){
+                throw $e;
+            }
         }
-
-        return null;
     }
 
     public function queueField($field)

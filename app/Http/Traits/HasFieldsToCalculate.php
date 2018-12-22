@@ -16,7 +16,11 @@ trait HasFieldsToCalculate {
    if(!is_null($parameters))$this->calculation()->setParameters($parameters);
    $this->validateField($field);
    // dd($this->calculation()->processCalculation($field));
-   return $this->calculation()->processCalculation($field);
+     try{
+        return $this->calculation()->processCalculation($field);
+     }catch(\Exception $e){
+         return redirect()->back()->withErrors($e);
+     }
  }
 
  protected function validateField($field){
