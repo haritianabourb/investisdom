@@ -17,11 +17,8 @@ class Retrocession extends AbstractField
 
     public function process()
     {
-        $numerateur = $this->parameters->get('montant_ht')
-            + $this->parameters->get('tva_npr')
-            + $this->parameters->get('van_paiement')
-            + $this->parameters->get('subvention');
-        return $numerateur / $this->parameters->get('montant_reduction_impot');
+//        dd($this->parameters->sortKeys(), $this->parameters->get('numerateur_van')/ $this->parameters->get('montant_reduction_impot'));
+        return $this->parameters->get('numerateur_van') / $this->parameters->get('montant_reduction_impot');
     }
 
 }

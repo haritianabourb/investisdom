@@ -26,7 +26,9 @@ class TermPay extends AbstractField
      */
     public function process()
     {
-        $echeance_loyer = Finance::pmt($this->parameters->get('taux_pret'), $this->parameters->get('duree_pret'), $this->parameters->get('montant_compl_fin'), 0, false);
+//        dd();
+        $rate = Finance::aer($this->parameters->get('taux_pret')/12/100, $this->parameters->get('duree_pret'));
+        $echeance_loyer = Finance::pmt($this->parameters->get('taux_pret')/12/100, $this->parameters->get('duree_pret'), $this->parameters->get('montant_compl_fin'), 0, false);
         return abs($echeance_loyer);
 
     }

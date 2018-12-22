@@ -31,7 +31,8 @@ class TauxPret extends AbstractField
     public function process()
     {
         // FIXME URGENTLY!!! rename this f***ing "tx_pret" variable name, it's a mess!!!
-        return ($this->parameters->get('tx_pret') / 100.0) / 12;
+//        return ($this->parameters->get('tx_pret') / 100.0) / 12;
+        return $this->parameters->get('tx_pret');
     }
 
 }

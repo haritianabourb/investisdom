@@ -25,7 +25,10 @@ class NumerateurVAN extends AbstractField
 
         // FIXME show of this if it has a problem, why numerator when vpm are calculate from another external package ???
         // I think this can be removed, show the MathPHP::financial package
-        return $this->parameters->get('montant_ht_mandat') - $this->parameters->get('tva_npr') - $this->parameters->get('van_paiement');
+        return $this->parameters->get('montant_ht_mandat')
+                - $this->parameters->get('van_paiement')
+                - $this->parameters->get('tva_npr')
+                - $this->parameters->get('subvention');
     }
 
 }
