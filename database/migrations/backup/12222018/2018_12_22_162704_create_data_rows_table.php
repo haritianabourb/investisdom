@@ -19,12 +19,12 @@ class CreateDataRowsTable extends Migration {
 			$table->string('field');
 			$table->string('type');
 			$table->string('display_name');
-			$table->smallInteger('required')->default('0::smallint');
-			$table->smallInteger('browse')->default('1::smallint');
-			$table->smallInteger('read')->default('1::smallint');
-			$table->smallInteger('edit')->default('1::smallint');
-			$table->smallInteger('add')->default('1::smallint');
-			$table->smallInteger('delete')->default('1::smallint');
+			$table->smallInteger('required')->default(0);
+			$table->smallInteger('browse')->default(1);
+			$table->smallInteger('read')->default(1);
+			$table->smallInteger('edit')->default(1);
+			$table->smallInteger('add')->default(1);
+			$table->smallInteger('delete')->default(1);
 			$table->text('details')->nullable();
 			$table->integer('order')->default(1);
 		});

@@ -79,13 +79,13 @@ class CalculateBuilder
         $fields_queue = $this->preProcessing($field);
 
 
-        foreach ($fields_queue as $field_queue) {
-            try{
+        try{
+            foreach ($fields_queue as $field_queue) {
                 if (!is_null($field_queue))
                     $this->addField($field_queue->name(), false);
-            }catch(\Error $e){
-                throw $e;
             }
+        }catch(\Error $e){
+            throw $e;
         }
 
     }

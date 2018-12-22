@@ -32,19 +32,6 @@ class UsersTableSeeder extends Seeder
             ),
             1 => 
             array (
-                'id' => 3,
-                'role_id' => 3,
-                'name' => 'Administrateur',
-                'email' => 'c.monel@investis-dom.com',
-                'avatar' => 'users/August2018/I9E3dxrV7J5OEUAzqFK2.png',
-                'password' => '$2y$10$kQTnOvxsdVaq4KeB6u6vquorkMEwv8yJlelP8gQu4YwZxwOL6I50m',
-                'remember_token' => '5FTkzPwiJMcMpcRKJ8zICwrmjr95pYhM6ifokc0nBUD7dLGfPLN9NeLLZC2l',
-                'settings' => '{"locale":"fr"}',
-                'created_at' => '2018-08-23 17:14:58',
-                'updated_at' => '2018-08-23 17:14:58',
-            ),
-            2 => 
-            array (
                 'id' => 4,
                 'role_id' => 1,
                 'name' => 'Artur',
@@ -56,7 +43,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2018-10-02 05:20:07',
                 'updated_at' => '2018-10-02 05:20:07',
             ),
-            3 => 
+            2 => 
             array (
                 'id' => 2,
                 'role_id' => 1,
@@ -68,6 +55,19 @@ class UsersTableSeeder extends Seeder
                 'settings' => NULL,
                 'created_at' => '2018-08-13 13:25:50',
                 'updated_at' => '2018-08-13 13:25:50',
+            ),
+            3 => 
+            array (
+                'id' => 3,
+                'role_id' => 3,
+                'name' => 'Administrateur',
+                'email' => 'c.monel@investis-dom.com',
+                'avatar' => 'users/August2018/I9E3dxrV7J5OEUAzqFK2.png',
+                'password' => '$2y$10$kQTnOvxsdVaq4KeB6u6vquorkMEwv8yJlelP8gQu4YwZxwOL6I50m',
+                'remember_token' => 'hdog5o46F8RxoSNcHg368s87JyLLZtYzNA084e4v2wsLAGTbzVbXy8Pr0sv8',
+                'settings' => '{"locale":"fr"}',
+                'created_at' => '2018-08-23 17:14:58',
+                'updated_at' => '2018-08-23 17:14:58',
             ),
         ));
         

@@ -17,8 +17,8 @@ class CreateVoyagerThemesTable extends Migration {
 			$table->integer('id', true);
 			$table->string('name');
 			$table->string('folder')->unique();
-			$table->smallInteger('active')->default('0::smallint');
-			$table->string('version')->default('');
+			$table->smallInteger('active')->default(0);
+			$table->string('version')->default(0);
 			$table->timestamps();
 		});
 	}
