@@ -35,7 +35,8 @@ return [
             "tva_loyer" => \App\Services\Mandat\TVALoyer::class,
             "tva_investissement" => \App\Services\Mandat\TVAInvestissement::class,
             "total_interet" => \App\Services\Mandat\TotalInterest::class,
-            "van_paiement" => \App\Services\Mandat\VANPaiement::class,
+            "van_paiement" => \App\Services\Mandat\VANPaiementDRFIP::class,
+//            "van_paiement_drfip" => \App\Services\Mandat\VANPaiementDRFIP::class,
             "vpm" => \App\Services\Mandat\VPM::class,
         ],
 
@@ -120,7 +121,8 @@ return [
                 "retrocession"
             ],
             "schedule" => [
-                "montant_compl_fin"
+                "echeance_loyer",
+                "montant_compl_fin",
             ],
             "taux_retro" => [
                 "apport_bd",
@@ -137,6 +139,9 @@ return [
             "van_paiement" => [
                 "schedule",
             ],
+//            "van_paiement_drfip" => [
+//                "schedule",
+//            ],
         ],
     ],
 ];
