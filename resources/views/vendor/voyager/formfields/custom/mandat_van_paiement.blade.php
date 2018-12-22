@@ -27,17 +27,28 @@ $van_paiements = json_decode($dataTypeContent->{$row->field});
     ?>
 
     @foreach ($van_paiements as $van_paiement)
+        @isset($van_paiement->period)
+          <?php
+            try{
+              $van_paiement->period = \Carbon\Carbon::createFromFormat("m/d/Y", $van_paiement->period)->format("d-m-Y");
+            }catch(\InvalidArgumentException $e){
+              $van_paiement->period  = $loop->iteration;
+            }
+          ?>
+        @endisset
       <?php
         $total_payment += $van_paiement->payment;
         $total_interest += $van_paiement->interet;
-        $total_balance += $van_paiement->principal;
+        $total_balance += $van_paiement->capital??$van_paiement->capital?? 0;
         $total_principal +=  $van_paiement->balance;
       ?>
       <tr>
-        <td class="text-center">{{$loop->iteration}}</td>
+        @isset($van_paiement->period)
+          <td class="text-center">{{$van_paiement->period}}</td>
+        @endisset
         <td class="text-center">{{number_format($van_paiement->payment, 2, ",", " ")}} &euro;</td>
         <td class="text-center">{{number_format($van_paiement->interet, 2, ",", " ")}} &euro;</td>
-        <td class="text-center">{{number_format($van_paiement->principal, 2, ",", " ")}} &euro;</td>
+        <td class="text-center">{{number_format($van_paiement->capital??$van_paiement->capital?? 0, 2, ",", " ")}} &euro;</td>
         <td class="text-center">{{number_format($van_paiement->balance, 2, ",", " ")}} &euro;</td>
       </tr>
     @endforeach
