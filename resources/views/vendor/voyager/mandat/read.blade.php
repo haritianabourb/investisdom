@@ -195,7 +195,7 @@
         <div class="col-md-4 hidden-sm">
             <div class="row padding-top">
                 <div class="col-md-12">
-                    <div>
+                    <div class="affix">
                         {{--<address>--}}
                             {{--@php($leaseholder = $dataTypeContent->leaseholderId->where('id', $dataTypeContent->leaseholderId->id)->first())--}}
                             {{--<strong>{{$leaseholder->name}}</strong><br/>--}}
