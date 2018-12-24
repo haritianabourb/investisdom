@@ -100,8 +100,8 @@ class Schedule extends AbstractField
 
         }
 
-//        $date = $this->date->addMonth()->copy()->startOfMonth();
-        $date = $this->date->addMonth()->copy();
+        $date = $this->date->addMonth()->copy()->startOfMonth();
+//        $date = $this->date->addMonth()->copy();
 
         return array(
             'period' => $date->format('m/d/Y'),
