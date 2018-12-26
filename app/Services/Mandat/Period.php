@@ -2,34 +2,31 @@
 
 namespace App\Services\Mandat;
 
-use App\Services\VAT;
 use App\Services\Funding;
 use App\Services\AbstractField;
 
+/**
+ * Class Period set the stack of a period, calculate from term years when it's a loan
+ *
+ * not really a calculation
+ *
+ * @package App\Services\Mandat
+ */
+class Period extends AbstractField
+{
 
-	class Period extends AbstractField
-	{
+    protected $name = "period";
+    protected $validations = [
+        "duree_pret" => "required"
+    ];
 
-		protected $name = "period";
-		protected $validations = [
-			"nbr_period" => "required"
-		];
+    /**
+     * @return float|int|mixed the perion
+     */
+    public function process()
+    {
+        return $this->parameters->get('duree_pret');
 
-		public function process(){
+    }
 
-			// return $this->parameters->get('duree_pret') / 12;
-
-			if($this->parameters->get('complement_financement') == Funding::BANK){
-				return $this->parameters->get('term_years') * 12;
-			}
-
-			if($this->parameters->get('complement_financement') == Funding::CASH){
-				return $this->parameters->get('nbr_period');
-			}
-
-
-		}
-
-	}
-
-	?>
+}

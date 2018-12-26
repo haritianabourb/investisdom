@@ -101,7 +101,11 @@ if (starts_with(Auth::user()->avatar, 'http://') || starts_with(Auth::user()->av
             <div class="side-body padding-top">
                 @yield('page_header')
                 <div id="voyager-notifications"></div>
-                @yield('content')
+                <div class="row">
+                    <div class="col-md-12">
+                        @yield('content')
+                    </div>
+                </div>
             </div>
         </div>
     </div>

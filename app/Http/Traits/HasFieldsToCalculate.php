@@ -14,17 +14,15 @@ trait HasFieldsToCalculate {
 
  public function calculateField($parameters = null, $field) {
    if(!is_null($parameters))$this->calculation()->setParameters($parameters);
-   $this->validateField($field);
-   // dd($this->calculation()->processCalculation($field));
-   return $this->calculation()->processCalculation($field);
+     try{
+         $this->validateField($field);
+        return $this->calculation()->processCalculation($field);
+     }catch(\Exception $e){
+         return collect(json_decode($e->getMessage()) ?? $e->getMessage());
+     }
  }
 
  protected function validateField($field){
-     if(!$this->calculation->validateField($field)){
-       return response()
-         ->json([
-           'error' => "missing or incorect field calculation",
-         ]);
-     }
+        if(!$this->calculation->validateField($field)) throw new \Exception("error on field $field");
  }
 }

@@ -2,42 +2,41 @@
 
 namespace App\Services\Mandat;
 
-use App\Services\VAT;
 use App\Services\Funding;
 use App\Services\AbstractField;
 
+/**
+ * Class Interest show an interest amount fee, calculate if it's a loan
+ *
+ * calculation:
+ *
+ * interest = loan_amount * percent(loan_rate)
+ *
+ * @package App\Services\Mandat
+ */
+class Interest extends AbstractField
+{
 
-	class Interest extends AbstractField
-	{
+    protected $name = "interet";
 
-		protected $name = "interet";
-		// protected $validations = [
-		// 	"complement_financement" => "required",
-		// 	"taux_pret" => "required",
-		// 	"period" => "required"
-		// ];
+    protected $validations = [
+        "complement_financement" => "required",
+        "taux_pret" => "required"
+    ];
 
-		public function process(){
-			if($this->parameters->get('complement_financement') == Funding::BANK){
-				return $this->parameters->get('montant_compl_fin') * $this->parameters->get('tx_pret')/100;
-				//
-				// $this->principal = round($this->echeance_loyer - $interet, 2);
-				//
-				// $this->balance = round($this->montant_compl_fin - $this->principal, 2);
-			}
+    /**
+     * @return float|int|mixed the interest loan amount
+     */
+    public function process()
+    {
 
-			if($this->parameters->get('complement_financement') == Funding::CASH){
+        if ($this->parameters->get('complement_financement') != Funding::CASH) {
+            return $this->parameters->get('montant_compl_fin') * $this->parameters->get('taux_pret') / 100;
+        }
 
-				return 0;
-				//
-				// $this->principal = round($this->echeance_loyer, 2);
-				//
-				// $this->balance = round($this->montant_compl_fin - ($this->period * $this->principal), 2);
+        return 0;
 
-			}
+    }
 
-		}
+}
 
-	}
-
-	?>

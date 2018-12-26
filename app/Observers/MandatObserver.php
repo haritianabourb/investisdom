@@ -26,7 +26,6 @@ class MandatObserver
      */
       public function creating(Mandat $mandat)
     {
-        // dd($mandat);
         $mandat->identifiant = "ATTEMPTID";
     }
 
@@ -38,7 +37,6 @@ class MandatObserver
      */
       public function created(Mandat $mandat)
     {
-        // dd($mandat->leaseholderId);
         $date = (new Carbon($mandat->created_at))->format("Ymd");
         $identifiant =
           substr(preg_replace('/\s/', '', $mandat->leaseholderId->name), 0, 3)
@@ -50,6 +48,7 @@ class MandatObserver
           DB::table($mandat->getTable())->where('id', $mandat->id)->update(['identifiant' => $identifiant]);
     }
 
+
     /**
      * Handle the contract "creating" event.
      *
@@ -60,14 +59,12 @@ class MandatObserver
     {
       $request = request()->all();
 
-      // FIXME some field doesn't exist, we have to change it ASPA
-      $request['tx_pret'] = $request['taux_pret'];
       $request['nbr_period'] = $request['duree_pret_periode'];
 
       $results = $this->calculateField($request, 'all');
 
       $columns = Schema::getColumnListing($mandat->getTable());
-      
+
       $results->each(function ($item, $key) use ($mandat, $columns){
         if(in_array($key, $columns)){
           $mandat->$key = $item;
@@ -75,7 +72,6 @@ class MandatObserver
       });
 
       $mandat->schedule = json_encode($mandat->schedule?? "");
-      $mandat->taux_pret = $request['tx_pret'];
 
       $mandat->resultats = $results;
     }

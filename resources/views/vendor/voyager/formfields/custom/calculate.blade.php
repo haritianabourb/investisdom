@@ -23,7 +23,7 @@
          $.getJSON("{{route("admin.mandat.".(!is_null($dataTypeContent->getKey()) ? 'edit' : 'api').".calculate", ["mandat" => $dataTypeContent->id, "field" => $row->field])}}",
            {
              @foreach ($fields as $field_name)
-             "{{$field_name}}" : $('[name={{$field_name}}]').val() @if(!$loop->last || (!is_null($queueFields) && count($queueFields))),@endif
+             "{{$field_name}}" : $('[name={{$field_name}}]').is('input[type="checkbox"]') ? $('[name={{$field_name}}]').prop('checked') : $('[name={{$field_name}}]').val() @if(!$loop->last || (!is_null($queueFields) && count($queueFields))),@endif
              @endforeach
              @if(!is_null($queueFields))
                @foreach ($queueFields as $field_name)
