@@ -29,11 +29,9 @@ class Interest extends AbstractField
      */
     public function process()
     {
-        //FIXME this doesn't exist normaly, change tx_pret name to another, like taux_pret_annuel or else
-        $this->parameters->get('tx_pret') ?? $this->parameters->addParameters(['tx_pret' => $this->parameters->get('taux_pret')]);
 
         if ($this->parameters->get('complement_financement') != Funding::CASH) {
-            return $this->parameters->get('montant_compl_fin') * $this->parameters->get('tx_pret') / 100;
+            return $this->parameters->get('montant_compl_fin') * $this->parameters->get('taux_pret') / 100;
         }
 
         return 0;

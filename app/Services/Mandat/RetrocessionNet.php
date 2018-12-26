@@ -9,11 +9,6 @@ class RetrocessionNet extends AbstractField
 {
 
     protected $name = "retrocession_net";
-    // protected $validations = [
-    // 	"complement_financement" => "required",
-    // 	"taux_pret" => "required",
-    // 	"period" => "required"
-    // ];
 
     public function process()
     {

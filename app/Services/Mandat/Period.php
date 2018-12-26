@@ -17,7 +17,7 @@ class Period extends AbstractField
 
     protected $name = "period";
     protected $validations = [
-        "nbr_period" => "required"
+        "duree_pret" => "required"
     ];
 
     /**
@@ -25,13 +25,7 @@ class Period extends AbstractField
      */
     public function process()
     {
-
-        // FIXME is it used anymore???
-        if ($this->parameters->get('complement_financement') != Funding::CASH) {
-            return $this->parameters->get('term_years') * 12;
-        }
-
-        return $this->parameters->get('nbr_period');
+        return $this->parameters->get('duree_pret');
 
     }
 

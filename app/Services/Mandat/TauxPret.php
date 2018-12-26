@@ -22,7 +22,7 @@ class TauxPret extends AbstractField
 
     protected $name = "taux_pret";
     protected $validations = [
-        "tx_pret" => "required"
+        "taux_pret" => "required"
     ];
 
     /**
@@ -32,7 +32,7 @@ class TauxPret extends AbstractField
     {
         // FIXME URGENTLY!!! rename this f***ing "tx_pret" variable name, it's a mess!!!
 //        return ($this->parameters->get('tx_pret') / 100.0) / 12;
-        return $this->parameters->get('tx_pret');
+        return $this->parameters->get('taux_pret');
     }
 
 }

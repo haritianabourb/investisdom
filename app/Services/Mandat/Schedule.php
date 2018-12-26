@@ -83,8 +83,14 @@ class Schedule extends AbstractField
      */
     private function calculate()
     {
+        if ($this->parameters->get('complement_financement') == Funding::CASH) {
 
-        if ($this->parameters->get('complement_financement') == Funding::BANK) {
+            $interet = 0;
+            $this->capital = round($this->echeance_loyer, 2);
+            $this->balance = round($this->montant_compl_fin - ($this->period * $this->echeance_loyer), 2);
+
+        }else{
+//        }else ($this->parameters->get('complement_financement') == Funding::BANK) {
 
             $interet = abs(Finance::ipmt($this->taux_pret/12/100, $this->period, $this->nbr_period, $this->montant_compl_fin, 0, false));
             $this->capital = abs(Finance::ppmt($this->taux_pret/12/100, $this->period, $this->nbr_period, $this->montant_compl_fin, 0, false));
@@ -92,13 +98,6 @@ class Schedule extends AbstractField
 
         }
 
-        if ($this->parameters->get('complement_financement') == Funding::CASH) {
-
-            $interet = 0;
-            $this->capital = round($this->echeance_loyer, 2);
-            $this->balance = round($this->montant_compl_fin - ($this->period * $this->echeance_loyer), 2);
-
-        }
 
         $date = $this->date->addMonth()->copy()->startOfMonth();
 //        $date = $this->date->addMonth()->copy();

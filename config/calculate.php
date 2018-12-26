@@ -28,7 +28,7 @@ return [
             "retrocession_net" => \App\Services\Mandat\RetrocessionNet::class,
             "schedule" => \App\Services\Mandat\Schedule::class,
             "taux_base_eligible" => \App\Services\Mandat\TauxBaseEligible::class,
-            "taux_pret" => \App\Services\Mandat\TauxPret::class,
+            //"taux_pret" => \App\Services\Mandat\TauxPret::class,
             "taux_retro" => \App\Services\Mandat\TauxRetrocession::class,
             "term_years" => \App\Services\Mandat\Term_Years::class,
             "tva_npr" => \App\Services\Mandat\TVANPR::class,
@@ -78,7 +78,7 @@ return [
             ],
             "echeance_loyer" => [
                 "period",
-                "taux_pret",
+                //"taux_pret",
                 "montant_compl_fin",
             ],
             "echeance_loyer_ttc" => [

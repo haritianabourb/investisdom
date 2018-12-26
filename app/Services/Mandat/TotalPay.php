@@ -9,11 +9,6 @@ class TotalPay extends AbstractField
 {
 
     protected $name = "montant_total_loyer";
-    // protected $validations = [
-    // 	"complement_financement" => "required",
-    // 	"taux_pret" => "required",
-    // 	"period" => "required"
-    // ];
 
     public function process()
     {
