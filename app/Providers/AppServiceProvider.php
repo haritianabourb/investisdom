@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use App\FormFields\MoneyFormField;
-
+use App\FormFields\PercentageFormField;
 
 use Voyager;
 
