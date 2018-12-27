@@ -23,4 +23,8 @@ class Mandat extends Model
   function supplierId(){
     return $this->belongsTo(Supplier::class, "supplier_id", "id");
   }
+
+  function bank(){
+    return $this->belongsTo(Bank::class, "bank", "id");
+  }
 }
