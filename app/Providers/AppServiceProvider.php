@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use App\FormFields\MoneyFormField;
 
 
 use Voyager;
@@ -41,6 +42,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+        Voyager::addFormField(MoneyFormField::class);
     }
 
 
