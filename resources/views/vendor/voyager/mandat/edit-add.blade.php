@@ -381,6 +381,18 @@
                $('[name="ri_amount_type_id"]').html($html).select2();
             });
 
+            $('[name="type_defiscalisation"]').trigger("change").trigger("select2:select");
+
+
+            @if(!is_null(old('ri_amount_type_id', $dataTypeContent->ri_amount_type_id)))
+                <?php $selected_value = old('ri_amount_type_id', $dataTypeContent->ri_amount_type_id); ?>
+                $('[name="ri_amount_type_id"]').val({{$selected_value}}).trigger("change").trigger("select2:select");
+            @endif
+
+
+            $('[name="leaseholder_id"]').on("change", function(){});
+
+
         });
     </script>
 @endpush
