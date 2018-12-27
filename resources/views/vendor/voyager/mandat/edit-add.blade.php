@@ -315,6 +315,72 @@
 
             $("[name=is_subvention]").trigger('change'); //setting default visibility
             $("[name=type_subvention]").trigger("change").trigger("select2:select");
+
+
+
+            $('[name="type_defiscalisation"]').on('change', function(){
+               $('[name="ri_amount_type_id"]').val(null).trigger("change");
+               $('[name="ri_amount_type_id"] option, [name="ri_amount_type_id"] optgroup').remove();
+                var $html = '';
+                // FIXME I'm Horrible :'( Please is anybody here to make me more secure and prettier?
+               if(this.value === "01"){
+                    $html = ' <optgroup label="PLEIN DROIT | RUN - MAR - GUA">\n' +
+                        '                       <option value="44.12">Normal : 44,12%</option>\n' +
+                        '                   <option value="61.77">Rénovation hôtelière : 61,77%</option>\n' +
+                        '                   <option value="52.95">Energie : 52,95%</option>\n' +
+                        '                   <option value="50">Logement social : 50,00%</option>\n' +
+                        '                   </optgroup>\n' +
+                        '                   <optgroup label="PLEIN DROIT | NCA - TAH - ST MARTIN - MAY - WAL - ST BARTH">\n' +
+                        '                       <option value="44.12">Normal : 44,12%</option>\n' +
+                        '                   <option value="52.95">Rénovation hôtelière : 52,95%</option>\n' +
+                        '                   <option value="52.95">Energie : 52,95%</option>\n' +
+                        '                   <option value="50">Logement social : 50,00%</option>\n' +
+                        '                   </optgroup>\n' +
+                        '                   <optgroup label="PLEIN DROIT | MAY - WAL">\n' +
+                        '                       <option value="52.95">Normal : 52,95%</option>\n' +
+                        '                   <option value="52.95">Rénovation hôtelière : 52,95%</option>\n' +
+                        '                   <option value="61.77">Energie : 61,77%</option>\n' +
+                        '                   <option value="50">Logement social : 50,00%</option>\n' +
+                        '                   </optgroup>\n' +
+                        '                   <optgroup label="PLEIN DROIT | GUY">\n' +
+                        '                       <option value="52.95">Normal : 52,95%</option>\n' +
+                        '                   <option value="61.77">Rénovation hôtelière : 61,77%</option>\n' +
+                        '                   <option value="61.77">Energie : 61,77%</option>\n' +
+                        '                   <option value="50">Logement social : 50,00%</option>\n' +
+                        '                   </optgroup>\n' +
+                        '                   <optgroup label="******************************************"></optgroup>\n' +
+                        '                       <optgroup label="AGREMENT | RUN - MAR - GUA">\n' +
+                        '                       <option value="45.30">Normal : 45,30%</option>\n' +
+                        '                   <option value="63.42">Rénovation hôtelière : 63,42%</option>\n' +
+                        '                   <option value="54.36">Energie : 54,36%</option>\n' +
+                        '                   <option value="50">Logement social : 50,00%</option>\n' +
+                        '                   </optgroup>\n' +
+                        '                   <optgroup label="AGREMENT | NCA - TAH - ST MARTIN - MAY - WAL - ST BARTH">\n' +
+                        '                       <option value="45.30">Normal : 45,30%</option>\n' +
+                        '                   <option value="54.36">Rénovation hôtelière : 54,36%</option>\n' +
+                        '                   <option value="54.36">Energie : 54,36%</option>\n' +
+                        '                   <option value="50">Logement social : 50,00%</option>\n' +
+                        '                   </optgroup>\n' +
+                        '                   <optgroup label="AGREMENT | MAY - WAL">\n' +
+                        '                       <option value="54.36">Normal : 54,36%</option>\n' +
+                        '                   <option value="54.36">Rénovation hôtelière : 54,36%</option>\n' +
+                        '                   <option value="63.42">Energie : 63,42%</option>\n' +
+                        '                   <option value="50">Logement social : 50,00%</option>\n' +
+                        '                   </optgroup>\n' +
+                        '                   <optgroup label="AGREMENT | GUY">\n' +
+                        '                       <option value="54.36">Normal : 54,36%</option>\n' +
+                        '                   <option value="63.42">Rénovation hôtelière : 63,42%</option>\n' +
+                        '                   <option value="63.42">Energie : 63,42%</option>\n' +
+                        '                   <option value="50">Logement social : 50,00%</option>\n' +
+                        '                   </optgroup>\n' +
+                        '                   '
+               }else{
+                   $html = '<option value="38.25">Impôt sur le Revenu: 38,25%</option>\n' +
+                       '<option value="35.00">Impôt sur les Société: 35,00%</option>';
+               }
+               $('[name="ri_amount_type_id"]').html($html).select2();
+            });
+
         });
     </script>
 @endpush
