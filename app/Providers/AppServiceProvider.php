@@ -43,6 +43,7 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         Voyager::addFormField(MoneyFormField::class);
+        Voyager::addFormField(PercentageFormField::class);
     }
 
 
