@@ -128,8 +128,15 @@
                                         {{ __('voyager::generic.download') }}
                                     </a>
                                 @endif
+
                             @elseif($row->type == 'money')
-                                  @include('voyager::partials.money')
+                                @php
+                                    $field_name=$row->field;
+                                    $money_value=strval($dataTypeContent[$field_name]);
+                                    $money_value=str_replace('.', ',', $money_value);
+                                    echo $money_value.' €';
+                                @endphp
+                                
                             @else
                                 @include('voyager::multilingual.input-hidden-bread-read')
                                 @if(isset($display_options->percent) && $display_options->percent && floatval($display_options->percent))
