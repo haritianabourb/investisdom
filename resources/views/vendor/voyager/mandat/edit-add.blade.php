@@ -389,9 +389,21 @@
                 $('[name="ri_amount_type_id"]').val({{$selected_value}}).trigger("change").trigger("select2:select");
             @endif
 
+            $('[name="leaseholder_id"]').on("change", function(){
+                $.getJSON('{{route('api.leaseholders.index')}}/'+this.value, {"_method" : "GET"}, function(leaseholder){
+                    if ( true == leaseholder.data.depend_groupeco){
+                        $('[name="type_defiscalisation"]').val("02").trigger("change");
+                        $('[name="type_defiscalisation"] option[value="01"]').prop("disabled", true);
+                        $('[name="type_defiscalisation"]').select2()
+                    }else{
+                        $('[name="type_defiscalisation"] option[value="01"]').prop("disabled", false);
+                        $('[name="type_defiscalisation"]').select2()
+                    }
+                });
 
-            $('[name="leaseholder_id"]').on("change", function(){});
+            });
 
+            $('[name="leaseholder_id"]').trigger("change");
 
         });
     </script>
