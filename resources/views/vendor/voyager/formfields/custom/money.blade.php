@@ -1,9 +1,11 @@
 <div class="input-group">
 	<input type="number"
+		   lang="en-150"
 	       class="form-control"
 	       name="{{ $row->field }}"
 	       data-name="{{ $row->display_name }}"
 	       type="number"
+	       step="0.01"
 	       @if($row->required == 1) required @endif
 	             step="any"
 	       placeholder="{{ isset($options->placeholder)? old($row->field, $options->placeholder): $row->display_name }}"
