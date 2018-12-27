@@ -3,14 +3,15 @@
 namespace App\Providers;
 
 
+use App\CGP;
 use App\Mandat;
+use App\Observers\CGPObserver;
 use App\Reservation;
 use App\SNC;
 use App\Observers\MandatObserver;
 use App\Observers\ReservationObserver;
 use App\Observers\SNCObserver;
 
-use Illuminate\Support\Facades\Event;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
 class EventServiceProvider extends ServiceProvider
@@ -37,6 +38,7 @@ class EventServiceProvider extends ServiceProvider
     public function boot()
     {
         parent::boot();
+        CGP::observe(CGPObserver::class);
         Reservation::observe(ReservationObserver::class);
         Mandat::observe(MandatObserver::class);
         SNC::observe(SNCObserver::class);
