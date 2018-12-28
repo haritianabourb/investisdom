@@ -74,12 +74,40 @@ function Task4_IsRepriseFournisseur() {
 
 }
 
+
+
+
+function Task29_AssistanceJuridique() {
+    if (!(window.location.href.indexOf("reservations") != -1))
+        return;
+    var elementsToHide = [
+        "[name=type_aj]"
+    ].join(", "); //getting selector string for jQuery
+
+    $("[name=assistance_juridique]").change(function() {
+        if (this.checked) { //Oui, show fields
+            $(elementsToHide)
+                .parent().fadeTo("fast", 1);
+        } else { //otherwise, hide fields
+            $(elementsToHide).val("")
+                .parent().fadeTo("fast", 0);
+        }
+    });
+
+    $("[name=assistance_juridique]").trigger('change'); //setting default visibility
+
+}
+
+
+
+
 $(document).ready(function() {
 
     Task6_HideFieldsForInvestorsAndIntermediaries();
     // Task5_HideFieldsForMandat();
     Task4_IsReplacement();
     Task4_IsRepriseFournisseur();
+    Task29_AssistanceJuridique();
 
     $(document).on('hidden.bs.modal', '.modal', function (event) {
       if($('.modal.in').length > 0){
