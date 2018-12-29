@@ -87,15 +87,42 @@ function Task29_AssistanceJuridique() {
     $("[name=assistance_juridique]").change(function() {
         if (this.checked) { //Oui, show fields
             $(elementsToHide)
-                .parent().fadeTo("fast", 1);
+                .parent().addClass("opacity1").fadeTo("fast", 1);
+
         } else { //otherwise, hide fields
             $(elementsToHide).val("")
-                .parent().fadeTo("fast", 0);
+                .parent().removeClass("opacity1").fadeTo("fast", 0);
         }
+
+        $("[name=type_aj]").trigger("change");
     });
 
     $("[name=assistance_juridique]").trigger('change'); //setting default visibility
+    
 
+}
+
+function Task29_ToggleReductionAj() {
+    if (!(window.location.href.indexOf("reservations") != -1))
+        return;
+    var elementsToHide = [
+        "[name=taux_ponctuel]"
+    ].join(", "); //getting selector string for jQuery
+
+    $("[name=type_aj]").change(function() {
+        console.log($(this).parent().hasClass("opacity1"));
+        if ((this.value == "ponctuel") && ($(this).parent().hasClass("opacity1"))) { //Ponctuel, show fields
+            $(elementsToHide)
+                .parent().show("fast");
+            // $("[name=capital]").prop("required", true);
+        } else { //otherwise, hide fields
+            $(elementsToHide).val("")
+                .parent().hide("fast");
+            // $("[name=capital]").prop("required", false);
+        }
+    });
+
+    $("[name=type_aj]").trigger("change");
 }
 
 
@@ -108,6 +135,7 @@ $(document).ready(function() {
     Task4_IsReplacement();
     Task4_IsRepriseFournisseur();
     Task29_AssistanceJuridique();
+    Task29_ToggleReductionAj();
 
     $(document).on('hidden.bs.modal', '.modal', function (event) {
       if($('.modal.in').length > 0){
