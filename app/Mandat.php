@@ -25,6 +25,6 @@ class Mandat extends Model
   }
 
   function bank(){
-    return $this->belongsTo(Bank::class, "bank", "id");
+    return $this->belongsTo(Bank::class);
   }
 }
