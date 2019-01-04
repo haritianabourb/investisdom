@@ -1,12 +1,12 @@
 <?php
 namespace App\FormFields;
 use TCG\Voyager\FormFields\AbstractHandler;
-class MoneyFormField extends AbstractHandler
+class PercentageFormField extends AbstractHandler
 {
-    protected $codename = 'money';
+    protected $codename = 'percentage';
     public function createContent($row, $dataType, $dataTypeContent, $options)
     {
-        return view('voyager::formfields.custom.money', compact('row', 'options', 'dataType', 'dataTypeContent'));
+        return view('voyager::formfields.percentage', compact('row', 'options', 'dataType', 'dataTypeContent'));
         // return view('voyager::formfields.custom.money');
     }
 }
