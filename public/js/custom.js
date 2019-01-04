@@ -110,7 +110,6 @@ function Task29_ToggleReductionAj() {
     ].join(", "); //getting selector string for jQuery
 
     $("[name=type_aj]").change(function() {
-        console.log($(this).parent().hasClass("opacity1"));
         if ((this.value == "ponctuel") && ($(this).parent().hasClass("opacity1"))) { //Ponctuel, show fields
             $(elementsToHide)
                 .parent().show("fast");
