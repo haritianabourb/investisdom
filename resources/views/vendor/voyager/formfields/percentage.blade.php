@@ -25,10 +25,13 @@
   <span class="input-group-addon">&#37;</span>
 </div>
 
-<script>
-	window.onload = function () {
-		$('[data-for="{{ $row->field }}"]').change(function() {
-			$('[name="{{ $row->field }}"]').val($(this).val()/100);
-		});
-	}
-</script>
+
+@section('javascript')
+    <script>
+        window.onload = function () {
+            $('[data-for="{{ $row->field }}"]').change(function() {
+                $('[name="{{ $row->field }}"]').val($(this).val()/100);
+            });
+        }
+    </script>
+@stop
