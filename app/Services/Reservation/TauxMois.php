@@ -9,6 +9,7 @@
 namespace App\Services\Reservation;
 
 use App\TauxCGP;
+use App\TypeContrat;
 use App\Services\AbstractField;
 
 class TauxMois extends AbstractField
@@ -20,8 +21,6 @@ class TauxMois extends AbstractField
 
     public function process()
     {
-        // TODO: Implement process() method.
-//        return $this->parameters->get('identifiant') ?: '';
 
         $mandat_mois = $this->parameters->get('reservation_start')->month;
         $mandat_mois = "mois_$mandat_mois";
@@ -32,7 +31,9 @@ class TauxMois extends AbstractField
             ->where('type_contrat_id', $this->parameters->get('type_contrat_id'))
             ->first();
 
-        return $tauxCGP? $tauxCGP->$mandat_mois/100 : 0.216;
+        $contract_type = TypeContrat::find($this->parameters->get('type_contrat_id'));
+
+        return $tauxCGP ? $tauxCGP->$mandat_mois/100 : ($contract_type->name == "Confort" ? self::TAUX_CONFORT : self::TAUX_SERENITE);
     }
 
 
