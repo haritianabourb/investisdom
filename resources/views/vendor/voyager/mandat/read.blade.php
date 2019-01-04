@@ -175,6 +175,8 @@
                                     @endif
                                 @elseif($row->type == 'money')
                                     @include('voyager::partials.money')
+                                @elseif($row->type == 'percentage')
+                                    @include('voyager::partials.percentage')
                                 @else
                                     @include('voyager::multilingual.input-hidden-bread-read')
                                     @if(isset($display_options->percent) && $display_options->percent)
