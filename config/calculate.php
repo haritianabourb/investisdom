@@ -1,4 +1,5 @@
 <?php
+$reservation->apport = $apport;
 return [
 
     // "calculate" => [
@@ -144,4 +145,46 @@ return [
 //            ],
         ],
     ],
+
+    "reservation" => [
+        "services" => [
+            "all" => \App\Services\Reservation\All::class,
+            "apport" => \App\Services\Reservation\Apport::class,
+            "gain_brut" => \App\Services\Reservation\GainBrut::class,
+            "montant_commission_cgp" => \App\Services\Reservation\MontantCommissionCGP::class,
+            "reservation_start" => \App\Services\Reservation\ReservationStart::class,
+            "taux_rentabilite" => \App\Services\Reservation\TauxRentabilite::class,
+            "taux_mois" => \App\Services\Reservation\TauxMois::class,
+            "taux_reservation" => \App\Services\Reservation\TauxReservation::class,
+        ],
+        "queues" => [
+            "all" => [
+                "apport",
+                "gain_brut",
+                "montant_commission_cgp",
+                "reservation_start",
+                "taux_rentabilite",
+                "taux_mois",
+                "taux_reservation",
+            ],
+            "apport" => [
+                "taux_rentabilite",
+            ],
+            "gain_brut" => [
+                "apport",
+            ],
+            "montant_commission_cgp" => [
+                "apport",
+            ],
+            "taux_rentabilite" => [
+                "taux_mois",
+            ],
+            "taux_mois" => [
+                "reservation_start",
+            ],
+            "taux_reservation" => [
+                "apport"
+            ],
+        ]
+    ]
 ];

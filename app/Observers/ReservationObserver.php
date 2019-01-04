@@ -5,10 +5,16 @@ namespace App\Observers;
 use App\Reservation;
 use App\TauxCGP;
 use Carbon\Carbon;
+use \App\Http\Traits\HasFieldsToCalculate;
+
+use DB;
+use Schema;
 
 class ReservationObserver
 {
+    use HasFieldsToCalculate;
 
+    protected $calculate_name = "reservation";
 
 
     /**
@@ -32,13 +38,14 @@ class ReservationObserver
     {
         // dd($reservation);
         $date = (new Carbon($reservation->created_at))->format("Ymd");
-        $reservation->identifiant =
+        $identifiant =
           substr(preg_replace('/\s/', '', $reservation->investorsId->name), 0, 3)
           .substr(preg_replace('/\s/', '', $reservation->cgpsId->name), -3)
           ."-".$date
           ."/".$reservation->id;
 
-        $reservation->save();
+        // XXX little hack to not thrown the saving event for calculations
+        DB::table($reservation->getTable())->where('id', $reservation->id)->update(['identifiant' => $identifiant]);
 
     }
 
@@ -50,7 +57,20 @@ class ReservationObserver
      */
     public function saving(Reservation $reservation)
     {
-        $this->calculate($reservation);
+
+        $request = request()->all();
+
+        $results = $this->calculateField($request, 'all');
+
+        $columns = Schema::getColumnListing($reservation->getTable());
+
+        $results->each(function ($item, $key) use ($reservation, $columns){
+            if(in_array($key, $columns)){
+                $reservation->$key = $item;
+            }
+        });
+
+//        $this->calculate($reservation);
     }
 
     /**
@@ -129,37 +149,4 @@ class ReservationObserver
 
     }
 
-    // private function getInvestors(){
-    //   $investor1 = json_decode(json_encode(
-    //    array(
-    //     'tax_reservation' => 12700,            // montant reduction
-    //     'snc_reservation' => 1,                // nb_snc
-    //     'aj_reservation' => 0,                 //
-    //     'contract_reservation' => 'CONFORT',    // $this->typeReservationsId->name
-    //     'taux_reservation_contrat' => 0.276,    // Taux report commission, XXX depant du mois et du contrat
-    //     'taux_cgp' => 0.056,                    // TauxCGP::where('cgp_id', $this->cgpId->id)->andWhere('year', $this->mandat_start_at->year)->getcurrentTaux($mois);
-    //     )
-    //   ), FALSE);
-    //
-    //
-    //   $taux_renta = $investor1->taux_reservation_contrat - $investor1->taux_cgp;                                   // taux rentabilité
-    //   $apport = $investor1->tax_reservation / (1+ ($taux_renta)); // apport
-    //   $comm_cgp = $apport * $investor1->taux_cgp;
-    //   $gain_brut = $investor1->tax_reservation - $apport;
-    //   $taux_reservation = $apport / $investor1->tax_reservation;
-    //
-    //   $investor1->dossier =
-    //   array(
-    //       'taux_rentabilite' => $taux_renta,
-    //       'apport' => $apport,
-    //       'commission_cgp' => $comm_cgp,
-    //       'brut_invoice' => $gain_brut,
-    //       'taux_reservation' => $taux_reservation,
-    //     );
-    //
-    //   return array(
-    //       $investor1,
-    //     )
-    //   ;
-    // }
 }
