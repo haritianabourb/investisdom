@@ -15,6 +15,9 @@ class TauxMois extends AbstractField
 {
     protected $name = "taux_mois";
 
+    const TAUX_CONFORT = 0.216;
+    const TAUX_SERENITE = 0.276;
+
     public function process()
     {
         // TODO: Implement process() method.
