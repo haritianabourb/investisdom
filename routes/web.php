@@ -15,6 +15,29 @@ Route::get('/', function () {
     return view('theme::index');
 });
 
+Route::get('/test-view', function () {
+
+    $data['nom'] = 'NAME';
+    $data['adresse'] = 'ADDRESS';
+    $data['cgpville'] = 'VILLE';
+    $data['cgpcp'] = '123';
+
+    $data['forme_juridique'] = 'REGISTRATION';
+    $data['immatriculation'] = 'IMMATRIC';
+    $data['nom_representant'] = 'REPRESENT';
+    $data['prenom'] = 'PRENOM';
+
+    $data['dateconvention'] = date ("d-m-Y");
+    $data['fonction'] = 'FONCTION';
+    $data['civilite'] = "M.";
+    $data['siret'] = 'KEY';
+    $data['capital'] = '123';
+    $data['lieu_immatriculation'] = '123';
+    $data['madate'] = date ("d-m-Y");
+    $data['annee']=date("Y", strtotime(date ("d-m-Y")));
+
+    return view('pdf.cgps.convention', $data);
+});
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
