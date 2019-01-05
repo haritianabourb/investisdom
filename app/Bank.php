@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Bank extends Entity
 {
-    // protected $table = 'entities';
+     protected $table = 'banks';
 
     // public static function boot(){
     //   parent::boot();

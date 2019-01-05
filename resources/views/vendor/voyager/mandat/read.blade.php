@@ -175,6 +175,8 @@
                                     @endif
                                 @elseif($row->type == 'money')
                                     @include('voyager::partials.money')
+                                @elseif($row->type == 'percentage')
+                                    @include('voyager::partials.percentage')
                                 @else
                                     @include('voyager::multilingual.input-hidden-bread-read')
                                     @if(isset($display_options->percent) && $display_options->percent)
@@ -242,7 +244,7 @@
                                 </tr>
                                 <tr>
                                     <td>Apport SNC:</td><td class="text-right">{{$dataTypeContent->apport_snc?? 0}}</td>
-                                    <td>y compris l'avance de TVA de :</td><td class="text-right">{{$dataTypeContent->montant_ttc_mandat}}</td>
+                                    <td>y compris l'avance de TVA de :</td><td class="text-right">{{$dataTypeContent->montant_total_tva}}</td>
                                 </tr>
                                 <tr>
                                     <td>Taux de Retrocession:</td><td class="text-right">{{number_format(($dataTypeContent->retrocession?? 0) * 100, 2, ',', " ")}} %</td>

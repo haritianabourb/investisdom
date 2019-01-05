@@ -2,6 +2,7 @@
 
 namespace App\Services\Mandat;
 
+use App\Leaseholder;
 use App\Services\AbstractField;
 
 /**
@@ -19,7 +20,12 @@ class TotalVAT extends AbstractField
 
     public function process()
     {
-        return $this->parameters->get('tva_npr') + $this->parameters->get('tva_investissement');
+        $total_tva = $this->parameters->get('tva_investissement');
+        if(!(Leaseholder::find($this->parameters->get('leaseholder_id'))->depend_groupeco) || $this->parameters->get('type_defiscalisation') == "01"){
+            $total_tva += $this->parameters->get('tva_npr');
+        }
+
+        return $total_tva;
     }
 
 }
