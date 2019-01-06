@@ -18,9 +18,11 @@ class PDFTestController extends VoyagerBaseController
 
 //        return view('pdf.cgps.conventiontest');
         //return view('pdf.pg.pg');
-        $pdf = PDF::loadView('pdf.pg.pg');
 
-        return $pdf->download('view.pdf');
-    }
+            $pdf = PDF::loadView('pdf.pg.pg');
+
+            return $pdf->download('view.pdf');
+
+}
 
 }
