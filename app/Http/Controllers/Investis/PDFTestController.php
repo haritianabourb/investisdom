@@ -17,9 +17,9 @@ class PDFTestController extends VoyagerBaseController
     public function generatePDF(Request $request){
 
 //        return view('pdf.cgps.conventiontest');
-        //return view('pdf.pg.pg');
+        return view('pdf.mandat.mandat');
 
-            $pdf = PDF::loadView('pdf.pg.pg');
+            $pdf = PDF::loadView('pdf.mandat.mandat');
 
             return $pdf->download('view.pdf');
 
