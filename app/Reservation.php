@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Reservation extends Model
 {
+
+    protected $observables= [
+        'beforeGeneratePdf',
+        'afterGeneratePdf',
+    ];
+
   const RESERVATION = 'RESERVATION';
   const MANDAT = 'MANDAT';
   const CONTRAT = 'CONTRAT';
@@ -33,6 +39,11 @@ class Reservation extends Model
   public function cgpsId(){
     // return $this->belongsTo(CGP::class);
     return $this->belongsTo(CGP::class, 'cgps_id', 'id');
+  }
+
+  public function generatePdf(){
+      $this->fireModelEvent('beforeGeneratePdf');
+      $this->fireModelEvent('afterGeneratePdf');
   }
 
   // public function cgp(){

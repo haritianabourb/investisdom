@@ -31,9 +31,11 @@ class TauxMois extends AbstractField
             ->where('type_contrat_id', $this->parameters->get('type_contrat_id'))
             ->first();
 
+        // FIXME the contract_type must be have a code section or an Id or a rate maybe
         $contract_type = TypeContrat::find($this->parameters->get('type_contrat_id'));
 
-        return $tauxCGP ? $tauxCGP->$mandat_mois/100 : ($contract_type->name == "Confort" ? self::TAUX_CONFORT : self::TAUX_SERENITE);
+
+        return $tauxCGP ? $tauxCGP->$mandat_mois/100 : self::TAUX_CONFORT ;
     }
 
 

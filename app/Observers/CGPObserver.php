@@ -42,6 +42,9 @@ class CGPObserver
 
           // XXX little hack to not thrown the saving event for calculations
           DB::table($cgp->getTable())->where('id', $cgp->id)->update(['identifiant' => $identifiant]);
+
+
+          // TODO create default rate for cgp
     }
 
 

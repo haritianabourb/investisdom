@@ -4,8 +4,6 @@ namespace App\Widgets;
 
 use TCG\Voyager\Widgets\BaseDimmer;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Str;
-use TCG\Voyager\Facades\Voyager;
 use App\Bank;
 
 class BanqueDimmer extends BaseDimmer
@@ -35,6 +33,7 @@ class BanqueDimmer extends BaseDimmer
             'text' => "Voir mes {$string}",
             'link' => route('voyager.banks.index'),
           ],
+          // XXX Must be these type with time
           // 'text'   => __('voyager::dimmer.user_text', ['count' => $count, 'string' => Str::lower($string)]),
           // 'button' => [
           //     'text' => __('voyager::dimmer.user_link_text'),
@@ -52,7 +51,6 @@ class BanqueDimmer extends BaseDimmer
      */
     public function shouldBeDisplayed()
     {
-        return true;
-        return Auth::user()->can('browse', \App\Bank::class );
+        return Auth::user()->can('browse', app(\App\Bank::class) );
     }
 }
