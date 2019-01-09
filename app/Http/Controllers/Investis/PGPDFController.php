@@ -41,7 +41,7 @@ class PGPDFController extends VoyagerBaseController
         //return view('pdf.00_PG.00_PG', $data);
         $pdf = PDF::loadView('pdf.00_PG.00_PG', $data);
 
-        return $pdf->download('view.pdf');
+        return $pdf->download('PG.pdf');
 
     }
 

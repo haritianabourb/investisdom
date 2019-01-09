@@ -1743,13 +1743,13 @@
 <p class="c0 c8"><span class="c3"></span></p>
 <p class="c0"><span class="c29">Et,</span></p>
 <p class="c0 c8"><span class="c29"></span></p>
-<p class="c0"><span class="c36">L&rsquo;entreprise </span><span class="c27">ALEXIS ROBIQUET ET TRANSPORTS ET SERVICES EURL</span><span
-        class="c20">&nbsp;immatricul&eacute;e </span><span class="c36">au </span><span class="c27">RCS </span><span
-        class="c36">de </span><span class="c27">SAINT DENIS </span><span class="c36">de la R&eacute;union sous le num&eacute;ro </span><span
-        class="c27">527647408 </span><span class="c36">sise </span><span class="c27">52, route de Savanna - Islarun Centre d&#39;Affaires - 97460 SAINT PAUL</span><span
+<p class="c0"><span class="c36">L&rsquo;entreprise </span><span class="c27">{{$locataire_raison_sociale}}</span><span
+        class="c20">&nbsp;immatricul&eacute;e </span><span class="c36">au </span><span class="c27">{{$RCSRM}} </span><span
+        class="c36">de </span><span class="c27">{{$RCS_VILLE}} </span><span class="c36">de la R&eacute;union sous le num&eacute;ro </span><span
+        class="c27">{{$SIREN}} </span><span class="c36">sise </span><span class="c27">{{$adresse}} - {{$CP}} {{$VILLE}}</span><span
         class="c36">, repr&eacute;sent&eacute;e par </span><span
-        class="c27">Monsieur ROBIQUET Alexis, Benoit</span><span class="c36">&nbsp;en sa qualit&eacute; de </span><span
-        class="c27">G&eacute;rant &nbsp;</span><span class="c20">c</span><span
+        class="c27">{{$civil}}</span><span class="c36">&nbsp;en sa qualit&eacute; de </span><span
+        class="c27">{{$TITRE}} &nbsp;</span><span class="c20">c</span><span
         class="c20 c52">i-apr&egrave;s </span><span class="c20 c30">d&eacute;sign&eacute;e le mandant, d&rsquo;autre part</span>
 </p>
 <p class="c0 c8"><span class="c3"></span></p>
@@ -1763,15 +1763,15 @@
 </p>
 <p class="c0"><span class="c3">INVESTISSEMENT&nbsp;: </span></p>
 <p class="c0"><span class="c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
-<p class="c0"><span class="c48">- Un tracteur routier neuf de marque RENAULT de type C460 T4X2 E6 et une semi-benne aluminium neuve de marque KRAKKER de type FMA bach&eacute;e</span>
+<p class="c0"><span class="c48">- {{$MATERIEL}}</span>
 </p>
 <p class="c0 c8"><span class="c15"></span></p>
 <p class="c0"><span class="c36">FOURNISSEUR&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-        class="c15">SCIME &amp; RENAULT</span></p>
+        class="c15">{{$FOURNISSEUR}}</span></p>
 <p class="c0"><span class="c3">VENDEUR&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 </p>
 <p class="c0"><span class="c36">MONTANT DE L&rsquo;INVESTISSEMENT&nbsp;HT : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-        class="c27">217 900,00 &euro;</span></p>
+        class="c27">{{$MONTANT_HT}} &euro;</span></p>
 <p class="c0"><span class="c20 c30">Ci-apr&egrave;s d&eacute;sign&eacute; le Mat&eacute;riel,</span></p>
 <p class="c0 c8"><span class="c20 c30"></span></p>
 <p class="c46 c51"><span class="c15">CONDITIONS FINANCIERES PROPOSEES :</span></p>
@@ -1784,7 +1784,7 @@
             <p class="c9"><span class="c3">Investissement HT hors carte grise</span></p>
         </td>
         <td class="c18" colspan="1" rowspan="1">
-            <p class="c13"><span class="c27">217 900,00 </span><span class="c3">&euro;</span></p>
+            <p class="c13"><span class="c27">{{$MONTANT_HT}} </span><span class="c3">&euro;</span></p>
         </td>
         <td class="c11" colspan="1" rowspan="1">
             <p class="c13 c8"><span class="c3"></span></p>
@@ -1793,7 +1793,7 @@
             <p class="c9"><span class="c3">Apport locataire</span></p>
         </td>
         <td class="c24" colspan="1" rowspan="1">
-            <p class="c13"><span class="c27">&nbsp;16 500,00 </span><span class="c3">&euro;</span></p>
+            <p class="c13"><span class="c27">&nbsp;{{$APPORT_LOCATAIRE}} </span><span class="c3">&euro;</span></p>
         </td>
     </tr>
     <tr class="c4">
@@ -1801,7 +1801,7 @@
             <p class="c9"><span class="c3">TVA NPR</span></p>
         </td>
         <td class="c18" colspan="1" rowspan="1">
-            <p class="c13"><span class="c27">&nbsp;18 521,50 </span><span class="c3">&euro;</span></p>
+            <p class="c13"><span class="c27">&nbsp;{{$TVA_NPR}} </span><span class="c3">&euro;</span></p>
         </td>
         <td class="c11" colspan="1" rowspan="1">
             <p class="c13 c8"><span class="c3"></span></p>
@@ -1810,7 +1810,7 @@
             <p class="c9"><span class="c3">Apport SNC y compris TVA NPR</span></p>
         </td>
         <td class="c24" colspan="1" rowspan="1">
-            <p class="c13"><span class="c27">&nbsp;78 500,00</span><span class="c3">&nbsp;&euro;</span></p>
+            <p class="c13"><span class="c27">&nbsp;{{$APPORT_SNC}}</span><span class="c3">&nbsp;&euro;</span></p>
         </td>
     </tr>
     <tr class="c4">
@@ -1818,7 +1818,7 @@
             <p class="c9"><span class="c3">Carte Grise</span></p>
         </td>
         <td class="c18" colspan="1" rowspan="1">
-            <p class="c13"><span class="c27">&nbsp; 1 031,76 </span><span class="c3">&euro;</span></p>
+            <p class="c13"><span class="c27">&nbsp; {{$CG}}</span><span class="c3">&euro;</span></p>
         </td>
         <td class="c11" colspan="1" rowspan="1">
             <p class="c13 c8"><span class="c3"></span></p>
@@ -1827,7 +1827,7 @@
             <p class="c9"><span class="c3">Total &agrave; financer</span></p>
         </td>
         <td class="c24" colspan="1" rowspan="1">
-            <p class="c13"><span class="c27">123 931,76</span><span class="c3">&nbsp;&euro;</span></p>
+            <p class="c13"><span class="c27">{{$TOTAL_FINANCER}}</span><span class="c3">&nbsp;&euro;</span></p>
         </td>
     </tr>
     <tr class="c4">
@@ -1835,7 +1835,7 @@
             <p class="c9"><span class="c3">Frais d&eacute;fiscalisables</span></p>
         </td>
         <td class="c18" colspan="1" rowspan="1">
-            <p class="c13"><span class="c27">&nbsp; &nbsp; &nbsp; 0,00</span><span class="c3">&nbsp;&euro;</span></p>
+            <p class="c13"><span class="c27">&nbsp; {{$FRAIS_ELIGIBLES}}</span><span class="c3">&nbsp;&euro;</span></p>
         </td>
         <td class="c11" colspan="1" rowspan="1">
             <p class="c13 c8"><span class="c3"></span></p>
@@ -1844,7 +1844,7 @@
             <p class="c9"><span class="c3">Financement</span></p>
         </td>
         <td class="c24" colspan="1" rowspan="1">
-            <p class="c13"><span class="c27">SOFIDER</span></p>
+            <p class="c13"><span class="c27">{{$Financement}}</span></p>
         </td>
     </tr>
     <tr class="c4">
@@ -1852,7 +1852,7 @@
             <p class="c9"><span class="c3">Frais non d&eacute;fiscalisables</span></p>
         </td>
         <td class="c18" colspan="1" rowspan="1">
-            <p class="c13"><span class="c27">&nbsp; &nbsp; &nbsp; 0,00</span><span class="c3">&nbsp;&euro;</span></p>
+            <p class="c13"><span class="c27">&nbsp;{{$FRAIS_NON_ELIGIBLES}}</span><span class="c3">&nbsp;&euro;</span></p>
         </td>
         <td class="c11" colspan="1" rowspan="1">
             <p class="c13 c8"><span class="c3"></span></p>
@@ -1861,7 +1861,7 @@
             <p class="c9"><span class="c3">Mensualit&eacute;s HT</span></p>
         </td>
         <td class="c24" colspan="1" rowspan="1">
-            <p class="c13"><span class="c27">&nbsp; 2 282,39</span><span class="c3">&nbsp;&euro;</span></p>
+            <p class="c13"><span class="c27">&nbsp; {{$LOYER_HT}}</span><span class="c3">&nbsp;&euro;</span></p>
         </td>
     </tr>
     <tr class="c4">
@@ -1869,7 +1869,7 @@
             <p class="c9"><span class="c3">TVA sur investissement</span></p>
         </td>
         <td class="c18" colspan="1" rowspan="1">
-            <p class="c13"><span class="c27">&nbsp; &nbsp; &nbsp; 0,00</span><span class="c3">&nbsp;&euro;</span></p>
+            <p class="c13"><span class="c27">&nbsp; {{$TVA_HT}}</span><span class="c3">&nbsp;&euro;</span></p>
         </td>
         <td class="c11" colspan="1" rowspan="1">
             <p class="c13 c8"><span class="c3"></span></p>
@@ -1878,7 +1878,7 @@
             <p class="c9"><span class="c3">Mensualit&eacute;s TTC</span></p>
         </td>
         <td class="c24" colspan="1" rowspan="1">
-            <p class="c13"><span class="c27">&nbsp; 2 476,40</span><span class="c3">&nbsp;&euro;</span></p>
+            <p class="c13"><span class="c27">&nbsp; {{$LOYER_TTC}}</span><span class="c3">&nbsp;&euro;</span></p>
         </td>
     </tr>
     <tr class="c4">
@@ -1886,7 +1886,7 @@
             <p class="c9"><span class="c3">Montant total HT</span></p>
         </td>
         <td class="c18" colspan="1" rowspan="1">
-            <p class="c13"><span class="c27">218 931,76</span><span class="c3">&nbsp;&euro;</span></p>
+            <p class="c13"><span class="c27">{{$MONTANT_HT_AVEC_FRAIS}}</span><span class="c3">&nbsp;&euro;</span></p>
         </td>
         <td class="c11" colspan="1" rowspan="1">
             <p class="c13 c8"><span class="c3"></span></p>
@@ -1895,7 +1895,7 @@
             <p class="c9"><span class="c3">Dur&eacute;e de d&eacute;tention obligatoire</span></p>
         </td>
         <td class="c24" colspan="1" rowspan="1">
-            <p class="c13"><span class="c27">60</span></p>
+            <p class="c13"><span class="c27">{{$DUREE}}</span></p>
         </td>
     </tr>
     <tr class="c4">
@@ -1903,7 +1903,7 @@
             <p class="c9"><span class="c3">Valeur r&eacute;siduelle d&eacute;ductible de la base</span></p>
         </td>
         <td class="c18" colspan="1" rowspan="1">
-            <p class="c13"><span class="c27">&nbsp; &nbsp; &nbsp; 0,00</span><span class="c3">&nbsp;&euro;</span></p>
+            <p class="c13"><span class="c27">&nbsp; {{$DED_BASE}}</span><span class="c3">&nbsp;&euro;</span></p>
         </td>
         <td class="c11" colspan="1" rowspan="1">
             <p class="c13 c8"><span class="c3"></span></p>
@@ -1912,7 +1912,7 @@
             <p class="c9"><span class="c3">TVA r&eacute;cup&eacute;rable sur loyers </span></p>
         </td>
         <td class="c24" colspan="1" rowspan="1">
-            <p class="c13"><span class="c27">&nbsp;11 640,20</span><span class="c3">&nbsp;&euro;</span></p>
+            <p class="c13"><span class="c27">&nbsp;{{$TVA_TOTALE_LOYERS}}</span><span class="c3">&nbsp;&euro;</span></p>
         </td>
     </tr>
     <tr class="c4">
@@ -1920,7 +1920,7 @@
             <p class="c9"><span class="c3">Base d&eacute;fiscalisable</span></p>
         </td>
         <td class="c18" colspan="1" rowspan="1">
-            <p class="c13"><span class="c27">199 378,50</span><span class="c3">&nbsp;&euro;</span></p>
+            <p class="c13"><span class="c27">{{$BD}}</span><span class="c3">&nbsp;&euro;</span></p>
         </td>
         <td class="c11" colspan="1" rowspan="1">
             <p class="c13 c8"><span class="c3"></span></p>
@@ -1929,7 +1929,7 @@
             <p class="c9"><span class="c3">Taux d&#39;acquisition</span></p>
         </td>
         <td class="c24" colspan="1" rowspan="1">
-            <p class="c13" id="h.30j0zll"><span class="c27">70,51%</span></p>
+            <p class="c13" id="h.30j0zll"><span class="c27">{{$TAUX_DECQUISITION}}%</span></p>
         </td>
     </tr>
     <tr class="c4">
@@ -1937,7 +1937,7 @@
             <p class="c9"><span class="c3">Montant TTC</span></p>
         </td>
         <td class="c18" colspan="1" rowspan="1">
-            <p class="c13"><span class="c27">218 931,76</span><span class="c3">&nbsp;&euro;</span></p>
+            <p class="c13"><span class="c27">{{$MONTANT_TTC}}</span><span class="c3">&nbsp;&euro;</span></p>
         </td>
         <td class="c11" colspan="1" rowspan="1">
             <p class="c13 c8"><span class="c3"></span></p>
@@ -1946,7 +1946,7 @@
             <p class="c9"><span class="c3">Total du plan de financement</span></p>
         </td>
         <td class="c24" colspan="1" rowspan="1">
-            <p class="c13"><span class="c27">218 931,76 </span><span class="c3">&euro;</span></p>
+            <p class="c13"><span class="c27">{{$PLAN_DE_FI_TTC}} </span><span class="c3">&euro;</span></p>
         </td>
     </tr>
     <tr class="c4">
@@ -1954,7 +1954,7 @@
             <p class="c9"><span class="c3">Honoraires juridiques</span></p>
         </td>
         <td class="c18" colspan="1" rowspan="1">
-            <p class="c13"><span class="c27">&nbsp; &nbsp; 199,00</span><span class="c3">&nbsp;&euro;</span></p>
+            <p class="c13"><span class="c27">&nbsp; {{$HONORARIES}}</span><span class="c3">&nbsp;&euro;</span></p>
         </td>
         <td class="c38" colspan="1" rowspan="1">
             <p class="c13 c8"><span class="c3"></span></p>
@@ -1963,7 +1963,7 @@
             <p class="c9"><span class="c3">Frais d&#39;immatriculation</span></p>
         </td>
         <td class="c24" colspan="1" rowspan="1">
-            <p class="c13"><span class="c15">&nbsp; &nbsp; &nbsp;25,00 &euro; </span></p>
+            <p class="c13"><span class="c15">&nbsp; {{$FRAIS_DIMMAT}} &euro; </span></p>
         </td>
     </tr>
     <tr class="c4">
@@ -2173,7 +2173,7 @@
 </p>
 <p class="c0 c8"><span class="c3"></span></p>
 <p class="c0"><span class="c36">Fait en deux exemplaires originaux &agrave; </span><span class="c27">SAINT GILLES LES BAINS</span><span
-        class="c36">&nbsp;le</span><span class="c27">&nbsp;24/12/2018</span></p>
+        class="c36">&nbsp;le</span><span class="c27">&nbsp;{{$DATE_DE_CONTRAT}}</span></p>
 <p class="c21 c8"><span class="c3"></span></p>
 <p class="c21 c8"><span class="c3"></span></p>
 <p class="c21"><span class="c3">Le Mandant&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
