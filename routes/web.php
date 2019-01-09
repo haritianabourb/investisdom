@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('theme::index');
 });
 
-Route::get('/test-view', 'Investis\PDFTestController@generatePDF');
+Route::get('/00_PG', 'Investis\PGPDFController@generatePDF');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

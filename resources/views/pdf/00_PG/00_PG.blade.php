@@ -1305,7 +1305,7 @@
             <div class="document_number">
                 <br>
                 <br>
-                N° Dossier : 1812012-REU
+                N° Dossier : {{$N_DOSSIER}}-REU
             </div>
         </div>
         </htmlpageheader>
@@ -1315,20 +1315,20 @@
         </div>
 
         <div class="section">
-            <strong><u>LOCATAIRE</u> : </strong>ALEXIS ROBIQUET ET TRANSPORTS ET SERVICES EURL
+            <strong><u>LOCATAIRE</u> : </strong>{{$LOCATAIRE}}
         </div>
 
         <div class="section">
-            <strong><u>ADRESSE</u> : </strong>52, route de Savanna - Islarun Centre d'Affaires - 97460 SAINT PAUL
+            <strong><u>ADRESSE</u> : </strong>{{$ADRESSE}} - {{$CP}} {{$VILLE}}
             <div>
                 <div style="float:left; width:50%;">
-                    <strong>Tel:</strong>0693 30 32 23<br>
-                    <strong>Gsm:</strong>0693 30 32 23
+                    <strong>Tel:</strong>{{$TEL}}<br>
+                    <strong>Gsm:</strong>{{$GSM}}
                 </div>
 
                 <div style="float:right; width:50%">
-                    <strong>Mail:</strong>random@mail.mail<br>
-                    <strong>Fax:</strong>WhatDoesTheFaxSay
+                    <strong>Mail:</strong>{{$MAIL}}<br>
+                    <strong>Fax:</strong>{{$FAX}}
                 </div>
 
                 <div style="clear: both; margin: 0pt; padding: 0pt; "></div>
@@ -1336,30 +1336,30 @@
         </div>
 
         <div class="section">
-            <strong>Commercial : </strong>CM
+            <strong>Commercial : </strong>{{$Commercial}}
         </div>
 
         <div class="section">
-            <strong><u>FOURNISSEUR</u> : </strong>AUTOMOBILES REUNION SN
+            <strong><u>FOURNISSEUR</u> : </strong>{{$FOURNISSEUR}}
         </div>
 
         <div class="section">
-            <strong><u>MATERIEL</u> : </strong>Un tracteur routier neuf de marque RENAULT de type C460 T4X2 E6
+            <strong><u>MATERIEL</u> : </strong>{{$MATERIEL}}
         </div>
 
         <div class="section">
-            <strong><u>MONTANT HT</u> : </strong>120 900,00 €&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <strong><u>MONTANT TTC</u> : </strong>120 900,00 €<br>
+            <strong><u>MONTANT HT</u> : </strong>{{$MONTANT_HT}} €&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <strong><u>MONTANT TTC</u> : </strong>{{$MONTANT_TTC}} €<br>
             <div class="snc">
-                SNC MARVIC 114
+                SNC MARVIC {{$SNC}}
             </div>
-            <strong><u>FINANCEMENT</u> : </strong>SOFIDER
+            <strong><u>FINANCEMENT</u> : </strong>{{$FINANCEMENT}}
         </div>
 
         <div class="section">
-            <strong><u>ASSUREUR</u> : </strong><br>
-            <strong>Tel : </strong><br>
-            <strong><u>Pièces obligatoires à fournir</u> : </strong><br>
+            <strong><u>ASSUREUR</u> : </strong>{{$ASSUREUR}}<br>
+            <strong>Tel : </strong>{{$ASSUREUR_TEL}}<br>
+            <strong><u>Pièces obligatoires à fournir</u> : {{$DOCUMENTS}}</strong><br>
         </div>
 
         <div class="section">
@@ -1758,7 +1758,7 @@
 
         <div class="section">
             <div class="secondary_title">
-                <strong><i>Exemplaire à conserver par le fournisseur AUTOMOBILES REUNION SN</i></strong>
+                <strong><i>Exemplaire à conserver par le fournisseur {{$FOURNISSEUR}}</i></strong>
             </div>
         </div>
 
@@ -1766,20 +1766,20 @@
         <br>
 
         <div class="section">
-            <strong>SNC MARVIC 114</strong>
+            <strong>SNC {{$SNC}}</strong>
         </div>
 
         <div class="section">
-            <strong><u>ENTREPRISE LOCATAIRE</u> : </strong>ALEXIS ROBIQUET ET TRANSPORTS ET SERVICES EURL
+            <strong><u>ENTREPRISE LOCATAIRE</u> : </strong>{{$LOCATAIRE}}
         </div>
         <div class="section">
-            <strong><u>MATERIEL</u> : </strong>Un tracteur routier neuf de marque RENAULT de type C460 T4X2 E6
+            <strong><u>MATERIEL</u> : </strong>{{$MATERIEL}}
         </div>
         <div class="section">
-            <strong><u>MONTANT TTC</u> : </strong>121 931,76 €
+            <strong><u>MONTANT TTC</u> : </strong>{{$MONTANT_TTC}} €
         </div>
         <div class="section">
-            <strong><u>FINANCEMENT</u> : </strong>SOFIDER
+            <strong><u>FINANCEMENT</u> : </strong>{{$FINANCEMENT}}
         </div>
 
         <br>
@@ -1806,20 +1806,20 @@
         <br>
 
         <div class="section">
-            <strong>SNC MARVIC 114</strong>
+            <strong>SNC {{$SNC}}</strong>
         </div>
 
         <div class="section">
-            <strong><u>ENTREPRISE LOCATAIRE</u> : </strong>ALEXIS ROBIQUET ET TRANSPORTS ET SERVICES EURL
+            <strong><u>ENTREPRISE LOCATAIRE</u> : </strong>{{$LOCATAIRE}}
         </div>
         <div class="section">
-            <strong><u>MATERIEL</u> : </strong>Un tracteur routier neuf de marque RENAULT de type C460 T4X2 E6
+            <strong><u>MATERIEL</u> : </strong>{{$MATERIEL}}
         </div>
         <div class="section">
-            <strong><u>MONTANT TTC</u> : </strong>121 931,76 €
+            <strong><u>MONTANT TTC</u> : </strong>{{$MONTANT_TTC}} €
         </div>
         <div class="section">
-            <strong><u>FINANCEMENT</u> : </strong>SOFIDER
+            <strong><u>FINANCEMENT</u> : </strong>{{$FINANCEMENT}}
         </div>
 
         <p class="c8 c12"><span class="c7 c4 c6"></span></p>
