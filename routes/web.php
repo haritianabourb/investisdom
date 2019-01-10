@@ -25,6 +25,7 @@ Route::get('/04_banq_fact_frais', 'Investis\BanqFactFraisPDFController@generateP
 Route::get('/04_cash_fact_tva', 'Investis\CashFactFraisPDFController@generatePDF');
 Route::get('/05_banq_pvag_pvr', 'Investis\BanqPvagPvrPDFController@generatePDF');
 Route::get('/23_da_banq', 'Investis\DaBanqPDFController@generatePDF');
+Route::get('/p_14_mi', 'Investis\P14MiPDFController@generatePDF');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
