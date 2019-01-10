@@ -1280,67 +1280,67 @@
             style="width: 242.00px; height: 95.53px; margin-left: -0.00px; margin-top: -0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
             title=""></span></p>
 <p class="c56"><span class="c7 c22">ACCORD DE FINANCEMENT ET DE LIVRAISON</span></p>
-<p class="c56"><span class="c22">DOSSIER N&deg; </span><span class="c11 c22">1812005-REU &ndash; SNC MARVIC 133</span>
+<p class="c56"><span class="c22">DOSSIER N° </span><span class="c11 c22">{{$N_DOSSIER}} -REU – SNC {{$SNC}} </span>
 </p>
 <p class="c20 c6"><span class="c7 c13"></span></p>
 <p class="c20 c6"><span class="c7 c13"></span></p>
-<p class="c20 c59"><span class="c25">SNC &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
-        class="c3">MARVIC 133</span></p>
-<p class="c20 c59"><span class="c25">ADRESSE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c0">62 BVD DU CHAUDRON </span>
+<p class="c20 c59"><span class="c25">SNC                         </span><span
+        class="c3">{{$SNC}} </span></p>
+<p class="c20 c59"><span class="c25">ADRESSE         </span><span class="c0">62 BVD DU CHAUDRON </span>
 </p>
-<p class="c20 c49"><span class="c0">97490 &ndash; SAINTE CLOTILDE</span></p>
+<p class="c20 c49"><span class="c0">97490 – SAINTE CLOTILDE</span></p>
 <p class="c20 c6"><span class="c7 c25"></span></p>
-<p class="c20"><span class="c25">FOURNISSEUR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c3">JMECAGRI</span>
+<p class="c20"><span class="c25">FOURNISSEUR         </span><span class="c3">{{$FOURNISSEUR}} </span>
 </p>
-<p class="c20"><span class="c25">ADRESSE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c10 c18">65, impasse Georges Brassens</span>
+<p class="c20"><span class="c25">ADRESSE        </span><span class="c10 c18">{{$ADRESSE_FOURNISSEUR}} </span>
 </p>
-<p class="c20"><span class="c10 c18">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;97430 LE TAMPON</span>
+<p class="c20"><span class="c10 c18">                {{$CP_FOURNISSEUR}}  {{$VILLE_FOURNISSEUR}} </span>
 </p>
 <p class="c20 c6"><span class="c10 c18"></span></p>
-<p class="c26 c38"><span class="c0">Je vous informe par la pr&eacute;sente de l&#39;acceptation par notre cabinet de d&eacute;fiscalisation du financement du dossier dans les dispositions de l&lsquo;article 199 undecies B du Code G&eacute;n&eacute;ral des Imp&ocirc;ts portant acquisition pour le compte du locataire&nbsp;:</span>
+<p class="c26 c38"><span class="c0">Je vous informe par la présente de l'acceptation par notre cabinet de défiscalisation du financement du dossier dans les dispositions de l‘article 199 undecies B du Code Général des Impôts portant acquisition pour le compte du locataire :</span>
 </p>
 <p class="c26 c6"><span class="c7 c25"></span></p>
-<p class="c26"><span class="c25">LOCATAIRE&nbsp;: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-        class="c10 c18">JEBANE GEORGES JACQUES</span></p>
+<p class="c26"><span class="c25">LOCATAIRE :         </span><span
+        class="c10 c18">{{$LOCATAIRE_RAISON_SOCIALE}}</span></p>
 <p class="c26 c6"><span class="c0"></span></p>
-<p class="c17"><span class="c25">MATERIEL&nbsp;: &nbsp;</span><span class="c10 c18">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Une remorque &agrave; canne tron&ccedil;onn&eacute;e neuve</span>
+<p class="c17"><span class="c25">MATERIEL :  </span><span class="c10 c18">         - {{$MATERIAL}}</span>
 </p>
 <p class="c6 c17"><span class="c10 c18"></span></p>
-<p class="c16"><span class="c18">D&rsquo;un montant total TTC de&nbsp;: </span><span class="c10 c18">&nbsp;50 000,00 &euro;</span>
+<p class="c16"><span class="c18">D’un montant total TTC de : </span><span class="c10 c18"> {{$MONTANT_TTC}} €</span>
 </p>
 <p class="c26 c39 c6 c41"><span class="c0"></span></p>
-<p class="c26"><span class="c18">Par la SNC </span><span class="c3">MARVIC 133 </span><span class="c0">domicili&eacute;e 62 boulevard du chaudron &ndash; 97490 &ndash; SAINTE CLOTILDE</span>
+<p class="c26"><span class="c18">Par la SNC </span><span class="c3">{{$SNC}}  </span><span class="c0">domiciliée 62 boulevard du chaudron – 97490 – SAINTE CLOTILDE</span>
 </p>
 <p class="c26 c6"><span class="c0"></span></p>
-<p class="c26"><span class="c18">Pour ce faire, la SNC </span><span class="c3">MARVIC 133 </span><span class="c0">apportera la somme de&nbsp;:</span>
+<p class="c26"><span class="c18">Pour ce faire, la SNC </span><span class="c3">{{$SNC}}  </span><span class="c0">apportera la somme de :</span>
 </p>
 <p class="c6 c26"><span class="c0"></span></p>
 <p class="c20 c6"><span class="c0"></span></p>
 <ul class="c5 lst-kix_list_7-0 start">
     <li class="c26 c24"><span class="c0">Au titre de son apport</span></li>
 </ul>
-<p class="c44 c32"><span class="c10 c18">&nbsp;15 600,00 &euro; </span></p>
+<p class="c44 c32"><span class="c10 c18"> {{$APPORT_SNC}} € </span></p>
 <p class="c20 c6"><span class="c0"></span></p>
 <ul class="c5 lst-kix_list_7-0">
-    <li class="c26 c24"><span class="c18">Le locataire devra s&#39;acquitter aupr&egrave;s du fournisseur </span><span
-            class="c3">JMECAGRI </span><span class="c0">de la somme de </span></li>
+    <li class="c26 c24"><span class="c18">Le locataire devra s'acquitter auprès du fournisseur </span><span
+            class="c3">{{$FOURNISSEUR}}  </span><span class="c0">de la somme de </span></li>
 </ul>
 <p class="c26 c32 c6"><span class="c0"></span></p>
-<p class="c44 c32"><span class="c10 c18">&nbsp; 5 000,00 &euro;</span></p>
+<p class="c44 c32"><span class="c10 c18"> {{$APPORT_LOCATAIRE}} €</span></p>
 <p class="c20 c6"><span class="c0"></span></p>
 <ul class="c5 lst-kix_list_7-0">
-    <li class="c26 c24"><span class="c18">Le solde faisant l&#39;objet d&#39;un financement sur </span><span class="c3">60 </span><span
+    <li class="c26 c24"><span class="c18">Le solde faisant l'objet d'un financement sur </span><span class="c3">{{$DUREE}} </span><span
             class="c0">mois </span></li>
 </ul>
 <p class="c44 c32 c6"><span class="c10 c18"></span></p>
-<p class="c32 c44"><span class="c3">&nbsp;29 400,00 &euro;</span></p>
+<p class="c32 c44"><span class="c3"> {{$RESTE_A_FINANCER}} €</span></p>
 <p class="c20 c6"><span class="c0"></span></p>
 <p class="c26 c6"><span class="c0"></span></p>
 <p class="c6 c20"><span class="c0"></span></p>
-<p class="c26 c62"><span class="c18">Vous voudrez bien nous confirmer la date et l&#39;heure de livraison du mat&eacute;riel. Le r&egrave;glement de la quote-part de la SNC </span><span
-        class="c3">MARVIC 133 </span><span class="c0">sur l&#39;investissement interviendra par virement apr&egrave;s examen de la conformit&eacute; du dossier.</span>
+<p class="c26 c62"><span class="c18">Vous voudrez bien nous confirmer la date et l'heure de livraison du matériel. Le règlement de la quote-part de la SNC </span><span
+        class="c3">{{$SNC}}  </span><span class="c0">sur l'investissement interviendra par virement après examen de la conformité du dossier.</span>
 </p>
-<p class="c26 c62"><span class="c0">Il est pr&eacute;cis&eacute; que la livraison ne pourra intervenir que si le fournisseur s&rsquo;est vu remettre par le cabinet INVESTIS DOM ou par le locataire mandat&eacute; par nous m&ecirc;me pour la livraison et la prise en charge du mat&eacute;riel, les &eacute;l&eacute;ments suivants&nbsp;:</span>
+<p class="c26 c62"><span class="c0">Il est précisé que la livraison ne pourra intervenir que si le fournisseur s’est vu remettre par le cabinet INVESTIS DOM ou par le locataire mandaté par nous même pour la livraison et la prise en charge du matériel, les éléments suivants :</span>
 </p>
 <p class="c26 c6 c62"><span class="c0"></span></p><a id="t.5cc7f8636a6df98545acf4991275dc7278a66d2c"></a><a
     id="t.0"></a>
@@ -1354,7 +1354,7 @@
         </td>
         <td class="c31" colspan="1" rowspan="1">
             <ul class="c5 lst-kix_list_8-0">
-                <li class="c34"><span class="c0">Cession de cr&eacute;ance des loyers</span></li>
+                <li class="c34"><span class="c0">Cession de créance des loyers</span></li>
             </ul>
         </td>
     </tr>
@@ -1366,7 +1366,7 @@
         </td>
         <td class="c31" colspan="1" rowspan="1">
             <ul class="c5 lst-kix_list_8-0">
-                <li class="c34"><span class="c0">D&eacute;l&eacute;gation d&rsquo;assurance au profit de l&rsquo;organisme pr&ecirc;teur</span>
+                <li class="c34"><span class="c0">Délégation d’assurance au profit de l’organisme prêteur</span>
                 </li>
             </ul>
         </td>
@@ -1374,12 +1374,12 @@
     <tr class="c36">
         <td class="c19" colspan="1" rowspan="1">
             <ul class="c5 lst-kix_list_8-0">
-                <li class="c34"><span class="c0">Promesse d&rsquo;achat</span></li>
+                <li class="c34"><span class="c0">Promesse d’achat</span></li>
             </ul>
         </td>
         <td class="c31" colspan="1" rowspan="1">
             <ul class="c5 lst-kix_list_8-0">
-                <li class="c34"><span class="c0">Autorisation de pr&eacute;l&egrave;vement</span></li>
+                <li class="c34"><span class="c0">Autorisation de prélèvement</span></li>
             </ul>
         </td>
     </tr>
@@ -1397,254 +1397,254 @@
     </tr>
     </tbody>
 </table>
-<p class="c26 c62"><span class="c0">Si pour des raisons qui lui sont propres, le fournisseur proc&eacute;dait &agrave; la livraison du mat&eacute;riel sans la lev&eacute;e de ces r&eacute;serves, cette livraison sera r&eacute;put&eacute;e r&eacute;alis&eacute;e sous sa seule et enti&egrave;re responsabilit&eacute;. Les d&eacute;marches effectu&eacute;es par la SNC afin de r&eacute;cup&eacute;rer les diff&eacute;rentes pi&egrave;ces manquantes pourront exposer le fournisseur &agrave; des d&eacute;lais de paiement de la part SNC ou de la part cr&eacute;dit, voire en fonction des pi&egrave;ces manquantes &agrave; l&rsquo;annulation d&eacute;finitive de l&rsquo;accord de financement.</span>
+<p class="c26 c62"><span class="c0">Si pour des raisons qui lui sont propres, le fournisseur procédait à la livraison du matériel sans la levée de ces réserves, cette livraison sera réputée réalisée sous sa seule et entière responsabilité. Les démarches effectuées par la SNC afin de récupérer les différentes pièces manquantes pourront exposer le fournisseur à des délais de paiement de la part SNC ou de la part crédit, voire en fonction des pièces manquantes à l’annulation définitive de l’accord de financement.</span>
 </p>
 <p class="c26 c39 c6"><span class="c0"></span></p>
-<p class="c26 c39"><span class="c18">Fait le </span><span class="c3">21/12/2018</span></p>
+<p class="c26 c39"><span class="c18">Fait le </span><span class="c3">{{$DATE_DE_CONTRAT}}</span></p>
 <p class="c26 c6"><span class="c0"></span></p>
-<p class="c26"><span class="c0">Restant &agrave; votre disposition, </span></p>
+<p class="c26"><span class="c0">Restant à votre disposition, </span></p>
 <p class="c8"><span class="c0">Avec nos meilleures salutations</span></p>
 <p class="c35 c61"><span class="c7 c22">PROCES - VERBAL DE LIVRAISON ET DE PRISE EN CHARGE PAR LE LOCATAIRE</span></p>
-<p class="c35" id="h.30j0zll"><span class="c22">DOSSIER N&deg; </span><span class="c22 c11">1812005REU &ndash; SNC MARVIC 133</span>
+<p class="c35" id="h.30j0zll"><span class="c22">DOSSIER N° </span><span class="c22 c11">{{$N_DOSSIER}} REU – SNC {{$SNC}} </span>
 </p>
 <p class="c1 c58 c6"><span class="c7 c13"></span></p>
 <p class="c1 c6 c58"><span class="c7 c13"></span></p>
-<p class="c1"><span class="c10 c2">JMECAGRI</span></p>
+<p class="c1"><span class="c10 c2">{{$FOURNISSEUR}} </span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c2">La soci&eacute;t&eacute; </span><span class="c2 c11">JMECAGRI</span><span
-        class="c2">, </span><span class="c2 c11">SARL </span><span class="c2">au capital de </span><span class="c2 c11">&nbsp; &nbsp; &nbsp; &nbsp; 500 </span><span
-        class="c2">euros dont le si&egrave;ge social est sis au </span><span class="c2 c11">65, impasse Georges Brassens 97430 LE TAMPON </span><span
-        class="c2">immatricul&eacute;e au Registre du Commerce et des Soci&eacute;t&eacute;s de </span><span
-        class="c2 c11">SAINT PIERRE</span><span class="c2">&nbsp;sous le num&eacute;ro </span><span class="c2 c11">794673392 </span><span
-        class="c2">repr&eacute;sent&eacute;e par </span><span class="c2 c11">M. HOARAU </span><span class="c2">agissant en qualit&eacute; de </span><span
-        class="c2 c11">G&eacute;rant</span><span class="c7 c2">.</span></p>
+<p class="c1"><span class="c2">La société </span><span class="c2 c11">{{$FOURNISSEUR}} </span><span
+        class="c2">, </span><span class="c2 c11">{{$FORME_JURIDIQUE_FOURNISSEUR}} </span><span class="c2">au capital de </span><span class="c2 c11">       {{$CAPITAL_FOURNISSEUR}} </span><span
+        class="c2">euros dont le siège social est sis au </span><span class="c2 c11">{{$ADRESSE_FOURNISSEUR}}  {{$CP_FOURNISSEUR}}  {{$VILLE_FOURNISSEUR}}  </span><span
+        class="c2">immatriculée au Registre du Commerce et des Sociétés de </span><span
+        class="c2 c11">{{$RSC_VILLE_FOURNISSEUR}} </span><span class="c2"> sous le numéro </span><span class="c2 c11">794673392 </span><span
+        class="c2">représentée par </span><span class="c2 c11">M. HOARAU </span><span class="c2">agissant en qualité de </span><span
+        class="c2 c11">{{$QUALITE_REPRESENTANT}} </span><span class="c7 c2">.</span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c7 c2">Ci-apr&egrave;s d&eacute;sign&eacute;, le FOURNISSEUR</span></p>
+<p class="c1"><span class="c7 c2">Ci-après désigné, le FOURNISSEUR</span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c10 c2">JEBANE GEORGES JACQUES</span></p>
+<p class="c1"><span class="c10 c2">{{$LOCATAIRE_RAISON_SOCIALE}}</span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c2 c15">L&rsquo;entreprise </span><span class="c2 c11">JEBANE GEORGES JACQUES, </span><span
-        class="c2 c15">dont le si&egrave;ge social est sis au </span><span class="c2 c11">13, rue des Jacques - 97412 BRAS PANON </span><span
-        class="c2 c15">immatricul&eacute;e &agrave; la </span><span class="c2 c11">CGSS </span><span
-        class="c2 c15">de </span><span class="c2 c11">LA REUNION </span><span
-        class="c2 c15">sous le num&eacute;ro </span><span class="c2 c11">385242995, </span><span class="c2 c15">repr&eacute;sent&eacute;e par </span><span
-        class="c2 c11">Monsieur JEBANE Georges, Jacques </span><span
-        class="c2 c15">agissant en qualit&eacute; d&rsquo;</span><span class="c10 c2">Exploitant.</span></p>
+<p class="c1"><span class="c2 c15">L’entreprise </span><span class="c2 c11">{{$LOCATAIRE_RAISON_SOCIALE}}, </span><span
+        class="c2 c15">dont le siège social est sis au </span><span class="c2 c11">{{$ADRESSE}} - {{$CP}} {{$VILLE}} </span><span
+        class="c2 c15">immatriculée à la </span><span class="c2 c11">{{$RSCRM_LONG}} </span><span
+        class="c2 c15">de </span><span class="c2 c11">{{$RSC_VILLE}} </span><span
+        class="c2 c15">sous le numéro </span><span class="c2 c11">{{$SIREN}} , </span><span class="c2 c15">représentée par </span><span
+        class="c2 c11">{{$CIVILITE}} {{$NOM}} {{$PRENOM}} </span><span
+        class="c2 c15">agissant en qualité d’</span><span class="c10 c2">{{$TITRE}}.</span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c7 c2">Ci-apr&egrave;s d&eacute;sign&eacute;, le LOCATAIRE</span></p>
+<p class="c1"><span class="c7 c2">Ci-après désigné, le LOCATAIRE</span></p>
 <p class="c6 c66"><span class="c7 c2"></span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c2">Lieu de livraison&nbsp;: </span><span class="c10 c2">JMECAGRI</span></p>
+<p class="c1"><span class="c2">Lieu de livraison : </span><span class="c10 c2">{{$FOURNISSEUR}} </span></p>
 <p class="c1 c6"><span class="c2 c7"></span></p>
 <p class="c1 c6"><span class="c0"></span></p>
-<p class="c1"><span class="c7 c2">D&Eacute;SIGNATION DU MAT&Eacute;RIEL</span></p>
+<p class="c1"><span class="c7 c2">DÉSIGNATION DU MATÉRIEL</span></p>
 <p class="c8 c6"><span class="c7 c2"></span></p>
 <p class="c1 c6"><span class="c10 c18"></span></p>
-<p class="c1" id="h.1fob9te"><span class="c10 c18">- Une remorque &agrave; canne tron&ccedil;onn&eacute;e neuve</span>
+<p class="c1" id="h.1fob9te"><span class="c10 c18">- {{$MATERIAL}}</span>
 </p>
 <p class="c1 c6"><span class="c10 c18"></span></p>
 <p class="c1 c6 c61"><span class="c10 c18"></span></p>
-<p class="c1"><span class="c7 c2">CONDITIONS G&Eacute;N&Eacute;RALES D&#39;ACHAT</span></p>
+<p class="c1"><span class="c7 c2">CONDITIONS GÉNÉRALES D'ACHAT</span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c2">Si les conditions expos&eacute;es ci-dessous sont r&eacute;unies, le mat&eacute;riel d&eacute;crit ci-dessus sera la propri&eacute;t&eacute; exclusive de la SNC </span><span
-        class="c2 c11">MARVIC 133 </span><span class="c7 c2">ci-apr&egrave;s d&eacute;sign&eacute;e LE LOUEUR.</span>
-</p>
-<p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c7 c2">Nonobstant toute clause contraire de vente, la propri&eacute;t&eacute; du mat&eacute;riel ne pourra &ecirc;tre transf&eacute;r&eacute;e au LOUEUR qu&#39;&agrave; partir de la r&eacute;ception des documents suivants :</span>
+<p class="c1"><span class="c2">Si les conditions exposées ci-dessous sont réunies, le matériel décrit ci-dessus sera la propriété exclusive de la SNC </span><span
+        class="c2 c11">{{$SNC}}  </span><span class="c7 c2">ci-après désignée LE LOUEUR.</span>
 </p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c7 c2">Contrat de location rempli et sign&eacute; par le LOCATAIRE</span></p>
-<p class="c1"><span class="c7 c2">Proc&egrave;s-verbal de livraison dat&eacute; et sign&eacute; par le FOURNISSEUR et le LOCATAIRE agissant ici en qualit&eacute; de mandataire du LOUEUR. Le LOCATAIRE atteste ainsi que le mat&eacute;riel est livr&eacute; conform&eacute;ment &agrave; la commande.</span>
-</p>
-<p class="c1"><span class="c7 c2">La facture d&eacute;taill&eacute;e &eacute;tablie aux, nom et adresse du L&rsquo;ACQUEREUR, mentionnant les taxes et taux conform&eacute;ment &agrave; la l&eacute;gislation en vigueur.</span>
+<p class="c1"><span class="c7 c2">Nonobstant toute clause contraire de vente, la propriété du matériel ne pourra être transférée au LOUEUR qu'à partir de la réception des documents suivants :</span>
 </p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c7 c2">Faute d&#39;ex&eacute;cution de l&#39;int&eacute;gralit&eacute; de ces formalit&eacute;s, LOUEUR peut consid&eacute;rer la commande et la livraison comme non effectu&eacute;es. De m&ecirc;me, le LOUEUR peut consid&eacute;rer la commande comme annul&eacute;e &agrave; d&eacute;faut de remise du proc&egrave;s-verbal de livraison conforme dans les 30 jours &agrave; compter de la date de signature du contrat.</span>
+<p class="c1"><span class="c7 c2">Contrat de location rempli et signé par le LOCATAIRE</span></p>
+<p class="c1"><span class="c7 c2">Procès-verbal de livraison daté et signé par le FOURNISSEUR et le LOCATAIRE agissant ici en qualité de mandataire du LOUEUR. Le LOCATAIRE atteste ainsi que le matériel est livré conformément à la commande.</span>
+</p>
+<p class="c1"><span class="c7 c2">La facture détaillée établie aux, nom et adresse du L’ACQUEREUR, mentionnant les taxes et taux conformément à la législation en vigueur.</span>
 </p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c7 c2">Par d&eacute;rogation aux articles 1719 et suivants du Code Civil, le LOCATAIRE d&eacute;charge LE LOUEUR des obligations d&#39;entretiens et de garantie. En cas de litige, L&rsquo;EXPLOITANT exercera directement et &agrave; ses frais contre le FOURNISSEUR, les actions et recours en garantie. </span>
-</p>
-<p class="c1"><span class="c7 c2">Le FOURNISSEUR accepte ces actions pendant toute la dur&eacute;e de la location. Si le mat&eacute;riel est immatriculable, les signataires s&#39;engagent &agrave; ce qu&#39;il le soit au nom du LOUEUR avec mention du LOCATAIRE. </span>
+<p class="c1"><span class="c7 c2">Faute d'exécution de l'intégralité de ces formalités, LOUEUR peut considérer la commande et la livraison comme non effectuées. De même, le LOUEUR peut considérer la commande comme annulée à défaut de remise du procès-verbal de livraison conforme dans les 30 jours à compter de la date de signature du contrat.</span>
 </p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c7 c2">LE LOCATAIRE soussign&eacute; atteste avoir choisi sous sa seule responsabilit&eacute; les modalit&eacute;s de livraison et le mat&eacute;riel ci-dessus.</span>
+<p class="c1"><span class="c7 c2">Par dérogation aux articles 1719 et suivants du Code Civil, le LOCATAIRE décharge LE LOUEUR des obligations d'entretiens et de garantie. En cas de litige, L’{{$TITRE}} exercera directement et à ses frais contre le FOURNISSEUR, les actions et recours en garantie. </span>
 </p>
-<p class="c1"><span class="c7 c2">LE LOCATAIRE d&ucirc;ment mandat&eacute; par le LOUEUR certifie avoir pris livraison ce jour du mat&eacute;riel et que ce mat&eacute;riel :</span>
+<p class="c1"><span class="c7 c2">Le FOURNISSEUR accepte ces actions pendant toute la durée de la location. Si le matériel est immatriculable, les signataires s'engagent à ce qu'il le soit au nom du LOUEUR avec mention du LOCATAIRE. </span>
+</p>
+<p class="c1 c6"><span class="c7 c2"></span></p>
+<p class="c1"><span class="c7 c2">LE LOCATAIRE soussigné atteste avoir choisi sous sa seule responsabilité les modalités de livraison et le matériel ci-dessus.</span>
+</p>
+<p class="c1"><span class="c7 c2">LE LOCATAIRE dûment mandaté par le LOUEUR certifie avoir pris livraison ce jour du matériel et que ce matériel :</span>
 </p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <ul class="c5 lst-kix_list_6-0 start">
-    <li class="c1 c24"><span class="c7 c2">A &eacute;t&eacute; int&eacute;gralement livr&eacute;,</span></li>
-    <li class="c1 c24"><span class="c7 c2">Est neuf et en bon &eacute;tat de marche,</span></li>
+    <li class="c1 c24"><span class="c7 c2">A été intégralement livré,</span></li>
+    <li class="c1 c24"><span class="c7 c2">Est neuf et en bon état de marche,</span></li>
     <li class="c1 c24"><span class="c7 c2">Est conforme au bon de commande,</span></li>
-    <li class="c1 c24"><span class="c2">Est conforme au mat&eacute;riel mentionn&eacute; dans le contrat de location le liant &agrave; la SNC </span><span
-            class="c2 c11">MARVIC 133</span></li>
-    <li class="c1 c24"><span class="c7 c2">A &eacute;t&eacute; test&eacute; par ses soins</span></li>
-    <li class="c1 c24"><span class="c7 c2">Est r&eacute;glementaire, conforme, notamment aux lois, r&egrave;glements, prescriptions administratives, normes fran&ccedil;aises et qu&#39;il est muni de tous les documents et justificatifs n&eacute;cessaires y r&eacute;f&eacute;rant.</span>
+    <li class="c1 c24"><span class="c2">Est conforme au matériel mentionné dans le contrat de location le liant à la SNC </span><span
+            class="c2 c11">{{$SNC}} </span></li>
+    <li class="c1 c24"><span class="c7 c2">A été testé par ses soins</span></li>
+    <li class="c1 c24"><span class="c7 c2">Est réglementaire, conforme, notamment aux lois, règlements, prescriptions administratives, normes françaises et qu'il est muni de tous les documents et justificatifs nécessaires y référant.</span>
     </li>
 </ul>
 <p class="c1 c32 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c2">LE LOCATAIRE d&eacute;clare accepter le mat&eacute;riel sans r&eacute;serve ni restriction autorisant ainsi le LOUEUR &agrave; r&eacute;gler le FOURNISSEUR conform&eacute;ment &agrave; la facture d&eacute;finitive et s&#39;interdit &agrave; compter de la signature du pr&eacute;sent proc&egrave;s-verbal toute action contre la SNC </span><span
-        class="c2 c11">MARVIC 133 </span><span class="c7 c2">concernant l&rsquo;&eacute;tat du mat&eacute;riel.</span>
+<p class="c1"><span class="c2">LE LOCATAIRE déclare accepter le matériel sans réserve ni restriction autorisant ainsi le LOUEUR à régler le FOURNISSEUR conformément à la facture définitive et s'interdit à compter de la signature du présent procès-verbal toute action contre la SNC </span><span
+        class="c2 c11">{{$SNC}}  </span><span class="c7 c2">concernant l’état du matériel.</span>
 </p>
 <p class="c6 c55"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c7 c2">LE FOURNISSEUR soussign&eacute; reconna&icirc;t avoir accept&eacute; selon les conditions g&eacute;n&eacute;rales ci-dessus la commande du mat&eacute;riel neuf d&eacute;crit plus haut et avoir livr&eacute; ce jour au LOCATAIRE mandat&eacute; par LE LOUEUR ce m&ecirc;me mat&eacute;riel neuf en bon &eacute;tat de marche, conform&eacute;ment aux caract&eacute;ristiques indiqu&eacute;es tant ci-dessus que sur la facture d&eacute;finitive. </span>
+<p class="c1"><span class="c7 c2">LE FOURNISSEUR soussigné reconnaît avoir accepté selon les conditions générales ci-dessus la commande du matériel neuf décrit plus haut et avoir livré ce jour au LOCATAIRE mandaté par LE LOUEUR ce même matériel neuf en bon état de marche, conformément aux caractéristiques indiquées tant ci-dessus que sur la facture définitive. </span>
 </p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c7 c2">Le FOURNISSEUR atteste que le mat&eacute;riel livr&eacute; est neuf, qu&rsquo;il n&rsquo;a jamais &eacute;t&eacute; exploit&eacute;, qu&rsquo;il ne s&rsquo;agit pas d&rsquo;un mat&eacute;riel de d&eacute;monstration et qu&rsquo;il n&rsquo;a jamais &eacute;t&eacute; r&eacute;nove ou reconditionn&eacute;.</span>
+<p class="c1"><span class="c7 c2">Le FOURNISSEUR atteste que le matériel livré est neuf, qu’il n’a jamais été exploité, qu’il ne s’agit pas d’un matériel de démonstration et qu’il n’a jamais été rénove ou reconditionné.</span>
 </p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c7 c2">De m&ecirc;me afin de ne pas remettre en cause l&rsquo;op&eacute;ration de financement, le FOURNISSEUR renonce express&eacute;ment en cas de non-paiement de la totalit&eacute; du montant d&ucirc; par LE LOCATAIRE &agrave;, se pr&eacute;valoir de la clause de r&eacute;serve de propri&eacute;t&eacute; et &agrave; demander la r&eacute;solution de la vente. </span>
+<p class="c1"><span class="c7 c2">De même afin de ne pas remettre en cause l’opération de financement, le FOURNISSEUR renonce expressément en cas de non-paiement de la totalité du montant dû par LE LOCATAIRE à, se prévaloir de la clause de réserve de propriété et à demander la résolution de la vente. </span>
 </p>
-<p class="c1"><span class="c7 c2">La pr&eacute;sente n&rsquo;emporte pas renonciation au droit du FOURNISSEUR &agrave; faire appliquer l&rsquo;ex&eacute;cution forc&eacute;e des obligations contractuelles.</span>
+<p class="c1"><span class="c7 c2">La présente n’emporte pas renonciation au droit du FOURNISSEUR à faire appliquer l’exécution forcée des obligations contractuelles.</span>
 </p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <p class="c33 c6"><span class="c7 c2"></span></p>
 <p class="c33 c6"><span class="c7 c2"></span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c2">Fait &agrave; </span><span class="c2 c11">LE TAMPON</span><span
-        class="c2">, le&nbsp;</span><span class="c43 c53">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span
-        class="c43">&nbsp; </span><span class="c7 c2">en trois exemplaires originaux</span></p>
+<p class="c1"><span class="c2">Fait à </span><span class="c2 c11">{{$VILLE_FOURNISSEUR}} </span><span
+        class="c2">, le </span><span class="c43 c53">                                             </span><span
+        class="c43">  </span><span class="c7 c2">en trois exemplaires originaux</span></p>
 <p class="c1 c27 c6"><span class="c7 c2"></span></p>
 <p class="c1 c27 c6"><span class="c7 c2"></span></p>
 <p class="c1 c6 c27"><span class="c7 c2"></span></p>
 <p class="c6 c37"><span class="c7 c2"></span></p>
-<p class="c14"><span class="c2 c42">LE LOCATAIRE</span><span class="c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+<p class="c14"><span class="c2 c42">LE LOCATAIRE</span><span class="c2">                                                                </span><span
         class="c2 c29">LE FOURNISSEUR</span></p>
 <p class="c14 c6"><span class="c29 c2"></span></p>
-<p class="c65"><span class="c2 c42">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
+<p class="c65"><span class="c2 c42">                                                                                   </span>
 </p>
 <p class="c8 c6"><span class="c7 c2"></span></p>
 <p class="c1"><span
-        class="c7 c2">&laquo; Lu et approuv&eacute;&nbsp;&raquo; Signature et cachet commercial&nbsp;&raquo;</span></p>
+        class="c7 c2">« Lu et approuvé » Signature et cachet commercial »</span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <p class="c1"><span
-        class="c7 c2">&laquo; Lu et approuv&eacute;&nbsp;&raquo; Signature et cachet commercial&nbsp;&raquo;</span></p>
+        class="c7 c2">« Lu et approuvé » Signature et cachet commercial »</span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <hr style="page-break-before:always;display:none;">
 <p class="c6 c57"><span class="c7 c2"></span></p>
 <p class="c51"><span class="c7 c22">ATTESTATION DE PRIX NET </span></p>
-<p class="c51"><span class="c7 c22">CONTRAT n&deg; 1812005-REU &ndash; SNC MARVIC 133</span></p>
+<p class="c51"><span class="c7 c22">CONTRAT n° {{$N_DOSSIER}} -REU – SNC {{$SNC}} </span></p>
 <p class="c8 c6"><span class="c0"></span></p>
 <p class="c1 c6"><span class="c0"></span></p>
 <p class="c1 c6"><span class="c0"></span></p>
 <p class="c1 c6"><span class="c0"></span></p>
 <p class="c1 c6"><span class="c0"></span></p>
 <p class="c1 c6"><span class="c0"></span></p>
-<p class="c1" id="h.3znysh7"><span class="c2">Nous soussign&eacute;s, </span><span class="c2 c11">JMECAGRI</span><span
-        class="c2">, </span><span class="c2 c11">SARL </span><span class="c2">au capital de </span><span class="c2 c11">&nbsp; &nbsp; &nbsp; &nbsp; 500 </span><span
-        class="c2">euros dont le si&egrave;ge social est sis au </span><span class="c2 c11">65, impasse Georges Brassens 97430 LE TAMPON </span><span
-        class="c2">immatricul&eacute;e au Registre du Commerce et des Soci&eacute;t&eacute;s de </span><span
-        class="c2 c11">SAINT PIERRE</span><span class="c2">&nbsp;sous le num&eacute;ro </span><span class="c10 c2">794673392,</span>
+<p class="c1" id="h.3znysh7"><span class="c2">Nous soussignés, </span><span class="c2 c11">{{$FOURNISSEUR}} </span><span
+        class="c2">, </span><span class="c2 c11">{{$FORME_JURIDIQUE_FOURNISSEUR}} </span><span class="c2">au capital de </span><span class="c2 c11">       {{$CAPITAL_FOURNISSEUR}} </span><span
+        class="c2">euros dont le siège social est sis au </span><span class="c2 c11">{{$ADRESSE_FOURNISSEUR}}  {{$CP_FOURNISSEUR}}  {{$VILLE_FOURNISSEUR}}  </span><span
+        class="c2">immatriculée au Registre du Commerce et des Sociétés de </span><span
+        class="c2 c11">{{$RSC_VILLE_FOURNISSEUR}} </span><span class="c2"> sous le numéro </span><span class="c10 c2">794673392,</span>
 </p>
 <p class="c1 c6"><span class="c10 c2"></span></p>
-<p class="c1"><span class="c2">Repr&eacute;sent&eacute;e par </span><span class="c2 c11">M. HOARAU </span><span
-        class="c2">agissant en qualit&eacute; de </span><span class="c2 c11">G&eacute;rant</span><span
+<p class="c1"><span class="c2">Représentée par </span><span class="c2 c11">M. HOARAU </span><span
+        class="c2">agissant en qualité de </span><span class="c2 c11">{{$QUALITE_REPRESENTANT}} </span><span
         class="c7 c2">,</span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c2">Certifions par la pr&eacute;sente que le mat&eacute;riel suivant&nbsp;vendu &agrave; la SNC </span><span
-        class="c2 c11">MARVIC 133 </span><span class="c2">et destin&eacute; au locataire </span><span class="c10 c2">JEBANE GEORGES JACQUES,</span>
+<p class="c1"><span class="c2">Certifions par la présente que le matériel suivant vendu à la SNC </span><span
+        class="c2 c11">{{$SNC}}  </span><span class="c2">et destiné au locataire </span><span class="c10 c2">{{$LOCATAIRE_RAISON_SOCIALE}},</span>
 </p>
 <p class="c1 c6"><span class="c10 c2"></span></p>
-<p class="c1"><span class="c10 c18">&nbsp; </span></p>
-<p class="c1"><span class="c10 c18">- Une remorque &agrave; canne tron&ccedil;onn&eacute;e neuve</span></p>
+<p class="c1"><span class="c10 c18">  </span></p>
+<p class="c1"><span class="c10 c18">- {{$MATERIAL}}</span></p>
 <p class="c1 c6 c32"><span class="c0"></span></p>
 <p class="c1 c32 c6"><span class="c0"></span></p>
-<p class="c1 c32"><span class="c7 c2">Au prix de&nbsp;: </span><span class="c10 c2">&nbsp;50 000,00 </span><span
+<p class="c1 c32"><span class="c7 c2">Au prix de : </span><span class="c10 c2"> {{$MONTANT_TTC}} </span><span
         class="c7 c2">euros TTC</span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c7 c2">Est conforme &agrave; la marge normale de notre activit&eacute; et ne fait en aucun cas l&rsquo;objet, directement ou indirectement, de la part de notre soci&eacute;t&eacute;, d&rsquo;aucun versement de commission, rabais, remise ou ristourne, &agrave; quelconque des intervenants de cette op&eacute;ration.</span>
+<p class="c1"><span class="c7 c2">Est conforme à la marge normale de notre activité et ne fait en aucun cas l’objet, directement ou indirectement, de la part de notre société, d’aucun versement de commission, rabais, remise ou ristourne, à quelconque des intervenants de cette opération.</span>
 </p>
-<p class="c1"><span class="c2">Par ailleurs, j&rsquo;atteste, ne pas reprendre de mat&eacute;riel ayant les m&ecirc;mes fonctions et les m&ecirc;mes performances au sein de l&rsquo;entreprise </span><span
-        class="c2 c11">JEBANE GEORGES JACQUES.</span></p>
+<p class="c1"><span class="c2">Par ailleurs, j’atteste, ne pas reprendre de matériel ayant les mêmes fonctions et les mêmes performances au sein de l’entreprise </span><span
+        class="c2 c11">{{$LOCATAIRE_RAISON_SOCIALE}}.</span></p>
 <p class="c8 c6"><span class="c7 c2"></span></p>
 <p class="c8 c6"><span class="c7 c2"></span></p>
-<p class="c8"><span class="c2">Fait &agrave; </span><span class="c10 c2">LE TAMPON,</span></p>
+<p class="c8"><span class="c2">Fait à </span><span class="c10 c2">{{$VILLE_FOURNISSEUR}} ,</span></p>
 <p class="c8 c6"><span class="c7 c2"></span></p>
-<p class="c8"><span class="c2">Le </span><span class="c2 c11">21/12/2018</span></p>
+<p class="c8"><span class="c2">Le </span><span class="c2 c11">{{$DATE_DE_CONTRAT}}</span></p>
 <p class="c8 c6"><span class="c7 c2"></span></p>
-<p class="c8"><span class="c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;Pour le fournisseur </span><span
-        class="c10 c2">JMECAGRI</span></p>
-<p class="c8"><span class="c7 c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
-<p class="c8 c67"><span class="c7 c2">&nbsp; &nbsp; &nbsp; &nbsp; Signature et cachet</span></p>
+<p class="c8"><span class="c2">                                                               Pour le fournisseur </span><span
+        class="c10 c2">{{$FOURNISSEUR}} </span></p>
+<p class="c8"><span class="c7 c2">        </span></p>
+<p class="c8 c67"><span class="c7 c2">        Signature et cachet</span></p>
 <p class="c8 c6"><span class="c7 c52 c43"></span></p>
 <p class="c8 c6"><span class="c7 c9"></span></p>
 <p class="c8 c6"><span class="c7 c9"></span></p>
 <hr style="page-break-before:always;display:none;">
 <p class="c57 c6"><span class="c7 c9"></span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c10 c2">JMECAGRI</span></p>
-<p class="c1"><span class="c10 c2">65, impasse Georges Brassens</span></p>
-<p class="c1"><span class="c2 c11">97430 LE TAMPON</span></p>
+<p class="c1"><span class="c10 c2">{{$FOURNISSEUR}} </span></p>
+<p class="c1"><span class="c10 c2">{{$ADRESSE_FOURNISSEUR}} </span></p>
+<p class="c1"><span class="c2 c11">{{$CP_FOURNISSEUR}}  {{$VILLE_FOURNISSEUR}} </span></p>
 <p class="c1 c21 c6"><span class="c7 c2"></span></p>
-<p class="c1 c21"><span class="c2">SNC</span><span class="c10 c2">&nbsp;MARVIC 133</span></p>
+<p class="c1 c21"><span class="c2">SNC</span><span class="c10 c2"> {{$SNC}} </span></p>
 <p class="c1 c21"><span class="c7 c2">62 Boulevard du Chaudron</span></p>
-<p class="c1 c21"><span class="c7 c2">97490 &ndash; SAINTE CLOTILDE</span></p>
+<p class="c1 c21"><span class="c7 c2">97490 – SAINTE CLOTILDE</span></p>
 <p class="c1 c21 c6"><span class="c7 c2"></span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c2">A </span><span class="c2 c11">LE TAMPON</span><span class="c2">, le </span><span
-        class="c2 c11">21/12/2018</span></p>
+<p class="c1"><span class="c2">A </span><span class="c2 c11">{{$VILLE_FOURNISSEUR}} </span><span class="c2">, le </span><span
+        class="c2 c11">{{$DATE_DE_CONTRAT}}</span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <p class="c1 c6"><span class="c7 c40"></span></p>
 <p class="c1 c6"><span class="c7 c40"></span></p>
 <p class="c35 c6"><span class="c7 c40"></span></p>
 <p class="c35 c6"><span class="c7 c40"></span></p>
-<p class="c35"><span class="c7 c22">ATTESTATION DE VERSEMENT DE L&rsquo;APPORT LOCATAIRE</span></p>
-<p class="c35 c47" id="h.2et92p0"><span class="c22">DOSSIER N&deg; </span><span class="c22 c11">1812005-REU &ndash; SNC MARVIC 133</span>
+<p class="c35"><span class="c7 c22">ATTESTATION DE VERSEMENT DE L’APPORT LOCATAIRE</span></p>
+<p class="c35 c47" id="h.2et92p0"><span class="c22">DOSSIER N° </span><span class="c22 c11">{{$N_DOSSIER}} -REU – SNC {{$SNC}} </span>
 </p>
 <p class="c35 c6"><span class="c7 c40"></span></p>
 <p class="c1 c6"><span class="c7 c40"></span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c2">Nous soussign&eacute;s, </span><span class="c2 c11">JMECAGRI </span><span class="c2">attestons par la pr&eacute;sente connaitre les dispositions de l&rsquo;article L.112-6 du code mon&eacute;taire et financier relatif &agrave; l&rsquo;interdiction du paiement en esp&egrave;ces de certaines cr&eacute;ances et attestons avoir per&ccedil;u par ch&egrave;que ou virement bancaire de l&rsquo;entreprise </span><span
-        class="c2 c11">JEBANE GEORGES JACQUES, </span><span class="c2">la somme de&nbsp;:</span></p>
+<p class="c1"><span class="c2">Nous soussignés, </span><span class="c2 c11">{{$FOURNISSEUR}}  </span><span class="c2">attestons par la présente connaitre les dispositions de l’article L.112-6 du code monétaire et financier relatif à l’interdiction du paiement en espèces de certaines créances et attestons avoir perçu par chèque ou virement bancaire de l’entreprise </span><span
+        class="c2 c11">{{$LOCATAIRE_RAISON_SOCIALE}}, </span><span class="c2">la somme de :</span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c2 c11">&nbsp; 5 000,00 </span><span class="c7 c2">euros </span></p>
+<p class="c1"><span class="c2 c11"> {{$APPORT_LOCATAIRE}} </span><span class="c7 c2">euros </span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c2">au titre de sa quote-part sur le paiement de l&rsquo;investissement r&eacute;alis&eacute; pour son compte par la SNC </span><span
-        class="c2 c11">MARVIC 133 </span><span class="c2">conform&eacute;ment au plan de financement joint.</span></p>
+<p class="c1"><span class="c2">au titre de sa quote-part sur le paiement de l’investissement réalisé pour son compte par la SNC </span><span
+        class="c2 c11">{{$SNC}}  </span><span class="c2">conformément au plan de financement joint.</span></p>
 <p class="c1 c6"><span class="c0"></span></p>
 <p class="c1 c6"><span class="c0"></span></p>
-<p class="c1"><span class="c2">L&rsquo;investissement de l&rsquo;entreprise </span><span class="c2 c11">JEBANE GEORGES JACQUES </span><span
-        class="c7 c2">concerne le mat&eacute;riel neuf suivant&nbsp;:</span></p>
+<p class="c1"><span class="c2">L’investissement de l’entreprise </span><span class="c2 c11">{{$LOCATAIRE_RAISON_SOCIALE}} </span><span
+        class="c7 c2">concerne le matériel neuf suivant :</span></p>
 <p class="c1 c6"><span class="c10 c2"></span></p>
-<p class="c1"><span class="c10 c18">- Une remorque &agrave; canne tron&ccedil;onn&eacute;e neuve</span></p>
+<p class="c1"><span class="c10 c18">- {{$MATERIAL}}</span></p>
 <p class="c1 c6"><span class="c0"></span></p>
-<p class="c1"><span class="c7 c2">La pr&eacute;sente attestation est &eacute;tablie pour servir et valoir ce que de droit</span>
+<p class="c1"><span class="c7 c2">La présente attestation est établie pour servir et valoir ce que de droit</span>
 </p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c2">Pour le fournisseur </span><span class="c10 c2">JMECAGRI</span></p>
+<p class="c1"><span class="c2">Pour le fournisseur </span><span class="c10 c2">{{$FOURNISSEUR}} </span></p>
 <p class="c1"><span class="c7 c2">Signature et cachet </span></p>
 <p class="c8 c6"><span class="c7 c52 c43"></span></p>
 <p class="c8 c6"><span class="c7 c43 c52"></span></p>
 <p class="c8 c6"><span class="c7 c9"></span></p>
 <hr style="page-break-before:always;display:none;">
 <p class="c57 c6"><span class="c7 c9"></span></p>
-<p class="c1"><span class="c10 c2">JMECAGRI</span></p>
-<p class="c1"><span class="c10 c2">65, impasse Georges Brassens</span></p>
-<p class="c1"><span class="c2 c11">97430 LE TAMPON</span></p>
+<p class="c1"><span class="c10 c2">{{$FOURNISSEUR}} </span></p>
+<p class="c1"><span class="c10 c2">{{$ADRESSE_FOURNISSEUR}} </span></p>
+<p class="c1"><span class="c2 c11">{{$CP_FOURNISSEUR}}  {{$VILLE_FOURNISSEUR}} </span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c2">A </span><span class="c2 c11">LE TAMPON</span><span class="c2">, le </span><span
-        class="c2 c11">21/12/2018</span></p>
+<p class="c1"><span class="c2">A </span><span class="c2 c11">{{$VILLE_FOURNISSEUR}} </span><span class="c2">, le </span><span
+        class="c2 c11">{{$DATE_DE_CONTRAT}}</span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <p class="c35 c6"><span class="c7 c40"></span></p>
 <p class="c35 c6"><span class="c7 c40"></span></p>
 <p class="c35"><span class="c7 c22">ATTESTATION DE RECEPTION DES FONDS INVESTISSEURS</span></p>
-<p class="c35"><span class="c22">DOSSIER N&deg; </span><span class="c22 c11">1812005-REU &ndash; SNC MARVIC 133</span>
+<p class="c35"><span class="c22">DOSSIER N° </span><span class="c22 c11">{{$N_DOSSIER}} -REU – SNC {{$SNC}} </span>
 </p>
 <p class="c1 c6"><span class="c7 c60"></span></p>
 <p class="c1 c6"><span class="c7 c40"></span></p>
@@ -1653,273 +1653,273 @@
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c2">Nous soussign&eacute;s, </span><span class="c2 c11">JMECAGRI </span><span class="c2">attestons par la pr&eacute;sente avoir per&ccedil;u par virement bancaire de la SNC </span><span
-        class="c2 c11">MARVIC 133</span><span class="c2">, la somme de&nbsp;:</span></p>
+<p class="c1"><span class="c2">Nous soussignés, </span><span class="c2 c11">{{$FOURNISSEUR}}  </span><span class="c2">attestons par la présente avoir perçu par virement bancaire de la SNC </span><span
+        class="c2 c11">{{$SNC}} </span><span class="c2">, la somme de :</span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c2 c11">&nbsp;15 600,00 </span><span class="c7 c2">euros, </span></p>
+<p class="c1"><span class="c2 c11"> {{$APPORT_SNC}} </span><span class="c7 c2">euros, </span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c2">relative au contrat de location N&deg; </span><span
-        class="c2 c11">1812005-REU</span><span class="c2">&nbsp;conclu entre la SNC </span><span class="c2 c11">MARVIC 133 </span><span
-        class="c2">et l&rsquo;entreprise </span><span class="c2 c11">JEBANE GEORGES JACQUES </span><span class="c7 c2">concernant le mat&eacute;riel suivant&nbsp;:</span>
+<p class="c1"><span class="c2">relative au contrat de location N° </span><span
+        class="c2 c11">{{$N_DOSSIER}} -REU</span><span class="c2"> conclu entre la SNC </span><span class="c2 c11">{{$SNC}}  </span><span
+        class="c2">et l’entreprise </span><span class="c2 c11">{{$LOCATAIRE_RAISON_SOCIALE}} </span><span class="c7 c2">concernant le matériel suivant :</span>
 </p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <p class="c1 c6"><span class="c0"></span></p>
-<p class="c1"><span class="c10 c18">- Une remorque &agrave; canne tron&ccedil;onn&eacute;e neuve</span></p>
+<p class="c1"><span class="c10 c18">- {{$MATERIAL}}</span></p>
 <p class="c1 c32 c6"><span class="c0"></span></p>
 <p class="c1 c6"><span class="c0"></span></p>
-<p class="c1"><span class="c7 c2">La pr&eacute;sente attestation est &eacute;tablie pour servir et valoir ce que de droit</span>
+<p class="c1"><span class="c7 c2">La présente attestation est établie pour servir et valoir ce que de droit</span>
 </p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c2">Pour le fournisseur </span><span class="c10 c2">JMECAGRI</span></p>
+<p class="c1"><span class="c2">Pour le fournisseur </span><span class="c10 c2">{{$FOURNISSEUR}} </span></p>
 <p class="c1"><span class="c7 c2">Signature et cachet </span></p>
 <hr style="page-break-before:always;display:none;">
 <p class="c8 c6"><span class="c0"></span></p>
 <p class="c8 c6"><span class="c0"></span></p>
 <hr style="page-break-before:always;display:none;">
 <p class="c57 c6"><span class="c0"></span></p>
-<p class="c1"><span class="c10 c2">SNC MARVIC 133</span></p>
+<p class="c1"><span class="c10 c2">SNC {{$SNC}} </span></p>
 <p class="c1"><span class="c7 c2">62 BOULEVARD DU CHAUDRON</span></p>
-<p class="c1"><span class="c7 c2">97490 &ndash; SAINTE CLOTILDE</span></p>
-<p class="c1 c21"><span class="c10 c2">JMECAGRI</span></p>
-<p class="c1 c21"><span class="c10 c2">65, impasse Georges Brassens</span></p>
-<p class="c1 c21"><span class="c2 c11">97430 LE TAMPON</span></p>
+<p class="c1"><span class="c7 c2">97490 – SAINTE CLOTILDE</span></p>
+<p class="c1 c21"><span class="c10 c2">{{$FOURNISSEUR}} </span></p>
+<p class="c1 c21"><span class="c10 c2">{{$ADRESSE_FOURNISSEUR}} </span></p>
+<p class="c1 c21"><span class="c2 c11">{{$CP_FOURNISSEUR}}  {{$VILLE_FOURNISSEUR}} </span></p>
 <p class="c1 c6"><span class="c0"></span></p>
 <p class="c6 c33"><span class="c7 c60"></span></p>
-<p class="c35 c47"><span class="c22">CESSION DE CREANCE IMPARFAITE N&deg; </span><span class="c22 c11">1812005-REU &ndash; SNC MARVIC 133</span>
+<p class="c35 c47"><span class="c22">CESSION DE CREANCE IMPARFAITE N° </span><span class="c22 c11">{{$N_DOSSIER}} -REU – SNC {{$SNC}} </span>
 </p>
-<p class="c51"><span class="c22">VALANT ATTESTATION DE PAIEMENT ANTICIPE DES LOYERS DE L&rsquo;EXPLOITANT</span></p>
+<p class="c51"><span class="c22">VALANT ATTESTATION DE PAIEMENT ANTICIPE DES LOYERS DE L’{{$TITRE}}</span></p>
 <p class="c6 c45"><span class="c7 c52 c43"></span></p>
 <p class="c1"><span class="c7 c2">Entre,</span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c2">La SNC </span><span class="c2 c11">MARVIC 133, </span><span class="c2">Soci&eacute;t&eacute; en Nom Collectif au capital de 100 &euro;, dont le si&egrave;ge social est sis au 62 BOULEVARD DU CHAUDRON &ndash; 97490 &ndash; SAINTE CLOTILDE immatricul&eacute;e sous le num&eacute;ro </span><span
+<p class="c1"><span class="c2">La SNC </span><span class="c2 c11">{{$SNC}} , </span><span class="c2">Société en Nom Collectif au capital de 100 €, dont le siège social est sis au 62 BOULEVARD DU CHAUDRON – 97490 – SAINTE CLOTILDE immatriculée sous le numéro </span><span
         class="c2 c11">844599340 </span><span class="c2">au RCS de SAINT DENIS </span></p>
 <p class="c1 c6"><span class="c10 c2"></span></p>
-<p class="c1"><span class="c7 c2">Repr&eacute;sent&eacute;e par Monsieur Christophe MONEL</span></p>
+<p class="c1"><span class="c7 c2">Représentée par {{$CIVILITE}} Christophe MONEL</span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c7 c2">Ci-apr&egrave;s d&eacute;sign&eacute; le CEDANT</span></p>
+<p class="c1"><span class="c7 c2">Ci-après désigné le CEDANT</span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <p class="c1"><span class="c7 c2">Et</span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c2">La soci&eacute;t&eacute; </span><span class="c2 c11">JMECAGRI</span><span
-        class="c2">, </span><span class="c2 c11">SARL </span><span class="c2">au capital de </span><span class="c2 c11">&nbsp; &nbsp; &nbsp; &nbsp; 500 </span><span
-        class="c2">euros dont le si&egrave;ge social est sis au </span><span class="c2 c11">65, impasse Georges Brassens 97430 LE TAMPON </span><span
-        class="c2">immatricul&eacute;e au Registre du Commerce et des Soci&eacute;t&eacute;s de </span><span
-        class="c2 c11">SAINT PIERRE</span><span class="c2">&nbsp;sous le num&eacute;ro </span><span class="c10 c2">794673392,</span>
+<p class="c1"><span class="c2">La société </span><span class="c2 c11">{{$FOURNISSEUR}} </span><span
+        class="c2">, </span><span class="c2 c11">{{$FORME_JURIDIQUE_FOURNISSEUR}} </span><span class="c2">au capital de </span><span class="c2 c11">       {{$CAPITAL_FOURNISSEUR}} </span><span
+        class="c2">euros dont le siège social est sis au </span><span class="c2 c11">{{$ADRESSE_FOURNISSEUR}}  {{$CP_FOURNISSEUR}}  {{$VILLE_FOURNISSEUR}}  </span><span
+        class="c2">immatriculée au Registre du Commerce et des Sociétés de </span><span
+        class="c2 c11">{{$RSC_VILLE_FOURNISSEUR}} </span><span class="c2"> sous le numéro </span><span class="c10 c2">794673392,</span>
 </p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c2">Repr&eacute;sent&eacute;e par </span><span class="c2 c11">M. HOARAU </span><span
-        class="c2">agissant en qualit&eacute; de </span><span class="c2 c11">G&eacute;rant,</span></p>
+<p class="c1"><span class="c2">Représentée par </span><span class="c2 c11">M. HOARAU </span><span
+        class="c2">agissant en qualité de </span><span class="c2 c11">{{$QUALITE_REPRESENTANT}} </span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c7 c2">Ci-apr&egrave;s d&eacute;sign&eacute; le CESSIONNAIRE</span></p>
+<p class="c1"><span class="c7 c2">Ci-après désigné le CESSIONNAIRE</span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c7 c2">Avec l&rsquo;intervention de </span></p>
+<p class="c1"><span class="c7 c2">Avec l’intervention de </span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c2 c15">L&rsquo;entreprise </span><span class="c2 c11">JEBANE GEORGES JACQUES, </span><span
-        class="c2 c15">dont le si&egrave;ge social est sis au </span><span class="c2 c11">13, rue des Jacques - 97412 BRAS PANON </span><span
-        class="c2 c15">immatricul&eacute;e &agrave; la </span><span class="c2 c11">CGSS</span><span class="c2 c15">&nbsp;de </span><span
-        class="c2 c11">LA REUNION </span><span class="c2 c15">sous le num&eacute;ro </span><span class="c10 c2">385242995,</span>
+<p class="c1"><span class="c2 c15">L’entreprise </span><span class="c2 c11">{{$LOCATAIRE_RAISON_SOCIALE}}, </span><span
+        class="c2 c15">dont le siège social est sis au </span><span class="c2 c11">{{$ADRESSE}} - {{$CP}} {{$VILLE}} </span><span
+        class="c2 c15">immatriculée à la </span><span class="c2 c11">{{$RSCRM_LONG}} </span><span class="c2 c15"> de </span><span
+        class="c2 c11">{{$RSC_VILLE}} </span><span class="c2 c15">sous le numéro </span><span class="c10 c2">{{$SIREN}} </span>
 </p>
 <p class="c1 c6"><span class="c2 c10"></span></p>
-<p class="c1"><span class="c2 c15">Repr&eacute;sent&eacute;e par </span><span class="c2 c11">Monsieur JEBANE Georges, Jacques </span><span
-        class="c2 c15">agissant en qualit&eacute; de </span><span class="c10 c2">Exploitant,</span></p>
+<p class="c1"><span class="c2 c15">Représentée par </span><span class="c2 c11">{{$CIVILITE}} {{$NOM}} {{$PRENOM}} </span><span
+        class="c2 c15">agissant en qualité de </span><span class="c10 c2">{{$TITRE}},</span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c7 c2">Ci-apr&egrave;s d&eacute;sign&eacute; le LOCATAIRE</span></p>
+<p class="c1"><span class="c7 c2">Ci-après désigné le LOCATAIRE</span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c7 c28">Il a &eacute;t&eacute; convenu ce qui suit :</span></p>
+<p class="c1"><span class="c7 c28">Il a été convenu ce qui suit :</span></p>
 <p class="c1 c6"><span class="c7 c28"></span></p>
-<p class="c30"><span class="c2">La cession de cr&eacute;ances concerne le montant des loyers dus par le LOCATAIRE relatif au contrat de location N&deg; </span><span
-        class="c2 c11">1812005-REU</span><span class="c2">&nbsp;sign&eacute; le </span><span
-        class="c2 c11">21/12/2018</span><span class="c7 c2">&nbsp;avec le CEDANT, concernant le mat&eacute;riel vendu par le CESSIONNAIRE au CEDANT pour le compte du LOCATAIRE</span>
+<p class="c30"><span class="c2">La cession de créances concerne le montant des loyers dus par le LOCATAIRE relatif au contrat de location N° </span><span
+        class="c2 c11">{{$N_DOSSIER}} -REU</span><span class="c2"> signé le </span><span
+        class="c2 c11">{{$DATE_DE_CONTRAT}}</span><span class="c7 c2"> avec le CEDANT, concernant le matériel vendu par le CESSIONNAIRE au CEDANT pour le compte du LOCATAIRE</span>
 </p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c7 c2">Article 1&nbsp;: DESCRIPTION DE LA CREANCE CEDEE ET DE L&rsquo;OPERATION</span></p>
+<p class="c1"><span class="c7 c2">Article 1 : DESCRIPTION DE LA CREANCE CEDEE ET DE L’OPERATION</span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c7 c2">Le CESSIONNAIRE a vendu au CEDANT un le mat&eacute;riel neuf suivant&nbsp;:</span></p>
+<p class="c1"><span class="c7 c2">Le CESSIONNAIRE a vendu au CEDANT un le matériel neuf suivant :</span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1 c4"><span class="c2 c11">- </span><span class="c3">Une remorque &agrave; canne tron&ccedil;onn&eacute;e neuve</span>
+<p class="c1 c4"><span class="c2 c11">- </span><span class="c3">{{$MATERIAL}}</span>
 </p>
 <p class="c1 c32 c6"><span class="c10 c2"></span></p>
-<p class="c30"><span class="c2">Le CEDANT a sign&eacute; avec le LOCATAIRE un contrat de location N&deg; </span><span
-        class="c2 c11">1812005-REU </span><span
-        class="c2">concernant le mat&eacute;riel ci-dessus en date du </span><span class="c2 c11">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 21/12/2018 </span><span
-        class="c2">moyennant le versement de </span><span class="c2 c11">60</span><span class="c2">&nbsp;loyers mensuels d&rsquo;un montant HT de </span><span
-        class="c2 c11">&nbsp; &nbsp; 490,00 </span><span class="c2">&euro; exigible au terme de chaque mois civil soit un montant total de </span><span
-        class="c2 c11">&nbsp;29 400,00 </span><span class="c7 c2">&euro; HT pour la location du mat&eacute;riel.</span>
+<p class="c30"><span class="c2">Le CEDANT a signé avec le LOCATAIRE un contrat de location N° </span><span
+        class="c2 c11">{{$N_DOSSIER}} -REU </span><span
+        class="c2">concernant le matériel ci-dessus en date du </span><span class="c2 c11">                                                                                                {{$DATE_DE_CONTRAT}} </span><span
+        class="c2">moyennant le versement de </span><span class="c2 c11">60</span><span class="c2"> loyers mensuels d’un montant HT de </span><span
+        class="c2 c11">    {{$ECHEANCE_LOYER_HT}} </span><span class="c2">€ exigible au terme de chaque mois civil soit un montant total de </span><span
+        class="c2 c11"> {{$RESTE_A_FINANCER}} </span><span class="c7 c2">€ HT pour la location du matériel.</span>
 </p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c7 c2">Article 2&nbsp;: CESSION DE CREANCE</span></p>
+<p class="c1"><span class="c7 c2">Article 2 : CESSION DE CREANCE</span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c2">Conform&eacute;ment aux dispositions de l&rsquo;article 1689 et suivants du code civil, le CEDANT c&egrave;de au CESSIONNAIRE qui l&rsquo;accepte, la cr&eacute;ance des loyers &eacute;chus et &agrave; &eacute;choir, qu&rsquo;il d&eacute;tient sur le LOCATAIRE soit </span><span
-        class="c2 c11">&nbsp;29 400,00 </span><span class="c7 c2">&euro; &agrave; ce jour, en principal.</span></p>
+<p class="c1"><span class="c2">Conformément aux dispositions de l’article 1689 et suivants du code civil, le CEDANT cède au CESSIONNAIRE qui l’accepte, la créance des loyers échus et à échoir, qu’il détient sur le LOCATAIRE soit </span><span
+        class="c2 c11"> {{$RESTE_A_FINANCER}} </span><span class="c7 c2">€ à ce jour, en principal.</span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c7 c2">La pr&eacute;sente cession est faite &agrave; forfait, aux frais, risques et p&eacute;rils du CESSIONNAIRE sans aucune garantie d&rsquo;aucune sorte sauf celle de l&rsquo;existence du contrat de location du mat&eacute;riel remis ce jour en mains propres par le CEDANT au CESSIONNAIRE</span>
+<p class="c1"><span class="c7 c2">La présente cession est faite à forfait, aux frais, risques et périls du CESSIONNAIRE sans aucune garantie d’aucune sorte sauf celle de l’existence du contrat de location du matériel remis ce jour en mains propres par le CEDANT au CESSIONNAIRE</span>
 </p>
-<p class="c1"><span class="c7 c2">Le CESSIONNAIRE d&eacute;clare express&eacute;ment accepter la pr&eacute;sente cession de cr&eacute;ances ci-dessus et donner d&eacute;charge au CEDANT de tout paiement de facture relative &agrave; l&rsquo;investissement ci-dessus.</span>
-</p>
-<p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c7 c2">En cas de d&eacute;faillance du LOCATAIRE, le CESSIONNAIRE renonce &agrave; tout recours envers le CEDANT ou ses associ&eacute;s et accepte de supporter seul tout al&eacute;a relatif &agrave; la cr&eacute;ance c&eacute;d&eacute;e et &agrave; ses accessoires.</span>
+<p class="c1"><span class="c7 c2">Le CESSIONNAIRE déclare expressément accepter la présente cession de créances ci-dessus et donner décharge au CEDANT de tout paiement de facture relative à l’investissement ci-dessus.</span>
 </p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c7 c2">Le CESSIONNAIRE renonce express&eacute;ment &agrave; toute clause de r&eacute;serve de propri&eacute;t&eacute; ou disposition lui permettant de conserver la propri&eacute;t&eacute; du mat&eacute;riel vendu au CEDANT.</span>
-</p>
-<p class="c1"><span class="c7 c2">Le CEDANT d&eacute;clare que la cr&eacute;ance c&eacute;d&eacute;e ne fait &agrave; ce jour l&rsquo;objet d&rsquo;aucune proc&eacute;dure ni contestation quant &agrave; son montant, son principe et son exigibilit&eacute;.</span>
+<p class="c1"><span class="c7 c2">En cas de défaillance du LOCATAIRE, le CESSIONNAIRE renonce à tout recours envers le CEDANT ou ses associés et accepte de supporter seul tout aléa relatif à la créance cédée et à ses accessoires.</span>
 </p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c7 c2">Article&nbsp;3&nbsp;: PRIX DE LA CREANCE</span></p>
-<p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c2">La pr&eacute;sente cession est consentie moyennant le prix de </span><span
-        class="c2 c11">&nbsp;29 400,00 </span><span class="c7 c2">&euro; euros hors taxes pay&eacute; par compensation entre les sommes dues au CESSIONNAIRE par le CEDANT au titre du solde du paiement du prix du mat&eacute;riel.</span>
+<p class="c1"><span class="c7 c2">Le CESSIONNAIRE renonce expressément à toute clause de réserve de propriété ou disposition lui permettant de conserver la propriété du matériel vendu au CEDANT.</span>
 </p>
-<p class="c1"><span class="c7 c2">Quittance en est donn&eacute;e ce jour.</span></p>
-<p class="c1"><span class="c7 c2">En cons&eacute;quence de la pr&eacute;sente cession et ce &agrave; compter de ce jour, le CESSIONNAIRE disposera de la cr&eacute;ance c&eacute;d&eacute;e comme lui appartenant en pleine propri&eacute;t&eacute; et exercera tous les droits et actions relatifs &agrave; la cr&eacute;ance c&eacute;d&eacute;e.</span>
+<p class="c1"><span class="c7 c2">Le CEDANT déclare que la créance cédée ne fait à ce jour l’objet d’aucune procédure ni contestation quant à son montant, son principe et son exigibilité.</span>
 </p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c7 c2">Article&nbsp;4 : ACCEPTATION ET ENGAGEMENT PERSONNEL DU LOCATAIRE</span></p>
+<p class="c1"><span class="c7 c2">Article 3 : PRIX DE LA CREANCE</span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c2">Le LOCATAIRE consent express&eacute;ment &agrave; la cession de cr&eacute;ance. Il prend l&rsquo;engagement direct et personnel de verser directement au CESSIONNAIRE l&rsquo;int&eacute;gralit&eacute; des </span><span
-        class="c2 c11">60 </span><span class="c7 c2">mensualit&eacute;s, y compris celles non &eacute;chues au titre de son contrat de location. </span>
+<p class="c1"><span class="c2">La présente cession est consentie moyennant le prix de </span><span
+        class="c2 c11"> {{$RESTE_A_FINANCER}} </span><span class="c7 c2">€ euros hors taxes payé par compensation entre les sommes dues au CESSIONNAIRE par le CEDANT au titre du solde du paiement du prix du matériel.</span>
 </p>
-<p class="c1"><span class="c7 c2">Ce versement anticip&eacute; par rapport &agrave; l&rsquo;&eacute;ch&eacute;ancier de paiement des loyers pr&eacute;vus dans le contrat de location sign&eacute; en le LOCATAIRE et le CEDANT, ne donnera lieu &agrave; aucun escompte pour paiement anticip&eacute;.</span>
-</p>
-<p class="c1"><span class="c7 c2">En cas de non-respect de ce d&eacute;lai de paiement, le LOCATAIRE sera directement redevable envers le CESSIONNAIRE des p&eacute;nalit&eacute;s de retard par application aux sommes dues d&rsquo;un int&eacute;r&ecirc;t &eacute;gal &agrave; 1.5 fois le taux d&rsquo;int&eacute;r&ecirc;t l&eacute;gal en vigueur, tout mois commenc&eacute; &eacute;tant int&eacute;gralement d&ucirc;.</span>
-</p>
-<p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c7 c2">Article 5&nbsp;: ENGAGEMENT DU CESSIONNAIRE</span></p>
-<p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c7 c2">Le CESSIONNAIRE d&eacute;clare express&eacute;ment accepter la cession de cr&eacute;ance en l&rsquo;&eacute;tat &agrave; la date de signature de cet acte et renonce &agrave; tout recours contre le CEDANT, ou ses associ&eacute;s en cas de d&eacute;faillance du LOCATAIRE.</span>
-</p>
-<p class="c1"><span class="c2">Le CESSIONNAIRE renonce express&eacute;ment &agrave; toute clause de r&eacute;serve de propri&eacute;t&eacute; ou mesure lui permettant de revendiquer ou de conserver la propri&eacute;t&eacute; du mat&eacute;riel vendu au CEDANT</span><span
-        class="c2 c42">&nbsp;et &agrave; demander la r&eacute;solution de la vente.</span></p>
-<p class="c1"><span class="c7 c2">Il fera son affaire personnelle du recouvrement de la cr&eacute;ance c&eacute;d&eacute;e.</span>
+<p class="c1"><span class="c7 c2">Quittance en est donnée ce jour.</span></p>
+<p class="c1"><span class="c7 c2">En conséquence de la présente cession et ce à compter de ce jour, le CESSIONNAIRE disposera de la créance cédée comme lui appartenant en pleine propriété et exercera tous les droits et actions relatifs à la créance cédée.</span>
 </p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c7 c2">Article 6&nbsp;: ENGAGEMENT DU CEDANT</span></p>
+<p class="c1"><span class="c7 c2">Article 4 : ACCEPTATION ET ENGAGEMENT PERSONNEL DU LOCATAIRE</span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c2">Il est express&eacute;ment convenu que le paiement au CESSIONNAIRE de la somme de </span><span
-        class="c2 c11">&nbsp;29 400,00 </span><span
-        class="c2">&euro; lib&egrave;re totalement la soci&eacute;t&eacute; </span><span class="c2 c11">JEBANE GEORGES JACQUES </span><span
-        class="c2">des sommes dues envers la SNC </span><span class="c2 c11">MARVIC 133 </span><span class="c2">au titre du contrat de location N&deg; </span><span
-        class="c2 c11">1812005-REU</span><span class="c2">&nbsp;en date du </span><span class="c2 c11">21/12/2018</span><span
+<p class="c1"><span class="c2">Le LOCATAIRE consent expressément à la cession de créance. Il prend l’engagement direct et personnel de verser directement au CESSIONNAIRE l’intégralité des </span><span
+        class="c2 c11">{{$DUREE}} </span><span class="c7 c2">mensualités, y compris celles non échues au titre de son contrat de location. </span>
+</p>
+<p class="c1"><span class="c7 c2">Ce versement anticipé par rapport à l’échéancier de paiement des loyers prévus dans le contrat de location signé en le LOCATAIRE et le CEDANT, ne donnera lieu à aucun escompte pour paiement anticipé.</span>
+</p>
+<p class="c1"><span class="c7 c2">En cas de non-respect de ce délai de paiement, le LOCATAIRE sera directement redevable envers le CESSIONNAIRE des pénalités de retard par application aux sommes dues d’un intérêt égal à 1.5 fois le taux d’intérêt légal en vigueur, tout mois commencé étant intégralement dû.</span>
+</p>
+<p class="c1 c6"><span class="c7 c2"></span></p>
+<p class="c1"><span class="c7 c2">Article 5 : ENGAGEMENT DU CESSIONNAIRE</span></p>
+<p class="c1 c6"><span class="c7 c2"></span></p>
+<p class="c1"><span class="c7 c2">Le CESSIONNAIRE déclare expressément accepter la cession de créance en l’état à la date de signature de cet acte et renonce à tout recours contre le CEDANT, ou ses associés en cas de défaillance du LOCATAIRE.</span>
+</p>
+<p class="c1"><span class="c2">Le CESSIONNAIRE renonce expressément à toute clause de réserve de propriété ou mesure lui permettant de revendiquer ou de conserver la propriété du matériel vendu au CEDANT</span><span
+        class="c2 c42"> et à demander la résolution de la vente.</span></p>
+<p class="c1"><span class="c7 c2">Il fera son affaire personnelle du recouvrement de la créance cédée.</span>
+</p>
+<p class="c1 c6"><span class="c7 c2"></span></p>
+<p class="c1"><span class="c7 c2">Article 6 : ENGAGEMENT DU CEDANT</span></p>
+<p class="c1 c6"><span class="c7 c2"></span></p>
+<p class="c1"><span class="c2">Il est expressément convenu que le paiement au CESSIONNAIRE de la somme de </span><span
+        class="c2 c11"> {{$RESTE_A_FINANCER}} </span><span
+        class="c2">€ libère totalement la société </span><span class="c2 c11">{{$LOCATAIRE_RAISON_SOCIALE}} </span><span
+        class="c2">des sommes dues envers la SNC </span><span class="c2 c11">{{$SNC}}  </span><span class="c2">au titre du contrat de location N° </span><span
+        class="c2 c11">{{$N_DOSSIER}} -REU</span><span class="c2"> en date du </span><span class="c2 c11">{{$DATE_DE_CONTRAT}}</span><span
         class="c7 c2">.</span></p>
-<p class="c1"><span class="c7 c2">En cas de d&eacute;faillance du LOCATAIRE dans ses paiements, le CEDANT s&rsquo;engage &agrave; tout mettre en &oelig;uvre pour r&eacute;cup&eacute;rer le mat&eacute;riel lou&eacute; et le relouer avec l&rsquo;accord du CESSIONNAIRE &agrave; un nouvel exploitant &eacute;ligible aux dispositions de l&rsquo;article 199 undecies B du Code G&eacute;n&eacute;ral des imp&ocirc;ts.</span>
+<p class="c1"><span class="c7 c2">En cas de défaillance du LOCATAIRE dans ses paiements, le CEDANT s’engage à tout mettre en œuvre pour récupérer le matériel loué et le relouer avec l’accord du CESSIONNAIRE à un nouvel {{$TITRE}} éligible aux dispositions de l’article 199 undecies B du Code Général des impôts.</span>
 </p>
-<p class="c1"><span class="c7 c2">Le CEDANT d&eacute;clare qu&rsquo;aucune cession ou d&eacute;l&eacute;gation totale ou partielle des loyers ant&eacute;rieure &agrave; ce jour n&rsquo;a &eacute;t&eacute; mise en place et qu&rsquo;il n&rsquo;existe aucune opposition au paiement des loyers de la part du LOCATAIRE, ce que ce dernier reconnait parfaitement.</span>
-</p>
-<p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c7 c2">Article 7&nbsp;: REMISE DE TITRE</span></p>
-<p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c7 c2">En compl&eacute;ment de la pr&eacute;sente cession, le CEDANT remet au CESSIONNAIRE, lequel en a eu pr&eacute;alablement connaissance par copie, des titres originaux suivants&nbsp;:</span>
-</p>
-<p class="c1"><span class="c2">Contrat de location sign&eacute; entre le locataire et la SNC </span><span
-        class="c2 c11">MARVIC 133</span></p>
-<p class="c1"><span class="c7 c2">Il est donn&eacute; acte au CEDANT de cette remise</span></p>
-<p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c7 c2">Article 8&nbsp;: DOMICILE</span></p>
-<p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c7 c2">Pour l&rsquo;ex&eacute;cution des pr&eacute;sentes, les parties font chacune &eacute;lection de domicile &agrave; leurs si&egrave;ges sociaux respectifs</span>
+<p class="c1"><span class="c7 c2">Le CEDANT déclare qu’aucune cession ou délégation totale ou partielle des loyers antérieure à ce jour n’a été mise en place et qu’il n’existe aucune opposition au paiement des loyers de la part du LOCATAIRE, ce que ce dernier reconnait parfaitement.</span>
 </p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c7 c2">Article 9&nbsp;: TRIBUNAUX COMPETENTS</span></p>
+<p class="c1"><span class="c7 c2">Article 7 : REMISE DE TITRE</span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c7 c2">La pr&eacute;sente cession est r&eacute;gie par le droit fran&ccedil;ais. Toute contestation relative &agrave; la validit&eacute;, l&rsquo;interpr&eacute;tation ou l&rsquo;ex&eacute;cution de la cession sera de la comp&eacute;tence des Tribunaux de Saint Denis de la R&eacute;union.</span>
+<p class="c1"><span class="c7 c2">En complément de la présente cession, le CEDANT remet au CESSIONNAIRE, lequel en a eu préalablement connaissance par copie, des titres originaux suivants :</span>
+</p>
+<p class="c1"><span class="c2">Contrat de location signé entre le locataire et la SNC </span><span
+        class="c2 c11">{{$SNC}} </span></p>
+<p class="c1"><span class="c7 c2">Il est donné acte au CEDANT de cette remise</span></p>
+<p class="c1 c6"><span class="c7 c2"></span></p>
+<p class="c1"><span class="c7 c2">Article 8 : DOMICILE</span></p>
+<p class="c1 c6"><span class="c7 c2"></span></p>
+<p class="c1"><span class="c7 c2">Pour l’exécution des présentes, les parties font chacune élection de domicile à leurs sièges sociaux respectifs</span>
+</p>
+<p class="c1 c6"><span class="c7 c2"></span></p>
+<p class="c1"><span class="c7 c2">Article 9 : TRIBUNAUX COMPETENTS</span></p>
+<p class="c1 c6"><span class="c7 c2"></span></p>
+<p class="c1"><span class="c7 c2">La présente cession est régie par le droit français. Toute contestation relative à la validité, l’interprétation ou l’exécution de la cession sera de la compétence des Tribunaux de Saint Denis de la Réunion.</span>
 </p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c2">Fait le </span><span class="c10 c2">21/12/2018</span></p>
+<p class="c1"><span class="c2">Fait le </span><span class="c10 c2">{{$DATE_DE_CONTRAT}}</span></p>
 <p class="c1"><span class="c7 c2">A SAINTE CLOTILDE en 3 exemplaires originaux</span></p>
 <p class="c8 c6"><span class="c7 c2"></span></p>
 <p class="c8 c6" id="h.tyjcwt"><span class="c7 c2"></span></p>
 <p class="c8 c6"><span class="c7 c2"></span></p>
 <p class="c8"><span class="c7 c28">Le CEDANT</span></p>
-<p class="c8"><span class="c28">&laquo;&nbsp;Bon pour cession de cr&eacute;ance &agrave; concurrence de </span><span
-        class="c28 c11">29400,00 </span><span class="c7 c28">euros (Montant en chiffre et en lettres) en principal&nbsp;&raquo;</span>
+<p class="c8"><span class="c28">« Bon pour cession de créance à concurrence de </span><span
+        class="c28 c11">29400,00 </span><span class="c7 c28">euros (Montant en chiffre et en lettres) en principal »</span>
 </p>
 <p class="c8 c6"><span class="c7 c28"></span></p>
 <p class="c8 c6"><span class="c7 c28"></span></p>
 <p class="c8"><span class="c7 c28">Le CESSIONNAIRE</span></p>
-<p class="c8"><span class="c7 c28">&laquo;&nbsp;Bon pour acceptation de cession de cr&eacute;ance&nbsp;&raquo;</span>
+<p class="c8"><span class="c7 c28">« Bon pour acceptation de cession de créance »</span>
 </p>
 <p class="c8 c6"><span class="c7 c28"></span></p>
-<p class="c8"><span class="c7 c28">&nbsp;</span></p>
+<p class="c8"><span class="c7 c28"> </span></p>
 <p class="c8 c6"><span class="c7 c28"></span></p>
 <p class="c8 c6"><span class="c7 c28"></span></p>
 <p class="c8 c6"><span class="c7 c28"></span></p>
 <p class="c8 c6"><span class="c7 c28"></span></p>
-<p class="c8"><span class="c7 c28">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c8"><span class="c7 c28">        </span></p>
 <p class="c8 c6"><span class="c7 c28"></span></p>
 <p class="c8 c21 c46"><span class="c7 c28">Le LOCATAIRE</span></p>
-<p class="c8 c46 c21"><span class="c7 c28">&laquo;&nbsp;Bon pour accord&nbsp;&raquo;</span></p>
+<p class="c8 c46 c21"><span class="c7 c28">« Bon pour accord »</span></p>
 <p class="c8 c6"><span class="c7 c2"></span></p>
 <p class="c8 c6"><span class="c7 c9"></span></p>
-<p class="c8"><span class="c7 c9">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c8"><span class="c7 c9">        </span></p>
 <hr style="page-break-before:always;display:none;">
 <p class="c8 c6"><span class="c7 c9"></span></p>
-<p class="c1"><span class="c10 c2">JMECAGRI</span></p>
-<p class="c1"><span class="c10 c2">65, impasse Georges Brassens</span></p>
-<p class="c1"><span class="c2 c11">97430 LE TAMPON</span></p>
+<p class="c1"><span class="c10 c2">{{$FOURNISSEUR}} </span></p>
+<p class="c1"><span class="c10 c2">{{$ADRESSE_FOURNISSEUR}} </span></p>
+<p class="c1"><span class="c2 c11">{{$CP_FOURNISSEUR}}  {{$VILLE_FOURNISSEUR}} </span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c2">A </span><span class="c2 c11">LE TAMPON</span><span class="c2">, le </span><span
-        class="c2 c11">21/12/2018</span></p>
+<p class="c1"><span class="c2">A </span><span class="c2 c11">{{$VILLE_FOURNISSEUR}} </span><span class="c2">, le </span><span
+        class="c2 c11">{{$DATE_DE_CONTRAT}}</span></p>
 <p class="c8 c6"><span class="c0"></span></p>
 <p class="c8 c6"><span class="c0"></span></p>
 <p class="c6 c54"><span class="c0"></span></p>
 <p class="c54 c6"><span class="c0"></span></p>
 <p class="c54 c6" id="h.3dy6vkm"><span class="c0"></span></p>
 <p class="c51" id="h.1t3h5sf"><span
-        class="c7 c22">ATTESTATION DE PAIEMENT ANTICIPE DES LOYERS DE L&rsquo;EXPLOITANT</span></p>
-<p class="c35 c47"><span class="c22">DOSSIER N&deg; </span><span
-        class="c22 c11">1812005-REU &ndash; SNC MARVIC 133</span></p>
+        class="c7 c22">ATTESTATION DE PAIEMENT ANTICIPE DES LOYERS DE L’{{$TITRE}}</span></p>
+<p class="c35 c47"><span class="c22">DOSSIER N° </span><span
+        class="c22 c11">{{$N_DOSSIER}} -REU – SNC {{$SNC}} </span></p>
 <p class="c4 c6 c50"><span class="c0"></span></p>
-<p class="c50 c4"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<p class="c50 c4"><span class="c0">        </span></p>
 <p class="c1 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c2">La soci&eacute;t&eacute; </span><span class="c2 c11">JMECAGRI</span><span
-        class="c2">, </span><span class="c2 c11">SARL </span><span class="c2">au capital de </span><span class="c2 c11">&nbsp; &nbsp; &nbsp; &nbsp; 500 </span><span
-        class="c2">euros dont le si&egrave;ge social est sis au </span><span class="c2 c11">65, impasse Georges Brassens 97430 LE TAMPON </span><span
-        class="c2">immatricul&eacute;e au Registre du Commerce et des Soci&eacute;t&eacute;s de </span><span
-        class="c2 c11">SAINT PIERRE</span><span class="c2">&nbsp;sous le num&eacute;ro </span><span class="c2 c11">794673392,</span><span
-        class="c2">&nbsp;repr&eacute;sent&eacute;e par </span><span class="c2 c11">M. HOARAU </span><span class="c2">agissant en qualit&eacute; de </span><span
-        class="c10 c2">G&eacute;rant,</span></p>
+<p class="c1"><span class="c2">La société </span><span class="c2 c11">{{$FOURNISSEUR}} </span><span
+        class="c2">, </span><span class="c2 c11">{{$FORME_JURIDIQUE_FOURNISSEUR}} </span><span class="c2">au capital de </span><span class="c2 c11">       {{$CAPITAL_FOURNISSEUR}} </span><span
+        class="c2">euros dont le siège social est sis au </span><span class="c2 c11">{{$ADRESSE_FOURNISSEUR}}  {{$CP_FOURNISSEUR}}  {{$VILLE_FOURNISSEUR}}  </span><span
+        class="c2">immatriculée au Registre du Commerce et des Sociétés de </span><span
+        class="c2 c11">{{$RSC_VILLE_FOURNISSEUR}} </span><span class="c2"> sous le numéro </span><span class="c2 c11">794673392,</span><span
+        class="c2"> représentée par </span><span class="c2 c11">M. HOARAU </span><span class="c2">agissant en qualité de </span><span
+        class="c10 c2">{{$QUALITE_REPRESENTANT}} </span></p>
 <p class="c1 c4 c6"><span class="c7 c2"></span></p>
-<p class="c1 c4"><span class="c2">Atteste par la pr&eacute;sente avoir per&ccedil;u de </span><span class="c2 c11">Monsieur JEBANE Georges, Jacques</span><span
-        class="c2">, repr&eacute;sentant l&rsquo;entreprise </span><span
-        class="c2 c11">JEBANE GEORGES JACQUES,</span><span class="c2">&nbsp;au titre de la cession des loyers dus &agrave; la SNC </span><span
-        class="c10 c2">MARVIC 133.</span></p>
+<p class="c1 c4"><span class="c2">Atteste par la présente avoir perçu de </span><span class="c2 c11">{{$CIVILITE}} {{$NOM}} {{$PRENOM}} </span><span
+        class="c2">, représentant l’entreprise </span><span
+        class="c2 c11">{{$LOCATAIRE_RAISON_SOCIALE}},</span><span class="c2"> au titre de la cession des loyers dus à la SNC </span><span
+        class="c10 c2">{{$SNC}} .</span></p>
 <p class="c1 c4 c6"><span class="c7 c2"></span></p>
 <p class="c1 c4"><span class="c7 c2">La somme de :</span></p>
 <p class="c1 c4 c6"><span class="c7 c2"></span></p>
 <ul class="c5 lst-kix_list_5-0 start">
-    <li class="c1 c24 c4"><span class="c10 c2">&nbsp;29 400,00 </span><span class="c7 c2">euros pay&eacute;s par ch&egrave;que ou virement </span>
+    <li class="c1 c24 c4"><span class="c10 c2"> {{$RESTE_A_FINANCER}} </span><span class="c7 c2">euros payés par chèque ou virement </span>
     </li>
 </ul>
 <p class="c1 c4 c6"><span class="c7 c2"></span></p>
 <p class="c1 c4 c6"><span class="c7 c2"></span></p>
-<p class="c1 c4"><span class="c2">L&rsquo;investissement de l&rsquo;entreprise </span><span class="c2 c11">JEBANE GEORGES JACQUES </span><span
-        class="c7 c2">concerne le mat&eacute;riel neuf suivant&nbsp;:</span></p>
+<p class="c1 c4"><span class="c2">L’investissement de l’entreprise </span><span class="c2 c11">{{$LOCATAIRE_RAISON_SOCIALE}} </span><span
+        class="c7 c2">concerne le matériel neuf suivant :</span></p>
 <p class="c1 c4 c6"><span class="c7 c2"></span></p>
-<p class="c1 c4"><span class="c3">- Une remorque &agrave; canne tron&ccedil;onn&eacute;e neuve</span></p>
+<p class="c1 c4"><span class="c3">- {{$MATERIAL}}</span></p>
 <p class="c1 c4 c6"><span class="c7 c2"></span></p>
-<p class="c1 c4"><span class="c2">Il est express&eacute;ment convenu que le paiement de la somme de </span><span
-        class="c2 c11">&nbsp;29 400,00 &euro; </span><span
-        class="c2">lib&egrave;re totalement la soci&eacute;t&eacute; </span><span
-        class="c2 c11">JEBANE GEORGES JACQUES </span><span class="c2">des sommes dues envers la SNC </span><span
-        class="c2 c11">MARVIC 133 </span><span class="c2">au titre du contrat de location N&deg; </span><span
-        class="c2 c11">1812005-REU </span><span class="c2">en date du </span><span class="c2 c11">21/12/2018.</span></p>
+<p class="c1 c4"><span class="c2">Il est expressément convenu que le paiement de la somme de </span><span
+        class="c2 c11"> {{$RESTE_A_FINANCER}} € </span><span
+        class="c2">libère totalement la société </span><span
+        class="c2 c11">{{$LOCATAIRE_RAISON_SOCIALE}} </span><span class="c2">des sommes dues envers la SNC </span><span
+        class="c2 c11">{{$SNC}}  </span><span class="c2">au titre du contrat de location N° </span><span
+        class="c2 c11">{{$N_DOSSIER}} -REU </span><span class="c2">en date du </span><span class="c2 c11">{{$DATE_DE_CONTRAT}}.</span></p>
 <p class="c1 c4 c6"><span class="c7 c2"></span></p>
 <p class="c1 c4 c6"><span class="c7 c2"></span></p>
-<p class="c1 c4"><span class="c7 c2">La pr&eacute;sente attestation est &eacute;tablie pour servir et valoir ce que de droit</span>
+<p class="c1 c4"><span class="c7 c2">La présente attestation est établie pour servir et valoir ce que de droit</span>
 </p>
 <p class="c1 c4 c6"><span class="c7 c2"></span></p>
 <p class="c1 c4 c6"><span class="c7 c2"></span></p>
 <p class="c1 c4 c6"><span class="c7 c2"></span></p>
 <p class="c1 c4 c6"><span class="c7 c2"></span></p>
-<p class="c1"><span class="c2">Pour le fournisseur </span><span class="c10 c2">JMECAGRI</span></p>
+<p class="c1"><span class="c2">Pour le fournisseur </span><span class="c10 c2">{{$FOURNISSEUR}} </span></p>
 <p class="c1 c4"><span class="c7 c2">Signature et cachet</span></p>
 <p class="c8 c6"><span class="c7 c9"></span></p>
 <div><p class="c8 c6"><span class="c7 c48"></span></p></div>
