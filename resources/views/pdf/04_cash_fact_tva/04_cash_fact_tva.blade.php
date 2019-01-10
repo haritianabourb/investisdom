@@ -2068,45 +2068,45 @@
         }</style>
 </head>
 <body class="c96"><p class="c88 c118 c67" id="h.gjdgxs"><span class="c18"></span></p>
-<p class="c44"><span class="c64 c71">SNC MARVIC 133&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+<p class="c44"><span class="c64 c71">SNC {{$SNC}}                                </span><span
         class="c0">Sainte Clotilde, </span></p>
-<p class="c44" id="h.30j0zll"><span class="c57">Centre d&rsquo;affaires CADJEE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-        class="c72">le </span><span class="c64">21/12/2018</span><span class="c72">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<p class="c44" id="h.30j0zll"><span class="c57">Centre d’affaires CADJEE                                        </span><span
+        class="c72">le </span><span class="c64">{{$DATE_DE_CONTRAT}}</span><span class="c72">        </span>
 </p>
 <p class="c44"><span class="c18">62 Boulevard du chaudron</span></p>
 <p class="c44"><span class="c18">97490 -SAINTE CLOTILDE</span></p>
-<p class="c44"><span class="c18">T&eacute;l.&nbsp;: 0262 500&nbsp;010</span></p>
-<p class="c44"><span class="c18">Fax&nbsp;: 0262 500&nbsp;011</span></p>
-<p class="c44"><span class="c57">Mail&nbsp;: </span><span class="c57 c97"><a class="c116"
-                                                                             href="mailto:contact@investis-dom.com">contact@investis-dom.com</a></span>
+<p class="c44"><span class="c18">Tél. : 0262 500 010</span></p>
+<p class="c44"><span class="c18">Fax : 0262 500 011</span></p>
+<p class="c44"><span class="c57">Mail : </span><span class="c57 c97"><a class="c116"
+                                                                        href="mailto:contact@investis-dom.com">contact@investis-dom.com</a></span>
 </p>
-<p class="c44"><span class="c57">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-        class="c5">JEBANE GEORGES JACQUES </span></p>
-<p class="c44 c91"><span class="c5">13, rue des Jacques</span></p>
-<p class="c44"><span class="c5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;97412 - BRAS PANON</span>
+<p class="c44"><span class="c57">                                                                </span><span
+        class="c5">{{$LOCATAIRE_RAISON_SOCIALE}} </span></p>
+<p class="c44 c91"><span class="c5">{{$ADRESSE}}</span></p>
+<p class="c44"><span class="c5">                                                                {{$CP}} - {{$VILLE}}</span>
 </p>
-<p class="c44"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<p class="c44"><span class="c0">                                                                </span>
 </p>
-<p class="c88"><span class="c123 c64 c71">FACTURE&nbsp;: 12912001-10122018-REU</span></p>
-<p class="c44"><span class="c86 c64">Contrat de location&nbsp;: 1812005REU</span></p>
-<p class="c44"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<p class="c88"><span class="c123 c64 c71">FACTURE : 12912001-10122018-REU</span></p>
+<p class="c44"><span class="c86 c64">Contrat de location : {{$N_DOSSIER}}REU</span></p>
+<p class="c44"><span class="c0">                                        </span>
 </p>
-<p class="c75"><span class="c72">D&eacute;signation&nbsp;: </span></p>
-<p class="c75"><span class="c5">- Une remorque &agrave; canne tron&ccedil;onn&eacute;e neuve</span></p>
+<p class="c75"><span class="c72">Désignation : </span></p>
+<p class="c75"><span class="c5">- {{$MATERIEL}}</span></p>
 <p class="c31"><span class="c0"></span></p><a id="t.dcf3c1694cf9841106af4f895e3a3fdab70a6633"></a><a id="t.0"></a>
 <table class="c87">
     <tbody>
     <tr class="c73">
         <td class="c94 c53" colspan="1" rowspan="1"><p class="c48"><span class="c0">Nature</span></p></td>
-        <td class="c2" colspan="1" rowspan="1"><p class="c54 c137"><span class="c0">Quantit&eacute;</span></p></td>
+        <td class="c2" colspan="1" rowspan="1"><p class="c54 c137"><span class="c0">Quantité</span></p></td>
         <td class="c53 c124" colspan="1" rowspan="1"><p class="c54 c108"><span class="c0">P. U HT</span></p></td>
         <td class="c30 c53" colspan="1" rowspan="1"><p class="c54 c58"><span class="c0">Montant HT</span></p></td>
         <td class="c50 c53" colspan="1" rowspan="1"><p class="c46"><span class="c0">TVA</span></p></td>
     </tr>
     <tr class="c73">
         <td class="c94" colspan="1" rowspan="1"><p class="c36 c67"><span class="c0"></span></p>
-            <p class="c36"><span class="c0">R&egrave;glement de TVA &agrave; la </span></p>
-            <p class="c36"><span class="c5">SNC MARVIC 133</span></p>
+            <p class="c36"><span class="c0">Règlement de TVA à la </span></p>
+            <p class="c36"><span class="c5">SNC {{$SNC}}</span></p>
             <p class="c36 c67"><span class="c0"></span></p>
             <p class="c36"><span class="c0">Loyer mensuel H.T </span></p>
             <p class="c36 c67"><span class="c0"></span></p>
@@ -2118,17 +2118,17 @@
             <p class="c14 c24"><span class="c5"></span></p>
             <p class="c14 c24"><span class="c5"></span></p>
             <p class="c14 c24"><span class="c5"></span></p>
-            <p class="c48 c76"><span class="c5">60</span></p></td>
+            <p class="c48 c76"><span class="c5">{{$DUREE}}</span></p></td>
         <td class="c124" colspan="1" rowspan="1"><p class="c14 c24"><span class="c5"></span></p>
             <p class="c14 c24"><span class="c5"></span></p>
             <p class="c14 c24"><span class="c5"></span></p>
             <p class="c14 c24"><span class="c5"></span></p>
-            <p class="c48 c76" id="h.1fob9te"><span class="c5">&nbsp; &nbsp; 490,00</span></p></td>
+            <p class="c48 c76" id="h.1fob9te"><span class="c5">    {{$ECHEANCE_LOYER_HT}}</span></p></td>
         <td class="c30" colspan="1" rowspan="1"><p class="c14 c76 c77"><span class="c5"></span></p>
             <p class="c14 c76 c77"><span class="c5"></span></p>
             <p class="c14 c76 c77"><span class="c5"></span></p>
             <p class="c14 c76 c77"><span class="c5"></span></p>
-            <p class="c54 c76 c77"><span class="c5">&nbsp;29 400,00</span></p>
+            <p class="c54 c76 c77"><span class="c5"> {{$ECHEANCE_LOYER_HT}}</span></p>
             <p class="c14 c76 c77"><span class="c5"></span></p>
             <p class="c14 c76 c77"><span class="c5"></span></p></td>
         <td class="c50" colspan="1" rowspan="1"><p class="c14 c24"><span class="c5"></span></p>
@@ -2140,10 +2140,10 @@
     </tbody>
 </table>
 <p class="c31"><span class="c0"></span></p>
-<p class="c44"><span class="c32">Escompte pour r&egrave;glement anticip&eacute;&nbsp;: 0 %</span></p>
-<p class="c44"><span class="c32">En cas de retard de paiement, une p&eacute;nalit&eacute; &eacute;gale &agrave; 3 fois le taux d&rsquo;int&eacute;r&ecirc;t l&eacute;gal sera exigible (D&eacute;cret 2009-138 du 9 f&eacute;vrier 2009)</span>
+<p class="c44"><span class="c32">Escompte pour règlement anticipé : 0 %</span></p>
+<p class="c44"><span class="c32">En cas de retard de paiement, une pénalité égale à 3 fois le taux d’intérêt légal sera exigible (Décret 2009-138 du 9 février 2009)</span>
 </p>
-<p class="c44"><span class="c32">En sus, une indemnit&eacute; forfaitaire de 150 euros pour frais de recouvrement sera exigible (D&eacute;cret 2012-1115 du 9 octobre 2012) </span>
+<p class="c44"><span class="c32">En sus, une indemnité forfaitaire de 150 euros pour frais de recouvrement sera exigible (Décret 2012-1115 du 9 octobre 2012) </span>
 </p>
 <p class="c31"><span class="c0"></span></p><a id="t.d33b9da4cdc835f13f016397c0d1d997b86cc424"></a><a id="t.1"></a>
 <table class="c87">
@@ -2155,85 +2155,85 @@
     </tr>
     <tr class="c70">
         <td class="c38" colspan="1" rowspan="1"><p class="c54 c74"><span class="c5">8.50%</span></p></td>
-        <td class="c111" colspan="1" rowspan="1"><p class="c54 c119"><span class="c5">&nbsp;29 400,00</span></p></td>
-        <td class="c136" colspan="1" rowspan="1"><p class="c27" id="h.3znysh7"><span class="c5">&nbsp; 2 499,00</span>
+        <td class="c111" colspan="1" rowspan="1"><p class="c54 c119"><span class="c5"> {{$ECHEANCE_LOYER_HT}}</span></p></td>
+        <td class="c136" colspan="1" rowspan="1"><p class="c27" id="h.3znysh7"><span class="c5">  {{$TVA_TOTALE_LOYERS}}</span>
             </p></td>
     </tr>
     </tbody>
 </table>
-<p class="c44"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<p class="c44"><span class="c0">                                                                </span>
 </p><a id="t.3b9714cd3a46afeda9067c3e9d7b362ae158bb29"></a><a id="t.2"></a>
 <table class="c107">
     <tbody>
     <tr class="c81">
         <td class="c83 c53" colspan="1" rowspan="1"><p class="c36"><span class="c0">Total H. T</span></p></td>
-        <td class="c9" colspan="1" rowspan="1"><p class="c29"><span class="c5">&nbsp;29 400,00 &euro;</span></p></td>
+        <td class="c9" colspan="1" rowspan="1"><p class="c29"><span class="c5"> {{$ECHEANCE_LOYER_HT}} €</span></p></td>
     </tr>
     <tr class="c12">
         <td class="c53 c83" colspan="1" rowspan="1"><p class="c36"><span class="c0">Total TVA</span></p></td>
-        <td class="c9" colspan="1" rowspan="1"><p class="c29"><span class="c5">&nbsp; 2 499,00 &euro;</span></p></td>
+        <td class="c9" colspan="1" rowspan="1"><p class="c29"><span class="c5">  {{$TVA_TOTALE_LOYERS}} €</span></p></td>
     </tr>
     <tr class="c12">
         <td class="c83 c53" colspan="1" rowspan="1"><p class="c36"><span class="c0">Total TTC</span></p></td>
-        <td class="c9" colspan="1" rowspan="1"><p class="c29"><span class="c5">&nbsp;31 899,00 &euro;</span></p></td>
+        <td class="c9" colspan="1" rowspan="1"><p class="c29"><span class="c5"> {{$CUMUL_LOYERS_TTC}} €</span></p></td>
     </tr>
     <tr class="c12">
         <td class="c83 c53" colspan="1" rowspan="1"><p class="c36"><span class="c0">Acomptes</span></p></td>
-        <td class="c9" colspan="1" rowspan="1"><p class="c29"><span class="c5">0.00 &euro;</span></p></td>
+        <td class="c9" colspan="1" rowspan="1"><p class="c29"><span class="c5">0.00 €</span></p></td>
     </tr>
     <tr class="c12">
-        <td class="c83 c53" colspan="1" rowspan="1"><p class="c36"><span class="c0">Net &agrave; payer</span></p></td>
-        <td class="c9" colspan="1" rowspan="1"><p class="c29"><span class="c5">&nbsp;31 899,00 &euro;</span></p></td>
+        <td class="c83 c53" colspan="1" rowspan="1"><p class="c36"><span class="c0">Net à payer</span></p></td>
+        <td class="c9" colspan="1" rowspan="1"><p class="c29"><span class="c5"> {{$CUMUL_LOYERS_TTC}} €</span></p></td>
     </tr>
     <tr class="c12">
-        <td class="c83 c53" colspan="1" rowspan="1"><p class="c36"><span class="c0">Solde d&ucirc;</span></p></td>
-        <td class="c9" colspan="1" rowspan="1"><p class="c29"><span class="c5">&nbsp;31 899,00 &euro;</span></p></td>
+        <td class="c83 c53" colspan="1" rowspan="1"><p class="c36"><span class="c0">Solde dû</span></p></td>
+        <td class="c9" colspan="1" rowspan="1"><p class="c29"><span class="c5"> {{$CUMUL_LOYERS_TTC}} €</span></p></td>
     </tr>
     </tbody>
 </table>
 <p class="c31"><span class="c0"></span></p>
-<p class="c112"><span class="c57">Facture arr&ecirc;t&eacute;e &agrave; la somme de&nbsp;: </span><span
+<p class="c112"><span class="c57">Facture arrêtée à la somme de : </span><span
         class="c57 c99 c123">treize-mille-cinq-cent-six euros un</span></p>
 <p class="c112 c67"><span class="c18"></span></p>
 <p class="c112 c67"><span class="c18"></span></p>
 <p class="c14"><span class="c10"></span></p>
 <p class="c54"><span
-        class="c10">SNC MARVIC 133 &ndash; 62 Boulevard du Chaudron &ndash; 97490 &ndash; Sainte Clotilde</span></p>
-<p class="c54"><span class="c10">SNC au capital de 100 euros, immatricul&eacute;e au RCS de SAINT DENIS sous le num&eacute;ro 844 599 340</span>
+        class="c10">SNC {{$SNC}} – 62 Boulevard du Chaudron – 97490 – Sainte Clotilde</span></p>
+<p class="c54"><span class="c10">SNC au capital de 100 euros, immatriculée au RCS de SAINT DENIS sous le numéro {{$SIREN_SNC}}</span>
 </p>
 <p class="c88 c67 c118"><span class="c18"></span></p>
-<p class="c44"><span class="c64 c71">INVESTIS DOM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+<p class="c44"><span class="c64 c71">INVESTIS DOM                                        </span><span
         class="c0">Sainte Clotilde, </span></p>
-<p class="c44"><span class="c57">Centre d&rsquo;affaires CADJEE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-        class="c72">le </span><span class="c64">21/12/2018</span><span class="c72">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<p class="c44"><span class="c57">Centre d’affaires CADJEE                                        </span><span
+        class="c72">le </span><span class="c64">{{$DATE_DE_CONTRAT}}</span><span class="c72">        </span>
 </p>
 <p class="c44"><span class="c18">62 Boulevard du chaudron</span></p>
 <p class="c44"><span class="c18">97490 -SAINTE CLOTILDE</span></p>
-<p class="c44"><span class="c18">T&eacute;l.&nbsp;: 0262 500&nbsp;010</span></p>
-<p class="c44"><span class="c18">Fax&nbsp;: 0262 500&nbsp;011</span></p>
-<p class="c44"><span class="c57">Mail&nbsp;: </span><span class="c97 c57"><a class="c116"
-                                                                             href="mailto:contact@investis-dom.com">contact@investis-dom.com</a></span>
+<p class="c44"><span class="c18">Tél. : 0262 500 010</span></p>
+<p class="c44"><span class="c18">Fax : 0262 500 011</span></p>
+<p class="c44"><span class="c57">Mail : </span><span class="c97 c57"><a class="c116"
+                                                                        href="mailto:contact@investis-dom.com">contact@investis-dom.com</a></span>
 </p>
-<p class="c44"><span class="c57">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-        class="c5">JEBANE GEORGES JACQUES </span></p>
-<p class="c44 c91"><span class="c5">13, rue des Jacques</span></p>
-<p class="c44"><span class="c5">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;97412 - BRAS PANON</span>
+<p class="c44"><span class="c57">                                                                </span><span
+        class="c5">{{$LOCATAIRE_RAISON_SOCIALE}} </span></p>
+<p class="c44 c91"><span class="c5">{{$ADRESSE}}</span></p>
+<p class="c44"><span class="c5">                                                                {{$CP}} - {{$VILLE}}</span>
 </p>
-<p class="c44"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<p class="c44"><span class="c0">                                                                </span>
 </p>
-<p class="c88"><span class="c123 c64 c71">FACTURE&nbsp;: 12912001-2-10122018-REU_48</span></p>
-<p class="c44"><span class="c64 c86">Contrat de location&nbsp;: 1812005REU</span></p>
-<p class="c44"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<p class="c88"><span class="c123 c64 c71">FACTURE : 12912001-2-10122018-REU_{{$CHRONO_FACT_FRAIS_INVESTIS_DOM}}</span></p>
+<p class="c44"><span class="c64 c86">Contrat de location : {{$N_DOSSIER}}REU</span></p>
+<p class="c44"><span class="c0">                                        </span>
 </p>
-<p class="c75"><span class="c0">D&eacute;signation&nbsp;: </span></p>
+<p class="c75"><span class="c0">Désignation : </span></p>
 <p class="c75"><span class="c0">Frais et taxes</span></p>
-<p class="c75"><span class="c5">- Une remorque &agrave; canne tron&ccedil;onn&eacute;e neuve</span></p>
+<p class="c75"><span class="c5">- {{$MATERIEL}}</span></p>
 <p class="c31"><span class="c0"></span></p><a id="t.fdcc6fd80691c314842394afae657091d04904ba"></a><a id="t.3"></a>
 <table class="c87">
     <tbody>
     <tr class="c73">
         <td class="c53 c94" colspan="1" rowspan="1"><p class="c48"><span class="c0">Nature</span></p></td>
-        <td class="c2" colspan="1" rowspan="1"><p class="c54 c137"><span class="c0">Quantit&eacute;</span></p></td>
+        <td class="c2" colspan="1" rowspan="1"><p class="c54 c137"><span class="c0">Quantité</span></p></td>
         <td class="c53 c134" colspan="1" rowspan="1"><p class="c54 c108"><span class="c0">P. U HT</span></p></td>
         <td class="c53 c66" colspan="1" rowspan="1"><p class="c54 c58"><span class="c0">Montant HT</span></p></td>
         <td class="c50 c53" colspan="1" rowspan="1"><p class="c46"><span class="c0">TVA</span></p></td>
@@ -2244,7 +2244,7 @@
             <p class="c36"><span class="c32">Honoraires juridiques</span></p>
             <p class="c36 c67"><span class="c32"></span></p>
             <p class="c36 c67"><span class="c32"></span></p>
-            <p class="c36"><span class="c32">Frais d&#39;enregistrement</span></p>
+            <p class="c36"><span class="c32">Frais d'enregistrement</span></p>
             <p class="c36 c67"><span class="c32"></span></p>
             <p class="c36 c67"><span class="c32"></span></p>
             <p class="c36"><span class="c32">Autres frais et taxe</span></p>
@@ -2262,24 +2262,24 @@
             <p class="c48 c76"><span class="c51">1</span></p></td>
         <td class="c134" colspan="1" rowspan="1"><p class="c14 c24"><span class="c0"></span></p>
             <p class="c14 c24"><span class="c0"></span></p>
-            <p class="c48 c76"><span class="c10">137,33</span></p>
+            <p class="c48 c76"><span class="c10">{{$HONORAIRES_HT}}</span></p>
             <p class="c14 c24"><span class="c10"></span></p>
             <p class="c14 c24"><span class="c10"></span></p>
-            <p class="c48 c76"><span class="c10">23,04</span></p>
+            <p class="c48 c76"><span class="c10">{{$FRAIS_DIMMAT_HT}}</span></p>
             <p class="c14 c24"><span class="c10"></span></p>
             <p class="c14 c24"><span class="c10"></span></p>
-            <p class="c48 c76"><span class="c10">200,00</span></p>
+            <p class="c48 c76"><span class="c10">{{$CFE}}</span></p>
             <p class="c14 c24"><span class="c5"></span></p>
             <p class="c14 c24"><span class="c0"></span></p></td>
         <td class="c66" colspan="1" rowspan="1"><p class="c14 c24"><span class="c0"></span></p>
             <p class="c14 c24"><span class="c0"></span></p>
-            <p class="c48 c76"><span class="c10">137,33</span></p>
+            <p class="c48 c76"><span class="c10">{{$HONORAIRES_HT}}</span></p>
             <p class="c14 c24"><span class="c10"></span></p>
             <p class="c14 c24"><span class="c10"></span></p>
-            <p class="c48 c76"><span class="c10">23,04</span></p>
+            <p class="c48 c76"><span class="c10">{{$FRAIS_DIMMAT_HT}}</span></p>
             <p class="c14 c24"><span class="c10"></span></p>
             <p class="c14 c24"><span class="c10"></span></p>
-            <p class="c48 c76"><span class="c10">200,00</span></p>
+            <p class="c48 c76"><span class="c10">{{$CFE}}</span></p>
             <p class="c14 c24"><span class="c5"></span></p>
             <p class="c14 c76 c77"><span class="c0"></span></p></td>
         <td class="c50" colspan="1" rowspan="1"><p class="c14 c24"><span class="c0"></span></p>
@@ -2295,10 +2295,10 @@
     </tbody>
 </table>
 <p class="c31"><span class="c0"></span></p>
-<p class="c44"><span class="c32">Escompte pour r&egrave;glement anticip&eacute;&nbsp;: 0 %</span></p>
-<p class="c44"><span class="c32">En cas de retard de paiement, une p&eacute;nalit&eacute; &eacute;gale &agrave; 3 fois le taux d&rsquo;int&eacute;r&ecirc;t l&eacute;gal sera exigible (D&eacute;cret 2009-138 du 9 f&eacute;vrier 2009)</span>
+<p class="c44"><span class="c32">Escompte pour règlement anticipé : 0 %</span></p>
+<p class="c44"><span class="c32">En cas de retard de paiement, une pénalité égale à 3 fois le taux d’intérêt légal sera exigible (Décret 2009-138 du 9 février 2009)</span>
 </p>
-<p class="c44"><span class="c32">En sus, une indemnit&eacute; forfaitaire de 150 euros pour frais de recouvrement sera exigible (D&eacute;cret 2012-1115 du 9 octobre 2012) </span>
+<p class="c44"><span class="c32">En sus, une indemnité forfaitaire de 150 euros pour frais de recouvrement sera exigible (Décret 2012-1115 du 9 octobre 2012) </span>
 </p>
 <p class="c31"><span class="c0"></span></p><a id="t.7c9c9e4cd59f5d69baf60e666ab0340f4ec1d892"></a><a id="t.4"></a>
 <table class="c87">
@@ -2310,55 +2310,55 @@
     </tr>
     <tr class="c70">
         <td class="c38" colspan="1" rowspan="1"><p class="c54 c74"><span class="c5">8.50%</span></p></td>
-        <td class="c100" colspan="1" rowspan="1"><p class="c54 c119"><span class="c5">&nbsp; 160,37 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
+        <td class="c100" colspan="1" rowspan="1"><p class="c54 c119"><span class="c5">  {{$CUMUL_HONORAIRES_ET_FRAIS_DIMMAT}}                        </span>
             </p></td>
-        <td class="c113" colspan="1" rowspan="1"><p class="c27"><span class="c5">13,63 &euro;</span></p></td>
+        <td class="c113" colspan="1" rowspan="1"><p class="c27"><span class="c5">{{$CUMUL_TVA_HONORAIRES_ET_FRAIS_DIMMAT}} €</span></p></td>
     </tr>
     </tbody>
 </table>
-<p class="c44"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<p class="c44"><span class="c0">                                                                </span>
 </p><a id="t.02f5c616e1a5092198d48abaeb4de08096c196f5"></a><a id="t.5"></a>
 <table class="c138">
     <tbody>
     <tr class="c127">
         <td class="c28" colspan="1" rowspan="1"><p class="c36"><span class="c0">Total H. T</span></p></td>
-        <td class="c84" colspan="1" rowspan="1"><p class="c19"><span class="c5">360,37 &euro;</span></p></td>
+        <td class="c84" colspan="1" rowspan="1"><p class="c19"><span class="c5">{{$CUMUL_FRAIS_HT}} €</span></p></td>
     </tr>
     <tr class="c81">
         <td class="c28" colspan="1" rowspan="1"><p class="c36"><span class="c0">Total TVA</span></p></td>
-        <td class="c84" colspan="1" rowspan="1"><p class="c19"><span class="c5">13,63 &euro;</span></p></td>
+        <td class="c84" colspan="1" rowspan="1"><p class="c19"><span class="c5">{{$CUMUL_TVA_HONORAIRES_ET_FRAIS_DIMMAT}} €</span></p></td>
     </tr>
     <tr class="c81">
         <td class="c28" colspan="1" rowspan="1"><p class="c36"><span class="c0">Total TTC</span></p></td>
-        <td class="c84" colspan="1" rowspan="1"><p class="c19"><span class="c5">374,00 &euro;</span></p></td>
+        <td class="c84" colspan="1" rowspan="1"><p class="c19"><span class="c5">{{$CUMUL_FRAIS_TTC}} €</span></p></td>
     </tr>
     <tr class="c81">
         <td class="c28" colspan="1" rowspan="1"><p class="c36"><span class="c0">Acomptes</span></p></td>
-        <td class="c84" colspan="1" rowspan="1"><p class="c19"><span class="c5">0.00 &euro;</span></p></td>
+        <td class="c84" colspan="1" rowspan="1"><p class="c19"><span class="c5">0.00 €</span></p></td>
     </tr>
     <tr class="c81">
-        <td class="c28" colspan="1" rowspan="1"><p class="c36"><span class="c0">Net &agrave; payer</span></p></td>
-        <td class="c84" colspan="1" rowspan="1"><p class="c19"><span class="c5">374,00 &euro;</span></p></td>
+        <td class="c28" colspan="1" rowspan="1"><p class="c36"><span class="c0">Net à payer</span></p></td>
+        <td class="c84" colspan="1" rowspan="1"><p class="c19"><span class="c5">{{$CUMUL_FRAIS_TTC}} €</span></p></td>
     </tr>
     <tr class="c81">
-        <td class="c28" colspan="1" rowspan="1"><p class="c36"><span class="c0">Solde d&ucirc;</span></p></td>
-        <td class="c84" colspan="1" rowspan="1"><p class="c19"><span class="c5">374,00 &euro;</span></p></td>
+        <td class="c28" colspan="1" rowspan="1"><p class="c36"><span class="c0">Solde dû</span></p></td>
+        <td class="c84" colspan="1" rowspan="1"><p class="c19"><span class="c5">{{$CUMUL_FRAIS_TTC}} €</span></p></td>
     </tr>
     </tbody>
 </table>
 <p class="c31"><span class="c0"></span></p>
-<p class="c112"><span class="c57">Facture arr&ecirc;t&eacute;e &agrave; la somme de&nbsp;:&nbsp;</span><span
+<p class="c112"><span class="c57">Facture arrêtée à la somme de : </span><span
         class="c57 c99">deux-cent-cinquante-quatre euros</span></p>
 <p class="c67 c112"><span class="c18"></span></p>
-<p class="c54"><span class="c10">SAS INVESTIS DEFISCALISATION OUTRE MER &ndash; 62 Boulevard du Chaudron &ndash; 97490 &ndash; Sainte Clotilde</span>
+<p class="c54"><span class="c10">SAS INVESTIS DEFISCALISATION OUTRE MER – 62 Boulevard du Chaudron – 97490 – Sainte Clotilde</span>
 </p>
-<p class="c54"><span class="c10">SAS au capital de 10 000 euros, immatricul&eacute;e au RCS de SAINT DENIS sous le num&eacute;ro 820&nbsp;090&nbsp;652</span>
+<p class="c54"><span class="c10">SAS au capital de 10 000 euros, immatriculée au RCS de SAINT DENIS sous le numéro 820 090 652</span>
 </p>
 <p class="c14"><span class="c10"></span></p><a id="t.750125e227e8fb78c5926b08437a145c6aca2424"></a><a id="t.6"></a>
 <table class="c145">
     <tbody>
     <tr class="c98">
-        <td class="c79" colspan="7" rowspan="1"><p class="c54"><span class="c7">DELEGATION D&#39;ASSURANCE</span></p>
+        <td class="c79" colspan="7" rowspan="1"><p class="c54"><span class="c7">DELEGATION D'ASSURANCE</span></p>
         </td>
     </tr>
     <tr class="c12">
@@ -2373,7 +2373,7 @@
     <tr class="c70">
         <td class="c103" colspan="2" rowspan="2"><p class="c54"><span class="c7">SOUSCRIPTEUR</span></p></td>
         <td class="c15" colspan="1" rowspan="1"><p class="c14"><span class="c7"></span></p></td>
-        <td class="c101" colspan="4" rowspan="2"><p class="c54"><span class="c8">JEBANE GEORGES JACQUES</span></p></td>
+        <td class="c101" colspan="4" rowspan="2"><p class="c54"><span class="c8">{{$LOCATAIRE_RAISON_SOCIALE}}</span></p></td>
     </tr>
     <tr class="c60">
         <td class="c85" colspan="1" rowspan="1"><p class="c14"><span class="c7"></span></p></td>
@@ -2406,7 +2406,7 @@
         <td class="c106" colspan="1" rowspan="1"><p class="c14"><span class="c7"></span></p></td>
     </tr>
     <tr class="c70">
-        <td class="c103" colspan="2" rowspan="1"><p class="c54"><span class="c7">CONTRAT N&deg;</span></p></td>
+        <td class="c103" colspan="2" rowspan="1"><p class="c54"><span class="c7">CONTRAT N°</span></p></td>
         <td class="c15" colspan="1" rowspan="1"><p class="c14"><span class="c7"></span></p></td>
         <td class="c95" colspan="3" rowspan="1"><p class="c14"><span class="c7"></span></p></td>
         <td class="c3" colspan="1" rowspan="1"><p class="c14"><span class="c7"></span></p></td>
@@ -2428,11 +2428,11 @@
                 <tr class="c110">
                     <td class="c59" colspan="1" rowspan="1"><p class="c14"><span class="c7"></span></p>
                         <p class="c14"><span class="c7"></span></p>
-                        <p class="c54"><span class="c7">DESIGNATION DU MATERIEL &nbsp;</span></p>
+                        <p class="c54"><span class="c7">DESIGNATION DU MATERIEL  </span></p>
                         <p class="c14"><span class="c7"></span></p></td>
                     <td class="c126" colspan="1" rowspan="1"><p class="c14"><span class="c7"></span></p></td>
                     <td class="c117" colspan="1" rowspan="1"><p class="c14"><span class="c8"></span></p>
-                        <p class="c54" id="h.2et92p0"><span class="c8">Une remorque &agrave; canne tron&ccedil;onn&eacute;e neuve</span>
+                        <p class="c54" id="h.2et92p0"><span class="c8">{{$MATERIEL}}</span>
                         </p>
                         <p class="c14"><span class="c7"></span></p></td>
                 </tr>
@@ -2453,7 +2453,7 @@
         <td class="c103" colspan="2" rowspan="2"><p class="c54"><span class="c7">PROPRIETAIRE</span></p></td>
         <td class="c15" colspan="1" rowspan="1"><p class="c14"><span class="c7"></span></p></td>
         <td class="c49" colspan="4" rowspan="1"><p class="c14"><span class="c7"></span></p>
-            <p class="c54"><span class="c16 c129">SNC</span><span class="c16 c131">&nbsp;MARVIC 133</span></p>
+            <p class="c54"><span class="c16 c129">SNC</span><span class="c16 c131"> {{$SNC}}</span></p>
             <p class="c54"><span class="c7">62 BOULEVARD DU CHAUDRON - 97490 - SAINTE CLOTILDE</span></p></td>
     </tr>
     <tr class="c60">
@@ -2478,7 +2478,7 @@
             <p class="c54"><span class="c7">DELEGATAIRE</span></p></td>
         <td class="c15" colspan="1" rowspan="1"><p class="c14"><span class="c7"></span></p></td>
         <td class="c49" colspan="4" rowspan="1"><p class="c14"><span class="c7"></span></p>
-            <p class="c54"><span class="c16 c129">SNC</span><span class="c16 c131">&nbsp;MARVIC 133</span></p>
+            <p class="c54"><span class="c16 c129">SNC</span><span class="c16 c131"> {{$SNC}}</span></p>
             <p class="c54"><span class="c7">62 BOULEVARD DU CHAUDRON - 97490 - SAINTE CLOTILDE</span></p></td>
     </tr>
     <tr class="c60">
@@ -2525,11 +2525,11 @@
         <td class="c78" colspan="1" rowspan="1"><p class="c14"><span class="c7"></span></p></td>
     </tr>
     <tr class="c56">
-        <td class="c92" colspan="7" rowspan="1"><p class="c20"><span class="c7">Il est pr&eacute;cis&eacute; qu&#39;en cas de sinistre atteignant ce bien et donnant lieu &agrave; indemnit&eacute; au profit de l&#39;assur&eacute;, aucun r&egrave;glement ne sera effectu&eacute; hors de la pr&eacute;sence de la SNC&nbsp;:</span>
+        <td class="c92" colspan="7" rowspan="1"><p class="c20"><span class="c7">Il est précisé qu'en cas de sinistre atteignant ce bien et donnant lieu à indemnité au profit de l'assuré, aucun règlement ne sera effectué hors de la présence de la SNC :</span>
             </p></td>
     </tr>
     <tr class="c12">
-        <td class="c25" colspan="4" rowspan="1"><p class="c20"><span class="c16 c131">MARVIC 133</span></p></td>
+        <td class="c25" colspan="4" rowspan="1"><p class="c20"><span class="c16 c131">{{$SNC}}</span></p></td>
         <td class="c33" colspan="1" rowspan="1"><p class="c11"><span class="c7"></span></p></td>
         <td class="c33" colspan="1" rowspan="1"><p class="c11"><span class="c7"></span></p></td>
         <td class="c55" colspan="1" rowspan="1"><p class="c11"><span class="c7"></span></p></td>
@@ -2544,22 +2544,22 @@
         <td class="c55" colspan="1" rowspan="1"><p class="c11"><span class="c7"></span></p></td>
     </tr>
     <tr class="c65">
-        <td class="c92" colspan="7" rowspan="1"><p class="c20"><span class="c7">ou de son mandataire, entre les mains duquel le paiement sera effectu&eacute; jusqu&#39;&agrave; concurrence de sa cr&eacute;ance.</span>
+        <td class="c92" colspan="7" rowspan="1"><p class="c20"><span class="c7">ou de son mandataire, entre les mains duquel le paiement sera effectué jusqu'à concurrence de sa créance.</span>
             </p></td>
     </tr>
     <tr class="c65">
-        <td class="c92" colspan="7" rowspan="1"><p class="c20"><span class="c16">Aucune modification ne sera apport&eacute;e &agrave; cette police sans l&#39;accord pr&eacute;alable de la SNC :</span>
+        <td class="c92" colspan="7" rowspan="1"><p class="c20"><span class="c16">Aucune modification ne sera apportée à cette police sans l'accord préalable de la SNC :</span>
             </p></td>
     </tr>
     <tr class="c12">
-        <td class="c25" colspan="4" rowspan="1"><p class="c20"><span class="c8">MARVIC 133</span></p>
+        <td class="c25" colspan="4" rowspan="1"><p class="c20"><span class="c8">{{$SNC}}</span></p>
             <p class="c11"><span class="c8"></span></p></td>
         <td class="c33" colspan="1" rowspan="1"><p class="c11"><span class="c8"></span></p></td>
         <td class="c33" colspan="1" rowspan="1"><p class="c11"><span class="c8"></span></p></td>
         <td class="c55" colspan="1" rowspan="1"><p class="c11"><span class="c8"></span></p></td>
     </tr>
     <tr class="c110">
-        <td class="c92" colspan="7" rowspan="1"><p class="c20"><span class="c7">qui sera imm&eacute;diatement inform&eacute;e en cas de non paiement de la cotisation, suspension de garantie ou r&eacute;siliation de police.</span>
+        <td class="c92" colspan="7" rowspan="1"><p class="c20"><span class="c7">qui sera immédiatement informée en cas de non paiement de la cotisation, suspension de garantie ou résiliation de police.</span>
             </p></td>
     </tr>
     <tr class="c81">
@@ -2572,7 +2572,7 @@
         <td class="c55" colspan="1" rowspan="1"><p class="c26"><span class="c7"></span></p></td>
     </tr>
     <tr class="c125">
-        <td class="c63" colspan="2" rowspan="1"><p class="c104"><span class="c7">Fait le &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&agrave;</span>
+        <td class="c63" colspan="2" rowspan="1"><p class="c104"><span class="c7">Fait le                      à</span>
             </p></td>
         <td class="c40" colspan="1" rowspan="1"><p class="c14"><span class="c7"></span></p></td>
         <td class="c33" colspan="1" rowspan="1"><p class="c14"><span class="c7"></span></p></td>

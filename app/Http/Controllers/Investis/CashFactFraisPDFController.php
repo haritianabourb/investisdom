@@ -11,7 +11,7 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
-class BanqFactFraisPDFController extends VoyagerBaseController
+class CashFactFraisPDFController extends VoyagerBaseController
 {
 
     public function generatePDF(Request $request){
@@ -32,14 +32,22 @@ class BanqFactFraisPDFController extends VoyagerBaseController
         $data['CUMUL_FRAIS_HT']='650';
         $data['CUMUL_FRAIS_TTC']='240';
         $data['FINANCEMENT']='SOFIDER';
-        $data['CUMUL_LOYERS_HT']=
+        $data['SNC'] = 'SNC';
+        $data['DUREE']='60';
+        $data['ECHEANCE_LOYER_HT']='490';
+        $data['TVA_TOTALE_LOYERS']='2499';
+        $data['CUMUL_LOYERS_TTC']=' 31 899,00';
+        $data['SIREN_SNC']='SIREN SNC';
 
 
 
-        //return view('pdf.04_banq_fact_frais.04_banq_fact_frais', $data);
-        $pdf = PDF::loadView('pdf.04_banq_fact_frais.04_banq_fact_frais', $data);
 
-        return $pdf->download('04_banq_fact_frais.pdf');
+
+        //return view('pdf.04_cash_fact_tva.04_cash_fact_tva', $data);
+        $pdf = PDF::loadView('pdf.04_cash_fact_tva.04_cash_fact_tva',
+            $data);
+
+        return $pdf->download('04_cash_fact_tva.pdf');
 
     }
 
