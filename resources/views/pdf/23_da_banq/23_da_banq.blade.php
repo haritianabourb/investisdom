@@ -1483,7 +1483,7 @@
     <tbody>
     <tr class="c52">
         <td class="c63" colspan="7" rowspan="1"><p class="c41" id="h.gjdgxs"><span
-                    class="c3">DELEGATION D&#39;ASSURANCE</span></p></td>
+                    class="c3">DELEGATION D'ASSURANCE</span></p></td>
     </tr>
     <tr class="c17">
         <td class="c32" colspan="1" rowspan="1"><p class="c1"><span class="c3"></span></p></td>
@@ -1497,7 +1497,7 @@
     <tr class="c45">
         <td class="c67" colspan="2" rowspan="2"><p class="c41"><span class="c3">SOUSCRIPTEUR</span></p></td>
         <td class="c34" colspan="1" rowspan="1"><p class="c1"><span class="c3"></span></p></td>
-        <td class="c18" colspan="4" rowspan="2"><p class="c41"><span class="c13 c28">SARL K@R NORD</span></p></td>
+        <td class="c18" colspan="4" rowspan="2"><p class="c41"><span class="c13 c28">{{$FORME_JURIDIQUE}} {{$LOCATAIRE_RAISON_SOCIALE}}</span></p></td>
     </tr>
     <tr class="c38">
         <td class="c29" colspan="1" rowspan="1"><p class="c1"><span class="c3"></span></p></td>
@@ -1530,7 +1530,7 @@
         <td class="c48" colspan="1" rowspan="1"><p class="c1"><span class="c3"></span></p></td>
     </tr>
     <tr class="c45">
-        <td class="c67" colspan="2" rowspan="1"><p class="c41"><span class="c3">CONTRAT N&deg;</span></p></td>
+        <td class="c67" colspan="2" rowspan="1"><p class="c41"><span class="c3">CONTRAT N°</span></p></td>
         <td class="c34" colspan="1" rowspan="1"><p class="c1"><span class="c3"></span></p></td>
         <td class="c86" colspan="3" rowspan="1"><p class="c1"><span class="c3"></span></p></td>
         <td class="c68" colspan="1" rowspan="1"><p class="c1"><span class="c3"></span></p></td>
@@ -1552,11 +1552,11 @@
                 <tr class="c44">
                     <td class="c26" colspan="1" rowspan="1"><p class="c1"><span class="c3"></span></p>
                         <p class="c1"><span class="c3"></span></p>
-                        <p class="c41"><span class="c3">DESIGNATION DU MATERIEL &nbsp;</span></p>
+                        <p class="c41"><span class="c3">DESIGNATION DU MATERIEL  </span></p>
                         <p class="c1"><span class="c3"></span></p></td>
                     <td class="c39" colspan="1" rowspan="1"><p class="c1"><span class="c3"></span></p></td>
                     <td class="c71" colspan="1" rowspan="1"><p class="c1"><span class="c13 c28"></span></p>
-                        <p class="c41"><span class="c13">15 v&eacute;hicules particuliers neufs de marque Citroen de type C1 FEEL 5P 1,0 VTI - 68CV - 1500</span>
+                        <p class="c41"><span class="c13">{{$MATERIEL}}</span>
                         </p></td>
                 </tr>
                 </tbody>
@@ -1578,7 +1578,7 @@
             <p class="c41"><span class="c3">PROPRIETAIRE</span></p></td>
         <td class="c34" colspan="1" rowspan="1"><p class="c1"><span class="c3"></span></p></td>
         <td class="c20" colspan="4" rowspan="1"><p class="c1"><span class="c3"></span></p>
-            <p class="c41"><span class="c33">SNC</span><span class="c13">&nbsp;MARVIC 121</span></p>
+            <p class="c41"><span class="c33">SNC</span><span class="c13"> {{$SNC}}</span></p>
             <p class="c41"><span class="c3">62 BOULEVARD DU CHAUDRON - 97490 - SAINTE CLOTILDE</span></p></td>
     </tr>
     <tr class="c38">
@@ -1603,7 +1603,7 @@
             <p class="c41"><span class="c3">DELEGATAIRE</span></p></td>
         <td class="c34" colspan="1" rowspan="1"><p class="c1"><span class="c3"></span></p></td>
         <td class="c20" colspan="4" rowspan="1"><p class="c1"><span class="c3"></span></p>
-            <p class="c41"><span class="c33">SNC</span><span class="c13">&nbsp;MARVIC 121</span></p>
+            <p class="c41"><span class="c33">SNC</span><span class="c13"> {{$SNC}}</span></p>
             <p class="c41"><span class="c3">62 BOULEVARD DU CHAUDRON - 97490 - SAINTE CLOTILDE</span></p></td>
     </tr>
     <tr class="c38">
@@ -1650,11 +1650,11 @@
         <td class="c25" colspan="1" rowspan="1"><p class="c1"><span class="c3"></span></p></td>
     </tr>
     <tr class="c53">
-        <td class="c23" colspan="7" rowspan="1"><p class="c36"><span class="c3">Il est pr&eacute;cis&eacute; qu&#39;en cas de sinistre atteignant ce bien et donnant lieu &agrave; indemnit&eacute; au profit de l&#39;assur&eacute;, aucun r&egrave;glement ne sera effectu&eacute; hors de la pr&eacute;sence de la banque :</span>
+        <td class="c23" colspan="7" rowspan="1"><p class="c36"><span class="c3">Il est précisé qu'en cas de sinistre atteignant ce bien et donnant lieu à indemnité au profit de l'assuré, aucun règlement ne sera effectué hors de la présence de la banque :</span>
             </p></td>
     </tr>
     <tr class="c17">
-        <td class="c35" colspan="4" rowspan="1"><p class="c36"><span class="c13">OL</span></p></td>
+        <td class="c35" colspan="4" rowspan="1"><p class="c36"><span class="c13">{{$FINANCEMENT}}</span></p></td>
         <td class="c10" colspan="1" rowspan="1"><p class="c9"><span class="c3"></span></p></td>
         <td class="c10" colspan="1" rowspan="1"><p class="c9"><span class="c3"></span></p></td>
         <td class="c6" colspan="1" rowspan="1"><p class="c9"><span class="c3"></span></p></td>
@@ -1669,22 +1669,22 @@
         <td class="c6" colspan="1" rowspan="1"><p class="c9"><span class="c3"></span></p></td>
     </tr>
     <tr class="c11">
-        <td class="c23" colspan="7" rowspan="1"><p class="c36"><span class="c3">ou de son mandataire, entre les mains duquel le paiement sera effectu&eacute; jusqu&#39;&agrave; concurrence de sa cr&eacute;ance.</span>
+        <td class="c23" colspan="7" rowspan="1"><p class="c36"><span class="c3">ou de son mandataire, entre les mains duquel le paiement sera effectué jusqu'à concurrence de sa créance.</span>
             </p></td>
     </tr>
     <tr class="c11">
-        <td class="c23" colspan="7" rowspan="1"><p class="c36"><span class="c59">Aucune modification ne sera apport&eacute;e &agrave; cette police sans l&#39;accord pr&eacute;alable de la banque :</span>
+        <td class="c23" colspan="7" rowspan="1"><p class="c36"><span class="c59">Aucune modification ne sera apportée à cette police sans l'accord préalable de la banque :</span>
             </p></td>
     </tr>
     <tr class="c17">
-        <td class="c35" colspan="4" rowspan="1"><p class="c36"><span class="c13 c28">OL</span></p>
+        <td class="c35" colspan="4" rowspan="1"><p class="c36"><span class="c13 c28">{{$FINANCEMENT}}</span></p>
             <p class="c9"><span class="c13 c28"></span></p></td>
         <td class="c10" colspan="1" rowspan="1"><p class="c9"><span class="c13 c28"></span></p></td>
         <td class="c10" colspan="1" rowspan="1"><p class="c9"><span class="c13 c28"></span></p></td>
         <td class="c6" colspan="1" rowspan="1"><p class="c9"><span class="c13 c28"></span></p></td>
     </tr>
     <tr class="c44">
-        <td class="c23" colspan="7" rowspan="1"><p class="c36"><span class="c3">qui sera imm&eacute;diatement inform&eacute;e en cas de non paiement de la cotisation, suspension de garantie ou r&eacute;siliation de police.</span>
+        <td class="c23" colspan="7" rowspan="1"><p class="c36"><span class="c3">qui sera immédiatement informée en cas de non paiement de la cotisation, suspension de garantie ou résiliation de police.</span>
             </p></td>
     </tr>
     <tr class="c81">
@@ -1697,7 +1697,7 @@
         <td class="c6" colspan="1" rowspan="1"><p class="c37"><span class="c3"></span></p></td>
     </tr>
     <tr class="c58">
-        <td class="c65" colspan="2" rowspan="1"><p class="c83"><span class="c3">Fait le &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&agrave;</span>
+        <td class="c65" colspan="2" rowspan="1"><p class="c83"><span class="c3">Fait le                      à</span>
             </p></td>
         <td class="c16" colspan="1" rowspan="1"><p class="c1"><span class="c3"></span></p></td>
         <td class="c10" colspan="1" rowspan="1"><p class="c1"><span class="c3"></span></p></td>
