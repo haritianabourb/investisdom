@@ -20,6 +20,7 @@ Route::get('/01_mandat', 'Investis\MandatPDFController@generatePDF');
 Route::get('/02_el_cl', 'Investis\ELCLPDFController@generatePDF');
 Route::get('/02_soc_cl', 'Investis\SOCCLPDFController@generatePDF');
 Route::get('/03_el_acc', 'Investis\ELACCPDFController@generatePDF');
+Route::get('/03_soc_acc', 'Investis\SOCACCPDFController@generatePDF');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

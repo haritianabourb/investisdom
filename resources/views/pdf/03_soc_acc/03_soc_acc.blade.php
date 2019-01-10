@@ -1330,65 +1330,65 @@
             style="width: 242.00px; height: 95.53px; margin-left: -0.00px; margin-top: -0.00px; transform: rotate(0.00rad) translateZ(0px); -webkit-transform: rotate(0.00rad) translateZ(0px);"
             title=""></span></p>
 <p class="c19"><span class="c13 c17 c22">ACCORD DE FINANCEMENT ET DE LIVRAISON</span></p>
-<p class="c19"><span class="c13">DOSSIER N&deg; </span><span class="c13 c3">1812012-REU &ndash; SNC MARVIC 114</span>
+<p class="c19"><span class="c13">DOSSIER N&deg; </span><span class="c13 c3">{{$N_DOSSIER}}-REU &ndash; SNC {{$SNC}}</span>
 </p>
 <p class="c21 c16"><span class="c17 c52 c22"></span></p>
 <p class="c16 c21"><span class="c17 c52 c22"></span></p>
 <p class="c21 c67"><span class="c18">SNC &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span
-        class="c3 c28">MARVIC 114</span></p>
+        class="c3 c28">{{$SNC}}</span></p>
 <p class="c21 c67"><span class="c18">ADRESSE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c2">62 BVD DU CHAUDRON </span>
 </p>
-<p class="c21 c64 c67"><span class="c2">97490 &ndash; SAINTE CLOTILDE</span></p>
+<p class="c21 c64 c67"><span class="c2">{{$CP_FOURNISSEUR}} &ndash; {{$VILLE_FOURNISSEUR}}</span></p>
 <p class="c21 c16"><span class="c18 c17 c22"></span></p>
 <p class="c21"><span class="c18">FOURNISSEUR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-        class="c28 c3">AUTOMOBILES REUNION SN</span></p>
-<p class="c21"><span class="c18">ADRESSE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c11 c3">11, boulevard du Chaudron</span>
+        class="c28 c3">{{$FOURNISSEUR}}</span></p>
+<p class="c21"><span class="c18">ADRESSE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c11 c3">{{$ADRESSE_FOURNISSEUR}}</span>
 </p>
-<p class="c21"><span class="c11 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;97490 SAINTE CLOTILDE</span>
+<p class="c21"><span class="c11 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{$CP_FOURNISSEUR}} {{$VILLE_FOURNISSEUR}}</span>
 </p>
 <p class="c21 c16"><span class="c11 c3"></span></p>
 <p class="c34"><span class="c2">Je vous informe par la pr&eacute;sente de l&#39;acceptation par notre cabinet de d&eacute;fiscalisation du financement du dossier dans les dispositions de l&lsquo;article 199 undecies B du Code G&eacute;n&eacute;ral des Imp&ocirc;ts portant acquisition pour le compte du locataire&nbsp;:</span>
 </p>
 <p class="c16 c35"><span class="c18 c17 c22"></span></p>
 <p class="c35"><span class="c18">LOCATAIRE&nbsp;: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span
-        class="c11 c3">EURL ALEXIS ROBIQUET ET TRANSPORTS ET SERVICES EURL</span></p>
+        class="c11 c3">EURL {{$LOCATAIRE_RAISON_SOCIALE}}</span></p>
 <p class="c35 c16"><span class="c2"></span></p>
 <p class="c10"><span class="c18">MATERIEL&nbsp;: &nbsp;</span><span class="c11 c3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Un tracteur routier neuf de marque RENAULT de type C460 T4X2 E6</span>
 </p>
 <p class="c10 c16"><span class="c11 c3"></span></p>
-<p class="c35 c53 c64"><span class="c28">D&rsquo;un montant total TTC de&nbsp;: </span><span class="c11 c3">121 931,76 &euro;</span>
+<p class="c35 c53 c64"><span class="c28">D&rsquo;un montant total TTC de&nbsp;: </span><span class="c11 c3">{{$MONTANT_TTC}} &euro;</span>
 </p>
 <p class="c16 c26"><span class="c2"></span></p>
-<p class="c35"><span class="c28">Par la SNC </span><span class="c28 c3">MARVIC 114 </span><span class="c2">domicili&eacute;e 62 boulevard du chaudron &ndash; 97490 &ndash; SAINTE CLOTILDE</span>
+<p class="c35"><span class="c28">Par la SNC </span><span class="c28 c3">{{$SNC}} </span><span class="c2">domicili&eacute;e 62 boulevard du chaudron &ndash; {{$CP_FOURNISSEUR}} &ndash; {{$VILLE_FOURNISSEUR}}</span>
 </p>
 <p class="c35 c16"><span class="c2"></span></p>
-<p class="c35"><span class="c28">Pour ce faire, la SNC </span><span class="c28 c3">MARVIC 114 </span><span class="c2">apportera la somme de&nbsp;:</span>
+<p class="c35"><span class="c28">Pour ce faire, la SNC </span><span class="c28 c3">{{$SNC}} </span><span class="c2">apportera la somme de&nbsp;:</span>
 </p>
 <p class="c35 c16"><span class="c2"></span></p>
 <p class="c21 c16"><span class="c2"></span></p>
 <ul class="c5 lst-kix_list_7-0 start">
     <li class="c35 c31"><span class="c2">Au titre de son apport</span></li>
 </ul>
-<p class="c51 c23"><span class="c11 c3">&nbsp;43 600,00 &euro; </span></p>
+<p class="c51 c23"><span class="c11 c3">&nbsp;{{$APPORT_SNC}} &euro; </span></p>
 <p class="c21 c16"><span class="c2"></span></p>
 <ul class="c5 lst-kix_list_7-0">
     <li class="c35 c31"><span class="c28">Le locataire devra s&#39;acquitter aupr&egrave;s du fournisseur </span><span
-            class="c28 c3">AUTOMOBILES REUNION SN </span><span class="c2">de la somme de </span></li>
+            class="c28 c3">{{$FOURNISSEUR}} </span><span class="c2">de la somme de </span></li>
 </ul>
 <p class="c35 c23 c16"><span class="c2"></span></p>
-<p class="c51 c23"><span class="c11 c3">&nbsp; 8 202,57 &euro;</span></p>
+<p class="c51 c23"><span class="c11 c3">&nbsp; {{$APPORT_LOCATAIRE}} &euro;</span></p>
 <p class="c21 c16"><span class="c2"></span></p>
 <ul class="c5 lst-kix_list_7-0">
     <li class="c35 c31"><span class="c28">Le solde faisant l&#39;objet d&#39;un financement sur </span><span
-            class="c28 c3">60 </span><span class="c2">mois </span></li>
+            class="c28 c3">{{$DUREE}} </span><span class="c2">mois </span></li>
 </ul>
 <p class="c51 c23 c16"><span class="c11 c3"></span></p>
-<p class="c23 c51"><span class="c28 c3">&nbsp;70 129,19 &euro;</span></p>
+<p class="c23 c51"><span class="c28 c3">&nbsp;{{$RESTE_A_FINANCER}} &euro;</span></p>
 <p class="c21 c16"><span class="c2"></span></p>
 <p class="c35 c16"><span class="c2"></span></p>
 <p class="c21 c16"><span class="c2"></span></p>
 <p class="c20"><span class="c28">Vous voudrez bien nous confirmer la date et l&#39;heure de livraison du mat&eacute;riel. Le r&egrave;glement de la quote-part de la SNC </span><span
-        class="c28 c3">MARVIC 114 </span><span class="c2">sur l&#39;investissement interviendra par virement apr&egrave;s examen de la conformit&eacute; du dossier.</span>
+        class="c28 c3">{{$SNC}} </span><span class="c2">sur l&#39;investissement interviendra par virement apr&egrave;s examen de la conformit&eacute; du dossier.</span>
 </p>
 <p class="c20"><span class="c2">Il est pr&eacute;cis&eacute; que la livraison ne pourra intervenir que si le fournisseur s&rsquo;est vu remettre par le cabinet INVESTIS DOM ou par le locataire mandat&eacute; par nous m&ecirc;me pour la livraison et la prise en charge du mat&eacute;riel, les &eacute;l&eacute;ments suivants&nbsp;:</span>
 </p>
@@ -1449,35 +1449,35 @@
 <p class="c20"><span class="c2">Si pour des raisons qui lui sont propres, le fournisseur proc&eacute;dait &agrave; la livraison du mat&eacute;riel sans la lev&eacute;e de ces r&eacute;serves, cette livraison sera r&eacute;put&eacute;e r&eacute;alis&eacute;e sous sa seule et enti&egrave;re responsabilit&eacute;. Les d&eacute;marches effectu&eacute;es par la SNC afin de r&eacute;cup&eacute;rer les diff&eacute;rentes pi&egrave;ces manquantes pourront exposer le fournisseur &agrave; des d&eacute;lais de paiement de la part SNC ou de la part cr&eacute;dit, voire en fonction des pi&egrave;ces manquantes &agrave; l&rsquo;annulation d&eacute;finitive de l&rsquo;accord de financement.</span>
 </p>
 <p class="c35 c53 c16"><span class="c2"></span></p>
-<p class="c35 c53"><span class="c28">Fait le </span><span class="c28 c3">24/12/2018</span></p>
+<p class="c35 c53"><span class="c28">Fait le </span><span class="c28 c3">{{$DATE_DE_CONTRAT}}</span></p>
 <p class="c35 c16"><span class="c2"></span></p>
 <p class="c35"><span class="c2">Restant &agrave; votre disposition, </span></p>
 <p class="c25"><span class="c2">Avec nos meilleures salutations</span></p>
 <p class="c27 c65"><span class="c13 c17 c22">PROCES - VERBAL DE LIVRAISON ET DE PRISE EN CHARGE PAR LE LOCATAIRE</span>
 </p>
-<p class="c27" id="h.30j0zll"><span class="c13">DOSSIER N&deg; </span><span class="c3 c13">1812012REU &ndash; SNC MARVIC 114</span>
+<p class="c27" id="h.30j0zll"><span class="c13">DOSSIER N&deg; </span><span class="c3 c13">{{$N_DOSSIER}}REU &ndash; SNC {{$SNC}}</span>
 </p>
 <p class="c8 c41 c16"><span class="c17 c52 c22"></span></p>
 <p class="c8 c16 c41"><span class="c17 c52 c22"></span></p>
-<p class="c8"><span class="c17 c1 c3">SAS AUTOMOBILES REUNION SN</span></p>
+<p class="c8"><span class="c17 c1 c3">{{$FORME_JURIDIQUE_FOURNISSEUR}} {{$FOURNISSEUR}}</span></p>
 <p class="c8 c16"><span class="c0"></span></p>
-<p class="c8"><span class="c1">La soci&eacute;t&eacute; </span><span class="c1 c3">AUTOMOBILES REUNION SN</span><span
-        class="c1">, </span><span class="c1 c3">SAS </span><span class="c1">au capital de </span><span class="c1 c3">&nbsp; 3 000 000 </span><span
-        class="c1">euros dont le si&egrave;ge social est sis au </span><span class="c1 c3">11, boulevard du Chaudron 97490 SAINTE CLOTILDE </span><span
+<p class="c8"><span class="c1">La soci&eacute;t&eacute; </span><span class="c1 c3">{{$FOURNISSEUR}}</span><span
+        class="c1">, </span><span class="c1 c3">{{$FORME_JURIDIQUE_FOURNISSEUR}} </span><span class="c1">au capital de </span><span class="c1 c3">&nbsp; {{$CAPITAL_FOURNISSEUR}}  </span><span
+        class="c1">euros dont le si&egrave;ge social est sis au </span><span class="c1 c3">{{$ADRESSE_FOURNISSEUR}} {{$CP_FOURNISSEUR}} {{$VILLE_FOURNISSEUR}} </span><span
         class="c1">immatricul&eacute;e au Registre du Commerce et des Soci&eacute;t&eacute;s de </span><span
-        class="c1 c3">SAINT DENIS</span><span class="c1">&nbsp;sous le num&eacute;ro </span><span class="c1 c3">479673451 </span><span
-        class="c1">repr&eacute;sent&eacute;e par </span><span class="c1 c3">Monsieur TEZENAS </span><span class="c1">agissant en qualit&eacute; de </span><span
+        class="c1 c3">{{$RSC_VILLE_FOURNISSEUR}} </span><span class="c1">&nbsp;sous le num&eacute;ro </span><span class="c1 c3">{{$SIREN_FOURNISSEUR}}  </span><span
+        class="c1">repr&eacute;sent&eacute;e par </span><span class="c1 c3">{{$REPRESENTANT}}  </span><span class="c1">agissant en qualit&eacute; de </span><span
         class="c1 c3">Directeur G&eacute;n&eacute;ral</span><span class="c0">.</span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8"><span class="c0">Ci-apr&egrave;s d&eacute;sign&eacute;, le FOURNISSEUR</span></p>
 <p class="c8 c16"><span class="c0"></span></p>
-<p class="c8"><span class="c17 c1 c3">EURL ALEXIS ROBIQUET ET TRANSPORTS ET SERVICES EURL</span></p>
+<p class="c8"><span class="c17 c1 c3">EURL {{$LOCATAIRE_RAISON_SOCIALE}}</span></p>
 <p class="c8 c16"><span class="c0"></span></p>
-<p class="c8"><span class="c1 c22">L&rsquo;entreprise </span><span class="c1 c3">ALEXIS ROBIQUET ET TRANSPORTS ET SERVICES EURL, EURL </span><span
+<p class="c8"><span class="c1 c22">L&rsquo;entreprise </span><span class="c1 c3">{{$LOCATAIRE_RAISON_SOCIALE}}, EURL </span><span
         class="c1 c22">au capital de </span><span class="c1 c3">&nbsp;52 239 </span><span class="c1 c22">euros dont le si&egrave;ge social est sis au </span><span
         class="c1 c3">52, route de Savanna - Islarun Centre d&#39;Affaires - 97460 SAINT PAUL </span><span
         class="c1 c22">immatricul&eacute;e au </span><span class="c1 c3">Registre du Commerce et des Soci&eacute;t&eacute;s </span><span
-        class="c1 c22">de </span><span class="c1 c3">SAINT DENIS </span><span
+        class="c1 c22">de </span><span class="c1 c3">{{$RSC_VILLE_FOURNISSEUR}}  </span><span
         class="c1 c22">sous le num&eacute;ro </span><span class="c1 c3">527647408, </span><span class="c1 c22">repr&eacute;sent&eacute;e par </span><span
         class="c1 c3">Monsieur ROBIQUET Alexis, Benoit </span><span class="c1 c22">agissant en qualit&eacute; de </span><span
         class="c17 c1 c3">G&eacute;rant.</span></p>
@@ -1485,7 +1485,7 @@
 <p class="c8"><span class="c0">Ci-apr&egrave;s d&eacute;sign&eacute;, le LOCATAIRE</span></p>
 <p class="c16 c66"><span class="c0"></span></p>
 <p class="c8 c16"><span class="c0"></span></p>
-<p class="c8"><span class="c1">Lieu de livraison&nbsp;: </span><span class="c17 c1 c3">AUTOMOBILES REUNION SN</span></p>
+<p class="c8"><span class="c1">Lieu de livraison&nbsp;: </span><span class="c17 c1 c3">{{$FOURNISSEUR}}</span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8 c16"><span class="c2"></span></p>
 <p class="c8"><span class="c0">D&Eacute;SIGNATION DU MAT&Eacute;RIEL</span></p>
@@ -1498,7 +1498,7 @@
 <p class="c8"><span class="c0">CONDITIONS G&Eacute;N&Eacute;RALES D&#39;ACHAT</span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8"><span class="c1">Si les conditions expos&eacute;es ci-dessous sont r&eacute;unies, le mat&eacute;riel d&eacute;crit ci-dessus sera la propri&eacute;t&eacute; exclusive de la SNC </span><span
-        class="c1 c3">MARVIC 114 </span><span class="c0">ci-apr&egrave;s d&eacute;sign&eacute;e LE LOUEUR.</span></p>
+        class="c1 c3">{{$SNC}} </span><span class="c0">ci-apr&egrave;s d&eacute;sign&eacute;e LE LOUEUR.</span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8"><span class="c0">Nonobstant toute clause contraire de vente, la propri&eacute;t&eacute; du mat&eacute;riel ne pourra &ecirc;tre transf&eacute;r&eacute;e au LOUEUR qu&#39;&agrave; partir de la r&eacute;ception des documents suivants :</span>
 </p>
@@ -1527,14 +1527,14 @@
     <li class="c8 c31"><span class="c0">Est neuf et en bon &eacute;tat de marche,</span></li>
     <li class="c8 c31"><span class="c0">Est conforme au bon de commande,</span></li>
     <li class="c8 c31"><span class="c1">Est conforme au mat&eacute;riel mentionn&eacute; dans le contrat de location le liant &agrave; la SNC </span><span
-            class="c1 c3">MARVIC 114</span></li>
+            class="c1 c3">{{$SNC}}</span></li>
     <li class="c8 c31"><span class="c0">A &eacute;t&eacute; test&eacute; par ses soins</span></li>
     <li class="c8 c31"><span class="c0">Est r&eacute;glementaire, conforme, notamment aux lois, r&egrave;glements, prescriptions administratives, normes fran&ccedil;aises et qu&#39;il est muni de tous les documents et justificatifs n&eacute;cessaires y r&eacute;f&eacute;rant.</span>
     </li>
 </ul>
 <p class="c8 c23 c16"><span class="c0"></span></p>
 <p class="c8"><span class="c1">LE LOCATAIRE d&eacute;clare accepter le mat&eacute;riel sans r&eacute;serve ni restriction autorisant ainsi le LOUEUR &agrave; r&eacute;gler le FOURNISSEUR conform&eacute;ment &agrave; la facture d&eacute;finitive et s&#39;interdit &agrave; compter de la signature du pr&eacute;sent proc&egrave;s-verbal toute action contre la SNC </span><span
-        class="c1 c3">MARVIC 114 </span><span class="c0">concernant l&rsquo;&eacute;tat du mat&eacute;riel.</span></p>
+        class="c1 c3">{{$SNC}} </span><span class="c0">concernant l&rsquo;&eacute;tat du mat&eacute;riel.</span></p>
 <p class="c16 c49"><span class="c0"></span></p>
 <p class="c8"><span class="c0">LE FOURNISSEUR soussign&eacute; reconna&icirc;t avoir accept&eacute; selon les conditions g&eacute;n&eacute;rales ci-dessus la commande du mat&eacute;riel neuf d&eacute;crit plus haut et avoir livr&eacute; ce jour au LOCATAIRE mandat&eacute; par LE LOUEUR ce m&ecirc;me mat&eacute;riel neuf en bon &eacute;tat de marche, conform&eacute;ment aux caract&eacute;ristiques indiqu&eacute;es tant ci-dessus que sur la facture d&eacute;finitive. </span>
 </p>
@@ -1550,7 +1550,7 @@
 <p class="c44 c16"><span class="c0"></span></p>
 <p class="c16 c44"><span class="c0"></span></p>
 <p class="c8 c16"><span class="c0"></span></p>
-<p class="c8"><span class="c1">Fait &agrave; </span><span class="c1 c3">SAINTE CLOTILDE</span><span class="c1">, le&nbsp;</span><span
+<p class="c8"><span class="c1">Fait &agrave; </span><span class="c1 c3">{{$VILLE_FOURNISSEUR}}</span><span class="c1">, le&nbsp;</span><span
         class="c60">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span><span
         class="c68">&nbsp; </span><span class="c0">en trois exemplaires originaux</span></p>
 <p class="c8 c37 c16"><span class="c0"></span></p>
@@ -1574,7 +1574,7 @@
 <hr style="page-break-before:always;display:none;">
 <p class="c4"><span class="c0"></span></p>
 <p class="c46"><span class="c13 c17 c22">ATTESTATION DE PRIX NET </span></p>
-<p class="c46"><span class="c13 c17 c22">CONTRAT n&deg; 1812012-REU &ndash; SNC MARVIC 114</span></p>
+<p class="c46"><span class="c13 c17 c22">CONTRAT n&deg; {{$N_DOSSIER}}-REU &ndash; SNC {{$SNC}}</span></p>
 <p class="c14"><span class="c2"></span></p>
 <p class="c8 c16"><span class="c2"></span></p>
 <p class="c8 c16"><span class="c2"></span></p>
@@ -1582,40 +1582,40 @@
 <p class="c8 c16"><span class="c2"></span></p>
 <p class="c8 c16"><span class="c2"></span></p>
 <p class="c8" id="h.3znysh7"><span class="c1">Nous soussign&eacute;s, </span><span
-        class="c1 c3">AUTOMOBILES REUNION SN</span><span class="c1">, </span><span class="c1 c3">SAS </span><span
-        class="c1">au capital de </span><span class="c1 c3">&nbsp; 3 000 000 </span><span class="c1">euros dont le si&egrave;ge social est sis au </span><span
-        class="c1 c3">11, boulevard du Chaudron 97490 SAINTE CLOTILDE </span><span class="c1">immatricul&eacute;e au Registre du Commerce et des Soci&eacute;t&eacute;s de </span><span
-        class="c1 c3">SAINT DENIS</span><span class="c1">&nbsp;sous le num&eacute;ro </span><span class="c17 c1 c3">479673451,</span>
+        class="c1 c3">{{$FOURNISSEUR}}</span><span class="c1">, </span><span class="c1 c3">{{$FORME_JURIDIQUE_FOURNISSEUR}} </span><span
+        class="c1">au capital de </span><span class="c1 c3">&nbsp; {{$CAPITAL_FOURNISSEUR}}  </span><span class="c1">euros dont le si&egrave;ge social est sis au </span><span
+        class="c1 c3">{{$ADRESSE_FOURNISSEUR}} {{$CP_FOURNISSEUR}} {{$VILLE_FOURNISSEUR}} </span><span class="c1">immatricul&eacute;e au Registre du Commerce et des Soci&eacute;t&eacute;s de </span><span
+        class="c1 c3">{{$RSC_VILLE_FOURNISSEUR}} </span><span class="c1">&nbsp;sous le num&eacute;ro </span><span class="c17 c1 c3">{{$SIREN_FOURNISSEUR}} ,</span>
 </p>
 <p class="c8 c16"><span class="c17 c1 c3"></span></p>
-<p class="c8"><span class="c1">Repr&eacute;sent&eacute;e par </span><span class="c1 c3">Monsieur TEZENAS </span><span
+<p class="c8"><span class="c1">Repr&eacute;sent&eacute;e par </span><span class="c1 c3">{{$REPRESENTANT}}  </span><span
         class="c1">agissant en qualit&eacute; de </span><span class="c1 c3">Directeur G&eacute;n&eacute;ral</span><span
         class="c0">,</span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8"><span class="c1">Certifions par la pr&eacute;sente que le mat&eacute;riel suivant&nbsp;vendu &agrave; la SNC </span><span
-        class="c1 c3">MARVIC 114 </span><span class="c1">et destin&eacute; au locataire </span><span class="c17 c1 c3">EURL ALEXIS ROBIQUET ET TRANSPORTS ET SERVICES EURL,</span>
+        class="c1 c3">{{$SNC}} </span><span class="c1">et destin&eacute; au locataire </span><span class="c17 c1 c3">EURL {{$LOCATAIRE_RAISON_SOCIALE}},</span>
 </p>
 <p class="c8 c16"><span class="c17 c1 c3"></span></p>
 <p class="c8"><span class="c11 c3">&nbsp; </span></p>
 <p class="c8"><span class="c3 c11">- Un tracteur routier neuf de marque RENAULT de type C460 T4X2 E6</span></p>
 <p class="c8 c23 c16"><span class="c2"></span></p>
 <p class="c8 c23 c16"><span class="c2"></span></p>
-<p class="c8 c23"><span class="c0">Au prix de&nbsp;: </span><span class="c17 c1 c3">121 931,76 </span><span class="c0">euros TTC</span>
+<p class="c8 c23"><span class="c0">Au prix de&nbsp;: </span><span class="c17 c1 c3">{{$MONTANT_TTC}} </span><span class="c0">euros TTC</span>
 </p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8"><span class="c0">Est conforme &agrave; la marge normale de notre activit&eacute; et ne fait en aucun cas l&rsquo;objet, directement ou indirectement, de la part de notre soci&eacute;t&eacute;, d&rsquo;aucun versement de commission, rabais, remise ou ristourne, &agrave; quelconque des intervenants de cette op&eacute;ration.</span>
 </p>
 <p class="c8"><span class="c1">Par ailleurs, j&rsquo;atteste, ne pas reprendre de mat&eacute;riel ayant les m&ecirc;mes fonctions et les m&ecirc;mes performances au sein de l&rsquo;entreprise </span><span
-        class="c1 c3">ALEXIS ROBIQUET ET TRANSPORTS ET SERVICES EURL.</span></p>
+        class="c1 c3">{{$LOCATAIRE_RAISON_SOCIALE}}.</span></p>
 <p class="c14"><span class="c0"></span></p>
 <p class="c14"><span class="c0"></span></p>
-<p class="c25"><span class="c1">Fait &agrave; </span><span class="c1 c3 c17">SAINTE CLOTILDE,</span></p>
+<p class="c25"><span class="c1">Fait &agrave; </span><span class="c1 c3 c17">{{$VILLE_FOURNISSEUR}},</span></p>
 <p class="c14"><span class="c0"></span></p>
-<p class="c25"><span class="c1">Le </span><span class="c1 c3">24/12/2018</span></p>
+<p class="c25"><span class="c1">Le </span><span class="c1 c3">{{$DATE_DE_CONTRAT}}</span></p>
 <p class="c14"><span class="c0"></span></p>
 <p class="c25"><span class="c1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp;Pour le fournisseur </span><span
-        class="c17 c1 c3">AUTOMOBILES REUNION SN</span></p>
+        class="c17 c1 c3">{{$FOURNISSEUR}}</span></p>
 <p class="c25"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
 <p class="c25 c50"><span class="c0">&nbsp; &nbsp; &nbsp; &nbsp; Signature et cachet</span></p>
 <p class="c14"><span class="c7"></span></p>
@@ -1624,45 +1624,45 @@
 <hr style="page-break-before:always;display:none;">
 <p class="c4"><span class="c38 c17 c22"></span></p>
 <p class="c8 c16"><span class="c0"></span></p>
-<p class="c8"><span class="c17 c1 c3">AUTOMOBILES REUNION SN</span></p>
-<p class="c8"><span class="c17 c1 c3">11, boulevard du Chaudron</span></p>
-<p class="c8"><span class="c1 c3">97490 SAINTE CLOTILDE</span></p>
+<p class="c8"><span class="c17 c1 c3">{{$FOURNISSEUR}}</span></p>
+<p class="c8"><span class="c17 c1 c3">{{$ADRESSE_FOURNISSEUR}}</span></p>
+<p class="c8"><span class="c1 c3">{{$CP_FOURNISSEUR}} {{$VILLE_FOURNISSEUR}}</span></p>
 <p class="c8 c40 c16"><span class="c0"></span></p>
-<p class="c8 c40"><span class="c1">SNC</span><span class="c17 c1 c3">&nbsp;MARVIC 114</span></p>
+<p class="c8 c40"><span class="c1">SNC</span><span class="c17 c1 c3">&nbsp;{{$SNC}}</span></p>
 <p class="c8 c40"><span class="c0">62 Boulevard du Chaudron</span></p>
-<p class="c8 c40"><span class="c0">97490 &ndash; SAINTE CLOTILDE</span></p>
+<p class="c8 c40"><span class="c0">{{$CP_FOURNISSEUR}} &ndash; {{$VILLE_FOURNISSEUR}}</span></p>
 <p class="c8 c40 c16"><span class="c0"></span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8 c16"><span class="c0"></span></p>
-<p class="c8"><span class="c1">A </span><span class="c1 c3">SAINTE CLOTILDE</span><span class="c1">, le </span><span
-        class="c1 c3">24/12/2018</span></p>
+<p class="c8"><span class="c1">A </span><span class="c1 c3">{{$VILLE_FOURNISSEUR}}</span><span class="c1">, le </span><span
+        class="c1 c3">{{$DATE_DE_CONTRAT}}</span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8 c16"><span class="c33 c17 c22"></span></p>
 <p class="c8 c16"><span class="c33 c17 c22"></span></p>
 <p class="c27 c16"><span class="c17 c22 c33"></span></p>
 <p class="c27 c16"><span class="c33 c17 c22"></span></p>
 <p class="c27"><span class="c13 c17 c22">ATTESTATION DE VERSEMENT DE L&rsquo;APPORT LOCATAIRE</span></p>
-<p class="c27 c56" id="h.2et92p0"><span class="c13">DOSSIER N&deg; </span><span class="c13 c3">1812012-REU &ndash; SNC MARVIC 114</span>
+<p class="c27 c56" id="h.2et92p0"><span class="c13">DOSSIER N&deg; </span><span class="c13 c3">{{$N_DOSSIER}}-REU &ndash; SNC {{$SNC}}</span>
 </p>
 <p class="c27 c16"><span class="c33 c17 c22"></span></p>
 <p class="c8 c16"><span class="c33 c17 c22"></span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8 c16"><span class="c0"></span></p>
-<p class="c8"><span class="c1">Nous soussign&eacute;s, </span><span class="c1 c3">AUTOMOBILES REUNION SN </span><span
+<p class="c8"><span class="c1">Nous soussign&eacute;s, </span><span class="c1 c3">{{$FOURNISSEUR}} </span><span
         class="c1">attestons par la pr&eacute;sente connaitre les dispositions de l&rsquo;article L.112-6 du code mon&eacute;taire et financier relatif &agrave; l&rsquo;interdiction du paiement en esp&egrave;ces de certaines cr&eacute;ances et attestons avoir per&ccedil;u par ch&egrave;que ou virement bancaire de la </span><span
-        class="c1 c3">EURL ALEXIS ROBIQUET ET TRANSPORTS ET SERVICES EURL, </span><span
+        class="c1 c3">EURL {{$LOCATAIRE_RAISON_SOCIALE}}, </span><span
         class="c1">la somme de&nbsp;:</span></p>
 <p class="c8 c16"><span class="c0"></span></p>
-<p class="c8"><span class="c1 c3">&nbsp; 8 202,57 </span><span class="c0">euros </span></p>
+<p class="c8"><span class="c1 c3">&nbsp; {{$APPORT_LOCATAIRE}} </span><span class="c0">euros </span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8"><span class="c1">au titre de sa quote-part sur le paiement de l&rsquo;investissement r&eacute;alis&eacute; pour son compte par la SNC </span><span
-        class="c1 c3">MARVIC 114 </span><span class="c1">conform&eacute;ment au plan de financement joint.</span></p>
+        class="c1 c3">{{$SNC}} </span><span class="c1">conform&eacute;ment au plan de financement joint.</span></p>
 <p class="c8 c16"><span class="c2"></span></p>
 <p class="c8 c16"><span class="c2"></span></p>
-<p class="c8"><span class="c1">L&rsquo;investissement de la </span><span class="c1 c3">EURL ALEXIS ROBIQUET ET TRANSPORTS ET SERVICES EURL </span><span
+<p class="c8"><span class="c1">L&rsquo;investissement de la </span><span class="c1 c3">EURL {{$LOCATAIRE_RAISON_SOCIALE}} </span><span
         class="c0">concerne le mat&eacute;riel neuf suivant&nbsp;:</span></p>
 <p class="c8 c16"><span class="c17 c1 c3"></span></p>
 <p class="c8"><span class="c11 c3">- Un tracteur routier neuf de marque RENAULT de type C460 T4X2 E6</span></p>
@@ -1672,30 +1672,30 @@
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8 c16"><span class="c0"></span></p>
-<p class="c8"><span class="c1">Pour le fournisseur </span><span class="c17 c1 c3">AUTOMOBILES REUNION SN</span></p>
+<p class="c8"><span class="c1">Pour le fournisseur </span><span class="c17 c1 c3">{{$FOURNISSEUR}}</span></p>
 <p class="c8"><span class="c0">Signature et cachet </span></p>
 <p class="c14"><span class="c7"></span></p>
 <p class="c14"><span class="c7"></span></p>
 <p class="c14"><span class="c38 c17 c22"></span></p>
 <hr style="page-break-before:always;display:none;">
 <p class="c4"><span class="c17 c22 c38"></span></p>
-<p class="c8"><span class="c17 c1 c3">AUTOMOBILES REUNION SN</span></p>
-<p class="c8"><span class="c17 c1 c3">11, boulevard du Chaudron</span></p>
-<p class="c8"><span class="c1 c3">97490 SAINTE CLOTILDE</span></p>
+<p class="c8"><span class="c17 c1 c3">{{$FOURNISSEUR}}</span></p>
+<p class="c8"><span class="c17 c1 c3">{{$ADRESSE_FOURNISSEUR}}</span></p>
+<p class="c8"><span class="c1 c3">{{$CP_FOURNISSEUR}} {{$VILLE_FOURNISSEUR}}</span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8 c16"><span class="c0"></span></p>
-<p class="c8"><span class="c1">A </span><span class="c1 c3">SAINTE CLOTILDE</span><span class="c1">, le </span><span
-        class="c1 c3">24/12/2018</span></p>
+<p class="c8"><span class="c1">A </span><span class="c1 c3">{{$VILLE_FOURNISSEUR}}</span><span class="c1">, le </span><span
+        class="c1 c3">{{$DATE_DE_CONTRAT}}</span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c16 c27"><span class="c33 c17 c22"></span></p>
 <p class="c27 c16"><span class="c33 c17 c22"></span></p>
 <p class="c27"><span class="c13 c17 c22">ATTESTATION DE RECEPTION DES FONDS INVESTISSEURS</span></p>
-<p class="c27"><span class="c13">DOSSIER N&deg; </span><span class="c13 c3">1812012-REU &ndash; SNC MARVIC 114</span>
+<p class="c27"><span class="c13">DOSSIER N&deg; </span><span class="c13 c3">{{$N_DOSSIER}}-REU &ndash; SNC {{$SNC}}</span>
 </p>
 <p class="c8 c16"><span class="c17 c22 c36"></span></p>
 <p class="c8 c16"><span class="c33 c17 c22"></span></p>
@@ -1704,15 +1704,15 @@
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8 c16"><span class="c0"></span></p>
-<p class="c8"><span class="c1">Nous soussign&eacute;s, </span><span class="c1 c3">AUTOMOBILES REUNION SN </span><span
+<p class="c8"><span class="c1">Nous soussign&eacute;s, </span><span class="c1 c3">{{$FOURNISSEUR}} </span><span
         class="c1">attestons par la pr&eacute;sente avoir per&ccedil;u par virement bancaire de la SNC </span><span
-        class="c1 c3">MARVIC 114</span><span class="c1">, la somme de&nbsp;:</span></p>
+        class="c1 c3">{{$SNC}}</span><span class="c1">, la somme de&nbsp;:</span></p>
 <p class="c8 c16"><span class="c0"></span></p>
-<p class="c8"><span class="c1 c3">&nbsp;43 600,00 </span><span class="c0">euros, </span></p>
+<p class="c8"><span class="c1 c3">&nbsp;{{$APPORT_SNC}} </span><span class="c0">euros, </span></p>
 <p class="c8 c16"><span class="c0"></span></p>
-<p class="c8"><span class="c1">relative au contrat de location N&deg; </span><span class="c1 c3">1812012-REU</span><span
-        class="c1">&nbsp;conclu entre la SNC </span><span class="c1 c3">MARVIC 114 </span><span class="c1">et l&rsquo;entreprise </span><span
-        class="c1 c3">ALEXIS ROBIQUET ET TRANSPORTS ET SERVICES EURL </span><span class="c0">concernant le mat&eacute;riel suivant&nbsp;:</span>
+<p class="c8"><span class="c1">relative au contrat de location N&deg; </span><span class="c1 c3">{{$N_DOSSIER}}-REU</span><span
+        class="c1">&nbsp;conclu entre la SNC </span><span class="c1 c3">{{$SNC}} </span><span class="c1">et l&rsquo;entreprise </span><span
+        class="c1 c3">{{$LOCATAIRE_RAISON_SOCIALE}} </span><span class="c0">concernant le mat&eacute;riel suivant&nbsp;:</span>
 </p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8 c16"><span class="c2"></span></p>
@@ -1724,29 +1724,29 @@
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8 c16"><span class="c0"></span></p>
-<p class="c8"><span class="c1">Pour le fournisseur </span><span class="c17 c1 c3">AUTOMOBILES REUNION SN</span></p>
+<p class="c8"><span class="c1">Pour le fournisseur </span><span class="c17 c1 c3">{{$FOURNISSEUR}}</span></p>
 <p class="c8"><span class="c0">Signature et cachet </span></p>
 <hr style="page-break-before:always;display:none;">
 <p class="c14"><span class="c2"></span></p>
 <p class="c14"><span class="c2"></span></p>
 <hr style="page-break-before:always;display:none;">
 <p class="c4"><span class="c2"></span></p>
-<p class="c8"><span class="c17 c1 c3">SNC MARVIC 114</span></p>
+<p class="c8"><span class="c17 c1 c3">SNC {{$SNC}}</span></p>
 <p class="c8"><span class="c0">62 BOULEVARD DU CHAUDRON</span></p>
-<p class="c8"><span class="c0">97490 &ndash; SAINTE CLOTILDE</span></p>
-<p class="c8 c40"><span class="c17 c1 c3">AUTOMOBILES REUNION SN</span></p>
-<p class="c8 c40"><span class="c17 c1 c3">11, boulevard du Chaudron</span></p>
-<p class="c8 c40"><span class="c1 c3">97490 SAINTE CLOTILDE</span></p>
+<p class="c8"><span class="c0">{{$CP_FOURNISSEUR}} &ndash; {{$VILLE_FOURNISSEUR}}</span></p>
+<p class="c8 c40"><span class="c17 c1 c3">{{$FOURNISSEUR}}</span></p>
+<p class="c8 c40"><span class="c17 c1 c3">{{$ADRESSE_FOURNISSEUR}}</span></p>
+<p class="c8 c40"><span class="c1 c3">{{$CP_FOURNISSEUR}} {{$VILLE_FOURNISSEUR}}</span></p>
 <p class="c8 c16"><span class="c2"></span></p>
 <p class="c44 c16"><span class="c36 c17 c22"></span></p>
-<p class="c27 c56"><span class="c13">CESSION DE CREANCE IMPARFAITE N&deg; </span><span class="c13 c3">1812012-REU &ndash; SNC MARVIC 114</span>
+<p class="c27 c56"><span class="c13">CESSION DE CREANCE IMPARFAITE N&deg; </span><span class="c13 c3">{{$N_DOSSIER}}-REU &ndash; SNC {{$SNC}}</span>
 </p>
 <p class="c46"><span class="c13">VALANT ATTESTATION DE PAIEMENT ANTICIPE DES LOYERS DE L&rsquo;EXPLOITANT</span></p>
 <p class="c16 c39"><span class="c7"></span></p>
 <p class="c8"><span class="c0">Entre,</span></p>
 <p class="c8 c16"><span class="c0"></span></p>
-<p class="c8"><span class="c1">La SNC </span><span class="c1 c3">MARVIC 114, </span><span class="c1">Soci&eacute;t&eacute; en Nom Collectif au capital de 100 &euro;, dont le si&egrave;ge social est sis au 62 BOULEVARD DU CHAUDRON &ndash; 97490 &ndash; SAINTE CLOTILDE immatricul&eacute;e sous le num&eacute;ro </span><span
-        class="c1 c3">833090491 </span><span class="c1">au RCS de SAINT DENIS </span></p>
+<p class="c8"><span class="c1">La SNC </span><span class="c1 c3">{{$SNC}}, </span><span class="c1">Soci&eacute;t&eacute; en Nom Collectif au capital de 100 &euro;, dont le si&egrave;ge social est sis au 62 BOULEVARD DU CHAUDRON &ndash; {{$CP_FOURNISSEUR}} &ndash; {{$VILLE_FOURNISSEUR}} immatricul&eacute;e sous le num&eacute;ro </span><span
+        class="c1 c3">833090491 </span><span class="c1">au RCS de {{$RSC_VILLE_FOURNISSEUR}}  </span></p>
 <p class="c8 c16"><span class="c17 c1 c3"></span></p>
 <p class="c8"><span class="c0">Repr&eacute;sent&eacute;e par Monsieur Christophe MONEL</span></p>
 <p class="c8 c16"><span class="c0"></span></p>
@@ -1754,24 +1754,24 @@
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8"><span class="c0">Et</span></p>
 <p class="c8 c16"><span class="c0"></span></p>
-<p class="c8"><span class="c1">La soci&eacute;t&eacute; </span><span class="c1 c3">AUTOMOBILES REUNION SN</span><span
-        class="c1">, </span><span class="c1 c3">SAS </span><span class="c1">au capital de </span><span class="c1 c3">&nbsp; 3 000 000 </span><span
-        class="c1">euros dont le si&egrave;ge social est sis au </span><span class="c1 c3">11, boulevard du Chaudron 97490 SAINTE CLOTILDE </span><span
+<p class="c8"><span class="c1">La soci&eacute;t&eacute; </span><span class="c1 c3">{{$FOURNISSEUR}}</span><span
+        class="c1">, </span><span class="c1 c3">{{$FORME_JURIDIQUE_FOURNISSEUR}} </span><span class="c1">au capital de </span><span class="c1 c3">&nbsp; {{$CAPITAL_FOURNISSEUR}}  </span><span
+        class="c1">euros dont le si&egrave;ge social est sis au </span><span class="c1 c3">{{$ADRESSE_FOURNISSEUR}} {{$CP_FOURNISSEUR}} {{$VILLE_FOURNISSEUR}} </span><span
         class="c1">immatricul&eacute;e au Registre du Commerce et des Soci&eacute;t&eacute;s de </span><span
-        class="c1 c3">SAINT DENIS</span><span class="c1">&nbsp;sous le num&eacute;ro </span><span class="c17 c1 c3">479673451,</span>
+        class="c1 c3">{{$RSC_VILLE_FOURNISSEUR}} </span><span class="c1">&nbsp;sous le num&eacute;ro </span><span class="c17 c1 c3">{{$SIREN_FOURNISSEUR}} ,</span>
 </p>
 <p class="c8 c16"><span class="c0"></span></p>
-<p class="c8"><span class="c1">Repr&eacute;sent&eacute;e par </span><span class="c1 c3">Monsieur TEZENAS </span><span
+<p class="c8"><span class="c1">Repr&eacute;sent&eacute;e par </span><span class="c1 c3">{{$REPRESENTANT}}  </span><span
         class="c1">agissant en qualit&eacute; de </span><span class="c1 c3">Directeur G&eacute;n&eacute;ral,</span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8"><span class="c0">Ci-apr&egrave;s d&eacute;sign&eacute; le CESSIONNAIRE</span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8"><span class="c0">Avec l&rsquo;intervention de </span></p>
 <p class="c8 c16"><span class="c0"></span></p>
-<p class="c8"><span class="c1 c22">L&rsquo;entreprise </span><span class="c1 c3">ALEXIS ROBIQUET ET TRANSPORTS ET SERVICES EURL, EURL</span><span
+<p class="c8"><span class="c1 c22">L&rsquo;entreprise </span><span class="c1 c3">{{$LOCATAIRE_RAISON_SOCIALE}}, EURL</span><span
         class="c1 c22">&nbsp;dont le si&egrave;ge social est sis au </span><span class="c1 c3">52, route de Savanna - Islarun Centre d&#39;Affaires - 97460 SAINT PAUL </span><span
         class="c1 c22">immatricul&eacute;e au </span><span class="c1 c3">Registre du Commerce et des Soci&eacute;t&eacute;s</span><span
-        class="c1 c22">&nbsp;de </span><span class="c1 c3">SAINT DENIS </span><span
+        class="c1 c22">&nbsp;de </span><span class="c1 c3">{{$RSC_VILLE_FOURNISSEUR}}  </span><span
         class="c1 c22">sous le num&eacute;ro </span><span class="c17 c1 c3">527647408,</span></p>
 <p class="c8 c16"><span class="c17 c1 c3"></span></p>
 <p class="c8"><span class="c1 c22">Repr&eacute;sent&eacute;e par </span><span class="c1 c3">Monsieur ROBIQUET Alexis, Benoit </span><span
@@ -1782,8 +1782,8 @@
 <p class="c8"><span class="c9">Il a &eacute;t&eacute; convenu ce qui suit :</span></p>
 <p class="c8 c16"><span class="c9"></span></p>
 <p class="c63"><span class="c1">La cession de cr&eacute;ances concerne le montant des loyers dus par le LOCATAIRE relatif au contrat de location N&deg; </span><span
-        class="c1 c3">1812012-REU</span><span class="c1">&nbsp;sign&eacute; le </span><span
-        class="c1 c3">24/12/2018</span><span class="c0">&nbsp;avec le CEDANT, concernant le mat&eacute;riel vendu par le CESSIONNAIRE au CEDANT pour le compte du LOCATAIRE</span>
+        class="c1 c3">{{$N_DOSSIER}}-REU</span><span class="c1">&nbsp;sign&eacute; le </span><span
+        class="c1 c3">{{$DATE_DE_CONTRAT}}</span><span class="c0">&nbsp;avec le CEDANT, concernant le mat&eacute;riel vendu par le CESSIONNAIRE au CEDANT pour le compte du LOCATAIRE</span>
 </p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8 c16"><span class="c0"></span></p>
@@ -1795,16 +1795,16 @@
 </p>
 <p class="c8 c23 c16"><span class="c17 c1 c3"></span></p>
 <p class="c63"><span class="c1">Le CEDANT a sign&eacute; avec le LOCATAIRE un contrat de location N&deg; </span><span
-        class="c1 c3">1812012-REU </span><span
-        class="c1">concernant le mat&eacute;riel ci-dessus en date du </span><span class="c1 c3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 24/12/2018 </span><span
+        class="c1 c3">{{$N_DOSSIER}}-REU </span><span
+        class="c1">concernant le mat&eacute;riel ci-dessus en date du </span><span class="c1 c3">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {{$DATE_DE_CONTRAT}} </span><span
         class="c1">moyennant le versement de </span><span class="c1 c3">60</span><span class="c1">&nbsp;loyers mensuels d&rsquo;un montant HT de </span><span
-        class="c1 c3">&nbsp; 1 291,54 </span><span class="c1">&euro; exigible au terme de chaque mois civil soit un montant total de </span><span
-        class="c1 c3">&nbsp;70 129,19 </span><span class="c0">&euro; HT pour la location du mat&eacute;riel.</span></p>
+        class="c1 c3">&nbsp; {{$ECHEANCE_LOYER_HT}}  </span><span class="c1">&euro; exigible au terme de chaque mois civil soit un montant total de </span><span
+        class="c1 c3">&nbsp;{{$RESTE_A_FINANCER}} </span><span class="c0">&euro; HT pour la location du mat&eacute;riel.</span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8"><span class="c0">Article 2&nbsp;: CESSION DE CREANCE</span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8"><span class="c1">Conform&eacute;ment aux dispositions de l&rsquo;article 1689 et suivants du code civil, le CEDANT c&egrave;de au CESSIONNAIRE qui l&rsquo;accepte, la cr&eacute;ance des loyers &eacute;chus et &agrave; &eacute;choir, qu&rsquo;il d&eacute;tient sur le LOCATAIRE soit </span><span
-        class="c1 c3">&nbsp;70 129,19 </span><span class="c0">&euro; &agrave; ce jour, en principal.</span></p>
+        class="c1 c3">&nbsp;{{$RESTE_A_FINANCER}} </span><span class="c0">&euro; &agrave; ce jour, en principal.</span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8"><span class="c0">La pr&eacute;sente cession est faite &agrave; forfait, aux frais, risques et p&eacute;rils du CESSIONNAIRE sans aucune garantie d&rsquo;aucune sorte sauf celle de l&rsquo;existence du contrat de location du mat&eacute;riel remis ce jour en mains propres par le CEDANT au CESSIONNAIRE</span>
 </p>
@@ -1821,7 +1821,7 @@
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8"><span class="c0">Article&nbsp;3&nbsp;: PRIX DE LA CREANCE</span></p>
 <p class="c8 c16"><span class="c0"></span></p>
-<p class="c8"><span class="c1">La pr&eacute;sente cession est consentie moyennant le prix de </span><span class="c1 c3">&nbsp;70 129,19 </span><span
+<p class="c8"><span class="c1">La pr&eacute;sente cession est consentie moyennant le prix de </span><span class="c1 c3">&nbsp;{{$RESTE_A_FINANCER}} </span><span
         class="c0">&euro; euros hors taxes pay&eacute; par compensation entre les sommes dues au CESSIONNAIRE par le CEDANT au titre du solde du paiement du prix du mat&eacute;riel.</span>
 </p>
 <p class="c8"><span class="c0">Quittance en est donn&eacute;e ce jour.</span></p>
@@ -1831,7 +1831,7 @@
 <p class="c8"><span class="c0">Article&nbsp;4 : ACCEPTATION ET ENGAGEMENT PERSONNEL DU LOCATAIRE</span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8"><span class="c1">Le LOCATAIRE consent express&eacute;ment &agrave; la cession de cr&eacute;ance. Il prend l&rsquo;engagement direct et personnel de verser directement au CESSIONNAIRE l&rsquo;int&eacute;gralit&eacute; des </span><span
-        class="c1 c3">60 </span><span class="c0">mensualit&eacute;s, y compris celles non &eacute;chues au titre de son contrat de location. </span>
+        class="c1 c3">{{$DUREE}} </span><span class="c0">mensualit&eacute;s, y compris celles non &eacute;chues au titre de son contrat de location. </span>
 </p>
 <p class="c8"><span class="c0">Ce versement anticip&eacute; par rapport &agrave; l&rsquo;&eacute;ch&eacute;ancier de paiement des loyers pr&eacute;vus dans le contrat de location sign&eacute; en le LOCATAIRE et le CEDANT, ne donnera lieu &agrave; aucun escompte pour paiement anticip&eacute;.</span>
 </p>
@@ -1850,11 +1850,11 @@
 <p class="c8"><span class="c0">Article 6&nbsp;: ENGAGEMENT DU CEDANT</span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8"><span class="c1">Il est express&eacute;ment convenu que le paiement au CESSIONNAIRE de la somme de </span><span
-        class="c1 c3">&nbsp;70 129,19 </span><span
-        class="c1">&euro; lib&egrave;re totalement la soci&eacute;t&eacute; </span><span class="c1 c3">ALEXIS ROBIQUET ET TRANSPORTS ET SERVICES EURL </span><span
-        class="c1">des sommes dues envers la SNC </span><span class="c1 c3">MARVIC 114 </span><span class="c1">au titre du contrat de location N&deg; </span><span
-        class="c1 c3">1812012-REU</span><span class="c1">&nbsp;en date du </span><span
-        class="c1 c3">24/12/2018</span><span class="c0">.</span></p>
+        class="c1 c3">&nbsp;{{$RESTE_A_FINANCER}} </span><span
+        class="c1">&euro; lib&egrave;re totalement la soci&eacute;t&eacute; </span><span class="c1 c3">{{$LOCATAIRE_RAISON_SOCIALE}} </span><span
+        class="c1">des sommes dues envers la SNC </span><span class="c1 c3">{{$SNC}} </span><span class="c1">au titre du contrat de location N&deg; </span><span
+        class="c1 c3">{{$N_DOSSIER}}-REU</span><span class="c1">&nbsp;en date du </span><span
+        class="c1 c3">{{$DATE_DE_CONTRAT}}</span><span class="c0">.</span></p>
 <p class="c8"><span class="c0">En cas de d&eacute;faillance du LOCATAIRE dans ses paiements, le CEDANT s&rsquo;engage &agrave; tout mettre en &oelig;uvre pour r&eacute;cup&eacute;rer le mat&eacute;riel lou&eacute; et le relouer avec l&rsquo;accord du CESSIONNAIRE &agrave; un nouvel exploitant &eacute;ligible aux dispositions de l&rsquo;article 199 undecies B du Code G&eacute;n&eacute;ral des imp&ocirc;ts.</span>
 </p>
 <p class="c8"><span class="c0">Le CEDANT d&eacute;clare qu&rsquo;aucune cession ou d&eacute;l&eacute;gation totale ou partielle des loyers ant&eacute;rieure &agrave; ce jour n&rsquo;a &eacute;t&eacute; mise en place et qu&rsquo;il n&rsquo;existe aucune opposition au paiement des loyers de la part du LOCATAIRE, ce que ce dernier reconnait parfaitement.</span>
@@ -1864,7 +1864,7 @@
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8"><span class="c0">En compl&eacute;ment de la pr&eacute;sente cession, le CEDANT remet au CESSIONNAIRE, lequel en a eu pr&eacute;alablement connaissance par copie, des titres originaux suivants&nbsp;:</span>
 </p>
-<p class="c8"><span class="c1">Contrat de location sign&eacute; entre le locataire et la SNC </span><span class="c1 c3">MARVIC 114</span>
+<p class="c8"><span class="c1">Contrat de location sign&eacute; entre le locataire et la SNC </span><span class="c1 c3">{{$SNC}}</span>
 </p>
 <p class="c8"><span class="c0">Il est donn&eacute; acte au CEDANT de cette remise</span></p>
 <p class="c8 c16"><span class="c0"></span></p>
@@ -1875,12 +1875,12 @@
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8"><span class="c0">Article 9&nbsp;: TRIBUNAUX COMPETENTS</span></p>
 <p class="c8 c16"><span class="c0"></span></p>
-<p class="c8"><span class="c0">La pr&eacute;sente cession est r&eacute;gie par le droit fran&ccedil;ais. Toute contestation relative &agrave; la validit&eacute;, l&rsquo;interpr&eacute;tation ou l&rsquo;ex&eacute;cution de la cession sera de la comp&eacute;tence des Tribunaux de Saint Denis de la R&eacute;union.</span>
+<p class="c8"><span class="c0">La pr&eacute;sente cession est r&eacute;gie par le droit fran&ccedil;ais. Toute contestation relative &agrave; la validit&eacute;, l&rsquo;interpr&eacute;tation ou l&rsquo;ex&eacute;cution de la cession sera de la comp&eacute;tence des Tribunaux de {{$RSC_VILLE_FOURNISSEUR}}  de la R&eacute;union.</span>
 </p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8 c16"><span class="c0"></span></p>
-<p class="c8"><span class="c1">Fait le </span><span class="c17 c1 c3">24/12/2018</span></p>
-<p class="c8"><span class="c0">A SAINTE CLOTILDE en 3 exemplaires originaux</span></p>
+<p class="c8"><span class="c1">Fait le </span><span class="c17 c1 c3">{{$DATE_DE_CONTRAT}}</span></p>
+<p class="c8"><span class="c0">A {{$VILLE_FOURNISSEUR}} en 3 exemplaires originaux</span></p>
 <p class="c14"><span class="c0"></span></p>
 <p class="c14" id="h.tyjcwt"><span class="c0"></span></p>
 <p class="c14"><span class="c0"></span></p>
@@ -1907,16 +1907,16 @@
 <p class="c25"><span class="c38 c17 c22">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
 <hr style="page-break-before:always;display:none;">
 <p class="c14"><span class="c38 c17 c22"></span></p>
-<p class="c8"><span class="c17 c1 c3">AUTOMOBILES REUNION SN</span></p>
-<p class="c8"><span class="c17 c1 c3">11, boulevard du Chaudron</span></p>
-<p class="c8"><span class="c1 c3">97490 SAINTE CLOTILDE</span></p>
+<p class="c8"><span class="c17 c1 c3">{{$FOURNISSEUR}}</span></p>
+<p class="c8"><span class="c17 c1 c3">{{$ADRESSE_FOURNISSEUR}}</span></p>
+<p class="c8"><span class="c1 c3">{{$CP_FOURNISSEUR}} {{$VILLE_FOURNISSEUR}}</span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8 c16"><span class="c0"></span></p>
 <p class="c8 c16"><span class="c0"></span></p>
-<p class="c8"><span class="c1">A </span><span class="c1 c3">SAINTE CLOTILDE</span><span class="c1">, le </span><span
-        class="c1 c3">24/12/2018</span></p>
+<p class="c8"><span class="c1">A </span><span class="c1 c3">{{$VILLE_FOURNISSEUR}}</span><span class="c1">, le </span><span
+        class="c1 c3">{{$DATE_DE_CONTRAT}}</span></p>
 <p class="c14"><span class="c2"></span></p>
 <p class="c14"><span class="c2"></span></p>
 <p class="c24 c16"><span class="c2"></span></p>
@@ -1925,42 +1925,42 @@
 <p class="c46" id="h.1t3h5sf"><span class="c13 c17 c22">ATTESTATION DE PAIEMENT ANTICIPE DES LOYERS DE L&rsquo;EXPLOITANT</span>
 </p>
 <p class="c27 c56"><span class="c13">DOSSIER N&deg; </span><span
-        class="c13 c3">1812012-REU &ndash; SNC MARVIC 114</span></p>
+        class="c13 c3">{{$N_DOSSIER}}-REU &ndash; SNC {{$SNC}}</span></p>
 <p class="c55 c16"><span class="c2"></span></p>
 <p class="c55"><span class="c2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
 <p class="c8 c16"><span class="c0"></span></p>
-<p class="c8"><span class="c1">La soci&eacute;t&eacute; </span><span class="c1 c3">AUTOMOBILES REUNION SN</span><span
-        class="c1">, </span><span class="c1 c3">SAS </span><span class="c1">au capital de </span><span class="c1 c3">&nbsp; 3 000 000 </span><span
-        class="c1">euros dont le si&egrave;ge social est sis au </span><span class="c1 c3">11, boulevard du Chaudron 97490 SAINTE CLOTILDE </span><span
+<p class="c8"><span class="c1">La soci&eacute;t&eacute; </span><span class="c1 c3">{{$FOURNISSEUR}}</span><span
+        class="c1">, </span><span class="c1 c3">{{$FORME_JURIDIQUE_FOURNISSEUR}} </span><span class="c1">au capital de </span><span class="c1 c3">&nbsp; {{$CAPITAL_FOURNISSEUR}}  </span><span
+        class="c1">euros dont le si&egrave;ge social est sis au </span><span class="c1 c3">{{$ADRESSE_FOURNISSEUR}} {{$CP_FOURNISSEUR}} {{$VILLE_FOURNISSEUR}} </span><span
         class="c1">immatricul&eacute;e au Registre du Commerce et des Soci&eacute;t&eacute;s de </span><span
-        class="c1 c3">SAINT DENIS</span><span class="c1">&nbsp;sous le num&eacute;ro </span><span class="c1 c3">479673451,</span><span
-        class="c1">&nbsp;repr&eacute;sent&eacute;e par </span><span class="c1 c3">Monsieur TEZENAS </span><span
-        class="c1">agissant en qualit&eacute; de </span><span class="c17 c1 c3">Directeur G&eacute;n&eacute;ral,</span>
+        class="c1 c3">{{$RSC_VILLE_FOURNISSEUR}} </span><span class="c1">&nbsp;sous le num&eacute;ro </span><span class="c1 c3">{{$SIREN_FOURNISSEUR}} ,</span><span
+        class="c1">&nbsp;repr&eacute;sent&eacute;e par </span><span class="c1 c3">{{$REPRESENTANT}}  </span><span
+        class="c1">agissant en qualit&eacute; de </span><span class="c17 c1 c3">{{$QUALITE_REPRESENTANT}},</span>
 </p>
 <p class="c8 c12"><span class="c0"></span></p>
 <p class="c8 c62"><span class="c1">Atteste par la pr&eacute;sente avoir per&ccedil;u de </span><span class="c1 c3">Monsieur ROBIQUET Alexis, Benoit</span><span
-        class="c1">, repr&eacute;sentant l&rsquo;entreprise </span><span class="c1 c3">ALEXIS ROBIQUET ET TRANSPORTS ET SERVICES EURL,</span><span
-        class="c1">&nbsp;au titre de la cession des loyers dus &agrave; la SNC </span><span class="c17 c1 c3">MARVIC 114.</span>
+        class="c1">, repr&eacute;sentant l&rsquo;entreprise </span><span class="c1 c3">{{$LOCATAIRE_RAISON_SOCIALE}},</span><span
+        class="c1">&nbsp;au titre de la cession des loyers dus &agrave; la SNC </span><span class="c17 c1 c3">{{$SNC}}.</span>
 </p>
 <p class="c8 c12"><span class="c0"></span></p>
 <p class="c8 c62"><span class="c0">La somme de&nbsp;:</span></p>
 <p class="c8 c12"><span class="c0"></span></p>
 <ul class="c5 lst-kix_list_5-0 start">
-    <li class="c8 c31 c62"><span class="c17 c1 c3">&nbsp;70 129,19 </span><span class="c0">euros pay&eacute;s par ch&egrave;que ou virement </span>
+    <li class="c8 c31 c62"><span class="c17 c1 c3">&nbsp;{{$RESTE_A_FINANCER}} </span><span class="c0">euros pay&eacute;s par ch&egrave;que ou virement </span>
     </li>
 </ul>
 <p class="c8 c12"><span class="c0"></span></p>
 <p class="c8 c12"><span class="c0"></span></p>
-<p class="c8 c62"><span class="c1">L&rsquo;investissement de l&rsquo;entreprise </span><span class="c1 c3">ALEXIS ROBIQUET ET TRANSPORTS ET SERVICES EURL </span><span
+<p class="c8 c62"><span class="c1">L&rsquo;investissement de l&rsquo;entreprise </span><span class="c1 c3">{{$LOCATAIRE_RAISON_SOCIALE}} </span><span
         class="c0">concerne le mat&eacute;riel neuf suivant&nbsp;:</span></p>
 <p class="c8 c12"><span class="c0"></span></p>
 <p class="c8 c62"><span class="c28 c3">- Un tracteur routier neuf de marque RENAULT de type C460 T4X2 E6</span></p>
 <p class="c8 c12"><span class="c0"></span></p>
 <p class="c8 c62"><span class="c1">Il est express&eacute;ment convenu que le paiement de la somme de </span><span
-        class="c1 c3">&nbsp;70 129,19 &euro; </span><span
-        class="c1">lib&egrave;re totalement la soci&eacute;t&eacute; </span><span class="c1 c3">ALEXIS ROBIQUET ET TRANSPORTS ET SERVICES EURL </span><span
-        class="c1">des sommes dues envers la SNC </span><span class="c1 c3">MARVIC 114 </span><span class="c1">au titre du contrat de location N&deg; </span><span
-        class="c1 c3">1812012-REU </span><span class="c1">en date du </span><span class="c1 c3">24/12/2018.</span></p>
+        class="c1 c3">&nbsp;{{$RESTE_A_FINANCER}} &euro; </span><span
+        class="c1">lib&egrave;re totalement la soci&eacute;t&eacute; </span><span class="c1 c3">{{$LOCATAIRE_RAISON_SOCIALE}} </span><span
+        class="c1">des sommes dues envers la SNC </span><span class="c1 c3">{{$SNC}} </span><span class="c1">au titre du contrat de location N&deg; </span><span
+        class="c1 c3">{{$N_DOSSIER}}-REU </span><span class="c1">en date du </span><span class="c1 c3">{{$DATE_DE_CONTRAT}}.</span></p>
 <p class="c8 c12"><span class="c0"></span></p>
 <p class="c8 c12"><span class="c0"></span></p>
 <p class="c8 c62"><span class="c0">La pr&eacute;sente attestation est &eacute;tablie pour servir et valoir ce que de droit</span>
@@ -1969,7 +1969,7 @@
 <p class="c8 c12"><span class="c0"></span></p>
 <p class="c8 c12"><span class="c0"></span></p>
 <p class="c8 c12"><span class="c0"></span></p>
-<p class="c8"><span class="c1">Pour le fournisseur </span><span class="c17 c1 c3">AUTOMOBILES REUNION SN</span></p>
+<p class="c8"><span class="c1">Pour le fournisseur </span><span class="c17 c1 c3">{{$FOURNISSEUR}}</span></p>
 <p class="c8 c62"><span class="c0">Signature et cachet</span></p>
 <p class="c14"><span class="c38 c17 c22"></span></p>
 <div><p class="c14"><span class="c17 c22 c61"></span></p></div>
