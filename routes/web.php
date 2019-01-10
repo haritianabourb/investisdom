@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Route::get('/00_PG', 'Investis\PGPDFController@generatePDF');
 Route::get('/01_mandat', 'Investis\MandatPDFController@generatePDF');
+Route::get('/02_el_cl', 'Investis\ELCLPDFController@generatePDF');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
