@@ -411,42 +411,42 @@
 </head>
 <body class="c13"><p class="c0" id="h.gjdgxs"><span class="c6 c12"></span></p>
 <p class="c10"><span class="c6 c14">ATTESTATION PROPRE ASSUREUR</span></p>
-<p class="c10"><span class="c17">DOSSIER N&deg; </span><span class="c9">1812009REU &ndash; SNC MARVIC 132</span></p>
+<p class="c10"><span class="c17">DOSSIER N° </span><span class="c9">{{$N_DOSSIER}}REU – SNC {{$SNC}}</span></p>
 <p class="c0"><span class="c6 c12"></span></p>
 <p class="c0"><span class="c6 c12"></span></p>
 <p class="c0"><span class="c6 c12"></span></p>
 <p class="c0"><span class="c6 c3"></span></p>
-<p class="c15" id="h.30j0zll"><span class="c3">Je soussign&eacute;(e) </span><span class="c1">Monsieur BEGUE &nbsp;Juliano</span><span
-        class="c3">, </span><span class="c1">Exploitant</span><span class="c2">&nbsp;</span><span class="c3">de la soci&eacute;t&eacute; </span><span
-        class="c1">BEGUE JULIANO</span><span class="c3">, </span><span class="c1">EI</span><span
-        class="c2">&nbsp;</span><span class="c3">au capital de</span><span class="c1">&nbsp;</span><span class="c2">&nbsp;</span><span
-        class="c3">&euro; dont le si&egrave;ge social est sis au </span><span class="c1">13 impasse des delphiniums 97430 LE TAMPON </span><span
-        class="c3">immatricul&eacute;e au </span><span class="c1">R&eacute;pertoire des M&eacute;tiers </span><span
-        class="c3">de </span><span class="c1">SAINT DENIS </span><span class="c3">sous le num&eacute;ro </span><span
-        class="c1 c8">792350522, </span></p>
+<p class="c15" id="h.30j0zll"><span class="c3">Je soussigné(e) </span><span class="c1">Monsieur BEGUE  {{$PRENOM}}</span><span
+        class="c3">, </span><span class="c1">{{$TITRE}}</span><span class="c2"> </span><span class="c3">de la société </span><span
+        class="c1">{{$LOCATAIRE_RAISON_SOCIALE}}</span><span class="c3">, </span><span class="c1">{{$FORME_JURIDIQUE}}</span><span
+        class="c2"> </span><span class="c3">au capital de</span><span class="c1"> </span><span class="c2"> </span><span
+        class="c3">€ dont le siège social est sis au </span><span class="c1">{{$ADRESSE}} {{$CP}} {{$VILLE}} </span><span
+        class="c3">immatriculée au </span><span class="c1">Répertoire des Métiers </span><span
+        class="c3">de </span><span class="c1">{{$RSC_VILLE}} </span><span class="c3">sous le numéro </span><span
+        class="c1 c8">{{$SIREN}}, </span></p>
 <p class="c5"><span class="c1 c8"></span></p>
-<p class="c15"><span class="c6 c3">Atteste &ecirc;tre mon propre assureur pour le mat&eacute;riel suivant&nbsp;:</span>
+<p class="c15"><span class="c6 c3">Atteste être mon propre assureur pour le matériel suivant :</span>
 </p>
 <p class="c5"><span class="c6 c7"></span></p>
 <ul class="c11 lst-kix_list_2-0 start">
-    <li class="c15 c16" id="h.1fob9te"><span class="c4">Un v&eacute;hicule utilitaire de marque MERCEDES type SPRINTER FOURGON 214CDI 39 Fourgon 3t</span>
+    <li class="c15 c16" id="h.1fob9te"><span class="c4">{{$MATERIEL}}</span>
     </li>
 </ul>
 <p class="c5"><span class="c6 c7"></span></p>
-<p class="c15"><span class="c3">Pris en location aupr&egrave;s de la SNC </span><span class="c1">MARVIC 132 </span><span
-        class="c6 c3">dans le cadre d&rsquo;un montage fiscal relevant du dispositif de d&eacute;fiscalisation LOI GIRARDIN codifi&eacute; &agrave; l&rsquo;article 199 undecies B du Code G&eacute;n&eacute;ral des Imp&ocirc;ts.</span>
+<p class="c15"><span class="c3">Pris en location auprès de la SNC </span><span class="c1">{{$SNC}} </span><span
+        class="c6 c3">dans le cadre d’un montage fiscal relevant du dispositif de défiscalisation LOI GIRARDIN codifié à l’article 199 undecies B du Code Général des Impôts.</span>
 </p>
 <p class="c5"><span class="c3 c6"></span></p>
-<p class="c15"><span class="c3">Par la pr&eacute;sente, je m&rsquo;engage irr&eacute;vocablement &agrave; remplacer ce mat&eacute;riel en cas de perte totale, de sinistre m&ecirc;me partiel ou de vol et plus g&eacute;n&eacute;ralement de toute cause qui pourrait &eacute;ventuellement remettre en cause les avantages fiscaux accord&eacute;s &agrave; la SNC </span><span
-        class="c1">MARVIC 132 </span><span class="c6 c3">et/ou &agrave; l&rsquo;ensemble de ces associ&eacute;s.</span>
+<p class="c15"><span class="c3">Par la présente, je m’engage irrévocablement à remplacer ce matériel en cas de perte totale, de sinistre même partiel ou de vol et plus généralement de toute cause qui pourrait éventuellement remettre en cause les avantages fiscaux accordés à la SNC </span><span
+        class="c1">{{$SNC}} </span><span class="c6 c3">et/ou à l’ensemble de ces associés.</span>
 </p>
 <p class="c5"><span class="c6 c3"></span></p>
 <p class="c5"><span class="c6 c3"></span></p>
-<p class="c15"><span class="c3">Fait &agrave; </span><span class="c1">LE TAMPON</span></p>
-<p class="c15" id="h.3znysh7"><span class="c3">Le </span><span class="c1 c8">24/12/2018</span></p>
+<p class="c15"><span class="c3">Fait à </span><span class="c1">{{$VILLE}}</span></p>
+<p class="c15" id="h.3znysh7"><span class="c3">Le </span><span class="c1 c8">{{$DATE_DE_CONTRAT}}</span></p>
 <p class="c5"><span class="c6 c3"></span></p>
-<p class="c15"><span class="c3">Pour </span><span class="c1 c8">BEGUE JULIANO</span></p>
-<p class="c15"><span class="c6 c3">Nom, pr&eacute;nom, qualit&eacute; du signataire </span></p>
+<p class="c15"><span class="c3">Pour </span><span class="c1 c8">{{$PRENOM}}</span></p>
+<p class="c15"><span class="c6 c3">Nom, prénom, qualité du signataire </span></p>
 <p class="c15"><span class="c6 c3">Signature et cachet</span></p>
 <p class="c5"><span class="c6 c3"></span></p>
 <p class="c5"><span class="c6 c3"></span></p>
