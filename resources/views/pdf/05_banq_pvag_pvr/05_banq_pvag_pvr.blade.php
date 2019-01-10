@@ -1991,103 +1991,103 @@
             text-align: left
         }</style>
 </head>
-<body class="c26"><p class="c14" id="h.gjdgxs"><span class="c24 c11">MARVIC 114 </span><span class="c5 c24">Soci&eacute;t&eacute; en Nom Collectif au capital de 100 euros</span>
+<body class="c26"><p class="c14" id="h.gjdgxs"><span class="c24 c11">{{$SNC}} </span><span class="c5 c24">Société en Nom Collectif au capital de 100 euros</span>
 </p>
-<p class="c14"><span class="c5 c24">Si&egrave;ge social : 62 Boulevard du Chaudron </span></p>
-<p class="c14"><span class="c24">RCS de SAINT DENIS n&deg; </span><span class="c24 c11">833090491</span></p>
+<p class="c14"><span class="c5 c24">Siège social : 62 Boulevard du Chaudron </span></p>
+<p class="c14"><span class="c24">RCS de SAINT DENIS n° </span><span class="c24 c11">{{$SIREN_SNC}}</span></p>
 <p class="c14"><span class="c5 c24">************************************</span></p>
 <p class="c14 c7"><span class="c5 c25"></span></p>
-<p class="c0"><span class="c12">PROCES-VERBAL DES D&Eacute;LIB&Eacute;RATIONS DE L &rsquo;ASSEMBL&Eacute;E G&Eacute;N&Eacute;RALE EXTRAORDINAIRE DU </span><span
-        class="c12 c28">18 d&eacute;cembre 2018</span></p>
+<p class="c0"><span class="c12">PROCES-VERBAL DES DÉLIBÉRATIONS DE L ’ASSEMBLÉE GÉNÉRALE EXTRAORDINAIRE DU </span><span
+        class="c12 c28">18 décembre 2018</span></p>
 <p class="c0 c7"><span class="c5 c12"></span></p>
-<p class="c0"><span class="c12">L&#39;an DEUX MILLE </span><span class="c12 c11">DIX HUIT</span><span
+<p class="c0"><span class="c12">L'an DEUX MILLE </span><span class="c12 c11">DIX HUIT</span><span
         class="c5 c12">,</span></p>
-<p class="c0"><span class="c12 c11">Le </span><span class="c12 c28">Mardi dix-huit &nbsp;DECEMBRE</span><span
+<p class="c0"><span class="c12 c11">Le </span><span class="c12 c28">Mardi dix-huit  DECEMBRE</span><span
         class="c8 c12">,</span></p>
 <p class="c0 c7"><span class="c5 c4"></span></p>
-<p class="c0"><span class="c5 c4">Les associ&eacute;s se sont r&eacute;unis au si&egrave;ge de la soci&eacute;t&eacute; en assembl&eacute;e g&eacute;n&eacute;rale sur convocation de la g&eacute;rance.</span>
+<p class="c0"><span class="c5 c4">Les associés se sont réunis au siège de la société en assemblée générale sur convocation de la gérance.</span>
 </p>
 <p class="c0 c7"><span class="c5 c4"></span></p>
-<p class="c0"><span class="c5 c4">Sont pr&eacute;sents ou repr&eacute;sent&eacute;s :</span></p>
+<p class="c0"><span class="c5 c4">Sont présents ou représentés :</span></p>
 <ul class="c18 lst-kix_list_3-0 start">
     <li class="c6"><span class="c5 c4">Christophe MONEL</span></li>
 </ul>
-<p class="c0"><span class="c5 c4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Repr&eacute;sentant 1 part en pleine propri&eacute;t&eacute; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;............ 1 part</span>
+<p class="c0"><span class="c5 c4">          Représentant 1 part en pleine propriété                                                          ............ 1 part</span>
 </p>
 <p class="c0 c7"><span class="c5 c4"></span></p>
 <ul class="c18 lst-kix_list_3-0">
-    <li class="c6"><span class="c5 c4">La soci&eacute;t&eacute; INVESTIS DOM</span></li>
+    <li class="c6"><span class="c5 c4">La société INVESTIS DOM</span></li>
 </ul>
-<p class="c0"><span class="c5 c4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Repr&eacute;sentant 999 parts en pleine propri&eacute;t&eacute; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;........... 999 parts</span>
+<p class="c0"><span class="c5 c4">          Représentant 999 parts en pleine propriété                                                         ........... 999 parts</span>
 </p>
 <p class="c0"><span class="c5 c4">Soit un total en apport de 1000 parts.</span></p>
 <p class="c0 c7"><span class="c4 c5"></span></p>
-<p class="c0"><span class="c5 c4">Tous les associ&eacute;s &eacute;tant pr&eacute;sents ou repr&eacute;sent&eacute;s, l&#39;assembl&eacute;e g&eacute;n&eacute;rale peut valablement d&eacute;lib&eacute;rer et en cons&eacute;quence, est d&eacute;clar&eacute;e r&eacute;guli&egrave;rement constitu&eacute;e.</span>
+<p class="c0"><span class="c5 c4">Tous les associés étant présents ou représentés, l'assemblée générale peut valablement délibérer et en conséquence, est déclarée régulièrement constituée.</span>
 </p>
 <p class="c0 c7"><span class="c5 c4"></span></p>
-<p class="c0"><span class="c5 c4">La soci&eacute;t&eacute; INVESTIS DOM repr&eacute;sent&eacute;e par Monsieur Christophe MONEL en qualit&eacute; de g&eacute;rant pr&eacute;side la s&eacute;ance.</span>
+<p class="c0"><span class="c5 c4">La société INVESTIS DOM représentée par Monsieur Christophe MONEL en qualité de gérant préside la séance.</span>
 </p>
 <p class="c0 c7"><span class="c5 c4"></span></p>
-<p class="c0"><span class="c5 c4">Le g&eacute;rant ouvre la s&eacute;ance et rappelle en premier lieu que le projet de proc&egrave;s-verbal de la pr&eacute;sente d&eacute;lib&eacute;ration, ainsi que tous les documents et informations relatifs &agrave; la nature et aux cons&eacute;quences financi&egrave;res, juridiques et fiscales des op&eacute;rations sociales soumises au vote de l&#39;assembl&eacute;e, ont &eacute;t&eacute; pr&eacute;alablement communiqu&eacute;s aux associ&eacute;s ci-avant nomm&eacute;s, ainsi que cela est constat&eacute;.</span>
+<p class="c0"><span class="c5 c4">Le gérant ouvre la séance et rappelle en premier lieu que le projet de procès-verbal de la présente délibération, ainsi que tous les documents et informations relatifs à la nature et aux conséquences financières, juridiques et fiscales des opérations sociales soumises au vote de l'assemblée, ont été préalablement communiqués aux associés ci-avant nommés, ainsi que cela est constaté.</span>
 </p>
 <p class="c0 c7"><span class="c5 c4"></span></p>
-<p class="c0"><span class="c5 c4">L&#39;assembl&eacute;e lui donne acte de cette communication pr&eacute;alable.</span>
+<p class="c0"><span class="c5 c4">L'assemblée lui donne acte de cette communication préalable.</span>
 </p>
 <p class="c0 c7"><span class="c5 c4"></span></p>
-<p class="c0"><span class="c5 c4">Le g&eacute;rant rappelle ensuite l&#39;ordre du jour :</span></p>
+<p class="c0"><span class="c5 c4">Le gérant rappelle ensuite l'ordre du jour :</span></p>
 <ul class="c18 lst-kix_list_4-0 start">
     <li class="c20"><span class="c5 c4">AUTORISATION DE PRET et de GAGE SANS DEPOSSESSION</span></li>
-    <li class="c20"><span class="c5 c4">D&eacute;l&eacute;gation de loyers de l&rsquo;entreprise </span><span
-            class="c8 c4">ALEXIS ROBIQUET ET TRANSPORTS ET SERVICES EURL </span><span class="c5 c4">aupr&egrave;s de l&rsquo;&eacute;tablissement de financement bancaire, avec clause de non recours contre la SNC </span><span
-            class="c8 c4">MARVIC 114 </span><span class="c5 c4">et la totalit&eacute; de ses associ&eacute;s.</span>
+    <li class="c20"><span class="c5 c4">Délégation de loyers de l’entreprise </span><span
+            class="c8 c4">{{$LOCATAIRE_RAISON_SOCIALE}} </span><span class="c5 c4">auprès de l’établissement de financement bancaire, avec clause de non recours contre la SNC </span><span
+            class="c8 c4">{{$SNC}} </span><span class="c5 c4">et la totalité de ses associés.</span>
     </li>
     <li class="c20"><span
-            class="c5 c4">D&eacute;l&eacute;gation d&rsquo;assurance des v&eacute;hicules en faveur de </span><span
-            class="c8 c4">SOFIDER</span></li>
-    <li class="c20"><span class="c5 c4">D&eacute;l&eacute;gation de pouvoir</span></li>
+            class="c5 c4">Délégation d’assurance des véhicules en faveur de </span><span
+            class="c8 c4">{{$FINANCEMENT}}</span></li>
+    <li class="c20"><span class="c5 c4">Délégation de pouvoir</span></li>
 </ul>
 <p class="c0 c7"><span class="c5 c4"></span></p>
-<p class="c0"><span class="c5 c4">Le g&eacute;rant ouvre la discussion. Diverses observations sont &eacute;chang&eacute;es. </span>
+<p class="c0"><span class="c5 c4">Le gérant ouvre la discussion. Diverses observations sont échangées. </span>
 </p>
-<p class="c0"><span class="c5 c4">Personne ne demandant plus la parole, le g&eacute;rant met aux voix successivement les r&eacute;solutions contenues dans l&#39;ordre du jour.</span>
+<p class="c0"><span class="c5 c4">Personne ne demandant plus la parole, le gérant met aux voix successivement les résolutions contenues dans l'ordre du jour.</span>
 </p>
 <p class="c0 c7"><span class="c5 c4"></span></p>
 <p class="c0"><span class="c5 c4">RESOLUTION UNIQUE :</span></p>
-<p class="c0"><span class="c5 c4">L&#39;assembl&eacute;e autorise :</span></p>
+<p class="c0"><span class="c5 c4">L'assemblée autorise :</span></p>
 <ul class="c18 lst-kix_list_5-0 start">
-    <li class="c20"><span class="c5 c4">La signature aupr&egrave;s de </span><span class="c8 c4">SOFIDER</span><span
-            class="c5 c4">, d&#39;un contrat de pr&ecirc;t incluant la clause de non recours contre la SNC </span><span
-            class="c8 c4">MARVIC 114 </span><span class="c5 c4">et la totalit&eacute; de ses associ&eacute;s d&#39;un montant de </span><span
-            class="c4 c8">123 931,76&euro; </span><span class="c5 c4">au taux de </span></li>
-    <li class="c20"><span class="c8 c4">4,00% </span><span class="c5 c4">(hors assurance), sollicit&eacute; dans le cadre du financement des investissements d&#39;un montant de </span><span
-            class="c8 c4">218 931,76 TTC </span><span class="c5 c4">&euro; destin&eacute;s &agrave; &ecirc;tre donn&eacute;s en location au locataire </span><span
-            class="c8 c4">ALEXIS ROBIQUET ET TRANSPORTS ET SERVICES EURL</span><span class="c5 c4">.</span></li>
-    <li class="c20"><span class="c5 c4">La signature aupr&egrave;s de la </span><span class="c8 c4">SOFIDER </span><span
-            class="c5 c4">d&rsquo;une d&eacute;l&eacute;gation de loyers, incluant la clause de non recours contre la SNC </span><span
-            class="c8 c4">MARVIC 114 </span><span class="c5 c4">et la totalit&eacute; de ses associ&eacute;s.</span>
+    <li class="c20"><span class="c5 c4">La signature auprès de </span><span class="c8 c4">{{$FINANCEMENT}}</span><span
+            class="c5 c4">, d'un contrat de prêt incluant la clause de non recours contre la SNC </span><span
+            class="c8 c4">{{$SNC}} </span><span class="c5 c4">et la totalité de ses associés d'un montant de </span><span
+            class="c4 c8">{{$RESTE_A_FINANCER}}€ </span><span class="c5 c4">au taux de </span></li>
+    <li class="c20"><span class="c8 c4">{{$TAUX}}% </span><span class="c5 c4">(hors assurance), sollicité dans le cadre du financement des investissements d'un montant de </span><span
+            class="c8 c4">{{$MONTANT_TTC}} TTC </span><span class="c5 c4">€ destinés à être donnés en location au locataire </span><span
+            class="c8 c4">{{$LOCATAIRE_RAISON_SOCIALE}}</span><span class="c5 c4">.</span></li>
+    <li class="c20"><span class="c5 c4">La signature auprès de la </span><span class="c8 c4">{{$FINANCEMENT}} </span><span
+            class="c5 c4">d’une délégation de loyers, incluant la clause de non recours contre la SNC </span><span
+            class="c8 c4">{{$SNC}} </span><span class="c5 c4">et la totalité de ses associés.</span>
     </li>
     <li class="c20"><span
-            class="c5 c4">Le nantissement du mat&eacute;riel et ou gage sans d&eacute;possession par le </span><span
-            class="c8 c4">SOFIDER.</span></li>
-    <li class="c20"><span class="c5 c4">La d&eacute;l&eacute;gation de pouvoir &agrave; </span><span class="c8 c4">&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip; </span><span
-            class="c5 c4">aux fins de signer tous les contrats de pr&ecirc;t et/ou de nantissement du mat&eacute;riel lou&eacute; d&eacute;crit ci-dessous et/ou de d&eacute;l&eacute;gation de loyers avec clause de non recours contre la SNC </span><span
-            class="c8 c4">MARVIC 114 </span><span class="c5 c4">et la totalit&eacute; de ses associ&eacute;s.</span>
+            class="c5 c4">Le nantissement du matériel et ou gage sans dépossession par le </span><span
+            class="c8 c4">{{$FINANCEMENT}}.</span></li>
+    <li class="c20"><span class="c5 c4">La délégation de pouvoir à </span><span class="c8 c4">……………………………………… </span><span
+            class="c5 c4">aux fins de signer tous les contrats de prêt et/ou de nantissement du matériel loué décrit ci-dessous et/ou de délégation de loyers avec clause de non recours contre la SNC </span><span
+            class="c8 c4">{{$SNC}} </span><span class="c5 c4">et la totalité de ses associés.</span>
     </li>
 </ul>
 <p class="c19 c7 c35"><span class="c5 c4"></span></p>
 <ul class="c18 lst-kix_list_18-0 start">
-    <li class="c0 c33"><span class="c8 c4">Un tracteur routier neuf de marque RENAULT de type C460 T4X2 E6 et une semi-benne aluminium neuve de marque KRAKKER de type FMA bach&eacute;e</span>
+    <li class="c0 c33"><span class="c8 c4">{{$MATERIEL}}</span>
     </li>
 </ul>
 <p class="c0 c7"><span class="c5 c4"></span></p>
-<p class="c0"><span class="c5 c4">Cette r&eacute;solution est mise aux voix, et adopt&eacute;e &agrave; l&#39;unanimit&eacute;. </span>
+<p class="c0"><span class="c5 c4">Cette résolution est mise aux voix, et adoptée à l'unanimité. </span>
 </p>
-<p class="c0"><span class="c5 c4">Plus rien n&#39;&eacute;tant &agrave; l&#39;ordre du jour, la s&eacute;ance est lev&eacute;e. </span>
+<p class="c0"><span class="c5 c4">Plus rien n'étant à l'ordre du jour, la séance est levée. </span>
 </p>
-<p class="c0"><span class="c5 c4">De tout ce que dessus, il a &eacute;t&eacute; dress&eacute; le pr&eacute;sent proc&egrave;s-verbal qui, apr&egrave;s relecture, a &eacute;t&eacute; sign&eacute; par les associ&eacute;s.</span>
+<p class="c0"><span class="c5 c4">De tout ce que dessus, il a été dressé le présent procès-verbal qui, après relecture, a été signé par les associés.</span>
 </p>
 <p class="c9 c7"><span class="c5 c4"></span></p>
-<p class="c9"><span class="c5 c4">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;INVESTIS DOM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Christophe MONEL</span>
+<p class="c9"><span class="c5 c4">                INVESTIS DOM                                        Christophe MONEL</span>
 </p>
 <hr style="page-break-before:always;display:none;">
 <p class="c9 c7"><span class="c5 c4"></span></p>
@@ -2098,106 +2098,106 @@
             title=""></span></p>
 <p class="c7 c14"><span class="c5 c29"></span></p>
 <p class="c14"><span class="c5 c29">POUVOIR DE MISE EN OEUVRE </span></p>
-<p class="c14"><span class="c37">DOSSIER N&deg; </span><span class="c37 c11">1812012-REU &ndash; SNC MARVIC 114</span>
+<p class="c14"><span class="c37">DOSSIER N° </span><span class="c37 c11">{{$N_DOSSIER}}-REU – SNC {{$SNC}}</span>
 </p>
 <p class="c0 c7"><span class="c2"></span></p>
 <p class="c0 c7"><span class="c2"></span></p>
-<p class="c0"><span class="c4">La SAS INVESTIS DOM, dont le repr&eacute;sentant permanent Monsieur Christophe MONEL, agissant en qualit&eacute; de G&eacute;ant de la SNC </span><span
-        class="c4 c11">MARVIC 114, </span><span class="c4">Soci&eacute;t&eacute; en Nom Collectif dont le si&egrave;ge social est Centre d&rsquo;affaires CADJEE &ndash; 62 boulevard du Chaudron &ndash; 97490 &ndash; SAINTE CLOTILDE, immatricul&eacute;e au Registre du Commerce et des Soci&eacute;t&eacute;s de SAINT DENIS sous le num&eacute;ro </span><span
-        class="c4 c11">833090491.</span></p>
+<p class="c0"><span class="c4">La SAS INVESTIS DOM, dont le représentant permanent Monsieur Christophe MONEL, agissant en qualité de Géant de la SNC </span><span
+        class="c4 c11">{{$SNC}}, </span><span class="c4">Société en Nom Collectif dont le siège social est Centre d’affaires CADJEE – 62 boulevard du Chaudron – 97490 – SAINTE CLOTILDE, immatriculée au Registre du Commerce et des Sociétés de SAINT DENIS sous le numéro </span><span
+        class="c4 c11">{{$SIREN_SNC}}.</span></p>
 <p class="c0 c7"><span class="c5 c21"></span></p>
-<p class="c0"><span class="c4">Connaissance prise du Proc&egrave;s-Verbal du </span><span
+<p class="c0"><span class="c4">Connaissance prise du Procès-Verbal du </span><span
         class="c12 c28">18/12/2018 </span><span class="c4">par lequel la SNC </span><span
-        class="c4 c11">MARVIC 114 </span><span class="c5 c4">autorise l&rsquo;acquisition de&nbsp;:</span></p>
+        class="c4 c11">{{$SNC}} </span><span class="c5 c4">autorise l’acquisition de :</span></p>
 <p class="c0 c7"><span class="c5 c4"></span></p>
-<p class="c0 c23"><span class="c8 c4">- Un tracteur routier neuf de marque RENAULT de type C460 T4X2 E6 et une semi-benne aluminium neuve de marque KRAKKER de type FMA bach&eacute;e</span>
+<p class="c0 c23"><span class="c8 c4">- {{$MATERIEL}}</span>
 </p>
 <p class="c0 c23 c7"><span class="c5 c21"></span></p>
-<p class="c0"><span class="c5 c4">Dans le cadre d&rsquo;un projet de financement &agrave; d&eacute;fiscalisation partag&eacute;e, sp&eacute;cifi&eacute; comme suit&nbsp;:</span>
+<p class="c0"><span class="c5 c4">Dans le cadre d’un projet de financement à défiscalisation partagée, spécifié comme suit :</span>
 </p>
 <p class="c0 c7"><span class="c5 c4"></span></p>
-<p class="c0"><span class="c4">L&rsquo;investissement est r&eacute;alis&eacute; au travers de la SNC </span><span
-        class="c4 c11">MARVIC 114 </span><span class="c4">pour un montant total de </span><span
-        class="c4 c11">218931,76 </span><span class="c5 c4">euros TTC dont le financement est compos&eacute; :</span>
+<p class="c0"><span class="c4">L’investissement est réalisé au travers de la SNC </span><span
+        class="c4 c11">{{$SNC}} </span><span class="c4">pour un montant total de </span><span
+        class="c4 c11">{{$MONTANT_TTC}} </span><span class="c5 c4">euros TTC dont le financement est composé :</span>
 </p>
 <p class="c0 c7"><span class="c5 c4"></span></p>
 <ul class="c18 lst-kix_list_14-0 start">
-    <li class="c0 c32"><span class="c5 c4">Par l&rsquo;apport d&rsquo;investisseurs et de la TVA se rapportant &agrave; l&rsquo;investissement&nbsp;d&rsquo;un montant de </span><span
-            class="c8 c4">78500,00 euros&nbsp;</span><span class="c5 c4">;</span></li>
-    <li class="c0 c32"><span class="c5 c4">Par l&rsquo;apport du locataire </span><span class="c8 c4">EURL ALEXIS ROBIQUET ET TRANSPORTS ET SERVICES EURL </span><span
-            class="c5 c4">d&rsquo;un montant </span><span class="c8 c4">16500,00 </span><span
+    <li class="c0 c32"><span class="c5 c4">Par l’apport d’investisseurs et de la TVA se rapportant à l’investissement d’un montant de </span><span
+            class="c8 c4">{{$APPORT_SNC}} euros </span><span class="c5 c4">;</span></li>
+    <li class="c0 c32"><span class="c5 c4">Par l’apport du locataire </span><span class="c8 c4">EURL {{$LOCATAIRE_RAISON_SOCIALE}} </span><span
+            class="c5 c4">d’un montant </span><span class="c8 c4">{{$APPORT_LOCATAIRE}} </span><span
             class="c5 c4">euros ;</span></li>
 </ul>
 <ul class="c18 lst-kix_list_5-0">
-    <li class="c20"><span class="c5 c4">Par la mise en place d&rsquo;un pr&ecirc;t de </span><span class="c8 c4">123 931,76 </span><span
-            class="c5 c4">euros contract&eacute; aupr&egrave;s de </span><span class="c8 c4">SOFIDER</span><span
-            class="c5 c4">, sur une dur&eacute;e de </span><span class="c8 c4">60 </span><span class="c5 c4">mois au taux de </span><span
-            class="c8 c4">4,00%</span></li>
+    <li class="c20"><span class="c5 c4">Par la mise en place d’un prêt de </span><span class="c8 c4">{{$RESTE_A_FINANCER}} </span><span
+            class="c5 c4">euros contracté auprès de </span><span class="c8 c4">{{$FINANCEMENT}}</span><span
+            class="c5 c4">, sur une durée de </span><span class="c8 c4">60 </span><span class="c5 c4">mois au taux de </span><span
+            class="c8 c4">{{$TAUX}}%</span></li>
 </ul>
 <ul class="c18 lst-kix_list_14-0">
     <li class="c0 c32"><span
-            class="c5 c4">&nbsp;(hors assurance) pour une &eacute;ch&eacute;ance mensuelle de </span><span
-            class="c8 c4">&nbsp; 2 282,39 </span><span class="c5 c4">euros.</span></li>
+            class="c5 c4"> (hors assurance) pour une échéance mensuelle de </span><span
+            class="c8 c4">  {{$ECHEANCE_LOYER_HT}} </span><span class="c5 c4">euros.</span></li>
 </ul>
 <p class="c0 c7"><span class="c5 c4"></span></p>
-<p class="c0"><span class="c5 c4">Le pr&ecirc;t est accord&eacute; avec les garanties suivantes&nbsp;:</span></p>
+<p class="c0"><span class="c5 c4">Le prêt est accordé avec les garanties suivantes :</span></p>
 <ul class="c18 lst-kix_list_5-0">
     <li class="c20"><span
-            class="c5 c4">Le nantissement du mat&eacute;riel et ou le gage sans d&eacute;possession par le</span><span
-            class="c8 c4">&nbsp;SOFIDER.</span></li>
+            class="c5 c4">Le nantissement du matériel et ou le gage sans dépossession par le</span><span
+            class="c8 c4"> {{$FINANCEMENT}}.</span></li>
 </ul>
 <ul class="c18 lst-kix_list_12-0 start">
-    <li class="c0 c33"><span class="c5 c4">D&eacute;l&eacute;gation de loyers de l&rsquo;entreprise </span><span
-            class="c8 c4">EURL ALEXIS ROBIQUET ET TRANSPORTS ET SERVICES EURL </span><span class="c5 c4">aupr&egrave;s de l&rsquo;&eacute;tablissement de financement bancaire, avec clause de non recours contre la SNC &nbsp;</span><span
-            class="c8 c4">MARVIC 114 </span><span class="c5 c4">et la totalit&eacute; de ses associ&eacute;s.</span>
+    <li class="c0 c33"><span class="c5 c4">Délégation de loyers de l’entreprise </span><span
+            class="c8 c4">EURL {{$LOCATAIRE_RAISON_SOCIALE}} </span><span class="c5 c4">auprès de l’établissement de financement bancaire, avec clause de non recours contre la SNC  </span><span
+            class="c8 c4">{{$SNC}} </span><span class="c5 c4">et la totalité de ses associés.</span>
     </li>
     <li class="c0 c33"><span
-            class="c5 c4">D&eacute;l&eacute;gation d&rsquo;assurance des mat&eacute;riels en faveur de </span><span
-            class="c8 c4">SOFIDER.</span></li>
+            class="c5 c4">Délégation d’assurance des matériels en faveur de </span><span
+            class="c8 c4">{{$FINANCEMENT}}.</span></li>
 </ul>
 <p class="c0 c19 c7"><span class="c5 c4"></span></p>
-<p class="c0"><span class="c4">La SNC </span><span class="c4 c11">MARVIC 114 </span><span class="c4">donne en location le mat&eacute;riel susmentionn&eacute; &agrave; </span><span
-        class="c4 c11">EURL ALEXIS ROBIQUET ET TRANSPORTS ET SERVICES EURL </span><span class="c4">pour un loyer mensuel de </span><span
-        class="c4 c11">2282,39 </span><span class="c4">euros HT sur une dur&eacute;e de </span><span
+<p class="c0"><span class="c4">La SNC </span><span class="c4 c11">{{$SNC}} </span><span class="c4">donne en location le matériel susmentionné à </span><span
+        class="c4 c11">EURL {{$LOCATAIRE_RAISON_SOCIALE}} </span><span class="c4">pour un loyer mensuel de </span><span
+        class="c4 c11">2282,39 </span><span class="c4">euros HT sur une durée de </span><span
         class="c4 c11">60 </span><span class="c5 c4">mois.</span></p>
 <p class="c0 c7"><span class="c5 c4"></span></p>
-<p class="c0"><span class="c4">Les frais de dossier relatifs au pr&ecirc;t contract&eacute; avec le </span><span
-        class="c4 c11">SOFIDER </span><span class="c4">sont &agrave; la charge du locataire </span><span class="c4 c11">EURL ALEXIS ROBIQUET ET TRANSPORTS ET SERVICES EURL.</span>
+<p class="c0"><span class="c4">Les frais de dossier relatifs au prêt contracté avec le </span><span
+        class="c4 c11">{{$FINANCEMENT}} </span><span class="c4">sont à la charge du locataire </span><span class="c4 c11">EURL {{$LOCATAIRE_RAISON_SOCIALE}}.</span>
 </p>
 <p class="c0 c7"><span class="c5 c4"></span></p>
-<p class="c0"><span class="c4">L&rsquo;entreprise</span><span class="c4 c11">&nbsp;EURL ALEXIS ROBIQUET ET TRANSPORTS ET SERVICES EURL </span><span
-        class="c5 c4">est inform&eacute;e des garanties li&eacute;es au financement.</span></p>
+<p class="c0"><span class="c4">L’entreprise</span><span class="c4 c11"> EURL {{$LOCATAIRE_RAISON_SOCIALE}} </span><span
+        class="c5 c4">est informée des garanties liées au financement.</span></p>
 <p class="c0 c7"><span class="c5 c4"></span></p>
-<p class="c0"><span class="c4">Donne en tant que de besoin pouvoir aux fins de signer tous les contrats de pr&ecirc;t, de d&eacute;l&eacute;gation de loyers, tous actes de garanties se r&eacute;f&eacute;rant &agrave; l&rsquo;investissement pr&eacute;cit&eacute; ainsi que l&rsquo;ouverture d&rsquo;un compte dans les livres de </span><span
-        class="c4 c11">SOFIDER </span><span class="c4">au nom de la SNC </span><span class="c8 c4">MARVIC 114.</span>
+<p class="c0"><span class="c4">Donne en tant que de besoin pouvoir aux fins de signer tous les contrats de prêt, de délégation de loyers, tous actes de garanties se référant à l’investissement précité ainsi que l’ouverture d’un compte dans les livres de </span><span
+        class="c4 c11">{{$FINANCEMENT}} </span><span class="c4">au nom de la SNC </span><span class="c8 c4">{{$SNC}}.</span>
 </p>
 <p class="c0 c7"><span class="c5 c4"></span></p>
 <ul class="c18 lst-kix_list_15-0 start">
     <li class="c0 c33"><span
-            class="c5 c4">Signer tout proc&egrave;s-verbal de livraison ou de prise en charge&nbsp;;</span></li>
+            class="c5 c4">Signer tout procès-verbal de livraison ou de prise en charge ;</span></li>
     <li class="c0 c33"><span class="c5 c4">Signer tout contrat de location ;</span></li>
-    <li class="c0 c33"><span class="c5 c4">Signer toute promesse de rachat du mat&eacute;riel ou promesse de cession de droits sociaux ;</span>
+    <li class="c0 c33"><span class="c5 c4">Signer toute promesse de rachat du matériel ou promesse de cession de droits sociaux ;</span>
     </li>
-    <li class="c0 c33"><span class="c5 c4">Signer tout contrat de pr&ecirc;t n&eacute;cessaire au financement du mat&eacute;riel et tout engagement ou cautionnement r&eacute;el sous forme de gage ou de nantissement en garantie de pr&ecirc;ts bancaires ;</span>
+    <li class="c0 c33"><span class="c5 c4">Signer tout contrat de prêt nécessaire au financement du matériel et tout engagement ou cautionnement réel sous forme de gage ou de nantissement en garantie de prêts bancaires ;</span>
     </li>
     <li class="c0 c33"><span
-            class="c5 c4">Signer toute convention tripartite de d&eacute;l&eacute;gation de loyers ;</span></li>
-    <li class="c0 c33"><span class="c5 c4">D&eacute;poser et signer toute demande de subvention ;</span></li>
-    <li class="c0 c33"><span class="c5 c4">Accomplir toute d&eacute;marche pour l&#39;immatriculation des mat&eacute;riels assujettis &agrave; cette formalit&eacute;,</span>
+            class="c5 c4">Signer toute convention tripartite de délégation de loyers ;</span></li>
+    <li class="c0 c33"><span class="c5 c4">Déposer et signer toute demande de subvention ;</span></li>
+    <li class="c0 c33"><span class="c5 c4">Accomplir toute démarche pour l'immatriculation des matériels assujettis à cette formalité,</span>
     </li>
 </ul>
 <p class="c0 c7"><span class="c5 c4"></span></p>
-<p class="c0"><span class="c5 c4">Ce pouvoir est conf&eacute;r&eacute; sous les r&eacute;serves suivantes&nbsp;:</span>
+<p class="c0"><span class="c5 c4">Ce pouvoir est conféré sous les réserves suivantes :</span>
 </p>
 <p class="c0 c7"><span class="c5 c4"></span></p>
 <ul class="c18 lst-kix_list_16-0 start">
-    <li class="c20"><span class="c5 c4">De la mention d&rsquo;une clause de non recours &agrave; l&rsquo;encontre de la SNC </span><span
-            class="c8 c4">MARVIC 114 </span><span class="c5 c4">et de la totalit&eacute; de ses associ&eacute;s dans le contrat de pr&ecirc;t</span>
+    <li class="c20"><span class="c5 c4">De la mention d’une clause de non recours à l’encontre de la SNC </span><span
+            class="c8 c4">{{$SNC}} </span><span class="c5 c4">et de la totalité de ses associés dans le contrat de prêt</span>
     </li>
-    <li class="c33 c38"><span class="c5 c4">De la signature simultan&eacute;e d&rsquo;une convention de cession de loyers</span>
+    <li class="c33 c38"><span class="c5 c4">De la signature simultanée d’une convention de cession de loyers</span>
     </li>
 </ul>
-<p class="c0"><span class="c5 c4">Faute de quoi, le pr&eacute;sent pouvoir serait consid&eacute;r&eacute; comme nul et non avenu </span>
+<p class="c0"><span class="c5 c4">Faute de quoi, le présent pouvoir serait considéré comme nul et non avenu </span>
 </p>
 <p class="c0 c7"><span class="c5 c4"></span></p>
 <p class="c0 c7"><span class="c5 c4"></span></p>
@@ -2205,29 +2205,29 @@
 <p class="c0"><span class="c4">Le </span><span class="c12 c28">18/12/2018</span></p>
 <hr style="page-break-before:always;display:none;">
 <p class="c9 c7"><span class="c8 c12"></span></p>
-<p class="c14 c19"><span class="c2">ATTESTATION D&Eacute;P&Ocirc;T DOSSIER </span><span class="c5 c22">N</span><span
-        class="c5 c29">&deg; </span><span class="c8 c22">1812012-REU &ndash; SNC MARVIC 114</span></p>
+<p class="c14 c19"><span class="c2">ATTESTATION DÉPÔT DOSSIER </span><span class="c5 c22">N</span><span
+        class="c5 c29">° </span><span class="c8 c22">{{$N_DOSSIER}}-REU – SNC {{$SNC}}</span></p>
 <p class="c14 c7"><span class="c2"></span></p>
 <p class="c14 c7"><span class="c5 c13"></span></p>
-<p class="c14"><span class="c8 c17">SOFIDER</span></p>
+<p class="c14"><span class="c8 c17">{{$FINANCEMENT}}</span></p>
 <p class="c9 c7"><span class="c3"></span></p>
-<p class="c9"><span class="c15">SNC : </span><span class="c8 c15">MARVIC 114</span></p>
+<p class="c9"><span class="c15">SNC : </span><span class="c8 c15">{{$SNC}}</span></p>
 <p class="c9 c7"><span class="c3"></span></p>
 <p class="c9"><span class="c15">LOCATAIRE : </span><span
-        class="c15 c11">ALEXIS ROBIQUET ET TRANSPORTS ET SERVICES EURL</span></p>
+        class="c15 c11">{{$LOCATAIRE_RAISON_SOCIALE}}</span></p>
 <p class="c9 c7"><span class="c3"></span></p>
-<p class="c9"><span class="c15">FOURNISSEUR : </span><span class="c15 c11">SCIME &amp; RENAULT</span></p>
+<p class="c9"><span class="c15">FOURNISSEUR : </span><span class="c15 c11">{{$FOURNISSEUR}}</span></p>
 <p class="c9 c7"><span class="c3"></span></p>
-<p class="c9"><span class="c15">N&deg; DE DOSSIER : </span><span class="c11 c15">1812012REU</span></p>
+<p class="c9"><span class="c15">N° DE DOSSIER : </span><span class="c11 c15">{{$N_DOSSIER}}REU</span></p>
 <p class="c14 c7"><span class="c3"></span></p>
 <p class="c9 c7"><span class="c3"></span></p>
 <p class="c9 c7"><span class="c3"></span></p>
 <p class="c9 c7"><span class="c3"></span></p>
-<p class="c9"><span class="c3">Liste des pi&egrave;ces remises&nbsp;: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<p class="c9"><span class="c3">Liste des pièces remises :                                </span>
 </p>
 <p class="c0 c7"><span class="c5 c21"></span></p>
 <ul class="c18 lst-kix_list_19-0 start">
-    <li class="c1"><span class="c3">Accord de financement&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    <li class="c1"><span class="c3">Accord de financement                                        </span>
     </li>
     <li class="c1"><span class="c3">Kbis SNC</span></li>
     <li class="c1"><span class="c3">Pouvoir SNC</span></li>
@@ -2235,30 +2235,30 @@
     <li class="c1"><span class="c3">Kbis fournisseur</span></li>
     <li class="c1"><span class="c3">RIB fournisseur</span></li>
     <li class="c1"><span class="c3">Contrat de location</span></li>
-    <li class="c1"><span class="c3">Promesse d&rsquo;achat</span></li>
+    <li class="c1"><span class="c3">Promesse d’achat</span></li>
     <li class="c1"><span class="c3">Attestation de non fraude</span></li>
     <li class="c1"><span class="c3">PV livraison</span></li>
     <li class="c1"><span class="c3">Facture</span></li>
-    <li class="c1"><span class="c3">Attestation d&rsquo;apport locataire</span></li>
+    <li class="c1"><span class="c3">Attestation d’apport locataire</span></li>
     <li class="c1"><span class="c3">Attestation de versement des fonds des investisseurs</span></li>
     <li class="c1"><span class="c3">CPI / CG</span></li>
-    <li class="c1"><span class="c3">D&eacute;l&eacute;gation d&rsquo;assurance</span></li>
+    <li class="c1"><span class="c3">Délégation d’assurance</span></li>
 </ul>
 <p class="c9 c7"><span class="c3"></span></p>
-<p class="c9"><span class="c3">Autres Pi&egrave;ces :</span></p>
+<p class="c9"><span class="c3">Autres Pièces :</span></p>
 <p class="c9 c7"><span class="c3"></span></p>
 <ul class="c18 lst-kix_list_20-0 start">
-    <li class="c1"><span class="c3">&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;</span>
+    <li class="c1"><span class="c3">…………………………………………………………………</span>
     </li>
 </ul>
 <p class="c9 c7"><span class="c3"></span></p>
 <ul class="c18 lst-kix_list_20-0">
-    <li class="c1"><span class="c3">&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;</span>
+    <li class="c1"><span class="c3">…………………………………………………………………</span>
     </li>
 </ul>
 <p class="c9 c7"><span class="c3"></span></p>
 <ul class="c18 lst-kix_list_20-0">
-    <li class="c1"><span class="c3">&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;</span>
+    <li class="c1"><span class="c3">…………………………………………………………………</span>
     </li>
 </ul>
 <p class="c9 c7"><span class="c3"></span></p>
@@ -2266,17 +2266,17 @@
 <p class="c9"><span class="c3">Observations :</span></p>
 <p class="c9 c7"><span class="c3"></span></p>
 <ul class="c18 lst-kix_list_21-0 start">
-    <li class="c1"><span class="c3">&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;</span>
+    <li class="c1"><span class="c3">…………………………………………………………………</span>
     </li>
 </ul>
 <p class="c9 c7"><span class="c3"></span></p>
 <ul class="c18 lst-kix_list_21-0">
-    <li class="c1"><span class="c3">&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;</span>
+    <li class="c1"><span class="c3">…………………………………………………………………</span>
     </li>
 </ul>
 <p class="c9 c7"><span class="c3"></span></p>
 <ul class="c18 lst-kix_list_21-0">
-    <li class="c1"><span class="c3">&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;&hellip;</span>
+    <li class="c1"><span class="c3">…………………………………………………………………</span>
     </li>
 </ul>
 <p class="c9 c7"><span class="c3"></span></p>
@@ -2285,28 +2285,28 @@
 <p class="c9 c7"><span class="c3"></span></p>
 <p class="c9 c7"><span class="c3"></span></p>
 <p class="c9 c7"><span class="c3"></span></p>
-<p class="c9"><span class="c3">Date de d&eacute;p&ocirc;t du dossier complet : &hellip;&hellip;&hellip;&hellip;&hellip;&hellip;.</span>
+<p class="c9"><span class="c3">Date de dépôt du dossier complet : ……………….</span>
 </p>
 <p class="c9 c7"><span class="c3"></span></p>
 <p class="c9 c7"><span class="c3"></span></p>
 <p class="c9 c7"><span class="c3"></span></p>
 <p class="c9 c7"><span class="c3"></span></p>
-<p class="c9"><span class="c3">Visa SNC &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;Visa BANQUE</span>
+<p class="c9"><span class="c3">Visa SNC                                                                                                Visa BANQUE</span>
 </p>
 <hr style="page-break-before:always;display:none;">
 <p class="c9 c7"><span class="c3"></span></p>
 <p class="c14 c19"><span class="c2">ACTE CAUTION</span></p>
 <p class="c16 c7"><span class="c5 c27"></span></p>
-<p class="c16"><span class="c10 c30">&lt;&lt; &nbsp; Apr&egrave;s avoir pris connaissance de toutes les conditions de l&#39;offre pr&eacute;alable dont j&#39;ai re&ccedil;u un exemplaire.</span>
+<p class="c16"><span class="c10 c30"><<   Après avoir pris connaissance de toutes les conditions de l'offre préalable dont j'ai reçu un exemplaire.</span>
 </p>
-<p class="c16"><span class="c10">En me portant caution de la SNC </span><span class="c10 c11">MARVIC 114 </span><span
-        class="c10">dans la limite de la somme de </span><span class="c27 c11">136 943,52</span><span class="c10 c11">&nbsp;euros </span><span
-        class="c10">(en chiffres et en lettres) couvrant le paiement du principal, des int&eacute;r&ecirc;ts et, le cas &eacute;ch&eacute;ant, des p&eacute;nalit&eacute;s ou int&eacute;r&ecirc;ts de retard et pour la dur&eacute;e de </span><span
-        class="c10 c11">60 </span><span class="c10">mois, je m&#39;engage &agrave; rembourser au pr&ecirc;teur les sommes dues sur mes revenus et mes biens si la SNC </span><span
-        class="c10 c11">MARVIC 114 </span><span class="c10 c30">n&rsquo;y satisfait pas elle-m&ecirc;me.</span></p>
-<p class="c16"><span class="c10">En renon&ccedil;ant au b&eacute;n&eacute;fice de discussion d&eacute;fini &agrave; l&#39;article 2298 du Code Civil et en m&#39;obligeant solidairement avec la SNC </span><span
-        class="c10 c11">MARVIC 114</span><span class="c10">, je m&rsquo;engage &agrave; rembourser le cr&eacute;ancier sans pouvoir exiger qu&#39;il poursuive pr&eacute;alablement la SNC </span><span
-        class="c10 c11">MARVIC 114 &nbsp;</span><span class="c10">&gt;&gt;</span></p>
+<p class="c16"><span class="c10">En me portant caution de la SNC </span><span class="c10 c11">{{$SNC}} </span><span
+        class="c10">dans la limite de la somme de </span><span class="c27 c11">{{$CUMUL_LOYERS_HT}}</span><span class="c10 c11"> euros </span><span
+        class="c10">(en chiffres et en lettres) couvrant le paiement du principal, des intérêts et, le cas échéant, des pénalités ou intérêts de retard et pour la durée de </span><span
+        class="c10 c11">60 </span><span class="c10">mois, je m'engage à rembourser au prêteur les sommes dues sur mes revenus et mes biens si la SNC </span><span
+        class="c10 c11">{{$SNC}} </span><span class="c10 c30">n’y satisfait pas elle-même.</span></p>
+<p class="c16"><span class="c10">En renonçant au bénéfice de discussion défini à l'article 2298 du Code Civil et en m'obligeant solidairement avec la SNC </span><span
+        class="c10 c11">{{$SNC}}</span><span class="c10">, je m’engage à rembourser le créancier sans pouvoir exiger qu'il poursuive préalablement la SNC </span><span
+        class="c10 c11">{{$SNC}}  </span><span class="c10">>></span></p>
 <p class="c9 c19 c7"><span class="c2"></span></p>
 <p class="c16 c7"><span class="c5 c27"></span></p>
 <p class="c16 c7"><span class="c5 c27"></span></p>

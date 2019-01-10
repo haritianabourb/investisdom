@@ -23,6 +23,7 @@ Route::get('/03_el_acc', 'Investis\ELACCPDFController@generatePDF');
 Route::get('/03_soc_acc', 'Investis\SOCACCPDFController@generatePDF');
 Route::get('/04_banq_fact_frais', 'Investis\BanqFactFraisPDFController@generatePDF');
 Route::get('/04_cash_fact_tva', 'Investis\CashFactFraisPDFController@generatePDF');
+Route::get('/05_banq_pvag_pvr', 'Investis\BanqPvagPvrPDFController@generatePDF');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
