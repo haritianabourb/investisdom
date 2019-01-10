@@ -45,7 +45,7 @@ class ReservationObserver
           ."/".$reservation->id;
 
         // XXX little hack to not thrown the saving event for calculations
-        DB::table($reservation->getTable())->where('id', $reservation->id)->update(['identifiant' => $identifiant]);
+        DB::table($reservation->getTable())->where('id', $reservation->id)->update(['identifiant' => $identifiant, "user_created_id" => \Auth::user()->id]);
 
         // TODO Pdf process
         $reservation->generatePdf();
@@ -74,6 +74,10 @@ class ReservationObserver
                 $reservation->$key = $item;
             }
         });
+
+        $reservation->user_id = \Auth::user()->id;
+        // TODO make this for better fill, maybe had a log too
+        $reservation->user_updated_id = \Auth::user()->id;
 
         $reservation->generatePdf();
 
