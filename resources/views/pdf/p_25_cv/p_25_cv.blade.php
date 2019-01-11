@@ -1802,191 +1802,191 @@
 <p class="c10"><span class="c9">CONTRAT DE VENTE DE MATERIEL AVANT MISE EN EXPLOITATON</span></p>
 <p class="c10 c15 c26"><span class="c21 c20 c19"></span></p>
 <p class="c2 c15"><span class="c6 c19 c21"></span></p>
-<p class="c2"><span class="c6 c14">ENTRE LES SOUSSIGNES</span><span class="c5">&nbsp;:</span></p>
+<p class="c2"><span class="c6 c14">ENTRE LES SOUSSIGNES</span><span class="c5"> :</span></p>
 <p class="c2 c15"><span class="c1"></span></p>
-<p class="c4"><span class="c6 c19">La soci&eacute;t&eacute; </span><span class="c3">JEAN DAVID LAVERIE SARL</span><span
-        class="c6 c19">, </span><span class="c3">au capital de 1000 </span><span class="c6 c19">euros dont le si&egrave;ge social est sis au </span><span
-        class="c3">192, rue du G&eacute;n&eacute;ral de Gaulle 97434 SAINT GILLES LES BAINS</span><span class="c6 c19">, immatricul&eacute;e au </span><span
-        class="c3">Registre du Commerce et des Soci&eacute;t&eacute;s</span><span class="c6 c19">&nbsp;de </span><span
-        class="c3">SAINT DENIS </span><span class="c6 c19">sous le num&eacute;ro </span><span
-        class="c3">512831918 </span><span class="c6 c19">repr&eacute;sent&eacute;e par </span><span class="c3">Monsieur MILLET Patrick </span><span
-        class="c6 c19">agissant en qualit&eacute; de G&eacute;rant,</span></p>
+<p class="c4"><span class="c6 c19">La société </span><span class="c3">{{$LOCATAIRE_RAISON_SOCIALE}} {{$FORME_JURIDIQUE}}</span><span
+        class="c6 c19">, </span><span class="c3">au capital de {{$CAPITAL}} </span><span class="c6 c19">euros dont le siège social est sis au </span><span
+        class="c3">{{$ADRESSE}} {{$CP}} {{$VILLE}}</span><span class="c6 c19">, immatriculée au </span><span
+        class="c3">{{$RSCRM_LONG}}</span><span class="c6 c19"> de </span><span
+        class="c3">{{$RCS_VILLE}} </span><span class="c6 c19">sous le numéro </span><span
+        class="c3">{{$SIREN}} </span><span class="c6 c19">représentée par </span><span class="c3">{{$CIVILITE}} {{$NOM}} {{$PRENOM}} </span><span
+        class="c6 c19">agissant en qualité de Gérant,</span></p>
 <p class="c0"><span class="c1"></span></p>
-<p class="c2"><span class="c6">Ci-apr&egrave;s d&eacute;nomm&eacute;e le &quot;</span><span
-        class="c20">VENDEUR</span><span class="c6">&quot;, d&#39;une part,</span></p>
+<p class="c2"><span class="c6">Ci-après dénommée le "</span><span
+        class="c20">VENDEUR</span><span class="c6">", d'une part,</span></p>
 <p class="c2 c15"><span class="c1"></span></p>
 <p class="c2"><span class="c1">Et :</span></p>
 <p class="c2 c15"><span class="c1"></span></p>
-<p class="c4"><span class="c6">La soci&eacute;t&eacute; </span><span class="c3">MARVIC 128</span><span class="c6">, Soci&eacute;t&eacute; en Nom Collectif (SNC) au capital de 100 euros, dont le si&egrave;ge social est situ&eacute; 62 boulevard du chaurdon - &nbsp;97490 SAINTE-CLOTILDE, immatricul&eacute;e au Registre du Commerce et des Soci&eacute;t&eacute;s de </span><span
-        class="c3">SAINT DENIS</span><span class="c6">, sous le num&eacute;ro </span><span
-        class="c3">843480088 </span><span class="c6">repr&eacute;sent&eacute;e par son G&eacute;rant, INVESTIS DOM, dont le </span><span
-        class="c6 c19">repr&eacute;sentant l&eacute;gal </span><span class="c1">est Monsieur Christophe MONEL,</span>
+<p class="c4"><span class="c6">La société </span><span class="c3">{{$SNC}}</span><span class="c6">, Société en Nom Collectif (SNC) au capital de 100 euros, dont le siège social est situé 62 boulevard du chaurdon -  97490 SAINTE-CLOTILDE, immatriculée au {{$RSCRM_LONG}} de </span><span
+        class="c3">{{$RCS_VILLE}}</span><span class="c6">, sous le numéro </span><span
+        class="c3">{{$SIREN_SNC}} </span><span class="c6">représentée par son Gérant, INVESTIS DOM, dont le </span><span
+        class="c6 c19">représentant légal </span><span class="c1">est {{$CIVILITE}} Christophe MONEL,</span>
 </p>
 <p class="c2 c15"><span class="c1"></span></p>
-<p class="c2"><span class="c6">Ci-apr&egrave;s d&eacute;nomm&eacute;e l&#39;&quot;</span><span
-        class="c20">ACQUEREUR</span><span class="c6">&quot; ou la </span><span class="c20">SNC </span><span class="c7">MARVIC 128</span><span
-        class="c20">,</span><span class="c1">&nbsp;d&#39;autre part.</span></p>
+<p class="c2"><span class="c6">Ci-après dénommée l'"</span><span
+        class="c20">ACQUEREUR</span><span class="c6">" ou la </span><span class="c20">SNC </span><span class="c7">{{$SNC}}</span><span
+        class="c20">,</span><span class="c1"> d'autre part.</span></p>
 <p class="c2 c15"><span class="c11"></span></p>
 <p class="c2 c15"><span class="c1"></span></p>
-<p class="c2"><span class="c14 c6">IL A TOUT D&rsquo;ABORD ETE EXPOSE CE QUI SUIT</span><span class="c5">&nbsp;:</span>
+<p class="c2"><span class="c14 c6">IL A TOUT D’ABORD ETE EXPOSE CE QUI SUIT</span><span class="c5"> :</span>
 </p>
 <p class="c2 c15"><span class="c1"></span></p>
 <p class="c2 c15"><span class="c1"></span></p>
-<p class="c4"><span class="c6">Le projet de la soci&eacute;t&eacute; </span><span
-        class="c3">JEAN DAVID LAVERIE SARL </span><span class="c1">consiste en l&rsquo;acquisition du mat&eacute;riel suivant&nbsp;:</span>
+<p class="c4"><span class="c6">Le projet de la société </span><span
+        class="c3">{{$LOCATAIRE_RAISON_SOCIALE}} {{$FORME_JURIDIQUE}} </span><span class="c1">consiste en l’acquisition du matériel suivant :</span>
 </p>
 <p class="c0"><span class="c1"></span></p>
 <ul class="c22 lst-kix_list_16-0 start">
-    <li class="c4 c23"><span class="c12 c3">6 lave-linge et un s&egrave;che-linge de marque ELECTROLUX neufs</span></li>
+    <li class="c4 c23"><span class="c12 c3">{{$MATERIEL}}</span></li>
 </ul>
 <p class="c0"><span class="c1"></span></p>
-<p class="c4"><span class="c6">Dans ce contexte, l&rsquo;entreprise</span><span class="c20">&nbsp;</span><span
-        class="c3">JEAN DAVID LAVERIE SARL </span><span class="c6">a souhait&eacute;, disposer du mat&eacute;riel aff&eacute;rent &agrave; son activit&eacute; pour un montant total de </span><span
-        class="c3">43100,00 </span><span class="c1">&euro; HT, ci-apr&egrave;s d&eacute;nomm&eacute; &laquo;&nbsp;INVESTISSEMENT&nbsp;&raquo;, dont le d&eacute;tail a &eacute;t&eacute; approch&eacute; de la mani&egrave;re suivante&nbsp;:</span>
+<p class="c4"><span class="c6">Dans ce contexte, l’entreprise</span><span class="c20"> </span><span
+        class="c3">{{$LOCATAIRE_RAISON_SOCIALE}} {{$FORME_JURIDIQUE}} </span><span class="c6">a souhaité, disposer du matériel afférent à son activité pour un montant total de </span><span
+        class="c3">{{$MONTANT_HT_HORS_FRAIS}} </span><span class="c1">€ HT, ci-après dénommé « INVESTISSEMENT », dont le détail a été approché de la manière suivante :</span>
 </p>
 <p class="c0"><span class="c1"></span></p>
 <ul class="c22 lst-kix_list_15-0 start">
-    <li class="c4 c23"><span class="c1">Acquisition du mat&eacute;riel pour un montant de </span><span class="c12 c3">43100,00 </span><span
+    <li class="c4 c23"><span class="c1">Acquisition du matériel pour un montant de </span><span class="c12 c3">{{$MONTANT_HT_HORS_FRAIS}} </span><span
             class="c1">euros HT</span></li>
 </ul>
 <p class="c0"><span class="c1"></span></p>
-<p class="c4"><span class="c6">Souhaitant b&eacute;n&eacute;ficier de l&#39;aide fiscale aux investissements r&eacute;alis&eacute;s dans les D&eacute;partements et Territoires d&rsquo;Outre-mer codifi&eacute;e &agrave; l&#39;Article 199 undecies B du Code G&eacute;n&eacute;ral des Imp&ocirc;ts, la soci&eacute;t&eacute; </span><span
-        class="c3">JEAN DAVID LAVERIE SARL </span><span class="c1">a sollicit&eacute; le cabinet d&#39;ing&eacute;nierie financi&egrave;re et fiscale INVESTIS DOM, afin de mettre en place le montage le plus appropri&eacute;.</span>
+<p class="c4"><span class="c6">Souhaitant bénéficier de l'aide fiscale aux investissements réalisés dans les Départements et Territoires d’Outre-mer codifiée à l'Article 199 undecies B du Code Général des Impôts, la société </span><span
+        class="c3">{{$LOCATAIRE_RAISON_SOCIALE}} {{$FORME_JURIDIQUE}} </span><span class="c1">a sollicité le cabinet d'ingénierie financière et fiscale INVESTIS DOM, afin de mettre en place le montage le plus approprié.</span>
 </p>
 <p class="c0"><span class="c1"></span></p>
-<p class="c4"><span class="c6">En application du sch&eacute;ma propos&eacute; par ledit cabinet, la Soci&eacute;t&eacute; en Nom Collectif (SNC) </span><span
-        class="c3">MARVIC 128</span><span class="c6">, constitu&eacute;e &agrave; cet effet proc&egrave;de &agrave; l&#39;acquisition avant sa mise en service de l&rsquo;INVESTISSEMENTS, aupr&egrave;s de</span><span
-        class="c20">&nbsp;</span><span class="c6">la soci&eacute;t&eacute; </span><span class="c3">JEAN DAVID LAVERIE SARL</span><span
-        class="c6">, pr&eacute;alablement acquis par elle aupr&egrave;s de son ou de ses propre(s) FOURNISSEUR(s) (ci-apr&egrave;s&nbsp;: le FOURNISSEUR), pour le lui donner en location pendant une dur&eacute;e irr&eacute;vocable de </span><span
-        class="c3">cinq (5) </span><span class="c6">ans, et ce, dans le cadre du contrat de location portant le num&eacute;ro</span><span
-        class="c3">&nbsp;1811007REU</span><span class="c1">.</span></p>
+<p class="c4"><span class="c6">En application du schéma proposé par ledit cabinet, la Société en Nom Collectif (SNC) </span><span
+        class="c3">{{$SNC}}</span><span class="c6">, constituée à cet effet procède à l'acquisition avant sa mise en service de l’INVESTISSEMENTS, auprès de</span><span
+        class="c20"> </span><span class="c6">la société </span><span class="c3">{{$LOCATAIRE_RAISON_SOCIALE}} {{$FORME_JURIDIQUE}}</span><span
+        class="c6">, préalablement acquis par elle auprès de son ou de ses propre(s) FOURNISSEUR(s) (ci-après : le FOURNISSEUR), pour le lui donner en location pendant une durée irrévocable de </span><span
+        class="c3">cinq (5) </span><span class="c6">ans, et ce, dans le cadre du contrat de location portant le numéro</span><span
+        class="c3"> {{$N_DOSSIER}}REU</span><span class="c1">.</span></p>
 <p class="c0"><span class="c1"></span></p>
-<p class="c4"><span class="c1">Ce MATERIEL est &eacute;ligible &agrave; l&rsquo;Article 199 undecies B du Code G&eacute;n&eacute;ral des Imp&ocirc;ts.</span>
+<p class="c4"><span class="c1">Ce MATERIEL est éligible à l’Article 199 undecies B du Code Général des Impôts.</span>
 </p>
 <p class="c0"><span class="c1"></span></p>
 <p class="c0"><span class="c1"></span></p>
 <p class="c4"><span class="c20 c24">CECI EXPOSE, IL A ETE CONVENU ET ARRETE CE QUI SUIT</span><span
-        class="c11">&nbsp;:</span></p>
+        class="c11"> :</span></p>
 <p class="c0"><span class="c1"></span></p>
 <p class="c4"><span class="c18">ARTICLE 1 - VENTE</span></p>
 <p class="c0"><span class="c1"></span></p>
-<p class="c4"><span class="c1">Par les pr&eacute;sentes, le VENDEUR s&rsquo;engage &agrave; vendre, &agrave; l&rsquo;ACQU&Eacute;REUR, le MATERIEL d&eacute;sign&eacute; dans l&rsquo;expos&eacute; pr&eacute;alable.</span>
+<p class="c4"><span class="c1">Par les présentes, le VENDEUR s’engage à vendre, à l’ACQUÉREUR, le MATERIEL désigné dans l’exposé préalable.</span>
 </p>
-<p class="c4"><span class="c1">Le VENDEUR d&eacute;clare et garantit que le MATERIEL n&rsquo;est grev&eacute; d&rsquo;aucune clause de r&eacute;serve de propri&eacute;t&eacute;.</span>
+<p class="c4"><span class="c1">Le VENDEUR déclare et garantit que le MATERIEL n’est grevé d’aucune clause de réserve de propriété.</span>
 </p>
 <p class="c0"><span class="c1"></span></p>
-<p class="c4"><span class="c6">Le MATERIEL &eacute;tant destin&eacute; &agrave; &ecirc;tre aussit&ocirc;t donn&eacute; en location &agrave; la soci&eacute;t&eacute; </span><span
-        class="c3">JEAN DAVID LAVERIE SARL</span><span class="c1">, la jouissance ne lui est, &agrave; aucun moment, transf&eacute;r&eacute;e.</span>
+<p class="c4"><span class="c6">Le MATERIEL étant destiné à être aussitôt donné en location à la société </span><span
+        class="c3">{{$LOCATAIRE_RAISON_SOCIALE}} {{$FORME_JURIDIQUE}}</span><span class="c1">, la jouissance ne lui est, à aucun moment, transférée.</span>
 </p>
 <p class="c0"><span class="c1"></span></p>
 <p class="c4"><span class="c18">ARTICLE 2 - CONDITIONS DE LIVRAISON</span></p>
 <p class="c0"><span class="c1"></span></p>
-<p class="c4"><span class="c1">Le MATERIEL sera livr&eacute; &agrave; l&rsquo;ACQU&Eacute;REUR dans les locaux du VENDEUR lorsque l&rsquo;ensemble des &eacute;l&eacute;ments le composant aura &eacute;t&eacute; livr&eacute; au VENDEUR par le FOURNISSEUR.</span>
+<p class="c4"><span class="c1">Le MATERIEL sera livré à l’ACQUÉREUR dans les locaux du VENDEUR lorsque l’ensemble des éléments le composant aura été livré au VENDEUR par le FOURNISSEUR.</span>
 </p>
 <p class="c0"><span class="c1"></span></p>
-<p class="c4"><span class="c1">Un proc&egrave;s-verbal de livraison sera &eacute;tabli entre le VENDEUR et l&rsquo;ACQU&Eacute;REUR auquel seront jointes les copies de l&rsquo;int&eacute;gralit&eacute; des P.V. de livraison et factures acquitt&eacute;es sign&eacute;es entre le VENDEUR et le FOURNISSEUR.</span>
+<p class="c4"><span class="c1">Un procès-verbal de livraison sera établi entre le VENDEUR et l’ACQUÉREUR auquel seront jointes les copies de l’intégralité des P.V. de livraison et factures acquittées signées entre le VENDEUR et le FOURNISSEUR.</span>
 </p>
 <p class="c0"><span class="c1"></span></p>
-<p class="c4"><span class="c1">Si, &agrave; la date du 31 d&eacute;cembre de l&rsquo;ann&eacute;e en cours, la totalit&eacute; du MATERIEL n&rsquo;&eacute;tait pas livr&eacute;e, le pr&eacute;sent contrat de vente serait r&eacute;solu de plein droit, si bon semble &agrave; l&rsquo;ACQU&Eacute;REUR, sans indemnit&eacute; de part ni d&rsquo;autre.</span>
+<p class="c4"><span class="c1">Si, à la date du 31 décembre de l’année en cours, la totalité du MATERIEL n’était pas livrée, le présent contrat de vente serait résolu de plein droit, si bon semble à l’ACQUÉREUR, sans indemnité de part ni d’autre.</span>
 </p>
 <p class="c0"><span class="c1"></span></p>
-<p class="c4"><span class="c1">Toutefois les parties pourront convenir, le cas &eacute;ch&eacute;ant, des conditions et modalit&eacute;s du financement d&rsquo;une partie du MATERIEL et donc, de sa vente &agrave; l&rsquo;ACQU&Eacute;REUR suivie de sa location au VENDEUR. Un nouveau contrat de vente sera alors sign&eacute; entre les parties.</span>
+<p class="c4"><span class="c1">Toutefois les parties pourront convenir, le cas échéant, des conditions et modalités du financement d’une partie du MATERIEL et donc, de sa vente à l’ACQUÉREUR suivie de sa location au VENDEUR. Un nouveau contrat de vente sera alors signé entre les parties.</span>
 </p>
 <p class="c0"><span class="c1"></span></p>
 <p class="c4"><span class="c18">ARTICLE 3 - GARANTIE DES VICES CACHES</span></p>
 <p class="c0"><span class="c1"></span></p>
-<p class="c4"><span class="c1">Le VENDEUR garantit l&rsquo;ACQU&Eacute;REUR contre tous les vices cach&eacute;s ou les d&eacute;fauts de fabrication susceptibles de se r&eacute;v&eacute;ler apr&egrave;s la mise en exploitation du MATERIEL, dans les termes et conditions de la garantie du FOURNISSEUR.</span>
+<p class="c4"><span class="c1">Le VENDEUR garantit l’ACQUÉREUR contre tous les vices cachés ou les défauts de fabrication susceptibles de se révéler après la mise en exploitation du MATERIEL, dans les termes et conditions de la garantie du FOURNISSEUR.</span>
 </p>
 <p class="c0"><span class="c1"></span></p>
-<p class="c4"><span class="c1">Cette garantie conventionnelle des vices cach&eacute;s, comprendra, au minimum, la r&eacute;paration (pi&egrave;ces, main-d&rsquo;&oelig;uvre et d&eacute;placement) de toutes pi&egrave;ces ou partie d&rsquo;installation reconnue d&eacute;fectueuse, dans le d&eacute;lai d&rsquo;un an, &agrave; compter de la mise en service du MATERIEL</span>
+<p class="c4"><span class="c1">Cette garantie conventionnelle des vices cachés, comprendra, au minimum, la réparation (pièces, main-d’œuvre et déplacement) de toutes pièces ou partie d’installation reconnue défectueuse, dans le délai d’un an, à compter de la mise en service du MATERIEL</span>
 </p>
 <p class="c0"><span class="c1"></span></p>
-<p class="c4"><span class="c1">A d&eacute;faut de garantie constructeur r&eacute;percut&eacute;e par le VENDEUR, la garantie ci-dessus s&rsquo;appliquera de plein droit.</span>
+<p class="c4"><span class="c1">A défaut de garantie constructeur répercutée par le VENDEUR, la garantie ci-dessus s’appliquera de plein droit.</span>
 </p>
 <p class="c0"><span class="c1"></span></p>
 <p class="c4"><span class="c18">ARTICLE 4 - PRIX</span></p>
 <p class="c0"><span class="c1"></span></p>
 <p class="c4"><span
-        class="c6">Le prix HT du MATERIEL se rapportant &agrave; la pr&eacute;sente vente est de &nbsp;</span><span
-        class="c3">43100,00 </span><span class="c1">euros hors taxes, ce prix &eacute;tant strictement &eacute;gal &agrave; son prix d&rsquo;achat hors taxes par le VENDEUR aupr&egrave;s du FOURNISSEUR.</span>
+        class="c6">Le prix HT du MATERIEL se rapportant à la présente vente est de  </span><span
+        class="c3">{{$MONTANT_HT_HORS_FRAIS}} </span><span class="c1">euros hors taxes, ce prix étant strictement égal à son prix d’achat hors taxes par le VENDEUR auprès du FOURNISSEUR.</span>
 </p>
 <p class="c0"><span class="c1"></span></p>
-<p class="c4"><span class="c1">Si le prix de vente est assujetti &agrave; la TVA, celle-ci sera pr&eacute; financ&eacute;e par le VENDEUR, la cr&eacute;ance que ce dernier d&eacute;tient sur l&rsquo;ACQU&Eacute;REUR &eacute;tant rembours&eacute;e lorsque celui-ci aura &eacute;t&eacute; lui-m&ecirc;me rembours&eacute; par les Services fiscaux. A cet effet, le VENDEUR s&rsquo;engage &agrave; mentionner cette TVA dans sa propre d&eacute;claration de TVA.</span>
+<p class="c4"><span class="c1">Si le prix de vente est assujetti à la TVA, celle-ci sera pré financée par le VENDEUR, la créance que ce dernier détient sur l’ACQUÉREUR étant remboursée lorsque celui-ci aura été lui-même remboursé par les Services fiscaux. A cet effet, le VENDEUR s’engage à mentionner cette TVA dans sa propre déclaration de TVA.</span>
 </p>
 <p class="c0"><span class="c18"></span></p>
 <p class="c4"><span class="c18">ARTICLE 5 - MODALITES DE PAIEMENT</span></p>
 <p class="c0"><span class="c1"></span></p>
-<p class="c4"><span class="c6">Le prix hors taxes ci-avant stipul&eacute;, soit &nbsp;</span><span
-        class="c3">43100,00 </span><span class="c1">&euro; HT est payable comme suit :</span></p>
+<p class="c4"><span class="c6">Le prix hors taxes ci-avant stipulé, soit  </span><span
+        class="c3">{{$MONTANT_HT_HORS_FRAIS}} </span><span class="c1">€ HT est payable comme suit :</span></p>
 <p class="c0"><span class="c1"></span></p>
 <ul class="c22 lst-kix_list_14-0 start">
-    <li class="c4 c23"><span class="c3 c12">9836,499779895179 </span><span class="c1">&euro; payable comptant, au moyen d&rsquo;un virement bancaire, repr&eacute;sentant l&#39;apport des investisseurs regroup&eacute;s dans la SNC </span><span
-            class="c12 c3">MARVIC 128</span><span class="c1">;</span></li>
-    <li class="c4 c23"><span class="c12 c3">27600,00 </span><span class="c1">&euro;, sous la forme d&rsquo;un autofinancement</span>
+    <li class="c4 c23"><span class="c3 c12">{{$APPORT_SNC_NET_DE_TVA}} </span><span class="c1">€ payable comptant, au moyen d’un virement bancaire, représentant l'apport des investisseurs regroupés dans la SNC </span><span
+            class="c12 c3">{{$SNC}}</span><span class="c1">;</span></li>
+    <li class="c4 c23"><span class="c12 c3">{{$RESTE_A_FINANCER_NET}} </span><span class="c1">€, sous la forme d’un autofinancement</span>
     </li>
-    <li class="c4 c23"><span class="c12 c3">2000,00 </span><span class="c1">&euro;, payable par compensation avec une quote-part du d&eacute;p&ocirc;t de garantie conclus par ailleurs entre les m&ecirc;mes parties.</span>
+    <li class="c4 c23"><span class="c12 c3">{{$APPORT_LOCATAIRE}} </span><span class="c1">€, payable par compensation avec une quote-part du dépôt de garantie conclus par ailleurs entre les mêmes parties.</span>
     </li>
-    <li class="c4 c23"><span class="c1">Le solde, </span><span class="c12 c3">3663,50 </span><span class="c1">&euro;, correspondant au montant de la TVA Non Per&ccedil;ue et R&eacute;cup&eacute;rable.</span>
+    <li class="c4 c23"><span class="c1">Le solde, </span><span class="c12 c3">{{$TVA_NPR}} </span><span class="c1">€, correspondant au montant de la TVA Non Perçue et Récupérable.</span>
     </li>
 </ul>
 <p class="c0"><span class="c1"></span></p>
 <p class="c4"><span class="c1">Le paiement du prix aura lieu contre remise des documents suivants :</span></p>
 <p class="c0"><span class="c1"></span></p>
 <ul class="c22 lst-kix_list_14-0">
-    <li class="c4 c23"><span class="c1">une facture &eacute;mise par le VENDEUR ;</span></li>
-    <li class="c4 c23"><span class="c1">une copie des proc&egrave;s-verbaux de livraison d&ucirc;ment sign&eacute;s par le FOURNISSEUR et d&rsquo;une copie de sa/ses facture(s) libell&eacute;e(s) au nom du VENDEUR mentionnant l&rsquo;&eacute;tat des paiements re&ccedil;us ;</span>
+    <li class="c4 c23"><span class="c1">une facture émise par le VENDEUR ;</span></li>
+    <li class="c4 c23"><span class="c1">une copie des procès-verbaux de livraison dûment signés par le FOURNISSEUR et d’une copie de sa/ses facture(s) libellée(s) au nom du VENDEUR mentionnant l’état des paiements reçus ;</span>
     </li>
 </ul>
-<p class="c4"><span class="c1">&nbsp;</span></p>
-<p class="c2"><span class="c18">ARTICLE 6 - NANTISSEMENT DE L&rsquo;INVESTISSEMENT</span></p>
+<p class="c4"><span class="c1"> </span></p>
+<p class="c2"><span class="c18">ARTICLE 6 - NANTISSEMENT DE L’INVESTISSEMENT</span></p>
 <p class="c2 c15"><span class="c1"></span></p>
-<p class="c2"><span class="c1">L&rsquo;ACQU&Eacute;REUR accepte que l&rsquo;INVESTISSEMENT d&eacute;sign&eacute; au pr&eacute;sent contrat puisse faire l&#39;objet d&#39;un nantissement consenti &agrave; l&rsquo;&eacute;tablissement financier dans le cadre du pr&ecirc;t.</span>
+<p class="c2"><span class="c1">L’ACQUÉREUR accepte que l’INVESTISSEMENT désigné au présent contrat puisse faire l'objet d'un nantissement consenti à l’établissement financier dans le cadre du prêt.</span>
 </p>
-<p class="c4"><span class="c1">Le VENDEUR, qui aura la qualit&eacute; de locataire de ce MATERIEL, reconna&icirc;t que cette op&eacute;ration a &eacute;t&eacute; r&eacute;alis&eacute;e dans son seul int&eacute;r&ecirc;t et accepte toutes les cons&eacute;quences qui pourraient d&eacute;couler de l&rsquo;exercice de ce nantissement.</span>
+<p class="c4"><span class="c1">Le VENDEUR, qui aura la qualité de locataire de ce MATERIEL, reconnaît que cette opération a été réalisée dans son seul intérêt et accepte toutes les conséquences qui pourraient découler de l’exercice de ce nantissement.</span>
 </p>
 <p class="c0"><span class="c1"></span></p>
-<p class="c4"><span class="c18">ARTICLE 7 &ndash; TAXES ET IMP&Ocirc;TS</span></p>
+<p class="c4"><span class="c18">ARTICLE 7 – TAXES ET IMPÔTS</span></p>
 <p class="c0"><span class="c1"></span></p>
-<p class="c4"><span class="c6">Le VENDEUR, en de sa qualit&eacute; de locataire, s&rsquo;engage &agrave; payer tous frais, imp&ocirc;ts, taxes, contraventions de toute nature, pr&eacute;sents ou &agrave; venir, et notamment la CFE et la TVA dont le la SNC </span><span
-        class="c3">MARVIC 128 </span><span class="c1">serait redevable en sa qualit&eacute; de propri&eacute;taire du MATERIEL.</span>
+<p class="c4"><span class="c6">Le VENDEUR, en de sa qualité de locataire, s’engage à payer tous frais, impôts, taxes, contraventions de toute nature, présents ou à venir, et notamment la CFE et la TVA dont le la SNC </span><span
+        class="c3">{{$SNC}} </span><span class="c1">serait redevable en sa qualité de propriétaire du MATERIEL.</span>
 </p>
-<p class="c4"><span class="c1">Il en sera de m&ecirc;me des frais des pr&eacute;sentes et de leurs suites, des frais de publicit&eacute;, le cas &eacute;ch&eacute;ant, ainsi que de tous frais et d&eacute;bours.</span>
+<p class="c4"><span class="c1">Il en sera de même des frais des présentes et de leurs suites, des frais de publicité, le cas échéant, ainsi que de tous frais et débours.</span>
 </p>
 <p class="c0"><span class="c1"></span></p>
 <p class="c4"><span class="c18">ARTICLE 8 - ELECTION DE DOMICILE</span></p>
 <p class="c0"><span class="c18"></span></p>
-<p class="c4"><span class="c1">Pour l&rsquo;ex&eacute;cution des pr&eacute;sentes, les parties &eacute;lisent domicile chacune en son si&egrave;ge &eacute;nonc&eacute; en t&ecirc;te des pr&eacute;sentes.</span>
+<p class="c4"><span class="c1">Pour l’exécution des présentes, les parties élisent domicile chacune en son siège énoncé en tête des présentes.</span>
 </p>
 <p class="c0"><span class="c18"></span></p>
 <p class="c4"><span class="c18">ARTICLE 9 - ATTRIBUTION DE JURIDICTION</span></p>
 <p class="c0"><span class="c1"></span></p>
-<p class="c4"><span class="c1">Pour l&rsquo;ex&eacute;cution du pr&eacute;sent contrat, les parties font &eacute;lection de domicile en leur si&egrave;ge social. Tout changement d&rsquo;adresse par r&eacute;f&eacute;rence aux pr&eacute;sentes devra &ecirc;tre notifi&eacute; par lettre recommand&eacute;e avec demande d&rsquo;avis de r&eacute;ception.</span>
+<p class="c4"><span class="c1">Pour l’exécution du présent contrat, les parties font élection de domicile en leur siège social. Tout changement d’adresse par référence aux présentes devra être notifié par lettre recommandée avec demande d’avis de réception.</span>
 </p>
 <p class="c0"><span class="c1"></span></p>
-<p class="c4"><span class="c1">Le pr&eacute;sent contrat est r&eacute;gi par la Loi fran&ccedil;aise.</span></p>
+<p class="c4"><span class="c1">Le présent contrat est régi par la Loi française.</span></p>
 <p class="c0"><span class="c1"></span></p>
-<p class="c4"><span class="c1">Tout diff&eacute;rend se rapportant &agrave; l&rsquo;interpr&eacute;tation ou l&rsquo;ex&eacute;cution du pr&eacute;sent contrat sera soumis au Tribunal de Commerce de la R&eacute;union qui est reconnu seul comp&eacute;tent m&ecirc;me en cas d&rsquo;appel en garantie ou de pluralit&eacute; de d&eacute;fendeurs.</span>
+<p class="c4"><span class="c1">Tout différend se rapportant à l’interprétation ou l’exécution du présent contrat sera soumis au Tribunal de Commerce de la Réunion qui est reconnu seul compétent même en cas d’appel en garantie ou de pluralité de défendeurs.</span>
 </p>
 <p class="c0"><span class="c1"></span></p>
-<p class="c4"><span class="c1">Toutefois, l&rsquo;ACQUEREUR aura seul la facult&eacute;, si bon lui semble, de renoncer &agrave; cette clause attributive de juridiction, pour saisir les Tribunaux du si&egrave;ge du VENDEUR.</span>
+<p class="c4"><span class="c1">Toutefois, l’ACQUEREUR aura seul la faculté, si bon lui semble, de renoncer à cette clause attributive de juridiction, pour saisir les Tribunaux du siège du VENDEUR.</span>
 </p>
 <p class="c2 c15"><span class="c1"></span></p>
 <p class="c2 c15"><span class="c1"></span></p>
-<p class="c2"><span class="c1">Fait &agrave; SAINTE-CLOTILDE, </span></p>
+<p class="c2"><span class="c1">Fait à SAINTE-CLOTILDE, </span></p>
 <p class="c2 c15"><span class="c1"></span></p>
-<p class="c2"><span class="c6">Le </span><span class="c3">07/12/2018</span></p>
-<p class="c2"><span class="c1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<p class="c2"><span class="c6">Le </span><span class="c3">{{$DATE_DE_CONTRAT}}</span></p>
+<p class="c2"><span class="c1">                        </span>
 </p>
 <p class="c2"><span class="c1">En trois (3) exemplaires.</span></p>
 <p class="c2 c15"><span class="c1"></span></p>
 <p class="c2 c15"><span class="c1"></span></p>
 <p class="c2"><span class="c1">Pour le VENDEUR</span></p>
-<p class="c2"><span class="c6">La soci&eacute;t&eacute; </span><span class="c12 c3">JEAN DAVID LAVERIE </span></p>
-<p class="c2"><span class="c1">Nom, pr&eacute;nom, qualit&eacute; du signataire</span></p>
+<p class="c2"><span class="c6">La société </span><span class="c12 c3">{{$LOCATAIRE_RAISON_SOCIALE}} </span></p>
+<p class="c2"><span class="c1">Nom, prénom, qualité du signataire</span></p>
 <p class="c2"><span class="c1">Signature et cachet commercial</span></p>
-<p class="c2 c16"><span class="c1">Pour l&rsquo;ACQUEREUR</span></p>
-<p class="c2 c16"><span class="c6">La SNC </span><span class="c3">MARVIC 128</span></p>
-<p class="c2 c16"><span class="c1">Nom, pr&eacute;nom, qualit&eacute; du signataire</span></p>
+<p class="c2 c16"><span class="c1">Pour l’ACQUEREUR</span></p>
+<p class="c2 c16"><span class="c6">La SNC </span><span class="c3">{{$SNC}}</span></p>
+<p class="c2 c16"><span class="c1">Nom, prénom, qualité du signataire</span></p>
 <p class="c2 c16"><span class="c1">Signature et cachet commercial</span></p>
 <p class="c2 c15"><span class="c6 c8"></span></p>
 <p class="c2 c15"><span class="c8 c6"></span></p>
@@ -1994,7 +1994,7 @@
 <p class="c2 c15"><span class="c8 c6"></span></p>
 <p class="c10 c15"><span class="c8 c6"></span></p>
 <p class="c10 c15" id="h.gjdgxs"><span class="c8 c13"></span></p>
-<div><p class="c2"><span class="c25 c19">Contrat de vente JDL SARL / SNC MARVIC 128&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Page </span><span
-            class="c19 c25">&nbsp;sur </span></p></div>
+<div><p class="c2"><span class="c25 c19">Contrat de vente {{$LOCATAIRE_SIGLE}} {{$FORME_JURIDIQUE}} / SNC {{$SNC}}                                                Page </span><span
+            class="c19 c25"> sur </span></p></div>
 </body>
 </html>

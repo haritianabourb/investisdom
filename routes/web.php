@@ -29,6 +29,7 @@ Route::get('/p_14_mi', 'Investis\P14MiPDFController@generatePDF');
 Route::get('/p_15', 'Investis\P15PDFController@generatePDF');
 Route::get('/p_18', 'Investis\P18PDFController@generatePDF');
 Route::get('/p_24', 'Investis\P24FactVentePDFController@generatePDF');
+Route::get('/p_25', 'Investis\P25PDFController@generatePDF');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
