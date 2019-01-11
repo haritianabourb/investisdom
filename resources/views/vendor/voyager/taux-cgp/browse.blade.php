@@ -97,32 +97,42 @@
                                 <tbody>
                                     <?php
                                         $itemGroups=$dataTypeContent->groupBy(['cgps_id']);
-                                        $titleIsShown=false;
+
                                     ?>
 
                                     @foreach($itemGroups as $itemGroup)
+                                        <?php
+                                        $firstRowInGroup="yes";
+                                        ?>
                                     @foreach($itemGroup as $data)
 
 
-                                    <tr>
+
+                                    <tr data-first-row-in-group="{{$firstRowInGroup}}"> <!-- row started -->
                                         @can('delete',app($dataType->model_name))
                                             <td>
                                                 <input type="checkbox" name="row_id" id="checkbox_{{ $data->getKey() }}" value="{{ $data->getKey() }}">
                                             </td>
                                         @endcan
                                         @foreach($dataType->browseRows as $row)
+
                                             <td>
+
                                                 @if($loop->first)
+
+
                                                   @can('read',app($dataType->model_name))
-                                                      
-                                                        <a href="{{ route('voyager.'.$dataType->slug.'.show', [$dataType->name => $data]) }}">
+
+                                                        <a class="first_title_link" href="{{ route('voyager.'.$dataType->slug.'.show', [$dataType->name => $data]) }}">
 
                                                   @endcan
                                                 @endif
                                                 <?php $options = json_decode($row->details); ?>
                                                 @if($row->type == 'image')
+
                                                     <img src="@if( !filter_var($data->{$row->field}, FILTER_VALIDATE_URL)){{ Voyager::image( $data->{$row->field} ) }}@else{{ $data->{$row->field} }}@endif" style="width:100px">
                                                 @elseif($row->type == 'relationship')
+
                                                     @include('voyager::formfields.relationship', ['view' => 'browse'])
                                                 @elseif($row->type == 'select_multiple')
                                                     @if(property_exists($options, 'relationship'))
@@ -210,18 +220,26 @@
                                                 @endif
                                                 @if($loop->first)
                                                   @can('read',app($dataType->model_name))
+
                                                   </a>
                                                   @endcan
                                                 @endif
-                                            </td>
+
+                                            </td> <!-- CELL_END-->
                                         @endforeach
                                         <td class="no-sort no-click" id="bread-actions">
                                             @foreach(Voyager::actions() as $action)
                                                 @include('voyager::bread.partials.actions', ['action' => $action])
                                             @endforeach
+
                                         </td>
-                                    </tr>
+
+                                    </tr> <!-- row end -->
+                                    <?php
+                                    $firstRowInGroup="no";
+                                    ?>
                                     @endforeach
+
                                     @endforeach
                                 </tbody>
                             </table>
