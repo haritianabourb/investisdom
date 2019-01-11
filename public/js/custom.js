@@ -125,6 +125,32 @@ function Task29_ToggleReductionAj() {
 }
 
 
+function Task31_RegimeMatrimonal() {
+    if (!(window.location.href.indexOf("investors") != -1))
+        return;
+    var elementsToHide = [
+        "[name=prenom_conjoint]",
+        "[name=nom_conjoint]",
+        "[name=nom_jeunefille_conjoint]",
+        "[name=birth_conjoint]"
+    ].join(", "); //getting selector string for jQuery
+
+    $("[name=regime_mat_invest]").change(function() {
+        console.log(this.value);
+        if ((this.value == "02") || (this.value=="03") || (this.value=="04"))
+        {//show fields
+            $(elementsToHide)
+                .parent().show("fast");
+        } else { //otherwise, hide fields
+            $(elementsToHide).val("")
+                .parent().hide("fast");
+        }
+    });
+
+    $("[name=regime_mat_invest]").trigger("change");
+}
+
+
 
 
 $(document).ready(function() {
@@ -135,6 +161,7 @@ $(document).ready(function() {
     Task4_IsRepriseFournisseur();
     Task29_AssistanceJuridique();
     Task29_ToggleReductionAj();
+    Task31_RegimeMatrimonal();
 
     $(document).on('hidden.bs.modal', '.modal', function (event) {
       if($('.modal.in').length > 0){
