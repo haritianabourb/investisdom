@@ -321,31 +321,31 @@
             text-align: left
         }</style>
 </head>
-<body class="c9"><p class="c12"><span class="c5 c3">SARL JEAN DAVID LAVERIE</span></p>
-<p class="c12"><span class="c5 c3">192, rue du G&eacute;n&eacute;ral de Gaulle</span></p>
-<p class="c12"><span class="c5 c3">97434 SAINT GILLES LES BAINS512831918</span></p>
-<p class="c12"><span class="c10">Siren : </span><span class="c3">512831918</span></p>
-<p class="c12"><span class="c10">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SNC </span><span
-        class="c3">MARVIC 128</span></p>
+<body class="c9"><p class="c12"><span class="c5 c3">{{$FORME_JURIDIQUE}} {{$LOCATAIRE_RAISON_SOCIALE}}</span></p>
+<p class="c12"><span class="c5 c3">{{$ADRESSE}}</span></p>
+<p class="c12"><span class="c5 c3">{{$CP}} {{$VILLE}}{{$SIREN}}</span></p>
+<p class="c12"><span class="c10">Siren : </span><span class="c3">{{$SIREN}}</span></p>
+<p class="c12"><span class="c10">                                                                A         SNC </span><span
+        class="c3">{{$SNC}}</span></p>
 <p class="c12 c19" id="h.gjdgxs"><span class="c0">62 boulevard du chaudron</span></p>
-<p class="c12"><span class="c0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;97490 SAINTE CLOTILDE</span>
+<p class="c12"><span class="c0">                                                                        97490 SAINTE CLOTILDE</span>
 </p>
 <p class="c6"><span class="c0"></span></p>
 <p class="c6"><span class="c0"></span></p>
 <p class="c6"><span class="c0"></span></p>
 <p class="c16 c14"><span class="c0"></span></p>
-<p class="c16"><span class="c10">FACTURE n&deg; </span><span class="c3">20181811007</span></p>
+<p class="c16"><span class="c10">FACTURE n° </span><span class="c3">{{$ANNEE_INVEST}}{{$N_DOSSIER}}</span></p>
 <p class="c16 c14"><span class="c0"></span></p><a id="t.df31920e3da859cfc5ad2e7a7af05f2cf5f0776f"></a><a id="t.0"></a>
 <table class="c18">
     <tbody>
     <tr class="c1">
-        <td class="c11" colspan="1" rowspan="1"><p class="c13"><span class="c0">D&eacute;signation</span></p></td>
+        <td class="c11" colspan="1" rowspan="1"><p class="c13"><span class="c0">Désignation</span></p></td>
         <td class="c4" colspan="1" rowspan="1"><p class="c15"><span class="c0">P.U. HT</span></p></td>
         <td class="c17" colspan="1" rowspan="1"><p class="c15"><span class="c0">TOTAL HT</span></p></td>
     </tr>
     <tr class="c1">
         <td class="c11" colspan="1" rowspan="1"><p class="c2"><span class="c3 c5"></span></p>
-            <p class="c13"><span class="c5 c3">6 lave-linge et un s&egrave;che-linge de marque ELECTROLUX neufs</span>
+            <p class="c13"><span class="c5 c3">{{$MATERIEL}}</span>
             </p>
             <p class="c2"><span class="c0"></span></p>
             <p class="c2"><span class="c0"></span></p>
@@ -354,44 +354,44 @@
             <p class="c2"><span class="c0"></span></p>
             <p class="c2"><span class="c0"></span></p></td>
         <td class="c4" colspan="1" rowspan="1"><p class="c8 c14"><span class="c5 c3"></span></p>
-            <p class="c8"><span class="c3">43100,00 &euro;</span></p></td>
+            <p class="c8"><span class="c3">{{$MONTANT_HT_HORS_FRAIS}} €</span></p></td>
         <td class="c17" colspan="1" rowspan="1"><p class="c8 c14"><span class="c0"></span></p>
-            <p class="c8"><span class="c3">43100,00 &euro;</span></p></td>
+            <p class="c8"><span class="c3">{{$MONTANT_HT_HORS_FRAIS}} €</span></p></td>
     </tr>
     <tr class="c1">
         <td class="c11" colspan="1" rowspan="1"><p class="c8"><span class="c0">TOTAL HT</span></p></td>
         <td class="c4" colspan="1" rowspan="1"><p class="c7"><span class="c0"></span></p></td>
-        <td class="c17" colspan="1" rowspan="1"><p class="c8"><span class="c3">43100,00 </span><span
-                    class="c0">&euro;</span></p></td>
+        <td class="c17" colspan="1" rowspan="1"><p class="c8"><span class="c3">{{$MONTANT_HT_HORS_FRAIS}} </span><span
+                    class="c0">€</span></p></td>
     </tr>
     <tr class="c1">
         <td class="c11" colspan="1" rowspan="1"><p class="c8"><span class="c0">TVA NPR (Art. 295-1-5 du CGI)</span></p>
         </td>
         <td class="c4" colspan="1" rowspan="1"><p class="c7"><span class="c0"></span></p></td>
-        <td class="c17" colspan="1" rowspan="1"><p class="c8"><span class="c3">3663,50</span><span class="c0">&nbsp;&euro;</span>
+        <td class="c17" colspan="1" rowspan="1"><p class="c8"><span class="c3">{{$TVA_NPR}}</span><span class="c0"> €</span>
             </p></td>
     </tr>
     <tr class="c1">
         <td class="c11" colspan="1" rowspan="1"><p class="c8"><span class="c0">TVA 8,5%</span></p></td>
         <td class="c4" colspan="1" rowspan="1"><p class="c7"><span class="c0"></span></p></td>
-        <td class="c17" colspan="1" rowspan="1"><p class="c8"><span class="c3">&nbsp;0,00</span><span class="c0">&nbsp;&euro;</span>
+        <td class="c17" colspan="1" rowspan="1"><p class="c8"><span class="c3"> {{$TVA}}</span><span class="c0"> €</span>
             </p></td>
     </tr>
     <tr class="c1">
         <td class="c11" colspan="1" rowspan="1"><p class="c8"><span class="c0">TOTAL TTC</span></p></td>
         <td class="c4" colspan="1" rowspan="1"><p class="c7"><span class="c0"></span></p></td>
-        <td class="c17" colspan="1" rowspan="1"><p class="c8"><span class="c3">&nbsp;43100,00</span><span class="c0">&nbsp;&euro;</span>
+        <td class="c17" colspan="1" rowspan="1"><p class="c8"><span class="c3"> {{$MONTANT_TTC}}</span><span class="c0"> €</span>
             </p></td>
     </tr>
     </tbody>
 </table>
 <p class="c16 c14"><span class="c0"></span></p>
-<p class="c12"><span class="c10">Arr&ecirc;te la pr&eacute;sente facture &agrave; la somme de&nbsp;: </span><span
-        class="c3">quarante-trois-mille cent euros</span></p>
+<p class="c12"><span class="c10">Arrête la présente facture à la somme de : </span><span
+        class="c3"></span></p>
 <p class="c6"><span class="c0"></span></p>
 <p class="c6"><span class="c0"></span></p>
 <p class="c12"><span class="c0">A, SAINTE CLOTILDE </span></p>
-<p class="c12"><span class="c10">Le, </span><span class="c3">07/12/2018</span></p>
+<p class="c12"><span class="c10">Le, </span><span class="c3">{{$DATE_DE_CONTRAT}}</span></p>
 <p class="c6"><span class="c0"></span></p>
 <p class="c6"><span class="c0"></span></p>
 <p class="c6"><span class="c0"></span></p></body>
