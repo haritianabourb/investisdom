@@ -172,6 +172,7 @@ return [
           App\Widgets\InvestissementDimmer::class,
           App\Widgets\CGPDimmer::class,
           App\Widgets\ReservationDimmer::class,
+          App\Widgets\LastReservationDimmer::class,
           App\Widgets\FournisseurDimmer::class,
         ],
 
