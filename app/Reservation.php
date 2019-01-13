@@ -40,7 +40,6 @@ class Reservation extends Model
   }
 
   public function cgpsId(){
-    // return $this->belongsTo(CGP::class);
     return $this->belongsTo(CGP::class, 'cgps_id', 'id');
   }
 
@@ -48,9 +47,5 @@ class Reservation extends Model
       $this->fireModelEvent('beforeGeneratePdf');
       $this->fireModelEvent('afterGeneratePdf');
   }
-
-  // public function cgp(){
-  //   return $this->belongsTo(CGP::class, 'cgps_id', 'id');
-  // }
 
 }

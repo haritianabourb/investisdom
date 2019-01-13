@@ -23,7 +23,8 @@ class ReservationController extends VoyagerBaseController
 
     public function generatePDFRecherche(Request $request, Reservation $reservation){
         $this->authorize('browse', $reservation);
-        $pdf = PDF::loadView('pdf.reservations.reservation');
+        dd($reservation);
+        $pdf = PDF::loadView('pdf.reservations.reservation', compact($reservation));
         return $pdf->download('Demande_de_Reservation'.$reservation->identifiant.'_'.date('m-d-Y').'.pdf');
     }
 

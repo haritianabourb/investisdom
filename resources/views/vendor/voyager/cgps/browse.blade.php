@@ -202,7 +202,7 @@
                                             @foreach(Voyager::actions() as $action)
                                                 @include('voyager::bread.partials.actions', ['action' => $action])
                                             @endforeach
-                                                <a type="button" href="{{ route('admin.reservations.generate-recherche', ['reservation' => $data]) }}" class="btn btn-default generate-pdf-convention"><i class="voyager-documentation"></i> Generer le Contrat</a>
+                                                <a type="button" href="{{ route('admin.cgps.generate-convention', ['cgp' => $data]) }}" class="btn btn-default generate-pdf-convention"><i class="voyager-documentation"></i> Generer la convention</a>
                                         </td>
                                     </tr>
                                     @endcan
