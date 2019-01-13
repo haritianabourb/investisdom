@@ -16,10 +16,11 @@ class TauxRentabilite extends AbstractField
 
     public function process()
     {
-        $commission_cgp = $this->parameters->get('commission_cgp')/100;
+        $commission_cgp = $this->parameters->get('commission_cgp');
+//        $commission_cgp = $this->parameters->get('commission_cgp')/100;
 
         // TODO: remove percent formatting (* 100) and let it as float <1.
-        return ($this->parameters->get('taux_mois') - $commission_cgp) * 100;
+        return ($this->parameters->get('taux_mois') - $commission_cgp);
     }
 
 

@@ -16,7 +16,8 @@ class Apport extends AbstractField
 
     public function process()
     {
-        $taux_renta = $this->parameters->get('taux_rentabilite')/100;
+        $taux_renta = $this->parameters->get('taux_rentabilite');
+//        $taux_renta = $this->parameters->get('taux_rentabilite')/100;
 
         return $this->parameters->get('montant_reduction') / (1+ $taux_renta);
     }
