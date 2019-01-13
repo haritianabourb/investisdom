@@ -23,7 +23,7 @@ Route::group(['prefix' => 'admin'], function () {
     });
 
     Route::group(['prefix' => 'reservations'], function(){
-      Route::get('/{reservation}/generate-recherche', 'Investis\ReservationController@generatePDFRecherche')->name('admin.reservations.generate-convention');
+      Route::get('/{reservation}/generate-recherche', 'Investis\ReservationController@generatePDFRecherche')->name('admin.reservations.generate-recherche');
     });
 
     Route::group(['prefix' => 'scns'], function(){
