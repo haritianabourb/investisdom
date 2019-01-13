@@ -23,7 +23,8 @@
             {{ __('voyager::generic.return_to_list') }}
         </a>
 
-        <a type="button" href="{{ route('admin.reservations.generate-recherche', ['reservation' => $dataTypeContent]) }}" class="btn btn-default generate-pdf-convention"><i class="voyager-documentation"></i> Generer la convention</a>
+        <a type="button" href="{{ route('admin.reservations.generate-recherche', ['reservation' => $dataTypeContent]) }}" class="btn btn-default generate-pdf-convention"><i class="voyager-documentation"></i> Generer le Contrat</a>
+        <a type="button" href="{{ route('admin.reservations.generate-mandat', ['reservation' => $dataTypeContent]) }}" class="btn btn-default generate-pdf-convention"><i class="voyager-documentation"></i> Generer le Mandat de Recherche</a>
     </h1>
     @include('voyager::multilingual.language-selector')
 @stop

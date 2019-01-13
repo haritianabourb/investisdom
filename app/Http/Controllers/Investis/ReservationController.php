@@ -16,16 +16,17 @@ class ReservationController extends VoyagerBaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function generatePDFMandat(Request $request, Reservation $reservation){
-//        $this->authorize('browse', $reservation);
-//        $pdf = PDF::loadView('pdf.reservation.convention', $data);
-//        return $pdf->download('Contrat_de_partenariat_'.$reservation->name.'.pdf');
+        $this->authorize('browse', $reservation);
+        $investor = \App\Investor::find($reservation->investors_id);
+        $pdf = PDF::loadView('pdf.reservations.mandat_recherche', ['reservation' => $reservation, 'investor' => $investor]);
+        return $pdf->download('Mandat_de_Recherche'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf');
     }
 
     public function generatePDFRecherche(Request $request, Reservation $reservation){
         $this->authorize('browse', $reservation);
-        dd($reservation);
+        dd($reservation, $investor = \App\Investor::find($reservation->investors_id), $cgp = \App\CGP::find($reservation->cgps_id));
         $pdf = PDF::loadView('pdf.reservations.reservation', compact($reservation));
-        return $pdf->download('Demande_de_Reservation'.$reservation->identifiant.'_'.date('m-d-Y').'.pdf');
+        return $pdf->download('Demande_de_Reservation'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf');
     }
 
 }

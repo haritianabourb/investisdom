@@ -45,6 +45,7 @@ class Reservation extends Model
 
   public function generatePdf(){
       $this->fireModelEvent('beforeGeneratePdf');
+
       $this->fireModelEvent('afterGeneratePdf');
   }
 

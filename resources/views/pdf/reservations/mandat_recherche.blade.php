@@ -306,20 +306,20 @@
             <TD class="tr1 td1"><P class="p0 ft0">&nbsp;</P></TD>
         </TR>
         <TR>
-            <TD class="tr2 td0"><P class="p0 ft3">Prénom : {{$prenom}}</P></TD>
-            <TD class="tr2 td1"><P class="p2 ft3">Ville : {{$cgpville}}</P></TD>
+            <TD class="tr2 td0"><P class="p0 ft3">Prénom : {{$investor->prenom_invest}}</P></TD>
+            <TD class="tr2 td1"><P class="p2 ft3">Ville : {{$investor->city}}</P></TD>
         </TR>
         <TR>
-            <TD class="tr3 td0"><P class="p0 ft3">Nom : {{$nom_representant}}</P></TD>
-            <TD class="tr3 td1"><P class="p3 ft3">Téléphone fixe : 0100000000</P></TD>
+            <TD class="tr3 td0"><P class="p0 ft3">Nom : {{$investor->name_invest}}</P></TD>
+            <TD class="tr3 td1"><P class="p3 ft3">Téléphone fixe : {{$investor->fixe_invest}}</P></TD>
         </TR>
         <TR>
-            <TD class="tr3 td0"><P class="p0 ft3">Adresse : {{$adresse}}</P></TD>
-            <TD class="tr3 td1"><P class="p3 ft3">Téléphone portable : 0600000000</P></TD>
+            <TD class="tr3 td0"><P class="p0 ft3">Adresse : {{$investor->adress_1}} {{$investor->adress_2 ?: ""}}</P></TD>
+            <TD class="tr3 td1"><P class="p3 ft3">Téléphone portable : {{$investor->gsm_invest}}</P></TD>
         </TR>
         <TR>
-            <TD class="tr3 td0"><P class="p0 ft3">Code postal : {{$cgpcp}}</P></TD>
-            <TD class="tr3 td1"><P class="p2 ft3">Email : test@test.fr</P></TD>
+            <TD class="tr3 td0"><P class="p0 ft3">Code postal : {{$investor->postal_code}}</P></TD>
+            <TD class="tr3 td1"><P class="p2 ft3">Email : {{$investor->email_invest}}</P></TD>
         </TR>
     </TABLE>
     <P class="p4 ft3">
@@ -386,7 +386,7 @@
         <TR>
             <TD class="tr4 td6">
                 <P class="p0 ft3">Fait à : PARIS, le
-                    <NOBR>{{$madate}}</NOBR>
+                    <NOBR>{{date('d-m-Y')}}</NOBR>
                 </P>
             </TD>
             <TD class="tr4 td7"><P class="p0 ft0">&nbsp;</P></TD>
