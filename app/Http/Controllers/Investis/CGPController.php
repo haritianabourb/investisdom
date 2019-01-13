@@ -23,10 +23,11 @@ class CGPController extends VoyagerBaseController
         $data['cgpville'] = $cgp->city;
         $data['cgpcp'] = $cgp->postal_code;
 
-        $data['forme_juridique'] = $cgp->juridical_registration;
-        $data['immatriculation'] = $cgp->registrationEntitiesId->description;
-        $data['nom_representant'] = $cgp->contactId->firstname;
-        $data['prenom'] = $cgp->contactId->lastname;
+      $data['forme_juridique'] = $cgp->juridical_registration;
+//      $data['immatriculation'] = $cgp->registrationEntitiesId->description;
+      $data['immatriculation'] = $cgp->type_registration;
+      $data['nom_representant'] = $cgp->contactId->firstname;
+      $data['prenom'] = $cgp->contactId->lastname;
 
         $data['dateconvention'] = date ("d-m-Y");
         $data['fonction'] = $cgp->contact_status;

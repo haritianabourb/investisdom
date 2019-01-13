@@ -17,6 +17,9 @@ class Reservation extends Model
   const MANDAT = 'MANDAT';
   const CONTRAT = 'CONTRAT';
 
+  const UNIQUE = '01';
+  const ECHELONNE = '02';
+
   // TEMP DATA FOR SIMULATION
 
   const TVA85 = 8.5/100;
