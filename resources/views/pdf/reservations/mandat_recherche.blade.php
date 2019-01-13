@@ -347,18 +347,18 @@
     </P>
     <TABLE cellpadding=0 cellspacing=0 class="t1">
         <TR>
-            <TD class="tr4 td2"><label class="p0 ft4"><input type="checkbox"> Industrie</label></TD>
-            <TD class="tr4 td3"><label class="p0 ft4"><input type="checkbox"> Energie</label></TD>
-            <TD class="tr4 td4"><label class="p0 ft4"><input type="checkbox"> Indifférent</label></TD>
+            <TD class="tr4 td2"><label class="p0 ft4"><input type="checkbox" @if($reservation->secteur_activite == 'industrie' && $reservation->nbr_snc <= 1) checked="checked"@endif> Industrie</label></TD>
+            <TD class="tr4 td3"><label class="p0 ft4"><input type="checkbox" @if($reservation->secteur_activite == 'energie' && $reservation->nbr_snc <= 1) checked="checked"@endif> Energie</label></TD>
+            <TD class="tr4 td4"><label class="p0 ft4"><input type="checkbox" @if($reservation->secteur_activite == 'indifferent' || $reservation->nbr_snc > 1) checked="checked"@endif> Indifférent</label></TD>
         </TR>
         <TR>
-            <TD class="tr5 td2"><label class="p0 ft4"><input type="checkbox"> Artisanat</label></TD>
-            <TD class="tr5 td3"><label class="p0 ft4"><input type="checkbox"> TP, Transport, Construction</label></TD>
+            <TD class="tr5 td2"><label class="p0 ft4"><input type="checkbox" @if($reservation->secteur_activite == 'artisanat' && $reservation->nbr_snc <= 1) checked="checked"@endif> Artisanat</label></TD>
+            <TD class="tr5 td3"><label class="p0 ft4"><input type="checkbox" @if($reservation->secteur_activite == 'tp, transport, construction' && $reservation->nbr_snc <= 1) checked="checked"@endif> TP, Transport, Construction</label></TD>
             <TD class="tr5 td4">&nbsp;</TD>
         </TR>
         <TR>
-            <TD class="tr3 td2"><label class="p0 ft4"><input type="checkbox"> Tourisme</label></TD>
-            <TD class="tr3 td3"><label class="p0 ft4"><input type="checkbox"> Logement social</label></TD>
+            <TD class="tr3 td2"><label class="p0 ft4"><input type="checkbox" @if($reservation->secteur_activite == 'tourisme' && $reservation->nbr_snc <= 1) checked="checked"@endif> Tourisme</label></TD>
+            <TD class="tr3 td3"><label class="p0 ft4"><input type="checkbox" @if($reservation->secteur_activite == 'logement social' && $reservation->nbr_snc <= 1) checked="checked"@endif> Logement social</label></TD>
             <TD class="tr3 td4">&nbsp;</TD>
         </TR>
     </TABLE>
@@ -366,8 +366,8 @@
     <P class="p6 ft3">Le MANDANT souhaite souscrire un produit :</P>
     <TABLE cellpadding=0 cellspacing=0 class="t2">
         <TR>
-            <TD class="tr4 td2"><label class="p0 ft4"><input type="checkbox"> CONFORT</label></TD>
-            <TD class="tr4 td5"><label class="p0 ft4"><input type="checkbox"> SERENITE + (garanti à 100% financièrement et fiscalement</label></TD>
+            <TD class="tr4 td2"><label class="p0 ft4"><input type="checkbox" @if(in_array($formulae->nom, ['Confort', 'Confort Prélevement'])) checked="checked" @endif> CONFORT</label></TD>
+            <TD class="tr4 td5"><label class="p0 ft4"><input type="checkbox" @if(in_array($formulae->nom,['Serenité', 'Serenité Prélevement'])) checked="checked" @endif> SERENITE + (garanti à 100% financièrement et fiscalement</label></TD>
         </TR>                                                                                                                                          
         <TR>
             <TD class="tr5 td2"><label class="p0 ft4"><input type="checkbox"> Assistance juridique</label></TD>
@@ -380,8 +380,8 @@
         convenu entre les parties qu'un autre investissement permettant au MANDANT de réduire le montant de son IRPP
         dans la même proportion lui sera proposé. Il est admis par le MANDANT que le MANDATAIRE est tenu à une
         obligation de moyens qui ne saurait en aucun cas être considérée comme une obligation de résultats.</P>
-    <P class="p12 ft4">Le MANDANT souhaite réduire le montant de son imposition à hauteur de : 20000 euros.<br>
-        Le présent mandat est consenti jusqu'au 15 décembre 2018.</P>
+    <P class="p12 ft4">Le MANDANT souhaite réduire le montant de son imposition à hauteur de : {{$reservation->montant_reduction}} euros.<br>
+        Le présent mandat est consenti jusqu'au 15 décembre {{date('Y')}}.</P>
     <TABLE cellpadding=0 cellspacing=0 class="t3">
         <TR>
             <TD class="tr4 td6">

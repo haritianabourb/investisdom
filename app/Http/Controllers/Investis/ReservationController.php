@@ -18,13 +18,15 @@ class ReservationController extends VoyagerBaseController
     public function generatePDFMandat(Request $request, Reservation $reservation){
         $this->authorize('browse', $reservation);
         $investor = \App\Investor::find($reservation->investors_id);
-        $pdf = PDF::loadView('pdf.reservations.mandat_recherche', ['reservation' => $reservation, 'investor' => $investor]);
+        $formulae = \App\TypeContrat::find($reservation->type_contrats_id);
+        $pdf = PDF::loadView('pdf.reservations.mandat_recherche', ['reservation' => $reservation, 'investor' => $investor, 'formulae' => $formulae]);
         return $pdf->download('Mandat_de_Recherche'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf');
     }
 
     public function generatePDFRecherche(Request $request, Reservation $reservation){
         $this->authorize('browse', $reservation);
-        dd($reservation, $investor = \App\Investor::find($reservation->investors_id), $cgp = \App\CGP::find($reservation->cgps_id));
+        $investor = \App\Investor::find($reservation->investors_id);
+        $formulae = \App\TypeContrat::find($reservation->type_contrats_id);
         $pdf = PDF::loadView('pdf.reservations.reservation', compact($reservation));
         return $pdf->download('Demande_de_Reservation'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf');
     }
