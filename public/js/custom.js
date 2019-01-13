@@ -126,6 +126,28 @@ function Task29_ToggleReductionAj() {
 
 
 
+function Task24_Network() {
+    // if (!(window.location.href.indexOf("reservations") != -1))
+    //     return;
+    var elementsToHide = [
+        "[name=network_yes]"
+    ].join(", "); //getting selector string for jQuery
+
+    $("[name=network]").change(function() {
+        if ((this.value == "oui")) { //show fields
+            $(elementsToHide)
+                .parent().show("fast");
+            // $("[name=capital]").prop("required", true);
+        } else { //otherwise, hide fields
+            $(elementsToHide).val("")
+                .parent().hide("fast");
+            // $("[name=capital]").prop("required", false);
+        }
+    });
+
+    $("[name=network]").trigger("change");
+}
+
 
 $(document).ready(function() {
 
@@ -135,6 +157,7 @@ $(document).ready(function() {
     Task4_IsRepriseFournisseur();
     Task29_AssistanceJuridique();
     Task29_ToggleReductionAj();
+    Task24_Network();
 
     $(document).on('hidden.bs.modal', '.modal', function (event) {
       if($('.modal.in').length > 0){
