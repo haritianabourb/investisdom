@@ -27,7 +27,7 @@ class ReservationController extends VoyagerBaseController
         $this->authorize('browse', $reservation);
         $investor = \App\Investor::find($reservation->investors_id);
         $formulae = \App\TypeContrat::find($reservation->type_contrats_id);
-        $pdf = PDF::loadView('pdf.reservations.reservation', compact($reservation));
+        $pdf = PDF::loadView('pdf.reservations.reservation', ['reservation' => $reservation, 'investor' => $investor, 'formulae' => $formulae]);
         return $pdf->download('Demande_de_Reservation'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf');
     }
 
