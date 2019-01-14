@@ -31,4 +31,12 @@ class ReservationController extends VoyagerBaseController
         return $pdf->download('Demande_de_Reservation'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf');
     }
 
+    public function generatePDFSEPA(Request $request, Reservation $reservation){
+        $this->authorize('browse', $reservation);
+        $investor = \App\Investor::find($reservation->investors_id);
+        $formulae = \App\TypeContrat::find($reservation->type_contrats_id);
+        $pdf = PDF::loadView('pdf.reservations.sepa', ['reservation' => $reservation, 'investor' => $investor, 'formulae' => $formulae]);
+        return $pdf->download('Mandat_SEPA'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf');
+    }
+
 }
