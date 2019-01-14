@@ -649,12 +649,12 @@
             </TR>
             <TR>
                 <TD class="tr5 td14"><P class="p1 ft3">- Assistance juridique</P></TD>
-                <TD class="tr5 td15"><P class="p93 ft2">@if($reservation->assistance_juridique && in_array($formulae->nom, ['Confort', 'Confort Prelevement'])) {{$reservation->nbr_snc*75}} @else 0 @endif euros (75.00 euros par SNC)</P></TD>
+                <TD class="tr5 td15"><P class="p93 ft2">@if($reservation->assistance_juridique && in_array($formulae->id, [1, 3])) {{$reservation->nbr_snc*75}} @else 0 @endif euros (75.00 euros par SNC)</P></TD>
             </TR>
             <TR>
                 <TD class="tr6 td14"><P class="p1 ft3">Total</P></TD>
                 <?php
-                    $total = ($reservation->nbr_snc*60)+($reservation->montant_reduction/1000)+($reservation->assistance_juridique && in_array($formulae->nom, ['Confort', 'Confort Prelevement']) ? $reservation->nbr_snc*75 : 0);
+                    $total = ($reservation->nbr_snc*60)+($reservation->montant_reduction/1000)+($reservation->assistance_juridique && in_array($formulae->id, [1, 3]) ? $reservation->nbr_snc*75 : 0);
                 ?>
                 <TD class="tr6 td15"><P class="p94 ft3">{{$total}} euros</P></TD>
             </TR>
