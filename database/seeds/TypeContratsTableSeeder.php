@@ -33,6 +33,22 @@ class TypeContratsTableSeeder extends Seeder
                 'created_at' => '2018-09-19 17:31:55',
                 'updated_at' => '2018-09-19 17:31:55',
             ),
+            2 => 
+            array (
+                'id' => 3,
+                'nom' => 'Serenité Prelevement',
+                'description' => 'Formule Serenité, avec prelevement',
+                'created_at' => '2019-01-14 00:48:01',
+                'updated_at' => '2019-01-14 00:48:01',
+            ),
+            3 => 
+            array (
+                'id' => 4,
+                'nom' => 'Confort  Prelevement',
+                'description' => 'Formule Confort, avec prelevement',
+                'created_at' => '2019-01-14 00:48:25',
+                'updated_at' => '2019-01-14 00:48:25',
+            ),
         ));
         
         

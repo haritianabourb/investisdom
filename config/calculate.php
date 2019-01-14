@@ -1,5 +1,5 @@
 <?php
-$reservation->apport = $apport;
+
 return [
 
     // "calculate" => [

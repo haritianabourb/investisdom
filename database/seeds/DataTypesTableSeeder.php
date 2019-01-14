@@ -109,24 +109,6 @@ class DataTypesTableSeeder extends Seeder
             ),
             5 => 
             array (
-                'id' => 6,
-                'name' => 'banks',
-                'slug' => 'banks',
-                'display_name_singular' => 'Banque',
-                'display_name_plural' => 'Banques',
-                'icon' => 'voyager-treasure',
-                'model_name' => 'App\\Bank',
-                'policy_name' => '',
-                'controller' => '',
-                'description' => 'Banques et Assimilés',
-                'generate_permissions' => 1,
-                'server_side' => 0,
-                'details' => NULL,
-                'created_at' => '2018-09-10 15:38:44',
-                'updated_at' => '2018-09-10 15:38:44',
-            ),
-            6 => 
-            array (
                 'id' => 9,
                 'name' => 'type_entities',
                 'slug' => 'type-entities',
@@ -143,7 +125,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-10 15:42:35',
                 'updated_at' => '2018-09-10 15:42:35',
             ),
-            7 => 
+            6 => 
             array (
                 'id' => 12,
                 'name' => 'investors',
@@ -161,7 +143,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-10 15:53:00',
                 'updated_at' => '2018-09-20 06:29:48',
             ),
-            8 => 
+            7 => 
             array (
                 'id' => 14,
                 'name' => 'sncs',
@@ -179,7 +161,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-10 15:53:00',
                 'updated_at' => '2018-09-19 17:27:18',
             ),
-            9 => 
+            8 => 
             array (
                 'id' => 16,
                 'name' => 'registration_entities',
@@ -197,25 +179,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-10 16:45:25',
                 'updated_at' => '2018-09-10 16:45:25',
             ),
-            10 => 
-            array (
-                'id' => 17,
-                'name' => 'reservations',
-                'slug' => 'reservations',
-                'display_name_singular' => 'Réservation',
-                'display_name_plural' => 'Réservations',
-                'icon' => 'voyager-receipt',
-                'model_name' => 'App\\Reservation',
-                'policy_name' => NULL,
-                'controller' => NULL,
-                'description' => NULL,
-                'generate_permissions' => 1,
-                'server_side' => 0,
-                'details' => '{"order_column":null,"order_display_column":null}',
-                'created_at' => '2018-09-19 17:13:08',
-                'updated_at' => '2018-09-19 17:13:08',
-            ),
-            11 => 
+            9 => 
             array (
                 'id' => 19,
                 'name' => 'taux_cgp',
@@ -233,7 +197,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-19 17:21:21',
                 'updated_at' => '2018-09-19 17:21:21',
             ),
-            12 => 
+            10 => 
             array (
                 'id' => 20,
                 'name' => 'type_contrats',
@@ -251,7 +215,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-19 17:27:46',
                 'updated_at' => '2018-09-19 17:27:46',
             ),
-            13 => 
+            11 => 
             array (
                 'id' => 7,
                 'name' => 'cgps',
@@ -269,7 +233,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-10 15:38:45',
                 'updated_at' => '2018-09-25 21:35:57',
             ),
-            14 => 
+            12 => 
             array (
                 'id' => 22,
                 'name' => 'mandat',
@@ -287,7 +251,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-26 06:30:26',
                 'updated_at' => '2018-09-26 06:30:26',
             ),
-            15 => 
+            13 => 
             array (
                 'id' => 13,
                 'name' => 'leaseholders',
@@ -305,7 +269,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-10 15:53:00',
                 'updated_at' => '2018-09-26 09:30:00',
             ),
-            16 => 
+            14 => 
             array (
                 'id' => 15,
                 'name' => 'suppliers',
@@ -323,7 +287,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-10 15:54:06',
                 'updated_at' => '2018-09-26 09:34:25',
             ),
-            17 => 
+            15 => 
             array (
                 'id' => 8,
                 'name' => 'intermediaries',
@@ -340,6 +304,42 @@ class DataTypesTableSeeder extends Seeder
                 'details' => '{"order_column":null,"order_display_column":null}',
                 'created_at' => '2018-09-10 15:38:45',
                 'updated_at' => '2018-09-26 09:36:38',
+            ),
+            16 => 
+            array (
+                'id' => 6,
+                'name' => 'banks',
+                'slug' => 'banks',
+                'display_name_singular' => 'Banque',
+                'display_name_plural' => 'Banques',
+                'icon' => 'voyager-treasure',
+                'model_name' => 'App\\Bank',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => 'Banques et Assimilés',
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null}',
+                'created_at' => '2018-09-10 15:38:44',
+                'updated_at' => '2018-12-27 06:30:38',
+            ),
+            17 => 
+            array (
+                'id' => 17,
+                'name' => 'reservations',
+                'slug' => 'reservations',
+                'display_name_singular' => 'Réservation',
+                'display_name_plural' => 'Réservations',
+                'icon' => 'voyager-receipt',
+                'model_name' => 'App\\Reservation',
+                'policy_name' => 'App\\Policies\\ReservationPolicy',
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null}',
+                'created_at' => '2018-09-19 17:13:08',
+                'updated_at' => '2019-01-10 04:35:38',
             ),
         ));
         

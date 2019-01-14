@@ -37,6 +37,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => NULL,
+                'user_id' => NULL,
             ),
             1 => 
             array (
@@ -58,6 +59,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => NULL,
+                'user_id' => NULL,
             ),
             2 => 
             array (
@@ -79,6 +81,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => NULL,
+                'user_id' => NULL,
             ),
             3 => 
             array (
@@ -100,6 +103,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => NULL,
+                'user_id' => NULL,
             ),
             4 => 
             array (
@@ -121,6 +125,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => NULL,
+                'user_id' => NULL,
             ),
             5 => 
             array (
@@ -142,6 +147,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => NULL,
+                'user_id' => NULL,
             ),
             6 => 
             array (
@@ -163,6 +169,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => NULL,
+                'user_id' => NULL,
             ),
             7 => 
             array (
@@ -184,6 +191,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => NULL,
+                'user_id' => NULL,
             ),
             8 => 
             array (
@@ -205,6 +213,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => NULL,
+                'user_id' => NULL,
             ),
             9 => 
             array (
@@ -226,6 +235,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => NULL,
+                'user_id' => NULL,
             ),
             10 => 
             array (
@@ -247,6 +257,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => '0692448152',
                 'fax' => '-',
                 'email' => 'monelchristophe@gmail.com',
+                'user_id' => NULL,
             ),
             11 => 
             array (
@@ -268,6 +279,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => NULL,
+                'user_id' => NULL,
             ),
             12 => 
             array (
@@ -289,6 +301,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => 'testman@okdem.re',
+                'user_id' => NULL,
             ),
             13 => 
             array (
@@ -310,6 +323,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => 'testman@okdem.re',
+                'user_id' => NULL,
             ),
             14 => 
             array (
@@ -331,6 +345,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => 'testman@okdem.re',
+                'user_id' => NULL,
             ),
             15 => 
             array (
@@ -352,6 +367,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => 'testman@okdem.re',
+                'user_id' => NULL,
             ),
             16 => 
             array (
@@ -373,6 +389,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => 'testman@okdem.re',
+                'user_id' => NULL,
             ),
             17 => 
             array (
@@ -394,6 +411,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => 'testman@okdem.re',
+                'user_id' => NULL,
             ),
             18 => 
             array (
@@ -415,6 +433,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => 'testman@okdem.re',
+                'user_id' => NULL,
             ),
             19 => 
             array (
@@ -436,6 +455,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => 'testman@okdem.re',
+                'user_id' => NULL,
             ),
             20 => 
             array (
@@ -457,6 +477,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => 'testman@yopmail.com',
+                'user_id' => NULL,
             ),
             21 => 
             array (
@@ -478,6 +499,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => 'testman@yopmail.com',
+                'user_id' => NULL,
             ),
             22 => 
             array (
@@ -499,6 +521,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => 'testman@yopmail.com',
+                'user_id' => NULL,
             ),
             23 => 
             array (
@@ -520,6 +543,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => 'testman@yopmail.com',
+                'user_id' => NULL,
             ),
             24 => 
             array (
@@ -541,6 +565,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => 'testman@yopmail.com',
+                'user_id' => NULL,
             ),
             25 => 
             array (
@@ -562,6 +587,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => 'testman@yopmail.com',
+                'user_id' => NULL,
             ),
             26 => 
             array (
@@ -583,6 +609,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => 'testman@yopmail.com',
+                'user_id' => NULL,
             ),
             27 => 
             array (
@@ -604,6 +631,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => 'testman@yopmail.com',
+                'user_id' => NULL,
             ),
             28 => 
             array (
@@ -625,6 +653,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => 'dela.modale@delamodale.de',
+                'user_id' => NULL,
             ),
             29 => 
             array (
@@ -646,6 +675,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => 'dela.modale@delamodale.de',
+                'user_id' => NULL,
             ),
             30 => 
             array (
@@ -667,6 +697,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => 'dela.modale@delamodale.de',
+                'user_id' => NULL,
             ),
             31 => 
             array (
@@ -688,6 +719,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => 'dela.modale@delamodale.de',
+                'user_id' => NULL,
             ),
             32 => 
             array (
@@ -709,6 +741,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => 'dela.modale@delamodale.de',
+                'user_id' => NULL,
             ),
             33 => 
             array (
@@ -730,6 +763,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => 'dela.modale@delamodale.de',
+                'user_id' => NULL,
             ),
             34 => 
             array (
@@ -751,6 +785,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => 'dela.modale@delamodale.de',
+                'user_id' => NULL,
             ),
             35 => 
             array (
@@ -772,6 +807,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => 'dela.modale@delamodale.de',
+                'user_id' => NULL,
             ),
             36 => 
             array (
@@ -793,6 +829,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => 'djefoo@hotmail.com',
+                'user_id' => NULL,
             ),
             37 => 
             array (
@@ -814,6 +851,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => 'djefoo@hotmail.com',
+                'user_id' => NULL,
             ),
             38 => 
             array (
@@ -835,6 +873,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => 'g.aaron@refgfg.re',
+                'user_id' => NULL,
             ),
             39 => 
             array (
@@ -856,6 +895,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => 'g.aaron@refgfg.re',
+                'user_id' => NULL,
             ),
             40 => 
             array (
@@ -877,6 +917,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => 'g.aaron@htyhr.re',
+                'user_id' => NULL,
             ),
             41 => 
             array (
@@ -898,6 +939,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => 'g.aaron@htyhr.re',
+                'user_id' => NULL,
             ),
             42 => 
             array (
@@ -919,6 +961,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => '0101',
+                'user_id' => NULL,
             ),
             43 => 
             array (
@@ -940,6 +983,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => '0101',
+                'user_id' => NULL,
             ),
             44 => 
             array (
@@ -961,6 +1005,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => 'g.aaron@directimmo.re',
+                'user_id' => NULL,
             ),
         ));
         
