@@ -347,18 +347,18 @@
     </P>
     <TABLE cellpadding=0 cellspacing=0 class="t1">
         <TR>
-            <TD class="tr4 td2"><label class="p0 ft4"><input type="checkbox" @if($reservation->secteur_activite == 'industrie' && $reservation->nbr_snc <= 1) checked="checked"@endif> Industrie</label></TD>
-            <TD class="tr4 td3"><label class="p0 ft4"><input type="checkbox" @if($reservation->secteur_activite == 'energie' && $reservation->nbr_snc <= 1) checked="checked"@endif> Energie</label></TD>
-            <TD class="tr4 td4"><label class="p0 ft4"><input type="checkbox" @if($reservation->secteur_activite == 'indifferent' || $reservation->nbr_snc > 1) checked="checked"@endif> Indifférent</label></TD>
+            <TD class="tr4 td2"><label class="p0 ft4"><input type="checkbox" @if($reservation->secteurs_activite == 'industrie' && $reservation->nbr_snc <= 1) checked="checked"@endif> Industrie</label></TD>
+            <TD class="tr4 td3"><label class="p0 ft4"><input type="checkbox" @if($reservation->secteurs_activite == 'energie' && $reservation->nbr_snc <= 1) checked="checked"@endif> Energie</label></TD>
+            <TD class="tr4 td4"><label class="p0 ft4"><input type="checkbox" @if($reservation->secteurs_activite == 'indifferent' || $reservation->nbr_snc > 1) checked="checked"@endif> Indifférent</label></TD>
         </TR>
         <TR>
-            <TD class="tr5 td2"><label class="p0 ft4"><input type="checkbox" @if($reservation->secteur_activite == 'artisanat' && $reservation->nbr_snc <= 1) checked="checked"@endif> Artisanat</label></TD>
-            <TD class="tr5 td3"><label class="p0 ft4"><input type="checkbox" @if($reservation->secteur_activite == 'tp, transport, construction' && $reservation->nbr_snc <= 1) checked="checked"@endif> TP, Transport, Construction</label></TD>
+            <TD class="tr5 td2"><label class="p0 ft4"><input type="checkbox" @if($reservation->secteurs_activite == 'artisanat' && $reservation->nbr_snc <= 1) checked="checked"@endif> Artisanat</label></TD>
+            <TD class="tr5 td3"><label class="p0 ft4"><input type="checkbox" @if($reservation->secteurs_activite == 'tp, transport, construction' && $reservation->nbr_snc <= 1) checked="checked"@endif> TP, Transport, Construction</label></TD>
             <TD class="tr5 td4">&nbsp;</TD>
         </TR>
         <TR>
-            <TD class="tr3 td2"><label class="p0 ft4"><input type="checkbox" @if($reservation->secteur_activite == 'tourisme' && $reservation->nbr_snc <= 1) checked="checked"@endif> Tourisme</label></TD>
-            <TD class="tr3 td3"><label class="p0 ft4"><input type="checkbox" @if($reservation->secteur_activite == 'logement social' && $reservation->nbr_snc <= 1) checked="checked"@endif> Logement social</label></TD>
+            <TD class="tr3 td2"><label class="p0 ft4"><input type="checkbox" @if($reservation->secteurs_activite == 'tourisme' && $reservation->nbr_snc <= 1) checked="checked"@endif> Tourisme</label></TD>
+            <TD class="tr3 td3"><label class="p0 ft4"><input type="checkbox" @if($reservation->secteurs_activite == 'logement social' && $reservation->nbr_snc <= 1) checked="checked"@endif> Logement social</label></TD>
             <TD class="tr3 td4">&nbsp;</TD>
         </TR>
     </TABLE>
@@ -366,8 +366,8 @@
     <P class="p6 ft3">Le MANDANT souhaite souscrire un produit :</P>
     <TABLE cellpadding=0 cellspacing=0 class="t2">
         <TR>
-            <TD class="tr4 td2"><label class="p0 ft4"><input type="checkbox" @if(in_array($formulae->nom, ['Confort', 'Confort Prélevement'])) checked="checked" @endif> CONFORT</label></TD>
-            <TD class="tr4 td5"><label class="p0 ft4"><input type="checkbox" @if(in_array($formulae->nom,['Serenité', 'Serenité Prélevement'])) checked="checked" @endif> SERENITE + (garanti à 100% financièrement et fiscalement</label></TD>
+            <TD class="tr4 td2"><label class="p0 ft4"><input type="checkbox" @if(in_array($formulae->id, [1, 3])) checked="checked" @endif> CONFORT</label></TD>
+            <TD class="tr4 td5"><label class="p0 ft4"><input type="checkbox" @if(in_array($formulae->id,[2, 4])) checked="checked" @endif> SERENITE + (garanti à 100% financièrement et fiscalement</label></TD>
         </TR>                                                                                                                                          
         <TR>
             <TD class="tr5 td2"><label class="p0 ft4"><input type="checkbox"> Assistance juridique</label></TD>
