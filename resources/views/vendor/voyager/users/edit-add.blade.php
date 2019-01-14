@@ -68,7 +68,7 @@
                                         $dataTypeRows = $dataType->{(isset($dataTypeContent->id) ? 'editRows' : 'addRows' )};
 
                                         $row     = $dataTypeRows->where('field', 'user_belongsto_role_relationship')->first();
-                                        $options = json_decode($row->details);
+                                        $options = $row->details;
                                     @endphp
                                     @include('voyager::users.relationship')
                                 </div>
@@ -76,7 +76,7 @@
                                     <label for="additional_roles">{{ __('voyager::profile.roles_additional') }}</label>
                                     @php
                                         $row     = $dataTypeRows->where('field', 'user_belongstomany_role_relationship')->first();
-                                        $options = json_decode($row->details);
+                                        $options = $row->details;
                                     @endphp
                                     @include('voyager::users.relationship')
                                 </div>
