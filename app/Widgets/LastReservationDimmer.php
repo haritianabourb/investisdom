@@ -32,7 +32,7 @@ class LastReservationDimmer extends BaseDimmer
 
       $text = "<ul class='text-left text-info'>";
       foreach ($lasts as $last){
-            $text.= "<li><a href='".route('voyager.reservations.show', $last)."' class='text-info'><strong>{$last->identifiant} : ".$last->investorsId()->find($last->investors_id)->name." - ".number_format($last->taux_rentabilite, 2, '.', " ")."%</strong></a></li>";
+            $text.= "<li><a href='".route('voyager.reservations.show', $last)."' class='text-info'><strong>{$last->identifiant} : ".($last->investorsId()->find($last->investors_id) ? $last->investorsId()->find($last->investors_id)->name: '')." - ".number_format($last->taux_rentabilite, 2, '.', " ")."%</strong></a></li>";
       }
       $text .= "</ul>";
 
