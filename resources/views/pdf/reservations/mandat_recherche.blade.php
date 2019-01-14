@@ -314,7 +314,7 @@
             <TD class="tr3 td1"><P class="p3 ft3">Téléphone fixe : {{$investor->fixe_invest}}</P></TD>
         </TR>
         <TR>
-            <TD class="tr3 td0"><P class="p0 ft3">Adresse : {{$investor->adress_1}} {{$investor->adress_2 ?: ""}}</P></TD>
+            <TD class="tr3 td0"><P class="p0 ft3">Adresse : {{$investor->address_1}} {{$investor->address_2 ?: ""}}</P></TD>
             <TD class="tr3 td1"><P class="p3 ft3">Téléphone portable : {{$investor->gsm_invest}}</P></TD>
         </TR>
         <TR>
@@ -362,7 +362,7 @@
             <TD class="tr3 td4">&nbsp;</TD>
         </TR>
     </TABLE>
-    <P class="p10 ft3">Nombre souhaité de SNC : 2</P>
+    <P class="p10 ft3">Nombre souhaité de SNC : {{$reservation->nbr_snc}}</P>
     <P class="p6 ft3">Le MANDANT souhaite souscrire un produit :</P>
     <TABLE cellpadding=0 cellspacing=0 class="t2">
         <TR>
