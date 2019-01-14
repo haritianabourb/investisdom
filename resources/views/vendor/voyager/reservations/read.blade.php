@@ -25,7 +25,9 @@
 
         <a type="button" href="{{ route('admin.reservations.generate-recherche', ['reservation' => $dataTypeContent]) }}" class="btn btn-default generate-pdf-convention"><i class="voyager-documentation"></i> Generer le Contrat</a>
         <a type="button" href="{{ route('admin.reservations.generate-mandat', ['reservation' => $dataTypeContent]) }}" class="btn btn-default generate-pdf-convention"><i class="voyager-documentation"></i> Generer le Mandat de Recherche</a>
+        @if($dataTypeContent->paiement == "echelonne" || $dataTypeContent->moyen_paiement == "prelevement")
         <a type="button" href="{{ route('admin.reservations.generate-sepa', ['reservation' => $dataTypeContent]) }}" class="btn btn-default generate-pdf-convention"><i class="voyager-documentation"></i> Generer un Mandat SEPA</a>
+        @endif
     </h1>
     @include('voyager::multilingual.language-selector')
 @stop

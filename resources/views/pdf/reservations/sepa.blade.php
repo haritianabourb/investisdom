@@ -316,17 +316,51 @@
     <P class="p23 ft23">Investisseur :</P>
     <P class="p24 ft17">{{$investor->civilite}} {{$investor->full_name}}<SPAN class="ft8">domiciliée à </SPAN> {{$investor->address_1}} {{$investor->address_2}}, {{$investor->postal_code}} {{$investor->city}},</P>
     <P class="p25 ft8">INVESTIS DOM SAS, en charge de la trésorerie et de la gestion des SNC réalisant les investissements éligibles aux dispositifs de réduction d’impôt régis à l’article 199 undecies B du Code Général des Impôts prélèvera les sommes suivantes sur le compte de <SPAN class="ft17">{{$investor->civilite}} {{$investor->full_name}}</SPAN></P>
-    <P class="p26 ft14">Commentaire :</P>
-    <P class="p27 ft14">Génération de l’échéancier en fonction du choix, unique ou échelonné</P>
-    <P class="p28 ft27"><SPAN class="ft4">-</SPAN><SPAN class="ft26">Si prélèvement unique (coche « ponctuel ») =&gt; une seule ligne avec le montant de l’apport, le montant des frais et de l’assistance juridique</SPAN></P>
-    <P class="p29 ft29"><SPAN class="ft4">-</SPAN><SPAN class="ft28">Si prélèvement échelonné (coche « récurrent ») =&gt; première ligne 40% de l’apport, le montant des frais et de l’assistance juridique puis sur les lignes suivantes jusqu’à octobre le solde de l’apport divisé par le nombre de mois restants.</SPAN></P>
-    <TABLE cellpadding=0 cellspacing=0 class="t2">
+    <br>
+    <br>
+    <TABLE cellpadding=0 cellspacing=0>
         <TR>
-            <TD class="tr8 td25"><P class="p7 ft11">Date</P></TD>
+            <TD class="tr8 td25"><P class="p30 ft23">Date</P></TD>
             <TD class="tr8 td23"><P class="p30 ft23">Apport en compte Courant</P></TD>
-            <TD class="tr8 td24"><P class="p31 ft23">Formalités</P></TD>
-            <TD class="tr8 td24"><P class="p31 ft23">Assistance Juridique</P></TD>
+            <TD class="tr8 td24"><P class="p30 ft23">Formalités</P></TD>
+            <TD class="tr8 td24"><P class="p30 ft23">Assistance Juridique</P></TD>
         </TR>
+        @if($reservation->paiement == "unique")
+        <TR>
+            <TD class="tr8 td25"><P class="p30 ft23">{{$reservation->created_at}}</P></TD>
+            <TD class="tr8 td23"><P class="p30 ft23">{{number_format($reservation->apport, 2, ',', " ")}}</P></TD>
+            <TD class="tr8 td24"><P class="p30 ft23">{{number_format($reservation->nbr_snc*60, 2, ',', " ")}}</P></TD>
+            <TD class="tr8 td24"><P class="p30 ft23">{{number_format($reservation->nbr_snc*75, 2, ',', " ")}}</P></TD>
+        </TR>
+        @else
+            <?php
+            $diffInMonth = $reservation->created_at->DiffInMonths('2019-10-01 00:00:00');
+            $start = $reservation->apport *40/100;
+
+            $rest = ($reservation->apport - $start)/($diffInMonth-1);
+            ?>
+        <TR>
+            <TD><P>{{$reservation->created_at->format('d/m/Y')}}</P></TD>
+            <TD><P>{{number_format($start, 2, ',', " ")}}</P></TD>
+            <TD><P>{{number_format($reservation->nbr_snc*60, 2, ',', " ")}}</P></TD>
+            <TD><P>{{number_format($reservation->nbr_snc*75, 2, ',', " ")}}</P></TD>
+        </TR>
+            <?php
+                    $loopDate = $reservation->created_at->addMonth()->copy()->startOfMonth();
+            ?>
+            @for ($i = 1; $i < $diffInMonth; $i++)
+                    <TR>
+                        <TD><P>{{$loopDate->format('d/m/Y')}}</P></TD>
+                        <TD><P>{{number_format($rest, 2, ',', " ")}}</P></TD>
+                        <TD><P>&nbsp;</P></TD>
+                        <TD><P>&nbsp;</P></TD>
+                    </TR>
+                <?php
+                      $loopDate = $loopDate->addMonth()->copy()->startOfMonth();
+                ?>
+            @endfor
+
+        @endif
     </TABLE>
 </DIV>
 @endsection
