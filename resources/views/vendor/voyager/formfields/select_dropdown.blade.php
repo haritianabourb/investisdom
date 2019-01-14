@@ -58,7 +58,7 @@
           @php
             $relationshipDataType = app('voyager')->model('DataType')->where('model_name', '=', get_class($relationshipClass))->first();
             $relationshipDataTypeRows = $relationshipDataType->addRows->filter(function($item, $key){
-              $details = json_decode($item->details);
+              $details = $item->details
               return isset($details->modal) && $details->modal;
             });
             // TODO make this configurable in option later with an id in a display modal BREAD configuration.
