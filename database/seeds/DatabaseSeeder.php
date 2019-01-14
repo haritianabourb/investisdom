@@ -46,6 +46,5 @@ class DatabaseSeeder extends Seeder
         $this->call(SncsTableSeeder::class);
         $this->call(MandatTableSeeder::class);
         $this->call(ResetSequenceTableSeeder::class);
-        $this->call(bcktestintAddressesTableSeeder::class);
     }
 }
