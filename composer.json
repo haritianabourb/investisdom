@@ -13,6 +13,7 @@
         "cknow/laravel-money": "~3.2",
         "doctrine/dbal": "^2.8",
         "fideloper/proxy": "^4.0",
+        "guzzlehttp/guzzle": "^6.3",
         "larapack/hooks": "^1.0",
         "larapack/voyager-hooks": "^1.0",
         "laravel/framework": "5.6.*",
@@ -20,9 +21,11 @@
         "markrogoyski/math-php": "0.*",
         "niklasravnsborg/laravel-pdf": "^2.0",
         "orangehill/iseed": "^2.6",
+        "quentinbontemps/laravel-yousign": "^1.0",
         "tcg/voyager": "^1.1",
         "torann/currency": "^1.0",
-        "voyager-themes": "^0.13.0"
+        "voyager-themes": "^0.13.0",
+        "yousign/yousign-api-client": "~2.0.4"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",

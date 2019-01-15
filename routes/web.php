@@ -31,6 +31,8 @@ Route::get('/p_18', 'Investis\P18PDFController@generatePDF');
 Route::get('/p_24', 'Investis\P24FactVentePDFController@generatePDF');
 Route::get('/p_25', 'Investis\P25PDFController@generatePDF');
 
+Route::get('/test_requests', 'Investis\YouSignController@TestRequests');
+
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
     Route::group(['prefix' => 'cgps'], function(){
