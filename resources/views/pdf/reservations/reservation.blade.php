@@ -556,7 +556,7 @@
         <P class="p28 ft3">Situation matrimoniale :</P>
         <LABEL class="p60 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "01" )checked="checked"@endif> Célibataire</LABEL><br>
         <LABEL class="p29 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "02" )checked="checked"@endif> Marié(e) sous contrat</LABEL><br>
-        <LABEL class="p29 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "0" )checked="checked"@endif> Marié(e) sous le régime de la communauté</LABEL><br>
+        <LABEL class="p29 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "03" )checked="checked"@endif> Marié(e) sous le régime de la communauté</LABEL><br>
         <LABEL class="p29 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "04" )checked="checked"@endif> Pacsé(e)</LABEL><br>
         <LABEL class="p29 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "05" )checked="checked"@endif> Divrocé(e)</LABEL><br>
         <LABEL class="p29 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "06" )checked="checked"@endif> Veuf(ve)</LABEL>
@@ -597,6 +597,7 @@
 <DIV id="page_8">
     <DIV id="id8_1">
         <P class="p71 ft4">4. CONSENTEMENT DES EPOUX OU DES ENGAGES</P>
+        @if(!in_array($investor->regime_mat_invest, ["01", "04", "05", "06"]))
         <P class="p58 ft3">Je soussigné(e) :</P>
         <P class="p29 ft3">Prénom : {{$investor->prenom_conjoint ?: "-"}} </P>
         <P class="p29 ft3">Nom : {{$investor->nom_conjoint ?: "-"}} </P>
@@ -610,6 +611,9 @@
         <P class="p68 ft3">Fait à : {{$investor->postal_code}} {{$investor->city}}</P>
         <P class="p29 ft3">Le : <NOBR>{{\Carbon\Carbon::now()->format('d-m-Y')}}</NOBR></P>
         <P class="p61 ft3">signature</P>
+        @else
+            <P class="p72 ft3">Aucun consentement n'est nécessaire</P>
+        @endif
     </DIV>
 </DIV>
 <DIV id="page_9">
