@@ -495,7 +495,7 @@
         <TABLE cellpadding=0 cellspacing=0 class="t3">
             <TR>
                 <TD class="tr4 td6">
-                    <P class="p0 ft3">Fait à : {{$investor->postal_code}}, le
+                    <P class="p0 ft3">Fait à : {{$investor->postal_code}} {{$investor->city}}, le
                         <NOBR>{{date('d-m-Y')}}</NOBR>
                     </P>
                 </TD>
@@ -559,7 +559,7 @@
         <P class="p28 ft3">Si marié(e) ou engagé(e) dans les liens d'un Pacte Civil de Solidarité (P.A.C.S) :</P>
         <P class="p35 ft3">Renonciation du conjoint à la qualité d'associé</P>
         <P class="p28 ft3">Le soussigné(e) déclare acquérir les parts de SNC au moyen de ses deniers propres.</P>
-        <P class="p28 ft3">Fait à : {{$investor->city}}</P>
+        <P class="p28 ft3">Fait à : {{$investor->postal_code}} {{$investor->city}}</P>
         <P class="p59 ft3">Le : <NOBR>{{\Carbon\Carbon::now()->format('d-m-Y')}}</NOBR></P>
         <P class="p61 ft3">signature</P>
         <P class="p62 ft14">Les Informations recueillies par INVESTIS DOM font l'objet d'un traitement informatique destiné à traiter votre souscription dans nos opérations d'investissements au titre de l'article 199 undecies B du Code Général des Impôts. Vos opérations et données personnelles sont couvertes par le secret professionnel auquel nous sommes tenus.</P>
@@ -580,7 +580,7 @@
         <P class="p66 ft12">Déclare sur l'honneur, conformément à l'article 17 de l'arrêté du 9 février 1968 pris à la suite du décret n° <NOBR>84-406</NOBR> du 30 mai 1984, relatif au Registre du Commerce et des Sociétés, n'avoir fait l'objet d'aucune condamnation pénale ni de sanction civile ou administrative de nature à m'interdire :</P>
         <P class="p67 ft3"><SPAN class="ft16">°</SPAN><SPAN class="ft5">Soit d'exercer une activité commerciale</SPAN></P>
         <P class="p29 ft3"><SPAN class="ft16">°</SPAN><SPAN class="ft5">Soit de gérer, d'administrer ou de diriger une personne morale.</SPAN></P>
-        <P class="p68 ft3">Fait à : {{$investor->city}}</P>
+        <P class="p68 ft3">Fait à : {{$investor->postal_code}} {{$investor->city}}</P>
         <P class="p29 ft3">Le : <NOBR>{{\Carbon\Carbon::now()->format('d-m-Y')}}</NOBR></P>
         <P class="p61 ft3">signature</P>
         <P class="p69 ft15">Rappel : Article L <NOBR>123-5</NOBR> du Code de Commerce</P>
@@ -603,7 +603,7 @@
         <P class="p27 ft3">Déclare par la présente,</P>
         <P class="p73 ft12"><SPAN class="ft16">°</SPAN><SPAN class="ft17">Avoir été informé(e) conformément aux dispositions de l'article </SPAN><NOBR>1832-2</NOBR> du Code Civil, de la demande de souscription effectuée par mon conjoint pour un montant de réduction d'impôt de {{$reservation->montant_reduction}} euros</P>
         <P class="p67 ft3"><SPAN class="ft16">°</SPAN><SPAN class="ft5">Renoncer, en application de l'article </SPAN><NOBR>1832-2</NOBR> du Code Civil, à revendiquer la qualité d'associé de la SNC et reconnais cette qualité à mon conjoint.</P>
-        <P class="p68 ft3">Fait à : {{$investor->city}}</P>
+        <P class="p68 ft3">Fait à : {{$investor->postal_code}} {{$investor->city}}</P>
         <P class="p29 ft3">Le : <NOBR>{{\Carbon\Carbon::now()->format('d-m-Y')}}</NOBR></P>
         <P class="p61 ft3">signature</P>
     </DIV>
@@ -632,7 +632,7 @@
         <P class="p84 ft3"><SPAN class="ft16">°</SPAN><SPAN class="ft5">La constatation de la clôture de liquidation.</SPAN></P>
         <P class="p85 ft3"><SPAN class="ft3">-</SPAN><SPAN class="ft5">De signer en mes lieux et places les </SPAN><NOBR>procès-verbaux</NOBR> ainsi que tous autres documents se rapportant à ces assemblées.</P>
         <P class="p86 ft12">Je suis informé(e) que je pourrai disposer prochainement sur mon compte personnel INVESTIS DOM (accessible depuis <NOBR>www.investis-dom.com)</NOBR> de l'ensemble de mes dossiers de souscription, ainsi qu'aux dossiers des pièces contractuelles.</P>
-        <P class="p87 ft3">Fait à : {{$investor->postal_code}}</P>
+        <P class="p87 ft3">Fait à : {{$investor->postal_code}} {{$investor->city}}</P>
         <P class="p29 ft3">Le : <NOBR>{{\Carbon\Carbon::now()->format('d-m-Y')}}</NOBR></P>
         <P class="p67 ft16">Faire précéder la signature de la mention manuscrite</P>
         <P class="p88 ft16">« Bon pour pouvoir »</P>
@@ -690,7 +690,7 @@
         <P class="p28 ft3">Adresse : {{$investor->address_1}} {{$investor->address_2?:""}}</P>
         <P class="p28 ft3">Code postal : {{$investor->postal_code}}</P>
         <P class="p28 ft3">Ville : {{$investor->city}}</P>
-        <P class="p100 ft3">Fait à : {{$investor->city}}</P>
+        <P class="p100 ft3">Fait à : {{$investor->postal_code}} {{$investor->city}}</P>
         <P class="p29 ft3">Le : <NOBR>{{\Carbon\Carbon::now()->format('d-m-Y')}}</NOBR></P>
         <P class="p61 ft3">signature</P>
 
