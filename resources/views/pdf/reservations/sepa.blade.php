@@ -173,7 +173,7 @@
 @section("body")
 <DIV id="page_1">
     <P class="p0 ft0">MANDAT DE PRELEVEMENT SEPA CORE</P>
-    <P class="p1 ft2"><SPAN class="ft1">Référence unique du mandat : </SPAN>{{$reservation->identifiant}}<SPAN class="ft1"> REU</SPAN></P>
+    <P class="p1 ft2"><SPAN class="ft1">Référence unique du mandat : </SPAN>{{$reservation->identifiant}}<SPAN class="ft1"></SPAN></P>
     <P class="p2 ft3">En signant ce formulaire de mandat, vous autorisez le Créancier à envoyer des instructions à votre banque pour débiter votre compte, et votre banque à débiter votre compte conformément aux instructions du Créancier.</P>
     <P class="p3 ft3">Vous bénéficiez du droit d’être remboursé par votre banque selon les conditions décrites dans la convention que vous avez passée avec elle. Une demande de remboursement doit être présentée :</P>
     <P class="p4 ft6"><SPAN class="ft4">-</SPAN><SPAN class="ft5">dans les 8 semaines suivant la date de débit de votre compte pour un prélèvement autorisé et contesté.</SPAN></P>
@@ -286,8 +286,8 @@
             </TR>
         </TABLE>
     </div>
-    <P class="p11 ft8">Fait à {{$investor->city}}</P>
-    <P class="p12 ft17"><SPAN class="ft8">Le </SPAN>{{$reservation->created_at}}</P>
+    <P class="p11 ft8">Fait à {{$investor->postal_code}} {{$investor->city}}</P>
+    <P class="p12 ft17"><SPAN class="ft8">Le </SPAN>{{$reservation->created_at->format('d/m/Y')}}</P>
     <P class="p13 ft8">Signature</P>
 </DIV>
 <DIV id="page_2">
@@ -307,7 +307,7 @@
     <P class="p17 ft18">………………………………………………………………………………………………………………………………………..</P>
     <P class="p14 ft19"><SPAN class="ft18">…………………………..</SPAN>Code identifiant du tiers créancier</P>
     <P class="p20 ft9">Contrat concerné</P>
-    <P class="p18 ft17"><SPAN class="ft22">{{$reservation->identifiant}}</SPAN><SPAN class="ft8">REU / Réservation Girardin industrielle </SPAN>{{date('Y')}}</P>
+    <P class="p18 ft17"><SPAN class="ft22">{{$reservation->identifiant}}</SPAN><SPAN class="ft8"> / Réservation Girardin industrielle </SPAN>{{date('Y')}}</P>
     <P class="p14 ft19">Numéro et description du contrat</P>
     <P class="p21 ft8">Les informations contenues dans le présent mandat, qui doit être complété, sont destinées à n’être utilisées par le créancier que pour la gestion de sa relation avec son client. Elles pourront donner lieu à l’exercice, par ce dernier, de ses droits d’oppositions, d’accès et de rectification tels que prévus aux articles 38 et suivants de la loi <NOBR>n°78-17</NOBR> du 6 janvier 1978 relative à l’informatique, aux fichiers et aux libertés.</P>
 </DIV>

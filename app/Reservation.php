@@ -13,6 +13,10 @@ class Reservation extends Model
         'afterGeneratePdf',
     ];
 
+    protected $casts = [
+        "created_at" => "datetime:d/m/Y",
+    ];
+
   const RESERVATION = 'RESERVATION';
   const MANDAT = 'MANDAT';
   const CONTRAT = 'CONTRAT';
