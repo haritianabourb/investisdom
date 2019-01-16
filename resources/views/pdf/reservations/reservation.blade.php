@@ -547,7 +547,7 @@
         <P class="p29 ft3">Adresse : {{$investor->address_1}} {{$investor->address_2}}- {{$investor->postal_code}} - {{$investor->city}}</P>
         <P class="p28 ft3">Téléphone : {{$investor->fixe_invest ?: "-"}}</P>
         <P class="p29 ft3">Fax : {{$investor->fax_invest ?: "-"}}</P>
-        <P class="p29 ft3">Mobile : {{$investor->mobile_invest ?: "-"}}</P>
+        <P class="p29 ft3">Mobile : {{$investor->gsm_invest ?: "-"}}</P>
         <P class="p29 ft3">Email : {{$investor->email_invest ?: "-"}}</P>
         <P class="p28 ft3">Situation matrimoniale :</P>
         <LABEL class="p60 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "01" )checked="checked"@endif> Célibataire</LABEL><br>
