@@ -322,7 +322,7 @@
 @section('body')
 <DIV id="page_1">
     <DIV id="id1_1">
-        <P class="p0 ft0">DEMANDE DE RESERVATION PRODUIT {{strtoupper(in_array($formulae->nom, ['Confort', 'Confort Prelevement']) ? "Confort" : "Serenite")}}</P>
+        <P class="p0 ft0">DEMANDE DE RESERVATION PRODUIT {{strtoupper(in_array($formulae->nom, ['confort', 'confort-echelonne']) ? "Confort" : "Serenite")}}</P>
         <TABLE cellpadding=0 cellspacing=0 class="t0">
             <TR>
                 <TD class="tr0 td0"><P class="p1 ft1">&nbsp;</P></TD>
@@ -454,7 +454,7 @@
             </TR>
             <TR>
                 <TD class="tr5 td12"><P class="p1 ft3">- Assistance juridique</P></TD>
-                <TD class="tr5 td13"><P class="p13 ft2">@if($reservation->assistance_juridique && in_array($formulae->nom, ['Confort', 'Confort Prelevement'])) {{number_format($reservation->nbr_snc*75, 2, ","," ")}} @else 0 @endif euros, (75.00 euros par SNC)</P></TD>
+                <TD class="tr5 td13"><P class="p13 ft2">@if($reservation->assistance_juridique && in_array($formulae->nom, ['confort', 'confort-echelonne'])) {{number_format($reservation->nbr_snc*75, 2, ","," ")}} @else 0 @endif euros, (75.00 euros par SNC)</P></TD>
             </TR>
         </TABLE>
     </DIV>
@@ -486,7 +486,7 @@
         <P class="p45 ft12">Je suis informé(e) que ces conditions sont valables sous réserve que mon dossier complet soit adressé à INVESTIS DOM au plus tard le <NOBR>{{\Carbon\Carbon::now()->addDay(7)->format('d-m-Y')}}</NOBR> par voie numérique puis au plus tard le <NOBR>{{\Carbon\Carbon::now()->addDay(10)->format('d-m-Y')}}</NOBR> par courrier.</P>
         <P class="p46 ft12">Sous réserve de l'acceptation par INVESTIS DOM de la présente réservation, de l'encaissement de mon dépôt en compte courant et des frais liés, INVESTIS DOM s'engage à honorer ma souscription avant le 31/12/{{\Carbon\Carbon::now()->format('Y')}}, date limite de la cession des parts sociales.</P>
         <P class="p47 ft11">Je donne pouvoir à INVESTIS DOM pour signer en mon nom et pour mon compte les dossiers de souscription et effectuer toutes les formalités y afférant. Dans l'hypothèse où tout ou partie de mes souscriptions ne seraient pas réalisées avant le 31/12/{{\Carbon\Carbon::now()->format('Y')}}, INVESTIS DOM s'engage â me rembourser le montant des sommes non utilisées hors écart d'ajustement qui sera porté au crédit de mon compte.</P>
-        <P class="p48 ft12">Pendant la durée de détention des parts sociales à minima de 5 années, @if($reservation->assistance_juridique) je souhaite @else je ne souhaite pas @endif bénéficier de l'assistance juridique d'INVESTIS DOM @if($reservation->assistance_juridique && in_array($formulae->nom, ['Confort', 'Confort Prelevement'])) d'un montant de  75,00 euros par SNC, soit un montant annuel de {{number_format($reservation->nbr_snc*75/5, 2, ","," ")}} euros @endif.</P>
+        <P class="p48 ft12">Pendant la durée de détention des parts sociales à minima de 5 années, @if($reservation->assistance_juridique) je souhaite @else je ne souhaite pas @endif bénéficier de l'assistance juridique d'INVESTIS DOM @if($reservation->assistance_juridique && in_array($formulae->nom, ['confort', 'confort-echelonne'])) d'un montant de  75,00 euros par SNC, soit un montant annuel de {{number_format($reservation->nbr_snc*75/5, 2, ","," ")}} euros @endif.</P>
         <P class="p28 ft3">Je suis informé(e) que les formalités d'enregistrement s'élèvent à {{ number_format($reservation->nbr_snc*70, 2, ","," ") }} euros que je m'engage à payer au gérant des SNC.</P>
         <P class="p49 ft12">Pour cette réservation, je suis averti que conformément à l'article <NOBR>L.121-20-12</NOBR> du code de la consommation. Je dispose d'un délai de 14 jours révolu pour exercer mon droit de rétractation.</P>
         <P class="p50 ft11">En application de l'article <NOBR>L.411-2</NOBR> du Code Monétaire et Financier, cette opération ne donne pas lieu à l'établissement de documents d'informations soumis au visa de l'Autorité dos marchés financiers (AMF). Je suis informé(e) que, s'agissant d'un placement privé visant un cercle restreint d'investisseurs, le nombre d'investisseurs participant à chacune des opérations souscrites ne doit pas dépasser le chiffre de 150 conformément aux articles et dispositions <NOBR>L.411-2</NOBR> et <NOBR>D411-4</NOBR> du Code Monétaire et Financier.</P>
