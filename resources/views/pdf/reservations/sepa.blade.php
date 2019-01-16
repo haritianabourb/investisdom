@@ -334,10 +334,10 @@
         </TR>
         @else
             <?php
-            $diffInMonth = $reservation->created_at->DiffInMonths('2019-10-01 00:00:00');
+            $diffInMonth = $reservation->created_at->DiffInMonths('2019-11-01 00:00:00');
             $start = $reservation->apport *40/100;
 
-            $rest = ($reservation->apport - $start)/($diffInMonth-1);
+            $rest = ($reservation->apport - $start)/($diffInMonth);
             ?>
         <TR>
             <TD><P>{{$reservation->created_at->format('d/m/Y')}}</P></TD>
@@ -348,7 +348,7 @@
             <?php
                     $loopDate = $reservation->created_at->addMonth()->copy()->startOfMonth();
             ?>
-            @for ($i = 1; $i < $diffInMonth; $i++)
+            @for ($i = 1; $i <= $diffInMonth; $i++)
                     <TR>
                         <TD><P>{{$loopDate->format('d/m/Y')}}</P></TD>
                         <TD><P>{{number_format($rest, 2, ',', " ")}}</P></TD>
