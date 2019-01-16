@@ -312,7 +312,7 @@
         .t9{width: 383px;margin-left: 327px;margin-top: 148px;font: italic 10px 'Helvetica';}
         .t10{width: 383px;margin-left: 327px;margin-top: 367px;font: italic 10px 'Helvetica';}
         .t11{width: 383px;margin-left: 327px;margin-top: 114px;font: italic 10px 'Helvetica';}
-        .t12{width: 341px;margin-left: 42px;margin-top: 40px;font: 11px 'Helvetica';}
+        .t12{width: 456px;margin-left: 42px;margin-top: 40px;font: 11px 'Helvetica';}
         .t13{width: 386px;margin-left: 366px;margin-top: 530px;font: italic 10px 'Helvetica';}
         .t14{width: 386px;margin-left: 324px;margin-top: 144px;font: italic 10px 'Helvetica';}
         .t15{width: 386px;margin-left: 324px;margin-top: 151px;font: italic 10px 'Helvetica';}
@@ -322,7 +322,7 @@
 @section('body')
 <DIV id="page_1">
     <DIV id="id1_1">
-        <P class="p0 ft0">DEMANDE DE RESERVATION PRODUIT {{strtoupper(in_array($formulae->nom, ['Confort', 'Confort Prelevement']) ? "Confort" : "Serenité")}}</P>
+        <P class="p0 ft0">DEMANDE DE RESERVATION PRODUIT {{strtoupper(in_array($formulae->nom, ['Confort', 'Confort Prelevement']) ? "Confort" : "Serenite")}}</P>
         <TABLE cellpadding=0 cellspacing=0 class="t0">
             <TR>
                 <TD class="tr0 td0"><P class="p1 ft1">&nbsp;</P></TD>
@@ -338,7 +338,7 @@
         <P class="p5 ft3"><SPAN class="ft2">-</SPAN><SPAN class="ft5">Dûment renseigné,</SPAN></P>
         <P class="p6 ft3"><SPAN class="ft2">-</SPAN><SPAN class="ft5">Signé, pages 4, 5, 6, 7, 8</SPAN></P>
         <P class="p6 ft3"><SPAN class="ft2">-</SPAN><SPAN class="ft5">Paraphé, pages 1, 2, 3, 9, 10, 11</SPAN></P>
-        <P class="p7 ft3">Accompagné des pièces <NOBR>ci-dessous</NOBR> et des chèques de règlement figurant page 9</P>
+        <P class="p7 ft3">Accompagné des pièces <NOBR>ci-dessous</NOBR> et des chèques de règlement figurant page 12</P>
         <P class="p8 ft3"><SPAN class="ft2">-</SPAN><SPAN class="ft5">Copie de la pièce d'identité</SPAN></P>
         <P class="p6 ft3"><SPAN class="ft2">-</SPAN><SPAN class="ft5">Justificatif de domicile</SPAN></P>
 
@@ -442,19 +442,19 @@
         <P class="p28 ft3">Vous souscrivez nos opérations d'investissement afin de bénéficier d'une réduction d'impôt de {{$reservation->montant_reduction}} euros.</P>
         <P class="p28 ft3">Pour ce faire, vos engagements financiers sont :</P>
         <P class="p29 ft3">Apport en compte courant d'associé de {{number_format($reservation->apport, 2, ","," ")}} euros</P>
-        <P class="p29 ft3">Frais d'enregistrement : 140 euros</P>
+        <P class="p29 ft3">Frais d'enregistrement : {{ number_format($reservation->nbr_snc*70, 2, ","," ") }} euros</P>
         <TABLE cellpadding=0 cellspacing=0 class="t5">
             <TR>
                 <TD class="tr0 td12"><P class="p1 ft3">- Formalités d'enregistrement</P></TD>
-                <TD class="tr0 td13"><P class="p1 ft3">{{ $reservation->nbr_snc*60 }} euros, (60 euros par SNC)</P></TD>
+                <TD class="tr0 td13"><P class="p1 ft3">{{ number_format($reservation->nbr_snc*60, 2, ","," ") }} euros, (60 euros par SNC)</P></TD>
             </TR>
             <TR>
                 <TD class="tr2 td12"><P class="p1 ft3">- Prix des parts sociales</P></TD>
-                <TD class="tr2 td13"><P class="p17 ft3">{{$reservation->montant_reduction/1000}} euros, (0.10 euro la part)</P></TD>
+                <TD class="tr2 td13"><P class="p17 ft3">{{number_format($reservation->montant_reduction/1000, 2, ","," ")}} euros, (0.10 euro la part)</P></TD>
             </TR>
             <TR>
                 <TD class="tr5 td12"><P class="p1 ft3">- Assistance juridique</P></TD>
-                <TD class="tr5 td13"><P class="p13 ft2">@if($reservation->assistance_juridique && in_array($formulae->nom, ['Confort', 'Confort Prelevement'])) {{$reservation->nbr_snc*75}} @else 0 @endif euros, (75.00 euros par SNC)</P></TD>
+                <TD class="tr5 td13"><P class="p13 ft2">@if($reservation->assistance_juridique && in_array($formulae->nom, ['Confort', 'Confort Prelevement'])) {{number_format($reservation->nbr_snc*75, 2, ","," ")}} @else 0 @endif euros, (75.00 euros par SNC)</P></TD>
             </TR>
         </TABLE>
     </DIV>
@@ -473,7 +473,7 @@
         <P class="p30 ft11">L'investisseur dispose d'un délai de rétractation de 14 jours calendaires à compter de la signature de la présente demande de réservation confort. Le contrat ne recevra aucun commencement d'exécution avant l'expiration du délai de rétractation. En dehors de ce droit de rétractation, il n'existe aucune autre possibilité de résiliation. Vous êtes informé que la sortie de l'opération dans laquelle vous avez souscrit s'opère par voie de cession des droits sociaux au terme de la 5ème année (ou après dissolution et liquidation de la ou des SNC dont vous êtes associé). La langue utilisée dans les contrats et pour l'exécution de ces contrats est le français.</P>
         <P class="p37 ft9">II - RESERVATION</P>
         <P class="p38 ft4">1. DEMANDE DE RESERVATION</P>
-        <P class="p39 ft11">Je soussigné(e) {{ $investor->full_name }} demeurant {{ $investor->address_1.", ".$investor->address_2 }} - {{$investor->postal_code}} - {{$investor->city}} m'engage à m'associer aux investissements en défiscalisation loi Girardin (articles 199 undecies B ou C du CGI) sélectionnés par INVESTIS DOM pour un montant total de réduction d'impôt au titre de l'IRPP de : {{$reservation->montant_reduction}} euros.</P>
+        <P class="p39 ft11">Je soussigné(e) {{ $investor->full_name }} demeurant {{ $investor->address_1.", ".$investor->address_2 }} - {{$investor->postal_code}} - {{$investor->city}} m'engage à m'associer aux investissements en défiscalisation loi Girardin (articles 199 undecies B du CGI) sélectionnés par INVESTIS DOM pour un montant total de réduction d'impôt au titre de l'IRPP de : {{$reservation->montant_reduction}} euros.</P>
         <P class="p40 ft13">Je déclare avoir pris la décision de m'associer aux investissements en défiscalisation loi Girardin en toute connaissance de cause, avoir sollicités tous avis auprès de conseils spécialisés et être en mesure d'appréhender l'ensemble des contraintes et risques inhérents à ce type de placement.</P>
         <P class="p41 ft12">Je suis informé(e) que je ne peux participer à cette opération que pour mon propre compte et que la souscription au capital d'une Société en Nom Collectif emporte la qualité d'associé pendant toute la durée de l'opération. Il m'appartient de veiller à ce que cette qualité ne soit pas incompatible</P>
     </DIV>
@@ -486,8 +486,8 @@
         <P class="p45 ft12">Je suis informé(e) que ces conditions sont valables sous réserve que mon dossier complet soit adressé à INVESTIS DOM au plus tard le <NOBR>{{\Carbon\Carbon::now()->addDay(7)->format('d-m-Y')}}</NOBR> par voie numérique puis au plus tard le <NOBR>{{\Carbon\Carbon::now()->addDay(10)->format('d-m-Y')}}</NOBR> par courrier.</P>
         <P class="p46 ft12">Sous réserve de l'acceptation par INVESTIS DOM de la présente réservation, de l'encaissement de mon dépôt en compte courant et des frais liés, INVESTIS DOM s'engage à honorer ma souscription avant le 31/12/{{\Carbon\Carbon::now()->format('Y')}}, date limite de la cession des parts sociales.</P>
         <P class="p47 ft11">Je donne pouvoir à INVESTIS DOM pour signer en mon nom et pour mon compte les dossiers de souscription et effectuer toutes les formalités y afférant. Dans l'hypothèse où tout ou partie de mes souscriptions ne seraient pas réalisées avant le 31/12/{{\Carbon\Carbon::now()->format('Y')}}, INVESTIS DOM s'engage â me rembourser le montant des sommes non utilisées hors écart d'ajustement qui sera porté au crédit de mon compte.</P>
-        <P class="p48 ft12">Pendant la durée de détention des parts sociales à minima de 5 années, @if($reservation->assistance_juridique) je souhaite @else je ne souhaite pas @endif bénéficier de l'assistance juridique d'INVESTIS DOM d'un montant de @if($reservation->assistance_juridique && in_array($formulae->nom, ['Confort', 'Confort Prelevement'])) 75,00 @else 0,00 @endif euros par SNC, soit un montant annuel de @if($reservation->assistance_juridique && in_array($formulae->nom, ['Confort', 'Confort Prelevement'])) {{$reservation->nbr_snc*75/5}} @else 0 @endif euros.</P>
-        <P class="p28 ft3">Je suis informé(e) que les formalités d'enregistrement s'élèvent à 140 euros que je m'engage à payer au gérant des SNC.</P>
+        <P class="p48 ft12">Pendant la durée de détention des parts sociales à minima de 5 années, @if($reservation->assistance_juridique) je souhaite @else je ne souhaite pas @endif bénéficier de l'assistance juridique d'INVESTIS DOM @if($reservation->assistance_juridique && in_array($formulae->nom, ['Confort', 'Confort Prelevement'])) d'un montant de  75,00 euros par SNC, soit un montant annuel de {{number_format($reservation->nbr_snc*75/5, 2, ","," ")}} euros @endif.</P>
+        <P class="p28 ft3">Je suis informé(e) que les formalités d'enregistrement s'élèvent à {{ number_format($reservation->nbr_snc*70, 2, ","," ") }} euros que je m'engage à payer au gérant des SNC.</P>
         <P class="p49 ft12">Pour cette réservation, je suis averti que conformément à l'article <NOBR>L.121-20-12</NOBR> du code de la consommation. Je dispose d'un délai de 14 jours révolu pour exercer mon droit de rétractation.</P>
         <P class="p50 ft11">En application de l'article <NOBR>L.411-2</NOBR> du Code Monétaire et Financier, cette opération ne donne pas lieu à l'établissement de documents d'informations soumis au visa de l'Autorité dos marchés financiers (AMF). Je suis informé(e) que, s'agissant d'un placement privé visant un cercle restreint d'investisseurs, le nombre d'investisseurs participant à chacune des opérations souscrites ne doit pas dépasser le chiffre de 150 conformément aux articles et dispositions <NOBR>L.411-2</NOBR> et <NOBR>D411-4</NOBR> du Code Monétaire et Financier.</P>
     </DIV>
@@ -527,30 +527,30 @@
 <DIV id="page_6">
     <DIV id="id6_1">
         <P class="p57 ft4">2. IDENTITE DE L'INVESTISSEUR</P>
-        <P class="p58 ft3">Civilité : {{$investor->civilite}}</P>
+        <P class="p58 ft3">Civilité : {{ucfirst($investor->civilite)}}</P>
         <P class="p29 ft3">Nom : {{$investor->name_invest}}</P>
         <P class="p29 ft3">Nom de jeune fille : {{$investor->name_jeunefille_invest?: "-"}}</P>
         <P class="p29 ft3">Prénom : {{$investor->prenom_invest}}</P>
-        <P class="p29 ft3">Date de naissance : <NOBR>{{$investor->birth_date}}</NOBR></P>
+        <P class="p29 ft3">Date de naissance : <NOBR>{{$investor->birth_date->format("d/m/Y")}}</NOBR></P>
         <P class="p59 ft3">Lieu de naissance : {{$investor->prenom_invest}}</P>
         <P class="p29 ft3">Nationalité : {{$investor->country_invest}}</P>
         <P class="p29 ft3">Profession : {{$investor->profession_invest}}</P>
         <P class="p29 ft3">Adresse : {{$investor->address_1}} {{$investor->address_2}}- {{$investor->postal_code}} - {{$investor->city}}</P>
+        <P class="p28 ft3">Téléphone : {{$investor->fixe_invest ?: "-"}}</P>
+        <P class="p29 ft3">Fax : {{$investor->fax_invest ?: "-"}}</P>
+        <P class="p29 ft3">Mobile : {{$investor->mobile_invest ?: "-"}}</P>
+        <P class="p29 ft3">Email : {{$investor->email_invest ?: "-"}}</P>
         <P class="p28 ft3">Situation matrimoniale :</P>
-        <LABEL class="p60 ft3">Célibataire : <input type="checkbox" @if($investor->regime_mat_invest == "01" )checked="checked"@endif></LABEL>
-        <LABEL class="p29 ft3">Marié(e) sous contrat : <input type="checkbox" @if($investor->regime_mat_invest == "02" )checked="checked"@endif></LABEL>
-        <LABEL class="p29 ft3">Marié(e) sous le régime de la communauté: <input type="checkbox" @if($investor->regime_mat_invest == "0" )checked="checked"@endif></LABEL>
-        <LABEL class="p29 ft3">Pacsé(e): <input type="checkbox" @if($investor->regime_mat_invest == "04" )checked="checked"@endif></LABEL>
-        <LABEL class="p29 ft3">Divrocé(e): <input type="checkbox" @if($investor->regime_mat_invest == "05" )checked="checked"@endif></LABEL>
-        <LABEL class="p29 ft3">Veuf(ve): <input type="checkbox" @if($investor->regime_mat_invest == "06" )checked="checked"@endif></LABEL>
+        <LABEL class="p60 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "01" )checked="checked"@endif> Célibataire</LABEL><br>
+        <LABEL class="p29 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "02" )checked="checked"@endif> Marié(e) sous contrat</LABEL><br>
+        <LABEL class="p29 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "0" )checked="checked"@endif> Marié(e) sous le régime de la communauté</LABEL><br>
+        <LABEL class="p29 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "04" )checked="checked"@endif> Pacsé(e)</LABEL><br>
+        <LABEL class="p29 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "05" )checked="checked"@endif> Divrocé(e)</LABEL><br>
+        <LABEL class="p29 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "06" )checked="checked"@endif> Veuf(ve)</LABEL>
         <P class="p28 ft3">Si marié(e) ou engagé(e) dans les liens d'un Pacte Civil de Solidarité (P.A.C.S) :</P>
         <P class="p35 ft3">Renonciation du conjoint à la qualité d'associé</P>
-        <P class="p28 ft3">Téléphone : {{$investor->fixe_conjoint ?: "-"}}</P>
-        <P class="p29 ft3">Fax : {{$investor->fax_conjoint ?: "-"}}</P>
-        <P class="p29 ft3">Mobile : {{$investor->mobile_conjoint ?: "-"}}</P>
-        <P class="p29 ft3">Email : {{$investor->email_conjoint ?: "-"}}</P>
         <P class="p28 ft3">Le soussigné(e) déclare acquérir les parts de SNC au moyen de ses deniers propres.</P>
-        <P class="p28 ft3">Fait à : {{$investor->postal_code}}</P>
+        <P class="p28 ft3">Fait à : {{$investor->city}}</P>
         <P class="p59 ft3">Le : <NOBR>{{\Carbon\Carbon::now()->format('d-m-Y')}}</NOBR></P>
         <P class="p61 ft3">signature</P>
         <P class="p62 ft14">Les Informations recueillies par INVESTIS DOM font l'objet d'un traitement informatique destiné à traiter votre souscription dans nos opérations d'investissements au titre des articles 199 undecies B ou C du Code Général des Impôts. Vos opérations et données personnelles sont couvertes par le secret professionnel auquel nous sommes tenus.</P>
@@ -563,7 +563,7 @@
     <DIV id="id7_1">
         <P class="p65 ft4">3. DECLARATION DE NON CONDAMNATION</P>
         <P class="p58 ft3">Je soussigné(e) : {{ $investor->prenom_invest }} {{ strtoupper($investor->name_invest) }}</P>
-        <P class="p29 ft3">né(e) le : <NOBR>20-01-1990</NOBR></P>
+        <P class="p29 ft3">né(e) le : <NOBR>{{$investor->birth_date->format("d/m/Y")}}</NOBR></P>
         <P class="p29 ft3">A : {{$investor->birth_cp}}</P>
         <P class="p29 ft3">De (nom et prénom du père) : {{$investor->father_invest}}</P>
         <P class="p29 ft3">Et de (nom et prénom de la mère) : {{$investor->madre_invest}}</P>
@@ -588,7 +588,7 @@
         <P class="p29 ft3">Prénom : {{$investor->prenom_conjoint ?: "-"}} </P>
         <P class="p29 ft3">Nom : {{$investor->nom_conjoint ?: "-"}} </P>
         <P class="p29 ft3">Nom de jeune fille : {{$investor->nom_jeunefille_conjoint ?: "-"}}</P>
-        <P class="p29 ft3">Né(e) le : <NOBR>{{$investor->birth_conjoint ?: "-"}}</NOBR></P>
+        <P class="p29 ft3">Né(e) le : <NOBR>{{isset($investor->birth_conjoint) ? $investor->birth_conjoint->format('d/m/Y') : "-"}}</NOBR></P>
         <P class="p59 ft3">Marié(e) ou engagé(e) à {{ $investor->prenom_invest }} {{ strtoupper($investor->name_invest) }}</P>
         <P class="p72 ft3">Marié(e) sous le régime de la séparation de biens Marié(e) sous le régime de la communauté légale Engagé(e) dans les liens d'un Pacte Civil de Solidarité (P.A.C.S)</P>
         <P class="p27 ft3">Déclare par la présente,</P>
@@ -612,8 +612,8 @@
         <P class="p80 ft12"><SPAN class="ft3">-</SPAN><SPAN class="ft17">Signer une convention de compte courant au terme de laquelle je renonce expressément à demander le remboursement de mon compte courant ainsi qu'à tout boni de liquidation éventuel.</SPAN></P>
         <P class="p81 ft12">- Céder mon compte courant d'associé au gérant de la SNC et signer une promesse de vente par laquelle je m'engage à vendre mes parts sociales pour un euro symbolique à compter du premier jour suivant la clôture du cinquième exercice social de la SNC.</P>
         <P class="p79 ft3"><SPAN class="ft3">-</SPAN><SPAN class="ft5">Céder à l'issue de la période de défiscalisation les parts de SNC que j'aurai acquises pour la somme symbolique de : un euro.</SPAN></P>
-        <P class="p82 ft13"><SPAN class="ft3">-</SPAN><SPAN class="ft19">Me représenter et voter en mon nom et pour mon compte, et ce pendant toute la période de détention de mes parts, aux Assemblées Générales Ordinaires, Extraordinaires et de Liquidation de chacune des SNC dans lesquelles j'aurai acquis des parts et qui seront amenées à délibérer sur</SPAN></P>
-        <P class="p59 ft3">l'ordre du jour suivant :</P>
+        <P class="p82 ft13"><SPAN class="ft3">-</SPAN><SPAN class="ft19">Me représenter et voter en mon nom et pour mon compte, et ce pendant toute la période de détention de mes parts, aux Assemblées Générales Ordinaires, Extraordinaires et de Liquidation de chacune des SNC dans lesquelles j'aurai acquis des parts et qui seront amenées à délibérer sur l'ordre du jour suivant :</SPAN></P>
+        {{--<P class="p59 ft3"></P>--}}
         <P class="p83 ft3"><SPAN class="ft3">-</SPAN><SPAN class="ft5">Rapport de la Gérance,</SPAN></P>
         <P class="p84 ft3"><SPAN class="ft16">°</SPAN><SPAN class="ft5">Examen et approbation des comptes, du bilan et de l'annexe de l'exercice clos.</SPAN></P>
         <P class="p84 ft3"><SPAN class="ft16">°</SPAN><SPAN class="ft5">Quitus au Gérant de sa gestion.</SPAN></P>
@@ -637,26 +637,26 @@
         <P class="p90 ft4">6. REGLEMENTS DE VOTRE RESERVATION</P>
         <P class="p91 ft3">Règlements à adresser au : 62 boulevard du Chaudron - Centre d'affaires - 97490 - SAINTE CLOTILDE</P>
         <P class="p7 ft3">1 - A l'ordre de : INVESTIS DOM</P>
-        <P class="p7 ft3">Enregistrement de la cession des parts sociales et acquisition de {{$investor->montant_reduction/100}} parts sociales</P>
+        <P class="p7 ft3">Enregistrement de la cession des parts sociales et acquisition de {{round($reservation->montant_reduction/100)}} parts sociales</P>
         <TABLE cellpadding=0 cellspacing=0 class="t12">
             <TR>
                 <TD class="tr0 td14"><P class="p1 ft3">- Formalités et frais d'enregistrement</P></TD>
-                <TD class="tr0 td15"><P class="p1 ft2">{{$reservation->nbr_snc*60}} euros (60.00 euros par SNC)</P></TD>
+                <TD class="tr0 td15"><P class="p1 ft2">{{number_format($reservation->nbr_snc*60, 2, ","," ")}} euros (60.00 euros par SNC)</P></TD>
             </TR>
             <TR>
-                <TD class="tr2 td14"><P class="p1 ft3">- Prix des parts sociales</P></TD>
-                <TD class="tr2 td15"><P class="p92 ft3">{{$reservation->montant_reduction/1000}} euros (0.10 euros la part)</P></TD>
+                <TD class="tr0 td14"><P class="p1 ft3">- Prix des parts sociales</P></TD>
+                <TD class="tr0 td15"><P class="p1 ft2">{{number_format($reservation->montant_reduction/1000, 2, ","," ")}} euros (0.10 euros la part)</P></TD>
             </TR>
             <TR>
-                <TD class="tr5 td14"><P class="p1 ft3">- Assistance juridique</P></TD>
-                <TD class="tr5 td15"><P class="p93 ft2">@if($reservation->assistance_juridique && in_array($formulae->id, [1, 3])) {{$reservation->nbr_snc*75}} @else 0 @endif euros (75.00 euros par SNC)</P></TD>
+                <TD class="tr0 td14"><P class="p1 ft3">- Assistance juridique</P></TD>
+                <TD class="tr0 td15"><P class="p1 ft2">@if($reservation->assistance_juridique && in_array($formulae->id, [1, 3])) {{number_format($reservation->nbr_snc*75, 2, ","," ")}} @else 0 @endif euros (75.00 euros par SNC)</P></TD>
             </TR>
             <TR>
                 <TD class="tr6 td14"><P class="p1 ft3">Total</P></TD>
                 <?php
                     $total = ($reservation->nbr_snc*60)+($reservation->montant_reduction/1000)+($reservation->assistance_juridique && in_array($formulae->id, [1, 3]) ? $reservation->nbr_snc*75 : 0);
                 ?>
-                <TD class="tr6 td15"><P class="p94 ft3">{{$total}} euros</P></TD>
+                <TD class="tr6 td15"><P class="p94 ft3">{{number_format($total, 2, ",", " ")}} euros</P></TD>
             </TR>
         </TABLE>
         <P class="p95 ft3">2 - A l'ordre de : INVESTIS DOM COLLECTE</P>
@@ -675,7 +675,7 @@
         <P class="p98 ft11">Centre d'affaires CADJEE 62 Boulevard du Chaudron 97490 Sainte Clotilde</P>
         <P class="p99 ft3">Je soussigné(e)</P>
         <P class="p28 ft3">Déclare exercer par la présente, mon droit de rétractation, se rapportant à ma demande de réservation suivante :</P>
-        <P class="p28 ft3">Montant de la réduction d'impôt : 20000 euros</P>
+        <P class="p28 ft3">Montant de la réduction d'impôt : {{number_format($reservation->montant_reduction, 2, ",", " ")}} euros</P>
         <P class="p28 ft3">Nom : {{$investor->name_invest}}</P>
         <P class="p35 ft3">Prénom : {{$investor->prenom_invest}}</P>
         <P class="p28 ft3">Adresse : {{$investor->address_1}} {{$investor->address_2?:""}}</P>
@@ -691,12 +691,12 @@
 <DIV id="page_12">
     <DIV id="id12_1">
         <P class="p101 ft4">8. RECAPITULATIF DE VOTRE DOSSIER DE RESERVATION</P>
-        <P class="p102 ft12">Monsieur {{ $investor->prenom_invest }} {{ strtoupper($investor->name_invest) }} vous investissez un apport en compte courant de {{ number_format($reservation->apport, 2, ","," ") }} euros afin de bénéficier d'une réduction d'impôt de 20000 euros, réalisant ainsi une économie d'impôt sur le revenu de : 3333.33 euros.</P>
+        <P class="p102 ft12">Monsieur {{ $investor->prenom_invest }} {{ strtoupper($investor->name_invest) }} vous investissez un apport en compte courant de {{ number_format($reservation->apport, 2, ","," ") }} euros afin de bénéficier d'une réduction d'impôt de {{ number_format($reservation->montant_reduction, 2, ",", " ") }} euros, réalisant ainsi une économie d'impôt sur le revenu de : 3333.33 euros.</P>
         <P class="p87 ft3">Vous avez choisi de souscrire un produit confort sans notre option d'assistance juridique.</P>
         <P class="p103 ft11">Dans tous les cas de contentieux diligentés et pris en charge par INVESTIS DOM au bénéfice de la SNC ou de ses associés. Il est expressément convenu que les éventuelles indemnités allouées par tes tribunaux compétents au titre des frais exposés dans la procédure seront intégralement reversées par l'associé de la SNC à INVESTIS DOM.</P>
         <P class="p33 ft3">Règlements :</P>
         <P class="p29 ft3">Un chèque pour l'apport en compte courant : {{ number_format($reservation->apport, 2, ","," ") }} euros libellé à l'ordre de : INVESTIS DOM COLLECTE.</P>
-        <P class="p29 ft3">Un chèque pour les formalités et les frais d'enregistrement : 140 euros libellé à l'ordre de : INVESTIS DOM</P>
+        <P class="p29 ft3">Un chèque pour les formalités et les frais d'enregistrement : {{ number_format($reservation->nbr_snc*70, 2, ","," ") }} euros libellé à l'ordre de : INVESTIS DOM</P>
         <P class="p28 ft3">Documents à nous adresser :</P>
         <P class="p29 ft3">Nous vous remercions de bien vouloir nous retourner :</P>
         <P class="p104 ft12">Pour le <NOBR>{{\Carbon\Carbon::now()->addDay(7)->format('d-m-Y')}}</NOBR> au plus tard la copie de votre demande de réservation et des chèques à <NOBR>reservation@investis-dom.com</NOBR> Pour le <NOBR>{{\Carbon\Carbon::now()->addDay(10)->format('d-m-Y')}}</NOBR> au plus tard votre dossier complet par courrier.</P>
@@ -712,7 +712,7 @@
         <P class="p108 ft11">INVESTIS DOM vous positionnera alors sur les différentes opérations souhaitées. Vous serez donc assuré de bénéficier du taux de retour sur apport validé lors de votre demande de réservation. Vous disposerez prochainement sur votre compte personnel INVESTIS DOM (accessible depuis <NOBR>www.investis-dom.com)</NOBR> de l'ensemble de vos dossiers de souscription ainsi que des dossiers des pièces contractuelles.</P>
         <P class="p109 ft12">En janvier {{\Carbon\Carbon::now()->addYear()->format('Y')}}, nous vous inviterons à envoyer une lettre au trésorier pour lui signaler la réduction de votre tiers provisionnel ou de votre mensualisation. Une lettre type à personnaliser est à votre disposition sur votre compte personnel.</P>
         <P class="p110 ft12">INVESTIS DOM précise que les affaires présentées et les résultantes financières et fiscales ont un caractère strictement confidentiel, et que les informations divulguées au réservataire ne devront pas être diffusées auprès de tiers.</P>
-        <P class="p111 ft13">L'équipe d'INVESTIS DOM espère que votre demande de réservation répond pleinement à votre projet de réduction d'impôt 2017 et vous remercie de la confiance que vous voulez bien lui accorder.</P>
+        <P class="p111 ft13">L'équipe d'INVESTIS DOM espère que votre demande de réservation répond pleinement à votre projet de réduction d'impôt {{\Carbon\Carbon::now()->format('Y')}} et vous remercie de la confiance que vous voulez bien lui accorder.</P>
     </DIV>
 </DIV>
 @endsection

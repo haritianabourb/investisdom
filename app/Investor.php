@@ -12,6 +12,11 @@ class Investor extends Entity
     public $additional_attributes = ['full_name'];
     protected $appends = ['full_name'];
 
+    protected $casts = [
+        'birth_date' => 'datetime:d/m/Y',
+        'birth_conjoint' =>  'datetime:d/m/Y',
+    ];
+
     public function getFullNameAttribute()
     {
         return "{$this->prenom_invest} ".strtoupper($this->name_invest);
