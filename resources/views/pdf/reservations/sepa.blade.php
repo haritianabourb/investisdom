@@ -307,14 +307,14 @@
     <P class="p17 ft18">………………………………………………………………………………………………………………………………………..</P>
     <P class="p14 ft19"><SPAN class="ft18">…………………………..</SPAN>Code identifiant du tiers créancier</P>
     <P class="p20 ft9">Contrat concerné</P>
-    <P class="p18 ft17"><SPAN class="ft22">{{$reservation->identifiant}}</SPAN><SPAN class="ft8"> / Réservation Girardin industrielle </SPAN>{{date('Y')}}</P>
+    <P class="p18 ft17"><SPAN class="ft22">{{$reservation->identifiant}}</SPAN><SPAN class="ft8"> | Réservation Girardin industrielle </SPAN>{{date('Y')}}</P>
     <P class="p14 ft19">Numéro et description du contrat</P>
     <P class="p21 ft8">Les informations contenues dans le présent mandat, qui doit être complété, sont destinées à n’être utilisées par le créancier que pour la gestion de sa relation avec son client. Elles pourront donner lieu à l’exercice, par ce dernier, de ses droits d’oppositions, d’accès et de rectification tels que prévus aux articles 38 et suivants de la loi <NOBR>n°78-17</NOBR> du 6 janvier 1978 relative à l’informatique, aux fichiers et aux libertés.</P>
 </DIV>
 <DIV id="page_3">
     <P class="p22 ft23">Echéancier</P>
     <P class="p23 ft23">Investisseur :</P>
-    <P class="p24 ft17">{{$investor->civilite}} {{$investor->full_name}}<SPAN class="ft8">domiciliée à </SPAN> {{$investor->address_1}} {{$investor->address_2}}, {{$investor->postal_code}} {{$investor->city}},</P>
+    <P class="p24 ft17">{{ucfirst($investor->civilite)}} {{$investor->full_name}}<SPAN class="ft8"> domiciliée à </SPAN> {{$investor->address_1}} {{$investor->address_2}}, {{$investor->postal_code}} {{$investor->city}},</P>
     <P class="p25 ft8">INVESTIS DOM SAS, en charge de la trésorerie et de la gestion des SNC réalisant les investissements éligibles aux dispositifs de réduction d’impôt régis à l’article 199 undecies B du Code Général des Impôts prélèvera les sommes suivantes sur le compte de <SPAN class="ft17">{{$investor->civilite}} {{$investor->full_name}}</SPAN></P>
     <br>
     <br>
