@@ -28,7 +28,7 @@ class TauxMois extends AbstractField
 
         $tauxCGP = TauxCGP::ofYear($this->parameters->get('reservation_start')->year)
             ->where('cgps_id', $this->parameters->get('cgps_id'))
-            ->where('type_contrat_id', $this->parameters->get('type_contrat_id'))
+            ->where('type_contrat_id', $this->parameters->get('type_contrats_id'))
             ->first();
 
         // FIXME the contract_type must be have a code section or an Id or a rate maybe

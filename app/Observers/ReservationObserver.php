@@ -36,7 +36,7 @@ class ReservationObserver
      */
       public function created(Reservation $reservation)
     {
-        // dd($reservation);
+        // dd($reservation);;
         $date = (new Carbon($reservation->created_at))->format("Ymd");
         $identifiant =
           substr(preg_replace('/\s/', '', $reservation->investorsId->name), 0, 3)
@@ -79,52 +79,8 @@ class ReservationObserver
         // TODO make this for better fill, maybe had a log too
         $reservation->user_updated_id = \Auth::user()->id;
 
-        $reservation->generatePdf();
+//        $reservation->generatePdf();
 
-    }
-
-    /**
-     * Handle the contract "updated" event.
-     *
-     * @param  \App\Reservation  $reservation
-     * @return void
-     */
-    public function updated(Reservation $reservation)
-    {
-        //
-    }
-
-    /**
-     * Handle the contract "deleted" event.
-     *
-     * @param  \App\Reservation  $reservation
-     * @return void
-     */
-    public function deleted(Reservation $reservation)
-    {
-        //
-    }
-
-    /**
-     * Handle the contract "restored" event.
-     *
-     * @param  \App\Reservation  $reservation
-     * @return void
-     */
-    public function restored(Reservation $reservation)
-    {
-        //
-    }
-
-    /**
-     * Handle the contract "force deleted" event.
-     *
-     * @param  \App\Reservation  $reservation
-     * @return void
-     */
-    public function forceDeleted(Reservation $reservation)
-    {
-        //
     }
 
     public function beforeGeneratePdf(Reservation $reservation){
