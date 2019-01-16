@@ -342,8 +342,19 @@
         <TR>
             <TD><P>{{$reservation->created_at->format('d/m/Y')}}</P></TD>
             <TD><P>{{number_format($start, 2, ',', " ")}}</P></TD>
-            <TD><P>{{number_format($reservation->nbr_snc*60, 2, ',', " ")}}</P></TD>
-            <TD><P>{{number_format($reservation->nbr_snc*75, 2, ',', " ")}}</P></TD>
+            <TD><P>{{number_format($reservation->nbr_snc*60+$reservation->montant_reduction/1000, 2, ',', " ")}}</P></TD>
+            <TD><P>
+                    @if($reservation->assistance_juridique && in_array($formulae->slug, ["confort", "confort-echelonne"]))
+
+                    {{number_format($reservation->nbr_snc*75, 2, ',', " ")}}
+
+                    @else
+
+                        {{number_format(0, 2, ',', " ")}}
+
+                    @endif
+                </P>
+            </TD>
         </TR>
             <?php
                     $loopDate = $reservation->created_at->addMonth()->copy()->startOfMonth();
