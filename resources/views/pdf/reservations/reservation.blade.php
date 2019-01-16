@@ -709,7 +709,11 @@
         <P class="p103 ft11">Dans tous les cas de contentieux diligentés et pris en charge par INVESTIS DOM au bénéfice de la SNC ou de ses associés. Il est expressément convenu que les éventuelles indemnités allouées par tes tribunaux compétents au titre des frais exposés dans la procédure seront intégralement reversées par l'associé de la SNC à INVESTIS DOM.</P>
         <P class="p33 ft3">Règlements :</P>
         <P class="p29 ft3">Un chèque pour l'apport en compte courant : {{ number_format($reservation->apport, 2, ","," ") }} euros libellé à l'ordre de : INVESTIS DOM COLLECTE.</P>
-        <P class="p29 ft3">Un chèque pour les formalités et les frais d'enregistrement : {{ number_format($reservation->nbr_snc*70, 2, ","," ") }} euros libellé à l'ordre de : INVESTIS DOM</P>
+        <?php
+        //        $total = ($reservation->nbr_snc*60)+($reservation->montant_reduction/1000)+($reservation->assistance_juridique && in_array($formulae->id, [1, 3]) ? $reservation->nbr_snc*75 : 0);
+        $total = ($reservation->nbr_snc*60)+($reservation->montant_reduction/1000)+($reservation->assistance_juridique && in_array($formulae->id, [1, 3]) ? $reservation->nbr_snc*75 : 0);
+        ?>
+        <P class="p29 ft3">Un chèque pour les formalités et les frais d'enregistrement : {{ number_format($total) }} euros libellé à l'ordre de : INVESTIS DOM</P>
         <P class="p28 ft3">Documents à nous adresser :</P>
         <P class="p29 ft3">Nous vous remercions de bien vouloir nous retourner :</P>
         <P class="p104 ft12">Pour le <NOBR>{{\Carbon\Carbon::now()->addDay(7)->format('d-m-Y')}}</NOBR> au plus tard la copie de votre demande de réservation et des chèques à <NOBR>reservation@investis-dom.com</NOBR> Pour le <NOBR>{{\Carbon\Carbon::now()->addDay(10)->format('d-m-Y')}}</NOBR> au plus tard votre dossier complet par courrier.</P>
