@@ -53,7 +53,7 @@
 
         #page_5 {position:relative; overflow: hidden;margin: 23px 0px 25px 37px;padding: 0px;border: none;}
         #page_5 #id5_1 {border:none;margin: 130px 0px 0px 5px;padding: 0px;border:none;width: 752px;overflow: hidden;}
-        #page_5 #id5_2 {border:none;margin: 22px 0px 0px 5px;padding: 0px;border:none;width: 752px;overflow: hidden;}
+        #page_5 #id5_2 {border:none;margin: 0px 0px 0px 20px;padding: 0px;border:none;width: 752px;overflow: hidden;}
         #page_5 #id5_2 #id5_2_1 {float:left;border:none;margin: 0px 0px 0px 0px;padding: 0px;border:none;width: 446px;overflow: hidden;}
         #page_5 #id5_2 #id5_2_2 {float:left;border:none;margin: 34px 0px 0px 0px;padding: 0px;border:none;width: 306px;overflow: hidden;}
         #page_5 #id5_3 {border:none;margin: 9px 0px 0px 5px;padding: 0px;border:none;width: 752px;overflow: hidden; font-size: 5px !important;}
@@ -502,15 +502,24 @@
                 <TD class="tr4 td7"><P class="p0 ft0">&nbsp;</P></TD>
             </TR>
             <TR>
-                <TD class="tr5 td6"><P class="p0 ft3">Mention « Bon pour réservation » {{ $investor->prenom_invest }} {{ strtoupper($investor->name_invest) }}</P></TD>
-                <TD class="tr3 td6"><P class="p0 ft3">« Lu et approuvé, bon pour mandat » INVESTIS DOM</P></TD>
-            </TR>
-            <TR>
-                <TD class="tr5 td7"><P class="p0 ft5">signature</P></TD>
-                <TD class="tr3 td7"><P class="p14 ft5">signature</P></TD>
+                <TD class="tr5 td6">
+                    <P class="p0 ft3">
+                        {{ $investor->prenom_invest }} {{ strtoupper($investor->name_invest) }}<br>
+                        Mention « Bon pour réservation »<br>
+                        signature
+                    </P>
+                </TD>
+                <TD class="tr3 td6">
+                    <P class="p0 ft3">
+                        INVESTIS DOM<br>
+                        « Lu et approuvé, bon pour mandat »<br>
+                        signature
+                    </P>
+                </TD>
             </TR>
         </TABLE>
     </DIV>
+    <br>
     <br>
     <br>
     <DIV id="id5_3">
