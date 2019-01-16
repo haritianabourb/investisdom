@@ -25,7 +25,8 @@
         "tcg/voyager": "^1.1",
         "torann/currency": "^1.0",
         "voyager-themes": "^0.13.0",
-        "yousign/yousign-api-client": "~2.0.4"
+        "yousign/yousign-api-client": "~2.0.4",
+        "ext-json": "*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",
