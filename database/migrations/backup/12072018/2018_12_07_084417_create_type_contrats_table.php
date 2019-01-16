@@ -16,6 +16,7 @@ class CreateTypeContratsTable extends Migration {
 		{
 			$table->integer('id', true);
 			$table->string('nom');
+			$table->string('slug');
 			$table->string('description');
 			$table->timestamps();
 		});

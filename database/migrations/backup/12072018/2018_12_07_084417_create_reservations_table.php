@@ -35,6 +35,10 @@ class CreateReservationsTable extends Migration {
 			$table->string('type_aj')->nullable();
 			$table->string('taux_ponctuel')->nullable();
 			$table->string('paiement')->nullable();
+			$table->string('mode_paiement')->nullable();
+			$table->string('user_created_id')->nullable();
+			$table->string('user_id')->nullable();
+			$table->string('user_updated_id')->nullable();
 		});
 	}
 
