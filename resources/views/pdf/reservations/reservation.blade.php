@@ -608,7 +608,11 @@
         <P class="p29 ft3">Nom de jeune fille : {{$investor->nom_jeunefille_conjoint ?: "-"}}</P>
         <P class="p29 ft3">Né(e) le : <NOBR>{{isset($investor->birth_conjoint) ? $investor->birth_conjoint->format('d/m/Y') : "-"}}</NOBR></P>
         <P class="p59 ft3">Marié(e) ou engagé(e) à {{ $investor->prenom_invest }} {{ strtoupper($investor->name_invest) }}</P>
-        <P class="p72 ft3">Marié(e) sous le régime de la séparation de biens Marié(e) sous le régime de la communauté légale Engagé(e) dans les liens d'un Pacte Civil de Solidarité (P.A.C.S)</P>
+        <P class="p72 ft3">
+            @if($investor->regime_mat_invest == "02" )Marié(e) sous le régime de la séparation de biens @endif
+            @if($investor->regime_mat_invest == "03" )Marié(e) sous le régime de la communauté légale @endif
+            @if($investor->regime_mat_invest == "04" )Engagé(e) dans les liens d'un Pacte Civil de Solidarité (P.A.C.S)@endif
+        </P>
         <P class="p27 ft3">Déclare par la présente,</P>
         <P class="p73 ft12"><SPAN class="ft16">°</SPAN><SPAN class="ft17">Avoir été informé(e) conformément aux dispositions de l'article </SPAN><NOBR>1832-2</NOBR> du Code Civil, de la demande de souscription effectuée par mon conjoint pour un montant de réduction d'impôt de {{$reservation->montant_reduction}} euros</P>
         <P class="p67 ft3"><SPAN class="ft16">°</SPAN><SPAN class="ft5">Renoncer, en application de l'article </SPAN><NOBR>1832-2</NOBR> du Code Civil, à revendiquer la qualité d'associé de la SNC et reconnais cette qualité à mon conjoint.</P>
