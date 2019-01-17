@@ -287,7 +287,7 @@
         .td10{padding: 0px;margin: 0px;width: 140px;vertical-align: bottom;}
         .td11{padding: 0px;margin: 0px;width: 165px;vertical-align: bottom;}
         .td12{padding: 0px;margin: 0px;width: 259px;vertical-align: bottom;}
-        .td13{padding: 0px;margin: 0px;width: 164px;vertical-align: bottom;}
+        .td13{padding: 0px;margin: 0px;width: 259px;vertical-align: bottom;}
         .td14{padding: 0px;margin: 0px;width: 183px;vertical-align: bottom;}
         .td15{padding: 0px;margin: 0px;width: 158px;vertical-align: bottom;}
         .td16{padding: 0px;margin: 0px;width: 324px;vertical-align: bottom;}
@@ -442,7 +442,11 @@
         <P class="p28 ft3">Vous souscrivez nos opérations d'investissement afin de bénéficier d'une réduction d'impôt de {{$reservation->montant_reduction}} euros.</P>
         <P class="p28 ft3">Pour ce faire, vos engagements financiers sont :</P>
         <P class="p29 ft3">Apport en compte courant d'associé de {{number_format($reservation->apport, 2, ","," ")}} euros</P>
-        <P class="p29 ft3">Frais d'enregistrement : {{ number_format($reservation->nbr_snc*70, 2, ","," ") }} euros</P>
+        <?php
+        //        $total = ($reservation->nbr_snc*60)+($reservation->montant_reduction/1000)+($reservation->assistance_juridique && in_array($formulae->slug, ["confort", "confort-echelonne"]) ? $reservation->nbr_snc*75 : 0);
+        $total = ($reservation->nbr_snc*60)+($reservation->montant_reduction/1000)+($reservation->assistance_juridique && in_array($formulae->slug, ["confort", "confort-echelonne"]) ? $reservation->nbr_snc*75 : 0);
+        ?>
+        <P class="p29 ft3">Frais d'enregistrement : {{ number_format($total, 2, ","," ") }} euros</P>
         <TABLE cellpadding=0 cellspacing=0 class="t5">
             <TR>
                 <TD class="tr0 td12"><P class="p1 ft3">- Formalités d'enregistrement</P></TD>
