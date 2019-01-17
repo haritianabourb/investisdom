@@ -16,7 +16,7 @@ class YouSignController extends VoyagerBaseController
         $pdf_path=base_path()."/public/PDFs/samplepdf.pdf";
         $pdf_data=file_get_contents($pdf_path);
 
-        $encoded_pdf=  base64_encode($pdf_data);
+        $encoded_pdf= base64_encode($pdf_data);
 
 
         $api_key='97ba90df5d07460aa5daba1bee86f11d';
@@ -26,11 +26,6 @@ class YouSignController extends VoyagerBaseController
                 'Content-Type' => 'application/json']
             ]
         );
-        //$response_users = $client->request('GET', 'https://staging-api
-        //.yousign.com/users');
-
-//        echo $response_users->getBody();
-//        echo '<br><br><br><br>';
 
         /*Sending file to YouSign server*/
         $file_request_body=json_encode(
@@ -43,11 +38,33 @@ class YouSignController extends VoyagerBaseController
 
 
         $uploaded_file_id=$response_file_decoded->id;
-        //var_dump($uploaded_file_id);
 
-        //return;
+        /*Getting number of pages*/
 
+        $file_properties=$client->request('GET', 'https://staging-api.yousign.com'
+            .$uploaded_file_id.'/layout');
+//        echo $file_properties->getBody();
 
+        $file_properties=json_decode($file_properties->getBody(), true);
+
+//        echo '<pre>';
+//        print_r($file_properties["pages"][0]["width"]);
+//        echo '</pre>';
+        $page_count=count($file_properties["pages"]);
+        $page_width=$file_properties["pages"][0]["width"];
+        $page_height=$file_properties["pages"][0]["height"];
+
+//        echo $page_width.'<br>';
+//        echo $page_height.'<br>';
+//        echo $page_count.'<br>';
+
+//        return;
+        $nom = 'Soundi';
+        $prenom= 'Fica';
+        $phone= '+33754284387';
+        $email='soundifica@gmail.com';
+        $position_string = (intval($page_width)-157).",".(intval("30")).",".
+            (intval($page_width)-25).",".(intval("97"));
         $procedure_request_body=
         "{ ".
             "\"name\": \"Signing Procedure\",".
@@ -55,18 +72,18 @@ class YouSignController extends VoyagerBaseController
             "\"members\": ".
                 "[".
                     "{ ".
-                        "\"firstname\": \"Nom\",".
-                        "\"lastname\": \"Prenom\",".
-                        "\"email\": \"artur.in.the.box@yandex.ru\",".
-                        "\"phone\": \"+33754284387\",".
+                        "\"firstname\": \"".$nom."\",".
+                        "\"lastname\": \"".$prenom."\",".
+                        "\"email\": \"".$email."\",".
+                        "\"phone\": \"".$phone."\",".
                         "\"fileObjects\": ".
                         "[".
                             "{".
-                                "\"file\": \"/files/080ec04d-0c89-42db-a6b3-b767163d2f32\",".
-                                "\"page\": 2, ".
-                                "\"position\": \"230,499,464,589\",".
+                                "\"file\": \"".$uploaded_file_id."\",".
+                                "\"page\": ".$page_count.",".
+                                "\"position\": \"".$position_string."\",".
                                 "\"mention\": \"Read and approved\",".
-                                "\"mention2\": \"Signed by John Doe\"" .
+                                "\"mention2\": \"Signed by ".$nom." ".$prenom."\"" .
                             "}".
                         "]".
                     "}".
@@ -94,10 +111,11 @@ class YouSignController extends VoyagerBaseController
                         "} ".
                 "}".
         "}";
+//        echo '<pre>';
+        print_r(htmlspecialchars($procedure_request_body));
+//        echo '</pre>';
+//        return;
 
-        echo $procedure_request_body;
-
-        return;
         $response_procedure=$client->request('POST', 'https://staging-api.yousign.com/procedures',
             ['body' => $procedure_request_body]);
 
