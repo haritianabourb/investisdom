@@ -458,7 +458,7 @@
             </TR>
             <TR>
                 <TD class="tr5 td12"><P class="p1 ft3">- Assistance juridique</P></TD>
-                <TD class="tr5 td13"><P class="p13 ft2">@if($reservation->assistance_juridique && in_array($formulae->nom, ['confort', 'confort-echelonne'])) {{number_format($reservation->nbr_snc*75, 2, ","," ")}} @else 0 @endif euros, (75.00 euros par SNC)</P></TD>
+                <TD class="tr5 td13"><P class="p13 ft2">@if($reservation->assistance_juridique && in_array($formulae->slug, ["confort", "confort-echelonne"])) {{number_format($reservation->nbr_snc*75, 2, ","," ")}} @else 0 @endif euros, (75.00 euros par SNC)</P></TD>
             </TR>
         </TABLE>
     </DIV>
