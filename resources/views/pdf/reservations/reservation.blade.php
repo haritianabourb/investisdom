@@ -559,8 +559,8 @@
         <P class="p29 ft3">Email : {{$investor->email_invest ?: "-"}}</P>
         <P class="p28 ft3">Situation matrimoniale :</P>
         <LABEL class="p60 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "01" )checked="checked"@endif> Célibataire</LABEL><br>
-        <LABEL class="p29 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "02" )checked="checked"@endif> Marié(e) sous contrat</LABEL><br>
-        <LABEL class="p29 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "03" )checked="checked"@endif> Marié(e) sous le régime de la communauté</LABEL><br>
+        <LABEL class="p29 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "02" )checked="checked"@endif> Marié(e) sous le régime de la communauté</LABEL><br>
+        <LABEL class="p29 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "03" )checked="checked"@endif> Marié(e) sous contrat</LABEL><br>
         <LABEL class="p29 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "04" )checked="checked"@endif> Pacsé(e)</LABEL><br>
         <LABEL class="p29 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "05" )checked="checked"@endif> Divrocé(e)</LABEL><br>
         <LABEL class="p29 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "06" )checked="checked"@endif> Veuf(ve)</LABEL>
@@ -609,8 +609,8 @@
         <P class="p29 ft3">Né(e) le : <NOBR>{{isset($investor->birth_conjoint) ? $investor->birth_conjoint->format('d/m/Y') : "-"}}</NOBR></P>
         <P class="p59 ft3">Marié(e) ou engagé(e) à {{ $investor->prenom_invest }} {{ strtoupper($investor->name_invest) }}</P>
         <P class="p72 ft3">
-            @if($investor->regime_mat_invest == "02" )Marié(e) sous le régime de la séparation de biens @endif
-            @if($investor->regime_mat_invest == "03" )Marié(e) sous le régime de la communauté légale @endif
+            @if($investor->regime_mat_invest == "02" )Marié(e) sous le régime de la communauté légale @endif
+            @if($investor->regime_mat_invest == "03" )Marié(e) sous le régime de la séparation de biens @endif
             @if($investor->regime_mat_invest == "04" )Engagé(e) dans les liens d'un Pacte Civil de Solidarité (P.A.C.S)@endif
         </P>
         <P class="p27 ft3">Déclare par la présente,</P>
