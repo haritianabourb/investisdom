@@ -549,7 +549,7 @@
         <P class="p29 ft3">Nom de jeune fille : {{$investor->name_jeunefille_invest?: "-"}}</P>
         <P class="p29 ft3">Prénom : {{$investor->prenom_invest}}</P>
         <P class="p29 ft3">Date de naissance : <NOBR>{{$investor->birth_date->format("d/m/Y")}}</NOBR></P>
-        <P class="p59 ft3">Lieu de naissance : {{$investor->prenom_invest}}</P>
+        <P class="p59 ft3">Lieu de naissance : {{$investor->birth_location}}</P>
         <P class="p29 ft3">Nationalité : {{$investor->country_invest}}</P>
         <P class="p29 ft3">Profession : {{$investor->profession_invest}}</P>
         <P class="p29 ft3">Adresse : {{$investor->address_1}} {{$investor->address_2}}- {{$investor->postal_code}} - {{$investor->city}}</P>
