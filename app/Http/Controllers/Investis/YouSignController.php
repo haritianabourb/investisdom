@@ -16,7 +16,7 @@ class YouSignController extends VoyagerBaseController
         $pdf_path=base_path()."/public/PDFs/samplepdf.pdf";
         $pdf_data=file_get_contents($pdf_path);
 
-        $encoded_pdf= base64_encode($pdf_data);
+        $encoded_pdf=base64_encode($pdf_data);
 
 
         $api_key='97ba90df5d07460aa5daba1bee86f11d';
@@ -59,12 +59,23 @@ class YouSignController extends VoyagerBaseController
 //        echo $page_count.'<br>';
 
 //        return;
+
+        /*Here go the variables*/
         $nom = 'Soundi';
         $prenom= 'Fica';
         $phone= '+33754284387';
         $email='soundifica@gmail.com';
+
+        /*Here is the string $position_string to calculate position. I calculate it
+        dynamically as we discussed before but for different documents it
+        might be need to be set statically. Use tool https://placeit.yousign.fr/
+        to get coordinates :) Documentation for this can be found at
+        https://dev.yousign.com/#1fbfe3b0-774a-41f6-8d30-edcf0e281ddc */
+
+
         $position_string = (intval($page_width)-157).",".(intval("30")).",".
             (intval($page_width)-25).",".(intval("97"));
+
         $procedure_request_body=
         "{ ".
             "\"name\": \"Signing Procedure\",".
@@ -105,20 +116,20 @@ class YouSignController extends VoyagerBaseController
                                     "{ ".
                                         "\"subject\": \"John, created a procedure your API have.\", ".
                                         "\"message\": \"The content of this email is totally awesome.\", ".
-                                        "\"to\": [\"@creator\", \"@members\", \"billing@yousign.fr\"] ".
+                                        "\"to\": [\"@creator\"] ". //"@creator", "@members", "billing@yousign.fr"
                                     "} ".
                                 "] ".
                         "} ".
                 "}".
         "}";
 //        echo '<pre>';
-        print_r(htmlspecialchars($procedure_request_body));
+//        print_r(htmlspecialchars($procedure_request_body));
 //        echo '</pre>';
 //        return;
 
         $response_procedure=$client->request('POST', 'https://staging-api.yousign.com/procedures',
             ['body' => $procedure_request_body]);
 
-        echo $response_procedure->getBody();
+//        echo $response_procedure->getBody();
     }
 }
