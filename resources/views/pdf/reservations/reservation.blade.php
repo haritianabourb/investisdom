@@ -333,7 +333,7 @@
                 <TD class="tr1 td0"><P class="p1 ft3">Par réception courrier : Valable jusqu'au <NOBR>{{\Carbon\Carbon::now()->addDay(10)->format('d-m-Y')}}</NOBR></P></TD>
             </TR>
         </TABLE>
-        <P class="p3 ft4">Monsieur {{ $investor->full_name }}</P>
+        <P class="p3 ft4">{{ucfirst($investor->civilite)}} {{ $investor->full_name }}</P>
         <P class="p4 ft3">Merci de bien vouloir nous retourner un exemplaire original sous 14 jours :</P>
         <P class="p5 ft3"><SPAN class="ft2">-</SPAN><SPAN class="ft5">Dûment renseigné,</SPAN></P>
         <P class="p6 ft3"><SPAN class="ft2">-</SPAN><SPAN class="ft5">Signé, pages 4, 5, 6, 7, 8</SPAN></P>
