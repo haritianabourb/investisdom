@@ -315,7 +315,7 @@
     <P class="p22 ft23">Echéancier</P>
     <P class="p23 ft23">Investisseur :</P>
     <P class="p24 ft17">{{ucfirst($investor->civilite)}} {{$investor->full_name}}<SPAN class="ft8"> domiciliée à </SPAN> {{$investor->address_1}} {{$investor->address_2}}, {{$investor->postal_code}} {{$investor->city}},</P>
-    <P class="p25 ft8">INVESTIS DOM SAS, en charge de la trésorerie et de la gestion des SNC réalisant les investissements éligibles aux dispositifs de réduction d’impôt régis à l’article 199 undecies B du Code Général des Impôts prélèvera les sommes suivantes sur le compte de <SPAN class="ft17">{{$investor->civilite}} {{$investor->full_name}}</SPAN></P>
+    <P class="p25 ft8">INVESTIS DOM SAS, en charge de la trésorerie et de la gestion des SNC réalisant les investissements éligibles aux dispositifs de réduction d’impôt régis à l’article 199 undecies B du Code Général des Impôts prélèvera les sommes suivantes sur le compte de <SPAN class="ft17">{{ucfirst($investor->civilite)}} {{$investor->full_name}}</SPAN></P>
     <br>
     <br>
     <TABLE cellpadding=0 cellspacing=0>
