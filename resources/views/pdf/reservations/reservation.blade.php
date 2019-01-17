@@ -322,7 +322,7 @@
 @section('body')
 <DIV id="page_1">
     <DIV id="id1_1">
-        <P class="p0 ft0">DEMANDE DE RESERVATION PRODUIT {{strtoupper(in_array($formulae->nom, ['confort', 'confort-echelonne']) ? "Confort" : "Serenite")}}</P>
+        <P class="p0 ft0">DEMANDE DE RESERVATION PRODUIT {{strtoupper(in_array($formulae->slug, ['confort', 'confort-echelonne']) ? "Confort" : "Serenite")}}</P>
         <TABLE cellpadding=0 cellspacing=0 class="t0">
             <TR>
                 <TD class="tr0 td0"><P class="p1 ft1">&nbsp;</P></TD>
