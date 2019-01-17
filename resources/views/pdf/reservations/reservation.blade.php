@@ -581,7 +581,7 @@
         <P class="p65 ft4">3. DECLARATION DE NON CONDAMNATION</P>
         <P class="p58 ft3">Je soussigné(e) : {{ $investor->prenom_invest }} {{ strtoupper($investor->name_invest) }}</P>
         <P class="p29 ft3">né(e) le : <NOBR>{{$investor->birth_date->format("d/m/Y")}}</NOBR></P>
-        <P class="p29 ft3">A : {{$investor->birth_cp}}</P>
+        <P class="p29 ft3">A : {{$investor->birth_location}}</P>
         <P class="p29 ft3">De (nom et prénom du père) : {{$investor->father_invest}}</P>
         <P class="p29 ft3">Et de (nom et prénom de la mère) : {{$investor->madre_invest}}</P>
         <P class="p59 ft3">Demeurant : {{$investor->address_1}} {{$investor->address_2?:""}} - {{ $investor->postal_code }}- {{$investor->city}}</P>
