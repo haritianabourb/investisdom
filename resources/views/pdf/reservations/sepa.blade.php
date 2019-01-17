@@ -257,7 +257,6 @@
         <br>
         <?php
             $iban = str_split($investor->bank_iban, 4);
-
         ?>
         <TABLE cellpadding=0 cellspacing=0>
             <TR>
@@ -329,8 +328,14 @@
         <TR>
             <TD class="tr8 td25"><P class="p30 ft23">{{$reservation->created_at->format('d/m/Y')}}</P></TD>
             <TD class="tr8 td23"><P class="p30 ft23">{{number_format($reservation->apport, 2, ',', " ")}}</P></TD>
-            <TD class="tr8 td24"><P class="p30 ft23">{{number_format($reservation->nbr_snc*60, 2, ',', " ")}}</P></TD>
-            <TD class="tr8 td24"><P class="p30 ft23">{{number_format($reservation->nbr_snc*75, 2, ',', " ")}}</P></TD>
+            <TD class="tr8 td24"><P class="p30 ft23">{{number_format($reservation->nbr_snc*60+$reservation->montant_reduction/1000, 2, ',', " ")}}</P></TD>
+            <TD class="tr8 td24"><P class="p30 ft23">
+                    @if($reservation->assistance_juridique && in_array($formulae->slug, ["confort", "confort-echelonne"]))
+                    {{number_format($reservation->nbr_snc*75, 2, ',', " ")}}</P>
+                    @else
+                        {{number_format(0, 2, ",", " ")}}
+                    @endif
+            </TD>
         </TR>
         @else
             <?php
