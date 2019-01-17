@@ -327,7 +327,7 @@
         </TR>
         @if(in_array($formulae->slug,['confort', 'serenite']) && $reservation->paiement == "unique")
         <TR>
-            <TD class="tr8 td25"><P class="p30 ft23">{{$reservation->created_at}}</P></TD>
+            <TD class="tr8 td25"><P class="p30 ft23">{{$reservation->created_at->format('d/m/Y')}}</P></TD>
             <TD class="tr8 td23"><P class="p30 ft23">{{number_format($reservation->apport, 2, ',', " ")}}</P></TD>
             <TD class="tr8 td24"><P class="p30 ft23">{{number_format($reservation->nbr_snc*60, 2, ',', " ")}}</P></TD>
             <TD class="tr8 td24"><P class="p30 ft23">{{number_format($reservation->nbr_snc*75, 2, ',', " ")}}</P></TD>
