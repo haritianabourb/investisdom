@@ -216,10 +216,10 @@
         </TR>
         <TR>
             <TD class="tr5 td12"><P class="p7 ft10">Récurrent</P></TD>
-            <TD class="tr6 td13"><P class="p7 ft11" style="font-size: 10pt; text-align: center; padding-left: 5px;  ">@if(in_array($formulae->id,[3, 4]) || $reservation->paiement = "echelonne") X @endif</P></TD>
+            <TD class="tr6 td13"><P class="p7 ft11" style="font-size: 10pt; text-align: center; padding-left: 5px;  ">@if(in_array($formulae->slug,['confort-echelonne', 'serenite-echelonne']) || $reservation->paiement == "echelonne") X @endif</P></TD>
             <TD class="tr5 td8"><P class="p7 ft11">&nbsp;</P></TD>
             <TD class="tr5 td14"><P class="p7 ft10">Ponctuel</P></TD>
-            <TD class="tr6 td13"><P class="p7 ft11" style="font-size: 10pt; text-align: center; padding-left: 5px;">@if(in_array($formulae->id,[1, 2]) && $reservation->paiement = "unique") X @endif</P></TD>
+            <TD class="tr6 td13"><P class="p7 ft11" style="font-size: 10pt; text-align: center; padding-left: 5px;">@if(in_array($formulae->slug,['confort', 'serenite']) && $reservation->paiement == "unique") X @endif</P></TD>
             <TD class="tr5 td11"><P class="p7 ft11">&nbsp;</P></TD>
         </TR>
         <TR>
@@ -325,7 +325,7 @@
             <TD class="tr8 td24"><P class="p30 ft23">Formalités</P></TD>
             <TD class="tr8 td24"><P class="p30 ft23">Assistance Juridique</P></TD>
         </TR>
-        @if($reservation->paiement == "unique")
+        @if(in_array($formulae->slug,['confort', 'serenite']) && $reservation->paiement == "unique")
         <TR>
             <TD class="tr8 td25"><P class="p30 ft23">{{$reservation->created_at}}</P></TD>
             <TD class="tr8 td23"><P class="p30 ft23">{{number_format($reservation->apport, 2, ',', " ")}}</P></TD>
