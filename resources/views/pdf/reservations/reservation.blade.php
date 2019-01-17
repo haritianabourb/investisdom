@@ -712,7 +712,7 @@
 <DIV id="page_12">
     <DIV id="id12_1">
         <P class="p101 ft4">8. RECAPITULATIF DE VOTRE DOSSIER DE RESERVATION</P>
-        <P class="p102 ft12">Monsieur {{ $investor->prenom_invest }} {{ strtoupper($investor->name_invest) }} vous investissez un apport en compte courant de {{ number_format($reservation->apport, 2, ","," ") }} euros afin de bénéficier d'une réduction d'impôt de {{ number_format($reservation->montant_reduction, 2, ",", " ") }} euros, réalisant ainsi une économie d'impôt sur le revenu de : {{ number_format($reservation->gain_brut, 2, ",", " ") }} euros.</P>
+        <P class="p102 ft12">{{ucfirst($investor->civilite)}} {{ $investor->prenom_invest }} {{ strtoupper($investor->name_invest) }} vous investissez un apport en compte courant de {{ number_format($reservation->apport, 2, ","," ") }} euros afin de bénéficier d'une réduction d'impôt de {{ number_format($reservation->montant_reduction, 2, ",", " ") }} euros, réalisant ainsi une économie d'impôt sur le revenu de : {{ number_format($reservation->gain_brut, 2, ",", " ") }} euros.</P>
         <P class="p87 ft3">Vous avez choisi de souscrire un produit confort sans notre option d'assistance juridique.</P>
         <P class="p103 ft11">Dans tous les cas de contentieux diligentés et pris en charge par INVESTIS DOM au bénéfice de la SNC ou de ses associés. Il est expressément convenu que les éventuelles indemnités allouées par tes tribunaux compétents au titre des frais exposés dans la procédure seront intégralement reversées par l'associé de la SNC à INVESTIS DOM.</P>
         <P class="p33 ft3">Règlements :</P>
