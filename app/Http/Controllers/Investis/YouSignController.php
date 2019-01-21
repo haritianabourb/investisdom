@@ -43,22 +43,13 @@ class YouSignController extends VoyagerBaseController
 
         $file_properties=$client->request('GET', 'https://staging-api.yousign.com'
             .$uploaded_file_id.'/layout');
-//        echo $file_properties->getBody();
 
         $file_properties=json_decode($file_properties->getBody(), true);
 
-//        echo '<pre>';
-//        print_r($file_properties["pages"][0]["width"]);
-//        echo '</pre>';
         $page_count=count($file_properties["pages"]);
         $page_width=$file_properties["pages"][0]["width"];
         $page_height=$file_properties["pages"][0]["height"];
 
-//        echo $page_width.'<br>';
-//        echo $page_height.'<br>';
-//        echo $page_count.'<br>';
-
-//        return;
 
         /*Here go the variables*/
         $nom = 'Soundi';
