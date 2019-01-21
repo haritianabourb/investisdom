@@ -38,8 +38,8 @@ class CGPObserver
     public function created(CGP $cgp)
     {
         $identifiant =
-            substr(preg_replace('/\s/', '', $cgp->name), 0, 3)
-            . substr(preg_replace('/\s/', '', $cgp->registered_key), -3)
+            substr(preg_replace('/\s/', '', stripAccents($cgp->name)), 0, 3)
+            . substr(preg_replace('/\s/', '', stripAccents($cgp->registered_key)), -3)
             . "/" . $cgp->id;
 
         // XXX little hack to not thrown the saving event for calculations

@@ -39,8 +39,8 @@ class ReservationObserver
         // dd($reservation);;
         $date = (new Carbon($reservation->created_at))->format("Ymd");
         $identifiant =
-          substr(preg_replace('/\s/', '', $reservation->investorsId->name), 0, 3)
-          .substr(preg_replace('/\s/', '', $reservation->cgpsId->name), -3)
+          substr(preg_replace('/\s/', '', stripAccents($reservation->investorsId->name)), 0, 3)
+          .substr(preg_replace('/\s/', '', stripAccents($reservation->cgpsId->name)), -3)
           ."-".$date
           ."/".$reservation->id;
 
