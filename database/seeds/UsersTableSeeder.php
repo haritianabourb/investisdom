@@ -69,6 +69,19 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2018-08-23 17:14:58',
                 'updated_at' => '2018-08-23 17:14:58',
             ),
+            4 => 
+            array (
+                'id' => 5,
+                'role_id' => 4,
+                'name' => 'Contact1 TEST1',
+                'email' => 'test@email.com',
+                'avatar' => 'users/default.png',
+                'password' => '$2y$10$IKGP2eKXA4vzltvQFJwdyuQ6DEasK3y4XlIoRNh8JoAqmdI/UoGam',
+                'remember_token' => NULL,
+                'settings' => NULL,
+                'created_at' => '2019-01-11 10:55:43',
+                'updated_at' => '2019-01-11 10:55:43',
+            ),
         ));
         
         

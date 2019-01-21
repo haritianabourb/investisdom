@@ -18,6 +18,7 @@ class CreateTypeContratsTable extends Migration {
 			$table->string('nom');
 			$table->string('description');
 			$table->timestamps();
+			$table->string('slug')->nullable();
 		});
 	}
 

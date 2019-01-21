@@ -7,9 +7,22 @@ use Illuminate\Database\Eloquent\Model;
 
 class Reservation extends Model
 {
+
+    protected $observables= [
+        'beforeGeneratePdf',
+        'afterGeneratePdf',
+    ];
+
+    protected $casts = [
+        "created_at" => "datetime:d/m/Y",
+    ];
+
   const RESERVATION = 'RESERVATION';
   const MANDAT = 'MANDAT';
   const CONTRAT = 'CONTRAT';
+
+  const UNIQUE = '01';
+  const ECHELONNE = '02';
 
   // TEMP DATA FOR SIMULATION
 
@@ -31,12 +44,13 @@ class Reservation extends Model
   }
 
   public function cgpsId(){
-    // return $this->belongsTo(CGP::class);
     return $this->belongsTo(CGP::class, 'cgps_id', 'id');
   }
 
-  // public function cgp(){
-  //   return $this->belongsTo(CGP::class, 'cgps_id', 'id');
-  // }
+  public function generatePdf(){
+      $this->fireModelEvent('beforeGeneratePdf');
+
+      $this->fireModelEvent('afterGeneratePdf');
+  }
 
 }
