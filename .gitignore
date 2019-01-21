@@ -181,3 +181,6 @@ composer.lock
 
 # The Whole Idea IDE files folder
 .idea/
+
+#laravel ide helper
+_ide_helper.php
