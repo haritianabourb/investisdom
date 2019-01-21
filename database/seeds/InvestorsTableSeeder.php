@@ -356,7 +356,7 @@ class InvestorsTableSeeder extends Seeder
             6 => 
             array (
                 'id' => 13,
-                'name' => NULL,
+                'name' => 'Patrick DELEPORTE',
                 'registered_key' => NULL,
                 'address_1' => '61, Avenue de CANTELEU',
                 'address_2' => NULL,
@@ -365,7 +365,7 @@ class InvestorsTableSeeder extends Seeder
                 'started_at' => NULL,
                 'cgp_id' => NULL,
                 'created_at' => '2019-01-17 07:52:32',
-                'updated_at' => '2019-01-17 08:23:31',
+                'updated_at' => '2019-01-21 07:33:43',
                 'type_entities_id' => '4',
                 'nature_entities_id' => '1',
                 'registration_entities_id' => 'CMA',
