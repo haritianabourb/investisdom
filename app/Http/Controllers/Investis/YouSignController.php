@@ -19,7 +19,7 @@ class YouSignController extends VoyagerBaseController
         $encoded_pdf=base64_encode($pdf_data);
 
 
-        $api_key='97ba90df5d07460aa5daba1bee86f11d';
+        $api_key=env("YOUSIGN_APP_KEY", "");
         $client = new \GuzzleHttp\Client(
             ['headers' => [
                 'Authorization' => 'Bearer '.$api_key,
@@ -122,14 +122,9 @@ class YouSignController extends VoyagerBaseController
                         "} ".
                 "}".
         "}";
-//        echo '<pre>';
-//        print_r(htmlspecialchars($procedure_request_body));
-//        echo '</pre>';
-//        return;
 
         $response_procedure=$client->request('POST', 'https://staging-api.yousign.com/procedures',
             ['body' => $procedure_request_body]);
 
-//        echo $response_procedure->getBody();
     }
 }
