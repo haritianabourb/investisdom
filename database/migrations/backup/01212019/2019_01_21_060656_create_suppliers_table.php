@@ -21,7 +21,7 @@ class CreateSuppliersTable extends Migration {
 			$table->integer('postal_code')->nullable();
 			$table->text('city')->nullable();
 			$table->timestamps();
-			$table->string('capital');
+			$table->string('capital')->default('0');
 			$table->string('siren')->nullable();
 			$table->string('purpose_creation')->nullable();
 			$table->string('dom_agency')->nullable();

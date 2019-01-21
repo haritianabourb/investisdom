@@ -41,6 +41,22 @@ class RolesTableSeeder extends Seeder
                 'created_at' => '2018-08-23 17:10:46',
                 'updated_at' => '2018-08-23 17:10:46',
             ),
+            3 => 
+            array (
+                'id' => 5,
+                'name' => 'investors',
+                'display_name' => 'Investisseur',
+                'created_at' => '2019-01-05 06:22:09',
+                'updated_at' => '2019-01-05 06:22:09',
+            ),
+            4 => 
+            array (
+                'id' => 4,
+                'name' => 'cgp',
+                'display_name' => 'Conseiller en gestion de patrimoine',
+                'created_at' => '2019-01-05 06:20:55',
+                'updated_at' => '2019-01-05 06:22:26',
+            ),
         ));
         
         

@@ -16,7 +16,7 @@ class CreateLeaseholdersTable extends Migration {
 		{
 			$table->integer('id', true);
 			$table->string('name');
-			$table->string('registered_key');
+			$table->string('registered_key')->default('none');
 			$table->string('address_1');
 			$table->string('address_2')->nullable();
 			$table->integer('postal_code')->nullable();

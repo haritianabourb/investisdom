@@ -16,7 +16,7 @@ class CreateBanksTable extends Migration {
 		{
 			$table->integer('id', true);
 			$table->string('name');
-			$table->string('capital');
+			$table->string('capital')->nullable();
 			$table->string('address_1');
 			$table->string('address_2')->nullable();
 			$table->integer('postal_code')->nullable();
@@ -25,10 +25,10 @@ class CreateBanksTable extends Migration {
 			$table->string('registered_key');
 			$table->string('registration_city')->nullable();
 			$table->dateTime('registered_at')->nullable();
-			$table->integer('entities_id');
-			$table->smallInteger('default');
-			$table->integer('represantant_id');
-			$table->integer('contacts_id');
+			$table->integer('entities_id')->nullable();
+			$table->smallInteger('default')->nullable();
+			$table->integer('represantant_id')->nullable();
+			$table->integer('contacts_id')->nullable();
 			$table->timestamps();
 		});
 	}

@@ -167,6 +167,7 @@ function Task24_Network() {
 
     $("[name=network]").trigger("change");
 }
+
 function Task31_RegimeMatrimonal() {
     if (!(window.location.href.indexOf("investors") != -1))
         return;
@@ -192,6 +193,35 @@ function Task31_RegimeMatrimonal() {
     $("[name=regime_mat_invest]").trigger("change");
 }
 
+function Task101_PVTECH() {
+    // if (!(window.location.href.indexOf("reservations") != -1))
+    //     return;
+    var elementsToHide = [
+        "[name=mode_paiement]"
+    ].join(", "); //getting selector string for jQuery
+
+    $("[name=paiement]").change(function() {
+        console.log(this.value);
+        if (this.value == "unique")
+        {
+            $(elementsToHide).val("unique").parent().show("fast");
+
+            $("[name=type_contrats_id] option").prop("disabled", false);
+        } else { //otherwise, hide fields
+            $(elementsToHide).val("echelonne")
+                .parent().hide("fast");
+
+            $("[name=type_contrats_id] option[value='1'], [name=type_contrats_id] option[value='2']").prop("disabled", true);
+        }
+        $("[name=type_contrats_id]").select2();
+    });
+
+    $("[name=regime_mat_invest]").trigger("change");
+    $("[name=type_contrats_id]").select2();
+}
+
+
+
 
 
 
@@ -206,6 +236,7 @@ $(document).ready(function() {
     Task24_Network();
     Task27_madame();
     Task31_RegimeMatrimonal();
+    Task101_PVTECH();
 
     $(document).on('hidden.bs.modal', '.modal', function (event) {
       if($('.modal.in').length > 0){

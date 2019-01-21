@@ -23,10 +23,11 @@ class CGPController extends VoyagerBaseController
         $data['cgpville'] = $cgp->city;
         $data['cgpcp'] = $cgp->postal_code;
 
-        $data['forme_juridique'] = $cgp->juridical_registration;
-        $data['immatriculation'] = $cgp->registrationEntitiesId->description;
-        $data['nom_representant'] = $cgp->contactId->firstname;
-        $data['prenom'] = $cgp->contactId->lastname;
+      $data['forme_juridique'] = $cgp->juridical_registration;
+//      $data['immatriculation'] = $cgp->registrationEntitiesId->description;
+      $data['immatriculation'] = $cgp->type_registration;
+      $data['nom_representant'] = $cgp->contactId->firstname;
+      $data['prenom'] = $cgp->contactId->lastname;
 
         $data['dateconvention'] = date ("d-m-Y");
         $data['fonction'] = $cgp->contact_status;
@@ -37,7 +38,7 @@ class CGPController extends VoyagerBaseController
         $data['madate'] = date ("d-m-Y");
         $data['annee']=date("Y", strtotime(date ("d-m-Y")));
 
-        $pdf = PDF::loadView('pdf.cgps.conventiontest', $data);
+        $pdf = PDF::loadView('pdf.cgps.convention', $data);
 
         return $pdf->download('Contrat_de_partenariat_'.$cgp->name.'.pdf');
     }

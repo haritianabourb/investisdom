@@ -24,9 +24,9 @@ class CreateInvestorsTable extends Migration {
 			$table->dateTime('started_at')->nullable();
 			$table->integer('cgp_id')->nullable();
 			$table->timestamps();
-			$table->integer('type_entities_id');
-			$table->integer('nature_entities_id');
-			$table->integer('registration_entities_id')->nullable();
+			$table->string('type_entities_id');
+			$table->string('nature_entities_id');
+			$table->string('registration_entities_id')->nullable();
 			$table->string('capital')->nullable();
 			$table->string('registration_city')->nullable();
 			$table->string('cgp_attached')->nullable();

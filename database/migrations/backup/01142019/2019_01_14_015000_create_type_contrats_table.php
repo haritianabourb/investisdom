@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateVoyagerThemesTable extends Migration {
+class CreateTypeContratsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,13 +12,12 @@ class CreateVoyagerThemesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('voyager_themes', function(Blueprint $table)
+		Schema::create('type_contrats', function(Blueprint $table)
 		{
 			$table->integer('id', true);
-			$table->string('name');
-			$table->string('folder')->unique();
-			$table->smallInteger('active')->default('0');
-			$table->string('version')->default('');
+			$table->string('nom');
+			$table->string('slug');
+			$table->string('description');
 			$table->timestamps();
 		});
 	}
@@ -31,7 +30,7 @@ class CreateVoyagerThemesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('voyager_themes');
+		Schema::drop('type_contrats');
 	}
 
 }
