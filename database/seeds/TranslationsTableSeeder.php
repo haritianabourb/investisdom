@@ -149,6 +149,50 @@ class TranslationsTableSeeder extends Seeder
                 'created_at' => '2019-01-13 18:02:05',
                 'updated_at' => '2019-01-13 18:02:05',
             ),
+            12 => 
+            array (
+                'id' => 13,
+                'table_name' => 'data_types',
+                'column_name' => 'display_name_singular',
+                'foreign_key' => 19,
+                'locale' => 'en',
+                'value' => 'Taux Cgp',
+                'created_at' => '2019-01-14 07:23:49',
+                'updated_at' => '2019-01-14 07:23:49',
+            ),
+            13 => 
+            array (
+                'id' => 14,
+                'table_name' => 'data_types',
+                'column_name' => 'display_name_plural',
+                'foreign_key' => 19,
+                'locale' => 'en',
+                'value' => 'Taux Cgps',
+                'created_at' => '2019-01-14 07:23:49',
+                'updated_at' => '2019-01-14 07:23:49',
+            ),
+            14 => 
+            array (
+                'id' => 15,
+                'table_name' => 'data_types',
+                'column_name' => 'display_name_singular',
+                'foreign_key' => 20,
+                'locale' => 'en',
+                'value' => 'Type Contrat',
+                'created_at' => '2019-01-16 18:26:52',
+                'updated_at' => '2019-01-16 18:26:52',
+            ),
+            15 => 
+            array (
+                'id' => 16,
+                'table_name' => 'data_types',
+                'column_name' => 'display_name_plural',
+                'foreign_key' => 20,
+                'locale' => 'en',
+                'value' => 'Type Contrats',
+                'created_at' => '2019-01-16 18:26:52',
+                'updated_at' => '2019-01-16 18:26:52',
+            ),
         ));
         
         

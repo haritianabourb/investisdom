@@ -127,24 +127,6 @@ class DataTypesTableSeeder extends Seeder
             ),
             6 => 
             array (
-                'id' => 12,
-                'name' => 'investors',
-                'slug' => 'investors',
-                'display_name_singular' => 'Investisseur',
-                'display_name_plural' => 'Investisseurs',
-                'icon' => 'voyager-medal-rank-star',
-                'model_name' => 'App\\Investor',
-                'policy_name' => NULL,
-                'controller' => NULL,
-                'description' => 'Investisseurs',
-                'generate_permissions' => 1,
-                'server_side' => 0,
-                'details' => '{"order_column":null,"order_display_column":null}',
-                'created_at' => '2018-09-10 15:53:00',
-                'updated_at' => '2018-09-20 06:29:48',
-            ),
-            7 => 
-            array (
                 'id' => 14,
                 'name' => 'sncs',
                 'slug' => 'sncs',
@@ -161,7 +143,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-10 15:53:00',
                 'updated_at' => '2018-09-19 17:27:18',
             ),
-            8 => 
+            7 => 
             array (
                 'id' => 16,
                 'name' => 'registration_entities',
@@ -179,61 +161,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-10 16:45:25',
                 'updated_at' => '2018-09-10 16:45:25',
             ),
-            9 => 
-            array (
-                'id' => 19,
-                'name' => 'taux_cgp',
-                'slug' => 'taux-cgp',
-                'display_name_singular' => 'Taux Cgp',
-                'display_name_plural' => 'Taux Cgps',
-                'icon' => 'voyager-edit',
-                'model_name' => 'App\\TauxCGP',
-                'policy_name' => NULL,
-                'controller' => NULL,
-                'description' => NULL,
-                'generate_permissions' => 1,
-                'server_side' => 0,
-                'details' => '{"order_column":null,"order_display_column":null}',
-                'created_at' => '2018-09-19 17:21:21',
-                'updated_at' => '2018-09-19 17:21:21',
-            ),
-            10 => 
-            array (
-                'id' => 20,
-                'name' => 'type_contrats',
-                'slug' => 'type-contrats',
-                'display_name_singular' => 'Type Contrat',
-                'display_name_plural' => 'Type Contrats',
-                'icon' => NULL,
-                'model_name' => 'App\\TypeContrat',
-                'policy_name' => NULL,
-                'controller' => NULL,
-                'description' => NULL,
-                'generate_permissions' => 1,
-                'server_side' => 0,
-                'details' => '{"order_column":null,"order_display_column":null}',
-                'created_at' => '2018-09-19 17:27:46',
-                'updated_at' => '2018-09-19 17:27:46',
-            ),
-            11 => 
-            array (
-                'id' => 7,
-                'name' => 'cgps',
-                'slug' => 'cgps',
-                'display_name_singular' => 'CGP',
-                'display_name_plural' => 'CGP',
-                'icon' => 'voyager-bookmark',
-                'model_name' => 'App\\CGP',
-                'policy_name' => NULL,
-                'controller' => 'Investis\\CGPController',
-                'description' => 'Conseiller en Gestion de Patrimoine',
-                'generate_permissions' => 1,
-                'server_side' => 0,
-                'details' => '{"order_column":null,"order_display_column":null}',
-                'created_at' => '2018-09-10 15:38:45',
-                'updated_at' => '2018-09-25 21:35:57',
-            ),
-            12 => 
+            8 => 
             array (
                 'id' => 22,
                 'name' => 'mandat',
@@ -251,7 +179,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-26 06:30:26',
                 'updated_at' => '2018-09-26 06:30:26',
             ),
-            13 => 
+            9 => 
             array (
                 'id' => 13,
                 'name' => 'leaseholders',
@@ -269,7 +197,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-10 15:53:00',
                 'updated_at' => '2018-09-26 09:30:00',
             ),
-            14 => 
+            10 => 
             array (
                 'id' => 15,
                 'name' => 'suppliers',
@@ -287,7 +215,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-10 15:54:06',
                 'updated_at' => '2018-09-26 09:34:25',
             ),
-            15 => 
+            11 => 
             array (
                 'id' => 8,
                 'name' => 'intermediaries',
@@ -305,7 +233,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-10 15:38:45',
                 'updated_at' => '2018-09-26 09:36:38',
             ),
-            16 => 
+            12 => 
             array (
                 'id' => 6,
                 'name' => 'banks',
@@ -323,7 +251,61 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-10 15:38:44',
                 'updated_at' => '2018-12-27 06:30:38',
             ),
-            17 => 
+            13 => 
+            array (
+                'id' => 12,
+                'name' => 'investors',
+                'slug' => 'investors',
+                'display_name_singular' => 'Investisseur',
+                'display_name_plural' => 'Investisseurs',
+                'icon' => 'voyager-medal-rank-star',
+                'model_name' => 'App\\Investor',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => 'Investisseurs',
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null}',
+                'created_at' => '2018-09-10 15:53:00',
+                'updated_at' => '2019-01-17 08:25:40',
+            ),
+            14 => 
+            array (
+                'id' => 19,
+                'name' => 'taux_cgp',
+                'slug' => 'taux-cgp',
+                'display_name_singular' => 'Taux Cgp',
+                'display_name_plural' => 'Taux Cgps',
+                'icon' => 'voyager-edit',
+                'model_name' => 'App\\TauxCGP',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null}',
+                'created_at' => '2018-09-19 17:21:21',
+                'updated_at' => '2019-01-14 07:27:33',
+            ),
+            15 => 
+            array (
+                'id' => 20,
+                'name' => 'type_contrats',
+                'slug' => 'type-contrats',
+                'display_name_singular' => 'Type Contrat',
+                'display_name_plural' => 'Type Contrats',
+                'icon' => NULL,
+                'model_name' => 'App\\TypeContrat',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null}',
+                'created_at' => '2018-09-19 17:27:46',
+                'updated_at' => '2019-01-16 18:26:52',
+            ),
+            16 => 
             array (
                 'id' => 17,
                 'name' => 'reservations',
@@ -339,7 +321,25 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null}',
                 'created_at' => '2018-09-19 17:13:08',
-                'updated_at' => '2019-01-10 04:35:38',
+                'updated_at' => '2019-01-16 20:53:35',
+            ),
+            17 => 
+            array (
+                'id' => 7,
+                'name' => 'cgps',
+                'slug' => 'cgps',
+                'display_name_singular' => 'CGP',
+                'display_name_plural' => 'CGP',
+                'icon' => 'voyager-bookmark',
+                'model_name' => 'App\\CGP',
+                'policy_name' => NULL,
+                'controller' => 'Investis\\CGPController',
+                'description' => 'Conseiller en Gestion de Patrimoine',
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null}',
+                'created_at' => '2018-09-10 15:38:45',
+                'updated_at' => '2019-01-17 06:23:10',
             ),
         ));
         
