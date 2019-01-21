@@ -45,6 +45,5 @@ class EventServiceProvider extends ServiceProvider
         Mandat::observe(MandatObserver::class);
         Reservation::observe(ReservationObserver::class);
         SNC::observe(SNCObserver::class);
-        //
     }
 }
