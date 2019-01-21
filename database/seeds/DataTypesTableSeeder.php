@@ -253,24 +253,6 @@ class DataTypesTableSeeder extends Seeder
             ),
             13 => 
             array (
-                'id' => 12,
-                'name' => 'investors',
-                'slug' => 'investors',
-                'display_name_singular' => 'Investisseur',
-                'display_name_plural' => 'Investisseurs',
-                'icon' => 'voyager-medal-rank-star',
-                'model_name' => 'App\\Investor',
-                'policy_name' => NULL,
-                'controller' => NULL,
-                'description' => 'Investisseurs',
-                'generate_permissions' => 1,
-                'server_side' => 0,
-                'details' => '{"order_column":null,"order_display_column":null}',
-                'created_at' => '2018-09-10 15:53:00',
-                'updated_at' => '2019-01-17 08:25:40',
-            ),
-            14 => 
-            array (
                 'id' => 19,
                 'name' => 'taux_cgp',
                 'slug' => 'taux-cgp',
@@ -287,7 +269,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-19 17:21:21',
                 'updated_at' => '2019-01-14 07:27:33',
             ),
-            15 => 
+            14 => 
             array (
                 'id' => 20,
                 'name' => 'type_contrats',
@@ -305,7 +287,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-19 17:27:46',
                 'updated_at' => '2019-01-16 18:26:52',
             ),
-            16 => 
+            15 => 
             array (
                 'id' => 17,
                 'name' => 'reservations',
@@ -323,7 +305,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-19 17:13:08',
                 'updated_at' => '2019-01-16 20:53:35',
             ),
-            17 => 
+            16 => 
             array (
                 'id' => 7,
                 'name' => 'cgps',
@@ -340,6 +322,24 @@ class DataTypesTableSeeder extends Seeder
                 'details' => '{"order_column":null,"order_display_column":null}',
                 'created_at' => '2018-09-10 15:38:45',
                 'updated_at' => '2019-01-17 06:23:10',
+            ),
+            17 => 
+            array (
+                'id' => 12,
+                'name' => 'investors',
+                'slug' => 'investors',
+                'display_name_singular' => 'Investisseur',
+                'display_name_plural' => 'Investisseurs',
+                'icon' => 'voyager-medal-rank-star',
+                'model_name' => 'App\\Investor',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => 'Investisseurs',
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null}',
+                'created_at' => '2018-09-10 15:53:00',
+                'updated_at' => '2019-01-21 07:53:43',
             ),
         ));
         
