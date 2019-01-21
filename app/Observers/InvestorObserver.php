@@ -17,28 +17,12 @@ class InvestorObserver
      * @param  \App\Mandat $investor
      * @return void
      */
-    public function creating(Investor $investor)
+    public function saving(Investor $investor)
     {
-//        $investor->identifiant = "ATTEMPTID";
-    }
-
-    /**
-     * Handle the contract "created" event.
-     *
-     * @param  \App\Mandat $investor
-     * @return void
-     */
-    public function created(Investor $investor)
-    {
-//        $identifiant =
-//            substr(preg_replace('/\s/', '', $investor->name), 0, 3)
-//            . substr(preg_replace('/\s/', '', $investor->registered_key), -3)
-//            . "/" . $investor->id;
-
-        // XXX little hack to not thrown the saving event for calculations
-//        DB::table($investor->getTable())->where('id', $investor->id)->update(['identifiant' => $identifiant]);
+        if($investor->nature_entities_id == 1){
+            $investor->name = $investor->full_name;
+        }
 
     }
-
 
 }
