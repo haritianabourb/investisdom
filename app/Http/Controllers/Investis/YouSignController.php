@@ -7,17 +7,18 @@
  */
 
 namespace App\Http\Controllers\Investis;
-use Voyager;
+
+use PDF;
+
+
 class YouSignController extends VoyagerBaseController
 {
 
     public function TestRequests()
     {
-        $pdf_path=base_path()."/public/PDFs/samplepdf.pdf";
-        $pdf_data=file_get_contents($pdf_path);
 
-        $encoded_pdf=base64_encode($pdf_data);
-
+        $pdf_data = PDF::loadView('testview');
+        $encoded_pdf=base64_encode($pdf_data->output());
 
         $api_key=env("YOUSIGN_APP_KEY", "");
         $client = new \GuzzleHttp\Client(
