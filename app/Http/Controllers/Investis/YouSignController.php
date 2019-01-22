@@ -71,6 +71,18 @@ class YouSignController extends VoyagerBaseController
             "name" => "Signing Procedure",
             "description" => "Powerful! Here is the description of my first procedure with emails",
             "members" => [
+//                [
+//                    "user" => "2Fc73c6dd5-06ff-419e-a283-8ab68c719a5d",
+//                    "fileObjects" => [
+//                        [
+//                            "file" => $uploaded_file_id,
+//                            "page" => $page_count,
+//                            "position" => "" . $position_string,
+//                            "mention" => "Read and approved",
+//                            "mention2" => "Signed by $nom $prenom."
+//                        ]
+//                    ],
+//                ],
                 [
                     "firstname" => $nom,
                     "lastname" => $prenom,
@@ -110,7 +122,5 @@ class YouSignController extends VoyagerBaseController
 
         $response_procedure = $client->request('POST', 'https://staging-api.yousign.com/procedures',
             ['json' => $procedure_request_body]);
-
-
     }
 }
