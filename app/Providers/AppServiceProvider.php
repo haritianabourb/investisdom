@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Actions\YousignAction;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\DB;
@@ -41,9 +42,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        //Custom Form Fields
         Voyager::addFormField(MoneyFormField::class);
         Voyager::addFormField(PercentageFormField::class);
+
+        //Custom Actions
+        Voyager::addAction(YousignAction::class);
+
     }
 
 
