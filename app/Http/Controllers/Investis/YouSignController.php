@@ -35,11 +35,4 @@ class YouSignController extends VoyagerBaseController
         ];
     }
 
-    public function TestRequests()
-    {
-
-        //XXX here a testing trait for generic use
-        dd($this->yousign());
-
-    }
 }

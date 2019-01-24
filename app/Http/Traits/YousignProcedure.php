@@ -125,25 +125,7 @@ trait YousignProcedure {
                     ],
                 ],
             ],
-            "config" => [
-                //TODO make it as configurable
-                "email" => [
-                    "member.started" => [
-                        [
-                            "subject" => "Hey! You are invited to sign!",
-                            "message" => "Hello <tag data-tag-type='string' data-tag-name='recipient.firstname'></tag> <tag data-tag-type='string' data-tag-name='recipient.lastname'></tag>, <br><br> You have ben invited to sign a document, please click on the following button to read it: <tag data-tag-type='button' data-tag-name='url' data-tag-title='Access to documents'>Access to documents</tag>",
-                            "to" => ["@member"],
-                        ]
-                    ],
-                    "procedure.started" => [
-                        [
-                            "subject" => "John, created a procedure your API have",
-                            "message" => "The content of this email is totally awesome.",
-                            "to" => ["@creator"],
-                        ]
-                    ]
-                ]
-            ]
+            "config" => $this->getYousignConfig(),
         ];
 
 
@@ -155,6 +137,36 @@ trait YousignProcedure {
 
     public function yousignReturnView(){
         return null;
+    }
+
+    public function getYousignSignatureOnEachPages(){
+        if(is_null($this->yousignSignatureOnEachPage)){
+            $this->getYousignSignatureOnEachPages = false;
+        }
+
+        return $this->getYousignSignatureOnEachPages;
+    }
+
+    public function getYousignConfig(){
+        return [
+            //TODO make it as configurable
+            "email" => [
+                "member.started" => [
+                    [
+                        "subject" => "Hey! You are invited to sign!",
+                        "message" => "Hello <tag data-tag-type='string' data-tag-name='recipient.firstname'></tag> <tag data-tag-type='string' data-tag-name='recipient.lastname'></tag>, <br><br> You have ben invited to sign a document, please click on the following button to read it: <tag data-tag-type='button' data-tag-name='url' data-tag-title='Access to documents'>Access to documents</tag>",
+                        "to" => ["@member"],
+                    ]
+                ],
+                "procedure.started" => [
+                    [
+                        "subject" => "John, created a procedure your API have",
+                        "message" => "The content of this email is totally awesome.",
+                        "to" => ["@creator"],
+                    ]
+                ]
+            ]
+        ];
     }
 
 
