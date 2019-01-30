@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d2951e6b49aa0eb6be6bb05ded44a780",
+    "content-hash": "e4ee390256f20665428818aa270b23d3",
     "packages": [
         {
             "name": "arrilot/laravel-widgets",
@@ -4993,45 +4993,6 @@
             "time": "2018-11-21T21:40:54+00:00"
         },
         {
-            "name": "nusphere/nusoap",
-            "version": "0.9.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wooxo/nusoap.git",
-                "reference": "c020c749d34ed1c52669fd0068f7b557bbcd0a8f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wooxo/nusoap/zipball/c020c749d34ed1c52669fd0068f7b557bbcd0a8f",
-                "reference": "c020c749d34ed1c52669fd0068f7b557bbcd0a8f",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "lib/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Wooxo SA",
-                    "email": "dev@wooxo.fr"
-                }
-            ],
-            "description": "NuSoap Repository for Composer with some fixes",
-            "homepage": "https://github.com/wooxo/nusoap",
-            "keywords": [
-                "composer",
-                "nusoap",
-                "php"
-            ],
-            "time": "2015-12-04T12:05:20+00:00"
-        },
-        {
             "name": "phar-io/manifest",
             "version": "1.0.3",
             "source": {
@@ -6453,7 +6414,8 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.1.3"
+        "php": "^7.1.3",
+        "ext-json": "*"
     },
     "platform-dev": []
 }
