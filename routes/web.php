@@ -15,9 +15,6 @@ Route::get('/', function () {
     return view('theme::index');
 });
 
-
-Route::get('/test_requests', 'Investis\YouSignController@yousign');
-
 Route::get('/00_PG', 'Investis\PGPDFController@generatePDF');
 Route::get('/01_mandat', 'Investis\MandatPDFController@generatePDF');
 Route::get('/02_el_cl', 'Investis\ELCLPDFController@generatePDF');
