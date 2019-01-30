@@ -44,6 +44,7 @@ Route::group(['prefix' => 'admin'], function () {
       Route::get('/{reservation}/generate-recherche', 'Investis\ReservationController@generatePDFRecherche')->name('admin.reservations.generate-recherche');
       Route::get('/{reservation}/generate-mandat', 'Investis\ReservationController@generatePDFMandat')->name('admin.reservations.generate-mandat');
       Route::get('/{reservation}/generate-sepa', 'Investis\ReservationController@generatePDFSEPA')->name('admin.reservations.generate-sepa');
+      Route::get('/{reservation}/yousign', 'Investis\ReservationController@yousign')->name('admin.reservations.yousign');
     });
 
     Route::group(['prefix' => 'scns'], function(){
