@@ -6,6 +6,7 @@ use App\Http\Traits\YousignProcedure;
 use Illuminate\Http\Request;
 use \App\Reservation;
 use PDF;
+use TCG\Voyager\Traits\AlertsMessages;
 use Voyager;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
@@ -115,7 +116,12 @@ class ReservationController extends VoyagerBaseController
     public function yousign(Request $request, Reservation $reservation){
         $this->setMember($reservation);
         $this->setFile($reservation);
-        return $this->yousignStartProcedure();
+        $response = $this->yousignStartProcedure();
+
+        $this->alertSuccess("{$response->original->name} <br/> Envoyer a Yousign <br/> Procedure numéro: {$response->original->id}");
+
+        return redirect()->back()->with($this->alerts);
+//        return $this->alertSuccess($response);
     }
 
 //    public function yousignReturnView(){

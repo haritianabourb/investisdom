@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Actions\ContractAction;
+use App\Actions\MandatAction;
 use App\Actions\YousignAction;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
@@ -15,13 +17,6 @@ use Voyager;
 class AppServiceProvider extends ServiceProvider
 {
 
-  /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
-     */
-    // protected $defer = true;
-
     /**
      * Bootstrap any application services.
      *
@@ -29,7 +24,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // Voyager::useModel('SNC', \App\SNC::class);
         Validator::extend('siren', '\App\Validators\SIRENValidator@validate');
         DB::getDoctrineSchemaManager()->getDatabasePlatform()->registerDoctrineTypeMapping('status_pages', 'text');
         DB::getDoctrineSchemaManager()->getDatabasePlatform()->registerDoctrineTypeMapping('post_status', 'text');
@@ -47,6 +41,8 @@ class AppServiceProvider extends ServiceProvider
         Voyager::addFormField(PercentageFormField::class);
 
         //Custom Actions
+        Voyager::addAction(ContractAction::class);
+        Voyager::addAction(MandatAction::class);
         Voyager::addAction(YousignAction::class);
 
     }

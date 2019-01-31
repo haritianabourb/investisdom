@@ -34,13 +34,14 @@ class YousignAction extends AbstractAction
 
     public function getDefaultRoute()
     {
-        return "#";
+//        return "#";
+        return route('admin.'.$this->dataType->slug.'.yousign', ["reservation" => $this->data]);
     }
 
     public function getAttributes()
     {
       return [
-            'class' => 'btn btn-sm btn-primary pull-right edit',
+            'class' => 'btn btn-sm btn-primary',
         ];
     }
 }
