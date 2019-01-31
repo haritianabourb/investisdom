@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Investis;
 use App\Http\Traits\YousignProcedure;
 use Illuminate\Http\Request;
 use \App\Reservation;
+use DB;
 use PDF;
 use TCG\Voyager\Traits\AlertsMessages;
 use Voyager;
@@ -118,10 +119,14 @@ class ReservationController extends VoyagerBaseController
         $this->setFile($reservation);
         $response = $this->yousignStartProcedure();
 
-        $this->alertSuccess("{$response->original->name} <br/> Envoyer a Yousign <br/> Procedure numéro: {$response->original->id}");
 
+        // FIXME do an event, please!!!!
+//        $reservation->yousign_procedure_id = json_encode($this->yousignProcedure);
+        // XXX little hack to not thrown the saving event for calculations
+        DB::table($reservation->getTable())->where('id', $reservation->id)->update(['yousign_procedure_id' => json_encode($this->yousignProcedure)]);
+
+        $this->alertSuccess("{$response->original->name} <br/> Envoyer a Yousign <br/> Procedure numéro: {$response->original->id}");
         return redirect()->back()->with($this->alerts);
-//        return $this->alertSuccess($response);
     }
 
 //    public function yousignReturnView(){

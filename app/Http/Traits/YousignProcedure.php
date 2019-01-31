@@ -308,6 +308,7 @@ trait YousignProcedure
             dd($e->getResponse()->getBody()->getContents());
 
         }
+
         $this->yousignProcedure = json_decode($yousignProcedure->getBody()->getContents());
 
         return  $this->yousignReturnView();
