@@ -8,16 +8,18 @@ use App\Reservation;
 class YousignAction extends AbstractAction
 {
 
+    protected $title;
+
     public function getTitle()
     {
-        return "Envoyer à Yousign";
+        return $this->title ?? "Envoyer à Yousign";
     }
 
     public function getPolicy()
     {
         //TODO Change policy when it come
         //TODO check with yousign the pdf status
-        return false;
+        return 'browse';
     }
 
     public function getDataType()

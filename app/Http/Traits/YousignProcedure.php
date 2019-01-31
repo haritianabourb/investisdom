@@ -52,9 +52,8 @@ trait YousignProcedure
                     "config" => $this->getYousignConfig()
                 ];
 
-                $yousignProcedure = $this->getYousignClient()->request('POST', "{$this->yousignUrl}/procedures", [
-                    'json' => $request
-                ]);
+                $yousignProcedure = $this->getYousignClient()->request('POST', "{$this->yousignUrl}/procedures",
+                    ['json' => $request]);
 
             } catch (\GuzzleHttp\Exception\ClientException $e) {
 
