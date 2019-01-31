@@ -64,7 +64,7 @@ class YousignAction extends AbstractAction
 
     private function getYousignProcedureStatus(){
         // TODO show if a procedure already exist
-        if($this->data->yousign_procedure_id != "null"){
+        if($this->data->yousign_procedure_id && $this->data->yousign_procedure_id != "null"){
             // TODO show the procedure status
             $api_key = env("YOUSIGN_APP_KEY", "");
             $yousignUrl = env("YOUSIGN_APP_HOST", "");
