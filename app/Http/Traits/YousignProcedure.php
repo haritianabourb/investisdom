@@ -78,7 +78,8 @@ trait YousignProcedure
                 $file_request_body = [
                     'procedure' => $this->getYousignProcedure()->id,
                     'name' => $name,
-                    'content' => $encoded_pdf
+                    'content' => $encoded_pdf,
+                    'type' => 'signable'
                 ];
 
                 $response_file = $this->getYousignClient()->request('POST', "{$this->yousignUrl}/files", ['json' => $file_request_body]);
@@ -162,6 +163,7 @@ trait YousignProcedure
             }
 
         }
+
         return $this->yousignMembers;
     }
 
@@ -169,27 +171,25 @@ trait YousignProcedure
     {
         if (!$this->yousignSignatures) {
             $this->yousignSignatures = [];
-            foreach ($files = $this->getYousignFile() as $file) {
                 foreach ($users = $this->getYousignMembers() as $user) {
-                    foreach ($user->fileObjects as $fileObjects)
+                    foreach ($user->fileObjects as $fileObjects){
+
                         try {
                             $fileObjects["member"] = $user->id;
                         } catch (\Exception $e) {
                             dd($users, $user, $e);
                         }
-                    try {
-                        $yousignProcedure = $this->getYousignClient()->request('POST', "{$this->yousignUrl}/file_objects", [
-                            'json' => $fileObjects
-                        ]);
-                    } catch (\GuzzleHttp\Exception\ClientException $e) {
-
-                        dd($user, $fileObjects, $e->getResponse()->getBody()->getContents());
-
-                    }
+                        try {
+                            $yousignProcedure = $this->getYousignClient()->request('POST', "{$this->yousignUrl}/file_objects", [
+                                'json' => $fileObjects
+                            ]);
+                        } catch (\GuzzleHttp\Exception\ClientException $e) {
+                            dd($user, $fileObjects, $e->getResponse()->getBody()->getContents());
+                        }
 
                     $this->yousignSignatures [] = json_decode($yousignProcedure->getBody()->getContents());
+                    }
                 }
-            }
         }
 
         return $this->yousignSignatures;
