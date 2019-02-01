@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Actions\ContractAction;
 use App\Actions\MandatAction;
+use App\Actions\SepaAction;
 use App\Actions\YousignAction;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
@@ -43,6 +44,7 @@ class AppServiceProvider extends ServiceProvider
         //Custom Actions
         Voyager::addAction(ContractAction::class);
         Voyager::addAction(MandatAction::class);
+        Voyager::addAction(SepaAction::class);
         Voyager::addAction(YousignAction::class);
 
     }

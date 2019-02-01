@@ -26,10 +26,6 @@
         @foreach(Voyager::actions() as $action)
             @include('voyager::reservations.partials.read-actions', ['action' => $action])
         @endforeach
-
-        @if($dataTypeContent->paiement == "echelonne" || $dataTypeContent->mode_paiement == "prelevement")
-        <a type="button" href="{{ route('admin.reservations.generate-sepa', ['reservation' => $dataTypeContent]) }}" class="btn btn-default generate-pdf-convention"><i class="voyager-documentation"></i> Generer un Mandat SEPA</a>
-        @endif
     </h1>
     @include('voyager::multilingual.language-selector')
 @stop

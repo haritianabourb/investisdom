@@ -38,7 +38,7 @@ class YousignAction extends AbstractAction
 
     public function getDefaultRoute()
     {
-//        return "#";
+
         if(!$this->getYousignProcedureStatus() || $this->getYousignProcedureStatus() != "active"){
             return route('admin.'.$this->dataType->slug.'.yousign', ["reservation" => $this->data]);
         }
@@ -53,10 +53,10 @@ class YousignAction extends AbstractAction
         ];
 
         if($this->getYousignProcedureStatus() == "active"){
-            $attributes["class"] .= "btn-primary disabled";
+            $attributes["class"] .= "btn-info disabled";
             $attributes["disabled"] = "disabled";
         }else{
-            $attributes["class"] .= "btn-link";
+            $attributes["class"] .= "btn-primary";
         }
 
       return $attributes;
@@ -65,10 +65,9 @@ class YousignAction extends AbstractAction
     private function getYousignProcedureStatus(){
         // TODO show if a procedure already exist
         if($this->data->yousign_procedure_id && $this->data->yousign_procedure_id != "null"){
-            // TODO show the procedure status
+
             $api_key = env("YOUSIGN_APP_KEY", "");
             $yousignUrl = env("YOUSIGN_APP_HOST", "");
-            $yousignUser = env("YOUSIGN_APP_USER", "");
             $yousignClient = new \GuzzleHttp\Client(
                 [
                     'headers' => [
@@ -83,11 +82,6 @@ class YousignAction extends AbstractAction
             $yousignProcedure = $yousignClient->request('GET', $yousignUrl.$yousignProcedureId);
 
             $this->yousignProcedureStatus = (json_decode($yousignProcedure->getBody()->getContents()))->status;
-
-            // TODO case active : send link to signin procedure
-            // TODO case finnished : doesn't need to sign anymore
-            // TODO case expired : resend a new procedure
-            // TODO refused : WHo's refusing that!!!!
 
         }
 
