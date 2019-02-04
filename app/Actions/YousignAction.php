@@ -50,7 +50,7 @@ class YousignAction extends AbstractAction
     public function getDefaultRoute()
     {
 
-        if(!$this->getYousignProcedureStatus() || !in_array($this->getYousignProcedureStatus(), ["active","refused", "finnished" ])){
+        if(!$this->getYousignProcedureStatus() || !in_array($this->getYousignProcedureStatus(), ["active","refused", "finished" ])){
             return route('admin.'.$this->dataType->slug.'.yousign', ["reservation" => $this->data]);
         }
 
