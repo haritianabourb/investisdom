@@ -67,11 +67,11 @@ class YousignAction extends AbstractAction
             $attributes["class"] .= "btn-info disabled";
             $attributes["disabled"] = "disabled";
         }
-        if($this->getYousignProcedureStatus() == "finished"){
+        elseif($this->getYousignProcedureStatus() == "finished"){
             $attributes["class"] .= "btn-success";
         }
 
-        if(in_array($this->getYousignProcedureStatus(), ["refused", "expired"]) ){
+        elseif(in_array($this->getYousignProcedureStatus(), ["refused", "expired"]) ){
             $attributes["class"] .= "btn-danger";
         }else{
             $attributes["class"] .= "btn-primary";
