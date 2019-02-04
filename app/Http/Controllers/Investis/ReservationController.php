@@ -41,8 +41,8 @@ class ReservationController extends VoyagerBaseController
         $this->member = [
             "firstname" => $investor->name_invest,
             "lastname" => $investor->prenom_invest,
-            "phone" => '+33754284387',
-            "email" => 'soundifica@gmail.com',
+            "phone" => '+262692448152',
+            "email" => 'monelchristophe@gmail.com',
         ];
     }
 
