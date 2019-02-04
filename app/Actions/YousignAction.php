@@ -9,13 +9,24 @@ class YousignAction extends AbstractAction
 {
 
     protected $title;
+    protected $yousignProcedure;
     protected $yousignProcedureStatus;
 
     public function getTitle()
     {
         if($this->getYousignProcedureStatus() == "active"){
-            $this->title = "Yousign : Procedure en cours";
+            $this->title = "Yousign : Procédure en cours";
         }
+        if($this->getYousignProcedureStatus() == "finished"){
+            $this->title = "Yousign : Procédure Accepté";
+        }
+        if($this->getYousignProcedureStatus() == "expired"){
+            $this->title = "Yousign : Procédure Expiré" ;
+        }
+        if($this->getYousignProcedureStatus() == "refused"){
+            $this->title = "Yousign : Procédure Refusé" ;
+        }
+
         return $this->title ?? "Envoyer à Yousign";
     }
 
@@ -43,7 +54,7 @@ class YousignAction extends AbstractAction
             return route('admin.'.$this->dataType->slug.'.yousign', ["reservation" => $this->data]);
         }
 
-        return "/#";
+        return "#";
     }
 
     public function getAttributes()
@@ -55,6 +66,13 @@ class YousignAction extends AbstractAction
         if($this->getYousignProcedureStatus() == "active"){
             $attributes["class"] .= "btn-info disabled";
             $attributes["disabled"] = "disabled";
+        }
+        if($this->getYousignProcedureStatus() == "finished"){
+            $attributes["class"] .= "btn-success";
+        }
+
+        if(in_array($this->getYousignProcedureStatus(), ["refused", "expired"]) ){
+            $attributes["class"] .= "btn-danger";
         }else{
             $attributes["class"] .= "btn-primary";
         }
@@ -79,9 +97,11 @@ class YousignAction extends AbstractAction
             $yousignProcedureId = (json_decode($this->data->yousign_procedure_id))->id;
 
 
-            $yousignProcedure = $yousignClient->request('GET', $yousignUrl.$yousignProcedureId);
+            $this->yousignProcedure = $yousignClient->request('GET', $yousignUrl.$yousignProcedureId);
+            $this->yousignProcedure = json_decode($this->yousignProcedure->getBody()->getContents());
 
-            $this->yousignProcedureStatus = (json_decode($yousignProcedure->getBody()->getContents()))->status;
+
+            $this->yousignProcedureStatus = $this->yousignProcedure->status;
 
         }
 
