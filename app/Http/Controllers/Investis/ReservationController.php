@@ -19,7 +19,6 @@ class ReservationController extends VoyagerBaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     use YousignProcedure;
 
-//    protected $yousignFileName = "Document_test_trait";
     protected $yousignName = "Signing Procedure with trait";
     protected $yousignDescription = "New!!! now it's with trait, viva la dynamica!!!";
 
@@ -31,19 +30,97 @@ class ReservationController extends VoyagerBaseController
     public function getMembers()
     {
         // TODO: Implement getMembers() method.
-        return [$this->member];
+        return $this->member;
     }
 
     public function setMember(Reservation $reservation)
     {
         $investor = \App\Investor::find($reservation->investors_id);
 
-        $this->member = [
-            "firstname" => $investor->name_invest,
-            "lastname" => $investor->prenom_invest,
-            "phone" => '+262692448152',
-            "email" => 'monelchristophe@gmail.com',
-        ];
+        $this->member = collect([
+            collect([
+                'user' => "/users/" . env('YOUSIGN_APP_USER'),
+                'type' => "signer",
+                'position' => 2,
+                'fileObjects' => collect([
+                    'Demande_de_Reservation'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf' =>
+                    [
+                        [
+                            "page" => 5,
+                            "position" => "30,30,187,97",
+                            "mention" => "Bon pour accord",
+                            "mention2" => "Signé par InvestisDOM."
+                        ],
+                        [
+                            "page" => 12,
+                            "position" => "30,30,187,97",
+                            "mention" => "Lu et approuvé",
+                            "mention2" => "Signé par INVESTIS DOM."
+                        ],
+
+                    ],
+                    'Mandat_de_Recherche'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf' => [
+                        [
+                            "page" => 1,
+                            "position" => "30,30,187,97",
+                            "mention" => "Lu et approuvé, bon pour acceptation de mandat",
+                            "mention2" => "Signé par InvestisDOM."
+                        ]
+                    ]
+                ])
+
+
+            ]),
+            collect([
+                "firstname" => $investor->name_invest,
+                "lastname" => $investor->prenom_invest,
+                "phone" => '+262692448152',
+                "email" => 'monelchristophe@gmail.com',
+                "type" => "signer",
+                "position" => 1,
+                'fileObjects' => collect([
+                    'Demande_de_Reservation'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf' =>
+                    [
+                        [
+                            "page" => 5,
+                            "position" => "30,30,187,97",
+                            "mention" => "Bon pour réservation",
+                            "mention2" => "Signé par {$investor->name_invest} {$investor->prenom_invest}."
+                        ],
+                        [
+                            "page" => 6,
+                            "position" => "30,30,187,97",
+                        ],
+                        [
+                            "page" => 7,
+                            "position" => "30,30,187,97",
+                        ],
+                        [
+                            "page" => 9,
+                            "position" => "30,30,187,97",
+                            "mention" => "Bon pour pouvoir",
+                            "mention2" => "Signé par {$investor->name_invest} {$investor->prenom_invest}."
+                        ],
+                        [
+                            "page" => 12,
+                            "position" => "30,30,187,97",
+                            "mention" => "Lu et approuvé",
+                            "mention2" => "Signé par {$investor->name_invest} {$investor->prenom_invest}."
+                        ],
+
+                    ],
+                    'Mandat_de_Recherche'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf' =>
+                    [
+                        [
+                            "page" => 1,
+                            "position" => "30,30,187,97",
+                            "mention" => "Lu et approuvé, bon pour mandat",
+                            "mention2" => "Signé par {$investor->name_invest} {$investor->prenom_invest}."
+                        ]
+                    ]
+                ])
+            ])
+        ]);
     }
 
     public function setFile(Reservation $reservation)
@@ -115,8 +192,11 @@ class ReservationController extends VoyagerBaseController
     }
 
     public function yousign(Request $request, Reservation $reservation){
-        $this->setMember($reservation);
         $this->setFile($reservation);
+        $this->setMember($reservation);
+
+//        dd($this->getMembers(), $this->getMembers()->map->except("fileObjects")->toArray());
+
         $response = $this->yousignStartProcedure();
 
 
@@ -128,7 +208,6 @@ class ReservationController extends VoyagerBaseController
         $this->alertSuccess("{$response->original->name} <br/> Envoyer a Yousign <br/> Procedure numéro: {$response->original->id}");
         return redirect()->back()->with($this->alerts);
     }
-
 //    public function yousignReturnView(){
 //        return response('here');
 //    }

@@ -83,7 +83,7 @@ trait YousignProcedure
                 ];
 
                 $response_file = $this->getYousignClient()->request('POST', "{$this->yousignUrl}/files", ['json' => $file_request_body]);
-                $response_file_decoded[] = json_decode($response_file->getBody());
+                $response_file_decoded[] = json_decode($response_file->getBody()->getContents());
 
             }
 
@@ -98,69 +98,52 @@ trait YousignProcedure
         if (!$this->yousignMembers) {
             $this->yousignMembers = [];
 
-            foreach ($users = $this->getAuthors() as $user) {
-                $user["type"] = "signer";
-                $user["procedure"] = $this->getYousignProcedure()->id;
-                $user["position"] = 1;
+            $yousignMembers = [];
+            $yousignClient = $this->getYousignClient();
+
+            $this->getMembers()->transform(function ($user, $key) use (&$yousignMembers, $yousignClient){
+                $user->put("procedure", $this->getYousignProcedure()->id);
 
                 try {
 
-                    $yousignProcedure = $this->getYousignClient()->request('POST', "{$this->yousignUrl}/members", [
-                        'json' => $user
+                    $yousignProcedure = $yousignClient->request('POST', "{$this->yousignUrl}/members", [
+                        'json' => $user->except('fileObjects')->toArray()
                     ]);
-                    $user = json_decode($yousignProcedure->getBody()->getContents());
-                } catch (\GuzzleHttp\Exception\ClientException $e) {
 
-                    dd("Authors", $user, $e->getResponse()->getBody()->getContents());
+                    $yousignUser = json_decode($yousignProcedure->getBody()->getContents());
 
-                }
+                    $user->put('id', $yousignUser->id);
 
-                foreach ($files = $this->getYousignFile() as $file) {
-
-
-                    $user->fileObjects[] = [
-                        "file" => $file->id,
-                        "page" => $this->getYousignProperties()[$file->id]["page_count"],
-                        "position" => $this->getAuthorSignaturePosition()[$file->id],
-                        "mention" => "Lu est approuvé",
-                        "mention2" => "Signer par InvestisDOM."
-                    ];
-
-                }
-                $this->yousignMembers [] = $user;
-            }
-
-            foreach ($users = $this->getMembers() as $key => $user) {
-                $user["type"] = "signer";
-                $user["procedure"] = $this->getYousignProcedure()->id;
-                $user["position"] = 2;
-                try {
-
-                    $yousignProcedure = $this->getYousignClient()->request('POST', "{$this->yousignUrl}/members", [
-                        'json' => $user
-                    ]);
-                    $user = json_decode($yousignProcedure->getBody()->getContents());
                 } catch (\GuzzleHttp\Exception\ClientException $e) {
 
                     dd("Member", $user, $e->getResponse()->getBody()->getContents());
 
                 }
-                foreach ($files = $this->getYousignFile() as $file) {
-                    try {
-                        $user->fileObjects[] = [
-                            "file" => $file->id,
-                            "page" => $this->getYousignProperties()[$file->id]["page_count"],
-                            "position" => $this->getMemberSignaturePosition()[$file->id],
-                            "mention" => "Lu et approuvé",
-                            "mention2" => "Signed par {$user->firstname} {$user->lastname}."
-                        ];
-                    } catch (\Exception $e) {
-                        dd($user, $e);
+
+                $user->get("fileObjects")->transform(function($fileObject, $fileName) use ($user){
+                    foreach ($files = $this->getYousignFile() as $file) {
+                        if($fileName == $file->name){
+                            foreach ($fileObject as $key => $fo) {
+                                $fo["member"] = $user->get("id");
+                                $fo["file"] = $file->id;
+
+                                $fileObject[$key] = $fo;
+                            }
+                        }
                     }
 
-                }
-                $this->yousignMembers [] = $user;
-            }
+                    return $fileObject;
+                });
+
+                $yousignUser->fileObjects = $user->get("fileObjects")->values()->collapse()->all();
+
+                $yousignMembers[] = $yousignUser;
+
+                return $user;
+
+            });
+
+            $this->yousignMembers = $yousignMembers;
 
         }
 
@@ -171,14 +154,10 @@ trait YousignProcedure
     {
         if (!$this->yousignSignatures) {
             $this->yousignSignatures = [];
+
                 foreach ($users = $this->getYousignMembers() as $user) {
                     foreach ($user->fileObjects as $fileObjects){
 
-                        try {
-                            $fileObjects["member"] = $user->id;
-                        } catch (\Exception $e) {
-                            dd($users, $user, $e);
-                        }
                         try {
                             $yousignProcedure = $this->getYousignClient()->request('POST', "{$this->yousignUrl}/file_objects", [
                                 'json' => $fileObjects
@@ -209,19 +188,6 @@ trait YousignProcedure
 
     public abstract function getMembers();
 
-    public function getAuthors()
-    {
-
-        $authors = [
-            [
-                'user' => "/users/" . env('YOUSIGN_APP_USER'),
-            ]
-        ];
-
-        return $authors;
-
-    }
-
     protected function getYousignProperties()
     {
         if (!$this->yousignFileProperties) {
@@ -245,36 +211,6 @@ trait YousignProcedure
         }
 
         return $this->yousignFileProperties;
-    }
-
-    public function getMemberSignaturePosition()
-    {
-        if (!$this->yousignMemberSignaturePosition) {
-
-            $this->yousignMemberSignaturePosition = [];
-
-            foreach ($fileProperties = $this->getYousignProperties() as $fileProperty => $filePropertyValue) {
-                $this->yousignMemberSignaturePosition [$fileProperty] =
-                    (intval($filePropertyValue["page_width"]) - 157) . "," . (intval("30")) . ","
-                    . (intval($filePropertyValue["page_width"]) - 25) . "," . (intval("97"));
-            }
-        }
-
-        return $this->yousignMemberSignaturePosition;
-    }
-
-    public function getAuthorSignaturePosition()
-    {
-        if (!$this->yousignAuthorSignaturePosition) {
-
-            $this->yousignAuthorSignaturePosition = [];
-
-            foreach ($fileProperties = $this->getYousignProperties() as $fileProperty => $filePropertyValue) {
-                $this->yousignAuthorSignaturePosition [$fileProperty] = "30,30,187,97";
-            }
-        }
-
-        return $this->yousignAuthorSignaturePosition;
     }
 
 
