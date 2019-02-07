@@ -47,13 +47,13 @@ class ReservationController extends VoyagerBaseController
                     [
                         [
                             "page" => 5,
-                            "position" => "30,30,187,97",
+                            "position" => "419,172,557,227",
                             "mention" => "Bon pour accord",
                             "mention2" => "Signé par InvestisDOM."
                         ],
                         [
                             "page" => 12,
-                            "position" => "30,30,187,97",
+                            "position" => "415,72,553,127",
                             "mention" => "Lu et approuvé",
                             "mention2" => "Signé par INVESTIS DOM."
                         ],
@@ -62,7 +62,7 @@ class ReservationController extends VoyagerBaseController
                     'Mandat_de_Recherche'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf' => [
                         [
                             "page" => 1,
-                            "position" => "30,30,187,97",
+                            "position" => "430,56,551,110",
                             "mention" => "Lu et approuvé, bon pour acceptation de mandat",
                             "mention2" => "Signé par InvestisDOM."
                         ]
@@ -83,27 +83,27 @@ class ReservationController extends VoyagerBaseController
                     [
                         [
                             "page" => 5,
-                            "position" => "30,30,187,97",
+                            "position" => "124,187,222,226",
                             "mention" => "Bon pour réservation",
                             "mention2" => "Signé par {$investor->name_invest} {$investor->prenom_invest}."
                         ],
                         [
                             "page" => 6,
-                            "position" => "30,30,187,97",
+                            "position" => "117,197,255,252",
                         ],
                         [
                             "page" => 7,
-                            "position" => "30,30,187,97",
+                            "position" => "118,373,256,428",
                         ],
                         [
                             "page" => 9,
-                            "position" => "30,30,187,97",
+                            "position" => "115,96,252,151",
                             "mention" => "Bon pour pouvoir",
                             "mention2" => "Signé par {$investor->name_invest} {$investor->prenom_invest}."
                         ],
                         [
                             "page" => 12,
-                            "position" => "30,30,187,97",
+                            "position" => "71,72,208,127",
                             "mention" => "Lu et approuvé",
                             "mention2" => "Signé par {$investor->name_invest} {$investor->prenom_invest}."
                         ],
@@ -113,7 +113,7 @@ class ReservationController extends VoyagerBaseController
                     [
                         [
                             "page" => 1,
-                            "position" => "30,30,187,97",
+                            "position" => "116,56,237,110",
                             "mention" => "Lu et approuvé, bon pour mandat",
                             "mention2" => "Signé par {$investor->name_invest} {$investor->prenom_invest}."
                         ]
