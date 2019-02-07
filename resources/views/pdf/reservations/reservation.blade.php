@@ -520,7 +520,7 @@
                 <TD class="tr3 td6">
                     <P class="p0 ft3">
                         INVESTIS DOM<br>
-                        « Lu et approuvé, bon pour mandat »<br>
+                        « Lu et approuvé, bon pour accord »<br>
                         signature
                     </P>
                 </TD>
