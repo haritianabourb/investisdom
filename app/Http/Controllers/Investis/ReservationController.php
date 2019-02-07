@@ -192,6 +192,18 @@ class ReservationController extends VoyagerBaseController
     }
 
     public function yousign(Request $request, Reservation $reservation){
+
+
+
+        if($yousignProcedure = $this->isExistingYousignProcedure($reservation->yousign_procedure_id)){
+            $this->alertWarning(
+                "Procédure Yousign Existante"
+                ."<br/>"
+                ."Procédure numéro: {$yousignProcedure->id}");
+            return redirect()->back()->with($this->alerts);
+        }
+
+
         $this->setFile($reservation);
         $this->setMember($reservation);
 

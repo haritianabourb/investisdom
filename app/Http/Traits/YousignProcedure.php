@@ -278,5 +278,13 @@ trait YousignProcedure
         ];
     }
 
+    public function isExistingYousignProcedure($yousignProcedure){
+        if($yousignProcedure && $yousignProcedure != "null") {
+            return json_decode($yousignProcedure);
+        }
+
+        return false;
+    }
+
 
 }
