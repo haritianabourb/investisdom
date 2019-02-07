@@ -121,6 +121,28 @@ class ReservationController extends VoyagerBaseController
                 ])
             ])
         ]);
+
+        if(!in_array($investor->regime_mat_invest, ["01", "04", "05", "06"])){
+            $this->member->push(collect([
+                "firstname" => $investor->nom_conjoint,
+                "lastname" => $investor->prenom_conjoint,
+                "phone" => '+262692448152',
+                "email" => 'monelchristophe@gmail.com',
+                "type" => "signer",
+                "position" => 1,
+                'fileObjects' => collect([
+                    'Demande_de_Reservation'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf' =>
+                    [
+                        [
+                            "page" => 8,
+                            "position" => "117,197,255,252",
+                            "mention2" => "Signé par {$investor->nom_conjoint} {$investor->prenom_conjoint}."
+                        ],
+                    ],
+
+                ])
+            ]));
+        }
     }
 
     public function setFile(Reservation $reservation)
