@@ -36,6 +36,8 @@ class ReservationController extends VoyagerBaseController
     public function setMember(Reservation $reservation)
     {
         $investor = \App\Investor::find($reservation->investors_id);
+        $cgp = \App\CGP::find($reservation->cgps_id);
+        $cgp_contact = \App\Contact::find($cgp->contact_id);
 
         $this->member = collect([
             collect([
@@ -77,7 +79,7 @@ class ReservationController extends VoyagerBaseController
                 "phone" => '+262692448152',
                 "email" => 'monelchristophe@gmail.com',
                 "type" => "signer",
-                "position" => 1,
+                "position" => 2,
                 'fileObjects' => collect([
                     'Demande_de_Reservation'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf' =>
                     [
@@ -143,6 +145,16 @@ class ReservationController extends VoyagerBaseController
                 ])
             ]));
         }
+
+
+        $this->member->push(collect([
+            "firstname" => $cgp_contact->firstname,
+            "lastname" => $cgp_contact->lastname,
+            "phone" => '+262692448152',
+            "email" => 'monelchristophe@gmail.com',
+            "type" => "validator",
+            "position" => 3
+        ]));
     }
 
     public function setFile(Reservation $reservation)
@@ -173,13 +185,34 @@ class ReservationController extends VoyagerBaseController
                     [
                         "subject" => "Vous êtes invités à signer votre contrat sur Yousign!",
                         "message" => "Bonjour <tag data-tag-type='string' data-tag-name='recipient.firstname'></tag> <tag data-tag-type='string' data-tag-name='recipient.lastname'></tag>, <br><br> Votre Contrat de Reservation est prêt, Veuillez cliquer ici pour être redirigé: <tag data-tag-type='button' data-tag-name='url' data-tag-title='Access to documents'>Accés à la Réservation</tag>",
-                        "to" => ["@member"],
+                        "to" => ["@members.auto"],
+                    ]
+                ],
+                "member.finished" => [
+                    [
+                        "subject" => "Votre contrat sur Yousign a été signé!",
+                        "message" => "Bonjour <tag data-tag-type='string' data-tag-name='recipient.firstname'></tag> <tag data-tag-type='string' data-tag-name='recipient.lastname'></tag>, <br><br> Votre Contrat de Reservation est prêt, Veuillez cliquer ici pour être redirigé: <tag data-tag-type='button' data-tag-name='url' data-tag-title='Access to documents'>Accés à la Réservation</tag>",
+                        "to" => ["@creator"],
                     ]
                 ],
                 "procedure.started" => [
                     [
                         "subject" => "Une Nouvelle procedure de Réservation est en cours",
                         "message" => "Bonjour <tag data-tag-type='string' data-tag-name='recipient.firstname'></tag> <tag data-tag-type='string' data-tag-name='recipient.lastname'></tag>, <br><br> Votre Contrat de Reservation est prêt, Veuillez cliquer ici pour être redirigé: <tag data-tag-type='button' data-tag-name='url' data-tag-title='Access to documents'>Accés à la Réservation</tag>",
+                        "to" => ["@creator"],
+                    ]
+                ],
+                "procedure.finished" => [
+                    [
+                        "subject" => "La procedure de Réservation est terminée!",
+                        "message" => "Bonjour <tag data-tag-type='string' data-tag-name='recipient.firstname'></tag> <tag data-tag-type='string' data-tag-name='recipient.lastname'></tag>, <br><br> Votre Contrat de Reservation est validé, Veuillez cliquer ici pour être redirigé: <tag data-tag-type='button' data-tag-name='url' data-tag-title='Access to documents'>Accés à la Réservation</tag>",
+                        "to" => ["@creator"],
+                    ]
+                ],
+                "procedure.refused" => [
+                    [
+                        "subject" => "La procedure de Réservation est refusée",
+                        "message" => "Bonjour <tag data-tag-type='string' data-tag-name='recipient.firstname'></tag> <tag data-tag-type='string' data-tag-name='recipient.lastname'></tag>, <br><br> Votre Contrat de Reservation est refusé, Veuillez cliquer ici pour être redirigé: <tag data-tag-type='button' data-tag-name='url' data-tag-title='Access to documents'>Accés à la Réservation</tag>",
                         "to" => ["@creator"],
                     ]
                 ]
@@ -214,7 +247,11 @@ class ReservationController extends VoyagerBaseController
     }
 
     public function yousign(Request $request, Reservation $reservation){
-
+//        dd(
+//            $investor = \App\Investor::find($reservation->investors_id),
+//            $cgp = \App\CGP::find($reservation->cgps_id),
+//            $cgp_contact = \App\Contact::find($cgp->contact_id)
+//        );
 
 
         if($yousignProcedure = $this->isExistingYousignProcedure($reservation->yousign_procedure_id)){
@@ -225,25 +262,19 @@ class ReservationController extends VoyagerBaseController
             return redirect()->back()->with($this->alerts);
         }
 
-
         $this->setFile($reservation);
         $this->setMember($reservation);
 
-//        dd($this->getMembers(), $this->getMembers()->map->except("fileObjects")->toArray());
 
         $response = $this->yousignStartProcedure();
 
 
         // FIXME do an event, please!!!!
-//        $reservation->yousign_procedure_id = json_encode($this->yousignProcedure);
         // XXX little hack to not thrown the saving event for calculations
         DB::table($reservation->getTable())->where('id', $reservation->id)->update(['yousign_procedure_id' => json_encode($this->yousignProcedure)]);
 
         $this->alertSuccess("{$response->original->name} <br/> Envoyer a Yousign <br/> Procedure numéro: {$response->original->id}");
         return redirect()->back()->with($this->alerts);
     }
-//    public function yousignReturnView(){
-//        return response('here');
-//    }
 
 }
