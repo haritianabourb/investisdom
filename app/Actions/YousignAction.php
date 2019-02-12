@@ -3,7 +3,6 @@
 namespace App\Actions;
 
 use TCG\Voyager\Actions\AbstractAction;
-use App\Reservation;
 
 class YousignAction extends AbstractAction
 {

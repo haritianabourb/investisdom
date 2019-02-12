@@ -122,7 +122,7 @@ class ReservationController extends VoyagerBaseController
             ])
         ]);
 
-        if(!in_array($investor->regime_mat_invest, ["01", "04", "05", "06"])){
+        if(in_array($investor->regime_mat_invest, ["02", "04"])){
             $this->member->push(collect([
                 "firstname" => $investor->nom_conjoint,
                 "lastname" => $investor->prenom_conjoint,
