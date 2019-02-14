@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Scopes\SelfScope;
 use Illuminate\Database\Eloquent\Model;
 
 
@@ -29,11 +30,17 @@ class Reservation extends Model
   const TVA85 = 8.5/100;
   const TVANPR4412 = 44.12/100;
 
-  /**
-   * The event map for the model.
-   *
-   * @var array
-   */
+    /**
+     * The "booting" method of the model.
+     *
+     * @return void
+     */
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope(new SelfScope());
+    }
 
   public function typeContratsId(){
     return $this->belongsTo(TypeContrat::class, 'type_contrats_id', 'id');
