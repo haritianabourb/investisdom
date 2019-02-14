@@ -2,7 +2,7 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use App\Scopes\SelfScope;
 
 
 class Investor extends Entity
@@ -16,6 +16,18 @@ class Investor extends Entity
         'birth_date' => 'datetime:d/m/Y',
         'birth_conjoint' =>  'datetime:d/m/Y',
     ];
+
+    /**
+     * The "booting" method of the model.
+     *
+     * @return void
+     */
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope(new SelfScope());
+    }
 
     public function getFullNameAttribute()
     {

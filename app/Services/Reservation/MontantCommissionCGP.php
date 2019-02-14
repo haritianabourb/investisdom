@@ -16,7 +16,7 @@ class MontantCommissionCGP extends AbstractField
 
     public function process()
     {
-        $commission_cgp = $this->parameters->get('commission_cgp');
+        $commission_cgp = $this->parameters->get('commission_cgp') ?? 0;
 //        $commission_cgp = $this->parameters->get('commission_cgp')/100;
 
         return $this->parameters->get('apport') * $commission_cgp;

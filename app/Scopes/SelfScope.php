@@ -4,7 +4,9 @@ namespace App\Scopes;
 
 use App\CGP;
 use App\Contact;
+use App\Investor;
 use App\Reservation;
+use App\TauxCGP;
 use Illuminate\Database\Eloquent\Scope;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
@@ -27,7 +29,13 @@ class SelfScope implements Scope
         if(!Auth::user()->hasRole('admin', 'investis')){
             $this->contact = Contact::where('user_id', Auth::user()->id)->firstOrFail();
             if(get_class($model) == Reservation::class){
-                $builder = $this->applyReservationScope($builder, $model);
+                $this->applyReservationScope($builder, $model);
+            }
+            if(get_class($model) == Investor::class){
+                $this->applyInvestorScope($builder, $model);
+            }
+            if(get_class($model) == TauxCGP::class){
+                $this->applyTauxCGPScope($builder, $model);
             }
         }
     }
@@ -35,6 +43,18 @@ class SelfScope implements Scope
     private function applyReservationScope(Builder $builder, Reservation $model)
     {
         $cgp = CGP::where('contact_id', $this->contact->id)->firstOrFail();
-        return $builder->where("cgps_id", $cgp->id);
+        $builder->where("cgps_id", $cgp->id);
+    }
+
+    private function applyInvestorScope($builder, Investor $model)
+    {
+        $cgp = CGP::where('contact_id', $this->contact->id)->firstOrFail();
+        $builder->where("cgp_attached", $cgp->id);
+    }
+
+    private function applyTauxCGPScope($builder, TauxCGP $model)
+    {
+        $cgp = CGP::where('contact_id', $this->contact->id)->firstOrFail();
+        $builder->where("cgps_id", $cgp->id);
     }
 }
