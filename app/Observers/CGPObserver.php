@@ -3,6 +3,7 @@
 namespace App\Observers;
 
 use App\CGP;
+use App\Events\User\CGPUserCreated;
 use App\Mandat;
 // use App\TauxCGP;
 use App\Services\Amortization;
@@ -50,15 +51,18 @@ class CGPObserver
         $user = User::find($contact->user_id);
         if (!$user) {
             $role = Role::where('name', 'cgp')->firstOrFail();
+            $password = substr(md5($contact->email), random_int(0,5), 8);
             $user = new User;
             $user->name = $contact->full_name;
-            $user->email = $contact->email ?? "test@email.com";
-            $user->password = bcrypt('password');
+            $user->email = $contact->email;
+            $user->password = bcrypt($password);
             $user->role_id = $role->id;
             $user->save();
 
             $contact->user_id = $user->id;
             $contact->save();
+
+            event(new CGPUserCreated($user, $cgp, $contact, $password));
         }
 
         // TODO create default rate for cgp
