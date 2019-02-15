@@ -39,8 +39,8 @@ class MandatObserver
     {
         $date = (new Carbon($mandat->created_at))->format("Ymd");
         $identifiant =
-          substr(preg_replace('/\s/', '', $mandat->leaseholderId->name), 0, 3)
-          .substr(preg_replace('/\s/', '', $mandat->supplierId->name), -3)
+          substr(preg_replace('/\s/', '', stripAccents($mandat->leaseholderId->name)), 0, 3)
+          .substr(preg_replace('/\s/', '', stripAccents($mandat->supplierId->name)), -3)
           ."-".$date
           ."/".$mandat->id;
 

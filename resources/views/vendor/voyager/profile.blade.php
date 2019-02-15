@@ -22,4 +22,9 @@
         <p>{{ Auth::user()->bio }}</p>
         <a href="{{ route('voyager.users.edit', Auth::user()->id) }}" class="btn btn-primary">{{ __('voyager::profile.edit') }}</a>
     </div>
+    <section>
+        @foreach(Auth::user()->roles_all() as $role)
+            @include("voyager::partials.profiles.{$role->name}")
+        @endforeach
+    </section>
 @stop

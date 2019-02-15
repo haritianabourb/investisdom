@@ -2,12 +2,25 @@
 
 namespace App;
 
+use App\Scopes\SelfScope;
 use Illuminate\Database\Eloquent\Model;
 use Carbon\Carbon;
 
 class TauxCGP extends Model
 {
   protected $table="taux_cgp";
+
+    /**
+     * The "booting" method of the model.
+     *
+     * @return void
+     */
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope(new SelfScope());
+    }
 
   public function cgpsId(){
 

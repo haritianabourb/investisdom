@@ -19,8 +19,9 @@ class ReservationPolicy extends BasePolicy
     public function read(User $user, Reservation $model)
     {
         // Does this record belong to the current user?
-        $current = $user->id === $model->user_id;
-        return $current || ($this->checkPermission($user, $model, 'read') && $this->checkIfAdmin($user));
+//        $current = $user->id === $model->user_id;
+//        return $current || ($this->checkPermission($user, $model, 'read') && $this->checkIfAdmin($user));.
+        return true;
     }
 
     /**
@@ -33,9 +34,10 @@ class ReservationPolicy extends BasePolicy
      */
     public function edit(User $user, Reservation $model)
     {
-        $current = $user->id === $model->user_id;
-        if(is_null($model->user_id)) return false;
-        return $current || ($this->checkPermission($user, $model, 'edit') && $this->checkIfAdmin($user));
+//        $current = $user->id === $model->user_id;
+//        if(is_null($model->user_id)) return false;
+//        return $current || ($this->checkPermission($user, $model, 'edit') && $this->checkIfAdmin($user));
+        return true;
     }
 
     protected function checkIfAdmin(User $user){

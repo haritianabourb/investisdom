@@ -200,9 +200,8 @@
                                         @endforeach
                                         <td class="no-sort no-click" id="bread-actions">
                                             @foreach(Voyager::actions() as $action)
-                                                @include('voyager::bread.partials.actions', ['action' => $action])
+                                                @include('voyager::reservations.partials.browse-actions', ['action' => $action])
                                             @endforeach
-                                                <a type="button" href="{{ route('admin.reservations.generate-recherche', ['reservation' => $data]) }}" class="btn btn-default generate-pdf-convention"><i class="voyager-documentation"></i> Generer le Contrat</a>
                                         </td>
                                     </tr>
                                     @endcan

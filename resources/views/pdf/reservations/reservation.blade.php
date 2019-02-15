@@ -325,7 +325,7 @@
         <P class="p0 ft0">DEMANDE DE RESERVATION PRODUIT {{strtoupper(in_array($formulae->slug, ['confort', 'confort-echelonne']) ? "Confort" : "Serenite")}}</P>
         <TABLE cellpadding=0 cellspacing=0 class="t0">
             <TR>
-                <TD class="tr0 td0"><P class="p1 ft1">&nbsp;</P></TD>
+                <TD class="tr0 td0"><P class="p2 ft2">Dossier : {{$reservation->identifiant}}</P></TD>
                 <TD class="tr0 td0"><P class="p2 ft2">Date : <NOBR>{{\Carbon\Carbon::now()->format('d-m-Y')}}</NOBR></P></TD>
             </TR>
             <TR>
@@ -333,7 +333,7 @@
                 <TD class="tr1 td0"><P class="p1 ft3">Par réception courrier : Valable jusqu'au <NOBR>{{\Carbon\Carbon::now()->addDay(10)->format('d-m-Y')}}</NOBR></P></TD>
             </TR>
         </TABLE>
-        <P class="p3 ft4">{{ucfirst($investor->civilite)}} {{ $investor->full_name }}</P>
+        <P class="p3 ft4">{{ucfirst($investor->civilite ?? "M.")}} {{ $investor->full_name ?? "" }}</P>
         <P class="p4 ft3">Merci de bien vouloir nous retourner un exemplaire original sous 14 jours :</P>
         <P class="p5 ft3"><SPAN class="ft2">-</SPAN><SPAN class="ft5">Dûment renseigné,</SPAN></P>
         <P class="p6 ft3"><SPAN class="ft2">-</SPAN><SPAN class="ft5">Signé, pages 4, 5, 6, 7, 8</SPAN></P>
@@ -477,7 +477,7 @@
         <P class="p30 ft11">L'investisseur dispose d'un délai de rétractation de 14 jours calendaires à compter de la signature de la présente demande de réservation confort. Le contrat ne recevra aucun commencement d'exécution avant l'expiration du délai de rétractation. En dehors de ce droit de rétractation, il n'existe aucune autre possibilité de résiliation. Vous êtes informé que la sortie de l'opération dans laquelle vous avez souscrit s'opère par voie de cession des droits sociaux au terme de la 5ème année (ou après dissolution et liquidation de la ou des SNC dont vous êtes associé). La langue utilisée dans les contrats et pour l'exécution de ces contrats est le français.</P>
         <P class="p37 ft9">II - RESERVATION</P>
         <P class="p38 ft4">1. DEMANDE DE RESERVATION</P>
-        <P class="p39 ft11">Je soussigné(e) {{ $investor->full_name }} demeurant {{ $investor->address_1.", ".$investor->address_2 }} - {{$investor->postal_code}} - {{$investor->city}} m'engage à m'associer aux investissements en défiscalisation loi Girardin (articles 199 undecies B du CGI) sélectionnés par INVESTIS DOM pour un montant total de réduction d'impôt au titre de l'IRPP de : {{$reservation->montant_reduction}} euros.</P>
+        <P class="p39 ft11">Je soussigné(e) {{ $investor->full_name ?? "" }} demeurant {{ $investor->address_1.", ".$investor->address_2 }} - {{$investor->postal_code}} - {{$investor->city}} m'engage à m'associer aux investissements en défiscalisation loi Girardin (articles 199 undecies B du CGI) sélectionnés par INVESTIS DOM pour un montant total de réduction d'impôt au titre de l'IRPP de : {{$reservation->montant_reduction}} euros.</P>
         <P class="p40 ft13">Je déclare avoir pris la décision de m'associer aux investissements en défiscalisation loi Girardin en toute connaissance de cause, avoir sollicités tous avis auprès de conseils spécialisés et être en mesure d'appréhender l'ensemble des contraintes et risques inhérents à ce type de placement.</P>
         <P class="p41 ft12">Je suis informé(e) que je ne peux participer à cette opération que pour mon propre compte et que la souscription au capital d'une Société en Nom Collectif emporte la qualité d'associé pendant toute la durée de l'opération. Il m'appartient de veiller à ce que cette qualité ne soit pas incompatible</P>
     </DIV>
@@ -520,7 +520,7 @@
                 <TD class="tr3 td6">
                     <P class="p0 ft3">
                         INVESTIS DOM<br>
-                        « Lu et approuvé, bon pour mandat »<br>
+                        « Lu et approuvé, bon pour accord »<br>
                         signature
                     </P>
                 </TD>
@@ -544,7 +544,7 @@
 <DIV id="page_6">
     <DIV id="id6_1">
         <P class="p57 ft4">2. IDENTITE DE L'INVESTISSEUR</P>
-        <P class="p58 ft3">Civilité : {{ucfirst($investor->civilite)}}</P>
+        <P class="p58 ft3">Civilité : {{ucfirst($investor->civilite ?? "M.")}}</P>
         <P class="p29 ft3">Nom : {{$investor->name_invest}}</P>
         <P class="p29 ft3">Nom de jeune fille : {{$investor->name_jeunefille_invest?: "-"}}</P>
         <P class="p29 ft3">Prénom : {{$investor->prenom_invest}}</P>
@@ -716,7 +716,7 @@
 <DIV id="page_12">
     <DIV id="id12_1">
         <P class="p101 ft4">8. RECAPITULATIF DE VOTRE DOSSIER DE RESERVATION</P>
-        <P class="p102 ft12">{{ucfirst($investor->civilite)}} {{ $investor->prenom_invest }} {{ strtoupper($investor->name_invest) }} vous investissez un apport en compte courant de {{ number_format($reservation->apport, 2, ","," ") }} euros afin de bénéficier d'une réduction d'impôt de {{ number_format($reservation->montant_reduction, 2, ",", " ") }} euros, réalisant ainsi une économie d'impôt sur le revenu de : {{ number_format($reservation->gain_brut, 2, ",", " ") }} euros.</P>
+        <P class="p102 ft12">{{ucfirst($investor->civilite ?? "M.")}} {{ $investor->prenom_invest }} {{ strtoupper($investor->name_invest) }} vous investissez un apport en compte courant de {{ number_format($reservation->apport, 2, ","," ") }} euros afin de bénéficier d'une réduction d'impôt de {{ number_format($reservation->montant_reduction, 2, ",", " ") }} euros, réalisant ainsi une économie d'impôt sur le revenu de : {{ number_format($reservation->gain_brut, 2, ",", " ") }} euros.</P>
         <P class="p87 ft3">Vous avez choisi de souscrire un produit confort sans notre option d'assistance juridique.</P>
         <P class="p103 ft11">Dans tous les cas de contentieux diligentés et pris en charge par INVESTIS DOM au bénéfice de la SNC ou de ses associés. Il est expressément convenu que les éventuelles indemnités allouées par tes tribunaux compétents au titre des frais exposés dans la procédure seront intégralement reversées par l'associé de la SNC à INVESTIS DOM.</P>
         <P class="p33 ft3">Règlements :</P>

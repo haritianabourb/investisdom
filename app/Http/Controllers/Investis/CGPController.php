@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Investis;
 
+use App\Contact;
+use App\Events\User\CGPUserCreated;
+use App\User;
 use Illuminate\Http\Request;
 use \App\CGP;
 use PDF;
-use Voyager;
-use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Foundation\Bus\DispatchesJobs;;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 

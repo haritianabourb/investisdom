@@ -8,6 +8,8 @@ use App\Investor;
 use App\Mandat;
 use App\Reservation;
 use App\SNC;
+use App\Events\User\CGPUserCreated;
+use App\Listeners\User\SendSignupMailToCGPUser;
 use App\Observers\CGPObserver;
 use App\Observers\InvestorObserver;
 use App\Observers\MandatObserver;
@@ -23,7 +25,10 @@ class EventServiceProvider extends ServiceProvider
      *
      * @var array
      */
-    protected $listen = [];
+    protected $listen = [
+//        UserCreated::class => [SendSignupMailToUser::class],
+        CGPUserCreated::class => [SendSignupMailToCGPUser::class],
+    ];
 
     /**
      * Register any events for your application.

@@ -56,21 +56,24 @@ class ReservationDimmer extends BaseDimmer
       });
 
 
-      $last = Reservation::latest()->first();
 
-      $taux_rentabilite = $taux_rentabilite / $count;
+          $last = Reservation::latest()->first();
 
-      $text = "<p>Montants Reductions total: <strong>{$montant_reductions} €</strong><br/>"
-            . "Taux Rentabilité moyen: <strong>".number_format($taux_rentabilite, 2, '.', " ")."%</strong> </p>"
-            . "<p><a href='".route('voyager.reservations.show', $last)."' class='text-info'><strong>Dernier dossier: {$last->identifiant} ".number_format($last->taux_rentabilite, 2, '.', " ")."%</strong></a></p>"
-            . "<a href='{$max_taux["url"]}' class='badge badge-success'><span class='icon voyager-sort-asc'></span>{$max_taux["name"]} - {$max_taux["taux"]}%</a> "
-            . "<a href='{$min_taux["url"]}' class='badge badge-danger'><span class='icon voyager-sort-desc'></span>{$min_taux["name"]} - {$min_taux["taux"]}%</a>"
-      ;
+      if($count){
+          $taux_rentabilite = $taux_rentabilite / $count;
+
+          $text = "<p>Montants Reductions total: <strong>{$montant_reductions} €</strong><br/>"
+              . "Taux Rentabilité moyen: <strong>".number_format($taux_rentabilite, 2, '.', " ")."%</strong> </p>"
+              . "<p><a href='".route('voyager.reservations.show', $last)."' class='text-info'><strong>Dernier dossier: {$last->identifiant} ".number_format($last->taux_rentabilite, 2, '.', " ")."%</strong></a></p>"
+              . "<a href='{$max_taux["url"]}' class='badge badge-success'><span class='icon voyager-sort-asc'></span>{$max_taux["name"]} - {$max_taux["taux"]}%</a> "
+              . "<a href='{$min_taux["url"]}' class='badge badge-danger'><span class='icon voyager-sort-desc'></span>{$min_taux["name"]} - {$min_taux["taux"]}%</a>"
+          ;
+      }
 
       return view('voyager::dimmer', array_merge($this->config, [
           'icon'   => 'voyager-receipt',
           'title'  => "{$count} {$string}",
-          'text'   => $text,
+          'text'   => $text?? "Aucune {$string} pour le moment.",
           'button' => [
             'text' => "Voir mes {$string}",
             'link' => route('voyager.reservations.index'),
