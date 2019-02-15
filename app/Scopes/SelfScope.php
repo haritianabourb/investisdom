@@ -26,7 +26,7 @@ class SelfScope implements Scope
      */
     public function apply(Builder $builder, Model $model)
     {
-        if(!Auth::user()->hasRole('admin', 'investisdom')){
+        if(!Auth::user()->hasRole(['admin', 'investisdom', 'investis'])){
             $this->contact = Contact::where('user_id', Auth::user()->id)->firstOrFail();
             if(get_class($model) == Reservation::class){
                 $this->applyReservationScope($builder, $model);
