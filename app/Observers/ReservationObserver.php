@@ -25,6 +25,9 @@ class ReservationObserver
      */
       public function creating(Reservation $reservation)
     {
+        if(\Auth::user()->hasRole("cgps")){
+            $reservation->cgps_id = $cgp = CGP::where('contact_id', Contact::where("user_id", \Auth::user()->id)->first()->id)->first()->id;
+        }
         $reservation->identifiant = "ATTEMPTID";
     }
 
