@@ -56,19 +56,6 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2018-08-23 17:14:58',
                 'updated_at' => '2018-08-23 17:14:58',
             ),
-            3 => 
-            array (
-                'id' => 9,
-                'role_id' => 4,
-                'name' => 'ROSSO VINCENT',
-                'email' => 'test@email.com',
-                'avatar' => 'users/default.png',
-                'password' => '$2y$10$Nl8KRbTAxPoCwF4w3peIdOyCi1.bpMfuM9kbq5Emqp4ZB/dcsgwSu',
-                'remember_token' => 'taJGGfm2BkullON7GA5tU2snWZhOIG0M6Qlceimj8onJIQlICwI6gFEwSvnQ',
-                'settings' => '{"locale":"en"}',
-                'created_at' => '2019-02-15 09:23:06',
-                'updated_at' => '2019-02-18 10:23:14',
-            ),
             4 => 
             array (
                 'id' => 1,
