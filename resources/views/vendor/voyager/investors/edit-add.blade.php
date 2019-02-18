@@ -52,6 +52,11 @@
                             @endphp
 
                             @foreach($dataTypeRows as $row)
+                                @if($row->field === "cgp_attached" && !\Auth::user()->hasRole(['admin', 'investis', 'investisdom']))
+                                    @php
+                                        continue;
+                                    @endphp
+                                @endif
                                 <!-- GET THE DISPLAY OPTIONS -->
                                 @php
                                     $options = $row->details;
