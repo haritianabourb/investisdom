@@ -24,13 +24,15 @@ function Task6_HideFieldsForInvestorsAndIntermediaries() {
         }
     });
 
-    if ($("[name=nature_entities_id]").val() == "2") { //setting default visibility
-        $("#option-nature-entities-id-1").click();
-        $("#option-nature-entities-id-2").click();
-    } else {
-        $("#option-nature-entities-id-2").click();
-        $("#option-nature-entities-id-1").click();
-    }
+    $("[name=nature_entities_id]").trigger('change');
+    //
+    // if ($("[name=nature_entities_id]").val() == "2") { //setting default visibility
+    //     $("#option-nature-entities-id-1").click();
+    //     $("#option-nature-entities-id-2").click();
+    // } else {
+    //     $("#option-nature-entities-id-2").click();
+    //     $("#option-nature-entities-id-1").click();
+    // }
 }
 function Task4_IsReplacement() {
     if (!(window.location.href.indexOf("mandat") != -1))
