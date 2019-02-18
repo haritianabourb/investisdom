@@ -52,7 +52,7 @@
                             @endphp
 
                             @foreach($dataTypeRows as $row)
-                                @if($row->field === "cgps_id" && !\Auth::user()->hasRole(['admin', 'investis', 'investisdom']))
+                                @if(in_array($row->field,  ["cgps_id", "type_aj", "taux_ponctuel"]) && !\Auth::user()->hasRole(['admin', 'investis', 'investisdom']))
                                     @php
                                         continue;
                                     @endphp
