@@ -63,10 +63,10 @@ class ReservationDimmer extends BaseDimmer
           $taux_rentabilite = $taux_rentabilite / $count;
 
           $text = "<p>Montants Reductions total: <strong>{$montant_reductions} €</strong><br/>"
-              . "Taux Rentabilité moyen: <strong>".number_format($taux_rentabilite, 2, '.', " ")."%</strong> </p>"
-              . "<p><a href='".route('voyager.reservations.show', $last)."' class='text-info'><strong>Dernier dossier: {$last->identifiant} ".number_format($last->taux_rentabilite, 2, '.', " ")."%</strong></a></p>"
-              . "<a href='{$max_taux["url"]}' class='badge badge-success'><span class='icon voyager-sort-asc'></span>{$max_taux["name"]} - {$max_taux["taux"]}%</a> "
-              . "<a href='{$min_taux["url"]}' class='badge badge-danger'><span class='icon voyager-sort-desc'></span>{$min_taux["name"]} - {$min_taux["taux"]}%</a>"
+              . "Taux Rentabilité moyen: <strong>".number_format($taux_rentabilite*100, 2, '.', " ")."%</strong> </p>"
+              . "<p><a href='".route('voyager.reservations.show', $last)."' class='text-info'><strong>Dernier dossier: {$last->identifiant} ".number_format($last->taux_rentabilite*100, 2, '.', " ")."%</strong></a></p>"
+              . "<a href='{$max_taux["url"]}' class='badge badge-success'><span class='icon voyager-sort-asc'></span>{$max_taux["name"]} - ".number_format($max_taux["taux"]*100, 2,".", " ")."%</a> "
+              . "<a href='{$min_taux["url"]}' class='badge badge-danger'><span class='icon voyager-sort-desc'></span>{$min_taux["name"]} - ".number_format($min_taux["taux"]*100, 2,".", " ")."%</a>"
           ;
       }
 
