@@ -35,6 +35,11 @@
                   <div class="panel-body" style="padding-top:10px;">
                     <!-- form start -->
                     @foreach($dataType->readRows as $row)
+                          @if(in_array($row->field, ["cgp_attached", "cgp_id", "investor_belongsto_cgp_relationship" ])&& !\Auth::user()->hasRole(['admin', 'investis', 'investisdom']))
+                              @php
+                                  continue;
+                              @endphp
+                          @endif
                         @php $rowDetails = $row->details;
                          if($rowDetails === null){
                                 $rowDetails=new stdClass();
