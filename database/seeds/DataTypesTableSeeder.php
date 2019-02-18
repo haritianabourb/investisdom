@@ -289,24 +289,6 @@ class DataTypesTableSeeder extends Seeder
             ),
             15 => 
             array (
-                'id' => 17,
-                'name' => 'reservations',
-                'slug' => 'reservations',
-                'display_name_singular' => 'Réservation',
-                'display_name_plural' => 'Réservations',
-                'icon' => 'voyager-receipt',
-                'model_name' => 'App\\Reservation',
-                'policy_name' => 'App\\Policies\\ReservationPolicy',
-                'controller' => NULL,
-                'description' => NULL,
-                'generate_permissions' => 1,
-                'server_side' => 0,
-                'details' => '{"order_column":null,"order_display_column":null}',
-                'created_at' => '2018-09-19 17:13:08',
-                'updated_at' => '2019-01-16 20:53:35',
-            ),
-            16 => 
-            array (
                 'id' => 7,
                 'name' => 'cgps',
                 'slug' => 'cgps',
@@ -323,7 +305,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-10 15:38:45',
                 'updated_at' => '2019-01-17 06:23:10',
             ),
-            17 => 
+            16 => 
             array (
                 'id' => 12,
                 'name' => 'investors',
@@ -340,6 +322,24 @@ class DataTypesTableSeeder extends Seeder
                 'details' => '{"order_column":null,"order_display_column":null}',
                 'created_at' => '2018-09-10 15:53:00',
                 'updated_at' => '2019-02-18 11:25:06',
+            ),
+            17 => 
+            array (
+                'id' => 17,
+                'name' => 'reservations',
+                'slug' => 'reservations',
+                'display_name_singular' => 'Réservation',
+                'display_name_plural' => 'Réservations',
+                'icon' => 'voyager-receipt',
+                'model_name' => 'App\\Reservation',
+                'policy_name' => 'App\\Policies\\ReservationPolicy',
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null}',
+                'created_at' => '2018-09-19 17:13:08',
+                'updated_at' => '2019-02-18 12:50:21',
             ),
         ));
         
