@@ -54,7 +54,7 @@
             @endforeach
             </optgroup>
         </select>
-        @if(isset($options->relationship->modal) && $options->relationship->modal)
+        @if(isset($options->relationship->modal) && $options->relationship->modal && \Auth::user()->hasRole(["admin", "investis", "investisdom"]))
           @php
             $relationshipDataType = app('voyager')->model('DataType')->where('model_name', '=', get_class($relationshipClass))->first();
             $relationshipDataTypeRows = $relationshipDataType->addRows->filter(function($item, $key){
