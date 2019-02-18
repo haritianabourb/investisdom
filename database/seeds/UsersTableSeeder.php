@@ -58,16 +58,16 @@ class UsersTableSeeder extends Seeder
             ),
             3 => 
             array (
-                'id' => 5,
+                'id' => 9,
                 'role_id' => 4,
-                'name' => 'Contact1 TEST1',
+                'name' => 'ROSSO VINCENT',
                 'email' => 'test@email.com',
                 'avatar' => 'users/default.png',
-                'password' => '$2y$10$D5MGFwzP.AYXtTCQJVCsw.7Ws47SwTtAMiJN24ZjGn5MGLWQ74Z4e',
-                'remember_token' => NULL,
+                'password' => '$2y$10$Nl8KRbTAxPoCwF4w3peIdOyCi1.bpMfuM9kbq5Emqp4ZB/dcsgwSu',
+                'remember_token' => 'taJGGfm2BkullON7GA5tU2snWZhOIG0M6Qlceimj8onJIQlICwI6gFEwSvnQ',
                 'settings' => '{"locale":"en"}',
-                'created_at' => '2019-01-11 10:55:43',
-                'updated_at' => '2019-01-30 08:00:15',
+                'created_at' => '2019-02-15 09:23:06',
+                'updated_at' => '2019-02-18 10:23:14',
             ),
             4 => 
             array (
@@ -76,11 +76,11 @@ class UsersTableSeeder extends Seeder
                 'name' => 'support',
                 'email' => 'support@bourbon-digital.com',
                 'avatar' => 'users/August2018/KWQkYP2SxIktP9OUcmUk.jpeg',
-                'password' => '$2y$10$osF.tWlhnq3xTCiQCVFmpu314vdxwH6A7Tsqhl19MPAowVn0YRzOK',
-                'remember_token' => 'zrng7JRVEevFscPQ80vmnIhkOZxELvsPtbdBCbdQFgU8a3Ks1kyS8n5F1noP',
+                'password' => '$2y$10$X9M..b2stIB0Xabmtbr5s.vQMEx0Ks58ypam1B9XH27Pwzx2rSbya',
+                'remember_token' => 'phATRzivlguhGRjtu2ra5QjnNPry8fvtj6DiEgcFvID0DSYz8RBdlrNXAEZT',
                 'settings' => '{"locale":"en"}',
                 'created_at' => '2018-08-12 14:28:45',
-                'updated_at' => '2018-08-12 15:16:22',
+                'updated_at' => '2019-02-15 08:28:56',
             ),
         ));
         
