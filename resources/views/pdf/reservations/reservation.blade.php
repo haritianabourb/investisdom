@@ -322,10 +322,10 @@
 @section('body')
 <DIV id="page_1">
     <DIV id="id1_1">
-        <P class="p0 ft0">DEMANDE DE RESERVATION PRODUIT {{strtoupper(in_array($formulae->slug, ['confort', 'confort-echelonne']) ? "Confort" : "Serenite")}}</P>
+        <P class="p0 ft0">DEMANDE DE RESERVATION PRODUIT {{strtoupper(in_array($formulae->slug, ['confort', 'confort-echelonne']) ? "Confort" : "Serenite")}}<br/> {{$reservation->identifiant}}</P>
         <TABLE cellpadding=0 cellspacing=0 class="t0">
             <TR>
-                <TD class="tr0 td0"><P class="p2 ft2">Dossier : {{$reservation->identifiant}}</P></TD>
+                <TD class="tr0 td0"><P class="p2 ft2">&nbsp;</TD>
                 <TD class="tr0 td0"><P class="p2 ft2">Date : <NOBR>{{\Carbon\Carbon::now()->format('d-m-Y')}}</NOBR></P></TD>
             </TR>
             <TR>
