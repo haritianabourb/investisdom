@@ -148,7 +148,7 @@ class ReservationController extends VoyagerBaseController
 
 
         $this->member->push(collect([
-            "firstname" => $cgp_contact->firstname,
+            "firstname" => $cgp_contact->fistname,
             "lastname" => $cgp_contact->lastname,
             "phone" => '+262692448152',
             "email" => 'monelchristophe@gmail.com',
