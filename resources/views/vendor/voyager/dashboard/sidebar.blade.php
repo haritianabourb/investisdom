@@ -30,6 +30,10 @@
 
         </div>
 
+        @if(\Auth::user()->hasRole(['admin', 'investis', "investisdom"]))
         {!! menu('admin', 'admin_menu') !!}
+        @else
+        {!! menu('user', 'admin_menu') !!}
+        @endif
     </nav>
 </div>
