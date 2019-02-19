@@ -18,7 +18,7 @@
           <!-- Adding / Editing -->
           @foreach($relationshipDataTypeRows as $relationshipRow)
             @php
-              $options = json_decode($relationshipRow->details);
+              $options = is_object($relationshipRow->details) ? $relationshipRow->details : json_decode($relationshipRow->details);
               $display_options = isset($options->display) ? $options->display : NULL;
             @endphp
             <div class="row">
