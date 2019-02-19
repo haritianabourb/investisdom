@@ -11,6 +11,7 @@ function Task6_HideFieldsForInvestorsAndIntermediaries() {
         "[name=registered_key]",
         "[name=etablishment_code]"
     ].join(", "); //getting selector string for jQuery
+
     $("[name=nature_entities_id]").change(function() {
 
         if (this.value == "2") { //Société, show fields
@@ -24,7 +25,7 @@ function Task6_HideFieldsForInvestorsAndIntermediaries() {
         }
     });
 
-    $("[name=nature_entities_id]").trigger('change');
+    $("[name=nature_entities_id]").val($("[name=nature_entities_id]").val() === null ? "1" : $("[name=nature_entities_id]").val()).trigger('change');
     //
     // if ($("[name=nature_entities_id]").val() == "2") { //setting default visibility
     //     $("#option-nature-entities-id-1").click();
