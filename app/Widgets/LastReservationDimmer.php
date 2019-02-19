@@ -11,7 +11,7 @@ use App\Reservation;
 class LastReservationDimmer extends BaseDimmer
 {
 
-    public $reloadTimeout = 5;
+//    public $reloadTimeout = 5;
 
     /**
      * The configuration array.
