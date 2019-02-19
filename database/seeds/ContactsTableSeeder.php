@@ -235,7 +235,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => 'test@email.com',
-                'user_id' => 5,
+                'user_id' => NULL,
             ),
             10 => 
             array (
@@ -257,7 +257,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => 'tili.karim@test-email.com',
-                'user_id' => 8,
+                'user_id' => NULL,
             ),
             11 => 
             array (
@@ -279,7 +279,7 @@ class ContactsTableSeeder extends Seeder
                 'gsm' => NULL,
                 'fax' => NULL,
                 'email' => NULL,
-                'user_id' => 9,
+                'user_id' => NULL,
             ),
         ));
         
