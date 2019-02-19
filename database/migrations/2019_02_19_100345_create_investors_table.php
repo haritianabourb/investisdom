@@ -19,7 +19,7 @@ class CreateInvestorsTable extends Migration {
 			$table->string('registered_key')->nullable();
 			$table->string('address_1');
 			$table->string('address_2')->nullable();
-			$table->integer('postal_code')->nullable();
+			$table->string('postal_code')->nullable();
 			$table->text('city')->nullable();
 			$table->dateTime('started_at')->nullable();
 			$table->integer('cgp_id')->nullable();
