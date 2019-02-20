@@ -23,7 +23,7 @@ class SepaAction extends AbstractAction
             return 'browse';
         }
 
-        return null;
+        return false;
     }
 
     public function getDataType()

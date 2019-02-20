@@ -1,7 +1,13 @@
 @php
     // TODO make it in partial and call it with @include('voyager::partials.money')
   $field_name=$row->field;
-  $money_value=floatval($dataTypeContent[$field_name]);
+
+  if(\Illuminate\Support\Str::endsWith(\Request::route()->getName(), 'index')){
+    $money_value=floatval($data->$field_name)*100;
+  }else{
+    $money_value=floatval($dataTypeContent[$field_name])*100;
+  }
+
 @endphp
 
 {{number_format($money_value, 2, ",", " ")}} €

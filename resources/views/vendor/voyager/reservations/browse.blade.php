@@ -187,9 +187,13 @@
                                                             <img src="@if( !filter_var($image, FILTER_VALIDATE_URL)){{ Voyager::image( $image ) }}@else{{ $image }}@endif" style="width:50px">
                                                         @endforeach
                                                     @endif
-                                                @else
-                                                    @include('voyager::multilingual.input-hidden-bread-browse')
-                                                    <span>{{ $data->{$row->field} }}</span>
+                                                  @elseif($row->type == 'money')
+                                                      @include('voyager::partials.money')
+                                                  @elseif($row->type == 'percentage')
+                                                      @include('voyager::partials.percentage')
+                                                  @else
+                                                        @include('voyager::multilingual.input-hidden-bread-browse')
+                                                        <span>{{ $data->{$row->field} }}</span>
                                                 @endif
                                                 @if($loop->first)
                                                   @can('read',app($dataType->model_name))
