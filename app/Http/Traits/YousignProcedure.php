@@ -120,22 +120,26 @@ trait YousignProcedure
 
                 }
 
-                $user->get("fileObjects")->transform(function($fileObject, $fileName) use ($user){
-                    foreach ($files = $this->getYousignFile() as $file) {
-                        if($fileName == $file->name){
-                            foreach ($fileObject as $key => $fo) {
-                                $fo["member"] = $user->get("id");
-                                $fo["file"] = $file->id;
+                if($user->get("fileObjects")){
 
-                                $fileObject[$key] = $fo;
+                    $user->get("fileObjects")->transform(function($fileObject, $fileName) use ($user){
+                        foreach ($files = $this->getYousignFile() as $file) {
+                            if($fileName == $file->name){
+                                foreach ($fileObject as $key => $fo) {
+                                    $fo["member"] = $user->get("id");
+                                    $fo["file"] = $file->id;
+
+                                    $fileObject[$key] = $fo;
+                                }
                             }
                         }
-                    }
 
-                    return $fileObject;
-                });
+                        return $fileObject;
+                    });
 
-                $yousignUser->fileObjects = $user->get("fileObjects")->values()->collapse()->all();
+                    $yousignUser->fileObjects = $user->get("fileObjects")->values()->collapse()->all();
+                }
+
 
                 $yousignMembers[] = $yousignUser;
 

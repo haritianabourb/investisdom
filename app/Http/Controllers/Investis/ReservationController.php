@@ -79,7 +79,7 @@ class ReservationController extends VoyagerBaseController
                 "phone" => '+262692448152',
                 "email" => 'monelchristophe@gmail.com',
                 "type" => "signer",
-                "position" => 2,
+                "position" => 1,
                 'fileObjects' => collect([
                     'Demande_de_Reservation'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf' =>
                     [
@@ -153,7 +153,7 @@ class ReservationController extends VoyagerBaseController
             "phone" => '+262692448152',
             "email" => 'monelchristophe@gmail.com',
             "type" => "validator",
-            "position" => 3
+            "position" => 3,
         ]));
     }
 
@@ -173,6 +173,7 @@ class ReservationController extends VoyagerBaseController
         $this->yousignFileName = 'Mandat_de_Recherche'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf';
         $this->yousignName = "{$reservation->identifiant} - {$investor->name_invest} {$investor->prenom_invest}";
         $this->yousignDescription = "Reservation d'un Mandat de Recherche pour {$investor->name_invest} {$investor->prenom_invest} - Dossier n° {$reservation->identifiant}";
+
     }
 
 
