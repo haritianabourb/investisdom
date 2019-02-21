@@ -17,23 +17,14 @@ function Task6_HideFieldsForInvestorsAndIntermediaries() {
         if (this.value == "2") { //Société, show fields
             $(elementsToHide)
                 .parent().show("fast");
-            // $("[name=capital]").prop("required", true);
         } else { //otherwise, hide fields
             $(elementsToHide).val("")
                 .parent().hide("fast");
-            // $("[name=capital]").prop("required", false);
         }
     });
 
     $("[name=nature_entities_id]").val($("[name=nature_entities_id]").val() === null ? "1" : $("[name=nature_entities_id]").val()).trigger('change');
-    //
-    // if ($("[name=nature_entities_id]").val() == "2") { //setting default visibility
-    //     $("#option-nature-entities-id-1").click();
-    //     $("#option-nature-entities-id-2").click();
-    // } else {
-    //     $("#option-nature-entities-id-2").click();
-    //     $("#option-nature-entities-id-1").click();
-    // }
+
 }
 function Task4_IsReplacement() {
     if (!(window.location.href.indexOf("mandat") != -1))
@@ -174,15 +165,10 @@ function Task24_Network() {
 function Task31_RegimeMatrimonal() {
     if (!(window.location.href.indexOf("investors") != -1))
         return;
-    var elementsToHide = [
-        "[name=prenom_conjoint]",
-        "[name=nom_conjoint]",
-        "[name=nom_jeunefille_conjoint]",
-        "[name=birth_conjoint]"
-    ].join(", "); //getting selector string for jQuery
+
+    var elementsToHide = "[name$=_conjoint]";
 
     $("[name=regime_mat_invest]").change(function() {
-        console.log(this.value);
         if ((this.value == "02") || (this.value=="03") || (this.value=="04"))
         {//show fields
             $(elementsToHide)
