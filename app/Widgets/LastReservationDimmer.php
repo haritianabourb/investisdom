@@ -58,7 +58,7 @@ class LastReservationDimmer extends BaseDimmer
      */
     public function shouldBeDisplayed()
     {
-         return Auth::user()->can('browse', app(Reservation::class));
+         return Reservation::latest()->get() && Auth::user()->can('browse', app(Reservation::class));
     }
 
 }

@@ -30,7 +30,7 @@ class InvestissementDimmer extends BaseDimmer
       return view('voyager::dimmer', array_merge($this->config, [
           'icon'   => 'voyager-group',
           'title'  => "{$count} {$string}",
-          'text'   => 'en cours de développement',
+          'text'   => '&nbsp;',
           'button' => [
             'text' => "Voir mes {$string}",
             'link' => route('voyager.investors.index'),
