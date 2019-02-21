@@ -74,17 +74,6 @@ class SettingsTableSeeder extends Seeder
             ),
             5 => 
             array (
-                'id' => 6,
-                'key' => 'admin.title',
-                'display_name' => 'Admin Title',
-                'value' => 'InvestisDOM',
-                'details' => '',
-                'type' => 'text',
-                'order' => 1,
-                'group' => 'Admin',
-            ),
-            6 => 
-            array (
                 'id' => 7,
                 'key' => 'admin.description',
                 'display_name' => 'Admin Description',
@@ -94,7 +83,7 @@ class SettingsTableSeeder extends Seeder
                 'order' => 2,
                 'group' => 'Admin',
             ),
-            7 => 
+            6 => 
             array (
                 'id' => 8,
                 'key' => 'admin.loader',
@@ -105,7 +94,7 @@ class SettingsTableSeeder extends Seeder
                 'order' => 3,
                 'group' => 'Admin',
             ),
-            8 => 
+            7 => 
             array (
                 'id' => 9,
                 'key' => 'admin.icon_image',
@@ -116,12 +105,23 @@ class SettingsTableSeeder extends Seeder
                 'order' => 4,
                 'group' => 'Admin',
             ),
-            9 => 
+            8 => 
             array (
                 'id' => 10,
                 'key' => 'admin.google_analytics_client_id',
             'display_name' => 'Google Analytics Client ID (used for admin dashboard)',
                 'value' => NULL,
+                'details' => '',
+                'type' => 'text',
+                'order' => 1,
+                'group' => 'Admin',
+            ),
+            9 => 
+            array (
+                'id' => 6,
+                'key' => 'admin.title',
+                'display_name' => 'Admin Title',
+                'value' => 'Investis DOM',
                 'details' => '',
                 'type' => 'text',
                 'order' => 1,

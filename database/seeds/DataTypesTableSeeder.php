@@ -267,7 +267,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null}',
                 'created_at' => '2018-09-19 17:13:08',
-                'updated_at' => '2019-02-20 07:47:11',
+                'updated_at' => '2019-02-21 06:57:05',
             ),
             14 => 
             array (
@@ -285,27 +285,9 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null}',
                 'created_at' => '2018-09-10 15:53:00',
-                'updated_at' => '2019-02-20 07:49:49',
+                'updated_at' => '2019-02-21 07:22:52',
             ),
             15 => 
-            array (
-                'id' => 22,
-                'name' => 'mandat',
-                'slug' => 'mandat',
-                'display_name_singular' => 'Proposition de Financement',
-                'display_name_plural' => 'Propositions de Financement',
-                'icon' => 'voyager-receipt',
-                'model_name' => 'App\\Mandat',
-                'policy_name' => NULL,
-                'controller' => NULL,
-                'description' => NULL,
-                'generate_permissions' => 1,
-                'server_side' => 0,
-                'details' => '{"order_column":null,"order_display_column":null}',
-                'created_at' => '2018-09-26 06:30:26',
-                'updated_at' => '2019-02-20 07:51:17',
-            ),
-            16 => 
             array (
                 'id' => 4,
                 'name' => 'contacts',
@@ -321,9 +303,9 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null}',
                 'created_at' => '2018-08-23 17:18:48',
-                'updated_at' => '2019-02-20 08:13:43',
+                'updated_at' => '2019-02-21 05:35:42',
             ),
-            17 => 
+            16 => 
             array (
                 'id' => 7,
                 'name' => 'cgps',
@@ -339,7 +321,25 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null}',
                 'created_at' => '2018-09-10 15:38:45',
-                'updated_at' => '2019-02-20 08:29:57',
+                'updated_at' => '2019-02-21 05:38:52',
+            ),
+            17 => 
+            array (
+                'id' => 22,
+                'name' => 'mandat',
+                'slug' => 'mandat',
+                'display_name_singular' => 'Proposition de Financement',
+                'display_name_plural' => 'Propositions de Financement',
+                'icon' => 'voyager-receipt',
+                'model_name' => 'App\\Mandat',
+                'policy_name' => NULL,
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null}',
+                'created_at' => '2018-09-26 06:30:26',
+                'updated_at' => '2019-02-21 05:49:09',
             ),
         ));
         
