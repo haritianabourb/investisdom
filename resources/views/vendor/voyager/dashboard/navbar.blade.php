@@ -34,8 +34,15 @@
         <ul class="nav navbar-nav @if (config('voyager.multilingual.rtl')) navbar-left @else navbar-right @endif">
             <li class="dropdown profile">
                 <a href="#" class="dropdown-toggle text-right" data-toggle="dropdown" role="button"
-                   aria-expanded="false"><img src="{{ $user_avatar }}" class="profile-img"> <span
-                            class="caret"></span></a>
+                   aria-expanded="false">
+                        Bonjour
+                        @php($contact = \App\Contact::where('user_id', \Auth::user()->id)->first())
+                        @isset($contact)
+                            {{$contact->full_name}}
+                        @else
+                            {{Auth::user()->name}}
+                        @endisset
+                     <span class="caret"></span></a>
                 <ul class="dropdown-menu dropdown-menu-animated">
                     <li class="profile-img">
                         <img src="{{ $user_avatar }}" class="profile-img">
