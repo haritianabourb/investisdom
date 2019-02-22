@@ -39,13 +39,13 @@ class ReservationController extends VoyagerBaseController
         $cgp = \App\CGP::find($reservation->cgps_id);
         $cgp_contact = \App\Contact::find($cgp->contact_id);
 
-        $this->member = collect([
-            collect([
-                'user' => "/users/" . env('YOUSIGN_APP_USER'),
-                'type' => "signer",
-                'position' => 2,
-                'fileObjects' => collect([
-                    'Demande_de_Reservation'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf' =>
+        // Create author (Investis)
+        $author = collect([
+            'user' => "/users/" . env('YOUSIGN_APP_USER'),
+            'type' => "signer",
+            'position' => 2,
+            'fileObjects' => collect([
+                'Demande_de_Reservation'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf' =>
                     [
                         [
                             "page" => 5,
@@ -61,27 +61,29 @@ class ReservationController extends VoyagerBaseController
                         ],
 
                     ],
-                    'Mandat_de_Recherche'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf' => [
-                        [
-                            "page" => 1,
-                            "position" => "430,56,551,110",
-                            "mention" => "Lu et approuvé, bon pour acceptation de mandat",
-                            "mention2" => "Signé par InvestisDOM."
-                        ]
+                'Mandat_de_Recherche'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf' => [
+                    [
+                        "page" => 1,
+                        "position" => "430,56,551,110",
+                        "mention" => "Lu et approuvé, bon pour acceptation de mandat",
+                        "mention2" => "Signé par InvestisDOM."
                     ]
-                ])
+                ]
+            ])
 
 
-            ]),
-            collect([
-                "firstname" => $investor->name_invest,
-                "lastname" => $investor->prenom_invest,
-                "phone" => '+262692448152',
-                "email" => 'monelchristophe+1@gmail.com',
-                "type" => "signer",
-                "position" => 1,
-                'fileObjects' => collect([
-                    'Demande_de_Reservation'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf' =>
+        ]);
+
+        // Create the investor
+        $contact = collect([
+            "firstname" => $investor->name_invest,
+            "lastname" => $investor->prenom_invest,
+            "phone" => '+262692448152',
+            "email" => 'monelchristophe+1@gmail.com',
+            "type" => "signer",
+            "position" => 1,
+            'fileObjects' => collect([
+                'Demande_de_Reservation'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf' =>
                     [
                         [
                             "page" => 5,
@@ -111,7 +113,7 @@ class ReservationController extends VoyagerBaseController
                         ],
 
                     ],
-                    'Mandat_de_Recherche'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf' =>
+                'Mandat_de_Recherche'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf' =>
                     [
                         [
                             "page" => 1,
@@ -120,41 +122,60 @@ class ReservationController extends VoyagerBaseController
                             "mention2" => "Signé par {$investor->name_invest} {$investor->prenom_invest}."
                         ]
                     ]
-                ])
             ])
         ]);
 
-        if(in_array($investor->regime_mat_invest, ["02", "04"])){
-            $this->member->push(collect([
-                "firstname" => $investor->nom_conjoint,
-                "lastname" => $investor->prenom_conjoint,
-                "phone" => '+262692448152',
-                "email" => 'monelchristophe+2@gmail.com',
-                "type" => "signer",
-                "position" => 1,
-                'fileObjects' => collect([
-                    'Demande_de_Reservation'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf' =>
-                    [
-                        [
-                            "page" => 8,
-                            "position" => "117,197,255,252",
-                            "mention2" => "Signé par {$investor->nom_conjoint} {$investor->prenom_conjoint}."
-                        ],
-                    ],
-
-                ])
-            ]));
-        }
-
-
-        $this->member->push(collect([
+        // create the CGP
+        $validator = collect([
             "firstname" => $cgp_contact->fistname,
             "lastname" => $cgp_contact->lastname,
             "phone" => '+262692448152',
             "email" => 'monelchristophe+3@gmail.com',
             "type" => "validator",
             "position" => 3,
-        ]));
+        ]);
+
+        $conjoint = null;
+        if(in_array($investor->regime_mat_invest, ["02", "04"])){
+            // Create investor's husband/wife if exist
+            $conjoint = collect([
+                "firstname" => $investor->nom_conjoint,
+                "lastname" => $investor->prenom_conjoint,
+                "phone" => '+262692448152',
+                "email" => 'monelchristophe+2@gmail.com',
+                "type" => "signer",
+                "position" => 2,
+                'fileObjects' => collect([
+                    'Demande_de_Reservation'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf' =>
+                        [
+                            [
+                                "page" => 8,
+                                "position" => "117,197,255,252",
+                                "mention2" => "Signé par {$investor->nom_conjoint} {$investor->prenom_conjoint}."
+                            ],
+                        ],
+
+                ])
+            ]);
+
+            $contact->put('position', 1);
+            $author->put('position', 3);
+            $validator->put('position', 4);
+
+        }
+
+        // Push all
+        $this->member = collect([
+            $author,
+            $contact,
+            $validator,
+        ]);
+
+        // Add Conjoint if exist
+        if($conjoint){
+            $this->member->push($conjoint);
+        }
+
     }
 
     public function setFile(Reservation $reservation)
