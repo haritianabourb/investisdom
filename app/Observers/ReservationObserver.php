@@ -2,6 +2,7 @@
 
 namespace App\Observers;
 
+use App\CGP;
 use App\Reservation;
 use App\TauxCGP;
 use Carbon\Carbon;
