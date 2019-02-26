@@ -2,7 +2,9 @@
 
 namespace App\Actions;
 
+use Illuminate\Support\Facades\Validator;
 use TCG\Voyager\Actions\AbstractAction;
+use TCG\Voyager\Models\DataType;
 
 class YousignAction extends AbstractAction
 {
@@ -13,6 +15,10 @@ class YousignAction extends AbstractAction
 
     public function getTitle()
     {
+        if(!$this->getYousignValidation()){
+            return $this->title = "Yousign: Procédure impossible, <br/> Les champs Email et Téléphone Mobile <br/> de tous les contacts sont obligatoires";
+        }
+
         if($this->getYousignProcedureStatus() == "active"){
             $this->title = "Yousign : Procédure en cours";
         }
@@ -49,7 +55,7 @@ class YousignAction extends AbstractAction
     public function getDefaultRoute()
     {
 
-        if(!$this->getYousignProcedureStatus() || !in_array($this->getYousignProcedureStatus(), ["active","refused", "finished" ])){
+        if(!$this->getYousignProcedureStatus() || !in_array($this->getYousignProcedureStatus(), ["active","refused", "finished" ]) || $this->getYousignValidation()){
             return route('admin.'.$this->dataType->slug.'.yousign', ["reservation" => $this->data]);
         }
 
@@ -61,6 +67,11 @@ class YousignAction extends AbstractAction
         $attributes = [
             'class' => 'btn ',
         ];
+
+        if(!$this->getYousignValidation()){
+            $attributes["class"] .= "btn-danger";
+            return $attributes;
+        }
 
         if($this->getYousignProcedureStatus() == "active"){
             $attributes["class"] .= "btn-info disabled";
@@ -77,6 +88,45 @@ class YousignAction extends AbstractAction
         }
 
       return $attributes;
+    }
+
+    private function getYousignValidation(){
+        $investor = \App\Investor::find($this->data->investors_id);
+        $cgp = \App\CGP::find($this->data->cgps_id);
+
+        $validator  = Validator::make(
+            $investor->toArray(),
+            DataType::where('name', 'investors')->first()
+                ->rows()->whereIn('field', ['gsm_invest', 'email_invest', 'mail_conjoint', 'gsm_conjoint'])
+                ->pluck('details', 'field')->transform(function($item, $key){
+                    if (is_object($item)){
+                        return  isset($item->validation) && !is_null($item->validation) ? $item->validation->rule : 'nullable' ;
+                    }
+                })->toArray()
+        );
+
+        if($validator->fails()){
+            return false;
+        }
+
+
+        $validator  = Validator::make(
+            \App\Contact::find($cgp->contact_id)->toArray(),
+            DataType::where('name', 'contacts')->first()
+                ->rows()->whereIn('field', ['gsm', 'email'])
+                ->pluck('details', 'field')->transform(function($item, $key){
+                    if (is_object($item)){
+                        return  isset($item->validation) && !is_null($item->validation) ? $item->validation->rule : 'nullable' ;
+                    }
+                })->toArray()
+        );
+
+        if($validator->fails()){
+            return false;
+        }
+
+        return true;
+
     }
 
     private function getYousignProcedureStatus(){

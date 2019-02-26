@@ -78,8 +78,8 @@ class ReservationController extends VoyagerBaseController
         $contact = collect([
             "firstname" => $investor->name_invest,
             "lastname" => $investor->prenom_invest,
-            "phone" => '+262692448152',
-            "email" => 'monelchristophe+1@gmail.com',
+            "phone" => $investor->gsm_invest,
+            "email" => $investor->email_invest,
             "type" => "signer",
             "position" => 1,
             'fileObjects' => collect([
@@ -129,8 +129,8 @@ class ReservationController extends VoyagerBaseController
         $validator = collect([
             "firstname" => $cgp_contact->fistname,
             "lastname" => $cgp_contact->lastname,
-            "phone" => '+262692448152',
-            "email" => 'monelchristophe+3@gmail.com',
+            "phone" => $cgp_contact->gsm,
+            "email" => $cgp->email,
             "type" => "validator",
             "position" => 3,
         ]);
@@ -141,8 +141,8 @@ class ReservationController extends VoyagerBaseController
             $conjoint = collect([
                 "firstname" => $investor->nom_conjoint,
                 "lastname" => $investor->prenom_conjoint,
-                "phone" => '+262692448152',
-                "email" => 'monelchristophe+2@gmail.com',
+                "phone" => $investor->phone_conjoint,
+                "email" => $investor->mail_conjoint,
                 "type" => "signer",
                 "position" => 2,
                 'fileObjects' => collect([
@@ -276,13 +276,13 @@ class ReservationController extends VoyagerBaseController
 //        );
 
 
-        if($yousignProcedure = $this->isExistingYousignProcedure($reservation->yousign_procedure_id)){
-            $this->alertWarning(
-                "Procédure Yousign Existante"
-                ."<br/>"
-                ."Procédure numéro: {$yousignProcedure->id}");
-            return redirect()->back()->with($this->alerts);
-        }
+//        if($yousignProcedure = $this->isExistingYousignProcedure($reservation->yousign_procedure_id)){
+//            $this->alertWarning(
+//                "Procédure Yousign Existante"
+//                ."<br/>"
+//                ."Procédure numéro: {$yousignProcedure->id}");
+//            return redirect()->back()->with($this->alerts);
+//        }
 
         $this->setFile($reservation);
         $this->setMember($reservation);
