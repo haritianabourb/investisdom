@@ -130,7 +130,7 @@ class ReservationController extends VoyagerBaseController
             "firstname" => $cgp_contact->fistname,
             "lastname" => $cgp_contact->lastname,
             "phone" => $cgp_contact->gsm,
-            "email" => $cgp->email,
+            "email" => $cgp_contact->email,
             "type" => "validator",
             "position" => 3,
         ]);
