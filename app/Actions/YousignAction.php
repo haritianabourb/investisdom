@@ -2,7 +2,9 @@
 
 namespace App\Actions;
 
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 use TCG\Voyager\Actions\AbstractAction;
 use TCG\Voyager\Models\DataType;
 
@@ -99,9 +101,20 @@ class YousignAction extends AbstractAction
             DataType::where('name', 'investors')->first()
                 ->rows()->whereIn('field', ['gsm_invest', 'email_invest', 'mail_conjoint', 'gsm_conjoint'])
                 ->pluck('details', 'field')->transform(function($item, $key){
-                    if (is_object($item)){
-                        return  isset($item->validation) && !is_null($item->validation) ? $item->validation->rule : 'nullable' ;
+                    if (is_object($item) && isset($item->validation) && !is_null($item->validation)){
+
+                        $rules = explode("|", $item->validation->rule);
+
+                        foreach ($rules as $key => $rule){
+                            if (Str::startsWith($rule, "unique")){
+                                Arr::forget($rules, $key);
+                            }
+                        }
+
+                        return implode("|", $rules);
+
                     }
+                    return  'nullable' ;
                 })->toArray()
         );
 
@@ -115,9 +128,20 @@ class YousignAction extends AbstractAction
             DataType::where('name', 'contacts')->first()
                 ->rows()->whereIn('field', ['gsm', 'email'])
                 ->pluck('details', 'field')->transform(function($item, $key){
-                    if (is_object($item)){
-                        return  isset($item->validation) && !is_null($item->validation) ? $item->validation->rule : 'nullable' ;
+                    if (is_object($item) && isset($item->validation) && !is_null($item->validation)){
+
+                        $rules = explode("|", $item->validation->rule);
+
+                        foreach ($rules as $key => $rule){
+                            if (Str::startsWith($rule, "unique")){
+                                Arr::forget($rules, $key);
+                            }
+                        }
+
+                        return implode("|", $rules);
+
                     }
+                    return  'nullable' ;
                 })->toArray()
         );
 
