@@ -176,6 +176,7 @@ class ReservationController extends VoyagerBaseController
             $this->member->push($conjoint);
         }
 
+        $this->member = $this->member->sortBy('position', SORT_REGULAR)->values();
     }
 
     public function setFile(Reservation $reservation)
