@@ -50,7 +50,7 @@ class ReservationController extends VoyagerBaseController
                         [
                             "page" => 5,
                             "position" => "419,172,557,227",
-                            "mention" => "Bon pour accord",
+                            "mention" => "Lu et approuvé, Bon pour accord",
                             "mention2" => "Signé par InvestisDOM."
                         ],
                         [
@@ -88,7 +88,7 @@ class ReservationController extends VoyagerBaseController
                         [
                             "page" => 5,
                             "position" => "124,187,222,226",
-                            "mention" => "Bon pour réservation",
+                            "mention" => "Lu et approuvé, Bon pour réservation",
                             "mention2" => "Signé par {$investor->name_invest} {$investor->prenom_invest}."
                         ],
                         [

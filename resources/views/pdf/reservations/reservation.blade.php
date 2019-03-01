@@ -513,7 +513,7 @@
                 <TD class="tr5 td6">
                     <P class="p0 ft3">
                         {{ $investor->prenom_invest }} {{ strtoupper($investor->name_invest) }}<br>
-                        Mention « Bon pour réservation »<br>
+                        Mention « Lu et approuvé, Bon pour réservation »<br>
                         signature
                     </P>
                 </TD>
