@@ -37,6 +37,10 @@
         .voyager .breadcrumb a{
             color:{{ config('voyager.primary_color','#22A7F0') }};
         }
+
+        .app-container .side-menu .panel.widget a.profile-link{
+            display: inline;
+        }
     </style>
 
     @if(!empty(config('voyager.additional_css')))<!-- Additional CSS -->
