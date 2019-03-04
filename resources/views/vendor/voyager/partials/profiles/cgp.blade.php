@@ -31,7 +31,7 @@
                                     Chambre des Métiers et de l'Artisanat
                                     @break
                                 @case("RCS")
-                                    Registre des Commerces et des Société
+                                    Registre des Commerces et des Sociétés
                                     @break
                                 @case("SS")
                                     Sécurité sociale
