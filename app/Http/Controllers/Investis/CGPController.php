@@ -3,14 +3,15 @@
 namespace App\Http\Controllers\Investis;
 
 use App\Contact;
-use App\Events\User\CGPUserCreated;
-use App\User;
 use Illuminate\Http\Request;
 use \App\CGP;
+use Illuminate\Support\Facades\Auth;
 use PDF;
 use Illuminate\Foundation\Bus\DispatchesJobs;;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use TCG\Voyager\Events\BreadDataUpdated;
+use TCG\Voyager\Facades\Voyager;
 
 class CGPController extends VoyagerBaseController
 {
@@ -42,6 +43,41 @@ class CGPController extends VoyagerBaseController
         $pdf = PDF::loadView('pdf.cgps.convention', $data);
 
         return $pdf->download('Contrat_de_partenariat_'.$cgp->name.'.pdf');
+    }
+
+    public function getDocuments(){
+        $contact = Contact::where("user_id", Auth::user()->id)->firstOrFail();
+        $cgp = CGP::where("contact_id", $contact->id)->first();
+
+        $dataType = Voyager::model('DataType')->where('slug', '=', "cgps")->first();
+        $dataTypeContent = call_user_func([$dataType->model_name, 'findOrFail'], $cgp->id);
+//        dd($dataType, $dataTypeContent);
+
+        return view("voyager::cgps.documents.documents", compact('dataType', 'dataTypeContent'));
+    }
+
+    public function setDocument(Request $request){
+        $contact = Contact::where("user_id", Auth::user()->id)->firstOrFail();
+        $cgp = CGP::where("contact_id", $contact->id)->first();
+
+
+        $dataType = Voyager::model('DataType')->where('slug', '=', "cgps")->first();
+        $dataTypeContent = call_user_func([$dataType->model_name, 'findOrFail'], $cgp->id);
+
+
+
+        $rows = $dataType->editRows->whereIn("field", $request->keys());
+
+        $this->insertUpdateData($request, 'cgps', $rows, $dataTypeContent);
+
+        event(new BreadDataUpdated($dataType, $dataTypeContent));
+
+        return redirect()
+            ->route('admin.documents.cgp', compact('dataType','dataTypeContent'))
+            ->with([
+                'message'    => __('voyager::generic.successfully_updated')." {$dataType->display_name_singular}",
+                'alert-type' => 'success',
+            ]);
     }
 
 }

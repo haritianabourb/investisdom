@@ -15,26 +15,33 @@ Route::get('/', function () {
     return view('theme::index');
 });
 
-Route::get('/00_PG', 'Investis\PGPDFController@generatePDF');
-Route::get('/01_mandat', 'Investis\MandatPDFController@generatePDF');
-Route::get('/02_el_cl', 'Investis\ELCLPDFController@generatePDF');
-Route::get('/02_soc_cl', 'Investis\SOCCLPDFController@generatePDF');
-Route::get('/03_el_acc', 'Investis\ELACCPDFController@generatePDF');
-Route::get('/03_soc_acc', 'Investis\SOCACCPDFController@generatePDF');
-Route::get('/04_banq_fact_frais', 'Investis\BanqFactFraisPDFController@generatePDF');
-Route::get('/04_cash_fact_tva', 'Investis\CashFactFraisPDFController@generatePDF');
-Route::get('/05_banq_pvag_pvr', 'Investis\BanqPvagPvrPDFController@generatePDF');
-Route::get('/23_da_banq', 'Investis\DaBanqPDFController@generatePDF');
-Route::get('/p_14_mi', 'Investis\P14MiPDFController@generatePDF');
-Route::get('/p_15', 'Investis\P15PDFController@generatePDF');
-Route::get('/p_18', 'Investis\P18PDFController@generatePDF');
-Route::get('/p_24', 'Investis\P24FactVentePDFController@generatePDF');
-Route::get('/p_25', 'Investis\P25PDFController@generatePDF');
+// All of these are pdf for snc!!!
+//Route::get('/00_PG', 'Investis\PGPDFController@generatePDF');
+//Route::get('/01_mandat', 'Investis\MandatPDFController@generatePDF');
+//Route::get('/02_el_cl', 'Investis\ELCLPDFController@generatePDF');
+//Route::get('/02_soc_cl', 'Investis\SOCCLPDFController@generatePDF');
+//Route::get('/03_el_acc', 'Investis\ELACCPDFController@generatePDF');
+//Route::get('/03_soc_acc', 'Investis\SOCACCPDFController@generatePDF');
+//Route::get('/04_banq_fact_frais', 'Investis\BanqFactFraisPDFController@generatePDF');
+//Route::get('/04_cash_fact_tva', 'Investis\CashFactFraisPDFController@generatePDF');
+//Route::get('/05_banq_pvag_pvr', 'Investis\BanqPvagPvrPDFController@generatePDF');
+//Route::get('/23_da_banq', 'Investis\DaBanqPDFController@generatePDF');
+//Route::get('/p_14_mi', 'Investis\P14MiPDFController@generatePDF');
+//Route::get('/p_15', 'Investis\P15PDFController@generatePDF');
+//Route::get('/p_18', 'Investis\P18PDFController@generatePDF');
+//Route::get('/p_24', 'Investis\P24FactVentePDFController@generatePDF');
+//Route::get('/p_25', 'Investis\P25PDFController@generatePDF');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
+
     Route::group(['prefix' => 'cgps'], function(){
       Route::get('/{cgp}/generate-convention', 'Investis\CGPController@generatePDF')->name('admin.cgps.generate-convention');
+    });
+
+    Route::group(['prefix' => 'documents'], function(){
+        Route::get('/', 'Investis\CGPController@getDocuments')->name('admin.documents.cgp');
+        Route::post('/', 'Investis\CGPController@setDocument')->name('admin.documents.cgp.store');
     });
 
     Route::group(['prefix' => 'reservations'], function(){
