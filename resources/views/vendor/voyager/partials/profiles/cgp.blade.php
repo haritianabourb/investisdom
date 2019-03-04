@@ -25,7 +25,7 @@
                         </tr>
                         <tr>
                             <td>Immatriculation</td>
-                            <td>{{$cgp->etablishment_code}}</td>
+                            <td>{{$cgp->registered_key}}</td>
                         </tr>
                         <tr>
                             <td>Date d'immatriculation</td>
@@ -57,12 +57,12 @@
                     <tbody>
                         <tr>
                             <td>Civilité du représentant</td>
-                            <td>{{$contact->civilite}}</td>
+                            <td>{{$contact->civilite == 1 ? "Mr" : "Mme"}}</td>
 
                         </tr>
                         <tr>
                             <td>Nom</td>
-                            <td>{{$contact->firstname}}</td>
+                            <td>{{$contact->fistname}}</td>
                         </tr>
                         <tr>
                             <td>Prénom</td>
