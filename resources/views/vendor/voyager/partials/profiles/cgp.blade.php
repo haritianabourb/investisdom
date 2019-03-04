@@ -8,7 +8,7 @@
                 <table class="table table-striped table-hover">
                     <tbody>
                         <tr>
-                            <td>Addresse</td>
+                            <td>Adresse</td>
                             <td>{{$cgp->address_1}}@isset($cgp->address_2) {{$cgp->address_2}}@endisset</td>
                         </tr>
                         <tr>
@@ -25,18 +25,30 @@
                         </tr>
                         <tr>
                             <td>Immatriculation</td>
-                            <td>{{$cgp->registered_key}}</td>
+                            <td>
+                            @switch($cgp->type_registration)
+                                @case("CMA")
+                                    Chambre des Métiers et de l'Artisanat
+                                    @break
+                                @case("RCS")
+                                    Registre des Commerces et des Société
+                                    @break
+                                @case("SS")
+                                    Sécurité sociale
+                                    @break
+                            @endswitch
+                            </td>
                         </tr>
                         <tr>
                             <td>Date d'immatriculation</td>
-                            <td>{{$cgp->started_at}}</td>
+                            <td>{{\Carbon\Carbon::createFromFormat("Y-m-d", $cgp->started_at)->format("d/m/Y")}}</td>
                         </tr>
                         <tr>
                             <td>Lieu d'immatriculation</td>
                             <td>{{$cgp->registration_city}}</td>
                         </tr>
                         <tr>
-                            <td>N° SIRET</td>
+                            <td>Numéro d'immatriculation</td>
                             <td>{{number_format($cgp->registered_key,0,","," ")}}</td>
                         </tr>
                         <tr>
