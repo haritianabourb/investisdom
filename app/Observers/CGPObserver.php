@@ -46,11 +46,29 @@ class CGPObserver
         // XXX little hack to not thrown the saving event for calculations
         DB::table($cgp->getTable())->where('id', $cgp->id)->update(['identifiant' => $identifiant]);
 
-        // TODO contact creation cgp:
-        $contact = \App\Contact::find($cgp->contact_id);
+        // Set Primary Contact for the CGP
+        $this->setContactfor($cgp);
+
+        // Set auxiliary Contacts for the CGP
+        $this->setContactsFor($cgp);
+
+        // TODO create default rate for cgp
+    }
+
+    public function updating(CGP $cgp){
+
+        dd($cgp->contacts_all(), $cgp, request()->all(), request()->get("cgp_belongstomany_contact_relationship"), $cgp->getOriginal("contact_id") != $cgp->contact_id );
+    }
+
+    public function updated(CGP $cgp){
+
+    }
+
+    private function fillUserWith(Contact $contact, Role $role = null)
+    {
         $user = User::find($contact->user_id);
         if (!$user) {
-            $role = Role::where('name', 'cgp')->firstOrFail();
+            $role = $role?? Role::where('name', 'cgp')->firstOrFail();
             $password = substr(md5($contact->email), random_int(0,5), 8);
             $user = new User;
             $user->name = $contact->full_name;
@@ -59,14 +77,27 @@ class CGPObserver
             $user->role_id = $role->id;
             $user->save();
 
-            $contact->user_id = $user->id;
-            $contact->save();
-
             event(new CGPUserCreated($user, $cgp, $contact, $password));
         }
 
-        // TODO create default rate for cgp
+        return $user;
     }
 
+    private function setContactfor(CGP $cgp)
+    {
+        // TODO contact creation cgp:
+        $contact = \App\Contact::find($cgp->contact_id);
+        $contact->function = $cgp->contact_status;
+
+        $user = $this->fillUserWith($contact);
+
+        $contact->user_id = $user->id;
+        $contact->save();
+    }
+
+    private function setContactsFor(CGP $cgp)
+    {
+
+    }
 
 }

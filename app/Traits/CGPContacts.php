@@ -19,21 +19,21 @@ trait CGPContacts {
      */
     public function contacts()
     {
-        return $this->belongsToMany(Contact::class, 'cgp_contacts', "c_g_p_id", "contact_id");
+        return $this->belongsToMany(Contact::class, 'cgp_contacts');
     }
 
     /**
-     * Return all User contacts, merging the default and alternative contacts.
+     * Return all CGP contacts, merging the default and alternative contacts.
      */
     public function contacts_all()
     {
-        $this->loadcontactsRelations();
+        $this->loadContactRelations();
 
         return collect([$this->contact])->merge($this->contacts);
     }
 
     /**
-     * Check if User has a contact(s) associated.
+     * Check if CGP has a contact(s) associated.
      *
      * @param string|array $name The contact(s) to check.
      *
@@ -53,21 +53,21 @@ trait CGPContacts {
     }
 
     /**
-     * Set default User contact.
+     * Set default CGP contact.
      *
      * @param string $name The contact name to associate.
      */
-    public function setcontact($name)
-    {
-        $contact= Contact::where('name', '=', $name)->first();
-
-        if ($contact) {
-            $this->contact()->associate($contact);
-            $this->save();
-        }
-
-        return $this;
-    }
+//    public function setContact($name)
+//    {
+//        $contact= Contact::where('name', '=', $name)->first();
+//
+//        if ($contact) {
+//            $this->contact()->associate($contact);
+//            $this->save();
+//        }
+//
+//        return $this;
+//    }
 
 
     private function loadContactRelations()
