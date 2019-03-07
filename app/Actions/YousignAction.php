@@ -96,6 +96,10 @@ class YousignAction extends AbstractAction
         $investor = \App\Investor::find($this->data->investors_id);
         $cgp = \App\CGP::find($this->data->cgps_id);
 
+        if(!$investor || !$cgp->contact_id){
+            return false;
+        }
+
         $validator  = Validator::make(
             $investor->toArray(),
             DataType::where('name', 'investors')->first()
