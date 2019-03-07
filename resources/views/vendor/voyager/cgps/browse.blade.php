@@ -106,7 +106,15 @@
                                                 @if($row->type == 'image')
                                                     <img src="@if( !filter_var($data->{$row->field}, FILTER_VALIDATE_URL)){{ Voyager::image( $data->{$row->field} ) }}@else{{ $data->{$row->field} }}@endif" style="width:100px">
                                                 @elseif($row->type == 'relationship')
-                                                    @include('voyager::formfields.relationship', ['view' => 'browse'])
+                                                          @if($row->field == "cgp_belongstomany_contact_relationship")
+                                                              {{--
+                                                                  TODO remove this and make it more configurable
+                                                                  For now, it's here, but I really want a custom attribute, like money or percent customs fields
+                                                               --}}
+                                                              @include("voyager::formfields.custom.cgps.contacts", ['view' => 'browse'])
+                                                          @else
+                                                              @include('voyager::formfields.relationship', ['view' => 'browse'])
+                                                          @endif
                                                 @elseif($row->type == 'select_multiple')
                                                     @if(property_exists($options, 'relationship'))
 

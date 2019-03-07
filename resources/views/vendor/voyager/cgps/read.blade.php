@@ -60,7 +60,9 @@
                         @endif
                           <div class="col-md-{{ $display_options->width or 12 }}" @if(isset($display_options->id)){{ "id=$display_options->id" }}@endif>
                             <h5>{{ $row->display_name }}</h5>
-                            @if($row->type == "image")
+                            @if($row->field == "cgp_belongsto_contact_relationship")
+                                  @include('voyager::partials.contact', ['contact' => $dataTypeContent->contact])
+                            @elseif($row->type == "image")
                                 <img class="img-responsive"
                                      src="{{ filter_var($dataTypeContent->{$row->field}, FILTER_VALIDATE_URL) ? $dataTypeContent->{$row->field} : Voyager::image($dataTypeContent->{$row->field}) }}">
                             @elseif($row->type == 'multiple_images')
@@ -74,7 +76,15 @@
                                          src="{{ filter_var($dataTypeContent->{$row->field}, FILTER_VALIDATE_URL) ? $dataTypeContent->{$row->field} : Voyager::image($dataTypeContent->{$row->field}) }}">
                                 @endif
                             @elseif($row->type == 'relationship')
-                                 @include('voyager::formfields.relationship', ['view' => 'read', 'options' => $rowDetails])
+                                  @if($row->field == "cgp_belongstomany_contact_relationship")
+                                      {{--
+                                          TODO remove this and make it more configurable
+                                          For now, it's here, but I really want a custom attribute, like money or percent customs fields
+                                       --}}
+                                      @include("voyager::formfields.custom.cgps.contacts", ['view' => 'read', 'options' => $rowDetails])
+                                  @else
+                                      @include('voyager::formfields.relationship', ['view' => 'read', 'options' => $rowDetails])
+                                  @endif
                             @elseif($row->type == 'select_dropdown' && property_exists($rowDetails, 'options') &&
                                     !empty($rowDetails->options->{$dataTypeContent->{$row->field}})
                             )

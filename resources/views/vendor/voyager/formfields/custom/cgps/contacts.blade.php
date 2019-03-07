@@ -1,10 +1,9 @@
 @php $relationshipField = $row->field; @endphp
 
 @if(isset($view) && ($view == 'browse' || $view == 'read'))
-
     @php
         $relationshipData = (isset($data)) ? $data : $dataTypeContent;
-        $selected_values = isset($relationshipData) ? $relationshipData->belongsToMany($options->model, $options->pivot_table)->pluck($options->label)->all() : array();
+        $selected_values = isset($relationshipData) ? $relationshipData->contacts : array();
     @endphp
 
     @if($view == 'browse')
@@ -12,7 +11,6 @@
     @else
         @include("voyager::formfields.custom.cgps.contacts-show")
     @endif
-
 @else
         @include("voyager::formfields.custom.cgps.contacts-add-edit")
 @endif
