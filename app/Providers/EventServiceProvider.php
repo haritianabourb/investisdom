@@ -38,6 +38,7 @@ class EventServiceProvider extends ServiceProvider
     public function boot()
     {
         parent::boot();
+
         CGP::observe(CGPObserver::class);
         Investor::observe(InvestorObserver::class);
         Mandat::observe(MandatObserver::class);

@@ -3,10 +3,12 @@
 namespace App;
 
 use App\Traits\CGPContacts;
+use Chelout\RelationshipEvents\Concerns\HasBelongsToManyEvents;
+use Chelout\RelationshipEvents\Traits\HasRelationshipObservables;
 
 class CGP extends Entity
 {
-    use CGPContacts;
+    use CGPContacts,HasBelongsToManyEvents, HasRelationshipObservables;
 
     protected $table = 'cgps';
 
@@ -20,5 +22,7 @@ class CGP extends Entity
         // TODO: also make the trait more convenient for all model
         return $this->contact();
     }
+
+
 
 }

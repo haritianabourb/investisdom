@@ -3,8 +3,12 @@
 namespace App\Traits;
 
 use App\Contact;
+use App\Observers\CGPObserver;
+use Chelout\RelationshipEvents\Concerns\HasBelongsToManyEvents;
+use Chelout\RelationshipEvents\Traits\HasRelationshipObservables;
 
 trait CGPContacts {
+
 
     /**
      * Return default CGP Contact.
@@ -51,24 +55,6 @@ trait CGPContacts {
 
         return false;
     }
-
-    /**
-     * Set default CGP contact.
-     *
-     * @param string $name The contact name to associate.
-     */
-//    public function setContact($name)
-//    {
-//        $contact= Contact::where('name', '=', $name)->first();
-//
-//        if ($contact) {
-//            $this->contact()->associate($contact);
-//            $this->save();
-//        }
-//
-//        return $this;
-//    }
-
 
     private function loadContactRelations()
     {

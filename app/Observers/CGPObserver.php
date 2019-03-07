@@ -3,13 +3,14 @@
 namespace App\Observers;
 
 use App\CGP;
+use App\Contact;
 use App\Events\User\CGPUserCreated;
-use App\Mandat;
+
 // use App\TauxCGP;
 use App\Services\Amortization;
-use \App\Http\Traits\HasFieldsToCalculate;
 
 use App\User;
+use Log;
 use TCG\Voyager\Models\Role;
 use Carbon\Carbon;
 
@@ -55,49 +56,46 @@ class CGPObserver
         // TODO create default rate for cgp
     }
 
-    public function updating(CGP $cgp){
-
-        dd($cgp->contacts_all(), $cgp, request()->all(), request()->get("cgp_belongstomany_contact_relationship"), $cgp->getOriginal("contact_id") != $cgp->contact_id );
+    public function belongsToManyAttaching($relation, $parent, $id) {
+//        dd($id, Contact::where("id", $id)->first());
+        Log::info("attaching", [$relation, $parent, $id]);
     }
 
-    public function updated(CGP $cgp){
+    public function belongsToManyAttached($relation, CGP $cgp, $id) {
+        $contact = Contact::where("id", $id)->first();
+        $this->fillUserWith($cgp, $contact);
 
     }
 
-    private function fillUserWith(Contact $contact, Role $role = null)
+    private function fillUserWith(CGP $cgp, Contact $contact, Role $role = null)
     {
         $user = User::find($contact->user_id);
         if (!$user) {
-            $role = $role?? Role::where('name', 'cgp')->firstOrFail();
             $password = substr(md5($contact->email), random_int(0,5), 8);
             $user = new User;
             $user->name = $contact->full_name;
             $user->email = $contact->email;
             $user->password = bcrypt($password);
-            $user->role_id = $role->id;
-            $user->save();
 
             event(new CGPUserCreated($user, $cgp, $contact, $password));
         }
+
+        $role = Role::where('name', $role ?? 'cgp')->firstOrFail();
+        $user->role_id = $role->id;
+        $user->save();
 
         return $user;
     }
 
     private function setContactfor(CGP $cgp)
     {
-        // TODO contact creation cgp:
         $contact = \App\Contact::find($cgp->contact_id);
         $contact->function = $cgp->contact_status;
 
-        $user = $this->fillUserWith($contact);
+        $user = $this->fillUserWith($cgp, $contact);
 
         $contact->user_id = $user->id;
         $contact->save();
-    }
-
-    private function setContactsFor(CGP $cgp)
-    {
-
     }
 
 }
