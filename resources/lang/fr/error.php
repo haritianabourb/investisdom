@@ -8,4 +8,9 @@ return [
     'symlink_missing_button' => 'Réparer !',
     'symlink_missing_text'   => 'Nous n\'avons pu trouver le lien symbolique de stockage. Cela pourrait causer des problèmes de chargement des fichiers multimédias.',
     'symlink_missing_title'  => 'Le lien symbolique de stockage est manquant',
+    'yousign'  => [
+        "already_exist" => "Procédure Yousign Existante",
+        "yousign" => "yousign",
+
+    ]
 ];

@@ -50,14 +50,14 @@ class ReservationController extends VoyagerBaseController
                         [
                             "page" => 5,
                             "position" => "419,172,557,227",
-                            "mention" => "Lu et approuvé, Bon pour accord",
-                            "mention2" => "Signé par InvestisDOM."
+                            "mention" => ucfirst(__('yousign.fileObjects.author.approval')).", ".__('yousign.fileObjects.author.aggrement'),
+                            "mention2" => ucfirst(__("yousign.fileObjects.author.signature"))." Investis DOM."
                         ],
                         [
                             "page" => 12,
                             "position" => "415,72,553,127",
-                            "mention" => "Lu et approuvé",
-                            "mention2" => "Signé par INVESTIS DOM."
+                            "mention" => ucfirst(__('yousign.fileObjects.author.approval')),
+                            "mention2" => ucfirst(__("yousign.fileObjects.author.signature"))." Investis DOM."
                         ],
 
                     ],
@@ -65,8 +65,8 @@ class ReservationController extends VoyagerBaseController
                     [
                         "page" => 1,
                         "position" => "430,56,551,110",
-                        "mention" => "Lu et approuvé, bon pour acceptation de mandat",
-                        "mention2" => "Signé par InvestisDOM."
+                        "mention" => ucfirst(__('yousign.fileObjects.author.approval')).", ".ucfirst(__('yousign.fileObjects.author.mandate_signature')),
+                        "mention2" => ucfirst(__("yousign.fileObjects.author.signature"))." Investis DOM."
                     ]
                 ]
             ])
@@ -208,37 +208,37 @@ class ReservationController extends VoyagerBaseController
             "email" => [
                 "member.started" => [
                     [
-                        "subject" => "Vous êtes invités à signer votre contrat sur Yousign!",
-                        "message" => "Bonjour <tag data-tag-type='string' data-tag-name='recipient.firstname'></tag> <tag data-tag-type='string' data-tag-name='recipient.lastname'></tag>, <br><br> Votre Contrat de Reservation est prêt, Veuillez cliquer ici pour être redirigé: <tag data-tag-type='button' data-tag-name='url' data-tag-title='Access to documents'>Accés à la Réservation</tag>",
+                        "subject" => __("yousign.email.member.started.subject"),
+                        "message" => __("yousign.email.member.started.message"),
                         "to" => ["@member"],
                     ]
                 ],
                 "member.finished" => [
                     [
-                        "subject" => "Votre contrat sur Yousign a été signé!",
-                        "message" => "Bonjour <tag data-tag-type='string' data-tag-name='recipient.firstname'></tag> <tag data-tag-type='string' data-tag-name='recipient.lastname'></tag>, <br><br> Votre Contrat de Reservation a été, Veuillez cliquer ici pour être redirigé: <tag data-tag-type='button' data-tag-name='url' data-tag-title='Access to documents'>Accés aux documents</tag>",
+                        "subject" => __("yousign.email.member.finnished.subject"),
+                        "message" => __("yousign.email.member.finnished.message"),
                         "to" => ["@member"],
                     ]
                 ],
                 "procedure.started" => [
                     [
-                        "subject" => "Une Nouvelle procedure de Réservation est en cours",
-                        "message" => "Bonjour <tag data-tag-type='string' data-tag-name='recipient.firstname'></tag> <tag data-tag-type='string' data-tag-name='recipient.lastname'></tag>, <br><br> Votre Contrat de Reservation est prêt, La procédure a débuté, Veuillez cliquer ici pour être redirigé: <tag data-tag-type='button' data-tag-name='url' data-tag-title='Access to documents'>Accés à la Procédure</tag>",
-                        "to" => ["@member"],
+                        "subject" => __("yousign.email.procedure.started.subject"),
+                        "message" => __("yousign.email.procedure.started.message"),
+                        "to" => ["@author"],
                     ]
                 ],
                 "procedure.finished" => [
                     [
-                        "subject" => "La procedure de Réservation est terminée!",
-                        "message" => "Bonjour <tag data-tag-type='string' data-tag-name='recipient.firstname'></tag> <tag data-tag-type='string' data-tag-name='recipient.lastname'></tag>, <br><br> Votre Contrat de Reservation est validé, Veuillez cliquer ici pour être redirigé: <tag data-tag-type='button' data-tag-name='url' data-tag-title='Access to documents'>Accés à la Procédure</tag>",
-                        "to" => ["@member"],
+                        "subject" => __("yousign.email.procedure.finnished.subject"),
+                        "message" => __("yousign.email.procedure.finnished.message"),
+                        "to" => ["@author"],
                     ]
                 ],
                 "procedure.refused" => [
                     [
-                        "subject" => "La procedure de Réservation est refusée",
-                        "message" => "Bonjour <tag data-tag-type='string' data-tag-name='recipient.firstname'></tag> <tag data-tag-type='string' data-tag-name='recipient.lastname'></tag>, <br><br> Votre Contrat de Reservation est refusé, Veuillez cliquer ici pour être redirigé: <tag data-tag-type='button' data-tag-name='url' data-tag-title='Access to documents'>Accés à la Procédure</tag>",
-                        "to" => ["@member"],
+                        "subject" => __("yousign.email.procedure.refused.subject"),
+                        "message" => __("yousign.email.procedure.refused.message"),
+                        "to" => ["@author"],
                     ]
                 ]
             ]
@@ -279,13 +279,13 @@ class ReservationController extends VoyagerBaseController
 //        );
 
 
-//        if($yousignProcedure = $this->isExistingYousignProcedure($reservation->yousign_procedure_id)){
-//            $this->alertWarning(
-//                "Procédure Yousign Existante"
-//                ."<br/>"
-//                ."Procédure numéro: {$yousignProcedure->id}");
-//            return redirect()->back()->with($this->alerts);
-//        }
+        if($yousignProcedure = $this->isExistingYousignProcedure($reservation->yousign_procedure_id)){
+            $this->alertWarning(
+                __("error.yousign.already_exist")
+                ."<br/>"
+                .ucfirst(__("generic.procedure"))." ".__("generic.number").": {$yousignProcedure->id}");
+            return redirect()->back()->with($this->alerts);
+        }
 
         $this->setFile($reservation);
         $this->setMember($reservation);

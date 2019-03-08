@@ -274,14 +274,20 @@
     <script>
         $(document).ready(function () {
             @if (!$dataType->server_side)
-                var table = $('#dataTable').DataTable({!! json_encode(
+                var datatableConfig = {!! json_encode(
                     array_merge([
                         "order" => [],
+                        "rowGroup" => [
+                            "dataSrc" =>  4
+                        ],
                         "language" => __('voyager::datatable'),
-                        "columnDefs" => [['targets' => -1, 'searchable' =>  false, 'orderable' => false]],
+                        "columnDefs" => [['targets' => -1, 'searchable' =>  false, 'orderable' => false]]
                     ],
                     config('voyager.dashboard.data_tables', []))
-                , true) !!});
+                , true) !!};
+
+
+                var table = $('#dataTable').DataTable(datatableConfig);
             @else
                 $('#search-input select').select2({
                     minimumResultsForSearch: Infinity

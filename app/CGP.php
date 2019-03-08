@@ -23,6 +23,14 @@ class CGP extends Entity
         return $this->contact();
     }
 
+    public function scopeOfContact($query, Contact $contact, $main = false){
+        $query->where('contact_id', $contact->id)->when(!$main, function($query) use ($contact) {
+            $query->orWhereHas('contacts', function ($query) use ($contact){
+               $query->where('id', $contact->id);
+            });
+        });
+    }
+
 
 
 }

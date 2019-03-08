@@ -13,6 +13,11 @@ use DB;
 class InvestorObserver
 {
 
+
+    public function creating(Investor $investor){
+        $investor->user_id = \Auth::user()->id;
+    }
+
     /**
      * Handle the contract "creating" event.
      *
@@ -23,7 +28,13 @@ class InvestorObserver
     {
 
         if(\Auth::user()->hasRole(["cgps", "cgp"])){
-            $investor->cgp_attached = $investor->cgp_id = $cgp = CGP::where('contact_id', Contact::where("user_id", \Auth::user()->id)->first()->id)->first()->id;
+
+            $contact = Contact::ofUser(\Auth::user());
+
+            $cgp = CGP::ofContact($contact);
+
+            $investor->cgp_attached = $investor->cgp_id = $cgp->id;
+
         }
 
         if($investor->nature_entities_id == 1){

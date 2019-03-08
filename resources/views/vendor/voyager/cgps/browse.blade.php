@@ -279,6 +279,7 @@
     <script>
         $(document).ready(function () {
             @if (!$dataType->server_side)
+
                 var table = $('#dataTable').DataTable({!! json_encode(
                     array_merge([
                         "order" => [],

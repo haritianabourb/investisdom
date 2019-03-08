@@ -217,8 +217,10 @@ return [
     // Here you can specify additional assets you would like to be included in the master.blade
     'additional_css' => [
         'https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css',
+        'https://cdn.datatables.net/rowgroup/1.1.0/css/rowGroup.dataTables.min.css',
         // 'css/now-ui-dashboard.css'
-        'css/custom.css'
+        'css/custom.css',
+
     ],
 
     'additional_js' => [
@@ -230,7 +232,8 @@ return [
         // 'js/now-ui-dashboard.js',
         'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment-with-locales.js',
         'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js',
-        'https://cdn.jsdelivr.net/npm/formdata-polyfill@3.0.12/formdata.min.js'
+        'https://cdn.jsdelivr.net/npm/formdata-polyfill@3.0.12/formdata.min.js',
+        'https://cdn.datatables.net/rowgroup/1.1.0/js/dataTables.rowGroup.min.js'
     ],
 
     'googlemaps' => [

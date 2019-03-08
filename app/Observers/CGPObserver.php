@@ -47,13 +47,8 @@ class CGPObserver
         // XXX little hack to not thrown the saving event for calculations
         DB::table($cgp->getTable())->where('id', $cgp->id)->update(['identifiant' => $identifiant]);
 
-        // Set Primary Contact for the CGP
         $this->setContactfor($cgp);
 
-        // Set auxiliary Contacts for the CGP
-        $this->setContactsFor($cgp);
-
-        // TODO create default rate for cgp
     }
 
     public function belongsToManyAttaching($relation, $parent, $id) {
@@ -84,6 +79,9 @@ class CGPObserver
         $user->role_id = $role->id;
         $user->save();
 
+        $contact->user_id = $user->id;
+        $contact->save();
+
         return $user;
     }
 
@@ -93,6 +91,8 @@ class CGPObserver
         $contact->function = $cgp->contact_status;
 
         $user = $this->fillUserWith($cgp, $contact);
+
+        dd($contact, $user);
 
         $contact->user_id = $user->id;
         $contact->save();

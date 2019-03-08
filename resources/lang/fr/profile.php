@@ -11,4 +11,12 @@ return [
     'role_default'    => 'Rôle par défaut',
     'roles_additional'=> 'Rôles additionnels',
     'user_role'       => 'Rôle utilisateur',
+    'contact' => [
+        'function' => "fonction",
+        'phone' => "téléphone",
+        'fax' => "fax",
+        'mobile_phone' => "G.S.M.",
+        "email" => "courriel"
+
+    ]
 ];

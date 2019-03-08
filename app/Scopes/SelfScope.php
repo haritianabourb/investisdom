@@ -27,7 +27,9 @@ class SelfScope implements Scope
     public function apply(Builder $builder, Model $model)
     {
         if(!Auth::user()->hasRole(['admin', 'investisdom', 'investis'])){
-            $this->contact = Contact::where('user_id', Auth::user()->id)->firstOrFail();
+
+            $this->contact = Contact::ofUser(Auth::user())->firstOrFail();
+
             if(get_class($model) == Reservation::class){
                 $this->applyReservationScope($builder, $model);
             }
@@ -40,21 +42,38 @@ class SelfScope implements Scope
         }
     }
 
+
+
     private function applyReservationScope(Builder $builder, Reservation $model)
     {
-        $cgp = CGP::where('contact_id', $this->contact->id)->firstOrFail();
-        $builder->where("cgps_id", $cgp->id);
+
+        $cgp = CGP::ofContact($this->contact, true)->first();
+
+        if($cgp){
+            return $builder->where("cgps_id", $cgp->id);
+        }
+
+        $cgp = CGP::ofContact($this->contact)->firstOrFail();
+
+
+        $builder->where("cgps_id", $cgp->id)->where("user_id", $this->contact->user->id);
     }
 
     private function applyInvestorScope($builder, Investor $model)
     {
-        $cgp = CGP::where('contact_id', $this->contact->id)->firstOrFail();
+        $cgp = CGP::ofContact($this->contact, true)->first();
+
+        if($cgp){
+            return $builder->where("cgp_attached", $cgp->id);
+        }
+        $cgp = CGP::ofContact($this->contact)->firstOrFail();
+
         $builder->where("cgp_attached", $cgp->id);
     }
 
     private function applyTauxCGPScope($builder, TauxCGP $model)
     {
-        $cgp = CGP::where('contact_id', $this->contact->id)->firstOrFail();
+        $cgp = CGP::ofContact($this->contact)->firstOrFail();
         $builder->where("cgps_id", $cgp->id);
     }
 }

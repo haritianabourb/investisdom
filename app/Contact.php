@@ -21,6 +21,17 @@ class Contact extends Model
       'full_name_func_civ',
   ];
 
+  public function user(){
+    return $this->belongsTo(User::class, 'user_id');
+  }
+
+  public function scopeOfUser($query, User $user)
+  {
+      $query->whereHas("user", function($query) use ($user){
+          $query->where('id', $user->id);
+      });
+  }
+
   public function getFullNameAttribute()
   {
       return "{$this->fistname} ".strtoupper($this->lastname);

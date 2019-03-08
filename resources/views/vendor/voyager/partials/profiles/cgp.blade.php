@@ -1,7 +1,8 @@
-@php($contact = \App\Contact::where('user_id', Auth::user()->id)->first())
-@php($cgp = \App\CGP::where('contact_id', $contact->id)->first())
+@php($cgp = \App\CGP::ofContact($contact)->first())
+@php($representor = \App\Contact::find($cgp->contact_id))
 <div class="container">
     @isset($cgp)
+        <hr/>
         <div class="row">
             <div class="col-md-6 table-responsive">
                 <h3 class="text-center">Informations du CGP: {{$cgp->name}}</h3>
@@ -62,23 +63,23 @@
                     </tbody>
                 </table>
             </div>
-            @isset($contact)
             <div class="col-md-6 table-responsive">
+            @if(isset($representor) && !$representor->is($contact))
                 <h3 class="text-center">Informations du Représentant</h3>
                 <table class="table table-striped table-hover">
                     <tbody>
                         <tr>
                             <td>Civilité du représentant</td>
-                            <td>{{$contact->civilite == 1 ? "Mr" : "Mme"}}</td>
+                            <td>{{$representor->civilite == 1 ? "Mr" : "Mme"}}</td>
 
                         </tr>
                         <tr>
                             <td>Nom</td>
-                            <td>{{$contact->fistname}}</td>
+                            <td>{{$representor->fistname}}</td>
                         </tr>
                         <tr>
                             <td>Prénom</td>
-                            <td>{{$contact->lastname}}</td>
+                            <td>{{$representor->lastname}}</td>
                         </tr>
                         <tr>
                             <td>Fonction</td>
@@ -86,24 +87,27 @@
                         </tr>
                         <tr>
                             <td>Téléphone</td>
-                            <td>{{$contact->tel_fixe}}</td>
+                            <td>{{$representor->tel_fixe}}</td>
                         </tr>
                         <tr>
                             <td>Mobile</td>
-                            <td>{{$contact->gsm}}</td>
+                            <td>{{$representor->gsm}}</td>
                         </tr>
                         <tr>
                             <td>Fax</td>
-                            <td>{{$contact->fax}}</td>
+                            <td>{{$representor->fax}}</td>
                         </tr>
                         <tr>
                             <td>Courriel</td>
-                            <td><a href="mailto:{{$contact->email}}">{{$contact->email}}</a></td>
+                            <td><a href="mailto:{{$representor->email}}">{{$representor->email}}</a></td>
                         </tr>
                     </tbody>
                 </table>
+                @else
+                    <h3 class="text-center">Contact du CGP: {{$cgp->name}}</h3>
+                    @include("voyager::formfields.custom.cgps.contacts-show", ["selected_values" => $cgp->contacts])
+            @endif
             </div>
         </div>
-        @endisset
     @endisset
 </div>
