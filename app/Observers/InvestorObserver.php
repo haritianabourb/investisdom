@@ -31,7 +31,7 @@ class InvestorObserver
 
             $contact = Contact::ofUser(\Auth::user());
 
-            $cgp = CGP::ofContact($contact);
+            $cgp = CGP::ofContact($contact)->first();
 
             $investor->cgp_attached = $investor->cgp_id = $cgp->id;
 
