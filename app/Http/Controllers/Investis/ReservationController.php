@@ -224,21 +224,21 @@ class ReservationController extends VoyagerBaseController
                     [
                         "subject" => __("yousign.email.procedure.started.subject"),
                         "message" => __("yousign.email.procedure.started.message"),
-                        "to" => ["@author"],
+                        "to" => ["@creator"],
                     ]
                 ],
                 "procedure.finished" => [
                     [
                         "subject" => __("yousign.email.procedure.finnished.subject"),
                         "message" => __("yousign.email.procedure.finnished.message"),
-                        "to" => ["@author"],
+                        "to" => ["@creator"],
                     ]
                 ],
                 "procedure.refused" => [
                     [
                         "subject" => __("yousign.email.procedure.refused.subject"),
                         "message" => __("yousign.email.procedure.refused.message"),
-                        "to" => ["@author"],
+                        "to" => ["@creator"],
                     ]
                 ]
             ]
