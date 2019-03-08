@@ -41,11 +41,7 @@ class ReservationController extends VoyagerBaseController
 
         // Create author (Investis)
         $author = collect([
-            "firstname" => "Auteur",
-            "lastname" => "man",
-            "phone" => "0692491170",
-            "email" => "matthieu.gurak@gmail.com",
-//            'user' => "/users/" . env('YOUSIGN_APP_USER'),
+            'user' => "/users/" . env('YOUSIGN_APP_USER'),
             'type' => "signer",
             'position' => 2,
             'fileObjects' => collect([
@@ -80,14 +76,10 @@ class ReservationController extends VoyagerBaseController
 
         // Create the investor
         $contact = collect([
-            "firstname" => "Investor",
-            "lastname" => "Man",
-            "phone" => "0692234821",
-            "email" => "bourbondigital974@gmail.com",
-//            "firstname" => $investor->name_invest,
-//            "lastname" => $investor->prenom_invest,
-//            "phone" => $investor->gsm_invest,
-//            "email" => $investor->email_invest,
+            "firstname" => $investor->name_invest,
+            "lastname" => $investor->prenom_invest,
+            "phone" => $investor->gsm_invest,
+            "email" => $investor->email_invest,
             "type" => "signer",
             "position" => 1,
             'fileObjects' => collect([
@@ -135,14 +127,10 @@ class ReservationController extends VoyagerBaseController
 
         // create the CGP
         $validator = collect([
-//            "firstname" => $cgp_contact->fistname,
-//            "lastname" => $cgp_contact->lastname,
-//            "phone" => $cgp_contact->gsm,
-//            "email" => $cgp_contact->email,
-            "firstname" => "CGP",
-            "lastname" => "man",
-            "phone" => "0692491170",
-            "email" => "evolution974@gmail.com",
+            "firstname" => $cgp_contact->fistname,
+            "lastname" => $cgp_contact->lastname,
+            "phone" => $cgp_contact->gsm,
+            "email" => $cgp_contact->email,
             "type" => "validator",
             "position" => 3,
         ]);
