@@ -1,7 +1,7 @@
 <?php
 return [
     "file" => [
-        "name"
+        "name" => "fichier"
     ],
     "fileObjects" => [
       "author" => [
@@ -19,7 +19,7 @@ return [
             ],
             "finnished" => [
                 "subject" => "Votre contrat sur Yousign a été signé!",
-                "message" => "Bonjour <tag data-tag-type='string' data-tag-name='recipient.firstname'></tag> <tag data-tag-type='string' data-tag-name='recipient.lastname'></tag>, <br><br> Votre Contrat de Reservation a été, Veuillez cliquer ici pour être redirigé: <tag data-tag-type='button' data-tag-name='url' data-tag-title='Access to documents'>Accés aux documents</tag>"
+                "message" => "Bonjour <tag data-tag-type='string' data-tag-name='recipient.firstname'></tag> <tag data-tag-type='string' data-tag-name='recipient.lastname'></tag>, <br><br> Votre Contrat de Reservation a été signé, Veuillez cliquer ici pour être redirigé: <tag data-tag-type='button' data-tag-name='url' data-tag-title='Access to documents'>Accés aux documents</tag>"
             ],
         ],
         "procedure" => [
