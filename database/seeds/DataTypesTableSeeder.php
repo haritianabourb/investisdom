@@ -249,7 +249,7 @@ class DataTypesTableSeeder extends Seeder
                 'server_side' => 0,
                 'details' => '{"order_column":null,"order_display_column":null}',
                 'created_at' => '2018-09-10 15:38:45',
-                'updated_at' => '2019-02-21 05:38:52',
+                'updated_at' => '2019-03-07 05:15:41',
             ),
             13 => 
             array (
@@ -289,24 +289,6 @@ class DataTypesTableSeeder extends Seeder
             ),
             15 => 
             array (
-                'id' => 17,
-                'name' => 'reservations',
-                'slug' => 'reservations',
-                'display_name_singular' => 'Réservation',
-                'display_name_plural' => 'Réservations',
-                'icon' => 'voyager-receipt',
-                'model_name' => 'App\\Reservation',
-                'policy_name' => 'App\\Policies\\ReservationPolicy',
-                'controller' => NULL,
-                'description' => NULL,
-                'generate_permissions' => 1,
-                'server_side' => 0,
-                'details' => '{"order_column":null,"order_display_column":null}',
-                'created_at' => '2018-09-19 17:13:08',
-                'updated_at' => '2019-02-26 06:34:15',
-            ),
-            16 => 
-            array (
                 'id' => 22,
                 'name' => 'mandat',
                 'slug' => 'mandat',
@@ -322,6 +304,24 @@ class DataTypesTableSeeder extends Seeder
                 'details' => '{"order_column":null,"order_display_column":null}',
                 'created_at' => '2018-09-26 06:30:26',
                 'updated_at' => '2019-02-26 06:34:55',
+            ),
+            16 => 
+            array (
+                'id' => 17,
+                'name' => 'reservations',
+                'slug' => 'reservations',
+                'display_name_singular' => 'Réservation',
+                'display_name_plural' => 'Réservations',
+                'icon' => 'voyager-receipt',
+                'model_name' => 'App\\Reservation',
+                'policy_name' => 'App\\Policies\\ReservationPolicy',
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null}',
+                'created_at' => '2018-09-19 17:13:08',
+                'updated_at' => '2019-03-08 08:31:56',
             ),
             17 => 
             array (

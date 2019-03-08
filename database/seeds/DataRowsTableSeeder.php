@@ -1267,19 +1267,19 @@ class DataRowsTableSeeder extends Seeder
             ),
             78 => 
             array (
-                'id' => 253,
-                'data_type_id' => 7,
-                'field' => 'contact_status',
-                'type' => 'select_dropdown',
-                'display_name' => 'Poste du Représentant',
-                'required' => 0,
+                'id' => 189,
+                'data_type_id' => 17,
+                'field' => 'id',
+                'type' => 'text',
+                'display_name' => 'Id',
+                'required' => 1,
                 'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"options":{"Commercial":"Commercial","Pr\\u00e9sident":"Pr\\u00e9sident","Directeur_commercial":"Directeur commercial","Fournisseur":"Fournisseur","G\\u00e9rant":"G\\u00e9rant","Informaticien":"Directeur g\\u00e9n\\u00e9ral","President":"Pr\\u00e9sident","Vice-President":"Vice-Pr\\u00e9sident","Secretaire":"Secr\\u00e9taire","Service_entreprise":"Service entreprise","Habilit\\u00e9":"Habilit\\u00e9","Autre_fonction":"Autre fonction"},"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
-                'order' => 21,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => '{}',
+                'order' => 1,
             ),
             79 => 
             array (
@@ -1295,7 +1295,7 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 0,
                 'details' => '{"display":{"width":"8"}}',
-                'order' => 28,
+                'order' => 29,
             ),
             80 => 
             array (
@@ -1635,22 +1635,6 @@ class DataRowsTableSeeder extends Seeder
             ),
             101 => 
             array (
-                'id' => 244,
-                'data_type_id' => 7,
-                'field' => 'cgp_belongsto_contact_relationship',
-                'type' => 'relationship',
-                'display_name' => 'Représentant légal',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => '{"model":"App\\\\Contact","table":"contacts","type":"belongsTo","column":"contact_id","key":"id","label":"full_name","pivot_table":"addresses","pivot":"0","taggable":"0"}',
-                'order' => 20,
-            ),
-            102 => 
-            array (
                 'id' => 304,
                 'data_type_id' => 22,
                 'field' => 'taux_pret',
@@ -1665,7 +1649,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 56,
             ),
-            103 => 
+            102 => 
             array (
                 'id' => 305,
                 'data_type_id' => 22,
@@ -1681,7 +1665,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"default":"1"}',
                 'order' => 57,
             ),
-            104 => 
+            103 => 
             array (
                 'id' => 363,
                 'data_type_id' => 13,
@@ -1697,7 +1681,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"0":"non","1":"oui"},"display":{"width":"3"},"modal":true}',
                 'order' => 19,
             ),
-            105 => 
+            104 => 
             array (
                 'id' => 404,
                 'data_type_id' => 13,
@@ -1713,7 +1697,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"options":{"01.11":"01.11 : Culture de céréales (à l\'exception du riz), de légumineuses et de graines oléagineuses","01.11Z":"01.11Z : Culture de céréales (à l\'exception du riz), de légumineuses et de graines oléagineuses","01.12":"01.12 : Culture du riz","01.12Z":"01.12Z : Culture du riz","01.13":"01.13 : Culture de légumes, de melons, de racines et de tubercules","01.13Z":"01.13Z : Culture de légumes, de melons, de racines et de tubercules","01.14":"01.14 : Culture de la canne à sucre","01.14Z":"01.14Z : Culture de la canne à sucre","01.15":"01.15 : Culture du tabac","01.15Z":"01.15Z : Culture du tabac","01.16":"01.16 : Culture de plantes à fibres","01.16Z":"01.16Z : Culture de plantes à fibres","01.19":"01.19 : Autres cultures non permanentes","01.19Z":"01.19Z : Autres cultures non permanentes","01.2":"01.2 : Cultures permanentes","01.21":"01.21 : Culture de la vigne","01.21Z":"01.21Z : Culture de la vigne","01.22":"01.22 : Culture de fruits tropicaux et subtropicaux","01.22Z":"01.22Z : Culture de fruits tropicaux et subtropicaux","01.23":"01.23 : Culture d\'agrumes","01.23Z":"01.23Z : Culture d\'agrumes","01.24":"01.24 : Culture de fruits à pépins et à noyau","01.24Z":"01.24Z : Culture de fruits à pépins et à noyau","01.25":"01.25 : Culture d\'autres fruits d\'arbres ou d\'arbustes et de fruits à coque","01.25Z":"01.25Z : Culture d\'autres fruits d\'arbres ou d\'arbustes et de fruits à coque","01.26":"01.26 : Culture de fruits oléagineux","01.26Z":"01.26Z : Culture de fruits oléagineux","01.27":"01.27 : Culture de plantes à boissons","01.27Z":"01.27Z : Culture de plantes à boissons","01.28":"01.28 : Culture de plantes à épices, aromatiques, médicinales et pharmaceutiques","01.28Z":"01.28Z : Culture de plantes à épices, aromatiques, médicinales et pharmaceutiques","01.29":"01.29 : Autres cultures permanentes","01.29Z":"01.29Z : Autres cultures permanentes","01.3":"01.3 : Reproduction de plantes","01.30":"01.30 : Reproduction de plantes","01.30Z":"01.30Z : Reproduction de plantes","01.4":"01.4 : Production animale","01.41":"01.41 : élevage de vaches laitiéres","01.41Z":"01.41Z : élevage de vaches laitiéres","01.42":"01.42 : élevage d\'autres bovins et de buffles","01.42Z":"01.42Z : élevage d\'autres bovins et de buffles","01.43":"01.43 : élevage de chevaux et d\'autres équidés","01.43Z":"01.43Z : élevage de chevaux et d\'autres équidés","01.44":"01.44 : élevage de chameaux et d\'autres camélidés","01.44Z":"01.44Z : élevage de chameaux et d\'autres camélidés","01.45":"01.45 : élevage d\'ovins et de caprins","01.45Z":"01.45Z : élevage d\'ovins et de caprins","01.46":"01.46 : élevage de porcins","01.46Z":"01.46Z : élevage de porcins","01.47":"01.47 : élevage de volailles","01.47Z":"01.47Z : élevage de volailles","01.49":"01.49 : élevage d\'autres animaux","01.49Z":"01.49Z : élevage d\'autres animaux","01.5":"01.5 : Culture et élevage associés","01.50":"01.50 : Culture et élevage associés","01.50Z":"01.50Z : Culture et élevage associés","01.6":"01.6 : Activités de soutien à l\'agriculture et traitement primaire des récoltes","01.61":"01.61 : Activités de soutien aux cultures","01.61Z":"01.61Z : Activités de soutien aux cultures","01.62":"01.62 : Activités de soutien à la production animale","01.62Z":"01.62Z : Activités de soutien à la production animale","01.63":"01.63 : Traitement primaire des récoltes","01.63Z":"01.63Z : Traitement primaire des récoltes","01.64":"01.64 : Traitement des semences","01.64Z":"01.64Z : Traitement des semences","01.7":"01.7 : Chasse, piégeage et services annexes","01.70":"01.70 : Chasse, piégeage et services annexes","01.70Z":"01.70Z : Chasse, piégeage et services annexes","02.1":"02.1 : Sylviculture et autres activités forestiéres","02.10":"02.10 : Sylviculture et autres activités forestiéres","02.10Z":"02.10Z : Sylviculture et autres activités forestiéres","02.2":"02.2 : Exploitation forestiére","02.20":"02.20 : Exploitation forestiére","02.20Z":"02.20Z : Exploitation forestiére","02.3":"02.3 : Récolte de produits forestiers non ligneux poussant à l\'état sauvage","02.30":"02.30 : Récolte de produits forestiers non ligneux poussant à l\'état sauvage","02.30Z":"02.30Z : Récolte de produits forestiers non ligneux poussant à l\'état sauvage","02.4":"02.4 : Services de soutien à l\'exploitation forestiére","02.40":"02.40 : Services de soutien à l\'exploitation forestiére","02.40Z":"02.40Z : Services de soutien à l\'exploitation forestiére","03.1":"03.1 : Péche","03.11":"03.11 : Péche en mer","03.11Z":"03.11Z : Péche en mer","03.12":"03.12 : Péche en eau douce","03.12Z":"03.12Z : Péche en eau douce","03.2":"03.2 : Aquaculture","03.21":"03.21 : Aquaculture en mer","03.21Z":"03.21Z : Aquaculture en mer","03.22":"03.22 : Aquaculture en eau douce","03.22Z":"03.22Z : Aquaculture en eau douce","05.1":"05.1 : Extraction de houille","05.10":"05.10 : Extraction de houille","05.10Z":"05.10Z : Extraction de houille","05.2":"05.2 : Extraction de lignite","05.20":"05.20 : Extraction de lignite","05.20Z":"05.20Z : Extraction de lignite","06":"06 : Extraction d\'hydrocarbures","06.1":"06.1 : Extraction de pétrole brut","06.10":"06.10 : Extraction de pétrole brut","06.10Z":"06.10Z : Extraction de pétrole brut","06.2":"06.2 : Extraction de gaz naturel","06.20":"06.20 : Extraction de gaz naturel","06.20Z":"06.20Z : Extraction de gaz naturel","07.1":"07.1 : Extraction de minerais de fer","07.10":"07.10 : Extraction de minerais de fer","07.10Z":"07.10Z : Extraction de minerais de fer","07.2":"07.2 : Extraction de minerais de métaux non ferreux","07.21":"07.21 : Extraction de minerais d\'uranium et de thorium","07.21Z":"07.21Z : Extraction de minerais d\'uranium et de thorium","07.29":"07.29 : Extraction d\'autres minerais de métaux non ferreux","07.29Z":"07.29Z : Extraction d\'autres minerais de métaux non ferreux","08.1":"08.1 : Extraction de pierres, de sables et d\'argiles","08.11":"08.11 : Extraction de pierres ornementales et de construction, de calcaire industriel, de gypse, de craie et d\'ardoise","08.11Z":"08.11Z : Extraction de pierres ornementales et de construction, de calcaire industriel, de gypse, de craie et d\'ardoise","08.12":"08.12 : Exploitation de graviéres et sabliéres, extraction déargiles et de kaolin","08.12Z":"08.12Z : Exploitation de graviéres et sabliéres, extraction déargiles et de kaolin","08.9":"08.9 : Activités extractives n.c.a.","08.91":"08.91 : Extraction des minéraux chimiques et d\'engrais minéraux","08.91Z":"08.91Z : Extraction des minéraux chimiques et d\'engrais minéraux","08.92":"08.92 : Extraction de tourbe","08.92Z":"08.92Z : Extraction de tourbe","08.93":"08.93 : Production de sel","08.93Z":"08.93Z : Production de sel","08.99":"08.99 : Autres activités extractives n.c.a.","08.99Z":"08.99Z : Autres activités extractives n.c.a.","09.1":"09.1 : Activités de soutien à l\'extraction d\'hydrocarbures","09.10":"09.10 : Activités de soutien à l\'extraction d\'hydrocarbures","09.10Z":"09.10Z : Activités de soutien à l\'extraction d\'hydrocarbures","09.9":"09.9 : Activités de soutien aux autres industries extractives","09.90":"09.90 : Activités de soutien aux autres industries extractives","09.90Z":"09.90Z : Activités de soutien aux autres industries extractives","10.1":"10.1 : Transformation et conservation de la viande et préparation de produits à base de viande","10.11":"10.11 : Transformation et conservation de la viande de boucherie","10.11Z":"10.11Z : Transformation et conservation de la viande de boucherie","10.12":"10.12 : Transformation et conservation de la viande de volaille","10.12Z":"10.12Z : Transformation et conservation de la viande de volaille","10.13":"10.13 : Préparation de produits à base de viande","10.13A":"10.13A : Préparation industrielle de produits à base de viande","10.13B":"10.13B : Charcuterie","10.2":"10.2 : Transformation et conservation de poisson, de crustacés et de mollusques","10.20":"10.20 : Transformation et conservation de poisson, de crustacés et de mollusques","10.20Z":"10.20Z : Transformation et conservation de poisson, de crustacés et de mollusques","10.3":"10.3 : Transformation et conservation de fruits et légumes","10.31":"10.31 : Transformation et conservation de pommes de terre","10.31Z":"10.31Z : Transformation et conservation de pommes de terre","10.32":"10.32 : Préparation de jus de fruits et légumes","10.32Z":"10.32Z : Préparation de jus de fruits et légumes","10.39":"10.39 : Autre transformation et conservation de fruits et légumes","10.39A":"10.39A : Autre transformation et conservation de légumes","10.39B":"10.39B : Transformation et conservation de fruits","10.4":"10.4 : Fabrication déhuiles et graisses végétales et animales","10.41":"10.41 : Fabrication d\'huiles et graisses","10.41A":"10.41A : Fabrication d\'huiles et graisses brutes","10.41B":"10.41B : Fabrication d\'huiles et graisses raffinées","10.42":"10.42 : Fabrication de margarine et graisses comestibles similaires","10.42Z":"10.42Z : Fabrication de margarine et graisses comestibles similaires","10.5":"10.5 : Fabrication de produits laitiers","10.51":"10.51 : Exploitation de laiteries et fabrication de fromage","10.51A":"10.51A : Fabrication de lait liquide et de produits frais","10.51B":"10.51B : Fabrication de beurre","10.51C":"10.51C : Fabrication de fromage","10.51D":"10.51D : Fabrication d\'autres produits laitiers","10.52":"10.52 : Fabrication de glaces et sorbets","10.52Z":"10.52Z : Fabrication de glaces et sorbets","10.6":"10.6 : Travail des grains ; fabrication de produits amylacés","10.61":"10.61 : Travail des grains","10.61A":"10.61A : Meunerie","10.61B":"10.61B : Autres activités du travail des grains","10.62":"10.62 : Fabrication de produits amylacés","10.62Z":"10.62Z : Fabrication de produits amylacés","10.7":"10.7 : Fabrication de produits de boulangerie-pétisserie et de pétes alimentaires","10.71":"10.71 : Fabrication de pain et de pétisserie fraéche","10.71A":"10.71A : Fabrication industrielle de pain et de pétisserie fraéche","10.71B":"10.71B : Cuisson de produits de boulangerie","10.71C":"10.71C : Boulangerie et boulangerie-pétisserie","10.71D":"10.71D : Pétisserie","10.72":"10.72 : Fabrication de biscuits, biscottes et pétisseries de conservation","10.72Z":"10.72Z : Fabrication de biscuits, biscottes et pétisseries de conservation","10.73":"10.73 : Fabrication de pétes alimentaires","10.73Z":"10.73Z : Fabrication de pétes alimentaires","10.8":"10.8 : Fabrication d\'autres produits alimentaires","10.81":"10.81 : Fabrication de sucre","10.81Z":"10.81Z : Fabrication de sucre","10.82":"10.82 : Fabrication de cacao, chocolat et de produits de confiserie","10.82Z":"10.82Z : Fabrication de cacao, chocolat et de produits de confiserie","10.83":"10.83 : Transformation du thé et du café","10.83Z":"10.83Z : Transformation du thé et du café","10.84":"10.84 : Fabrication de condiments et assaisonnements","10.84Z":"10.84Z : Fabrication de condiments et assaisonnements","10.85":"10.85 : Fabrication de plats préparés","10.85Z":"10.85Z : Fabrication de plats préparés","10.86":"10.86 : Fabrication d\'aliments homogénéisés et diététiques","10.86Z":"10.86Z : Fabrication d\'aliments homogénéisés et diététiques","10.89":"10.89 : Fabrication d\'autres produits alimentaires n.c.a.","10.89Z":"10.89Z : Fabrication d\'autres produits alimentaires n.c.a.","10.9":"10.9 : Fabrication d\'aliments pour animaux","10.91":"10.91 : Fabrication d\'aliments pour animaux de ferme","10.91Z":"10.91Z : Fabrication d\'aliments pour animaux de ferme","10.92":"10.92 : Fabrication d\'aliments pour animaux de compagnie","10.92Z":"10.92Z : Fabrication d\'aliments pour animaux de compagnie","11.0":"11.0 : Fabrication de boissons","11.01":"11.01 : Production de boissons alcooliques distillées","11.01Z":"11.01Z : Production de boissons alcooliques distillées","11.02":"11.02 : Production de vin (de raisin)","11.02A":"11.02A : Fabrication de vins effervescents","11.02B":"11.02B : Vinification","11.03":"11.03 : Fabrication de cidre et de vins de fruits","11.03Z":"11.03Z : Fabrication de cidre et de vins de fruits","11.04":"11.04 : Production d\'autres boissons fermentées non distillées","11.04Z":"11.04Z : Production d\'autres boissons fermentées non distillées","11.05":"11.05 : Fabrication de biére","11.05Z":"11.05Z : Fabrication de biére","11.06":"11.06 : Fabrication de malt","11.06Z":"11.06Z : Fabrication de malt","11.07":"11.07 : Industrie des eaux minérales et autres eaux embouteillées et des boissons rafraéchissantes","11.07A":"11.07A : Industrie des eaux de table","11.07B":"11.07B : Production de boissons rafraéchissantes","12.0":"12.0 : Fabrication de produits à base de tabac","12.00":"12.00 : Fabrication de produits à base de tabac","12.00Z":"12.00Z : Fabrication de produits à base de tabac","13.1":"13.1 : Préparation de fibres textiles et filature","13.10":"13.10 : Préparation de fibres textiles et filature","13.10Z":"13.10Z : Préparation de fibres textiles et filature","13.2":"13.2 : Tissage","13.20":"13.20 : Tissage","13.20Z":"13.20Z : Tissage","13.3":"13.3 : Ennoblissement textile","13.30":"13.30 : Ennoblissement textile","13.30Z":"13.30Z : Ennoblissement textile","13.9":"13.9 : Fabrication d\'autres textiles","13.91":"13.91 : Fabrication d\'étoffes à mailles","13.91Z":"13.91Z : Fabrication d\'étoffes à mailles","13.92":"13.92 : Fabrication d\'articles textiles, sauf habillement","13.92Z":"13.92Z : Fabrication d\'articles textiles, sauf habillement","13.93":"13.93 : Fabrication de tapis et moquettes","13.93Z":"13.93Z : Fabrication de tapis et moquettes","13.94":"13.94 : Fabrication de ficelles, cordes et filets","13.94Z":"13.94Z : Fabrication de ficelles, cordes et filets","13.95":"13.95 : Fabrication de non-tissés, sauf habillement","13.95Z":"13.95Z : Fabrication de non-tissés, sauf habillement","13.96":"13.96 : Fabrication d\'autres textiles techniques et industriels","13.96Z":"13.96Z : Fabrication d\'autres textiles techniques et industriels","13.99":"13.99 : Fabrication d\'autres textiles n.c.a.","13.99Z":"13.99Z : Fabrication d\'autres textiles n.c.a.","14.1":"14.1 : Fabrication de vétements, autres qu\'en fourrure","14.11":"14.11 : Fabrication de vétements en cuir","14.11Z":"14.11Z : Fabrication de vétements en cuir","14.12":"14.12 : Fabrication de vétements de travail","14.12Z":"14.12Z : Fabrication de vétements de travail","14.13":"14.13 : Fabrication de vétements de dessus","14.13Z":"14.13Z : Fabrication de vétements de dessus","14.14":"14.14 : Fabrication de vétements de dessous","14.14Z":"14.14Z : Fabrication de vétements de dessous","14.19":"14.19 : Fabrication d\'autres vétements et accessoires","14.19Z":"14.19Z : Fabrication d\'autres vétements et accessoires","14.2":"14.2 : Fabrication d\'articles en fourrure","14.20":"14.20 : Fabrication d\'articles en fourrure","14.20Z":"14.20Z : Fabrication d\'articles en fourrure","14.3":"14.3 : Fabrication d\'articles à mailles","14.31":"14.31 : Fabrication d\'articles chaussants à mailles","14.31Z":"14.31Z : Fabrication d\'articles chaussants à mailles","14.39":"14.39 : Fabrication d\'autres articles à mailles","14.39Z":"14.39Z : Fabrication d\'autres articles à mailles","15.1":"15.1 : Apprét et tannage des cuirs ; préparation et teinture des fourrures ; fabrication d\'articles de voyage, de maroquinerie et de sellerie","15.11":"15.11 : Apprét et tannage des cuirs ; préparation et teinture des fourrures","15.11Z":"15.11Z : Apprét et tannage des cuirs ; préparation et teinture des fourrures","15.12":"15.12 : Fabrication d\'articles de voyage, de maroquinerie et de sellerie","15.12Z":"15.12Z : Fabrication d\'articles de voyage, de maroquinerie et de sellerie","15.2":"15.2 : Fabrication de chaussures","15.20":"15.20 : Fabrication de chaussures","15.20Z":"15.20Z : Fabrication de chaussures","16.1":"16.1 : Sciage et rabotage du bois","16.10":"16.10 : Sciage et rabotage du bois","16.10A":"16.10A : Sciage et rabotage du bois, hors imprégnation","16.10B":"16.10B : Imprégnation du bois","16.2":"16.2 : Fabrication d\'articles en bois, liége, vannerie et sparterie","16.21":"16.21 : Fabrication de placage et de panneaux de bois","16.21Z":"16.21Z : Fabrication de placage et de panneaux de bois","16.22":"16.22 : Fabrication de parquets assemblés","16.22Z":"16.22Z : Fabrication de parquets assemblés","16.23":"16.23 : Fabrication de charpentes et d\'autres menuiseries","16.23Z":"16.23Z : Fabrication de charpentes et d\'autres menuiseries","16.24":"16.24 : Fabrication d\'emballages en bois","16.24Z":"16.24Z : Fabrication d\'emballages en bois","16.29":"16.29 : Fabrication d\'objets divers en bois ; fabrication d\'objets en liége, vannerie et sparterie","16.29Z":"16.29Z : Fabrication d\'objets divers en bois ; fabrication d\'objets en liége, vannerie et sparterie","17.1":"17.1 : Fabrication de péte à papier, de papier et de carton","17.11":"17.11 : Fabrication de péte à papier","17.11Z":"17.11Z : Fabrication de péte à papier","17.12":"17.12 : Fabrication de papier et de carton","17.12Z":"17.12Z : Fabrication de papier et de carton","17.2":"17.2 : Fabrication d\'articles en papier ou en carton","17.21":"17.21 : Fabrication de papier et carton ondulés et d\'emballages en papier ou en carton","17.21A":"17.21A : Fabrication de carton ondulé","17.21B":"17.21B : Fabrication de cartonnages","17.21C":"17.21C : Fabrication d\'emballages en papier","17.22":"17.22 : Fabrication d\'articles en papier à usage sanitaire ou domestique","17.22Z":"17.22Z : Fabrication d\'articles en papier à usage sanitaire ou domestique","17.23":"17.23 : Fabrication d\'articles de papeterie","17.23Z":"17.23Z : Fabrication d\'articles de papeterie","17.24":"17.24 : Fabrication de papiers peints","17.24Z":"17.24Z : Fabrication de papiers peints","17.29":"17.29 : Fabrication d\'autres articles en papier ou en carton","17.29Z":"17.29Z : Fabrication d\'autres articles en papier ou en carton","18.1":"18.1 : Imprimerie et services annexes","18.11":"18.11 : Imprimerie de journaux","18.11Z":"18.11Z : Imprimerie de journaux","18.12":"18.12 : Autre imprimerie (labeur)","18.12Z":"18.12Z : Autre imprimerie (labeur)","18.13":"18.13 : Activités de pré-presse","18.13Z":"18.13Z : Activités de pré-presse","18.14":"18.14 : Reliure et activités connexes","18.14Z":"18.14Z : Reliure et activités connexes","18.2":"18.2 : Reproduction d\'enregistrements","18.20":"18.20 : Reproduction d\'enregistrements","18.20Z":"18.20Z : Reproduction d\'enregistrements","19.1":"19.1 : Cokéfaction","19.10":"19.10 : Cokéfaction","19.10Z":"19.10Z : Cokéfaction","19.2":"19.2 : Raffinage du pétrole","19.20":"19.20 : Raffinage du pétrole","19.20Z":"19.20Z : Raffinage du pétrole","20.1":"20.1 : Fabrication de produits chimiques de base, de produits azotés et d\'engrais, de matiéres plastiques de base et de caoutchouc synthétique","20.11":"20.11 : Fabrication de gaz industriels","20.11Z":"20.11Z : Fabrication de gaz industriels","20.12":"20.12 : Fabrication de colorants et de pigments","20.12Z":"20.12Z : Fabrication de colorants et de pigments","20.13":"20.13 : Fabrication d\'autres produits chimiques inorganiques de base","20.13A":"20.13A : Enrichissement et retraitement de matiéres nucléaires","20.13B":"20.13B : Fabrication d\'autres produits chimiques inorganiques de base n.c.a.","20.14":"20.14 : Fabrication d\'autres produits chimiques organiques de base","20.14Z":"20.14Z : Fabrication d\'autres produits chimiques organiques de base","20.15":"20.15 : Fabrication de produits azotés et d\'engrais","20.15Z":"20.15Z : Fabrication de produits azotés et d\'engrais","20.16":"20.16 : Fabrication de matiéres plastiques de base","20.16Z":"20.16Z : Fabrication de matiéres plastiques de base","20.17":"20.17 : Fabrication de caoutchouc synthétique","20.17Z":"20.17Z : Fabrication de caoutchouc synthétique","20.2":"20.2 : Fabrication de pesticides et déautres produits agrochimiques","20.20":"20.20 : Fabrication de pesticides et déautres produits agrochimiques","20.20Z":"20.20Z : Fabrication de pesticides et déautres produits agrochimiques","20.3":"20.3 : Fabrication de peintures, vernis, encres et mastics","20.30":"20.30 : Fabrication de peintures, vernis, encres et mastics","20.30Z":"20.30Z : Fabrication de peintures, vernis, encres et mastics","20.4":"20.4 : Fabrication de savons, de produits d\'entretien et de parfums","20.41":"20.41 : Fabrication de savons, détergents et produits d\'entretien","20.41Z":"20.41Z : Fabrication de savons, détergents et produits d\'entretien","20.42":"20.42 : Fabrication de parfums et de produits pour la toilette","20.42Z":"20.42Z : Fabrication de parfums et de produits pour la toilette","20.5":"20.5 : Fabrication d\'autres produits chimiques","20.51":"20.51 : Fabrication de produits explosifs","20.51Z":"20.51Z : Fabrication de produits explosifs","20.52":"20.52 : Fabrication de colles","20.52Z":"20.52Z : Fabrication de colles","20.53":"20.53 : Fabrication d\'huiles essentielles","20.53Z":"20.53Z : Fabrication d\'huiles essentielles","20.59":"20.59 : Fabrication d\'autres produits chimiques n.c.a.","20.59Z":"20.59Z : Fabrication d\'autres produits chimiques n.c.a.","20.6":"20.6 : Fabrication de fibres artificielles ou synthétiques","20.60":"20.60 : Fabrication de fibres artificielles ou synthétiques","20.60Z":"20.60Z : Fabrication de fibres artificielles ou synthétiques","21.1":"21.1 : Fabrication de produits pharmaceutiques de base","21.10":"21.10 : Fabrication de produits pharmaceutiques de base","21.10Z":"21.10Z : Fabrication de produits pharmaceutiques de base","21.2":"21.2 : Fabrication de préparations pharmaceutiques","21.20":"21.20 : Fabrication de préparations pharmaceutiques","21.20Z":"21.20Z : Fabrication de préparations pharmaceutiques","22.1":"22.1 : Fabrication de produits en caoutchouc","22.11":"22.11 : Fabrication et rechapage de pneumatiques","22.11Z":"22.11Z : Fabrication et rechapage de pneumatiques","22.19":"22.19 : Fabrication d\'autres articles en caoutchouc","22.19Z":"22.19Z : Fabrication d\'autres articles en caoutchouc","22.2":"22.2 : Fabrication de produits en plastique","22.21":"22.21 : Fabrication de plaques, feuilles, tubes et profilés en matiéres plastiques","22.21Z":"22.21Z : Fabrication de plaques, feuilles, tubes et profilés en matiéres plastiques","22.22":"22.22 : Fabrication d\'emballages en matiéres plastiques","22.22Z":"22.22Z : Fabrication d\'emballages en matiéres plastiques","22.23":"22.23 : Fabrication d\'éléments en matiéres plastiques pour la construction","22.23Z":"22.23Z : Fabrication d\'éléments en matiéres plastiques pour la construction","22.29":"22.29 : Fabrication d\'autres articles en matiéres plastiques","22.29A":"22.29A : Fabrication de piéces techniques à base de matiéres plastiques","22.29B":"22.29B : Fabrication de produits de consommation courante en matiéres plastiques","23.1":"23.1 : Fabrication de verre et d\'articles en verre","23.11":"23.11 : Fabrication de verre plat","23.11Z":"23.11Z : Fabrication de verre plat","23.12":"23.12 : Faéonnage et transformation du verre plat","23.12Z":"23.12Z : Faéonnage et transformation du verre plat","23.13":"23.13 : Fabrication de verre creux","23.13Z":"23.13Z : Fabrication de verre creux","23.14":"23.14 : Fabrication de fibres de verre","23.14Z":"23.14Z : Fabrication de fibres de verre","23.19":"23.19 : Fabrication et faéonnage d\'autres articles en verre, y compris verre technique","23.19Z":"23.19Z : Fabrication et faéonnage d\'autres articles en verre, y compris verre technique","23.20":"23.20 : Fabrication de produits réfractaires","23.20Z":"23.20Z : Fabrication de produits réfractaires","23.31":"23.31 : Fabrication de carreaux en céramique","23.31Z":"23.31Z : Fabrication de carreaux en céramique","23.32":"23.32 : Fabrication de briques, tuiles et produits de construction, en terre cuite","23.32Z":"23.32Z : Fabrication de briques, tuiles et produits de construction, en terre cuite","23.4":"23.4 : Fabrication d\'autres produits en céramique et en porcelaine","23.41":"23.41 : Fabrication d\'articles céramiques à usage domestique ou ornemental","23.41Z":"23.41Z : Fabrication d\'articles céramiques à usage domestique ou ornemental","23.42":"23.42 : Fabrication d\'appareils sanitaires en céramique","23.42Z":"23.42Z : Fabrication d\'appareils sanitaires en céramique","23.43":"23.43 : Fabrication d\'isolateurs et piéces isolantes en céramique","23.43Z":"23.43Z : Fabrication d\'isolateurs et piéces isolantes en céramique","23.44":"23.44 : Fabrication d\'autres produits céramiques à usage technique","23.44Z":"23.44Z : Fabrication d\'autres produits céramiques à usage technique","23.49":"23.49 : Fabrication d\'autres produits céramiques","23.49Z":"23.49Z : Fabrication d\'autres produits céramiques","23.5":"23.5 : Fabrication de ciment, chaux et plétre","23.51":"23.51 : Fabrication de ciment","23.51Z":"23.51Z : Fabrication de ciment","23.52":"23.52 : Fabrication de chaux et plétre","23.52Z":"23.52Z : Fabrication de chaux et plétre","23.6":"23.6 : Fabrication d\'ouvrages en béton, en ciment ou en plétre","23.61":"23.61 : Fabrication d\'éléments en béton pour la construction","23.61Z":"23.61Z : Fabrication d\'éléments en béton pour la construction","23.62":"23.62 : Fabrication d\'éléments en plétre pour la construction","23.62Z":"23.62Z : Fabrication d\'éléments en plétre pour la construction","23.63":"23.63 : Fabrication de béton prét à l\'emploi","23.63Z":"23.63Z : Fabrication de béton prét à l\'emploi","23.64":"23.64 : Fabrication de mortiers et bétons secs","23.64Z":"23.64Z : Fabrication de mortiers et bétons secs","23.65":"23.65 : Fabrication d\'ouvrages en fibre-ciment","23.65Z":"23.65Z : Fabrication d\'ouvrages en fibre-ciment","23.69":"23.69 : Fabrication d\'autres ouvrages en béton, en ciment ou en plétre","23.69Z":"23.69Z : Fabrication d\'autres ouvrages en béton, en ciment ou en plétre","23.7":"23.7 : Taille, faéonnage et finissage de pierres","23.70":"23.70 : Taille, faéonnage et finissage de pierres","23.70Z":"23.70Z : Taille, faéonnage et finissage de pierres","23.9":"23.9 : Fabrication de produits abrasifs et de produits minéraux non métalliques n.c.a.","23.91":"23.91 : Fabrication de produits abrasifs","23.91Z":"23.91Z : Fabrication de produits abrasifs","23.99":"23.99 : Fabrication d\'autres produits minéraux non métalliques n.c.a.","23.99Z":"23.99Z : Fabrication d\'autres produits minéraux non métalliques n.c.a.","24.1":"24.1 : Sidérurgie","24.10":"24.10 : Sidérurgie","24.10Z":"24.10Z : Sidérurgie","24.2":"24.2 : Fabrication de tubes, tuyaux, profilés creux et accessoires correspondants en acier","24.20":"24.20 : Fabrication de tubes, tuyaux, profilés creux et accessoires correspondants en acier","24.20Z":"24.20Z : Fabrication de tubes, tuyaux, profilés creux et accessoires correspondants en acier","24.3":"24.3 : Fabrication d\'autres produits de premiére transformation de l\'acier","24.31":"24.31 : étirage à froid de barres","24.31Z":"24.31Z : étirage à froid de barres","24.32":"24.32 : Laminage à froid de feuillards","24.32Z":"24.32Z : Laminage à froid de feuillards","24.33":"24.33 : Profilage à froid par formage ou pliage","24.33Z":"24.33Z : Profilage à froid par formage ou pliage","24.34":"24.34 : Tréfilage à froid","24.34Z":"24.34Z : Tréfilage à froid","24.4":"24.4 : Production de métaux précieux et d\'autres métaux non ferreux","24.41":"24.41 : Production de métaux précieux","24.41Z":"24.41Z : Production de métaux précieux","24.42":"24.42 : Métallurgie de l\'aluminium","24.42Z":"24.42Z : Métallurgie de l\'aluminium","24.43":"24.43 : Métallurgie du plomb, du zinc ou de l\'étain","24.43Z":"24.43Z : Métallurgie du plomb, du zinc ou de l\'étain","24.44":"24.44 : Métallurgie du cuivre","24.44Z":"24.44Z : Métallurgie du cuivre","24.45":"24.45 : Métallurgie des autres métaux non ferreux","24.45Z":"24.45Z : Métallurgie des autres métaux non ferreux","24.46":"24.46 : élaboration et transformation de matiéres nucléaires","24.46Z":"24.46Z : élaboration et transformation de matiéres nucléaires","24.5":"24.5 : Fonderie","24.51":"24.51 : Fonderie de fonte","24.51Z":"24.51Z : Fonderie de fonte","24.52":"24.52 : Fonderie d\'acier","24.52Z":"24.52Z : Fonderie d\'acier","24.53":"24.53 : Fonderie de métaux légers","24.53Z":"24.53Z : Fonderie de métaux légers","24.54":"24.54 : Fonderie d\'autres métaux non ferreux","24.54Z":"24.54Z : Fonderie d\'autres métaux non ferreux","25.1":"25.1 : Fabrication d\'éléments en métal pour la construction","25.11":"25.11 : Fabrication de structures métalliques et de parties de structures","25.11Z":"25.11Z : Fabrication de structures métalliques et de parties de structures","25.12":"25.12 : Fabrication de portes et fenétres en métal","25.12Z":"25.12Z : Fabrication de portes et fenétres en métal","25.2":"25.2 : Fabrication de réservoirs, citernes et conteneurs métalliques","25.21":"25.21 : Fabrication de radiateurs et de chaudiéres pour le chauffage central","25.21Z":"25.21Z : Fabrication de radiateurs et de chaudiéres pour le chauffage central","25.29":"25.29 : Fabrication d\'autres réservoirs, citernes et conteneurs métalliques","25.29Z":"25.29Z : Fabrication d\'autres réservoirs, citernes et conteneurs métalliques","25.3":"25.3 : Fabrication de générateurs de vapeur, à l\'exception des chaudiéres pour le chauffage central","25.30":"25.30 : Fabrication de générateurs de vapeur, à l\'exception des chaudiéres pour le chauffage central","25.30Z":"25.30Z : Fabrication de générateurs de vapeur, à l\'exception des chaudiéres pour le chauffage central","25.4":"25.4 : Fabrication d\'armes et de munitions","25.40":"25.40 : Fabrication d\'armes et de munitions","25.40Z":"25.40Z : Fabrication d\'armes et de munitions","25.5":"25.5 : Forge, emboutissage, estampage ; métallurgie des poudres","25.50":"25.50 : Forge, emboutissage, estampage ; métallurgie des poudres","25.50A":"25.50A : Forge, estampage, matriéage ; métallurgie des poudres","25.50B":"25.50B : Découpage, emboutissage","25.6":"25.6 : Traitement et revétement des métaux ; usinage","25.61":"25.61 : Traitement et revétement des métaux","25.61Z":"25.61Z : Traitement et revétement des métaux","25.62":"25.62 : Usinage","25.62A":"25.62A : Décolletage","25.62B":"25.62B : Mécanique industrielle","25.7":"25.7 : Fabrication de coutellerie, d\'outillage et de quincaillerie","25.71":"25.71 : Fabrication de coutellerie","25.71Z":"25.71Z : Fabrication de coutellerie","25.72":"25.72 : Fabrication de serrures et de ferrures","25.72Z":"25.72Z : Fabrication de serrures et de ferrures","25.73":"25.73 : Fabrication d\'outillage","25.73A":"25.73A : Fabrication de moules et modéles","25.73B":"25.73B : Fabrication d\'autres outillages","25.9":"25.9 : Fabrication d\'autres ouvrages en métaux","25.91":"25.91 : Fabrication de féts et emballages métalliques similaires","25.91Z":"25.91Z : Fabrication de féts et emballages métalliques similaires","25.92":"25.92 : Fabrication d\'emballages métalliques légers","25.92Z":"25.92Z : Fabrication d\'emballages métalliques légers","25.93":"25.93 : Fabrication d\'articles en fils métalliques, de chaénes et de ressorts","25.93Z":"25.93Z : Fabrication d\'articles en fils métalliques, de chaénes et de ressorts","25.94":"25.94 : Fabrication de vis et de boulons","25.94Z":"25.94Z : Fabrication de vis et de boulons","25.99":"25.99 : Fabrication d\'autres produits métalliques n.c.a.","25.99A":"25.99A : Fabrication d\'articles métalliques ménagers","25.99B":"25.99B : Fabrication d\'autres articles métalliques","26.1":"26.1 : Fabrication de composants et cartes électroniques","26.11":"26.11 : Fabrication de composants électroniques","26.11Z":"26.11Z : Fabrication de composants électroniques","26.12":"26.12 : Fabrication de cartes électroniques assemblées","26.12Z":"26.12Z : Fabrication de cartes électroniques assemblées","26.2":"26.2 : Fabrication d\'ordinateurs et d\'équipements périphériques","26.20":"26.20 : Fabrication d\'ordinateurs et d\'équipements périphériques","26.20Z":"26.20Z : Fabrication d\'ordinateurs et d\'équipements périphériques","26.3":"26.3 : Fabrication d\'équipements de communication","26.30":"26.30 : Fabrication d\'équipements de communication","26.30Z":"26.30Z : Fabrication d\'équipements de communication","26.4":"26.4 : Fabrication de produits électroniques grand public","26.40":"26.40 : Fabrication de produits électroniques grand public","26.40Z":"26.40Z : Fabrication de produits électroniques grand public","26.5":"26.5 : Fabrication d\'instruments et d\'appareils de mesure, d\'essai et de navigation ; horlogerie","26.51":"26.51 : Fabrication d\'instruments et d\'appareils de mesure, d\'essai et de navigation","26.51A":"26.51A : Fabrication d\'équipements d\'aide à la navigation","26.51B":"26.51B : Fabrication d\'instrumentation scientifique et technique","26.52":"26.52 : Horlogerie","26.52Z":"26.52Z : Horlogerie","26.6":"26.6 : Fabrication d\'équipements d\'irradiation médicale, d\'équipements électromédicaux et électrothérapeutiques","26.60":"26.60 : Fabrication d\'équipements d\'irradiation médicale, d\'équipements électromédicaux et électrothérapeutiques","26.60Z":"26.60Z : Fabrication d\'équipements d\'irradiation médicale, d\'équipements électromédicaux et électrothérapeutiques","26.7":"26.7 : Fabrication de matériels optique et photographique","26.70":"26.70 : Fabrication de matériels optique et photographique","26.70Z":"26.70Z : Fabrication de matériels optique et photographique","26.8":"26.8 : Fabrication de supports magnétiques et optiques","26.80":"26.80 : Fabrication de supports magnétiques et optiques","26.80Z":"26.80Z : Fabrication de supports magnétiques et optiques","27.1":"27.1 : Fabrication de moteurs, génératrices et transformateurs électriques et de matériel de distribution et de commande électrique","27.11":"27.11 : Fabrication de moteurs, génératrices et transformateurs électriques","27.11Z":"27.11Z : Fabrication de moteurs, génératrices et transformateurs électriques","27.12":"27.12 : Fabrication de matériel de distribution et de commande électrique","27.12Z":"27.12Z : Fabrication de matériel de distribution et de commande électrique","27.2":"27.2 : Fabrication de piles et d\'accumulateurs électriques","27.20":"27.20 : Fabrication de piles et d\'accumulateurs électriques","27.20Z":"27.20Z : Fabrication de piles et d\'accumulateurs électriques","27.3":"27.3 : Fabrication de fils et cébles et de matériel d\'installation électrique","27.31":"27.31 : Fabrication de cébles de fibres optiques","27.31Z":"27.31Z : Fabrication de cébles de fibres optiques","27.32":"27.32 : Fabrication d\'autres fils et cébles électroniques ou électriques","27.32Z":"27.32Z : Fabrication d\'autres fils et cébles électroniques ou électriques","27.33":"27.33 : Fabrication de matériel d\'installation électrique","27.33Z":"27.33Z : Fabrication de matériel d\'installation électrique","27.4":"27.4 : Fabrication d\'appareils d\'éclairage électrique","27.40":"27.40 : Fabrication d\'appareils d\'éclairage électrique","27.40Z":"27.40Z : Fabrication d\'appareils d\'éclairage électrique","27.5":"27.5 : Fabrication d\'appareils ménagers","27.51":"27.51 : Fabrication d\'appareils électroménagers","27.51Z":"27.51Z : Fabrication d\'appareils électroménagers","27.52":"27.52 : Fabrication d\'appareils ménagers non électriques","27.52Z":"27.52Z : Fabrication d\'appareils ménagers non électriques","27.9":"27.9 : Fabrication d\'autres matériels électriques","27.90":"27.90 : Fabrication d\'autres matériels électriques","27.90Z":"27.90Z : Fabrication d\'autres matériels électriques","28.1":"28.1 : Fabrication de machines d\'usage général","28.11":"28.11 : Fabrication de moteurs et turbines, à l\'exception des moteurs déavions et de véhicules","28.11Z":"28.11Z : Fabrication de moteurs et turbines, à l\'exception des moteurs déavions et de véhicules","28.12":"28.12 : Fabrication d\'équipements hydrauliques et pneumatiques","28.12Z":"28.12Z : Fabrication d\'équipements hydrauliques et pneumatiques","28.13":"28.13 : Fabrication d\'autres pompes et compresseurs","28.13Z":"28.13Z : Fabrication d\'autres pompes et compresseurs","28.14":"28.14 : Fabrication d\'autres articles de robinetterie","28.14Z":"28.14Z : Fabrication d\'autres articles de robinetterie","28.15":"28.15 : Fabrication d\'engrenages et d\'organes mécaniques de transmission","28.15Z":"28.15Z : Fabrication d\'engrenages et d\'organes mécaniques de transmission","28.2":"28.2 : Fabrication d\'autres machines d\'usage général","28.21":"28.21 : Fabrication de fours et bréleurs","28.21Z":"28.21Z : Fabrication de fours et bréleurs","28.22":"28.22 : Fabrication de matériel de levage et de manutention","28.22Z":"28.22Z : Fabrication de matériel de levage et de manutention","28.23":"28.23 : Fabrication de machines et d\'équipements de bureau (à l\'exception des ordinateurs et équipements périphériques)","28.23Z":"28.23Z : Fabrication de machines et d\'équipements de bureau (à l\'exception des ordinateurs et équipements périphériques)","28.24":"28.24 : Fabrication d\'outillage portatif à moteur incorporé","28.24Z":"28.24Z : Fabrication d\'outillage portatif à moteur incorporé","28.25":"28.25 : Fabrication d\'équipements aérauliques et frigorifiques industriels","28.25Z":"28.25Z : Fabrication d\'équipements aérauliques et frigorifiques industriels","28.29":"28.29 : Fabrication de machines diverses d\'usage général","28.29A":"28.29A : Fabrication d\'équipements d\'emballage, de conditionnement et de pesage","28.29B":"28.29B : Fabrication d\'autres machines d\'usage général","28.3":"28.3 : Fabrication de machines agricoles et forestiéres","28.30":"28.30 : Fabrication de machines agricoles et forestiéres","28.30Z":"28.30Z : Fabrication de machines agricoles et forestiéres","28.4":"28.4 : Fabrication de machines de formage des métaux et de machines-outils","28.41":"28.41 : Fabrication de machines de formage des métaux","28.41Z":"28.41Z : Fabrication de machines-outils pour le travail des métaux","28.49":"28.49 : Fabrication d\'autres machines-outils","28.49Z":"28.49Z : Fabrication d\'autres machines-outils","28.9":"28.9 : Fabrication d\'autres machines d\'usage spécifique","28.91":"28.91 : Fabrication de machines pour la métallurgie","28.91Z":"28.91Z : Fabrication de machines pour la métallurgie","28.92":"28.92 : Fabrication de machines pour l\'extraction ou la construction","28.92Z":"28.92Z : Fabrication de machines pour l\'extraction ou la construction","28.93":"28.93 : Fabrication de machines pour l\'industrie agro-alimentaire","28.93Z":"28.93Z : Fabrication de machines pour l\'industrie agro-alimentaire","28.94":"28.94 : Fabrication de machines pour les industries textiles","28.94Z":"28.94Z : Fabrication de machines pour les industries textiles","28.95":"28.95 : Fabrication de machines pour les industries du papier et du carton","28.95Z":"28.95Z : Fabrication de machines pour les industries du papier et du carton","28.96":"28.96 : Fabrication de machines pour le travail du caoutchouc ou des plastiques","28.96Z":"28.96Z : Fabrication de machines pour le travail du caoutchouc ou des plastiques","28.99":"28.99 : Fabrication d\'autres machines d\'usage spécifique n.c.a.","28.99A":"28.99A : Fabrication de machines d\'imprimerie","28.99B":"28.99B : Fabrication d\'autres machines spécialisées","29.1":"29.1 : Construction de véhicules automobiles","29.10":"29.10 : Construction de véhicules automobiles","29.10Z":"29.10Z : Construction de véhicules automobiles","29.2":"29.2 : Fabrication de carrosseries et remorques","29.20":"29.20 : Fabrication de carrosseries et remorques","29.20Z":"29.20Z : Fabrication de carrosseries et remorques","29.3":"29.3 : Fabrication d\'équipements automobiles","29.31":"29.31 : Fabrication d\'équipements électriques et électroniques automobiles","29.31Z":"29.31Z : Fabrication d\'équipements électriques et électroniques automobiles","29.32":"29.32 : Fabrication d\'autres équipements automobiles","29.32Z":"29.32Z : Fabrication d\'autres équipements automobiles","30.1":"30.1 : Construction navale","30.11":"30.11 : Construction de navires et de structures flottantes","30.11Z":"30.11Z : Construction de navires et de structures flottantes","30.12":"30.12 : Construction de bateaux de plaisance","30.12Z":"30.12Z : Construction de bateaux de plaisance","30.2":"30.2 : Construction de locomotives et d\'autre matériel ferroviaire roulant","30.20":"30.20 : Construction de locomotives et d\'autre matériel ferroviaire roulant","30.20Z":"30.20Z : Construction de locomotives et d\'autre matériel ferroviaire roulant","30.3":"30.3 : Construction aéronautique et spatiale","30.30":"30.30 : Construction aéronautique et spatiale","30.30Z":"30.30Z : Construction aéronautique et spatiale","30.4":"30.4 : Construction de véhicules militaires de combat","30.40":"30.40 : Construction de véhicules militaires de combat","30.40Z":"30.40Z : Construction de véhicules militaires de combat","30.9":"30.9 : Fabrication de matériels de transport n.c.a.","30.91":"30.91 : Fabrication de motocycles","30.91Z":"30.91Z : Fabrication de motocycles","30.92":"30.92 : Fabrication de bicyclettes et de véhicules pour invalides","30.92Z":"30.92Z : Fabrication de bicyclettes et de véhicules pour invalides","30.99":"30.99 : Fabrication déautres équipements de transport n.c.a.","30.99Z":"30.99Z : Fabrication déautres équipements de transport n.c.a.","31.0":"31.0 : Fabrication de meubles","31.01":"31.01 : Fabrication de meubles de bureau et de magasin","31.01Z":"31.01Z : Fabrication de meubles de bureau et de magasin","31.02":"31.02 : Fabrication de meubles de cuisine","31.02Z":"31.02Z : Fabrication de meubles de cuisine","31.03":"31.03 : Fabrication de matelas","31.03Z":"31.03Z : Fabrication de matelas","31.09":"31.09 : Fabrication d\'autres meubles","31.09A":"31.09A : Fabrication de siéges d\'ameublement d\'intérieur","31.09B":"31.09B : Fabrication déautres meubles et industries connexes de léameublement","32.1":"32.1 : Fabrication déarticles de joaillerie, bijouterie et articles similaires","32.11":"32.11 : Frappe de monnaie","32.11Z":"32.11Z : Frappe de monnaie","32.12":"32.12 : Fabrication déarticles de joaillerie et bijouterie","32.12Z":"32.12Z : Fabrication déarticles de joaillerie et bijouterie","32.13":"32.13 : Fabrication déarticles de bijouterie fantaisie et articles similaires","32.13Z":"32.13Z : Fabrication déarticles de bijouterie fantaisie et articles similaires","32.2":"32.2 : Fabrication d\'instruments de musique","32.20":"32.20 : Fabrication d\'instruments de musique","32.20Z":"32.20Z : Fabrication d\'instruments de musique","32.3":"32.3 : Fabrication d\'articles de sport","32.30":"32.30 : Fabrication d\'articles de sport","32.30Z":"32.30Z : Fabrication d\'articles de sport","32.4":"32.4 : Fabrication de jeux et jouets","32.40":"32.40 : Fabrication de jeux et jouets","32.40Z":"32.40Z : Fabrication de jeux et jouets","32.5":"32.5 : Fabrication d\'instruments et de fournitures à usage médical et dentaire","32.50":"32.50 : Fabrication d\'instruments et de fournitures à usage médical et dentaire","32.50A":"32.50A : Fabrication de matériel médico-chirurgical et dentaire","32.50B":"32.50B : Fabrication de lunettes","32.9":"32.9 : Activités manufacturiéres n.c.a.","32.91":"32.91 : Fabrication déarticles de brosserie","32.91Z":"32.91Z : Fabrication déarticles de brosserie","32.99":"32.99 : Autres activités manufacturiéres n.c.a.","32.99Z":"32.99Z : Autres activités manufacturiéres n.c.a.","33.1":"33.1 : Réparation d\'ouvrages en métaux, de machines et d\'équipements","33.11":"33.11 : Réparation d\'ouvrages en métaux","33.11Z":"33.11Z : Réparation d\'ouvrages en métaux","33.12":"33.12 : Réparation de machines et équipements mécaniques","33.12Z":"33.12Z : Réparation de machines et équipements mécaniques","33.13":"33.13 : Réparation de matériels électroniques et optiques","33.13Z":"33.13Z : Réparation de matériels électroniques et optiques","33.14":"33.14 : Réparation d\'équipements électriques","33.14Z":"33.14Z : Réparation d\'équipements électriques","33.15":"33.15 : Réparation et maintenance navale","33.15Z":"33.15Z : Réparation et maintenance navale","33.16":"33.16 : Réparation et maintenance d\'aéronefs et d\'engins spatiaux","33.16Z":"33.16Z : Réparation et maintenance d\'aéronefs et d\'engins spatiaux","33.17":"33.17 : Réparation et maintenance d\'autres équipements de transport","33.17Z":"33.17Z : Réparation et maintenance d\'autres équipements de transport","33.19":"33.19 : Réparation d\'autres équipements","33.19Z":"33.19Z : Réparation d\'autres équipements","33.2":"33.2 : Installation de machines et d\'équipements industriels","33.20":"33.20 : Installation de machines et d\'équipements industriels","33.20A":"33.20A : Installation de structures métalliques, chaudronnées et de tuyauterie","33.20B":"33.20B : Installation de machines et équipements mécaniques","33.20C":"33.20C : Conception d\'ensemble et assemblage sur site industriel d\'équipements de contréle des processus industriels","33.20D":"33.20D : Installation d\'équipements électriques, de matériels électroniques et optiques ou d\'autres matériels","35.1":"35.1 : Production, transport et distribution d\'électricité","35.11":"35.11 : Production d\'électricité","35.11Z":"35.11Z : Production d\'électricité","35.12":"35.12 : Transport d\'électricité","35.12Z":"35.12Z : Transport d\'électricité","35.13":"35.13 : Distribution d\'électricité","35.13Z":"35.13Z : Distribution d\'électricité","35.14":"35.14 : Commerce d\'électricité","35.14Z":"35.14Z : Commerce d\'électricité","35.2":"35.2 : Production et distribution de combustibles gazeux","35.21":"35.21 : Production de combustibles gazeux","35.21Z":"35.21Z : Production de combustibles gazeux","35.22":"35.22 : Distribution de combustibles gazeux par conduites","35.22Z":"35.22Z : Distribution de combustibles gazeux par conduites","35.23":"35.23 : Commerce de combustibles gazeux par conduites","35.23Z":"35.23Z : Commerce de combustibles gazeux par conduites","35.3":"35.3 : Production et distribution de vapeur et d\'air conditionné","35.30":"35.30 : Production et distribution de vapeur et d\'air conditionné","35.30Z":"35.30Z : Production et distribution de vapeur et d\'air conditionné","36.0":"36.0 : Captage, traitement et distribution d\'eau","36.00":"36.00 : Captage, traitement et distribution d\'eau","36.00Z":"36.00Z : Captage, traitement et distribution d\'eau","37.0":"37.0 : Collecte et traitement des eaux usées","37.00":"37.00 : Collecte et traitement des eaux usées","37.00Z":"37.00Z : Collecte et traitement des eaux usées","38.1":"38.1 : Collecte des déchets","38.11":"38.11 : Collecte des déchets non dangereux","38.11Z":"38.11Z : Collecte des déchets non dangereux","38.12":"38.12 : Collecte des déchets dangereux","38.12Z":"38.12Z : Collecte des déchets dangereux","38.2":"38.2 : Traitement et élimination des déchets","38.21":"38.21 : Traitement et élimination des déchets non dangereux","38.21Z":"38.21Z : Traitement et élimination des déchets non dangereux","38.22":"38.22 : Traitement et élimination des déchets dangereux","38.22Z":"38.22Z : Traitement et élimination des déchets dangereux","38.3":"38.3 : Récupération","38.31":"38.31 : Démantélement d\'épaves","38.31Z":"38.31Z : Démantélement d\'épaves","38.32":"38.32 : Récupération de déchets triés","38.32Z":"38.32Z : Récupération de déchets triés","39.0":"39.0 : Dépollution et autres services de gestion des déchets","39.00":"39.00 : Dépollution et autres services de gestion des déchets","39.00Z":"39.00Z : Dépollution et autres services de gestion des déchets","41.1":"41.1 : Promotion immobiliére","41.10":"41.10 : Promotion immobiliére","41.10A":"41.10A : Promotion immobiliére de logements","41.10B":"41.10B : Promotion immobiliére de bureaux","41.10C":"41.10C : Promotion immobiliére d\'autres bétiments","41.10D":"41.10D : Supports juridiques de programmes","41.2":"41.2 : Construction de bétiments résidentiels et non résidentiels","41.20":"41.20 : Construction de bétiments résidentiels et non résidentiels","41.20A":"41.20A : Construction de maisons individuelles","41.20B":"41.20B : Construction d\'autres bétiments","42.1":"42.1 : Construction de routes et de voies ferrées","42.11":"42.11 : Construction de routes et autoroutes","42.11Z":"42.11Z : Construction de routes et autoroutes","42.12":"42.12 : Construction de voies ferrées de surface et souterraines","42.12Z":"42.12Z : Construction de voies ferrées de surface et souterraines","42.13":"42.13 : Construction de ponts et tunnels","42.13A":"42.13A : Construction d\'ouvrages d\'art","42.13B":"42.13B : Construction et entretien de tunnels","42.2":"42.2 : Construction de réseaux et de lignes","42.21":"42.21 : Construction de réseaux pour fluides","42.21Z":"42.21Z : Construction de réseaux pour fluides","42.22":"42.22 : Construction de réseaux électriques et de télécommunications","42.22Z":"42.22Z : Construction de réseaux électriques et de télécommunications","42.9":"42.9 : Construction d\'autres ouvrages de génie civil","42.91":"42.91 : Construction d\'ouvrages maritimes et fluviaux","42.91Z":"42.91Z : Construction d\'ouvrages maritimes et fluviaux","42.99":"42.99 : Construction d\'autres ouvrages de génie civil n.c.a.","42.99Z":"42.99Z : Construction d\'autres ouvrages de génie civil n.c.a.","43.1":"43.1 : Démolition et préparation des sites","43.11":"43.11 : Travaux de démolition","43.11Z":"43.11Z : Travaux de démolition","43.12":"43.12 : Travaux de préparation des sites","43.12A":"43.12A : Travaux de terrassement courants et travaux préparatoires","43.12B":"43.12B : Travaux de terrassement spécialisés ou de grande masse","43.13":"43.13 : Forages et sondages","43.13Z":"43.13Z : Forages et sondages","43.2":"43.2 : Travaux d\'installation électrique, plomberie et autres travaux d\'installation","43.21":"43.21 : Installation électrique","43.21A":"43.21A : Travaux d\'installation électrique dans tous locaux","43.21B":"43.21B : Travaux d\'installation électrique sur la voie publique","43.22":"43.22 : Travaux de plomberie et installation de chauffage et de conditionnement d\'air","43.22A":"43.22A : Travaux d\'installation d\'eau et de gaz en tous locaux","43.22B":"43.22B : Travaux d\'installation d\'équipements thermiques et de climatisation","43.29":"43.29 : Autres travaux d\'installation","43.29A":"43.29A : Travaux d\'isolation","43.29B":"43.29B : Autres travaux d\'installation n.c.a.","43.3":"43.3 : Travaux de finition","43.31":"43.31 : Travaux de plétrerie","43.31Z":"43.31Z : Travaux de plétrerie","43.32":"43.32 : Travaux de menuiserie","43.32A":"43.32A : Travaux de menuiserie bois et PVC","43.32B":"43.32B : Travaux de menuiserie métallique et serrurerie","43.32C":"43.32C : Agencement de lieux de vente","43.33":"43.33 : Travaux de revétement des sols et des murs","43.33Z":"43.33Z : Travaux de revétement des sols et des murs","43.34":"43.34 : Travaux de peinture et vitrerie","43.34Z":"43.34Z : Travaux de peinture et vitrerie","43.39":"43.39 : Autres travaux de finition","43.39Z":"43.39Z : Autres travaux de finition","43.9":"43.9 : Autres travaux de construction spécialisés","43.91":"43.91 : Travaux de couverture","43.91A":"43.91A : Travaux de charpente","43.91B":"43.91B : Travaux de couverture par éléments","43.99":"43.99 : Autres travaux de construction spécialisésén.c.a.","43.99A":"43.99A : Travaux d\'étanchéification","43.99B":"43.99B : Travaux de montage de structures métalliques","43.99C":"43.99C : Travaux de maéonnerie générale et gros éuvre de bétiment","43.99D":"43.99D : Autres travaux spécialisés de construction","43.99E":"43.99E : Location avec opérateur de matériel de construction","45.1":"45.1 : Commerce de véhicules automobiles","45.11":"45.11 : Commerce de voitures et de véhicules automobiles légers","45.11Z":"45.11Z : Commerce de voitures et de véhicules automobiles légers","45.19":"45.19 : Commerce d\'autres véhicules automobiles","45.19Z":"45.19Z : Commerce d\'autres véhicules automobiles","45.2":"45.2 : Entretien et réparation de véhicules automobiles","45.20":"45.20 : Entretien et réparation de véhicules automobiles","45.20A":"45.20A : Entretien et réparation de véhicules automobiles légers","45.20B":"45.20B : Entretien et réparation d\'autres véhicules automobiles","45.3":"45.3 : Commerce d\'équipements automobiles","45.31":"45.31 : Commerce de gros d\'équipements automobiles","45.31Z":"45.31Z : Commerce de gros d\'équipements automobiles","45.32":"45.32 : Commerce de détail d\'équipements automobiles","45.32Z":"45.32Z : Commerce de détail d\'équipements automobiles","45.4":"45.4 : Commerce et réparation de motocycles","45.40":"45.40 : Commerce et réparation de motocycles","45.40Z":"45.40Z : Commerce et réparation de motocycles","46.1":"46.1 : Intermédiaires du commerce de gros","46.11":"46.11 : Intermédiaires du commerce en matiéres premiéres agricoles, animaux vivants, matiéres premiéres textiles et produits semi-finis","46.11Z":"46.11Z : Intermédiaires du commerce en matiéres premiéres agricoles, animaux vivants, matiéres premiéres textiles et produits semi-finis","46.12":"46.12 : Intermédiaires du commerce en combustibles, métaux, minéraux et produits chimiques","46.12A":"46.12A : Centrales d\'achat de carburant","46.12B":"46.12B : Autres intermédiaires du commerce en combustibles, métaux, minéraux et produits chimiques","46.13":"46.13 : Intermédiaires du commerce en bois et matériaux de construction","46.13Z":"46.13Z : Intermédiaires du commerce en bois et matériaux de construction","46.14":"46.14 : Intermédiaires du commerce en machines, équipements industriels, navires et avions","46.14Z":"46.14Z : Intermédiaires du commerce en machines, équipements industriels, navires et avions","46.15":"46.15 : Intermédiaires du commerce en meubles, articles de ménage et quincaillerie","46.15Z":"46.15Z : Intermédiaires du commerce en meubles, articles de ménage et quincaillerie","46.16":"46.16 : Intermédiaires du commerce en textiles, habillement, fourrures, chaussures et articles en cuir","46.16Z":"46.16Z : Intermédiaires du commerce en textiles, habillement, fourrures, chaussures et articles en cuir","46.17":"46.17 : Intermédiaires du commerce en denrées, boissons et tabac","46.17A":"46.17A : Centrales d\'achat alimentaires","46.17B":"46.17B : Autres intermédiaires du commerce en denrées, boissons et tabac","46.18":"46.18 : Intermédiaires spécialisés dans le commerce d\'autres produits spécifiques","46.18Z":"46.18Z : Intermédiaires spécialisés dans le commerce d\'autres produits spécifiques","46.19":"46.19 : Intermédiaires du commerce en produits divers","46.19A":"46.19A : Centrales d\'achat non alimentaires","46.19B":"46.19B : Autres intermédiaires du commerce en produits divers","46.2":"46.2 : Commerce de gros de produits agricoles bruts et d\'animaux vivants","46.21":"46.21 : Commerce de gros de céréales, de tabac non manufacturé, de semences et d\'aliments pour le bétail","46.21Z":"46.21Z : Commerce de gros (commerce interentreprises) de céréales, de tabac non manufacturé, de semences et d\'aliments pour le bétail","46.22":"46.22 : Commerce de gros de fleurs et plantes","46.22Z":"46.22Z : Commerce de gros (commerce interentreprises) de fleurs et plantes","46.23":"46.23 : Commerce de gros d\'animaux vivants","46.23Z":"46.23Z : Commerce de gros (commerce interentreprises) d\'animaux vivants","46.24":"46.24 : Commerce de gros de cuirs et peaux","46.24Z":"46.24Z : Commerce de gros (commerce interentreprises) de cuirs et peaux","46.3":"46.3 : Commerce de gros de produits alimentaires, de boissons et de tabac","46.31":"46.31 : Commerce de gros de fruits et légumes","46.31Z":"46.31Z : Commerce de gros (commerce interentreprises) de fruits et légumes","46.32":"46.32 : Commerce de gros de viandes et de produits à base de viande","46.32A":"46.32A : Commerce de gros (commerce interentreprises) de viandes de boucherie","46.32B":"46.32B : Commerce de gros (commerce interentreprises) de produits à base de viande","46.32C":"46.32C : Commerce de gros (commerce interentreprises) de volailles et gibier","46.33":"46.33 : Commerce de gros de produits laitiers, éufs, huiles et matiéres grasses comestibles","46.33Z":"46.33Z : Commerce de gros (commerce interentreprises) de produits laitiers, éufs, huiles et matiéres grasses comestibles","46.34":"46.34 : Commerce de gros de boissons","46.34Z":"46.34Z : Commerce de gros (commerce interentreprises) de boissons","46.35":"46.35 : Commerce de gros de produits à base de tabac","46.35Z":"46.35Z : Commerce de gros (commerce interentreprises) de produits à base de tabac","46.36":"46.36 : Commerce de gros de sucre, chocolat et confiserie","46.36Z":"46.36Z : Commerce de gros (commerce interentreprises) de sucre, chocolat et confiserie","46.37":"46.37 : Commerce de gros de café, thé, cacao et épices","46.37Z":"46.37Z : Commerce de gros (commerce interentreprises) de café, thé, cacao et épices","46.38":"46.38 : Commerce de gros d\'autres produits alimentaires, y compris poissons, crustacés et mollusques","46.38A":"46.38A : Commerce de gros (commerce interentreprises) de poissons, crustacés et mollusques","46.38B":"46.38B : Commerce de gros (commerce interentreprises) alimentaire spécialisé divers","46.39":"46.39 : Commerce de gros non spécialisé de denrées, boissons et tabac","46.39A":"46.39A : Commerce de gros (commerce interentreprises) de produits surgelés","46.39B":"46.39B : Commerce de gros (commerce interentreprises) alimentaire non spécialisé","46.4":"46.4 : Commerce de gros de biens domestiques","46.41":"46.41 : Commerce de gros de textiles","46.41Z":"46.41Z : Commerce de gros (commerce interentreprises) de textiles","46.42":"46.42 : Commerce de gros d\'habillement et de chaussures","46.42Z":"46.42Z : Commerce de gros (commerce interentreprises) d\'habillement et de chaussures","46.43":"46.43 : Commerce de gros d\'appareils électroménagers","46.43Z":"46.43Z : Commerce de gros (commerce interentreprises) d\'appareils électroménagers","46.44":"46.44 : Commerce de gros de vaisselle, verrerie et produits d\'entretien","46.44Z":"46.44Z : Commerce de gros (commerce interentreprises) de vaisselle, verrerie et produits d\'entretien","46.45":"46.45 : Commerce de gros de parfumerie et de produits de beauté","46.45Z":"46.45Z : Commerce de gros (commerce interentreprises) de parfumerie et de produits de beauté","46.46":"46.46 : Commerce de gros de produits pharmaceutiques","46.46Z":"46.46Z : Commerce de gros (commerce interentreprises) de produits pharmaceutiques","46.47":"46.47 : Commerce de gros de meubles, de tapis et d\'appareils d\'éclairage","46.47Z":"46.47Z : Commerce de gros (commerce interentreprises) de meubles, de tapis et d\'appareils d\'éclairage","46.48":"46.48 : Commerce de gros d\'articles d\'horlogerie et de bijouterie","46.48Z":"46.48Z : Commerce de gros (commerce interentreprises) d\'articles d\'horlogerie et de bijouterie","46.49":"46.49 : Commerce de gros d\'autres biens domestiques","46.49Z":"46.49Z : Commerce de gros (commerce interentreprises) d\'autres biens domestiques","46.5":"46.5 : Commerce de gros d\'équipements de l\'information et de la communication","46.51":"46.51 : Commerce de gros d\'ordinateurs, d\'équipements informatiques périphériques et de logiciels","46.51Z":"46.51Z : Commerce de gros (commerce interentreprises) d\'ordinateurs, d\'équipements informatiques périphériques et de logiciels","46.52":"46.52 : Commerce de gros de composants et d\'équipements électroniques et de télécommunication","46.52Z":"46.52Z : Commerce de gros (commerce interentreprises) de composants et d\'équipements électroniques et de télécommunication","46.6":"46.6 : Commerce de gros d\'autres équipements industriels","46.61":"46.61 : Commerce de gros de matériel agricole","46.61Z":"46.61Z : Commerce de gros (commerce interentreprises) de matériel agricole","46.62":"46.62 : Commerce de gros de machines-outils","46.62Z":"46.62Z : Commerce de gros (commerce interentreprises) de machines-outils","46.63":"46.63 : Commerce de gros de machines pour l\'extraction, la construction et le génie civil","46.63Z":"46.63Z : Commerce de gros (commerce interentreprises) de machines pour l\'extraction, la construction et le génie civil","46.64":"46.64 : Commerce de gros de machines pour l\'industrie textile et l\'habillement","46.64Z":"46.64Z : Commerce de gros (commerce interentreprises) de machines pour l\'industrie textile et l\'habillement","46.65":"46.65 : Commerce de gros de mobilier de bureau","46.65Z":"46.65Z : Commerce de gros (commerce interentreprises) de mobilier de bureau","46.66":"46.66 : Commerce de gros d\'autres machines et équipements de bureau","46.66Z":"46.66Z : Commerce de gros (commerce interentreprises) d\'autres machines et équipements de bureau","46.69":"46.69 : Commerce de gros d\'autres machines et équipements","46.69A":"46.69A : Commerce de gros (commerce interentreprises) de matériel électrique","46.69B":"46.69B : Commerce de gros (commerce interentreprises) de fournitures et équipements industriels divers","46.69C":"46.69C : Commerce de gros (commerce interentreprises) de fournitures et équipements divers pour le commerce et les services","46.7":"46.7 : Autres commerces de gros spécialisés","46.71":"46.71 : Commerce de gros de combustibles et de produits annexes","46.71Z":"46.71Z : Commerce de gros (commerce interentreprises) de combustibles et de produits annexes","46.72":"46.72 : Commerce de gros de minerais et métaux","46.72Z":"46.72Z : Commerce de gros (commerce interentreprises) de minerais et métaux","46.73":"46.73 : Commerce de gros de bois, de matériaux de construction et d\'appareils sanitaires","46.73A":"46.73A : Commerce de gros (commerce interentreprises) de bois et de matériaux de construction","46.73B":"46.73B : Commerce de gros (commerce interentreprises) d\'appareils sanitaires et de produits de décoration","46.74":"46.74 : Commerce de gros de quincaillerie et fournitures pour plomberie et chauffage","46.74A":"46.74A : Commerce de gros (commerce interentreprises) de quincaillerie","46.74B":"46.74B : Commerce de gros (commerce interentreprises) de fournitures pour la plomberie et le chauffage","46.75":"46.75 : Commerce de gros de produits chimiques","46.75Z":"46.75Z : Commerce de gros (commerce interentreprises) de produits chimiques","46.76":"46.76 : Commerce de gros d\'autres produits intermédiaires","46.76Z":"46.76Z : Commerce de gros (commerce interentreprises) d\'autres produits intermédiaires","46.77":"46.77 : Commerce de gros de déchets et débris","46.77Z":"46.77Z : Commerce de gros (commerce interentreprises) de déchets et débris","46.9":"46.9 : Commerce de gros non spécialisé","46.90":"46.90 : Commerce de gros non spécialisé","46.90Z":"46.90Z : Commerce de gros (commerce interentreprises) non spécialisé","47.1":"47.1 : Commerce de détail en magasin non spécialisé","47.11":"47.11 : Commerce de détail en magasin non spécialisé à prédominance alimentaire","47.11A":"47.11A : Commerce de détail de produits surgelés","47.11B":"47.11B : Commerce d\'alimentation générale","47.11C":"47.11C : Supérettes","47.11D":"47.11D : Supermarchés","47.11E":"47.11E : Magasins multi-commerces","47.11F":"47.11F : Hypermarchés","47.19":"47.19 : Autre commerce de détail en magasin non spécialisé","47.19A":"47.19A : Grands magasins","47.19B":"47.19B : Autres commerces de détail en magasin non spécialisé","47.2":"47.2 : Commerce de détail alimentaire en magasin spécialisé","47.21":"47.21 : Commerce de détail de fruits et légumes en magasin spécialisé","47.21Z":"47.21Z : Commerce de détail de fruits et légumes en magasin spécialisé","47.22":"47.22 : Commerce de détail de viandes et de produits à base de viande en magasin spécialisé","47.22Z":"47.22Z : Commerce de détail de viandes et de produits à base de viande en magasin spécialisé","47.23":"47.23 : Commerce de détail de poissons, crustacés et mollusques en magasin spécialisé","47.23Z":"47.23Z : Commerce de détail de poissons, crustacés et mollusques en magasin spécialisé","47.24":"47.24 : Commerce de détail de pain, pétisserie et confiserie en magasin spécialisé","47.24Z":"47.24Z : Commerce de détail de pain, pétisserie et confiserie en magasin spécialisé","47.25":"47.25 : Commerce de détail de boissons en magasin spécialisé","47.25Z":"47.25Z : Commerce de détail de boissons en magasin spécialisé","47.26":"47.26 : Commerce de détail de produits à base de tabac en magasin spécialisé","47.26Z":"47.26Z : Commerce de détail de produits à base de tabac en magasin spécialisé","47.29":"47.29 : Autres commerces de détail alimentaires en magasin spécialisé","47.29Z":"47.29Z : Autres commerces de détail alimentaires en magasin spécialisé","47.3":"47.3 : Commerce de détail de carburants en magasin spécialisé","47.30":"47.30 : Commerce de détail de carburants en magasin spécialisé","47.30Z":"47.30Z : Commerce de détail de carburants en magasin spécialisé","47.4":"47.4 : Commerce de détail d\'équipements de l\'information et de la communication en magasin spécialisé","47.41":"47.41 : Commerce de détail d\'ordinateurs, d\'unités périphériques et de logiciels en magasin spécialisé","47.41Z":"47.41Z : Commerce de détail d\'ordinateurs, d\'unités périphériques et de logiciels en magasin spécialisé","47.42":"47.42 : Commerce de détail de matériels de télécommunication en magasin spécialisé","47.42Z":"47.42Z : Commerce de détail de matériels de télécommunication en magasin spécialisé","47.43":"47.43 : Commerce de détail de matériels audio/vidéo en magasin spécialisé","47.43Z":"47.43Z : Commerce de détail de matériels audio et vidéo en magasin spécialisé","47.5":"47.5 : Commerce de détail d\'autres équipements du foyer en magasin spécialisé","47.51":"47.51 : Commerce de détail de textiles en magasin spécialisé","47.51Z":"47.51Z : Commerce de détail de textiles en magasin spécialisé","47.52":"47.52 : Commerce de détail de quincaillerie, peintures et verres en magasin spécialisé","47.52A":"47.52A : Commerce de détail de quincaillerie, peintures et verres en petites surfaces (moins de 400 m)","47.52B":"47.52B : Commerce de détail de quincaillerie, peintures et verres en grandes surfaces (400 met plus)","47.53":"47.53 : Commerce de détail de tapis, moquettes et revétements de murs et de sols en magasin spécialisé","47.53Z":"47.53Z : Commerce de détail de tapis, moquettes et revétements de murs et de sols en magasin spécialisé","47.54":"47.54 : Commerce de détail d\'appareils électroménagers en magasin spécialisé","47.54Z":"47.54Z : Commerce de détail d\'appareils électroménagers en magasin spécialisé","47.59":"47.59 : Commerce de détail de meubles, appareils d\'éclairage et autres articles de ménage en magasin spécialisé","47.59A":"47.59A : Commerce de détail de meubles","47.59B":"47.59B : Commerce de détail d\'autres équipements du foyer","47.6":"47.6 : Commerce de détail de biens culturels et de loisirs en magasin spécialisé","47.61":"47.61 : Commerce de détail de livres en magasin spécialisé","47.61Z":"47.61Z : Commerce de détail de livres en magasin spécialisé","47.62":"47.62 : Commerce de détail de journaux et papeterie en magasin spécialisé","47.62Z":"47.62Z : Commerce de détail de journaux et papeterie en magasin spécialisé","47.63":"47.63 : Commerce de détail d\'enregistrements musicaux et vidéo en magasin spécialisé","47.63Z":"47.63Z : Commerce de détail d\'enregistrements musicaux et vidéo en magasin spécialisé","47.64":"47.64 : Commerce de détail d\'articles de sport en magasin spécialisé","47.64Z":"47.64Z : Commerce de détail d\'articles de sport en magasin spécialisé","47.65":"47.65 : Commerce de détail de jeux et jouets en magasin spécialisé","47.65Z":"47.65Z : Commerce de détail de jeux et jouets en magasin spécialisé","47.7":"47.7 : Autres commerces de détail en magasin spécialisé","47.71":"47.71 : Commerce de détail d\'habillement en magasin spécialisé","47.71Z":"47.71Z : Commerce de détail d\'habillement en magasin spécialisé","47.72":"47.72 : Commerce de détail de chaussures et d\'articles en cuir en magasin spécialisé","47.72A":"47.72A : Commerce de détail de la chaussure","47.72B":"47.72B : Commerce de détail de maroquinerie et d\'articles de voyage","47.73":"47.73 : Commerce de détail de produits pharmaceutiques en magasin spécialisé","47.73Z":"47.73Z : Commerce de détail de produits pharmaceutiques en magasin spécialisé","47.74":"47.74 : Commerce de détail d\'articles médicaux et orthopédiques en magasin spécialisé","47.74Z":"47.74Z : Commerce de détail d\'articles médicaux et orthopédiques en magasin spécialisé","47.75":"47.75 : Commerce de détail de parfumerie et de produits de beauté en magasin spécialisé","47.75Z":"47.75Z : Commerce de détail de parfumerie et de produits de beauté en magasin spécialisé","47.76":"47.76 : Commerce de détail de fleurs, plantes, graines, engrais, animaux de compagnie et aliments pour ces animaux en magasin spécialisé","47.76Z":"47.76Z : Commerce de détail de fleurs, plantes, graines, engrais, animaux de compagnie et aliments pour ces animaux en magasin spécialisé","47.77":"47.77 : Commerce de détail d\'articles d\'horlogerie et de bijouterie en magasin spécialisé","47.77Z":"47.77Z : Commerce de détail d\'articles d\'horlogerie et de bijouterie en magasin spécialisé","47.78":"47.78 : Autre commerce de détail de biens neufs en magasin spécialisé","47.78A":"47.78A : Commerces de détail d\'optique","47.78B":"47.78B : Commerces de détail de charbons et combustibles","47.78C":"47.78C : Autres commerces de détail spécialisés divers","47.79":"47.79 : Commerce de détail de biens d\'occasion en magasin","47.79Z":"47.79Z : Commerce de détail de biens d\'occasion en magasin","47.8":"47.8 : Commerce de détail sur éventaires et marchés","47.81":"47.81 : Commerce de détail alimentaire sur éventaires et marchés","47.81Z":"47.81Z : Commerce de détail alimentaire sur éventaires et marchés","47.82":"47.82 : Commerce de détail de textiles, d\'habillement et de chaussures sur éventaires et marchés","47.82Z":"47.82Z : Commerce de détail de textiles, d\'habillement et de chaussures sur éventaires et marchés","47.89":"47.89 : Autres commerces de détail sur éventaires et marchés","47.89Z":"47.89Z : Autres commerces de détail sur éventaires et marchés","47.9":"47.9 : Commerce de détail hors magasin, éventaires ou marchés","47.91":"47.91 : Vente à distance","47.91A":"47.91A : Vente à distance sur catalogue général","47.91B":"47.91B : Vente à distance sur catalogue spécialisé","47.99":"47.99 : Autres commerces de détail hors magasin, éventaires ou marchés","47.99A":"47.99A : Vente à domicile","47.99B":"47.99B : Vente par automates et autres commerces de détail hors magasin, éventaires ou marchés n.c.a.","SECTION H":"SECTION H : TRANSPORTS ET ENTREPOSAGE","49.1":"49.1 : Transport ferroviaire interurbain de voyageurs","49.10":"49.10 : Transport ferroviaire interurbain de voyageurs","49.10Z":"49.10Z : Transport ferroviaire interurbain de voyageurs","49.2":"49.2 : Transports ferroviaires de fret","49.20":"49.20 : Transports ferroviaires de fret","49.20Z":"49.20Z : Transports ferroviaires de fret","49.3":"49.3 : Autres transports terrestres de voyageurs","49.31":"49.31 : Transports urbains et suburbains de voyageurs","49.31Z":"49.31Z : Transports urbains et suburbains de voyageurs","49.32":"49.32 : Transports de voyageurs par taxis","49.32Z":"49.32Z : Transports de voyageurs par taxis","49.39":"49.39 : Autres transports terrestres de voyageurs n.c.a.","49.39A":"49.39A : Transports routiers réguliers de voyageurs","49.39B":"49.39B : Autres transports routiers de voyageurs","49.39C":"49.39C : Téléphériques et remontées mécaniques","49.4":"49.4 : Transports routiers de fret et services de déménagement","49.41":"49.41 : Transports routiers de fret","49.41A":"49.41A : Transports routiers de fret interurbains","49.41B":"49.41B : Transports routiers de fret de proximité","49.41C":"49.41C : Location de camions avec chauffeur","49.42":"49.42 : Services de déménagement","49.42Z":"49.42Z : Services de déménagement","49.5":"49.5 : Transports par conduites","49.50":"49.50 : Transports par conduites","49.50Z":"49.50Z : Transports par conduites","50.1":"50.1 : Transports maritimes et cétiers de passagers","50.10":"50.10 : Transports maritimes et cétiers de passagers","50.10Z":"50.10Z : Transports maritimes et cétiers de passagers","50.2":"50.2 : Transports maritimes et cétiers de fret","50.20":"50.20 : Transports maritimes et cétiers de fret","50.20Z":"50.20Z : Transports maritimes et cétiers de fret","50.3":"50.3 : Transports fluviaux de passagers","50.30":"50.30 : Transports fluviaux de passagers","50.30Z":"50.30Z : Transports fluviaux de passagers","50.4":"50.4 : Transports fluviaux de fret","50.40":"50.40 : Transports fluviaux de fret","50.40Z":"50.40Z : Transports fluviaux de fret","51.1":"51.1 : Transports aériens de passagers","51.10":"51.10 : Transports aériens de passagers","51.10Z":"51.10Z : Transports aériens de passagers","51.2":"51.2 : Transports aériens de fret et transports spatiaux","51.21":"51.21 : Transports aériens de fret","51.21Z":"51.21Z : Transports aériens de fret","51.22":"51.22 : Transports spatiaux","51.22Z":"51.22Z : Transports spatiaux","52.1":"52.1 : Entreposage et stockage","52.10":"52.10 : Entreposage et stockage","52.10A":"52.10A : Entreposage et stockage frigorifique","52.10B":"52.10B : Entreposage et stockage non frigorifique","52.2":"52.2 : Services auxiliaires des transports","52.21":"52.21 : Services auxiliaires des transports terrestres","52.21Z":"52.21Z : Services auxiliaires des transports terrestres","52.22":"52.22 : Services auxiliaires des transports par eau","52.22Z":"52.22Z : Services auxiliaires des transports par eau","52.23":"52.23 : Services auxiliaires des transports aériens","52.23Z":"52.23Z : Services auxiliaires des transports aériens","52.24":"52.24 : Manutention","52.24A":"52.24A : Manutention portuaire","52.24B":"52.24B : Manutention non portuaire","52.29":"52.29 : Autres services auxiliaires des transports","52.29A":"52.29A : Messagerie, fret express","52.29B":"52.29B : Affrétement et organisation des transports","53.1":"53.1 : Activités de poste dans le cadre d\'une obligation de service universel","53.10":"53.10 : Activités de poste dans le cadre d\'une obligation de service universel","53.10Z":"53.10Z : Activités de poste dans le cadre d\'une obligation de service universel","53.2":"53.2 : Autres activités de poste et de courrier","53.20":"53.20 : Autres activités de poste et de courrier","53.20Z":"53.20Z : Autres activités de poste et de courrier","55.1":"55.1 : Hétels et hébergement similaire","55.10":"55.10 : Hétels et hébergement similaire","55.10Z":"55.10Z : Hétels et hébergement similaire","55.2":"55.2 : Hébergement touristique et autre hébergement de courte durée","55.20":"55.20 : Hébergement touristique et autre hébergement de courte durée","55.20Z":"55.20Z : Hébergement touristique et autre hébergement de courte durée","55.3":"55.3 : Terrains de camping et parcs pour caravanes ou véhicules de loisirs","55.30":"55.30 : Terrains de camping et parcs pour caravanes ou véhicules de loisirs","55.30Z":"55.30Z : Terrains de camping et parcs pour caravanes ou véhicules de loisirs","55.9":"55.9 : Autres hébergements","55.90":"55.90 : Autres hébergements","55.90Z":"55.90Z : Autres hébergements","56.1":"56.1 : Restaurants et services de restauration mobile","56.10":"56.10 : Restaurants et services de restauration mobile","56.10A":"56.10A : Restauration traditionnelle","56.10B":"56.10B : Cafétérias et autres libres-services","56.10C":"56.10C : Restauration de type rapide","56.2":"56.2 : Traiteurs et autres services de restauration","56.21":"56.21 : Services des traiteurs","56.21Z":"56.21Z : Services des traiteurs","56.29":"56.29 : Autres services de restauration","56.29A":"56.29A : Restauration collective sous contrat","56.29B":"56.29B : Autres services de restauration n.c.a.","56.3":"56.3 : Débits de boissons","56.30":"56.30 : Débits de boissons","56.30Z":"56.30Z : Débits de boissons","58.1":"58.1 : édition de livres et périodiques et autres activités d\'édition","58.11":"58.11 : édition de livres","58.11Z":"58.11Z : édition de livres","58.12":"58.12 : édition de répertoires et de fichiers d\'adresses","58.12Z":"58.12Z : édition de répertoires et de fichiers d\'adresses","58.13":"58.13 : édition de journaux","58.13Z":"58.13Z : édition de journaux","58.14":"58.14 : édition de revues et périodiques","58.14Z":"58.14Z : édition de revues et périodiques","58.19":"58.19 : Autres activités d\'édition","58.19Z":"58.19Z : Autres activités d\'édition","58.2":"58.2 : édition de logiciels","58.21":"58.21 : édition de jeux électroniques","58.21Z":"58.21Z : édition de jeux électroniques","58.29":"58.29 : édition d\'autres logiciels","58.29A":"58.29A : édition de logiciels systéme et de réseau","58.29B":"58.29B : Edition de logiciels outils de développement et de langages","58.29C":"58.29C : Edition de logiciels applicatifs","59.1":"59.1 : Activités cinématographiques, vidéo et de télévision","59.11":"59.11 : Production de films cinématographiques, de vidéo et de programmes de télévision","59.11A":"59.11A : Production de films et de programmes pour la télévision","59.11B":"59.11B : Production de films institutionnels et publicitaires","59.11C":"59.11C : Production de films pour le cinéma","59.12":"59.12 : Post-production de films cinématographiques, de vidéo et de programmes de télévision","59.12Z":"59.12Z : Post-production de films cinématographiques, de vidéo et de programmes de télévision","59.13":"59.13 : Distribution de films cinématographiques, de vidéo et de programmes de télévision","59.13A":"59.13A : Distribution de films cinématographiques","59.13B":"59.13B : Edition et distribution vidéo","59.14":"59.14 : Projection de films cinématographiques","59.14Z":"59.14Z : Projection de films cinématographiques","59.2":"59.2 : Enregistrement sonore et édition musicale","59.20":"59.20 : Enregistrement sonore et édition musicale","59.20Z":"59.20Z : Enregistrement sonore et édition musicale","60.1":"60.1 : édition et diffusion de programmes radio","60.10":"60.10 : édition et diffusion de programmes radio","60.10Z":"60.10Z : édition et diffusion de programmes radio","60.2":"60.2 : Programmation de télévision et télédiffusion","60.20":"60.20 : Programmation de télévision et télédiffusion","60.20A":"60.20A : Edition de chaénes généralistes","60.20B":"60.20B : Edition de chaénes thématiques","61.1":"61.1 : Télécommunications filaires","61.10":"61.10 : Télécommunications filaires","61.10Z":"61.10Z : Télécommunications filaires","61.2":"61.2 : Télécommunications sans fil","61.20":"61.20 : Télécommunications sans fil","61.20Z":"61.20Z : Télécommunications sans fil","61.3":"61.3 : Télécommunications par satellite","61.30":"61.30 : Télécommunications par satellite","61.30Z":"61.30Z : Télécommunications par satellite","61.9":"61.9 : Autres activités de télécommunication","61.90":"61.90 : Autres activités de télécommunication","61.90Z":"61.90Z : Autres activités de télécommunication","62.0":"62.0 : Programmation, conseil et autres activités informatiques","62.01":"62.01 : Programmation informatique","62.01Z":"62.01Z : Programmation informatique","62.02":"62.02 : Conseil informatique","62.02A":"62.02A : Conseil en systémes et logiciels informatiques","62.02B":"62.02B : Tierce maintenance de systémes et déapplications informatiques","62.03":"62.03 : Gestion d\'installations informatiques","62.03Z":"62.03Z : Gestion d\'installations informatiques","62.09":"62.09 : Autres activités informatiques","62.09Z":"62.09Z : Autres activités informatiques","63.1":"63.1 : Traitement de données, hébergement et activités connexes ; portails Internet","63.11":"63.11 : Traitement de données, hébergement et activités connexes","63.11Z":"63.11Z : Traitement de données, hébergement et activités connexes","63.12":"63.12 : Portails Internet","63.12Z":"63.12Z : Portails Internet","63.9":"63.9 : Autres services d\'information","63.91":"63.91 : Activités des agences de presse","63.91Z":"63.91Z : Activités des agences de presse","63.99":"63.99 : Autres services d\'information n.c.a.","63.99Z":"63.99Z : Autres services d\'information n.c.a.","64.1":"64.1 : Intermédiation monétaire","64.11":"64.11 : Activités de banque centrale","64.11Z":"64.11Z : Activités de banque centrale","64.19":"64.19 : Autres intermédiations monétaires","64.19Z":"64.19Z : Autres intermédiations monétaires","64.2":"64.2 : Activités des sociétés holding","64.20":"64.20 : Activités des sociétés holding","64.20Z":"64.20Z : Activités des sociétés holding","64.3":"64.3 : Fonds de placement et entités financiéres similaires","64.30":"64.30 : Fonds de placement et entités financiéres similaires","64.30Z":"64.30Z : Fonds de placement et entités financiéres similaires","64.9":"64.9 : Autres activités des services financiers, hors assurance et caisses de retraite","64.91":"64.91 : Crédit-bail","64.91Z":"64.91Z : Crédit-bail","64.92":"64.92 : Autre distribution de crédit","64.92Z":"64.92Z : Autre distribution de crédit","64.99":"64.99 : Autres activités des services financiers, hors assurance et caisses de retraite, n.c.a.","64.99Z":"64.99Z : Autres activités des services financiers, hors assurance et caisses de retraite, n.c.a.","65.1":"65.1 : Assurance","65.11":"65.11 : Assurance vie","65.11Z":"65.11Z : Assurance vie","65.12":"65.12 : Autres assurances","65.12Z":"65.12Z : Autres assurances","65.2":"65.2 : Réassurance","65.20":"65.20 : Réassurance","65.20Z":"65.20Z : Réassurance","65.3":"65.3 : Caisses de retraite","65.30":"65.30 : Caisses de retraite","65.30Z":"65.30Z : Caisses de retraite","66.1":"66.1 : Activités auxiliaires de services financiers, hors assurance et caisses de retraite","66.11":"66.11 : Administration de marchés financiers","66.11Z":"66.11Z : Administration de marchés financiers","66.12":"66.12 : Courtage de valeurs mobiliéres et de marchandises","66.12Z":"66.12Z : Courtage de valeurs mobiliéres et de marchandises","66.19":"66.19 : Autres activités auxiliaires de services financiers, hors assurance et caisses de retraite","66.19A":"66.19A : Supports juridiques de gestion de patrimoine mobilier","66.19B":"66.19B : Autres activités auxiliaires de services financiers, hors assurance et caisses de retraite, n.c.a.","66.2":"66.2 : Activités auxiliaires d\'assurance et de caisses de retraite","66.21":"66.21 : évaluation des risques et dommages","66.21Z":"66.21Z : évaluation des risques et dommages","66.22":"66.22 : Activités des agents et courtiers d\'assurances","66.22Z":"66.22Z : Activités des agents et courtiers d\'assurances","66.29":"66.29 : Autres activités auxiliaires d\'assurance et de caisses de retraite","66.29Z":"66.29Z : Autres activités auxiliaires d\'assurance et de caisses de retraite","66.3":"66.3 : Gestion de fonds","66.30":"66.30 : Gestion de fonds","66.30Z":"66.30Z : Gestion de fonds","68.1":"68.1 : Activités des marchands de biens immobiliers","68.10":"68.10 : Activités des marchands de biens immobiliers","68.10Z":"68.10Z : Activités des marchands de biens immobiliers","68.2":"68.2 : Location et exploitation de biens immobiliers propres ou loués","68.20":"68.20 : Location et exploitation de biens immobiliers propres ou loués","68.20A":"68.20A : Location de logements","68.20B":"68.20B : Location de terrains et d\'autres biens immobiliers","68.3":"68.3 : Activités immobiliéres pour compte de tiers","68.31":"68.31 : Agences immobiliéres","68.31Z":"68.31Z : Agences immobiliéres","68.32":"68.32 : Administration de biens immobiliers","68.32A":"68.32A : Administration d\'immeubles et autres biens immobiliers","68.32B":"68.32B : Supports juridiques de gestion de patrimoine immobilier","69.1":"69.1 : Activités juridiques","69.10":"69.10 : Activités juridiques","69.10Z":"69.10Z : Activités juridiques","69.2":"69.2 : Activités comptables","69.20":"69.20 : Activités comptables","69.20Z":"69.20Z : Activités comptables","70.1":"70.1 : Activités des siéges sociaux","70.10":"70.10 : Activités des siéges sociaux","70.10Z":"70.10Z : Activités des siéges sociaux","70.2":"70.2 : Conseil de gestion","70.21":"70.21 : Conseil en relations publiques et communication","70.21Z":"70.21Z : Conseil en relations publiques et communication","70.22":"70.22 : Conseil pour les affaires et autres conseils de gestion","70.22Z":"70.22Z : Conseil pour les affaires et autres conseils de gestion","71.1":"71.1 : Activités d\'architecture et d\'ingénierie","71.11":"71.11 : Activités d\'architecture","71.11Z":"71.11Z : Activités d\'architecture","71.12":"71.12 : Activités d\'ingénierie","71.12A":"71.12A : Activité des géométres","71.12B":"71.12B : Ingénierie, études techniques","71.2":"71.2 : Activités de contréle et analyses techniques","71.20":"71.20 : Activités de contréle et analyses techniques","71.20A":"71.20A : Contréle technique automobile","71.20B":"71.20B : Analyses, essais et inspections techniques","72.1":"72.1 : Recherche-développement en sciences physiques et naturelles","72.11":"72.11 : Recherche-développement en biotechnologie","72.11Z":"72.11Z : Recherche-développement en biotechnologie","72.19":"72.19 : Recherche-développement en autres sciences physiques et naturelles","72.19Z":"72.19Z : Recherche-développement en autres sciences physiques et naturelles","72.2":"72.2 : Recherche-développement en sciences humaines et sociales","72.20":"72.20 : Recherche-développement en sciences humaines et sociales","72.20Z":"72.20Z : Recherche-développement en sciences humaines et sociales","73.1":"73.1 : Publicité","73.11":"73.11 : Activités des agences de publicité","73.11Z":"73.11Z : Activités des agences de publicité","73.12":"73.12 : Régie publicitaire de médias","73.12Z":"73.12Z : Régie publicitaire de médias","73.2":"73.2 : études de marché et sondages","73.20":"73.20 : études de marché et sondages","73.20Z":"73.20Z : études de marché et sondages","74.1":"74.1 : Activités spécialisées de design","74.10":"74.10 : Activités spécialisées de design","74.10Z":"74.10Z : Activités spécialisées de design","74.2":"74.2 : Activités photographiques","74.20":"74.20 : Activités photographiques","74.20Z":"74.20Z : Activités photographiques","74.3":"74.3 : Traduction et interprétation","74.30":"74.30 : Traduction et interprétation","74.30Z":"74.30Z : Traduction et interprétation","74.9":"74.9 : Autres activités spécialisées, scientifiques et techniques n.c.a.","74.90":"74.90 : Autres activités spécialisées, scientifiques et techniques n.c.a.","74.90A":"74.90A : Activité des économistes de la construction","74.90B":"74.90B : Activités spécialisées, scientifiques et techniques diverses","75.0":"75.0 : Activités vétérinaires","75.00":"75.00 : Activités vétérinaires","75.00Z":"75.00Z : Activités vétérinaires","77.1":"77.1 : Location et location-bail de véhicules automobiles","77.11":"77.11 : Location et location-bail de voitures et de véhicules automobiles légers","77.11A":"77.11A : Location de courte durée de voitures et de véhicules automobiles légers","77.11B":"77.11B : Location de longue durée de voitures et de véhicules automobiles légers","77.12":"77.12 : Location et location-bail de camions","77.12Z":"77.12Z : Location et location-bail de camions","77.2":"77.2 : Location et location-bail de biens personnels et domestiques","77.21":"77.21 : Location et location-bail d\'articles de loisirs et de sport","77.21Z":"77.21Z : Location et location-bail d\'articles de loisirs et de sport","77.22":"77.22 : Location de vidéocassettes et disques vidéo","77.22Z":"77.22Z : Location de vidéocassettes et disques vidéo","77.29":"77.29 : Location et location-bail d\'autres biens personnels et domestiques","77.29Z":"77.29Z : Location et location-bail d\'autres biens personnels et domestiques","77.3":"77.3 : Location et location-bail d\'autres machines, équipements et biens","77.31":"77.31 : Location et location-bail de machines et équipements agricoles","77.31Z":"77.31Z : Location et location-bail de machines et équipements agricoles","77.32":"77.32 : Location et location-bail de machines et équipements pour la construction","77.32Z":"77.32Z : Location et location-bail de machines et équipements pour la construction","77.33":"77.33 : Location et location-bail de machines de bureau et de matériel informatique","77.33Z":"77.33Z : Location et location-bail de machines de bureau et de matériel informatique","77.34":"77.34 : Location et location-bail de matériels de transport par eau","77.34Z":"77.34Z : Location et location-bail de matériels de transport par eau","77.35":"77.35 : Location et location-bail de matériels de transport aérien","77.35Z":"77.35Z : Location et location-bail de matériels de transport aérien","77.39":"77.39 : Location et location-bail d\'autres machines, équipements et biens matériels n.c.a.","77.39Z":"77.39Z : Location et location-bail d\'autres machines, équipements et biens matériels n.c.a.","77.4":"77.4 : Location-bail de propriété intellectuelle et de produits similaires, à l\'exception des éuvres soumises à copyright","77.40":"77.40 : Location-bail de propriété intellectuelle et de produits similaires, à l\'exception des éuvres soumises à copyright","77.40Z":"77.40Z : Location-bail de propriété intellectuelle et de produits similaires, à l\'exception des éuvres soumises à copyright","78.1":"78.1 : Activités des agences de placement de main-d\'éuvre","78.10":"78.10 : Activités des agences de placement de main-d\'éuvre","78.10Z":"78.10Z : Activités des agences de placement de main-d\'éuvre","78.2":"78.2 : Activités des agences de travail temporaire","78.20":"78.20 : Activités des agences de travail temporaire","78.20Z":"78.20Z : Activités des agences de travail temporaire","78.3":"78.3 : Autre mise à disposition de ressources humaines","78.30":"78.30 : Autre mise à disposition de ressources humaines","78.30Z":"78.30Z : Autre mise à disposition de ressources humaines","79.1":"79.1 : Activités des agences de voyage et voyagistes","79.11":"79.11 : Activités des agences de voyage","79.11Z":"79.11Z : Activités des agences de voyage","79.12":"79.12 : Activités des voyagistes","79.12Z":"79.12Z : Activités des voyagistes","79.9":"79.9 : Autres services de réservation et activités connexes","79.90":"79.90 : Autres services de réservation et activités connexes","79.90Z":"79.90Z : Autres services de réservation et activités connexes","80.1":"80.1 : Activités de sécurité privée","80.10":"80.10 : Activités de sécurité privée","80.10Z":"80.10Z : Activités de sécurité privée","80.2":"80.2 : Activités liées aux systémes de sécurité","80.20":"80.20 : Activités liées aux systémes de sécurité","80.20Z":"80.20Z : Activités liées aux systémes de sécurité","80.3":"80.3 : Activités d\'enquéte","80.30":"80.30 : Activités d\'enquéte","80.30Z":"80.30Z : Activités d\'enquéte","81.1":"81.1 : Activités combinées de soutien lié aux bétiments","81.10":"81.10 : Activités combinées de soutien lié aux bétiments","81.10Z":"81.10Z : Activités combinées de soutien lié aux bétiments","81.2":"81.2 : Activités de nettoyage","81.21":"81.21 : Nettoyage courant des bétiments","81.21Z":"81.21Z : Nettoyage courant des bétiments","81.22":"81.22 : Autres activités de nettoyage des bétiments et nettoyage industriel","81.22Z":"81.22Z : Autres activités de nettoyage des bétiments et nettoyage industriel","81.29":"81.29 : Autres activités de nettoyage","81.29A":"81.29A : Désinfection, désinsectisation, dératisation","81.29B":"81.29B : Autres activités de nettoyage n.c.a.","81.3":"81.3 : Services d\'aménagement paysager","81.30":"81.30 : Services d\'aménagement paysager","81.30Z":"81.30Z : Services d\'aménagement paysager","82.1":"82.1 : Activités administratives","82.11":"82.11 : Services administratifs combinés de bureau","82.11Z":"82.11Z : Services administratifs combinés de bureau","82.19":"82.19 : Photocopie, préparation de documents et autres activités spécialisées de soutien de bureau","82.19Z":"82.19Z : Photocopie, préparation de documents et autres activités spécialisées de soutien de bureau","82.2":"82.2 : Activités de centres d\'appels","82.20":"82.20 : Activités de centres d\'appels","82.20Z":"82.20Z : Activités de centres d\'appels","82.3":"82.3 : Organisation de salons professionnels et congrés","82.30":"82.30 : Organisation de salons professionnels et congrés","82.30Z":"82.30Z : Organisation de foires, salons professionnels et congrés","82.9":"82.9 : Activités de soutien aux entreprises n.c.a.","82.91":"82.91 : Activités des agences de recouvrement de factures et des sociétés d\'information financiére sur la clientéle","82.91Z":"82.91Z : Activités des agences de recouvrement de factures et des sociétés d\'information financiére sur la clientéle","82.92":"82.92 : Activités de conditionnement","82.92Z":"82.92Z : Activités de conditionnement","82.99":"82.99 : Autres activités de soutien aux entreprises n.c.a.","82.99Z":"82.99Z : Autres activités de soutien aux entreprises n.c.a.","84.1":"84.1 : Administration générale, économique et sociale","84.11":"84.11 : Administration publique générale","84.11Z":"84.11Z : Administration publique générale","84.12":"84.12 : Administration publique (tutelle) de la santé, de la formation, de la culture et des services sociaux, autre que sécurité sociale","84.12Z":"84.12Z : Administration publique (tutelle) de la santé, de la formation, de la culture et des services sociaux, autre que sécurité sociale","84.13":"84.13 : Administration publique (tutelle) des activités économiques","84.13Z":"84.13Z : Administration publique (tutelle) des activités économiques","84.2":"84.2 : Services de prérogative publique","84.21":"84.21 : Affaires étrangéres","84.21Z":"84.21Z : Affaires étrangéres","84.22":"84.22 : Défense","84.22Z":"84.22Z : Défense","84.23":"84.23 : Justice","84.23Z":"84.23Z : Justice","84.24":"84.24 : Activités déordre public et de sécurité","84.24Z":"84.24Z : Activités déordre public et de sécurité","84.25":"84.25 : Services du feu et de secours","84.25Z":"84.25Z : Services du feu et de secours","84.3":"84.3 : Sécurité sociale obligatoire","84.30":"84.30 : Sécurité sociale obligatoire","84.30A":"84.30A : Activités générales de sécurité sociale","84.30B":"84.30B : Gestion des retraites complémentaires","84.30C":"84.30C : Distribution sociale de revenus","85.1":"85.1 : Enseignement pré-primaire","85.10":"85.10 : Enseignement pré-primaire","85.10Z":"85.10Z : Enseignement pré-primaire","85.2":"85.2 : Enseignement primaire","85.20":"85.20 : Enseignement primaire","85.20Z":"85.20Z : Enseignement primaire","85.3":"85.3 : Enseignement secondaire","85.31":"85.31 : Enseignement secondaire général","85.31Z":"85.31Z : Enseignement secondaire général","85.32":"85.32 : Enseignement secondaire technique ou professionnel","85.32Z":"85.32Z : Enseignement secondaire technique ou professionnel","85.4":"85.4 : Enseignement supérieur et post-secondaire non supérieur","85.41":"85.41 : Enseignement post-secondaire non supérieur","85.41Z":"85.41Z : Enseignement post-secondaire non supérieur","85.42":"85.42 : Enseignement supérieur","85.42Z":"85.42Z : Enseignement supérieur","85.5":"85.5 : Autres activités d\'enseignement","85.51":"85.51 : Enseignement de disciplines sportives et d\'activités de loisirs","85.51Z":"85.51Z : Enseignement de disciplines sportives et d\'activités de loisirs","85.52":"85.52 : Enseignement culturel","85.52Z":"85.52Z : Enseignement culturel","85.53":"85.53 : Enseignement de la conduite","85.53Z":"85.53Z : Enseignement de la conduite","85.59":"85.59 : Enseignements divers","85.59A":"85.59A : Formation continue d\'adultes","85.59B":"85.59B : Autres enseignements","85.6":"85.6 : Activités de soutien à l\'enseignement","85.60":"85.60 : Activités de soutien à l\'enseignement","85.60Z":"85.60Z : Activités de soutien à l\'enseignement","86.1":"86.1 : Activités hospitaliéres","86.10":"86.10 : Activités hospitaliéres","86.10Z":"86.10Z : Activités hospitaliéres","86.2":"86.2 : Activité des médecins et des dentistes","86.21":"86.21 : Activité des médecins généralistes","86.21Z":"86.21Z : Activité des médecins généralistes","86.22":"86.22 : Activité des médecins spécialistes","86.22A":"86.22A : Activités de radiodiagnostic et de radiothérapie","86.22B":"86.22B : Activités chirurgicales","86.22C":"86.22C : Autres activités des médecins spécialistes","86.23":"86.23 : Pratique dentaire","86.23Z":"86.23Z : Pratique dentaire","86.9":"86.9 : Autres activités pour la santé humaine","86.90":"86.90 : Autres activités pour la santé humaine","86.90A":"86.90A : Ambulances","86.90B":"86.90B : Laboratoires d\'analyses médicales","86.90C":"86.90C : Centres de collecte et banques d\'organes","86.90D":"86.90D : Activités des infirmiers et des sages-femmes","86.90E":"86.90E : Activités des professionnels de la rééducation, de léappareillage et des pédicures-podologues","86.90F":"86.90F : Activités de santé humaine non classées ailleurs","87.1":"87.1 : Hébergement médicalisé","87.10":"87.10 : Hébergement médicalisé","87.10A":"87.10A : Hébergement médicalisé pour personnes égées","87.10B":"87.10B : Hébergement médicalisé pour enfants handicapés","87.10C":"87.10C : Hébergement médicalisé pour adultes handicapés et autre hébergement médicalisé","87.2":"87.2 : Hébergement social pour personnes handicapées mentales, malades mentales et toxicomanes","87.20":"87.20 : Hébergement social pour personnes handicapées mentales, malades mentales et toxicomanes","87.20A":"87.20A : Hébergement social pour handicapés mentaux et malades mentaux","87.20B":"87.20B : Hébergement social pour toxicomanes","87.3":"87.3 : Hébergement social pour personnes égées ou handicapées physiques","87.30":"87.30 : Hébergement social pour personnes égées ou handicapées physiques","87.30A":"87.30A : Hébergement social pour personnes égées","87.30B":"87.30B : Hébergement social pour handicapés physiques","87.9":"87.9 : Autres activités déhébergement social","87.90":"87.90 : Autres activités déhébergement social","87.90A":"87.90A : Hébergement social pour enfants en difficultés","87.90B":"87.90B : Hébergement social pour adultes et familles en difficultés et autre hébergement social","88.1":"88.1 : Action sociale sans hébergement pour personnes égées et pour personnes handicapées","88.10":"88.10 : Action sociale sans hébergement pour personnes égées et pour personnes handicapées","88.10A":"88.10A : Aide à domicile","88.10B":"88.10B : Accueil ou accompagnement sans hébergement déadultes handicapés ou de personnes égées","88.10C":"88.10C : Aide par le travail","88.9":"88.9 : Autre action sociale sans hébergement","88.91":"88.91 : Action sociale sans hébergement pour jeunes enfants","88.91A":"88.91A : Accueil de jeunes enfants","88.91B":"88.91B : Accueil ou accompagnement sans hébergement déenfants handicapés","88.99":"88.99 : Autre action sociale sans hébergement n.c.a.","88.99A":"88.99A : Autre accueil ou accompagnement sans hébergement déenfants et déadolescents","88.99B":"88.99B : Action sociale sans hébergement n.c.a.","90.0":"90.0 : Activités créatives, artistiques et de spectacle","90.01":"90.01 : Arts du spectacle vivant","90.01Z":"90.01Z : Arts du spectacle vivant","90.02":"90.02 : Activités de soutien au spectacle vivant","90.02Z":"90.02Z : Activités de soutien au spectacle vivant","90.03":"90.03 : Création artistique","90.03A":"90.03A : Création artistique relevant des arts plastiques","90.03B":"90.03B : Autre création artistique","90.04":"90.04 : Gestion de salles de spectacles","90.04Z":"90.04Z : Gestion de salles de spectacles","91.0":"91.0 : Bibliothéques, archives, musées et autres activités culturelles","91.01":"91.01 : Gestion des bibliothéques et des archives","91.01Z":"91.01Z : Gestion des bibliothéques et des archives","91.02":"91.02 : Gestion des musées","91.02Z":"91.02Z : Gestion des musées","91.03":"91.03 : Gestion des sites et monuments historiques et des attractions touristiques similaires","91.03Z":"91.03Z : Gestion des sites et monuments historiques et des attractions touristiques similaires","91.04":"91.04 : Gestion des jardins botaniques et zoologiques et des réserves naturelles","91.04Z":"91.04Z : Gestion des jardins botaniques et zoologiques et des réserves naturelles","92.0":"92.0 : Organisation de jeux de hasard et d\'argent","92.00":"92.00 : Organisation de jeux de hasard et d\'argent","92.00Z":"92.00Z : Organisation de jeux de hasard et d\'argent","93.1":"93.1 : Activités liées au sport","93.11":"93.11 : Gestion d\'installations sportives","93.11Z":"93.11Z : Gestion d\'installations sportives","93.12":"93.12 : Activités de clubs de sports","93.12Z":"93.12Z : Activités de clubs de sports","93.13":"93.13 : Activités des centres de culture physique","93.13Z":"93.13Z : Activités des centres de culture physique","93.19":"93.19 : Autres activités liées au sport","93.19Z":"93.19Z : Autres activités liées au sport","93.2":"93.2 : Activités récréatives et de loisirs","93.21":"93.21 : Activités des parcs d\'attractions et parcs à thémes","93.21Z":"93.21Z : Activités des parcs d\'attractions et parcs à thémes","93.29":"93.29 : Autres activités récréatives et de loisirs","93.29Z":"93.29Z : Autres activités récréatives et de loisirs","94.1":"94.1 : Activités des organisations économiques, patronales et professionnelles","94.11":"94.11 : Activités des organisations patronales et consulaires","94.11Z":"94.11Z : Activités des organisations patronales et consulaires","94.12":"94.12 : Activités des organisations professionnelles","94.12Z":"94.12Z : Activités des organisations professionnelles","94.2":"94.2 : Activités des syndicats de salariés","94.20":"94.20 : Activités des syndicats de salariés","94.20Z":"94.20Z : Activités des syndicats de salariés","94.9":"94.9 : Activités des autres organisations associatives","94.91":"94.91 : Activités des organisations religieuses","94.91Z":"94.91Z : Activités des organisations religieuses","94.92":"94.92 : Activités des organisations politiques","94.92Z":"94.92Z : Activités des organisations politiques","94.99":"94.99 : Activités des organisations associatives n.c.a.","94.99Z":"94.99Z : Autres organisations fonctionnant par adhésion volontaire","95.1":"95.1 : Réparation d\'ordinateurs et d\'équipements de communication","95.11":"95.11 : Réparation d\'ordinateurs et d\'équipements périphériques","95.11Z":"95.11Z : Réparation d\'ordinateurs et d\'équipements périphériques","95.12":"95.12 : Réparation d\'équipements de communication","95.12Z":"95.12Z : Réparation d\'équipements de communication","95.2":"95.2 : Réparation de biens personnels et domestiques","95.21":"95.21 : Réparation de produits électroniques grand public","95.21Z":"95.21Z : Réparation de produits électroniques grand public","95.22":"95.22 : Réparation d\'appareils électroménagers et d\'équipements pour la maison et le jardin","95.22Z":"95.22Z : Réparation d\'appareils électroménagers et d\'équipements pour la maison et le jardin","95.23":"95.23 : Réparation de chaussures et d\'articles en cuir","95.23Z":"95.23Z : Réparation de chaussures et d\'articles en cuir","95.24":"95.24 : Réparation de meubles et d\'équipements du foyer","95.24Z":"95.24Z : Réparation de meubles et d\'équipements du foyer","95.25":"95.25 : Réparation d\'articles d\'horlogerie et de bijouterie","95.25Z":"95.25Z : Réparation d\'articles d\'horlogerie et de bijouterie","95.29":"95.29 : Réparation d\'autres biens personnels et domestiques","95.29Z":"95.29Z : Réparation d\'autres biens personnels et domestiques","96.0":"96.0 : Autres services personnels","96.01":"96.01 : Blanchisserie-teinturerie","96.01A":"96.01A : Blanchisserie-teinturerie de gros","96.01B":"96.01B : Blanchisserie-teinturerie de détail","96.02":"96.02 : Coiffure et soins de beauté","96.02A":"96.02A : Coiffure","96.02B":"96.02B : Soins de beauté","96.03":"96.03 : Services funéraires","96.03Z":"96.03Z : Services funéraires","96.04":"96.04 : Entretien corporel","96.04Z":"96.04Z : Entretien corporel","96.09":"96.09 : Autres services personnels n.c.a.","96.09Z":"96.09Z : Autres services personnels n.c.a.","97.0":"97.0 : Activités des ménages en tant qu\'employeurs de personnel domestique","97.00":"97.00 : Activités des ménages en tant qu\'employeurs de personnel domestique","97.00Z":"97.00Z : Activités des ménages en tant qu\'employeurs de personnel domestique","98.1":"98.1 : Activités indifférenciées des ménages en tant que producteurs de biens pour usage propre","98.10":"98.10 : Activités indifférenciées des ménages en tant que producteurs de biens pour usage propre","98.10Z":"98.10Z : Activités indifférenciées des ménages en tant que producteurs de biens pour usage propre","98.2":"98.2 : Activités indifférenciées des ménages en tant que producteurs de services pour usage propre","98.20":"98.20 : Activités indifférenciées des ménages en tant que producteurs de services pour usage propre","98.20Z":"98.20Z : Activités indifférenciées des ménages en tant que producteurs de services pour usage propre","99.0":"99.0 : Activités des organisations et organismes extraterritoriaux","99.00":"99.00 : Activités des organisations et organismes extraterritoriaux","99.00Z":"99.00Z : Activités des organisations et organismes extraterritoriaux"},"display":{"width":"3"},"modal":true}',
                 'order' => 15,
             ),
-            106 => 
+            105 => 
             array (
                 'id' => 406,
                 'data_type_id' => 8,
@@ -1729,7 +1713,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"TP":"TP","Automobile":"Automobile","Agriculture":"Agriculture","Elevage":"Elevage","Materiels industriels":"Materiels industriels","Camion":"Camion","Bus":"Bus","Materiel de boulangerie":"Materiel de boulangerie","Autre":"Autre"},"display":{"width":"3"}}',
                 'order' => 15,
             ),
-            107 => 
+            106 => 
             array (
                 'id' => 511,
                 'data_type_id' => 8,
@@ -1745,7 +1729,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"model":"App\\\\Contact","table":"contacts","type":"belongsTo","column":"contact_id","key":"id","label":"fistname","pivot_table":"addresses","pivot":"0","taggable":"0"}',
                 'order' => 17,
             ),
-            108 => 
+            107 => 
             array (
                 'id' => 232,
                 'data_type_id' => 14,
@@ -1761,7 +1745,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => NULL,
                 'order' => 16,
             ),
-            109 => 
+            108 => 
             array (
                 'id' => 167,
                 'data_type_id' => 15,
@@ -1777,7 +1761,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"modal":true}',
                 'order' => 2,
             ),
-            110 => 
+            109 => 
             array (
                 'id' => 227,
                 'data_type_id' => 14,
@@ -1793,7 +1777,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"model":"App\\\\TypeEntity","table":"type_entities","type":"belongsTo","column":"type_entities_id","key":"id","label":"name","pivot_table":"addresses","pivot":"0","taggable":"0"}',
                 'order' => 17,
             ),
-            111 => 
+            110 => 
             array (
                 'id' => 170,
                 'data_type_id' => 15,
@@ -1809,7 +1793,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 6,
             ),
-            112 => 
+            111 => 
             array (
                 'id' => 171,
                 'data_type_id' => 15,
@@ -1825,7 +1809,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"modal":true}',
                 'order' => 7,
             ),
-            113 => 
+            112 => 
             array (
                 'id' => 172,
                 'data_type_id' => 15,
@@ -1841,7 +1825,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"modal":true}',
                 'order' => 8,
             ),
-            114 => 
+            113 => 
             array (
                 'id' => 156,
                 'data_type_id' => 14,
@@ -1857,7 +1841,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => NULL,
                 'order' => 9,
             ),
-            115 => 
+            114 => 
             array (
                 'id' => 157,
                 'data_type_id' => 14,
@@ -1873,7 +1857,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => NULL,
                 'order' => 10,
             ),
-            116 => 
+            115 => 
             array (
                 'id' => 349,
                 'data_type_id' => 15,
@@ -1889,7 +1873,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"modal":true}',
                 'order' => 11,
             ),
-            117 => 
+            116 => 
             array (
                 'id' => 312,
                 'data_type_id' => 15,
@@ -1905,21 +1889,37 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"Statistique":"Statistique","Financement":"Financement"},"display":{"width":"3"},"modal":true}',
                 'order' => 3,
             ),
+            117 => 
+            array (
+                'id' => 306,
+                'data_type_id' => 22,
+                'field' => 'is_assurance_invalidite',
+                'type' => 'select_dropdown',
+                'display_name' => 'Assurance décès Invalidité',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"options":{"0":"Non","1":"Oui"},"display":{"width":"3"}}',
+                'order' => 61,
+            ),
             118 => 
             array (
-                'id' => 189,
-                'data_type_id' => 17,
-                'field' => 'id',
-                'type' => 'text',
-                'display_name' => 'Id',
-                'required' => 1,
+                'id' => 309,
+                'data_type_id' => 22,
+                'field' => 'created_at',
+                'type' => 'timestamp',
+                'display_name' => 'Created At',
+                'required' => 0,
                 'browse' => 0,
                 'read' => 0,
                 'edit' => 0,
                 'add' => 0,
                 'delete' => 0,
                 'details' => '{}',
-                'order' => 1,
+                'order' => 86,
             ),
             119 => 
             array (
@@ -1951,7 +1951,7 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{"display":{"width":"4"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Financement"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
-                'order' => 10,
+                'order' => 11,
             ),
             121 => 
             array (
@@ -1967,41 +1967,9 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}},"default":0}',
-                'order' => 11,
+                'order' => 12,
             ),
             122 => 
-            array (
-                'id' => 306,
-                'data_type_id' => 22,
-                'field' => 'is_assurance_invalidite',
-                'type' => 'select_dropdown',
-                'display_name' => 'Assurance décès Invalidité',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"options":{"0":"Non","1":"Oui"},"display":{"width":"3"}}',
-                'order' => 61,
-            ),
-            123 => 
-            array (
-                'id' => 309,
-                'data_type_id' => 22,
-                'field' => 'created_at',
-                'type' => 'timestamp',
-                'display_name' => 'Created At',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 0,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => '{}',
-                'order' => 86,
-            ),
-            124 => 
             array (
                 'id' => 337,
                 'data_type_id' => 15,
@@ -2017,7 +1985,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 38,
             ),
-            125 => 
+            123 => 
             array (
                 'id' => 338,
                 'data_type_id' => 15,
@@ -2033,7 +2001,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 39,
             ),
-            126 => 
+            124 => 
             array (
                 'id' => 324,
                 'data_type_id' => 15,
@@ -2049,839 +2017,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"2"}}',
                 'order' => 25,
             ),
-            127 => 
-            array (
-                'id' => 158,
-                'data_type_id' => 14,
-                'field' => 'type_entities_id',
-                'type' => 'hidden',
-                'display_name' => 'Type d entitée',
-                'required' => 1,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 0,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"default":2}',
-                'order' => 11,
-            ),
-            128 => 
-            array (
-                'id' => 160,
-                'data_type_id' => 14,
-                'field' => 'registration_entities_id',
-                'type' => 'text',
-                'display_name' => 'Immatriculation',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 0,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => '{"relationship":{"key":"id","label":"name"},"display":{"width":"3"}}',
-                'order' => 7,
-            ),
-            129 => 
-            array (
-                'id' => 228,
-                'data_type_id' => 14,
-                'field' => 'total_invest',
-                'type' => 'text',
-                'display_name' => 'Total Invest',
-                'required' => 1,
-                'browse' => 0,
-                'read' => 0,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => NULL,
-                'order' => 12,
-            ),
-            130 => 
-            array (
-                'id' => 229,
-                'data_type_id' => 14,
-                'field' => 'tax_rate',
-                'type' => 'text',
-                'display_name' => 'Tax Rate',
-                'required' => 1,
-                'browse' => 0,
-                'read' => 0,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => NULL,
-                'order' => 13,
-            ),
-            131 => 
-            array (
-                'id' => 230,
-                'data_type_id' => 14,
-                'field' => 'total_amount_ri',
-                'type' => 'text',
-                'display_name' => 'Total Amount Ri',
-                'required' => 1,
-                'browse' => 0,
-                'read' => 0,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => NULL,
-                'order' => 14,
-            ),
-            132 => 
-            array (
-                'id' => 231,
-                'data_type_id' => 14,
-                'field' => 'total_net_intake',
-                'type' => 'text',
-                'display_name' => 'Total Net Intake',
-                'required' => 1,
-                'browse' => 0,
-                'read' => 0,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => NULL,
-                'order' => 15,
-            ),
-            133 => 
-            array (
-                'id' => 433,
-                'data_type_id' => 14,
-                'field' => 'capital',
-                'type' => 'number',
-                'display_name' => 'Capital',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"3"}}',
-                'order' => 33,
-            ),
-            134 => 
-            array (
-                'id' => 307,
-                'data_type_id' => 22,
-                'field' => 'resultats',
-                'type' => 'text',
-                'display_name' => 'Résultats',
-                'required' => 1,
-                'browse' => 0,
-                'read' => 0,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => '{"formfields_custom":"mandat_resultat","display":{"width":"4"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"R\\u00e9capitulatif"}}',
-                'order' => 68,
-            ),
-            135 => 
-            array (
-                'id' => 414,
-                'data_type_id' => 8,
-                'field' => 'taux_comm',
-                'type' => 'select_dropdown',
-                'display_name' => 'Indiquez les taux de commission si la rénumération est variable.',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"options":{"01":"De plein droit","02":"Agrément","03":"Fermé"},"display":{"width":"3"}}',
-                'order' => 25,
-            ),
-            136 => 
-            array (
-                'id' => 512,
-                'data_type_id' => 14,
-                'field' => 'status',
-                'type' => 'select_dropdown',
-                'display_name' => 'Etat',
-                'required' => 1,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 0,
-                'delete' => 1,
-                'details' => '{"options":{"IN_STOCK":"En stock","ACTIVE":"Active","MARKETING_OFF":"Terminée non ouvertes à la commercialisation","MARKETING_ON":"Terminée ouvertes à la commercialisation","CLOSE":"Terminée"},"display":{"width":"4"}}',
-                'order' => 31,
-            ),
-            137 => 
-            array (
-                'id' => 415,
-                'data_type_id' => 8,
-                'field' => 'mandat_sign',
-                'type' => 'file',
-                'display_name' => 'Mandat signé',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"8"}}',
-                'order' => 34,
-            ),
-            138 => 
-            array (
-                'id' => 416,
-                'data_type_id' => 8,
-                'field' => 'kbis',
-                'type' => 'file',
-                'display_name' => 'KBIS',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"8"}}',
-                'order' => 35,
-            ),
-            139 => 
-            array (
-                'id' => 417,
-                'data_type_id' => 8,
-                'field' => 'cni',
-                'type' => 'file',
-                'display_name' => 'CNI',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"8"}}',
-                'order' => 36,
-            ),
-            140 => 
-            array (
-                'id' => 418,
-                'data_type_id' => 8,
-                'field' => 'rib',
-                'type' => 'file',
-                'display_name' => 'RIB',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"8"}}',
-                'order' => 37,
-            ),
-            141 => 
-            array (
-                'id' => 136,
-                'data_type_id' => 13,
-                'field' => 'city',
-                'type' => 'text',
-                'display_name' => 'Ville',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"3"},"modal":true}',
-                'order' => 6,
-            ),
-            142 => 
-            array (
-                'id' => 137,
-                'data_type_id' => 13,
-                'field' => 'started_at',
-                'type' => 'timestamp',
-                'display_name' => 'Date d\'immatriculation',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 0,
-                'details' => '{"display":{"width":"3"}}',
-                'order' => 8,
-            ),
-            143 => 
-            array (
-                'id' => 138,
-                'data_type_id' => 13,
-                'field' => 'created_at',
-                'type' => 'timestamp',
-                'display_name' => 'Created At',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 1,
-                'details' => NULL,
-                'order' => 9,
-            ),
-            144 => 
-            array (
-                'id' => 139,
-                'data_type_id' => 13,
-                'field' => 'updated_at',
-                'type' => 'timestamp',
-                'display_name' => 'Updated At',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => NULL,
-                'order' => 10,
-            ),
-            145 => 
-            array (
-                'id' => 143,
-                'data_type_id' => 13,
-                'field' => 'capital',
-                'type' => 'text',
-                'display_name' => 'Capital',
-                'required' => 1,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"3"},"modal":true}',
-                'order' => 13,
-            ),
-            146 => 
-            array (
-                'id' => 420,
-                'data_type_id' => 8,
-                'field' => 'bank_agency',
-                'type' => 'text',
-                'display_name' => 'Agence',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"2"}}',
-                'order' => 27,
-            ),
-            147 => 
-            array (
-                'id' => 407,
-                'data_type_id' => 8,
-                'field' => 'date_creation',
-                'type' => 'timestamp',
-                'display_name' => 'Date de création',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 0,
-                'details' => '{"display":{"width":"3"}}',
-                'order' => 18,
-            ),
-            148 => 
-            array (
-                'id' => 408,
-                'data_type_id' => 8,
-                'field' => 'date_contrat',
-                'type' => 'timestamp',
-                'display_name' => 'Date du contrat',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 0,
-                'details' => '{"display":{"width":"3"}}',
-                'order' => 19,
-            ),
-            149 => 
-            array (
-                'id' => 409,
-                'data_type_id' => 8,
-                'field' => 'duree_contrat',
-                'type' => 'text',
-                'display_name' => 'Durée du contrat',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"3"}}',
-                'order' => 20,
-            ),
-            150 => 
-            array (
-                'id' => 410,
-                'data_type_id' => 8,
-                'field' => 'tacite_reconduction',
-                'type' => 'checkbox',
-                'display_name' => 'Tacite Reconduction',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"on":"Oui","off":"Non","display":{"width":"3"}}',
-                'order' => 21,
-            ),
-            151 => 
-            array (
-                'id' => 411,
-                'data_type_id' => 8,
-                'field' => 'habilitation_mandat',
-                'type' => 'checkbox',
-                'display_name' => 'Habilitation Mandat',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"on":"Oui","off":"Non","display":{"width":"3"}}',
-                'order' => 22,
-            ),
-            152 => 
-            array (
-                'id' => 412,
-                'data_type_id' => 8,
-                'field' => 'remuneration',
-                'type' => 'select_dropdown',
-                'display_name' => 'Rémunération',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"options":{"Fixe":"Fixe","Variable":"Variable"},"display":{"width":"3"}}',
-                'order' => 24,
-            ),
-            153 => 
-            array (
-                'id' => 413,
-                'data_type_id' => 8,
-                'field' => 'habilitation_dossier',
-                'type' => 'checkbox',
-                'display_name' => 'Habilitation Dossier',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"3"}}',
-                'order' => 23,
-            ),
-            154 => 
-            array (
-                'id' => 174,
-                'data_type_id' => 15,
-                'field' => 'created_at',
-                'type' => 'timestamp',
-                'display_name' => 'Created At',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 1,
-                'details' => NULL,
-                'order' => 17,
-            ),
-            155 => 
-            array (
-                'id' => 175,
-                'data_type_id' => 15,
-                'field' => 'updated_at',
-                'type' => 'timestamp',
-                'display_name' => 'Updated At',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => NULL,
-                'order' => 24,
-            ),
-            156 => 
-            array (
-                'id' => 179,
-                'data_type_id' => 15,
-                'field' => 'capital',
-                'type' => 'text',
-                'display_name' => 'Capital',
-                'required' => 1,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"3"}}',
-                'order' => 13,
-            ),
-            157 => 
-            array (
-                'id' => 313,
-                'data_type_id' => 15,
-                'field' => 'dom_agency',
-                'type' => 'select_dropdown',
-                'display_name' => 'Agence',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"options":{"Reunion":"Reunion","Mayotte":"Mayotte","Martinique":"Martinique","Guadeloupe":"Guadeloupe","Guyane":"Guyane"},"display":{"width":"3"},"modal":true}',
-                'order' => 4,
-            ),
-            158 => 
-            array (
-                'id' => 317,
-                'data_type_id' => 15,
-                'field' => 'rib',
-                'type' => 'file',
-                'display_name' => 'RIB',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 0,
-                'details' => '{"display":{"width":"8"}}',
-                'order' => 33,
-            ),
-            159 => 
-            array (
-                'id' => 320,
-                'data_type_id' => 15,
-                'field' => 'divers_documents',
-                'type' => 'file',
-                'display_name' => 'Documents Divers',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 0,
-                'details' => '{"display":{"width":"8"}}',
-                'order' => 36,
-            ),
-            160 => 
-            array (
-                'id' => 321,
-                'data_type_id' => 15,
-                'field' => 'preloan_convention',
-                'type' => 'file',
-                'display_name' => 'Convention de pré-financement',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 0,
-                'details' => '{"display":{"width":"8"}}',
-                'order' => 37,
-            ),
-            161 => 
-            array (
-                'id' => 325,
-                'data_type_id' => 15,
-                'field' => 'bank_agency',
-                'type' => 'text',
-                'display_name' => 'Agence',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"2"}}',
-                'order' => 26,
-            ),
-            162 => 
-            array (
-                'id' => 326,
-                'data_type_id' => 15,
-                'field' => 'iban',
-                'type' => 'text',
-                'display_name' => 'IBAN',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"2"}}',
-                'order' => 31,
-            ),
-            163 => 
-            array (
-                'id' => 111,
-                'data_type_id' => 8,
-                'field' => 'contact_id',
-                'type' => 'select_dropdown',
-                'display_name' => 'Représentant légal',
-                'required' => 1,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"relationship":{"key":"id","label":"name"},"formfields_custom":"contact","display":{"width":"3"}}',
-                'order' => 16,
-            ),
-            164 => 
-            array (
-                'id' => 427,
-                'data_type_id' => 14,
-                'field' => 'gerant_id',
-                'type' => 'select_dropdown',
-                'display_name' => 'Gérant',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"relationship":{"key":"id","label":"full_name"},"formfields_custom":"contact","display":{"width":"3"}}',
-                'order' => 23,
-            ),
-            165 => 
-            array (
-                'id' => 428,
-                'data_type_id' => 14,
-                'field' => 'associe_first',
-                'type' => 'select_dropdown',
-                'display_name' => 'Associé principal',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"relationship":{"key":"id","label":"full_name"},"formfields_custom":"contact","display":{"width":"3"}}',
-                'order' => 25,
-            ),
-            166 => 
-            array (
-                'id' => 429,
-                'data_type_id' => 14,
-                'field' => 'associe_second',
-                'type' => 'select_dropdown',
-                'display_name' => 'Associé secondaire',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"relationship":{"key":"id","label":"full_name"},"formfields_custom":"contact","display":{"width":"3"}}',
-                'order' => 27,
-            ),
-            167 => 
-            array (
-                'id' => 430,
-                'data_type_id' => 14,
-                'field' => 'part_asso_first',
-                'type' => 'number',
-                'display_name' => 'Part de l\'associé principal',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"3"}}',
-                'order' => 29,
-            ),
-            168 => 
-            array (
-                'id' => 431,
-                'data_type_id' => 14,
-                'field' => 'part_asso_second',
-                'type' => 'number',
-                'display_name' => 'Part du second associé',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"3"}}',
-                'order' => 30,
-            ),
-            169 => 
-            array (
-                'id' => 432,
-                'data_type_id' => 14,
-                'field' => 'nbre_part_total',
-                'type' => 'number',
-                'display_name' => 'Nbre Part Total',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"3"}}',
-                'order' => 32,
-            ),
-            170 => 
-            array (
-                'id' => 421,
-                'data_type_id' => 8,
-                'field' => 'bank_iban',
-                'type' => 'text',
-                'display_name' => 'IBAN',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"2"}}',
-                'order' => 32,
-            ),
-            171 => 
-            array (
-                'id' => 422,
-                'data_type_id' => 8,
-                'field' => 'bank_bic',
-                'type' => 'text',
-                'display_name' => 'BIC',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"2"}}',
-                'order' => 33,
-            ),
-            172 => 
-            array (
-                'id' => 423,
-                'data_type_id' => 8,
-                'field' => 'bank_account',
-                'type' => 'text',
-                'display_name' => 'Compte',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"1"}}',
-                'order' => 30,
-            ),
-            173 => 
-            array (
-                'id' => 513,
-                'data_type_id' => 14,
-                'field' => 'nic',
-                'type' => 'text',
-                'display_name' => 'NIC',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 0,
-                'delete' => 0,
-                'details' => '{"validation":{"rule":"required|digits:5","messages":{"required":"le :attribute est obligatoire pour le passage en actif.","digits":"le :attribute doit être un nombre entier de :digits chiffres."}},"display":{"width":"1"}}',
-                'order' => 40,
-            ),
-            174 => 
-            array (
-                'id' => 153,
-                'data_type_id' => 14,
-                'field' => 'postal_code',
-                'type' => 'text',
-                'display_name' => 'Code Postal',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"3"}}',
-                'order' => 5,
-            ),
-            175 => 
-            array (
-                'id' => 434,
-                'data_type_id' => 14,
-                'field' => 'forme_juridique',
-                'type' => 'select_dropdown',
-                'display_name' => 'Forme Juridique',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"options":{"EI":"EI","EURL":"EURL","SA":"SA","SARL":"SARL","SAS":"SAS","Autre":"Autre"},"display":{"width":"3"}}',
-                'order' => 34,
-            ),
-            176 => 
-            array (
-                'id' => 435,
-                'data_type_id' => 14,
-                'field' => 'versement_capital',
-                'type' => 'number',
-                'display_name' => 'Versement Capital',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"3"}}',
-                'order' => 35,
-            ),
-            177 => 
-            array (
-                'id' => 436,
-                'data_type_id' => 14,
-                'field' => 'date_crea',
-                'type' => 'timestamp',
-                'display_name' => 'Date de Création',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"3"}}',
-                'order' => 36,
-            ),
-            178 => 
-            array (
-                'id' => 144,
-                'data_type_id' => 13,
-                'field' => 'registration_city',
-                'type' => 'text',
-                'display_name' => 'Lieu d\'immatriculation',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"3"},"modal":true}',
-                'order' => 7,
-            ),
-            179 => 
+            125 => 
             array (
                 'id' => 196,
                 'data_type_id' => 17,
@@ -2897,7 +2033,839 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"relationship":{"key":"id","label":"name"},"display":{"width":"4"}}',
                 'order' => 5,
             ),
-            180 => 
+            126 => 
+            array (
+                'id' => 158,
+                'data_type_id' => 14,
+                'field' => 'type_entities_id',
+                'type' => 'hidden',
+                'display_name' => 'Type d entitée',
+                'required' => 1,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 0,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"default":2}',
+                'order' => 11,
+            ),
+            127 => 
+            array (
+                'id' => 160,
+                'data_type_id' => 14,
+                'field' => 'registration_entities_id',
+                'type' => 'text',
+                'display_name' => 'Immatriculation',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => '{"relationship":{"key":"id","label":"name"},"display":{"width":"3"}}',
+                'order' => 7,
+            ),
+            128 => 
+            array (
+                'id' => 228,
+                'data_type_id' => 14,
+                'field' => 'total_invest',
+                'type' => 'text',
+                'display_name' => 'Total Invest',
+                'required' => 1,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => NULL,
+                'order' => 12,
+            ),
+            129 => 
+            array (
+                'id' => 229,
+                'data_type_id' => 14,
+                'field' => 'tax_rate',
+                'type' => 'text',
+                'display_name' => 'Tax Rate',
+                'required' => 1,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => NULL,
+                'order' => 13,
+            ),
+            130 => 
+            array (
+                'id' => 230,
+                'data_type_id' => 14,
+                'field' => 'total_amount_ri',
+                'type' => 'text',
+                'display_name' => 'Total Amount Ri',
+                'required' => 1,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => NULL,
+                'order' => 14,
+            ),
+            131 => 
+            array (
+                'id' => 231,
+                'data_type_id' => 14,
+                'field' => 'total_net_intake',
+                'type' => 'text',
+                'display_name' => 'Total Net Intake',
+                'required' => 1,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => NULL,
+                'order' => 15,
+            ),
+            132 => 
+            array (
+                'id' => 433,
+                'data_type_id' => 14,
+                'field' => 'capital',
+                'type' => 'number',
+                'display_name' => 'Capital',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"3"}}',
+                'order' => 33,
+            ),
+            133 => 
+            array (
+                'id' => 307,
+                'data_type_id' => 22,
+                'field' => 'resultats',
+                'type' => 'text',
+                'display_name' => 'Résultats',
+                'required' => 1,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => '{"formfields_custom":"mandat_resultat","display":{"width":"4"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"R\\u00e9capitulatif"}}',
+                'order' => 68,
+            ),
+            134 => 
+            array (
+                'id' => 414,
+                'data_type_id' => 8,
+                'field' => 'taux_comm',
+                'type' => 'select_dropdown',
+                'display_name' => 'Indiquez les taux de commission si la rénumération est variable.',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"options":{"01":"De plein droit","02":"Agrément","03":"Fermé"},"display":{"width":"3"}}',
+                'order' => 25,
+            ),
+            135 => 
+            array (
+                'id' => 512,
+                'data_type_id' => 14,
+                'field' => 'status',
+                'type' => 'select_dropdown',
+                'display_name' => 'Etat',
+                'required' => 1,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 0,
+                'delete' => 1,
+                'details' => '{"options":{"IN_STOCK":"En stock","ACTIVE":"Active","MARKETING_OFF":"Terminée non ouvertes à la commercialisation","MARKETING_ON":"Terminée ouvertes à la commercialisation","CLOSE":"Terminée"},"display":{"width":"4"}}',
+                'order' => 31,
+            ),
+            136 => 
+            array (
+                'id' => 415,
+                'data_type_id' => 8,
+                'field' => 'mandat_sign',
+                'type' => 'file',
+                'display_name' => 'Mandat signé',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"8"}}',
+                'order' => 34,
+            ),
+            137 => 
+            array (
+                'id' => 416,
+                'data_type_id' => 8,
+                'field' => 'kbis',
+                'type' => 'file',
+                'display_name' => 'KBIS',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"8"}}',
+                'order' => 35,
+            ),
+            138 => 
+            array (
+                'id' => 417,
+                'data_type_id' => 8,
+                'field' => 'cni',
+                'type' => 'file',
+                'display_name' => 'CNI',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"8"}}',
+                'order' => 36,
+            ),
+            139 => 
+            array (
+                'id' => 418,
+                'data_type_id' => 8,
+                'field' => 'rib',
+                'type' => 'file',
+                'display_name' => 'RIB',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"8"}}',
+                'order' => 37,
+            ),
+            140 => 
+            array (
+                'id' => 136,
+                'data_type_id' => 13,
+                'field' => 'city',
+                'type' => 'text',
+                'display_name' => 'Ville',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"3"},"modal":true}',
+                'order' => 6,
+            ),
+            141 => 
+            array (
+                'id' => 137,
+                'data_type_id' => 13,
+                'field' => 'started_at',
+                'type' => 'timestamp',
+                'display_name' => 'Date d\'immatriculation',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 0,
+                'details' => '{"display":{"width":"3"}}',
+                'order' => 8,
+            ),
+            142 => 
+            array (
+                'id' => 138,
+                'data_type_id' => 13,
+                'field' => 'created_at',
+                'type' => 'timestamp',
+                'display_name' => 'Created At',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 1,
+                'details' => NULL,
+                'order' => 9,
+            ),
+            143 => 
+            array (
+                'id' => 139,
+                'data_type_id' => 13,
+                'field' => 'updated_at',
+                'type' => 'timestamp',
+                'display_name' => 'Updated At',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => NULL,
+                'order' => 10,
+            ),
+            144 => 
+            array (
+                'id' => 143,
+                'data_type_id' => 13,
+                'field' => 'capital',
+                'type' => 'text',
+                'display_name' => 'Capital',
+                'required' => 1,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"3"},"modal":true}',
+                'order' => 13,
+            ),
+            145 => 
+            array (
+                'id' => 420,
+                'data_type_id' => 8,
+                'field' => 'bank_agency',
+                'type' => 'text',
+                'display_name' => 'Agence',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"2"}}',
+                'order' => 27,
+            ),
+            146 => 
+            array (
+                'id' => 407,
+                'data_type_id' => 8,
+                'field' => 'date_creation',
+                'type' => 'timestamp',
+                'display_name' => 'Date de création',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 0,
+                'details' => '{"display":{"width":"3"}}',
+                'order' => 18,
+            ),
+            147 => 
+            array (
+                'id' => 408,
+                'data_type_id' => 8,
+                'field' => 'date_contrat',
+                'type' => 'timestamp',
+                'display_name' => 'Date du contrat',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 0,
+                'details' => '{"display":{"width":"3"}}',
+                'order' => 19,
+            ),
+            148 => 
+            array (
+                'id' => 409,
+                'data_type_id' => 8,
+                'field' => 'duree_contrat',
+                'type' => 'text',
+                'display_name' => 'Durée du contrat',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"3"}}',
+                'order' => 20,
+            ),
+            149 => 
+            array (
+                'id' => 410,
+                'data_type_id' => 8,
+                'field' => 'tacite_reconduction',
+                'type' => 'checkbox',
+                'display_name' => 'Tacite Reconduction',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"on":"Oui","off":"Non","display":{"width":"3"}}',
+                'order' => 21,
+            ),
+            150 => 
+            array (
+                'id' => 411,
+                'data_type_id' => 8,
+                'field' => 'habilitation_mandat',
+                'type' => 'checkbox',
+                'display_name' => 'Habilitation Mandat',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"on":"Oui","off":"Non","display":{"width":"3"}}',
+                'order' => 22,
+            ),
+            151 => 
+            array (
+                'id' => 412,
+                'data_type_id' => 8,
+                'field' => 'remuneration',
+                'type' => 'select_dropdown',
+                'display_name' => 'Rémunération',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"options":{"Fixe":"Fixe","Variable":"Variable"},"display":{"width":"3"}}',
+                'order' => 24,
+            ),
+            152 => 
+            array (
+                'id' => 413,
+                'data_type_id' => 8,
+                'field' => 'habilitation_dossier',
+                'type' => 'checkbox',
+                'display_name' => 'Habilitation Dossier',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"3"}}',
+                'order' => 23,
+            ),
+            153 => 
+            array (
+                'id' => 174,
+                'data_type_id' => 15,
+                'field' => 'created_at',
+                'type' => 'timestamp',
+                'display_name' => 'Created At',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 1,
+                'details' => NULL,
+                'order' => 17,
+            ),
+            154 => 
+            array (
+                'id' => 175,
+                'data_type_id' => 15,
+                'field' => 'updated_at',
+                'type' => 'timestamp',
+                'display_name' => 'Updated At',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => NULL,
+                'order' => 24,
+            ),
+            155 => 
+            array (
+                'id' => 179,
+                'data_type_id' => 15,
+                'field' => 'capital',
+                'type' => 'text',
+                'display_name' => 'Capital',
+                'required' => 1,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"3"}}',
+                'order' => 13,
+            ),
+            156 => 
+            array (
+                'id' => 313,
+                'data_type_id' => 15,
+                'field' => 'dom_agency',
+                'type' => 'select_dropdown',
+                'display_name' => 'Agence',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"options":{"Reunion":"Reunion","Mayotte":"Mayotte","Martinique":"Martinique","Guadeloupe":"Guadeloupe","Guyane":"Guyane"},"display":{"width":"3"},"modal":true}',
+                'order' => 4,
+            ),
+            157 => 
+            array (
+                'id' => 317,
+                'data_type_id' => 15,
+                'field' => 'rib',
+                'type' => 'file',
+                'display_name' => 'RIB',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 0,
+                'details' => '{"display":{"width":"8"}}',
+                'order' => 33,
+            ),
+            158 => 
+            array (
+                'id' => 320,
+                'data_type_id' => 15,
+                'field' => 'divers_documents',
+                'type' => 'file',
+                'display_name' => 'Documents Divers',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 0,
+                'details' => '{"display":{"width":"8"}}',
+                'order' => 36,
+            ),
+            159 => 
+            array (
+                'id' => 321,
+                'data_type_id' => 15,
+                'field' => 'preloan_convention',
+                'type' => 'file',
+                'display_name' => 'Convention de pré-financement',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 0,
+                'details' => '{"display":{"width":"8"}}',
+                'order' => 37,
+            ),
+            160 => 
+            array (
+                'id' => 325,
+                'data_type_id' => 15,
+                'field' => 'bank_agency',
+                'type' => 'text',
+                'display_name' => 'Agence',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"2"}}',
+                'order' => 26,
+            ),
+            161 => 
+            array (
+                'id' => 326,
+                'data_type_id' => 15,
+                'field' => 'iban',
+                'type' => 'text',
+                'display_name' => 'IBAN',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"2"}}',
+                'order' => 31,
+            ),
+            162 => 
+            array (
+                'id' => 111,
+                'data_type_id' => 8,
+                'field' => 'contact_id',
+                'type' => 'select_dropdown',
+                'display_name' => 'Représentant légal',
+                'required' => 1,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"relationship":{"key":"id","label":"name"},"formfields_custom":"contact","display":{"width":"3"}}',
+                'order' => 16,
+            ),
+            163 => 
+            array (
+                'id' => 427,
+                'data_type_id' => 14,
+                'field' => 'gerant_id',
+                'type' => 'select_dropdown',
+                'display_name' => 'Gérant',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"relationship":{"key":"id","label":"full_name"},"formfields_custom":"contact","display":{"width":"3"}}',
+                'order' => 23,
+            ),
+            164 => 
+            array (
+                'id' => 428,
+                'data_type_id' => 14,
+                'field' => 'associe_first',
+                'type' => 'select_dropdown',
+                'display_name' => 'Associé principal',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"relationship":{"key":"id","label":"full_name"},"formfields_custom":"contact","display":{"width":"3"}}',
+                'order' => 25,
+            ),
+            165 => 
+            array (
+                'id' => 429,
+                'data_type_id' => 14,
+                'field' => 'associe_second',
+                'type' => 'select_dropdown',
+                'display_name' => 'Associé secondaire',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"relationship":{"key":"id","label":"full_name"},"formfields_custom":"contact","display":{"width":"3"}}',
+                'order' => 27,
+            ),
+            166 => 
+            array (
+                'id' => 430,
+                'data_type_id' => 14,
+                'field' => 'part_asso_first',
+                'type' => 'number',
+                'display_name' => 'Part de l\'associé principal',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"3"}}',
+                'order' => 29,
+            ),
+            167 => 
+            array (
+                'id' => 431,
+                'data_type_id' => 14,
+                'field' => 'part_asso_second',
+                'type' => 'number',
+                'display_name' => 'Part du second associé',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"3"}}',
+                'order' => 30,
+            ),
+            168 => 
+            array (
+                'id' => 432,
+                'data_type_id' => 14,
+                'field' => 'nbre_part_total',
+                'type' => 'number',
+                'display_name' => 'Nbre Part Total',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"3"}}',
+                'order' => 32,
+            ),
+            169 => 
+            array (
+                'id' => 421,
+                'data_type_id' => 8,
+                'field' => 'bank_iban',
+                'type' => 'text',
+                'display_name' => 'IBAN',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"2"}}',
+                'order' => 32,
+            ),
+            170 => 
+            array (
+                'id' => 422,
+                'data_type_id' => 8,
+                'field' => 'bank_bic',
+                'type' => 'text',
+                'display_name' => 'BIC',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"2"}}',
+                'order' => 33,
+            ),
+            171 => 
+            array (
+                'id' => 423,
+                'data_type_id' => 8,
+                'field' => 'bank_account',
+                'type' => 'text',
+                'display_name' => 'Compte',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"1"}}',
+                'order' => 30,
+            ),
+            172 => 
+            array (
+                'id' => 513,
+                'data_type_id' => 14,
+                'field' => 'nic',
+                'type' => 'text',
+                'display_name' => 'NIC',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 0,
+                'delete' => 0,
+                'details' => '{"validation":{"rule":"required|digits:5","messages":{"required":"le :attribute est obligatoire pour le passage en actif.","digits":"le :attribute doit être un nombre entier de :digits chiffres."}},"display":{"width":"1"}}',
+                'order' => 40,
+            ),
+            173 => 
+            array (
+                'id' => 153,
+                'data_type_id' => 14,
+                'field' => 'postal_code',
+                'type' => 'text',
+                'display_name' => 'Code Postal',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"3"}}',
+                'order' => 5,
+            ),
+            174 => 
+            array (
+                'id' => 434,
+                'data_type_id' => 14,
+                'field' => 'forme_juridique',
+                'type' => 'select_dropdown',
+                'display_name' => 'Forme Juridique',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"options":{"EI":"EI","EURL":"EURL","SA":"SA","SARL":"SARL","SAS":"SAS","Autre":"Autre"},"display":{"width":"3"}}',
+                'order' => 34,
+            ),
+            175 => 
+            array (
+                'id' => 435,
+                'data_type_id' => 14,
+                'field' => 'versement_capital',
+                'type' => 'number',
+                'display_name' => 'Versement Capital',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"3"}}',
+                'order' => 35,
+            ),
+            176 => 
+            array (
+                'id' => 436,
+                'data_type_id' => 14,
+                'field' => 'date_crea',
+                'type' => 'timestamp',
+                'display_name' => 'Date de Création',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"3"}}',
+                'order' => 36,
+            ),
+            177 => 
+            array (
+                'id' => 144,
+                'data_type_id' => 13,
+                'field' => 'registration_city',
+                'type' => 'text',
+                'display_name' => 'Lieu d\'immatriculation',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"3"},"modal":true}',
+                'order' => 7,
+            ),
+            178 => 
             array (
                 'id' => 360,
                 'data_type_id' => 13,
@@ -2913,7 +2881,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"CMA":"Chambre des Métiers et de l\'Artisanat","RCS":"Registre des Commerces et des Société","SS":"Sécurité sociale"},"display":{"width":"3"},"modal":true}',
                 'order' => 12,
             ),
-            181 => 
+            179 => 
             array (
                 'id' => 361,
                 'data_type_id' => 13,
@@ -2929,7 +2897,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"EI":"EI","EURL":"EURL","SA":"SA","SARL":"SARL","SAS":"SAS","Autre":"Autre"},"display":{"width":"3"},"modal":true}',
                 'order' => 14,
             ),
-            182 => 
+            180 => 
             array (
                 'id' => 403,
                 'data_type_id' => 13,
@@ -2945,7 +2913,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 17,
             ),
-            183 => 
+            181 => 
             array (
                 'id' => 370,
                 'data_type_id' => 13,
@@ -2961,7 +2929,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"2"}}',
                 'order' => 27,
             ),
-            184 => 
+            182 => 
             array (
                 'id' => 437,
                 'data_type_id' => 14,
@@ -2977,7 +2945,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"01":"Confort","02":"Sérénité +"},"display":{"width":"3"}}',
                 'order' => 37,
             ),
-            185 => 
+            183 => 
             array (
                 'id' => 401,
                 'data_type_id' => 8,
@@ -2993,7 +2961,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"CMA":"Chambre des Métiers et de l\'Artisanat","RCS":"Registre des Commerces et des Société","SS":"Sécurité sociale"},"display":{"width":"3"}}',
                 'order' => 12,
             ),
-            186 => 
+            184 => 
             array (
                 'id' => 424,
                 'data_type_id' => 14,
@@ -3009,7 +2977,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"model":"App\\\\Contact","table":"contacts","type":"belongsTo","column":"gerant_id","key":"id","label":"fistname","pivot_table":"addresses","pivot":"0","taggable":"0"}',
                 'order' => 24,
             ),
-            187 => 
+            185 => 
             array (
                 'id' => 318,
                 'data_type_id' => 15,
@@ -3025,7 +2993,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 34,
             ),
-            188 => 
+            186 => 
             array (
                 'id' => 425,
                 'data_type_id' => 14,
@@ -3041,7 +3009,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"model":"App\\\\Contact","table":"contacts","type":"belongsTo","column":"associe_first","key":"id","label":"fistname","pivot_table":"addresses","pivot":"0","taggable":"0"}',
                 'order' => 26,
             ),
-            189 => 
+            187 => 
             array (
                 'id' => 438,
                 'data_type_id' => 14,
@@ -3057,7 +3025,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"model":"App\\\\Contact","table":"contacts","type":"belongsTo","column":"associe_second","key":"id","label":"fistname","pivot_table":"addresses","pivot":"0","taggable":"0"}',
                 'order' => 28,
             ),
-            190 => 
+            188 => 
             array (
                 'id' => 152,
                 'data_type_id' => 14,
@@ -3073,7 +3041,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 4,
             ),
-            191 => 
+            189 => 
             array (
                 'id' => 319,
                 'data_type_id' => 15,
@@ -3089,7 +3057,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 35,
             ),
-            192 => 
+            190 => 
             array (
                 'id' => 514,
                 'data_type_id' => 14,
@@ -3105,7 +3073,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"12"}}',
                 'order' => 49,
             ),
-            193 => 
+            191 => 
             array (
                 'id' => 314,
                 'data_type_id' => 15,
@@ -3121,7 +3089,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"EI":"EI","EURL":"EURL","SA":"SA","SARL":"SARL","SAS":"SAS","Autre":"Autre"},"display":{"width":"3"},"modal":true}',
                 'order' => 14,
             ),
-            194 => 
+            192 => 
             array (
                 'id' => 364,
                 'data_type_id' => 13,
@@ -3137,7 +3105,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"0":"non","1":"oui"},"display":{"width":"3"},"modal":true}',
                 'order' => 20,
             ),
-            195 => 
+            193 => 
             array (
                 'id' => 80,
                 'data_type_id' => 7,
@@ -3151,9 +3119,9 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 0,
                 'delete' => 0,
                 'details' => '{"display":{"width":"8"},"format":"%d\\/%m\\/%Y"}',
-                'order' => 32,
+                'order' => 33,
             ),
-            196 => 
+            194 => 
             array (
                 'id' => 267,
                 'data_type_id' => 22,
@@ -3169,7 +3137,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"relationship":{"key":"id","label":"name","modal":true},"display":{"width":"3"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Locataire"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Locataire"}}',
                 'order' => 11,
             ),
-            197 => 
+            195 => 
             array (
                 'id' => 308,
                 'data_type_id' => 22,
@@ -3185,7 +3153,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"},"calculate":true}',
                 'order' => 83,
             ),
-            198 => 
+            196 => 
             array (
                 'id' => 479,
                 'data_type_id' => 22,
@@ -3201,7 +3169,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 39,
             ),
-            199 => 
+            197 => 
             array (
                 'id' => 367,
                 'data_type_id' => 13,
@@ -3217,7 +3185,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 23,
             ),
-            200 => 
+            198 => 
             array (
                 'id' => 315,
                 'data_type_id' => 15,
@@ -3233,7 +3201,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 15,
             ),
-            201 => 
+            199 => 
             array (
                 'id' => 316,
                 'data_type_id' => 15,
@@ -3249,7 +3217,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"TP":"TP","Automobile":"Automobile","Agriculture":"Agriculture","Elevage":"Elevage","Materiels industriels":"Materiels industriels","Camion":"Camion","Bus":"Bus","Materiel de boulangerie":"Materiel de boulangerie","Autre":"Autre"},"display":{"width":"3"},"modal":true}',
                 'order' => 16,
             ),
-            202 => 
+            200 => 
             array (
                 'id' => 327,
                 'data_type_id' => 15,
@@ -3265,7 +3233,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"2"}}',
                 'order' => 32,
             ),
-            203 => 
+            201 => 
             array (
                 'id' => 505,
                 'data_type_id' => 8,
@@ -3281,7 +3249,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"1"}}',
                 'order' => 28,
             ),
-            204 => 
+            202 => 
             array (
                 'id' => 506,
                 'data_type_id' => 8,
@@ -3297,7 +3265,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"1"}}',
                 'order' => 29,
             ),
-            205 => 
+            203 => 
             array (
                 'id' => 507,
                 'data_type_id' => 8,
@@ -3313,7 +3281,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"1"}}',
                 'order' => 31,
             ),
-            206 => 
+            204 => 
             array (
                 'id' => 515,
                 'data_type_id' => 14,
@@ -3329,7 +3297,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"01":"Avec","02":"Sans"},"display":{"width":"3"}}',
                 'order' => 38,
             ),
-            207 => 
+            205 => 
             array (
                 'id' => 328,
                 'data_type_id' => 15,
@@ -3345,7 +3313,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"1"}}',
                 'order' => 29,
             ),
-            208 => 
+            206 => 
             array (
                 'id' => 339,
                 'data_type_id' => 15,
@@ -3361,7 +3329,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"on":"Oui","off":"Non","display":{"width":"3"}}',
                 'order' => 18,
             ),
-            209 => 
+            207 => 
             array (
                 'id' => 340,
                 'data_type_id' => 15,
@@ -3377,7 +3345,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"on":"Oui","off":"Non","display":{"width":"3"}}',
                 'order' => 19,
             ),
-            210 => 
+            208 => 
             array (
                 'id' => 323,
                 'data_type_id' => 15,
@@ -3393,7 +3361,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"on":"Oui","off":"Non","display":{"width":"3"}}',
                 'order' => 20,
             ),
-            211 => 
+            209 => 
             array (
                 'id' => 380,
                 'data_type_id' => 13,
@@ -3409,7 +3377,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 40,
             ),
-            212 => 
+            210 => 
             array (
                 'id' => 384,
                 'data_type_id' => 13,
@@ -3425,7 +3393,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 44,
             ),
-            213 => 
+            211 => 
             array (
                 'id' => 389,
                 'data_type_id' => 13,
@@ -3441,7 +3409,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 49,
             ),
-            214 => 
+            212 => 
             array (
                 'id' => 390,
                 'data_type_id' => 13,
@@ -3457,7 +3425,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 50,
             ),
-            215 => 
+            213 => 
             array (
                 'id' => 391,
                 'data_type_id' => 13,
@@ -3473,7 +3441,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 51,
             ),
-            216 => 
+            214 => 
             array (
                 'id' => 392,
                 'data_type_id' => 13,
@@ -3489,7 +3457,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 52,
             ),
-            217 => 
+            215 => 
             array (
                 'id' => 393,
                 'data_type_id' => 13,
@@ -3505,7 +3473,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 53,
             ),
-            218 => 
+            216 => 
             array (
                 'id' => 394,
                 'data_type_id' => 13,
@@ -3521,7 +3489,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 54,
             ),
-            219 => 
+            217 => 
             array (
                 'id' => 395,
                 'data_type_id' => 13,
@@ -3537,7 +3505,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 55,
             ),
-            220 => 
+            218 => 
             array (
                 'id' => 396,
                 'data_type_id' => 13,
@@ -3553,7 +3521,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 56,
             ),
-            221 => 
+            219 => 
             array (
                 'id' => 25,
                 'data_type_id' => 4,
@@ -3569,71 +3537,39 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"4"},"modal":true,"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
                 'order' => 4,
             ),
-            222 => 
+            220 => 
             array (
-                'id' => 207,
+                'id' => 201,
                 'data_type_id' => 17,
-                'field' => 'updated_at',
-                'type' => 'timestamp',
-                'display_name' => 'Mis à jour le',
+                'field' => 'taux_rentabilite',
+                'type' => 'percentage',
+                'display_name' => 'Taux Rentabilité',
                 'required' => 0,
-                'browse' => 0,
-                'read' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => '{"display":{"width":"3"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Resultat"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Resultat"}}',
+                'order' => 23,
+            ),
+            221 => 
+            array (
+                'id' => 202,
+                'data_type_id' => 17,
+                'field' => 'apport',
+                'type' => 'money',
+                'display_name' => 'Apport',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
                 'edit' => 0,
                 'add' => 0,
                 'delete' => 0,
                 'details' => '{"display":{"width":"3"}}',
-                'order' => 27,
+                'order' => 24,
             ),
-            223 => 
-            array (
-                'id' => 474,
-                'data_type_id' => 17,
-                'field' => 'taux_ponctuel',
-                'type' => 'percentage',
-            'display_name' => 'Réduction Aj (%)',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"2"}}',
-                'order' => 15,
-            ),
-            224 => 
-            array (
-                'id' => 553,
-                'data_type_id' => 17,
-                'field' => 'user_id',
-                'type' => 'text',
-                'display_name' => 'User Id',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 0,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => '{}',
-                'order' => 28,
-            ),
-            225 => 
-            array (
-                'id' => 554,
-                'data_type_id' => 17,
-                'field' => 'user_created_id',
-                'type' => 'text',
-                'display_name' => 'User Created Id',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 0,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => '{}',
-                'order' => 30,
-            ),
-            226 => 
+            222 => 
             array (
                 'id' => 439,
                 'data_type_id' => 13,
@@ -3649,7 +3585,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 18,
             ),
-            227 => 
+            223 => 
             array (
                 'id' => 476,
                 'data_type_id' => 13,
@@ -3665,7 +3601,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 16,
             ),
-            228 => 
+            224 => 
             array (
                 'id' => 502,
                 'data_type_id' => 13,
@@ -3681,7 +3617,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"1"}}',
                 'order' => 28,
             ),
-            229 => 
+            225 => 
             array (
                 'id' => 341,
                 'data_type_id' => 15,
@@ -3697,7 +3633,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"on":"Oui","off":"Non","display":{"width":"3"}}',
                 'order' => 21,
             ),
-            230 => 
+            226 => 
             array (
                 'id' => 347,
                 'data_type_id' => 15,
@@ -3713,7 +3649,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"CMA":"Chambre des Métiers et de l\'Artisanat","RCS":"Registre des Commerces et des Société","SS":"Sécurité sociale"},"display":{"width":"3"},"modal":true}',
                 'order' => 12,
             ),
-            231 => 
+            227 => 
             array (
                 'id' => 348,
                 'data_type_id' => 15,
@@ -3729,7 +3665,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"modal":true}',
                 'order' => 10,
             ),
-            232 => 
+            228 => 
             array (
                 'id' => 400,
                 'data_type_id' => 15,
@@ -3745,7 +3681,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"relationship":{"key":"id","label":"full_name","modal":true},"display":{"width":"3"},"modal":true}',
                 'order' => 22,
             ),
-            233 => 
+            229 => 
             array (
                 'id' => 402,
                 'data_type_id' => 15,
@@ -3761,7 +3697,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"01":"Réunion - Saint-Denis ","02":"Réunion - Saint-Pierre","03":"Mayotte - Mamoudzou","04":"Guadeloupe - Pointe à Pitre","05":"Martinique - Fort de France","06":"Guyane - Cayenne","07":"Nouvelle Calédonie - Nouméa"},"display":{"width":"3"},"modal":true}',
                 'order' => 9,
             ),
-            234 => 
+            230 => 
             array (
                 'id' => 509,
                 'data_type_id' => 15,
@@ -3777,7 +3713,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"1"}}',
                 'order' => 28,
             ),
-            235 => 
+            231 => 
             array (
                 'id' => 510,
                 'data_type_id' => 15,
@@ -3793,7 +3729,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"1"}}',
                 'order' => 30,
             ),
-            236 => 
+            232 => 
             array (
                 'id' => 399,
                 'data_type_id' => 15,
@@ -3809,7 +3745,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"model":"App\\\\Contact","table":"contacts","type":"belongsTo","column":"contact_id","key":"id","label":"fistname","pivot_table":"addresses","pivot":"0","taggable":"0"}',
                 'order' => 23,
             ),
-            237 => 
+            233 => 
             array (
                 'id' => 265,
                 'data_type_id' => 22,
@@ -3825,7 +3761,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 1,
             ),
-            238 => 
+            234 => 
             array (
                 'id' => 266,
                 'data_type_id' => 22,
@@ -3841,7 +3777,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 2,
             ),
-            239 => 
+            235 => 
             array (
                 'id' => 278,
                 'data_type_id' => 22,
@@ -3857,7 +3793,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"1":"V\\u00e9hicule particulier","2":"V\\u00e9hicule utilitaire","3":"Camion","4":"Remorque","5":"Remorque agricole","6":"Engin TP","7":"Engin agricole","8":"CES","9":"Bus","10":"Mat\\u00e9riel de boulangerie","11":"Grue","12":"Mat\\u00e9riel de production industrielle","13":"B\\u00e2timent industriel","14":"B\\u00e2timent \\u00e0 usage d\'habitation","15":"Autre"},"display":{"width":"3"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Description du materiel"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Description du materiel"}}',
                 'order' => 15,
             ),
-            240 => 
+            236 => 
             array (
                 'id' => 279,
                 'data_type_id' => 22,
@@ -3873,7 +3809,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"0":"Inf\\u00e9rieure \\u00e0 200 g\\/km","1":"Sup\\u00e9rieure \\u00e0 200 g\\/km"},"display":{"width":"3","id":"co2"}}',
                 'order' => 17,
             ),
-            241 => 
+            237 => 
             array (
                 'id' => 131,
                 'data_type_id' => 13,
@@ -3889,7 +3825,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"modal":true}',
                 'order' => 2,
             ),
-            242 => 
+            238 => 
             array (
                 'id' => 132,
                 'data_type_id' => 13,
@@ -3905,7 +3841,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"modal":true}',
                 'order' => 11,
             ),
-            243 => 
+            239 => 
             array (
                 'id' => 133,
                 'data_type_id' => 13,
@@ -3921,7 +3857,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"modal":true}',
                 'order' => 3,
             ),
-            244 => 
+            240 => 
             array (
                 'id' => 134,
                 'data_type_id' => 13,
@@ -3937,7 +3873,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"modal":true}',
                 'order' => 4,
             ),
-            245 => 
+            241 => 
             array (
                 'id' => 135,
                 'data_type_id' => 13,
@@ -3953,7 +3889,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"modal":true}',
                 'order' => 5,
             ),
-            246 => 
+            242 => 
             array (
                 'id' => 365,
                 'data_type_id' => 13,
@@ -3969,7 +3905,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"01":"opération industrielle","02":"opération immobilière"},"display":{"width":"3"}}',
                 'order' => 21,
             ),
-            247 => 
+            243 => 
             array (
                 'id' => 366,
                 'data_type_id' => 13,
@@ -3985,7 +3921,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"IR":"IR","IS":"IS"},"display":{"width":"3"}}',
                 'order' => 22,
             ),
-            248 => 
+            244 => 
             array (
                 'id' => 398,
                 'data_type_id' => 13,
@@ -4001,7 +3937,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"relationship":{"key":"id","label":"full_name","modal":true},"display":{"width":"3"},"modal":true}',
                 'order' => 24,
             ),
-            249 => 
+            245 => 
             array (
                 'id' => 369,
                 'data_type_id' => 13,
@@ -4017,7 +3953,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"2"}}',
                 'order' => 26,
             ),
-            250 => 
+            246 => 
             array (
                 'id' => 371,
                 'data_type_id' => 13,
@@ -4033,7 +3969,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"2"}}',
                 'order' => 32,
             ),
-            251 => 
+            247 => 
             array (
                 'id' => 372,
                 'data_type_id' => 13,
@@ -4049,7 +3985,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"2"}}',
                 'order' => 33,
             ),
-            252 => 
+            248 => 
             array (
                 'id' => 373,
                 'data_type_id' => 13,
@@ -4065,7 +4001,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"1"}}',
                 'order' => 30,
             ),
-            253 => 
+            249 => 
             array (
                 'id' => 374,
                 'data_type_id' => 13,
@@ -4081,7 +4017,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 34,
             ),
-            254 => 
+            250 => 
             array (
                 'id' => 375,
                 'data_type_id' => 13,
@@ -4097,7 +4033,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 35,
             ),
-            255 => 
+            251 => 
             array (
                 'id' => 376,
                 'data_type_id' => 13,
@@ -4113,7 +4049,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 36,
             ),
-            256 => 
+            252 => 
             array (
                 'id' => 377,
                 'data_type_id' => 13,
@@ -4129,7 +4065,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 37,
             ),
-            257 => 
+            253 => 
             array (
                 'id' => 379,
                 'data_type_id' => 13,
@@ -4145,7 +4081,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 39,
             ),
-            258 => 
+            254 => 
             array (
                 'id' => 381,
                 'data_type_id' => 13,
@@ -4161,7 +4097,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 41,
             ),
-            259 => 
+            255 => 
             array (
                 'id' => 382,
                 'data_type_id' => 13,
@@ -4177,7 +4113,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 42,
             ),
-            260 => 
+            256 => 
             array (
                 'id' => 383,
                 'data_type_id' => 13,
@@ -4193,7 +4129,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 43,
             ),
-            261 => 
+            257 => 
             array (
                 'id' => 385,
                 'data_type_id' => 13,
@@ -4209,7 +4145,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 45,
             ),
-            262 => 
+            258 => 
             array (
                 'id' => 386,
                 'data_type_id' => 13,
@@ -4225,7 +4161,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 46,
             ),
-            263 => 
+            259 => 
             array (
                 'id' => 387,
                 'data_type_id' => 13,
@@ -4241,7 +4177,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 47,
             ),
-            264 => 
+            260 => 
             array (
                 'id' => 388,
                 'data_type_id' => 13,
@@ -4257,7 +4193,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 48,
             ),
-            265 => 
+            261 => 
             array (
                 'id' => 503,
                 'data_type_id' => 13,
@@ -4273,7 +4209,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"1"}}',
                 'order' => 29,
             ),
-            266 => 
+            262 => 
             array (
                 'id' => 551,
                 'data_type_id' => 6,
@@ -4289,7 +4225,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => NULL,
                 'order' => 14,
             ),
-            267 => 
+            263 => 
             array (
                 'id' => 27,
                 'data_type_id' => 4,
@@ -4305,23 +4241,23 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"4"}}',
                 'order' => 7,
             ),
-            268 => 
+            264 => 
             array (
-                'id' => 558,
+                'id' => 207,
                 'data_type_id' => 17,
-                'field' => 'mode_paiement',
-                'type' => 'select_dropdown',
-                'display_name' => 'Mode de Paiement',
+                'field' => 'updated_at',
+                'type' => 'timestamp',
+                'display_name' => 'Mis à jour le',
                 'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"options":{"cheque":"Ch\\u00e9que","prelevement":"Prelevement"},"display":{"width":"3"}}',
-                'order' => 17,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => '{"display":{"width":"3"}}',
+                'order' => 28,
             ),
-            269 => 
+            265 => 
             array (
                 'id' => 454,
                 'data_type_id' => 12,
@@ -4337,7 +4273,39 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 24,
             ),
-            270 => 
+            266 => 
+            array (
+                'id' => 474,
+                'data_type_id' => 17,
+                'field' => 'taux_ponctuel',
+                'type' => 'percentage',
+            'display_name' => 'Réduction Aj (%)',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"2"}}',
+                'order' => 16,
+            ),
+            267 => 
+            array (
+                'id' => 554,
+                'data_type_id' => 17,
+                'field' => 'user_created_id',
+                'type' => 'text',
+                'display_name' => 'User Created Id',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => '{}',
+                'order' => 31,
+            ),
+            268 => 
             array (
                 'id' => 504,
                 'data_type_id' => 13,
@@ -4353,7 +4321,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"1"}}',
                 'order' => 31,
             ),
-            271 => 
+            269 => 
             array (
                 'id' => 397,
                 'data_type_id' => 13,
@@ -4369,311 +4337,39 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"model":"App\\\\Contact","table":"contacts","type":"belongsTo","column":"contact_id","key":"id","label":"fistname","pivot_table":"addresses","pivot":"0","taggable":"0"}',
                 'order' => 25,
             ),
-            272 => 
+            270 => 
             array (
-                'id' => 457,
-                'data_type_id' => 12,
-                'field' => 'fax_invest',
-                'type' => 'text',
-                'display_name' => 'Fax',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"3"}}',
-                'order' => 28,
-            ),
-            273 => 
-            array (
-                'id' => 471,
-                'data_type_id' => 12,
-                'field' => 'check_resa',
-                'type' => 'file',
-                'display_name' => 'Chèque de réservation',
+                'id' => 559,
+                'data_type_id' => 17,
+                'field' => 'reservation_belongsto_cgp_relationship',
+                'type' => 'relationship',
+                'display_name' => 'CGP Affilié',
                 'required' => 0,
                 'browse' => 1,
                 'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 0,
-                'details' => '{"display":{"width":"8"}}',
-                'order' => 53,
-            ),
-            274 => 
-            array (
-                'id' => 67,
-                'data_type_id' => 6,
-                'field' => 'registration_city',
-                'type' => 'text',
-                'display_name' => 'Lieu D immatriculation',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 0,
                 'edit' => 0,
                 'add' => 0,
                 'delete' => 0,
-                'details' => NULL,
-                'order' => 15,
-            ),
-            275 => 
-            array (
-                'id' => 548,
-                'data_type_id' => 6,
-                'field' => 'registered_at',
-                'type' => 'timestamp',
-                'display_name' => 'Registered At',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => NULL,
-                'order' => 11,
-            ),
-            276 => 
-            array (
-                'id' => 549,
-                'data_type_id' => 6,
-                'field' => 'entities_id',
-                'type' => 'text',
-                'display_name' => 'Entities Id',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 0,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => NULL,
-                'order' => 12,
-            ),
-            277 => 
-            array (
-                'id' => 550,
-                'data_type_id' => 6,
-                'field' => 'default',
-                'type' => 'text',
-                'display_name' => 'Default',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 0,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => NULL,
-                'order' => 13,
-            ),
-            278 => 
-            array (
-                'id' => 552,
-                'data_type_id' => 6,
-                'field' => 'contacts_id',
-                'type' => 'text',
-                'display_name' => 'Contacts Id',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 0,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => NULL,
-                'order' => 15,
-            ),
-            279 => 
-            array (
-                'id' => 61,
-                'data_type_id' => 6,
-                'field' => 'created_at',
-                'type' => 'timestamp',
-                'display_name' => 'Created At',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 1,
-                'details' => NULL,
-                'order' => 9,
-            ),
-            280 => 
-            array (
-                'id' => 62,
-                'data_type_id' => 6,
-                'field' => 'updated_at',
-                'type' => 'timestamp',
-                'display_name' => 'Updated At',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => NULL,
-                'order' => 10,
-            ),
-            281 => 
-            array (
-                'id' => 53,
-                'data_type_id' => 6,
-                'field' => 'id',
-                'type' => 'text',
-                'display_name' => 'Id',
-                'required' => 1,
-                'browse' => 0,
-                'read' => 0,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => NULL,
-                'order' => 1,
-            ),
-            282 => 
-            array (
-                'id' => 54,
-                'data_type_id' => 6,
-                'field' => 'name',
-                'type' => 'text',
-                'display_name' => 'Nom',
-                'required' => 1,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"modal":true}',
-                'order' => 2,
-            ),
-            283 => 
-            array (
-                'id' => 66,
-                'data_type_id' => 6,
-                'field' => 'capital',
-                'type' => 'text',
-                'display_name' => 'Capital',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 0,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => NULL,
-                'order' => 14,
-            ),
-            284 => 
-            array (
-                'id' => 56,
-                'data_type_id' => 6,
-                'field' => 'address_1',
-                'type' => 'text',
-                'display_name' => 'Addresse 1',
-                'required' => 1,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"modal":true}',
-                'order' => 4,
-            ),
-            285 => 
-            array (
-                'id' => 57,
-                'data_type_id' => 6,
-                'field' => 'address_2',
-                'type' => 'text',
-                'display_name' => 'Addresse 2',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"modal":true}',
-                'order' => 5,
-            ),
-            286 => 
-            array (
-                'id' => 58,
-                'data_type_id' => 6,
-                'field' => 'postal_code',
-                'type' => 'text',
-                'display_name' => 'Code Postal',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"modal":true}',
+                'details' => '{"model":"\\\\App\\\\CGP","table":"cgps","type":"belongsTo","column":"cgps_id","key":"id","label":"name","pivot_table":"migrations","pivot":"0","taggable":"0"}',
                 'order' => 6,
             ),
-            287 => 
+            271 => 
             array (
-                'id' => 59,
-                'data_type_id' => 6,
-                'field' => 'city',
-                'type' => 'text',
-                'display_name' => 'Ville',
+                'id' => 569,
+                'data_type_id' => 17,
+                'field' => 'reservation_belongsto_user_relationship',
+                'type' => 'relationship',
+                'display_name' => 'Utilisateur affilié',
                 'required' => 0,
                 'browse' => 1,
                 'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"modal":true}',
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => '{"model":"App\\\\User","table":"users","type":"belongsTo","column":"user_id","key":"id","label":"name","pivot_table":"cgp_contacts","pivot":"0","taggable":"0"}',
                 'order' => 7,
             ),
-            288 => 
-            array (
-                'id' => 65,
-                'data_type_id' => 6,
-                'field' => 'registration_entities_id',
-                'type' => 'text',
-                'display_name' => 'Immatriculation',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"relationship":{"key":"id","label":"name"}}',
-                'order' => 13,
-            ),
-            289 => 
-            array (
-                'id' => 55,
-                'data_type_id' => 6,
-                'field' => 'registered_key',
-                'type' => 'text',
-                'display_name' => 'SIRET',
-                'required' => 1,
-                'browse' => 0,
-                'read' => 0,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 0,
-                'details' => '{"modal":true}',
-                'order' => 3,
-            ),
-            290 => 
-            array (
-                'id' => 282,
-                'data_type_id' => 22,
-                'field' => 'description_materiel',
-                'type' => 'text_area',
-                'display_name' => 'Description Matériel',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"3"}}',
-                'order' => 23,
-            ),
-            291 => 
+            272 => 
             array (
                 'id' => 88,
                 'data_type_id' => 7,
@@ -4689,7 +4385,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"relationship":{"key":"id","label":"full_name","modal":true},"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
                 'order' => 19,
             ),
-            292 => 
+            273 => 
             array (
                 'id' => 252,
                 'data_type_id' => 7,
@@ -4705,7 +4401,327 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 2,
             ),
+            274 => 
+            array (
+                'id' => 557,
+                'data_type_id' => 17,
+                'field' => 'reservation_belongsto_investor_relationship',
+                'type' => 'relationship',
+                'display_name' => 'investors',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => '{"model":"App\\\\Investor","table":"investors","type":"belongsTo","column":"investors_id","key":"id","label":"full_name","pivot_table":"contacts","pivot":"0","taggable":"0"}',
+                'order' => 4,
+            ),
+            275 => 
+            array (
+                'id' => 457,
+                'data_type_id' => 12,
+                'field' => 'fax_invest',
+                'type' => 'text',
+                'display_name' => 'Fax',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"3"}}',
+                'order' => 28,
+            ),
+            276 => 
+            array (
+                'id' => 471,
+                'data_type_id' => 12,
+                'field' => 'check_resa',
+                'type' => 'file',
+                'display_name' => 'Chèque de réservation',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 0,
+                'details' => '{"display":{"width":"8"}}',
+                'order' => 53,
+            ),
+            277 => 
+            array (
+                'id' => 67,
+                'data_type_id' => 6,
+                'field' => 'registration_city',
+                'type' => 'text',
+                'display_name' => 'Lieu D immatriculation',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => NULL,
+                'order' => 15,
+            ),
+            278 => 
+            array (
+                'id' => 548,
+                'data_type_id' => 6,
+                'field' => 'registered_at',
+                'type' => 'timestamp',
+                'display_name' => 'Registered At',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => NULL,
+                'order' => 11,
+            ),
+            279 => 
+            array (
+                'id' => 549,
+                'data_type_id' => 6,
+                'field' => 'entities_id',
+                'type' => 'text',
+                'display_name' => 'Entities Id',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => NULL,
+                'order' => 12,
+            ),
+            280 => 
+            array (
+                'id' => 550,
+                'data_type_id' => 6,
+                'field' => 'default',
+                'type' => 'text',
+                'display_name' => 'Default',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => NULL,
+                'order' => 13,
+            ),
+            281 => 
+            array (
+                'id' => 552,
+                'data_type_id' => 6,
+                'field' => 'contacts_id',
+                'type' => 'text',
+                'display_name' => 'Contacts Id',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => NULL,
+                'order' => 15,
+            ),
+            282 => 
+            array (
+                'id' => 61,
+                'data_type_id' => 6,
+                'field' => 'created_at',
+                'type' => 'timestamp',
+                'display_name' => 'Created At',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 1,
+                'details' => NULL,
+                'order' => 9,
+            ),
+            283 => 
+            array (
+                'id' => 62,
+                'data_type_id' => 6,
+                'field' => 'updated_at',
+                'type' => 'timestamp',
+                'display_name' => 'Updated At',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => NULL,
+                'order' => 10,
+            ),
+            284 => 
+            array (
+                'id' => 53,
+                'data_type_id' => 6,
+                'field' => 'id',
+                'type' => 'text',
+                'display_name' => 'Id',
+                'required' => 1,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => NULL,
+                'order' => 1,
+            ),
+            285 => 
+            array (
+                'id' => 54,
+                'data_type_id' => 6,
+                'field' => 'name',
+                'type' => 'text',
+                'display_name' => 'Nom',
+                'required' => 1,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"modal":true}',
+                'order' => 2,
+            ),
+            286 => 
+            array (
+                'id' => 66,
+                'data_type_id' => 6,
+                'field' => 'capital',
+                'type' => 'text',
+                'display_name' => 'Capital',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => NULL,
+                'order' => 14,
+            ),
+            287 => 
+            array (
+                'id' => 56,
+                'data_type_id' => 6,
+                'field' => 'address_1',
+                'type' => 'text',
+                'display_name' => 'Addresse 1',
+                'required' => 1,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"modal":true}',
+                'order' => 4,
+            ),
+            288 => 
+            array (
+                'id' => 57,
+                'data_type_id' => 6,
+                'field' => 'address_2',
+                'type' => 'text',
+                'display_name' => 'Addresse 2',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"modal":true}',
+                'order' => 5,
+            ),
+            289 => 
+            array (
+                'id' => 58,
+                'data_type_id' => 6,
+                'field' => 'postal_code',
+                'type' => 'text',
+                'display_name' => 'Code Postal',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"modal":true}',
+                'order' => 6,
+            ),
+            290 => 
+            array (
+                'id' => 59,
+                'data_type_id' => 6,
+                'field' => 'city',
+                'type' => 'text',
+                'display_name' => 'Ville',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"modal":true}',
+                'order' => 7,
+            ),
+            291 => 
+            array (
+                'id' => 65,
+                'data_type_id' => 6,
+                'field' => 'registration_entities_id',
+                'type' => 'text',
+                'display_name' => 'Immatriculation',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"relationship":{"key":"id","label":"name"}}',
+                'order' => 13,
+            ),
+            292 => 
+            array (
+                'id' => 55,
+                'data_type_id' => 6,
+                'field' => 'registered_key',
+                'type' => 'text',
+                'display_name' => 'SIRET',
+                'required' => 1,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 0,
+                'details' => '{"modal":true}',
+                'order' => 3,
+            ),
             293 => 
+            array (
+                'id' => 282,
+                'data_type_id' => 22,
+                'field' => 'description_materiel',
+                'type' => 'text_area',
+                'display_name' => 'Description Matériel',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"3"}}',
+                'order' => 23,
+            ),
+            294 => 
             array (
                 'id' => 284,
                 'data_type_id' => 22,
@@ -4721,7 +4737,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 25,
             ),
-            294 => 
+            295 => 
             array (
                 'id' => 208,
                 'data_type_id' => 19,
@@ -4737,7 +4753,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 1,
             ),
-            295 => 
+            296 => 
             array (
                 'id' => 209,
                 'data_type_id' => 19,
@@ -4753,7 +4769,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"relationship":{"key":"id","label":"name"},"display":{"width":"6"}}',
                 'order' => 2,
             ),
-            296 => 
+            297 => 
             array (
                 'id' => 210,
                 'data_type_id' => 19,
@@ -4769,7 +4785,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"relationship":{"key":"id","label":"nom"},"display":{"width":"6"}}',
                 'order' => 4,
             ),
-            297 => 
+            298 => 
             array (
                 'id' => 211,
                 'data_type_id' => 19,
@@ -4785,7 +4801,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 6,
             ),
-            298 => 
+            299 => 
             array (
                 'id' => 212,
                 'data_type_id' => 19,
@@ -4801,7 +4817,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 7,
             ),
-            299 => 
+            300 => 
             array (
                 'id' => 213,
                 'data_type_id' => 19,
@@ -4817,7 +4833,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 8,
             ),
-            300 => 
+            301 => 
             array (
                 'id' => 214,
                 'data_type_id' => 19,
@@ -4833,7 +4849,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 9,
             ),
-            301 => 
+            302 => 
             array (
                 'id' => 215,
                 'data_type_id' => 19,
@@ -4849,7 +4865,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 10,
             ),
-            302 => 
+            303 => 
             array (
                 'id' => 285,
                 'data_type_id' => 22,
@@ -4865,7 +4881,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 26,
             ),
-            303 => 
+            304 => 
             array (
                 'id' => 286,
                 'data_type_id' => 22,
@@ -4881,7 +4897,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 27,
             ),
-            304 => 
+            305 => 
             array (
                 'id' => 547,
                 'data_type_id' => 22,
@@ -4897,7 +4913,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 85,
             ),
-            305 => 
+            306 => 
             array (
                 'id' => 455,
                 'data_type_id' => 12,
@@ -4913,7 +4929,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
                 'order' => 26,
             ),
-            306 => 
+            307 => 
             array (
                 'id' => 456,
                 'data_type_id' => 12,
@@ -4929,7 +4945,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
                 'order' => 27,
             ),
-            307 => 
+            308 => 
             array (
                 'id' => 216,
                 'data_type_id' => 19,
@@ -4945,7 +4961,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 11,
             ),
-            308 => 
+            309 => 
             array (
                 'id' => 217,
                 'data_type_id' => 19,
@@ -4961,7 +4977,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 12,
             ),
-            309 => 
+            310 => 
             array (
                 'id' => 218,
                 'data_type_id' => 19,
@@ -4977,7 +4993,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 13,
             ),
-            310 => 
+            311 => 
             array (
                 'id' => 219,
                 'data_type_id' => 19,
@@ -4993,7 +5009,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 14,
             ),
-            311 => 
+            312 => 
             array (
                 'id' => 220,
                 'data_type_id' => 19,
@@ -5009,7 +5025,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 15,
             ),
-            312 => 
+            313 => 
             array (
                 'id' => 221,
                 'data_type_id' => 19,
@@ -5025,7 +5041,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 16,
             ),
-            313 => 
+            314 => 
             array (
                 'id' => 222,
                 'data_type_id' => 19,
@@ -5041,7 +5057,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 17,
             ),
-            314 => 
+            315 => 
             array (
                 'id' => 223,
                 'data_type_id' => 19,
@@ -5057,7 +5073,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"default":0,"display":{"width":"6"}}',
                 'order' => 18,
             ),
-            315 => 
+            316 => 
             array (
                 'id' => 224,
                 'data_type_id' => 19,
@@ -5073,7 +5089,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"2019":"2019","2020":"2020","2021":"2021","2022":"2022","2023":"2023","2024":"2024","2025":"2025"},"display":{"width":"6"}}',
                 'order' => 19,
             ),
-            316 => 
+            317 => 
             array (
                 'id' => 225,
                 'data_type_id' => 19,
@@ -5089,7 +5105,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 20,
             ),
-            317 => 
+            318 => 
             array (
                 'id' => 226,
                 'data_type_id' => 19,
@@ -5105,7 +5121,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 21,
             ),
-            318 => 
+            319 => 
             array (
                 'id' => 245,
                 'data_type_id' => 19,
@@ -5121,7 +5137,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"model":"App\\\\CGP","table":"cgps","type":"belongsTo","column":"cgps_id","key":"id","label":"name","pivot_table":"addresses","pivot":"0","taggable":"0"}',
                 'order' => 3,
             ),
-            319 => 
+            320 => 
             array (
                 'id' => 246,
                 'data_type_id' => 19,
@@ -5137,7 +5153,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"model":"App\\\\TypeContrat","table":"type_contrats","type":"belongsTo","column":"type_contrat_id","key":"id","label":"nom","pivot_table":"addresses","pivot":"0","taggable":"0"}',
                 'order' => 5,
             ),
-            320 => 
+            321 => 
             array (
                 'id' => 342,
                 'data_type_id' => 22,
@@ -5153,375 +5169,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 20,
             ),
-            321 => 
-            array (
-                'id' => 78,
-                'data_type_id' => 7,
-                'field' => 'started_at',
-                'type' => 'date',
-                'display_name' => 'Date d\'Immatriculation',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 0,
-                'details' => '{"display":{"width":"3"},"format":"%d\\/%m\\/%Y","validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
-                'order' => 10,
-            ),
             322 => 
-            array (
-                'id' => 79,
-                'data_type_id' => 7,
-                'field' => 'created_at',
-                'type' => 'timestamp',
-                'display_name' => 'Created At',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 0,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => '{"display":{"width":"8"},"format":"%d\\/%m\\/%Y"}',
-                'order' => 31,
-            ),
-            323 => 
-            array (
-                'id' => 86,
-                'data_type_id' => 7,
-                'field' => 'ape_key',
-                'type' => 'text',
-                'display_name' => 'Code APE',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 0,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => '{"display":{"width":"4"}}',
-                'order' => 29,
-            ),
-            324 => 
-            array (
-                'id' => 87,
-                'data_type_id' => 7,
-                'field' => 'etablishment_code',
-                'type' => 'text',
-                'display_name' => 'Code établissement',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 0,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => '{"display":{"width":"8"}}',
-                'order' => 30,
-            ),
-            325 => 
-            array (
-                'id' => 343,
-                'data_type_id' => 22,
-                'field' => 'marque_vehicle',
-                'type' => 'text',
-                'display_name' => 'Marque',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"3"}}',
-                'order' => 21,
-            ),
-            326 => 
-            array (
-                'id' => 561,
-                'data_type_id' => 20,
-                'field' => 'slug',
-                'type' => 'text',
-                'display_name' => 'Slug',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => 'null',
-                'order' => 4,
-            ),
-            327 => 
-            array (
-                'id' => 112,
-                'data_type_id' => 12,
-                'field' => 'id',
-                'type' => 'text',
-                'display_name' => 'Id',
-                'required' => 1,
-                'browse' => 0,
-                'read' => 0,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => '{}',
-                'order' => 1,
-            ),
-            328 => 
-            array (
-                'id' => 447,
-                'data_type_id' => 12,
-                'field' => 'prenom_invest',
-                'type' => 'text',
-                'display_name' => 'Prénom',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
-                'order' => 15,
-            ),
-            329 => 
-            array (
-                'id' => 344,
-                'data_type_id' => 22,
-                'field' => 'type_vehicle',
-                'type' => 'text',
-                'display_name' => 'Type',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"3"}}',
-                'order' => 19,
-            ),
-            330 => 
-            array (
-                'id' => 345,
-                'data_type_id' => 22,
-                'field' => 'montant_subvention',
-                'type' => 'number',
-            'display_name' => 'Montant de la Subvention (€)',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"3"}}',
-                'order' => 45,
-            ),
-            331 => 
-            array (
-                'id' => 346,
-                'data_type_id' => 22,
-                'field' => 'other_subvention',
-                'type' => 'text',
-                'display_name' => 'Si autre, précisez',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"3"}}',
-                'order' => 44,
-            ),
-            332 => 
-            array (
-                'id' => 350,
-                'data_type_id' => 22,
-                'field' => 'motivation',
-                'type' => 'select_dropdown',
-                'display_name' => 'Motivation',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"options":{"01":"Nouvelle activite de l\'entreprise","02":"Augmentation de la capacit\\u00e9 de production","03":"Augmentation de la productivite","04":"Augmentation du resultat d exploitation","05":"Augmentation de la qualite des produits finis"},"display":{"width":"3"}}',
-                'order' => 8,
-            ),
-            333 => 
-            array (
-                'id' => 72,
-                'data_type_id' => 7,
-                'field' => 'name',
-                'type' => 'text',
-                'display_name' => 'Dénomination sociale',
-                'required' => 1,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
-                'order' => 3,
-            ),
-            334 => 
-            array (
-                'id' => 73,
-                'data_type_id' => 7,
-                'field' => 'registered_key',
-                'type' => 'text',
-                'display_name' => 'N° SIRET',
-                'required' => 1,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
-                'order' => 12,
-            ),
-            335 => 
-            array (
-                'id' => 74,
-                'data_type_id' => 7,
-                'field' => 'address_1',
-                'type' => 'text',
-                'display_name' => 'Adresse',
-                'required' => 1,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
-                'order' => 4,
-            ),
-            336 => 
-            array (
-                'id' => 75,
-                'data_type_id' => 7,
-                'field' => 'address_2',
-                'type' => 'text',
-                'display_name' => 'Complément d\'adresse',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"3"}}',
-                'order' => 5,
-            ),
-            337 => 
-            array (
-                'id' => 76,
-                'data_type_id' => 7,
-                'field' => 'postal_code',
-                'type' => 'text',
-                'display_name' => 'Code Postal',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"3"},"validation":{"rule":"required|digits:5","messages":{"required":"le champs :attribute est obligatoire."}}}',
-                'order' => 6,
-            ),
-            338 => 
-            array (
-                'id' => 77,
-                'data_type_id' => 7,
-                'field' => 'city',
-                'type' => 'text',
-                'display_name' => 'Ville',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
-                'order' => 7,
-            ),
-            339 => 
-            array (
-                'id' => 475,
-                'data_type_id' => 22,
-                'field' => 'autre_duree_mandat',
-                'type' => 'text',
-            'display_name' => 'Autre (Durée du mandat)',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"3"}}',
-                'order' => 6,
-            ),
-            340 => 
-            array (
-                'id' => 528,
-                'data_type_id' => 22,
-                'field' => 'plafonnement_vp',
-                'type' => 'select_dropdown',
-                'display_name' => 'Plafonnement Vp',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"options":{"0":"Non","1":"Oui"},"display":{"width":"3"}}',
-                'order' => 16,
-            ),
-            341 => 
-            array (
-                'id' => 478,
-                'data_type_id' => 22,
-                'field' => 'marque_divers',
-                'type' => 'text',
-                'display_name' => 'Marque',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 0,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => '{"display":{"width":"3"}}',
-                'order' => 38,
-            ),
-            342 => 
-            array (
-                'id' => 480,
-                'data_type_id' => 22,
-                'field' => 'bank',
-                'type' => 'select_dropdown',
-                'display_name' => 'Banque',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 0,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 0,
-                'details' => '{"relationship":{"key":"id","label":"name","modal":true},"display":{"width":"3"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Banque"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Banque"}}',
-                'order' => 52,
-            ),
-            343 => 
-            array (
-                'id' => 354,
-                'data_type_id' => 4,
-                'field' => 'gsm',
-                'type' => 'text',
-                'display_name' => 'Gsm',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"4"},"modal":true}',
-                'order' => 12,
-            ),
-            344 => 
             array (
                 'id' => 197,
                 'data_type_id' => 17,
@@ -5537,7 +5185,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"relationship":{"key":"id","label":"full_name"},"display":{"width":"4"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Nouvelle proposition de recherche"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
                 'order' => 3,
             ),
-            345 => 
+            323 => 
             array (
                 'id' => 199,
                 'data_type_id' => 17,
@@ -5551,9 +5199,137 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{"on":"Oui","off":"Non","display":{"width":"2"}}',
-                'order' => 13,
+                'order' => 14,
             ),
-            346 => 
+            324 => 
+            array (
+                'id' => 343,
+                'data_type_id' => 22,
+                'field' => 'marque_vehicle',
+                'type' => 'text',
+                'display_name' => 'Marque',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"3"}}',
+                'order' => 21,
+            ),
+            325 => 
+            array (
+                'id' => 561,
+                'data_type_id' => 20,
+                'field' => 'slug',
+                'type' => 'text',
+                'display_name' => 'Slug',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => 'null',
+                'order' => 4,
+            ),
+            326 => 
+            array (
+                'id' => 112,
+                'data_type_id' => 12,
+                'field' => 'id',
+                'type' => 'text',
+                'display_name' => 'Id',
+                'required' => 1,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => '{}',
+                'order' => 1,
+            ),
+            327 => 
+            array (
+                'id' => 447,
+                'data_type_id' => 12,
+                'field' => 'prenom_invest',
+                'type' => 'text',
+                'display_name' => 'Prénom',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
+                'order' => 15,
+            ),
+            328 => 
+            array (
+                'id' => 344,
+                'data_type_id' => 22,
+                'field' => 'type_vehicle',
+                'type' => 'text',
+                'display_name' => 'Type',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"3"}}',
+                'order' => 19,
+            ),
+            329 => 
+            array (
+                'id' => 345,
+                'data_type_id' => 22,
+                'field' => 'montant_subvention',
+                'type' => 'number',
+            'display_name' => 'Montant de la Subvention (€)',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"3"}}',
+                'order' => 45,
+            ),
+            330 => 
+            array (
+                'id' => 346,
+                'data_type_id' => 22,
+                'field' => 'other_subvention',
+                'type' => 'text',
+                'display_name' => 'Si autre, précisez',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"3"}}',
+                'order' => 44,
+            ),
+            331 => 
+            array (
+                'id' => 350,
+                'data_type_id' => 22,
+                'field' => 'motivation',
+                'type' => 'select_dropdown',
+                'display_name' => 'Motivation',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"options":{"01":"Nouvelle activite de l\'entreprise","02":"Augmentation de la capacit\\u00e9 de production","03":"Augmentation de la productivite","04":"Augmentation du resultat d exploitation","05":"Augmentation de la qualite des produits finis"},"display":{"width":"3"}}',
+                'order' => 8,
+            ),
+            332 => 
             array (
                 'id' => 203,
                 'data_type_id' => 17,
@@ -5567,9 +5343,9 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 0,
                 'delete' => 0,
                 'details' => '{"display":{"width":"3"}}',
-                'order' => 24,
+                'order' => 25,
             ),
-            347 => 
+            333 => 
             array (
                 'id' => 204,
                 'data_type_id' => 17,
@@ -5583,9 +5359,217 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 0,
                 'delete' => 0,
                 'details' => '{"display":{"width":"3"}}',
-                'order' => 25,
+                'order' => 26,
             ),
-            348 => 
+            334 => 
+            array (
+                'id' => 475,
+                'data_type_id' => 22,
+                'field' => 'autre_duree_mandat',
+                'type' => 'text',
+            'display_name' => 'Autre (Durée du mandat)',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"3"}}',
+                'order' => 6,
+            ),
+            335 => 
+            array (
+                'id' => 528,
+                'data_type_id' => 22,
+                'field' => 'plafonnement_vp',
+                'type' => 'select_dropdown',
+                'display_name' => 'Plafonnement Vp',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"options":{"0":"Non","1":"Oui"},"display":{"width":"3"}}',
+                'order' => 16,
+            ),
+            336 => 
+            array (
+                'id' => 478,
+                'data_type_id' => 22,
+                'field' => 'marque_divers',
+                'type' => 'text',
+                'display_name' => 'Marque',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => '{"display":{"width":"3"}}',
+                'order' => 38,
+            ),
+            337 => 
+            array (
+                'id' => 480,
+                'data_type_id' => 22,
+                'field' => 'bank',
+                'type' => 'select_dropdown',
+                'display_name' => 'Banque',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 0,
+                'details' => '{"relationship":{"key":"id","label":"name","modal":true},"display":{"width":"3"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Banque"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Banque"}}',
+                'order' => 52,
+            ),
+            338 => 
+            array (
+                'id' => 354,
+                'data_type_id' => 4,
+                'field' => 'gsm',
+                'type' => 'text',
+                'display_name' => 'Gsm',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"4"},"modal":true}',
+                'order' => 12,
+            ),
+            339 => 
+            array (
+                'id' => 72,
+                'data_type_id' => 7,
+                'field' => 'name',
+                'type' => 'text',
+                'display_name' => 'Dénomination sociale',
+                'required' => 1,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
+                'order' => 3,
+            ),
+            340 => 
+            array (
+                'id' => 73,
+                'data_type_id' => 7,
+                'field' => 'registered_key',
+                'type' => 'text',
+                'display_name' => 'N° SIRET',
+                'required' => 1,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
+                'order' => 12,
+            ),
+            341 => 
+            array (
+                'id' => 74,
+                'data_type_id' => 7,
+                'field' => 'address_1',
+                'type' => 'text',
+                'display_name' => 'Adresse',
+                'required' => 1,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
+                'order' => 4,
+            ),
+            342 => 
+            array (
+                'id' => 75,
+                'data_type_id' => 7,
+                'field' => 'address_2',
+                'type' => 'text',
+                'display_name' => 'Complément d\'adresse',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"3"}}',
+                'order' => 5,
+            ),
+            343 => 
+            array (
+                'id' => 76,
+                'data_type_id' => 7,
+                'field' => 'postal_code',
+                'type' => 'text',
+                'display_name' => 'Code Postal',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"3"},"validation":{"rule":"required|digits:5","messages":{"required":"le champs :attribute est obligatoire."}}}',
+                'order' => 6,
+            ),
+            344 => 
+            array (
+                'id' => 77,
+                'data_type_id' => 7,
+                'field' => 'city',
+                'type' => 'text',
+                'display_name' => 'Ville',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
+                'order' => 7,
+            ),
+            345 => 
+            array (
+                'id' => 78,
+                'data_type_id' => 7,
+                'field' => 'started_at',
+                'type' => 'date',
+                'display_name' => 'Date d\'Immatriculation',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 0,
+                'details' => '{"display":{"width":"3"},"format":"%d\\/%m\\/%Y","validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
+                'order' => 10,
+            ),
+            346 => 
+            array (
+                'id' => 79,
+                'data_type_id' => 7,
+                'field' => 'created_at',
+                'type' => 'timestamp',
+                'display_name' => 'Created At',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => '{"display":{"width":"8"},"format":"%d\\/%m\\/%Y"}',
+                'order' => 32,
+            ),
+            347 => 
             array (
                 'id' => 268,
                 'data_type_id' => 22,
@@ -5601,7 +5585,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"SIMPLIFIE":"Simplifi\\u00e9","STANDARD":"Standard"},"default":"STANDARD","display":{"width":"3"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"R\\u00e9f\\u00e9rencement d\'une nouvelle proposition commerciale"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"R\\u00e9sum\\u00e9"}}',
                 'order' => 3,
             ),
-            349 => 
+            348 => 
             array (
                 'id' => 269,
                 'data_type_id' => 22,
@@ -5617,7 +5601,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"48":"48 Mois","60":"60 Mois","autre":"autre"},"default":"60","display":{"width":"3"}}',
                 'order' => 5,
             ),
-            350 => 
+            349 => 
             array (
                 'id' => 270,
                 'data_type_id' => 22,
@@ -5633,7 +5617,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"options":{"01":"D\\u00e9fiscalisation (199 undecies B)","02":"Cr\\u00e9dit d\'imp\\u00f4t (244 quater W)"},"display":{"width":"3"}}',
                 'order' => 4,
             ),
-            351 => 
+            350 => 
             array (
                 'id' => 271,
                 'data_type_id' => 22,
@@ -5649,7 +5633,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"formfields_custom":"taux_RI_dropdown","display":{"width":"3"}}',
                 'order' => 7,
             ),
-            352 => 
+            351 => 
             array (
                 'id' => 272,
                 'data_type_id' => 22,
@@ -5665,23 +5649,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"0":"Non","1":"Simple","2":"Motiv\\u00e9"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Prix"},"display":{"width":"3"}}',
                 'order' => 24,
             ),
-            353 => 
-            array (
-                'id' => 71,
-                'data_type_id' => 7,
-                'field' => 'id',
-                'type' => 'text',
-                'display_name' => 'Id',
-                'required' => 1,
-                'browse' => 0,
-                'read' => 0,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => '{}',
-                'order' => 1,
-            ),
-            354 => 
+            352 => 
             array (
                 'id' => 273,
                 'data_type_id' => 22,
@@ -5697,7 +5665,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"LOAN":"Pret","CASH":"Comptant","FAUX-CASH":"Auto-Financement"},"default":"LOAN","display":{"width":"3"}}',
                 'order' => 9,
             ),
-            355 => 
+            353 => 
             array (
                 'id' => 274,
                 'data_type_id' => 22,
@@ -5713,7 +5681,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"0":"Non Soumis","1":"Soumis"},"display":{"width":"3"}}',
                 'order' => 10,
             ),
-            356 => 
+            354 => 
             array (
                 'id' => 277,
                 'data_type_id' => 22,
@@ -5729,7 +5697,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"relationship":{"key":"id","label":"name","modal":true},"display":{"width":"3"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Fournisseur"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Fournisseur"}}',
                 'order' => 13,
             ),
-            357 => 
+            355 => 
             array (
                 'id' => 280,
                 'data_type_id' => 22,
@@ -5745,7 +5713,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 22,
             ),
-            358 => 
+            356 => 
             array (
                 'id' => 481,
                 'data_type_id' => 22,
@@ -5761,7 +5729,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"calculate":true}',
                 'order' => 46,
             ),
-            359 => 
+            357 => 
             array (
                 'id' => 482,
                 'data_type_id' => 22,
@@ -5777,7 +5745,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3","percent":true},"calculate":true}',
                 'order' => 48,
             ),
-            360 => 
+            358 => 
             array (
                 'id' => 498,
                 'data_type_id' => 12,
@@ -5793,7 +5761,55 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"1"}}',
                 'order' => 44,
             ),
+            359 => 
+            array (
+                'id' => 71,
+                'data_type_id' => 7,
+                'field' => 'id',
+                'type' => 'text',
+                'display_name' => 'Id',
+                'required' => 1,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => '{}',
+                'order' => 1,
+            ),
+            360 => 
+            array (
+                'id' => 205,
+                'data_type_id' => 17,
+                'field' => 'taux_reservation',
+                'type' => 'percentage',
+                'display_name' => 'Taux Reservation',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => '{"display":{"width":"3"}}',
+                'order' => 27,
+            ),
             361 => 
+            array (
+                'id' => 206,
+                'data_type_id' => 17,
+                'field' => 'created_at',
+                'type' => 'timestamp',
+                'display_name' => 'Date Création Mandat',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 1,
+                'details' => 'null',
+                'order' => 22,
+            ),
+            362 => 
             array (
                 'id' => 473,
                 'data_type_id' => 17,
@@ -5807,9 +5823,89 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 1,
                 'delete' => 1,
                 'details' => '{"options":{"permanent":"Permanent","ponctuel":"Ponctuel"},"display":{"width":"2"}}',
-                'order' => 14,
+                'order' => 15,
             ),
-            362 => 
+            363 => 
+            array (
+                'id' => 553,
+                'data_type_id' => 17,
+                'field' => 'user_id',
+                'type' => 'text',
+                'display_name' => 'User Id',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => '{}',
+                'order' => 29,
+            ),
+            364 => 
+            array (
+                'id' => 555,
+                'data_type_id' => 17,
+                'field' => 'user_updated_id',
+                'type' => 'text',
+                'display_name' => 'User Updated Id',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => '{}',
+                'order' => 32,
+            ),
+            365 => 
+            array (
+                'id' => 558,
+                'data_type_id' => 17,
+                'field' => 'mode_paiement',
+                'type' => 'select_dropdown',
+                'display_name' => 'Mode de Paiement',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"options":{"cheque":"Ch\\u00e9que","prelevement":"Prelevement"},"display":{"width":"3"}}',
+                'order' => 18,
+            ),
+            366 => 
+            array (
+                'id' => 563,
+                'data_type_id' => 17,
+                'field' => 'yousign_procedure_id',
+                'type' => 'text',
+                'display_name' => 'Yousign Procedure Id',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => 'null',
+                'order' => 30,
+            ),
+            367 => 
+            array (
+                'id' => 567,
+                'data_type_id' => 17,
+                'field' => 'mandat_reserved_at',
+                'type' => 'date',
+                'display_name' => 'Date de Réservation',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"3"},"format":"%d\\/%m\\/%Y","validation":{"rule":"required|date","messages":{"required":"le champs :attribute est obligatoire."}}}',
+                'order' => 21,
+            ),
+            368 => 
             array (
                 'id' => 562,
                 'data_type_id' => 17,
@@ -5823,9 +5919,9 @@ class DataRowsTableSeeder extends Seeder
                 'add' => 0,
                 'delete' => 0,
                 'details' => '{"model":"\\\\App\\\\TypeContrat","table":"type_contrats","type":"belongsTo","column":"type_contrats_id","key":"id","label":"nom","pivot_table":"migrations","pivot":"0","taggable":"0"}',
-                'order' => 9,
+                'order' => 10,
             ),
-            363 => 
+            369 => 
             array (
                 'id' => 117,
                 'data_type_id' => 12,
@@ -5841,7 +5937,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
                 'order' => 22,
             ),
-            364 => 
+            370 => 
             array (
                 'id' => 453,
                 'data_type_id' => 12,
@@ -5857,7 +5953,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"validation":{"rule":"required|email|unique:investors,email_invest","messages":{"required":"Le champ :attribute est obligatoire.","email":"Ce champs doit etre un email valide","unique":"Cette email est d\\u00e9ja existant en base"}}}',
                 'order' => 25,
             ),
-            365 => 
+            371 => 
             array (
                 'id' => 472,
                 'data_type_id' => 12,
@@ -5873,7 +5969,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 54,
             ),
-            366 => 
+            372 => 
             array (
                 'id' => 494,
                 'data_type_id' => 12,
@@ -5889,7 +5985,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"2"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Coordonn\\u00e9e Banquaire de l\'Investisseur"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Coordonn\\u00e9e Banquaire de l\'Investisseur"}}',
                 'order' => 40,
             ),
-            367 => 
+            373 => 
             array (
                 'id' => 495,
                 'data_type_id' => 12,
@@ -5905,7 +6001,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"2"}}',
                 'order' => 41,
             ),
-            368 => 
+            374 => 
             array (
                 'id' => 496,
                 'data_type_id' => 12,
@@ -5921,7 +6017,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"1"}}',
                 'order' => 42,
             ),
-            369 => 
+            375 => 
             array (
                 'id' => 497,
                 'data_type_id' => 12,
@@ -5937,7 +6033,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"1"}}',
                 'order' => 43,
             ),
-            370 => 
+            376 => 
             array (
                 'id' => 290,
                 'data_type_id' => 22,
@@ -5953,7 +6049,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"0":"Non","1":"Oui"},"display":{"width":"3"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Valeur de Remplacement"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Valeur de Remplacement"}}',
                 'order' => 32,
             ),
-            371 => 
+            377 => 
             array (
                 'id' => 291,
                 'data_type_id' => 22,
@@ -5969,7 +6065,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"null":"Aucun Remplacement"}',
                 'order' => 33,
             ),
-            372 => 
+            378 => 
             array (
                 'id' => 292,
                 'data_type_id' => 22,
@@ -5985,7 +6081,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"0":"Non","1":"Oui"},"null":"Aucune Assurance Propos\\u00e9","display":{"width":"3"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Assurance Mat\\u00e9riel"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Assurance Mat\\u00e9riel"}}',
                 'order' => 34,
             ),
-            373 => 
+            379 => 
             array (
                 'id' => 295,
                 'data_type_id' => 22,
@@ -6001,7 +6097,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"format":"%d\\/%m\\/%Y","validation":{"rule":"required|date|after_or_equal:today","messages":{"required":"le champs :attribute est requis pour le calcul des \\u00e9ch\\u00e9anceq.","date":"le champs :attribute doit \\u00eatre une date valide.","after_or_equal":"le champs :attribute ne peut \\u00eatre inf\\u00e9rieur \\u00e0 a date d\'aujourd\'hui"}},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Date de Livraison"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Date de Livraison"}}',
                 'order' => 37,
             ),
-            374 => 
+            380 => 
             array (
                 'id' => 296,
                 'data_type_id' => 22,
@@ -6017,7 +6113,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Financement"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Financement"}}',
                 'order' => 40,
             ),
-            375 => 
+            381 => 
             array (
                 'id' => 530,
                 'data_type_id' => 22,
@@ -6033,7 +6129,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3","percent":true},"calculate":true}',
                 'order' => 82,
             ),
-            376 => 
+            382 => 
             array (
                 'id' => 298,
                 'data_type_id' => 22,
@@ -6049,7 +6145,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"0":"Non","1":"Oui"},"display":{"width":"3"}}',
                 'order' => 42,
             ),
-            377 => 
+            383 => 
             array (
                 'id' => 310,
                 'data_type_id' => 22,
@@ -6065,7 +6161,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 87,
             ),
-            378 => 
+            384 => 
             array (
                 'id' => 483,
                 'data_type_id' => 22,
@@ -6081,7 +6177,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 58,
             ),
-            379 => 
+            385 => 
             array (
                 'id' => 484,
                 'data_type_id' => 22,
@@ -6097,135 +6193,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"0":"Non","1":"Oui"},"display":{"width":"3"}}',
                 'order' => 51,
             ),
-            380 => 
-            array (
-                'id' => 251,
-                'data_type_id' => 7,
-                'field' => 'activity',
-                'type' => 'select_dropdown',
-                'display_name' => 'Activité',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"options":{"CGP":"CGP","CIF":"CIF","Banque":"Banque","Expert comptable":"Expert comptable","Avocat":"Avocat"},"display":{"width":"3"}}',
-                'order' => 14,
-            ),
-            381 => 
-            array (
-                'id' => 254,
-                'data_type_id' => 7,
-                'field' => 'convention',
-                'type' => 'file',
-                'display_name' => 'Convention',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 0,
-                'details' => '{"formfields_custom":"file_convention","display":{"width":"8"}}',
-                'order' => 22,
-            ),
-            382 => 
-            array (
-                'id' => 255,
-                'data_type_id' => 7,
-                'field' => 'status',
-                'type' => 'file',
-                'display_name' => 'Statuts',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 0,
-                'details' => '{"display":{"width":"8"}}',
-                'order' => 23,
-            ),
-            383 => 
-            array (
-                'id' => 256,
-                'data_type_id' => 7,
-                'field' => 'kbis',
-                'type' => 'file',
-                'display_name' => 'Kbis',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 0,
-                'details' => '{"display":{"width":"8"}}',
-                'order' => 24,
-            ),
-            384 => 
-            array (
-                'id' => 257,
-                'data_type_id' => 7,
-                'field' => 'rib',
-                'type' => 'file',
-                'display_name' => 'Rib',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 0,
-                'details' => '{"display":{"width":"8"}}',
-                'order' => 25,
-            ),
-            385 => 
-            array (
-                'id' => 258,
-                'data_type_id' => 7,
-                'field' => 'cni',
-                'type' => 'file',
-                'display_name' => 'Cni',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 0,
-                'details' => '{"display":{"width":"8"}}',
-                'order' => 26,
-            ),
             386 => 
-            array (
-                'id' => 84,
-                'data_type_id' => 7,
-                'field' => 'capital',
-                'type' => 'text',
-                'display_name' => 'Capital',
-                'required' => 1,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
-                'order' => 13,
-            ),
-            387 => 
-            array (
-                'id' => 85,
-                'data_type_id' => 7,
-                'field' => 'registration_city',
-                'type' => 'text',
-                'display_name' => 'Lieu D\'immatriculation',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
-                'order' => 11,
-            ),
-            388 => 
             array (
                 'id' => 26,
                 'data_type_id' => 4,
@@ -6241,7 +6209,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"4"},"modal":true,"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
                 'order' => 6,
             ),
-            389 => 
+            387 => 
             array (
                 'id' => 351,
                 'data_type_id' => 4,
@@ -6257,7 +6225,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"1":"Monsieur","2":"Madame"},"display":{"width":"4"},"modal":true,"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
                 'order' => 2,
             ),
-            390 => 
+            388 => 
             array (
                 'id' => 352,
                 'data_type_id' => 4,
@@ -6273,7 +6241,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"4"},"modal":true}',
                 'order' => 5,
             ),
-            391 => 
+            389 => 
             array (
                 'id' => 353,
                 'data_type_id' => 4,
@@ -6289,7 +6257,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"4"},"modal":true,"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
                 'order' => 11,
             ),
-            392 => 
+            390 => 
             array (
                 'id' => 355,
                 'data_type_id' => 4,
@@ -6305,7 +6273,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"4"}}',
                 'order' => 13,
             ),
-            393 => 
+            391 => 
             array (
                 'id' => 356,
                 'data_type_id' => 4,
@@ -6321,7 +6289,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"4"},"modal":true,"validation":{"rule":"required|email|unique:contacts,email","messages":{"required":"le champs :attribute est obligatoire.","unique":":attribute est d\\u00e9ja existante en base"}}}',
                 'order' => 10,
             ),
-            394 => 
+            392 => 
             array (
                 'id' => 564,
                 'data_type_id' => 4,
@@ -6337,23 +6305,87 @@ class DataRowsTableSeeder extends Seeder
                 'details' => 'null',
                 'order' => 19,
             ),
-            395 => 
+            393 => 
             array (
-                'id' => 493,
-                'data_type_id' => 17,
-                'field' => 'paiement',
-                'type' => 'select_dropdown',
-                'display_name' => 'Paiement',
+                'id' => 84,
+                'data_type_id' => 7,
+                'field' => 'capital',
+                'type' => 'text',
+                'display_name' => 'Capital',
+                'required' => 1,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
+                'order' => 13,
+            ),
+            394 => 
+            array (
+                'id' => 85,
+                'data_type_id' => 7,
+                'field' => 'registration_city',
+                'type' => 'text',
+                'display_name' => 'Lieu D\'immatriculation',
                 'required' => 0,
                 'browse' => 0,
                 'read' => 1,
                 'edit' => 1,
                 'add' => 1,
                 'delete' => 1,
-                'details' => '{"options":{"unique":"Unique","echelonne":"Echelonn\\u00e9"},"display":{"width":"3"}}',
-                'order' => 16,
+                'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
+                'order' => 11,
+            ),
+            395 => 
+            array (
+                'id' => 251,
+                'data_type_id' => 7,
+                'field' => 'activity',
+                'type' => 'select_dropdown',
+                'display_name' => 'Activité',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"options":{"CGP":"CGP","CIF":"CIF","Banque":"Banque","Expert comptable":"Expert comptable","Avocat":"Avocat"},"display":{"width":"3"}}',
+                'order' => 14,
             ),
             396 => 
+            array (
+                'id' => 254,
+                'data_type_id' => 7,
+                'field' => 'convention',
+                'type' => 'file',
+                'display_name' => 'Convention',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 0,
+                'details' => '{"formfields_custom":"file_convention","display":{"width":"8"}}',
+                'order' => 23,
+            ),
+            397 => 
+            array (
+                'id' => 255,
+                'data_type_id' => 7,
+                'field' => 'status',
+                'type' => 'file',
+                'display_name' => 'Statuts',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 0,
+                'details' => '{"display":{"width":"8"}}',
+                'order' => 24,
+            ),
+            398 => 
             array (
                 'id' => 448,
                 'data_type_id' => 12,
@@ -6369,7 +6401,71 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
                 'order' => 14,
             ),
-            397 => 
+            399 => 
+            array (
+                'id' => 256,
+                'data_type_id' => 7,
+                'field' => 'kbis',
+                'type' => 'file',
+                'display_name' => 'Kbis',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 0,
+                'details' => '{"display":{"width":"8"}}',
+                'order' => 25,
+            ),
+            400 => 
+            array (
+                'id' => 257,
+                'data_type_id' => 7,
+                'field' => 'rib',
+                'type' => 'file',
+                'display_name' => 'Rib',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 0,
+                'details' => '{"display":{"width":"8"}}',
+                'order' => 26,
+            ),
+            401 => 
+            array (
+                'id' => 258,
+                'data_type_id' => 7,
+                'field' => 'cni',
+                'type' => 'file',
+                'display_name' => 'Cni',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 0,
+                'details' => '{"display":{"width":"8"}}',
+                'order' => 27,
+            ),
+            402 => 
+            array (
+                'id' => 493,
+                'data_type_id' => 17,
+                'field' => 'paiement',
+                'type' => 'select_dropdown',
+                'display_name' => 'Paiement',
+                'required' => 0,
+                'browse' => 0,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 1,
+                'details' => '{"options":{"unique":"Unique","echelonne":"Echelonn\\u00e9"},"display":{"width":"3"}}',
+                'order' => 17,
+            ),
+            403 => 
             array (
                 'id' => 485,
                 'data_type_id' => 22,
@@ -6385,7 +6481,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Contrat de Location"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Contrat de Location"},"calculate":true}',
                 'order' => 59,
             ),
-            398 => 
+            404 => 
             array (
                 'id' => 486,
                 'data_type_id' => 22,
@@ -6401,7 +6497,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"1":"Mensuelle","2":"Trimestrielle","3":"Annuelle"},"display":{"width":"3"}}',
                 'order' => 62,
             ),
-            399 => 
+            405 => 
             array (
                 'id' => 487,
                 'data_type_id' => 22,
@@ -6417,7 +6513,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"}}',
             'order' => 63,
         ),
-        400 => 
+        406 => 
         array (
             'id' => 488,
             'data_type_id' => 22,
@@ -6433,7 +6529,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"options":{"1":"Ch\\u00e8que","2":"Pr\\u00e9l\\u00e8vement","3":"Virement","4":"Cash"},"display":{"width":"3"}}',
             'order' => 60,
         ),
-        401 => 
+        407 => 
         array (
             'id' => 489,
             'data_type_id' => 22,
@@ -6449,7 +6545,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"}}',
             'order' => 64,
         ),
-        402 => 
+        408 => 
         array (
             'id' => 490,
             'data_type_id' => 22,
@@ -6465,7 +6561,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"}}',
             'order' => 65,
         ),
-        403 => 
+        409 => 
         array (
             'id' => 491,
             'data_type_id' => 22,
@@ -6481,7 +6577,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"calculate":true,"manual":true}',
             'order' => 66,
         ),
-        404 => 
+        410 => 
         array (
             'id' => 492,
             'data_type_id' => 22,
@@ -6497,7 +6593,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"}}',
             'order' => 67,
         ),
-        405 => 
+        411 => 
         array (
             'id' => 531,
             'data_type_id' => 22,
@@ -6513,7 +6609,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"calculate":true}',
             'order' => 69,
         ),
-        406 => 
+        412 => 
         array (
             'id' => 532,
             'data_type_id' => 22,
@@ -6529,119 +6625,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"R\\u00e9capitulatif"},"calculate":true}',
             'order' => 70,
         ),
-        407 => 
-        array (
-            'id' => 357,
-            'data_type_id' => 7,
-            'field' => 'type_registration',
-            'type' => 'select_dropdown',
-            'display_name' => 'Type d\'immatriculation',
-            'required' => 0,
-            'browse' => 0,
-            'read' => 1,
-            'edit' => 1,
-            'add' => 1,
-            'delete' => 1,
-            'details' => '{"options":{"CMA":"Chambre des M\\u00e9tiers et de l\'Artisanat","RCS":"Registre des Commerces et des Soci\\u00e9t\\u00e9","SS":"S\\u00e9curit\\u00e9 sociale"},"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
-            'order' => 9,
-        ),
-        408 => 
-        array (
-            'id' => 250,
-            'data_type_id' => 7,
-            'field' => 'juridical_registration',
-            'type' => 'select_dropdown',
-            'display_name' => 'Forme Juridique',
-            'required' => 0,
-            'browse' => 0,
-            'read' => 1,
-            'edit' => 1,
-            'add' => 1,
-            'delete' => 1,
-            'details' => '{"options":{"EI":"EI","EURL":"EURL","SA":"SA","SARL":"SARL","SAS":"SAS","Autre":"Autre"},"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
-            'order' => 8,
-        ),
-        409 => 
-        array (
-            'id' => 358,
-            'data_type_id' => 7,
-            'field' => 'assurances',
-            'type' => 'file',
-            'display_name' => 'Assurances',
-            'required' => 0,
-            'browse' => 1,
-            'read' => 1,
-            'edit' => 1,
-            'add' => 1,
-            'delete' => 0,
-            'details' => '{"display":{"width":"8"}}',
-            'order' => 27,
-        ),
-        410 => 
-        array (
-            'id' => 440,
-            'data_type_id' => 7,
-            'field' => 'remuneration',
-            'type' => 'select_dropdown',
-            'display_name' => 'Votre taux de rénumération est',
-            'required' => 0,
-            'browse' => 0,
-            'read' => 1,
-            'edit' => 1,
-            'add' => 1,
-            'delete' => 1,
-            'details' => '{"options":{"variable":"variable","fixe":"fixe"},"display":{"width":"3"}}',
-            'order' => 15,
-        ),
-        411 => 
-        array (
-            'id' => 441,
-            'data_type_id' => 7,
-            'field' => 'remu_fixe',
-            'type' => 'text',
-            'display_name' => 'Taux de rémunération fixe',
-            'required' => 0,
-            'browse' => 0,
-            'read' => 1,
-            'edit' => 1,
-            'add' => 1,
-            'delete' => 1,
-            'details' => '{"display":{"width":"3"},"validation":{"rule":"required_if:remuneration,fixe","messages":{"required_if":"ce champs est obligatoire quand la remun\\u00e9ration est fixe."}}}',
-            'order' => 16,
-        ),
-        412 => 
-        array (
-            'id' => 442,
-            'data_type_id' => 7,
-            'field' => 'network',
-            'type' => 'select_dropdown',
-            'display_name' => 'Fait t\'il parti d\'un réseau ?',
-            'required' => 0,
-            'browse' => 0,
-            'read' => 1,
-            'edit' => 1,
-            'add' => 1,
-            'delete' => 1,
-            'details' => '{"options":{"non":"non","oui":"oui"},"display":{"width":"3"}}',
-            'order' => 17,
-        ),
         413 => 
-        array (
-            'id' => 443,
-            'data_type_id' => 7,
-            'field' => 'network_yes',
-            'type' => 'text',
-            'display_name' => 'Taux de rémunération réseau',
-            'required' => 0,
-            'browse' => 0,
-            'read' => 1,
-            'edit' => 1,
-            'add' => 1,
-            'delete' => 1,
-            'details' => '{"display":{"width":"3"},"validation":{"rule":"required_if:network,oui","messages":{"required_if":"ce champs est obligatoire si l\'investisseur fait partie d\'un r\\u00e9seau."}}}',
-            'order' => 18,
-        ),
-        414 => 
         array (
             'id' => 533,
             'data_type_id' => 22,
@@ -6657,7 +6641,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"}}',
             'order' => 71,
         ),
-        415 => 
+        414 => 
         array (
             'id' => 534,
             'data_type_id' => 22,
@@ -6673,7 +6657,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"}}',
             'order' => 72,
         ),
-        416 => 
+        415 => 
         array (
             'id' => 535,
             'data_type_id' => 22,
@@ -6689,7 +6673,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3","percent":true},"calculate":true}',
             'order' => 49,
         ),
-        417 => 
+        416 => 
         array (
             'id' => 536,
             'data_type_id' => 22,
@@ -6705,7 +6689,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"calculate":true}',
             'order' => 73,
         ),
-        418 => 
+        417 => 
         array (
             'id' => 537,
             'data_type_id' => 22,
@@ -6721,7 +6705,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"calculate":true}',
             'order' => 74,
         ),
-        419 => 
+        418 => 
         array (
             'id' => 538,
             'data_type_id' => 22,
@@ -6737,7 +6721,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"}}',
             'order' => 75,
         ),
-        420 => 
+        419 => 
         array (
             'id' => 539,
             'data_type_id' => 22,
@@ -6753,7 +6737,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3","percent":true}}',
             'order' => 76,
         ),
-        421 => 
+        420 => 
         array (
             'id' => 465,
             'data_type_id' => 12,
@@ -6769,7 +6753,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"format":"%d\\/%m\\/%Y","validation":{"rule":"required_if:regime_mat_invest,2|required_if:regime_mat_invest,3|required_if:regime_mat_invest,4","messages":{"required_if":"le champs :attribute est obligatoire si l\'investisseur est mari\\u00e9 ou pacs\\u00e9."}}}',
             'order' => 37,
         ),
-        422 => 
+        421 => 
         array (
             'id' => 560,
             'data_type_id' => 12,
@@ -6785,7 +6769,39 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"model":"\\\\App\\\\CGP","table":"cgps","type":"belongsTo","column":"cgp_attached","key":"id","label":"name","pivot_table":"migrations","pivot":"0","taggable":"0"}',
             'order' => 7,
         ),
+        422 => 
+        array (
+            'id' => 250,
+            'data_type_id' => 7,
+            'field' => 'juridical_registration',
+            'type' => 'select_dropdown',
+            'display_name' => 'Forme Juridique',
+            'required' => 0,
+            'browse' => 0,
+            'read' => 1,
+            'edit' => 1,
+            'add' => 1,
+            'delete' => 1,
+            'details' => '{"options":{"EI":"EI","EURL":"EURL","SA":"SA","SARL":"SARL","SAS":"SAS","Autre":"Autre"},"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
+            'order' => 8,
+        ),
         423 => 
+        array (
+            'id' => 357,
+            'data_type_id' => 7,
+            'field' => 'type_registration',
+            'type' => 'select_dropdown',
+            'display_name' => 'Type d\'immatriculation',
+            'required' => 0,
+            'browse' => 0,
+            'read' => 1,
+            'edit' => 1,
+            'add' => 1,
+            'delete' => 1,
+            'details' => '{"options":{"CMA":"Chambre des M\\u00e9tiers et de l\'Artisanat","RCS":"Registre des Commerces et des Soci\\u00e9t\\u00e9","SS":"S\\u00e9curit\\u00e9 sociale"},"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
+            'order' => 9,
+        ),
+        424 => 
         array (
             'id' => 540,
             'data_type_id' => 22,
@@ -6801,7 +6817,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"calculate":true}',
             'order' => 47,
         ),
-        424 => 
+        425 => 
         array (
             'id' => 541,
             'data_type_id' => 22,
@@ -6817,7 +6833,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"calculate":true}',
             'order' => 77,
         ),
-        425 => 
+        426 => 
         array (
             'id' => 542,
             'data_type_id' => 22,
@@ -6833,7 +6849,87 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"}}',
             'order' => 78,
         ),
-        426 => 
+        427 => 
+        array (
+            'id' => 358,
+            'data_type_id' => 7,
+            'field' => 'assurances',
+            'type' => 'file',
+            'display_name' => 'Assurances',
+            'required' => 0,
+            'browse' => 1,
+            'read' => 1,
+            'edit' => 1,
+            'add' => 1,
+            'delete' => 0,
+            'details' => '{"display":{"width":"8"}}',
+            'order' => 28,
+        ),
+        428 => 
+        array (
+            'id' => 440,
+            'data_type_id' => 7,
+            'field' => 'remuneration',
+            'type' => 'select_dropdown',
+            'display_name' => 'Votre taux de rénumération est',
+            'required' => 0,
+            'browse' => 0,
+            'read' => 1,
+            'edit' => 1,
+            'add' => 1,
+            'delete' => 1,
+            'details' => '{"options":{"variable":"variable","fixe":"fixe"},"display":{"width":"3"}}',
+            'order' => 15,
+        ),
+        429 => 
+        array (
+            'id' => 441,
+            'data_type_id' => 7,
+            'field' => 'remu_fixe',
+            'type' => 'text',
+            'display_name' => 'Taux de rémunération fixe',
+            'required' => 0,
+            'browse' => 0,
+            'read' => 1,
+            'edit' => 1,
+            'add' => 1,
+            'delete' => 1,
+            'details' => '{"display":{"width":"3"},"validation":{"rule":"required_if:remuneration,fixe","messages":{"required_if":"ce champs est obligatoire quand la remun\\u00e9ration est fixe."}}}',
+            'order' => 16,
+        ),
+        430 => 
+        array (
+            'id' => 442,
+            'data_type_id' => 7,
+            'field' => 'network',
+            'type' => 'select_dropdown',
+            'display_name' => 'Fait t\'il parti d\'un réseau ?',
+            'required' => 0,
+            'browse' => 0,
+            'read' => 1,
+            'edit' => 1,
+            'add' => 1,
+            'delete' => 1,
+            'details' => '{"options":{"non":"non","oui":"oui"},"display":{"width":"3"}}',
+            'order' => 17,
+        ),
+        431 => 
+        array (
+            'id' => 443,
+            'data_type_id' => 7,
+            'field' => 'network_yes',
+            'type' => 'text',
+            'display_name' => 'Taux de rémunération réseau',
+            'required' => 0,
+            'browse' => 0,
+            'read' => 1,
+            'edit' => 1,
+            'add' => 1,
+            'delete' => 1,
+            'details' => '{"display":{"width":"3"},"validation":{"rule":"required_if:network,oui","messages":{"required_if":"ce champs est obligatoire si l\'investisseur fait partie d\'un r\\u00e9seau."}}}',
+            'order' => 18,
+        ),
+        432 => 
         array (
             'id' => 543,
             'data_type_id' => 22,
@@ -6849,7 +6945,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"}}',
             'order' => 79,
         ),
-        427 => 
+        433 => 
         array (
             'id' => 544,
             'data_type_id' => 22,
@@ -6865,7 +6961,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"calculate":true}',
             'order' => 80,
         ),
-        428 => 
+        434 => 
         array (
             'id' => 545,
             'data_type_id' => 22,
@@ -6881,7 +6977,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"}}',
             'order' => 81,
         ),
-        429 => 
+        435 => 
         array (
             'id' => 546,
             'data_type_id' => 22,
@@ -6897,7 +6993,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"formfields_custom":"mandat_van_paiement","calculate":true}',
             'order' => 84,
         ),
-        430 => 
+        436 => 
         array (
             'id' => 311,
             'data_type_id' => 22,
@@ -6913,7 +7009,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"model":"App\\\\Leaseholder","table":"leaseholders","type":"belongsTo","column":"leaseholder_id","key":"id","label":"name","pivot_table":"addresses","pivot":"0","taggable":"0"}',
             'order' => 12,
         ),
-        431 => 
+        437 => 
         array (
             'id' => 527,
             'data_type_id' => 22,
@@ -6929,7 +7025,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"model":"\\\\App\\\\Supplier","table":"suppliers","type":"belongsTo","column":"supplier_id","key":"id","label":"name","pivot_table":"addresses","pivot":"0","taggable":"0"}',
             'order' => 14,
         ),
-        432 => 
+        438 => 
         array (
             'id' => 450,
             'data_type_id' => 12,
@@ -6945,7 +7041,23 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 18,
         ),
-        433 => 
+        439 => 
+        array (
+            'id' => 568,
+            'data_type_id' => 7,
+            'field' => 'cgp_belongstomany_contact_relationship',
+            'type' => 'relationship',
+            'display_name' => 'autre contact',
+            'required' => 0,
+            'browse' => 0,
+            'read' => 1,
+            'edit' => 1,
+            'add' => 1,
+            'delete' => 1,
+            'details' => '{"model":"\\\\App\\\\Contact","table":"contacts","type":"belongsToMany","column":"id","key":"id","label":"full_name_func_civ","pivot_table":"cgp_contacts","pivot":"1","taggable":"0"}',
+            'order' => 22,
+        ),
+        440 => 
         array (
             'id' => 451,
             'data_type_id' => 12,
@@ -6961,7 +7073,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 19,
         ),
-        434 => 
+        441 => 
         array (
             'id' => 452,
             'data_type_id' => 12,
@@ -6977,7 +7089,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"}}',
             'order' => 16,
         ),
-        435 => 
+        442 => 
         array (
             'id' => 499,
             'data_type_id' => 12,
@@ -6993,7 +7105,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"1"}}',
             'order' => 45,
         ),
-        436 => 
+        443 => 
         array (
             'id' => 500,
             'data_type_id' => 12,
@@ -7009,7 +7121,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"2"}}',
             'order' => 46,
         ),
-        437 => 
+        444 => 
         array (
             'id' => 501,
             'data_type_id' => 12,
@@ -7025,7 +7137,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"2"}}',
             'order' => 47,
         ),
-        438 => 
+        445 => 
         array (
             'id' => 565,
             'data_type_id' => 12,
@@ -7041,7 +7153,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"validation":{"rule":"required_if:regime_mat_invest,2,3,4","messages":{"required_if":"le champs :attribute est obligatoire si l\'investisseur est mari\\u00e9 ou pacs\\u00e9."}}}',
             'order' => 39,
         ),
-        439 => 
+        446 => 
         array (
             'id' => 566,
             'data_type_id' => 12,
@@ -7057,7 +7169,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"validation":{"rule":"required_if:regime_mat_invest,2,3,4|email|unique:investors,mail_conjoint|unique:investors,email_invest|nullable","messages":{"required_if":"le champs :attribute est obligatoire si l\'investisseur est mari\\u00e9 ou pacs\\u00e9.","unique":"cette email est d\\u00e9ja existant en base","email":"cette attribut doit \\u00eatre une adresse email valide"}}}',
             'order' => 38,
         ),
-        440 => 
+        447 => 
         array (
             'id' => 449,
             'data_type_id' => 12,
@@ -7073,7 +7185,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"format":"%d\\/%m\\/%Y","validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 17,
         ),
-        441 => 
+        448 => 
         array (
             'id' => 123,
             'data_type_id' => 12,
@@ -7089,7 +7201,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"options":{"1":"Individuel","2":"Soci\\u00e9t\\u00e9"},"display":{"width":"3"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Renseignements G\\u00e9neraux"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 5,
         ),
-        442 => 
+        449 => 
         array (
             'id' => 446,
             'data_type_id' => 12,
@@ -7105,7 +7217,71 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"options":{"monsieur":"Monsieur","madame":"Madame","mademoiselle":"Mademoiselle"},"display":{"width":"3"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Renseignements Personnels"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Renseignement Personnel"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 13,
         ),
-        443 => 
+        450 => 
+        array (
+            'id' => 86,
+            'data_type_id' => 7,
+            'field' => 'ape_key',
+            'type' => 'text',
+            'display_name' => 'Code APE',
+            'required' => 0,
+            'browse' => 0,
+            'read' => 0,
+            'edit' => 0,
+            'add' => 0,
+            'delete' => 0,
+            'details' => '{"display":{"width":"4"}}',
+            'order' => 30,
+        ),
+        451 => 
+        array (
+            'id' => 87,
+            'data_type_id' => 7,
+            'field' => 'etablishment_code',
+            'type' => 'text',
+            'display_name' => 'Code établissement',
+            'required' => 0,
+            'browse' => 0,
+            'read' => 0,
+            'edit' => 0,
+            'add' => 0,
+            'delete' => 0,
+            'details' => '{"display":{"width":"8"}}',
+            'order' => 31,
+        ),
+        452 => 
+        array (
+            'id' => 253,
+            'data_type_id' => 7,
+            'field' => 'contact_status',
+            'type' => 'select_dropdown',
+            'display_name' => 'Poste du Représentant',
+            'required' => 0,
+            'browse' => 0,
+            'read' => 1,
+            'edit' => 1,
+            'add' => 1,
+            'delete' => 1,
+            'details' => '{"options":{"Commercial":"Commercial","Pr\\u00e9sident":"Pr\\u00e9sident","Directeur_commercial":"Directeur commercial","Fournisseur":"Fournisseur","G\\u00e9rant":"G\\u00e9rant","Informaticien":"Directeur g\\u00e9n\\u00e9ral","President":"Pr\\u00e9sident","Vice-President":"Vice-Pr\\u00e9sident","Secretaire":"Secr\\u00e9taire","Service_entreprise":"Service entreprise","Habilit\\u00e9":"Habilit\\u00e9","Autre_fonction":"Autre fonction"},"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
+            'order' => 21,
+        ),
+        453 => 
+        array (
+            'id' => 244,
+            'data_type_id' => 7,
+            'field' => 'cgp_belongsto_contact_relationship',
+            'type' => 'relationship',
+            'display_name' => 'Représentant légal',
+            'required' => 0,
+            'browse' => 1,
+            'read' => 1,
+            'edit' => 0,
+            'add' => 0,
+            'delete' => 0,
+            'details' => '{"model":"App\\\\Contact","table":"contacts","type":"belongsTo","column":"contact_id","key":"id","label":"full_name","pivot_table":"addresses","pivot":"0","taggable":"0"}',
+            'order' => 20,
+        ),
+        454 => 
         array (
             'id' => 115,
             'data_type_id' => 12,
@@ -7121,7 +7297,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 20,
         ),
-        444 => 
+        455 => 
         array (
             'id' => 23,
             'data_type_id' => 4,
@@ -7137,7 +7313,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{}',
             'order' => 1,
         ),
-        445 => 
+        456 => 
         array (
             'id' => 24,
             'data_type_id' => 4,
@@ -7153,7 +7329,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"4"},"modal":true,"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 3,
         ),
-        446 => 
+        457 => 
         array (
             'id' => 28,
             'data_type_id' => 4,
@@ -7169,7 +7345,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"4"},"modal":true,"validation":{"rule":"required|digits:5","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 8,
         ),
-        447 => 
+        458 => 
         array (
             'id' => 29,
             'data_type_id' => 4,
@@ -7185,7 +7361,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"4"},"modal":true,"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 9,
         ),
-        448 => 
+        459 => 
         array (
             'id' => 30,
             'data_type_id' => 4,
@@ -7201,7 +7377,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"4"},"format":"%d\\/%m\\/%Y","modal":true}',
             'order' => 14,
         ),
-        449 => 
+        460 => 
         array (
             'id' => 31,
             'data_type_id' => 4,
@@ -7217,7 +7393,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"4"},"modal":true}',
             'order' => 15,
         ),
-        450 => 
+        461 => 
         array (
             'id' => 32,
             'data_type_id' => 4,
@@ -7233,7 +7409,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"4"},"validation":{"rule":"digits:5"}}',
             'order' => 16,
         ),
-        451 => 
+        462 => 
         array (
             'id' => 33,
             'data_type_id' => 4,
@@ -7249,7 +7425,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"4"},"format":"%d\\/%m\\/%Y"}',
             'order' => 17,
         ),
-        452 => 
+        463 => 
         array (
             'id' => 34,
             'data_type_id' => 4,
@@ -7265,7 +7441,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{}',
             'order' => 18,
         ),
-        453 => 
+        464 => 
         array (
             'id' => 3,
             'data_type_id' => 1,
@@ -7281,7 +7457,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"validation":{"rule":"unique: users, email"}}',
             'order' => 3,
         ),
-        454 => 
+        465 => 
         array (
             'id' => 8,
             'data_type_id' => 1,
@@ -7297,7 +7473,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{}',
             'order' => 8,
         ),
-        455 => 
+        466 => 
         array (
             'id' => 4,
             'data_type_id' => 1,
@@ -7313,7 +7489,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{}',
             'order' => 4,
         ),
-        456 => 
+        467 => 
         array (
             'id' => 5,
             'data_type_id' => 1,
@@ -7329,7 +7505,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{}',
             'order' => 5,
         ),
-        457 => 
+        468 => 
         array (
             'id' => 12,
             'data_type_id' => 1,
@@ -7345,7 +7521,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{}',
             'order' => 12,
         ),
-        458 => 
+        469 => 
         array (
             'id' => 6,
             'data_type_id' => 1,
@@ -7361,7 +7537,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{}',
             'order' => 6,
         ),
-        459 => 
+        470 => 
         array (
             'id' => 7,
             'data_type_id' => 1,
@@ -7377,7 +7553,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{}',
             'order' => 7,
         ),
-        460 => 
+        471 => 
         array (
             'id' => 9,
             'data_type_id' => 1,
@@ -7393,7 +7569,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"model":"TCG\\\\Voyager\\\\Models\\\\Role","table":"roles","type":"belongsTo","column":"role_id","key":"id","label":"display_name","pivot_table":"roles","pivot":"0","taggable":"0"}',
             'order' => 10,
         ),
-        461 => 
+        472 => 
         array (
             'id' => 10,
             'data_type_id' => 1,
@@ -7409,55 +7585,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"model":"TCG\\\\Voyager\\\\Models\\\\Role","table":"roles","type":"belongsToMany","column":"id","key":"id","label":"display_name","pivot_table":"user_roles","pivot":"1","taggable":"0"}',
             'order' => 11,
         ),
-        462 => 
-        array (
-            'id' => 193,
-            'data_type_id' => 17,
-            'field' => 'mandat_start_at',
-            'type' => 'date',
-            'display_name' => 'Debut du mandat de recherche',
-            'required' => 1,
-            'browse' => 0,
-            'read' => 1,
-            'edit' => 1,
-            'add' => 1,
-            'delete' => 0,
-            'details' => '{"display":{"width":"3"},"format":"%d\\/%m\\/%Y","legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Date de recherche"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Date de recherche"},"validation":{"rule":"required|date","messages":{"required":"le champs :attribute est obligatoire."}}}',
-            'order' => 18,
-        ),
-        463 => 
-        array (
-            'id' => 194,
-            'data_type_id' => 17,
-            'field' => 'mandat_finnish_at',
-            'type' => 'date',
-            'display_name' => 'Fin du mandat de recherche',
-            'required' => 1,
-            'browse' => 0,
-            'read' => 1,
-            'edit' => 1,
-            'add' => 1,
-            'delete' => 0,
-            'details' => '{"display":{"width":"3"},"format":"%d\\/%m\\/%Y","default":"12\\/15 this year","validation":{"rule":"required|date|after:mandat_start_at","messages":{"required":"le champs :attribute est obligatoire."}}}',
-            'order' => 19,
-        ),
-        464 => 
-        array (
-            'id' => 195,
-            'data_type_id' => 17,
-            'field' => 'type_contrats_id',
-            'type' => 'select_dropdown',
-            'display_name' => 'Choisir une formule',
-            'required' => 1,
-            'browse' => 0,
-            'read' => 0,
-            'edit' => 1,
-            'add' => 1,
-            'delete' => 1,
-            'details' => '{"relationship":{"key":"id","label":"nom"},"default":null,"display":{"width":"4"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Financement"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
-            'order' => 8,
-        ),
-        465 => 
+        473 => 
         array (
             'id' => 198,
             'data_type_id' => 17,
@@ -7471,9 +7599,9 @@ class DataRowsTableSeeder extends Seeder
             'add' => 1,
             'delete' => 1,
             'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}},"default":1}',
-            'order' => 12,
+            'order' => 13,
         ),
-        466 => 
+        474 => 
         array (
             'id' => 200,
             'data_type_id' => 17,
@@ -7487,153 +7615,9 @@ class DataRowsTableSeeder extends Seeder
             'add' => 1,
             'delete' => 1,
             'details' => '{"options":{"industrie":"Industrie","artisanat":"Artisanat","tourisme":"Tourisme","energie":"Energie","tp, transport, construction":"TP, Transport, Construction","logement social":"Logement social","indifferent":"Indiff\\u00e9rent"},"display":{"width":"4"},"default":"indifferent"}',
-            'order' => 7,
-        ),
-        467 => 
-        array (
-            'id' => 201,
-            'data_type_id' => 17,
-            'field' => 'taux_rentabilite',
-            'type' => 'percentage',
-            'display_name' => 'Taux Rentabilité',
-            'required' => 0,
-            'browse' => 1,
-            'read' => 1,
-            'edit' => 0,
-            'add' => 0,
-            'delete' => 0,
-            'details' => '{"display":{"width":"3"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Resultat"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Resultat"}}',
-            'order' => 22,
-        ),
-        468 => 
-        array (
-            'id' => 202,
-            'data_type_id' => 17,
-            'field' => 'apport',
-            'type' => 'money',
-            'display_name' => 'Apport',
-            'required' => 0,
-            'browse' => 1,
-            'read' => 1,
-            'edit' => 0,
-            'add' => 0,
-            'delete' => 0,
-            'details' => '{"display":{"width":"3"}}',
-            'order' => 23,
-        ),
-        469 => 
-        array (
-            'id' => 205,
-            'data_type_id' => 17,
-            'field' => 'taux_reservation',
-            'type' => 'percentage',
-            'display_name' => 'Taux Reservation',
-            'required' => 0,
-            'browse' => 1,
-            'read' => 1,
-            'edit' => 0,
-            'add' => 0,
-            'delete' => 0,
-            'details' => '{"display":{"width":"3"}}',
-            'order' => 26,
-        ),
-        470 => 
-        array (
-            'id' => 206,
-            'data_type_id' => 17,
-            'field' => 'created_at',
-            'type' => 'timestamp',
-            'display_name' => 'Date Création Mandat',
-            'required' => 0,
-            'browse' => 0,
-            'read' => 0,
-            'edit' => 0,
-            'add' => 0,
-            'delete' => 1,
-            'details' => 'null',
-            'order' => 21,
-        ),
-        471 => 
-        array (
-            'id' => 555,
-            'data_type_id' => 17,
-            'field' => 'user_updated_id',
-            'type' => 'text',
-            'display_name' => 'User Updated Id',
-            'required' => 0,
-            'browse' => 0,
-            'read' => 0,
-            'edit' => 0,
-            'add' => 0,
-            'delete' => 0,
-            'details' => '{}',
-            'order' => 31,
-        ),
-        472 => 
-        array (
-            'id' => 563,
-            'data_type_id' => 17,
-            'field' => 'yousign_procedure_id',
-            'type' => 'text',
-            'display_name' => 'Yousign Procedure Id',
-            'required' => 0,
-            'browse' => 0,
-            'read' => 0,
-            'edit' => 0,
-            'add' => 0,
-            'delete' => 0,
-            'details' => 'null',
-            'order' => 29,
-        ),
-        473 => 
-        array (
-            'id' => 567,
-            'data_type_id' => 17,
-            'field' => 'mandat_reserved_at',
-            'type' => 'date',
-            'display_name' => 'Date de Réservation',
-            'required' => 0,
-            'browse' => 1,
-            'read' => 1,
-            'edit' => 1,
-            'add' => 1,
-            'delete' => 1,
-            'details' => '{"display":{"width":"3"},"format":"%d\\/%m\\/%Y","validation":{"rule":"required|date","messages":{"required":"le champs :attribute est obligatoire."}}}',
-            'order' => 20,
-        ),
-        474 => 
-        array (
-            'id' => 557,
-            'data_type_id' => 17,
-            'field' => 'reservation_belongsto_investor_relationship',
-            'type' => 'relationship',
-            'display_name' => 'investors',
-            'required' => 0,
-            'browse' => 1,
-            'read' => 1,
-            'edit' => 0,
-            'add' => 0,
-            'delete' => 0,
-            'details' => '{"model":"App\\\\Investor","table":"investors","type":"belongsTo","column":"investors_id","key":"id","label":"full_name","pivot_table":"contacts","pivot":"0","taggable":"0"}',
-            'order' => 4,
+            'order' => 8,
         ),
         475 => 
-        array (
-            'id' => 559,
-            'data_type_id' => 17,
-            'field' => 'reservation_belongsto_cgp_relationship',
-            'type' => 'relationship',
-            'display_name' => 'CGP Affilié',
-            'required' => 0,
-            'browse' => 1,
-            'read' => 1,
-            'edit' => 0,
-            'add' => 0,
-            'delete' => 0,
-            'details' => '{"model":"\\\\App\\\\CGP","table":"cgps","type":"belongsTo","column":"cgps_id","key":"id","label":"name","pivot_table":"migrations","pivot":"0","taggable":"0"}',
-            'order' => 6,
-        ),
-        476 => 
         array (
             'id' => 113,
             'data_type_id' => 12,
@@ -7649,7 +7633,55 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"R\\u00e9sum\\u00e9"}}',
             'order' => 6,
         ),
+        476 => 
+        array (
+            'id' => 193,
+            'data_type_id' => 17,
+            'field' => 'mandat_start_at',
+            'type' => 'date',
+            'display_name' => 'Debut du mandat de recherche',
+            'required' => 1,
+            'browse' => 0,
+            'read' => 1,
+            'edit' => 1,
+            'add' => 1,
+            'delete' => 0,
+            'details' => '{"display":{"width":"3"},"format":"%d\\/%m\\/%Y","legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Date de recherche"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Date de recherche"},"validation":{"rule":"required|date","messages":{"required":"le champs :attribute est obligatoire."}}}',
+            'order' => 19,
+        ),
         477 => 
+        array (
+            'id' => 194,
+            'data_type_id' => 17,
+            'field' => 'mandat_finnish_at',
+            'type' => 'date',
+            'display_name' => 'Fin du mandat de recherche',
+            'required' => 1,
+            'browse' => 0,
+            'read' => 1,
+            'edit' => 1,
+            'add' => 1,
+            'delete' => 0,
+            'details' => '{"display":{"width":"3"},"format":"%d\\/%m\\/%Y","default":"12\\/15 this year","validation":{"rule":"required|date|after:mandat_start_at","messages":{"required":"le champs :attribute est obligatoire."}}}',
+            'order' => 20,
+        ),
+        478 => 
+        array (
+            'id' => 195,
+            'data_type_id' => 17,
+            'field' => 'type_contrats_id',
+            'type' => 'select_dropdown',
+            'display_name' => 'Choisir une formule',
+            'required' => 1,
+            'browse' => 0,
+            'read' => 0,
+            'edit' => 1,
+            'add' => 1,
+            'delete' => 1,
+            'details' => '{"relationship":{"key":"id","label":"nom"},"default":null,"display":{"width":"4"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Financement"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
+            'order' => 9,
+        ),
+        479 => 
         array (
             'id' => 125,
             'data_type_id' => 12,
@@ -7665,7 +7697,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"validation":{"rule":"required_if:nature_entities_id,2","messages":{"required":"le champs :attribute est obligatoire si l\'investisseur est une soci\\u00e9t\\u00e9."}}}',
             'order' => 8,
         ),
-        478 => 
+        480 => 
         array (
             'id' => 126,
             'data_type_id' => 12,
@@ -7681,7 +7713,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"validation":{"rule":"required_if:nature_entities_id,2","messages":{"required":"le champs :attribute est obligatoire si l\'investisseur est une soci\\u00e9t\\u00e9."}}}',
             'order' => 11,
         ),
-        479 => 
+        481 => 
         array (
             'id' => 444,
             'data_type_id' => 12,
@@ -7697,7 +7729,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"relationship":{"key":"id","label":"name"},"display":{"width":"3"}}',
             'order' => 2,
         ),
-        480 => 
+        482 => 
         array (
             'id' => 445,
             'data_type_id' => 12,
@@ -7713,7 +7745,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"relationship":{"key":"id","label":"full_name"},"formfields_custom":"contact","display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 4,
         ),
-        481 => 
+        483 => 
         array (
             'id' => 114,
             'data_type_id' => 12,
@@ -7729,7 +7761,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"validation":{"rule":"required_if:nature_entities_id,2","messages":{"required":"le champs :attribute est obligatoire si l\'investisseur est une soci\\u00e9t\\u00e9."}}}',
             'order' => 9,
         ),
-        482 => 
+        484 => 
         array (
             'id' => 116,
             'data_type_id' => 12,
@@ -7745,7 +7777,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"}}',
             'order' => 21,
         ),
-        483 => 
+        485 => 
         array (
             'id' => 118,
             'data_type_id' => 12,
@@ -7761,7 +7793,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 23,
         ),
-        484 => 
+        486 => 
         array (
             'id' => 119,
             'data_type_id' => 12,
@@ -7777,7 +7809,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"format":"%d\\/%m\\/%Y","validation":{"rule":"required_if:nature_entities_id,2","messages":{"required":"le champs :attribute est obligatoire si l\'investisseur est une soci\\u00e9t\\u00e9."}}}',
             'order' => 12,
         ),
-        485 => 
+        487 => 
         array (
             'id' => 243,
             'data_type_id' => 12,
@@ -7793,7 +7825,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"null":"Aucune","display":{"width":"3"}}',
             'order' => 3,
         ),
-        486 => 
+        488 => 
         array (
             'id' => 120,
             'data_type_id' => 12,
@@ -7809,7 +7841,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{}',
             'order' => 55,
         ),
-        487 => 
+        489 => 
         array (
             'id' => 121,
             'data_type_id' => 12,
@@ -7825,7 +7857,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{}',
             'order' => 56,
         ),
-        488 => 
+        490 => 
         array (
             'id' => 122,
             'data_type_id' => 12,
@@ -7841,7 +7873,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"default":4}',
             'order' => 33,
         ),
-        489 => 
+        491 => 
         array (
             'id' => 124,
             'data_type_id' => 12,
@@ -7857,7 +7889,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"options":{"CMA":"Chambre des M\\u00e9tiers et de l\'Artisanat","RCS":"Registre des Commerces et des Soci\\u00e9t\\u00e9","SS":"S\\u00e9curit\\u00e9 sociale"},"display":{"width":"3"},"validation":{"rule":"required_if:nature_entities_id,2","messages":{"required":"le champs :attribute est obligatoire si l\'investisseur est une soci\\u00e9t\\u00e9."}}}',
             'order' => 10,
         ),
-        490 => 
+        492 => 
         array (
             'id' => 470,
             'data_type_id' => 12,
@@ -7873,7 +7905,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"8"}}',
             'order' => 52,
         ),
-        491 => 
+        493 => 
         array (
             'id' => 458,
             'data_type_id' => 12,
@@ -7889,7 +7921,7 @@ class DataRowsTableSeeder extends Seeder
         'details' => '{"options":{"01":"C\\u00e9libataire","02":"Mari\\u00e9 sous la communaut\\u00e9","03":"Mari\\u00e9 sous contrat","04":"Pacs\\u00e9","05":"Divorc\\u00e9(e)","06":"Veuf(ve)"},"display":{"width":"3"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"R\\u00e9gime Matrimonial"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"R\\u00e9gime Matrimonial"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 32,
         ),
-        492 => 
+        494 => 
         array (
             'id' => 459,
             'data_type_id' => 12,
@@ -7905,7 +7937,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"}}',
             'order' => 29,
         ),
-        493 => 
+        495 => 
         array (
             'id' => 460,
             'data_type_id' => 12,
@@ -7921,7 +7953,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"}}',
             'order' => 30,
         ),
-        494 => 
+        496 => 
         array (
             'id' => 461,
             'data_type_id' => 12,
@@ -7937,7 +7969,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"}}',
             'order' => 31,
         ),
-        495 => 
+        497 => 
         array (
             'id' => 462,
             'data_type_id' => 12,
@@ -7953,7 +7985,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"validation":{"rule":"required_if:regime_mat_invest,2,3,4","messages":{"required_if":"le champs :attribute est obligatoire si l\'investisseur est mari\\u00e9 ou pacs\\u00e9."}}}',
             'order' => 34,
         ),
-        496 => 
+        498 => 
         array (
             'id' => 463,
             'data_type_id' => 12,
@@ -7969,7 +8001,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"validation":{"rule":"required_if:regime_mat_invest,2,3,4","messages":{"required_if":"le champs :attribute est obligatoire si l\'investisseur est mari\\u00e9 ou pacs\\u00e9."}}}',
             'order' => 35,
         ),
-        497 => 
+        499 => 
         array (
             'id' => 464,
             'data_type_id' => 12,
@@ -7985,41 +8017,41 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"}}',
             'order' => 36,
         ),
-        498 => 
-        array (
-            'id' => 466,
-            'data_type_id' => 12,
-            'field' => 'cni',
-            'type' => 'file',
-            'display_name' => 'CNI',
-            'required' => 0,
-            'browse' => 1,
-            'read' => 1,
-            'edit' => 1,
-            'add' => 1,
-            'delete' => 0,
-            'details' => '{"display":{"width":"8"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Compl\\u00e9ment"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Compl\\u00e9ment"}}',
-            'order' => 48,
-        ),
-        499 => 
-        array (
-            'id' => 467,
-            'data_type_id' => 12,
-            'field' => 'justificatif_adress',
-            'type' => 'file',
-            'display_name' => 'Justificatif d\'adresse',
-            'required' => 0,
-            'browse' => 1,
-            'read' => 1,
-            'edit' => 1,
-            'add' => 1,
-            'delete' => 0,
-            'details' => '{"display":{"width":"8"}}',
-            'order' => 49,
-        ),
     ));
         \DB::table('data_rows')->insert(array (
             0 => 
+            array (
+                'id' => 466,
+                'data_type_id' => 12,
+                'field' => 'cni',
+                'type' => 'file',
+                'display_name' => 'CNI',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 0,
+                'details' => '{"display":{"width":"8"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Compl\\u00e9ment"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Compl\\u00e9ment"}}',
+                'order' => 48,
+            ),
+            1 => 
+            array (
+                'id' => 467,
+                'data_type_id' => 12,
+                'field' => 'justificatif_adress',
+                'type' => 'file',
+                'display_name' => 'Justificatif d\'adresse',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 1,
+                'add' => 1,
+                'delete' => 0,
+                'details' => '{"display":{"width":"8"}}',
+                'order' => 49,
+            ),
+            2 => 
             array (
                 'id' => 468,
                 'data_type_id' => 12,
@@ -8035,7 +8067,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 50,
             ),
-            1 => 
+            3 => 
             array (
                 'id' => 469,
                 'data_type_id' => 12,
