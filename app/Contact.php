@@ -67,8 +67,7 @@ class Contact extends Model
   }
 
   private function getFunction(){
-      // FIXME please please please, extract this!!!
-      // TODO Make it as default on the bread/db field!
-      return $this->function ?? "aucun poste definie";
+      // FIXME Now, this is required, so it can be deprecated
+      return $this->function ?? __("profile.contact.no_function");
   }
 }

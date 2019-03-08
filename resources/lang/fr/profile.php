@@ -12,6 +12,7 @@ return [
     'roles_additional'=> 'Rôles additionnels',
     'user_role'       => 'Rôle utilisateur',
     'contact' => [
+        'no_function' => "Aucun poste défini",
         'function' => "fonction",
         'phone' => "téléphone",
         'fax' => "fax",
