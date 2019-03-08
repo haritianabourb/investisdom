@@ -92,7 +92,7 @@ class CGPObserver
 
         $user = $this->fillUserWith($cgp, $contact);
 
-        dd($contact, $user);
+        //dd($contact, $user);
 
         $contact->user_id = $user->id;
         $contact->save();
