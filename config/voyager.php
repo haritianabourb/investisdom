@@ -84,6 +84,7 @@ return [
     | Here you can specify if media manager can show hidden files like(.gitignore)
     |
     */
+    'hidden_files' => false,
     'media' => [
         // The allowed mimetypes to be uploaded through the media-manager.
         'allowed_mimetypes' => '*', //All types can be uploaded
@@ -104,7 +105,6 @@ return [
         'allow_delete'        => true,
         'allow_create_folder' => true,
         'allow_rename'        => true,
-        'hidden_files' => false,
     ],
 
     /*
@@ -117,10 +117,10 @@ return [
     */
 
     'database' => [
-        'autoload_migrations' => false,
         'tables' => [
             'hidden' => ['migrations', 'data_rows', 'data_types', 'menu_items', 'password_resets', 'permission_role', 'settings'],
         ],
+        'autoload_migrations' => false,
     ],
 
     /*
@@ -170,17 +170,17 @@ return [
     'dashboard' => [
         // Add custom list items to navbar's dropdown
         'navbar_items' => [
-            'voyager::generic.profile' => [
+            'generic.profile' => [
                 'route'      => 'voyager.profile',
                 'classes'    => 'class-full-of-rum',
                 'icon_class' => 'voyager-person',
             ],
-            'voyager::generic.home' => [
+            'generic.home' => [
                 'route'        => '/',
                 'icon_class'   => 'voyager-home',
                 'target_blank' => true,
             ],
-            'voyager::generic.logout' => [
+            'generic.logout' => [
                 'route'      => 'voyager.logout',
                 'icon_class' => 'voyager-power',
             ],
@@ -266,5 +266,21 @@ return [
          'zoom' => env('GOOGLE_MAPS_DEFAULT_ZOOM', 11),
      ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Model specific settings
+    |--------------------------------------------------------------------------
+    |
+    | Here you change some model specific settings
+    |
+    */
+
+    'settings' => [
+        // Enables Laravel cache method for
+        // storing cache values between requests
+        'cache' => false,
+    ],
+
+    // Activate compass when environment is NOT local
     'compass_in_production' => false,
 ];
