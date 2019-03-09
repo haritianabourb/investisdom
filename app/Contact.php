@@ -2,13 +2,40 @@
 
 namespace App;
 
+use Cviebrock\EloquentSluggable\Sluggable;
+use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use Illuminate\Database\Eloquent\Model;
 
 
 class Contact extends Model
 {
+    use Sluggable, SluggableScopeHelpers;
 
-  public $additional_attributes = [
+    /**
+     * Get the route key for the model.
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    /**
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
+     */
+    public function sluggable()
+    {
+        return [
+            'slug' => [
+                'source' => 'full_name'
+            ]
+        ];
+    }
+
+    public $additional_attributes = [
       'full_name',
       'full_name_civ',
       'full_name_func',
@@ -70,4 +97,15 @@ class Contact extends Model
       // FIXME Now, this is required, so it can be deprecated
       return $this->function ?? __("profile.contact.no_function");
   }
+
+    public function getFistnameBrowseAttribute()
+    {
+        return $this->full_name_civ ?? 'Empty';
+    }
+
+    public function getAddress1BrowseAttribute()
+    {
+        return $this->address_1." ". $this->address_2.", ".$this->postal_code." ".$this->city;
+    }
+
 }

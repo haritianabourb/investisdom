@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use App\FormFields\MoneyFormField;
 use App\FormFields\PercentageFormField;
 
+use TCG\Voyager\Actions\EditAction;
 use Validator;
 use Voyager;
 
@@ -32,6 +33,6 @@ class InvestisDomServiceProvider extends ServiceProvider
         //Custom Form Fields
         Voyager::addFormField(MoneyFormField::class);
         Voyager::addFormField(PercentageFormField::class);
-
+        Voyager::replaceAction(EditAction::class, \App\Actions\EditAction::class);
     }
 }
