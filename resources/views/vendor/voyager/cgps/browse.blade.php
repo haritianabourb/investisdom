@@ -138,7 +138,7 @@
                                                     @if($data->{$row->field . '_page_slug'})
                                                         <a href="{{ $data->{$row->field . '_page_slug'} }}">{!! $options->options->{$data->{$row->field}} !!}</a>
                                                     @else
-                                                        {!! $options->options->{$data->{$row->field}} or '' !!}
+                                                        {!! $options->options->{$data->{$row->field}} ?? '' !!}
                                                     @endif
 
 

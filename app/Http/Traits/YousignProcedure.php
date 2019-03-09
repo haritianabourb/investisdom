@@ -57,6 +57,7 @@ trait YousignProcedure
 
             } catch (\GuzzleHttp\Exception\ClientException $e) {
 
+
                 dd($request, $e->getResponse()->getBody()->getContents());
 
             }
@@ -266,15 +267,15 @@ trait YousignProcedure
             "email" => [
                 "member.started" => [
                     [
-                        "subject" => "Hey! You are invited to sign!",
-                        "message" => "Hello <tag data-tag-type='string' data-tag-name='recipient.firstname'></tag> <tag data-tag-type='string' data-tag-name='recipient.lastname'></tag>, <br><br> You have ben invited to sign a document, please click on the following button to read it: <tag data-tag-type='button' data-tag-name='url' data-tag-title='Access to documents'>Access to documents</tag>",
+                        "subject" => __("yousign.email.member.started.subject"),
+                        "message" => __("yousign.email.member.started.message"),
                         "to" => ["@member"],
                     ]
                 ],
                 "procedure.started" => [
                     [
-                        "subject" => "John, created a procedure your API have",
-                        "message" => "The content of this email is totally awesome.",
+                        "subject" => __("yousign.email.procedure.started.subject"),
+                        "message" => __("yousign.email.procedure.started.message"),
                         "to" => ["@creator"],
                     ]
                 ]

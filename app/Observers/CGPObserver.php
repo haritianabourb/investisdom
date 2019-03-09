@@ -52,7 +52,7 @@ class CGPObserver
     }
 
     public function belongsToManyAttaching($relation, $parent, $id) {
-//        dd($id, Contact::where("id", $id)->first());
+        dd($relation, $parent, $id);
         Log::info("attaching", [$relation, $parent, $id]);
     }
 

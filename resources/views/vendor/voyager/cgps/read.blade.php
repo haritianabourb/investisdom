@@ -55,10 +55,10 @@
                           @endif
                             <div class="row">
                           <div class="col-md-12" style="border-bottom:0;">
-                            <h3 class="text-{{$rowDetails->section->align or 'center'}}" style="color: {{$rowDetails->section->color or '#333'}};background-color: {{$rowDetails->section->bgcolor or '#f0f0f0'}};padding: 5px; padding-left: 15px;">{{$rowDetails->section->text}}</h3>
+                            <h3 class="text-{{$rowDetails->section->align ?? 'center'}}" style="color: {{$rowDetails->section->color ?? '#333'}};background-color: {{$rowDetails->section->bgcolor ?? '#f0f0f0'}};padding: 5px; padding-left: 15px;">{{$rowDetails->section->text}}</h3>
                           </div>
                         @endif
-                          <div class="col-md-{{ $display_options->width or 12 }}" @if(isset($display_options->id)){{ "id=$display_options->id" }}@endif>
+                          <div class="col-md-{{ $display_options->width ?? 12 }}" @if(isset($display_options->id)){{ "id=$display_options->id" }}@endif>
                             <h5>{{ $row->display_name }}</h5>
                             @if($row->field == "cgp_belongsto_contact_relationship")
                                   @include('voyager::partials.contact', ['contact' => $dataTypeContent->contact])

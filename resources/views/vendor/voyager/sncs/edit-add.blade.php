@@ -61,9 +61,9 @@
                                     $display_options = isset($options->display) ? $options->display : NULL;
                                 @endphp
                                 @if ($options && isset($options->legend) && isset($options->legend->text))
-                                    <legend class="text-{{$options->legend->align or 'center'}}" style="background-color: {{$options->legend->bgcolor or '#f0f0f0'}};padding: 5px;">{{$options->legend->text}}</legend>
+                                    <legend class="text-{{$options->legend->align ?? 'center'}}" style="background-color: {{$options->legend->bgcolor ?? '#f0f0f0'}};padding: 5px;">{{$options->legend->text}}</legend>
                                 @endif
-                                <div class="form-group @if($row->type == 'hidden') hidden @endif col-md-{{ $display_options->width or 12 }}" @if(isset($display_options->id)){{ "id=$display_options->id" }}@endif>
+                                <div class="form-group @if($row->type == 'hidden') hidden @endif col-md-{{ $display_options->width ?? 12 }}" @if(isset($display_options->id)){{ "id=$display_options->id" }}@endif>
                                 @if ($options && isset($options->formfields_custom))
                                     {{ $row->slugify }}
                                     <label for="name">{{ $row->display_name }}</label>
@@ -99,9 +99,9 @@
                                       $display_options = isset($options->display) ? $options->display : NULL;
                                   @endphp
                                   @if ($options && isset($options->legend) && isset($options->legend->text))
-                                      <legend class="text-{{$options->legend->align or 'center'}}" style="background-color: {{$options->legend->bgcolor or '#f0f0f0'}};padding: 5px;">{{$options->legend->text}}</legend>
+                                      <legend class="text-{{$options->legend->align ?? 'center'}}" style="background-color: {{$options->legend->bgcolor ?? '#f0f0f0'}};padding: 5px;">{{$options->legend->text}}</legend>
                                   @endif
-                                  <div class="form-group @if($row->type == 'hidden') hidden @endif col-md-{{ $display_options->width or 12 }}" @if(isset($display_options->id)){{ "id=$display_options->id" }}@endif>
+                                  <div class="form-group @if($row->type == 'hidden') hidden @endif col-md-{{ $display_options->width ?? 12 }}" @if(isset($display_options->id)){{ "id=$display_options->id" }}@endif>
                                   @if ($options && isset($options->formfields_custom))
                                       {{ $row->slugify }}
                                       <label for="name">{{ $row->display_name }}</label>
