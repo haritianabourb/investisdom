@@ -21,10 +21,22 @@
                                 $url .= '/'.$segment;
                             @endphp
                             @if ($loop->last)
-                                <li>{{ ucfirst($segment) }}</li>
+                                <li>
+                                    @if(isset($dataType) && method_exists($dataType->model_name, 'sluggable'))
+                                        {{\Illuminate\Support\Str::title(str_replace("-", ' ', $segment))}}
+                                    @else
+                                        {{ ucfirst($segment) }}
+                                    @endif
+                                </li>
                             @else
                                 <li>
-                                    <a href="{{ $url }}">{{ ucfirst($segment) }}</a>
+                                    <a href="{{ $url }}">
+                                        @if(isset($dataType) && method_exists($dataType->model_name, 'sluggable'))
+                                            {{\Illuminate\Support\Str::title(str_replace("-", ' ', $segment))}}
+                                        @else
+                                            {{ ucfirst($segment) }}
+                                        @endif
+                                    </a>
                                 </li>
                             @endif
                         @endforeach
