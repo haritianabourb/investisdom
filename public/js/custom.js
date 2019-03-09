@@ -242,4 +242,18 @@ $(document).ready(function() {
         }, 0);
     });
 
+    $('.panel-collapse').unbind('hide.bs.collapse');
+
+    $('.panel-collapse').on('hide.bs.collapse', function(e) {
+        var target = $(e.target);
+        if (!target.is('a')) {
+            target = target.parent();
+        }
+        if (!target.hasClass('collapsed')) {
+            return;
+        }
+        e.stopPropagation();
+        e.preventDefault();
+    });
+
 });

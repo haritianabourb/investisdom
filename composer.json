@@ -23,8 +23,9 @@
         "orangehill/iseed": "^2.6",
         "php-http/curl-client": "^1.7",
         "sentry/sentry-laravel": "^1.0.0",
-        "tcg/voyager": "1.2.*",
-        "voyager-themes": "^0.13.0"
+        "tcg/voyager": "^1.2.1",
+        "voyager-themes": "^0.13.0",
+        "drudge-rajen/voyager-deployment-orchestrator" : "^2.0.1"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "dev-master",

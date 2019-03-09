@@ -40,24 +40,24 @@ Route::group(['prefix' => 'admin'], function () {
     });
 
     Route::group(['prefix' => 'documents'], function(){
-        Route::get('/', 'CGPController@getDocuments')->name('admin.documents.cgp');
-        Route::post('/', 'CGPController@setDocument')->name('admin.documents.cgp.store');
+        Route::get('/', 'Investis\CGPController@getDocuments')->name('admin.documents.cgp');
+        Route::post('/', 'Investis\CGPController@setDocument')->name('admin.documents.cgp.store');
     });
 
     Route::group(['prefix' => 'reservations'], function(){
-      Route::get('/{reservation}/generate-recherche', 'ReservationController@generatePDFRecherche')->name('admin.reservations.generate-recherche');
-      Route::get('/{reservation}/generate-mandat', 'ReservationController@generatePDFMandat')->name('admin.reservations.generate-mandat');
-      Route::get('/{reservation}/generate-sepa', 'ReservationController@generatePDFSEPA')->name('admin.reservations.generate-sepa');
-      Route::get('/{reservation}/yousign', 'ReservationController@yousign')->name('admin.reservations.yousign');
+      Route::get('/{reservation}/generate-recherche', 'Investis\ReservationController@generatePDFRecherche')->name('admin.reservations.generate-recherche');
+      Route::get('/{reservation}/generate-mandat', 'Investis\ReservationController@generatePDFMandat')->name('admin.reservations.generate-mandat');
+      Route::get('/{reservation}/generate-sepa', 'Investis\ReservationController@generatePDFSEPA')->name('admin.reservations.generate-sepa');
+      Route::get('/{reservation}/yousign', 'Investis\ReservationController@yousign')->name('admin.reservations.yousign');
     });
 
     Route::group(['prefix' => 'scns'], function(){
-      Route::post('/bulk', 'SNCController@bulkCreate')->name('admin.sncs.bulk-add');
+      Route::post('/bulk', 'Investis\SNCController@bulkCreate')->name('admin.sncs.bulk-add');
     });
 
     Route::group(['prefix' => 'mandat'], function(){
-      Route::get('/calculate/{field}', 'MandatController@calculate')->name('admin.mandat.api.calculate');
-      Route::get('/{mandat}/calculate/{field}', 'MandatController@calculate')->name('admin.mandat.edit.calculate');
+      Route::get('/calculate/{field}', 'Investis\MandatController@calculate')->name('admin.mandat.api.calculate');
+      Route::get('/{mandat}/calculate/{field}', 'Investis\MandatController@calculate')->name('admin.mandat.edit.calculate');
     });
 
 });
