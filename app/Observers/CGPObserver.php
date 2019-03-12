@@ -29,6 +29,7 @@ class CGPObserver
     public function creating(CGP $cgp)
     {
         $cgp->identifiant = "ATTEMPTID";
+        $this->setContactfor($cgp);
     }
 
     /**
@@ -47,7 +48,6 @@ class CGPObserver
         // FIXME little hack to not thrown the saving event for calculations
         DB::table($cgp->getTable())->where('id', $cgp->id)->update(['identifiant' => $identifiant]);
 
-        $this->setContactfor($cgp);
 
     }
 
@@ -60,6 +60,7 @@ class CGPObserver
     private function fillUserWith(CGP $cgp, Contact $contact, Role $role = null)
     {
         $user = User::find($contact->user_id);
+
         if (!$user) {
             $password = substr(md5($contact->email), random_int(0,5), 8);
             $user = new User;
@@ -67,11 +68,15 @@ class CGPObserver
             $user->email = $contact->email;
             $user->password = bcrypt($password);
 
+            // FIXME throw me on user observer when created
+            $user->save();
             event(new CGPUserCreated($user, $cgp, $contact, $password));
+
         }
 
         $role = Role::where('name', $role ?? 'cgp')->firstOrFail();
         $user->role_id = $role->id;
+
         $user->save();
 
         $contact->user_id = $user->id;
@@ -84,7 +89,7 @@ class CGPObserver
     {
         $contact = \App\Contact::find($cgp->contact_id);
 
-        // FIXME Fastest resolving for pdf action, need to resolve this.
+        // FIXME Fastest resolving for pdf action and cgp profile, need to resolve this.
         $cgp->contact_status = $contact->function;
 
         $user = $this->fillUserWith($cgp, $contact);

@@ -21,10 +21,13 @@ class CGPController extends VoyagerBaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    public function update(Request $request, $id)
+
+    public function saving(Request $request, $id)
     {
         if ($inputs = $request->get('cgp_belongstomany_contact_relationship')) {
-            $rules = [];
+            $rules = ["rules" =>
+                ["cgp_belongstomany_contact_relationship" => "sometimes|array" ]
+            ];
             foreach ($inputs as $key => $val) {
                 $rules["rules"]["cgp_belongstomany_contact_relationship.{$key}"] = 'different:contact_id';
             }
@@ -40,7 +43,7 @@ class CGPController extends VoyagerBaseController
             }
         }
 
-        return parent::update($request, $id);
+        return parent::saving($request, $id);
     }
 
     public function generatePDF(Request $request, CGP $cgp)

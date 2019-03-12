@@ -5,6 +5,8 @@ namespace App;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Arr;
+use Illuminate\Support\Str;
 
 
 class Contact extends Model
@@ -100,12 +102,12 @@ class Contact extends Model
 
     public function getFistnameBrowseAttribute()
     {
-        return $this->full_name_civ ?? 'Empty';
+        return $this->full_name_civ;
     }
 
     public function getAddress1BrowseAttribute()
     {
-        return $this->address_1." ". $this->address_2.", ".$this->postal_code." ".$this->city;
+        return $this->address_1." ". $this->address_2?:"".", ".$this->postal_code." ".$this->city;
     }
 
 }

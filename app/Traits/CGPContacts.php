@@ -9,7 +9,6 @@ use Chelout\RelationshipEvents\Traits\HasRelationshipObservables;
 
 trait CGPContacts {
 
-
     /**
      * Return default CGP Contact.
      */
@@ -26,15 +25,7 @@ trait CGPContacts {
         return $this->belongsToMany(Contact::class, 'cgp_contacts');
     }
 
-    /**
-     * Return all CGP contacts, merging the default and alternative contacts.
-     */
-    public function contacts_all()
-    {
-        $this->loadContactRelations();
 
-        return collect([$this->contact])->merge($this->contacts);
-    }
 
     /**
      * Check if CGP has a contact(s) associated.

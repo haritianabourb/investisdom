@@ -10,6 +10,14 @@ class CGP extends Entity
 {
     use CGPContacts,HasBelongsToManyEvents, HasRelationshipObservables;
 
+    protected $additional_attributes = [
+        "all_contacts"
+    ];
+
+    protected $appends = [
+        "all_contacts"
+    ];
+
     protected $table = 'cgps';
 
     public function tauxCGP(){
@@ -31,6 +39,14 @@ class CGP extends Entity
         });
     }
 
+    /**
+     * Return all CGP contacts, merging the default and alternative contacts.
+     */
+    public function getAllContactsAttribute()
+    {
+        $this->loadContactRelations();
 
+        return collect([$this->contact])->merge($this->contacts);
+    }
 
 }

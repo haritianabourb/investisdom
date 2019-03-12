@@ -13,9 +13,7 @@
 
         // XXX here the magic comes, VERY UGLY, come from relationship template
         $relationshipOptions = app($options->model)
-            ->where('id', '!=', isset($dataTypeContent) ? $dataTypeContent->contact_id : '')
-            ->whereNotIn('id', $dataType->all()->only('contact_id'))
-            ->whereNotIn('id', $dataTypeContent->all('contact_id')->pluck('contact_id')->toArray())
+            ->whereNotIn('id',$dataTypeContent->get()->pluck('all_contacts')->flatten()->pluck('id')->diff($dataTypeContent->contacts->flatten()->pluck('id')->toArray())->toArray())
             ->get();
     @endphp
 
