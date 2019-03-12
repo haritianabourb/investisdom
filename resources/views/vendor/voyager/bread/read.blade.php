@@ -128,6 +128,8 @@
                                         {{ __('voyager::generic.download') }}
                                     </a>
                                 @endif
+                            @elseif($row->type == 'email')
+                                  @include('voyager::formfields.custom.email', ["view" => "read"])
                             @elseif($row->type == 'money')
                                   @include('voyager::partials.money')
                             @elseif($row->type == 'percentage')

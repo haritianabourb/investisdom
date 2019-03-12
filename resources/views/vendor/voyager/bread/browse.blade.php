@@ -128,6 +128,8 @@
                                                 <?php $options = $row->details; ?>
                                                   @if (isset($row->details->view))
                                                       @include($row->details->view, ['row' => $row, 'dataType' => $dataType, 'dataTypeContent' => $dataTypeContent, 'content' => $data->{$row->field}, 'action' => 'browse'])
+                                                  @elseif($row->type == 'email')
+                                                          @include('voyager::formfields.custom.email', ['view' => 'browse'])
                                                   @elseif($row->type == 'image')
                                                     <img src="@if( !filter_var($data->{$row->field}, FILTER_VALIDATE_URL)){{ Voyager::image( $data->{$row->field} ) }}@else{{ $data->{$row->field} }}@endif" style="width:100px">
                                                 @elseif($row->type == 'relationship')
