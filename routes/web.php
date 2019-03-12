@@ -36,7 +36,7 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 
     Route::group(['prefix' => 'cgps'], function(){
-      Route::get('/{cgp}/generate-convention', 'CGPController@generatePDF')->name('admin.cgps.generate-convention');
+      Route::get('/{cgp}/generate-convention', 'Investis\CGPController@generatePDF')->name('admin.cgps.generate-convention');
     });
 
     Route::group(['prefix' => 'documents'], function(){
