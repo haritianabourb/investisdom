@@ -36,7 +36,9 @@ class VoyagerBaseController extends BaseVoyagerBaseController
       $val = $this->validateBread($request->all(), $dataType->addRows);
 
       if ($val->fails()) {
-          return response()->json(['errors' => $val->messages()]);
+          return redirect()->back()->with($this->alertError(
+              $val->messages()
+          ));
       }
 
       if (!$request->has('_validate')) {
@@ -50,7 +52,6 @@ class VoyagerBaseController extends BaseVoyagerBaseController
 
           return redirect()
               ->route('voyager.'.$dataType->slug.'.show', [$dataType->name => $data])
-              // ->route("voyager.{$dataType->slug}.show", [])
               ->with([
                       'message'    => __('voyager::generic.successfully_added_new')." {$dataType->display_name_singular}",
                       'alert-type' => 'success',
