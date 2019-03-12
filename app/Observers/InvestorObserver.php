@@ -29,7 +29,7 @@ class InvestorObserver
 
         if(\Auth::user()->hasRole(["cgps", "cgp"])){
 
-            $contact = Contact::ofUser(\Auth::user());
+            $contact = Contact::ofUser(\Auth::user())->first();
 
             $cgp = CGP::ofContact($contact)->first();
 
