@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Investis;
 
+use App\Contact;
 use App\Http\Traits\YousignProcedure;
 use Illuminate\Http\Request;
 use \App\Reservation;

@@ -43,6 +43,7 @@ return [
     'exception'              => 'Exception',
     'featured'               => 'Featured',
     'field_does_not_exist'   => 'Field does not exist',
+    'formulae'               => 'Formulae',
     'home'                   => 'Home',
     'how_to_use'             => 'How To Use',
     'index'                  => 'Index',
