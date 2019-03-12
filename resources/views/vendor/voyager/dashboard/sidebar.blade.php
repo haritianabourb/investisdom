@@ -30,7 +30,12 @@
 
         </div>
         <div id="adminmenu">
-            <admin-menu :items="{{ menu('admin', '_json') }}"></admin-menu>
+
+            @if(\Auth::user()->hasRole(['admin', 'investis', "investisdom"]))
+                <admin-menu :items="{{ menu('admin', '_json') }}"></admin-menu>
+            @else
+                <admin-menu :items="{{ menu('user', '_json') }}"></admin-menu>
+            @endif
         </div>
     </nav>
 </div>
