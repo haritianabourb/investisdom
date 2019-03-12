@@ -49,4 +49,8 @@ class CGP extends Entity
         return collect([$this->contact])->merge($this->contacts);
     }
 
+    public function getAddress1ReadAttribute(){
+        return $this->address_1." ". ($this->address_2?:"").", ".$this->postal_code." ".$this->city;
+    }
+
 }
