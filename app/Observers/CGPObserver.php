@@ -44,16 +44,11 @@ class CGPObserver
             . substr(preg_replace('/\s/', '', stripAccents($cgp->registered_key)), -3)
             . "/" . $cgp->id;
 
-        // XXX little hack to not thrown the saving event for calculations
+        // FIXME little hack to not thrown the saving event for calculations
         DB::table($cgp->getTable())->where('id', $cgp->id)->update(['identifiant' => $identifiant]);
 
         $this->setContactfor($cgp);
 
-    }
-
-    public function belongsToManyAttaching($relation, $parent, $id) {
-        dd($relation, $parent, $id);
-        Log::info("attaching", [$relation, $parent, $id]);
     }
 
     public function belongsToManyAttached($relation, CGP $cgp, $id) {
@@ -88,11 +83,11 @@ class CGPObserver
     private function setContactfor(CGP $cgp)
     {
         $contact = \App\Contact::find($cgp->contact_id);
-        $contact->function = $cgp->contact_status;
+
+        // FIXME Fastest resolving for pdf action, need to resolve this.
+        $cgp->contact_status = $contact->function;
 
         $user = $this->fillUserWith($cgp, $contact);
-
-        //dd($contact, $user);
 
         $contact->user_id = $user->id;
         $contact->save();
