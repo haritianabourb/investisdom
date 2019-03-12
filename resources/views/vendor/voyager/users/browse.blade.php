@@ -88,7 +88,7 @@
                                 </thead>
                                 <tbody>
                                     @foreach($dataTypeContent->filter(function($item, $key){
-                                      if($item->role->name == 'admin'){
+                                      if($item->role && $item->role->name == 'admin'){
                                         return auth()->user()->role->name == 'admin';
                                       }
                                       return true;

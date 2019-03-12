@@ -57,6 +57,20 @@ class CGPObserver
 
     }
 
+    public function belongsToManyDetached($relation, CGP $cgp, $id) {
+        $contact = Contact::where("id", $id)->first();
+
+        $user = User::find($contact->user_id);
+
+        if($user){
+            $user->role_id = null;
+            $user->roles()->detach();
+            $user->save();
+        }
+
+
+    }
+
     private function fillUserWith(CGP $cgp, Contact $contact, Role $role = null)
     {
         $user = User::find($contact->user_id);
