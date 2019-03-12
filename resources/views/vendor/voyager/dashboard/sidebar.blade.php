@@ -30,11 +30,10 @@
 
         </div>
         <div id="adminmenu">
-
             @if(\Auth::user()->hasRole(['admin', 'investis', "investisdom"]))
-                <admin-menu :items="{{ menu('admin', '_json') }}"></admin-menu>
+                <admin-menu :items="{{ investis_menu('admin', '_json') }}"></admin-menu>
             @else
-                <admin-menu :items="{{ menu('user', '_json') }}"></admin-menu>
+                <admin-menu :items="{{ investis_menu('user', '_json') }}"></admin-menu>
             @endif
         </div>
     </nav>
