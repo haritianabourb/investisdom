@@ -27,12 +27,6 @@ class ReservationObserver
      */
       public function creating(Reservation $reservation)
     {
-        if(\Auth::user()->hasRole(["cgps", "cgp"])){
-            $contact = Contact::ofUser(\Auth::user())->firstOrFail();
-            $cgp = CGP::ofContact($contact)->firstOrFail();
-            $reservation->cgps_id = $cgp->id;
-        }
-
         $reservation->user_id = \Auth::user()->id;
         $reservation->identifiant = "ATTEMPTID";
 
@@ -84,6 +78,12 @@ class ReservationObserver
                 $reservation->$key = $item;
             }
         });
+
+        if(\Auth::user()->hasRole(["cgps", "cgp"])){
+            $contact = Contact::ofUser(\Auth::user())->firstOrFail();
+            $cgp = CGP::ofContact($contact)->firstOrFail();
+            $reservation->cgps_id = $cgp->id;
+        }
 
         // TODO make this for better fill, maybe had a log too
         $reservation->user_updated_id = \Auth::user()->id;

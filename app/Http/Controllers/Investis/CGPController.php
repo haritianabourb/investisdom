@@ -22,7 +22,7 @@ class CGPController extends VoyagerBaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
 
-    public function saving(Request $request, $id)
+    public function store(Request $request)
     {
         if ($inputs = $request->get('cgp_belongstomany_contact_relationship')) {
             $rules = ["rules" =>
@@ -43,7 +43,31 @@ class CGPController extends VoyagerBaseController
             }
         }
 
-        return parent::saving($request, $id);
+        return parent::store($request, $id);
+    }
+
+    public function update(Request $request, $id)
+    {
+        if ($inputs = $request->get('cgp_belongstomany_contact_relationship')) {
+            $rules = ["rules" =>
+                ["cgp_belongstomany_contact_relationship" => "sometimes|array" ]
+            ];
+            foreach ($inputs as $key => $val) {
+                $rules["rules"]["cgp_belongstomany_contact_relationship.{$key}"] = 'different:contact_id';
+            }
+            $rules["messages"]["cgp_belongstomany_contact_relationship.*"] = 'Le responsable ne peut être ajouter aux contacts supplémentaires';
+
+            $validator = Validator::make($request->all(), $rules['rules'], $rules['messages']);
+
+            if ($validator->fails()) {
+                $this->alertError(
+                    $validator->messages()->all()
+                );
+                return redirect()->back()->with($this->alerts);
+            }
+        }
+
+        return parent::update($request, $id);
     }
 
     public function generatePDF(Request $request, CGP $cgp)
