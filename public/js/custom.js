@@ -190,7 +190,6 @@ function Task101_PVTECH() {
     ].join(", "); //getting selector string for jQuery
 
     $("[name=paiement]").change(function() {
-        console.log(this.value);
         if (this.value == "unique")
         {
             $(elementsToHide).val("unique").parent().show("fast");
@@ -205,7 +204,17 @@ function Task101_PVTECH() {
         $("[name=type_contrats_id]").select2();
     });
 
-    $("[name=regime_mat_invest]").trigger("change");
+    $("[name=type_contrats_id]").change(function(){
+        if (this.value == "2" || this.value == "4")
+        {
+            $("[name=paiement]").val("echelonne").trigger("change");
+
+        } else { //otherwise, hide fields
+            $("[name=paiement]").val("unique").trigger("change");
+        }
+    });
+
+    $("[name=paiement]").trigger("change");
     $("[name=type_contrats_id]").select2();
 }
 
