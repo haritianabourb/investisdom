@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Investis;
 
+use Illuminate\Support\Facades\File;
 use TCG\Voyager\Http\Controllers\VoyagerController as BaseVoyagerController;
 
 class VoyagerController extends BaseVoyagerController
@@ -12,8 +13,7 @@ class VoyagerController extends BaseVoyagerController
     {
         $path = str_start(str_replace(['../', './'], '', $path), '/');
 //        $path = __DIR__.'/../../../publishable/assets'.$path;
-//        $path = __DIR__.'/../../../publishable/assets'.$path;
-        $path = base_path('vendor/tcg/voyager/publishable/assets/').$path;
+        $path = base_path('vendor/tcg/voyager/publishable/assets').$path;
         if (File::exists($path)) {
             $mime = '';
             if (ends_with($path, '.js')) {
