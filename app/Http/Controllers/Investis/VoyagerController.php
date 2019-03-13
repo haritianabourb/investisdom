@@ -12,12 +12,9 @@ class VoyagerController extends BaseVoyagerController
 
     public function assets($path)
     {
-        Log::info('Path Before', [$path]);
         $path = str_start(str_replace(['../', './'], '', $path), '/');
-//        $path = __DIR__.'/../../../publishable/assets'.$path;
         $path = base_path('vendor/tcg/voyager/publishable/assets').$path;
-        Log::info('Path After', [$path]);
-        Log::info('See if File exist: ', [File::exists($path)]);
+
         if (File::exists($path)) {
             $mime = '';
             if (ends_with($path, '.js')) {
@@ -31,11 +28,9 @@ class VoyagerController extends BaseVoyagerController
             $response->setSharedMaxAge(31536000);
             $response->setMaxAge(31536000);
             $response->setExpires(new \DateTime('+1 year'));
-            Log::info("yes it exist", [$response]);
             return $response;
         }
 
-        Log::error("no doesn't exist", [$path]);
         return response('', 404);
     }
 }
