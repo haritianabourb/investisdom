@@ -200,7 +200,7 @@ function Task101_PVTECH() {
             $(elementsToHide).val("echelonne")
                 .parent().hide("fast");
 
-            $("[name=type_contrats_id] option[value='1'], [name=type_contrats_id] option[value='2']").prop("disabled", true);
+            $("[name=type_contrats_id] option[value='1'], [name=type_contrats_id] option[value='3']").prop("disabled", true);
         }
         $("[name=type_contrats_id]").select2();
     });
