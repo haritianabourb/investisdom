@@ -32,6 +32,7 @@ class CreateContactsTable extends Migration {
 			$table->string('fax')->nullable();
 			$table->string('email')->nullable();
 			$table->integer('user_id')->nullable();
+			$table->text('slug')->nullable();
 		});
 	}
 
