@@ -47,7 +47,8 @@ class Reservation extends Model
   }
 
   public function investorsId(){
-    return $this->belongsTo(Investor::class, 'investors_id', 'id');
+    return $this->investor();
+//    return $this->belongsTo(Investor::class, 'investors_id', 'id');
   }
 
   public function cgpsId(){
@@ -58,6 +59,10 @@ class Reservation extends Model
       $this->fireModelEvent('beforeGeneratePdf');
 
       $this->fireModelEvent('afterGeneratePdf');
+  }
+
+  public function investor(){
+      return $this->belongsTo(Investor::class, 'investors_id', 'id');
   }
 
 

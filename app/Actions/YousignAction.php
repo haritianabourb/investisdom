@@ -93,8 +93,9 @@ class YousignAction extends AbstractAction
     }
 
     private function getYousignValidation(){
-        $investor = \App\Investor::find($this->data->investors_id);
-        $cgp = \App\CGP::find($this->data->cgps_id);
+
+        $investor = \App\Investor::find($this->data->getOriginal('investors_id'));
+        $cgp = \App\CGP::find($this->data->getOriginal('cgps_id'));
 
         if(!$investor || !$cgp->contact_id){
             return false;
