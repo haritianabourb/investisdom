@@ -21,20 +21,9 @@ class YousignAction extends AbstractAction
             return $this->title = "Yousign: Procédure impossible, <br/> Les champs Email et Téléphone Mobile <br/> de tous les contacts sont obligatoires";
         }
 
-        if($this->getYousignProcedureStatus() == "active"){
-            $this->title = "Yousign : Procédure en cours";
-        }
-        if($this->getYousignProcedureStatus() == "finished"){
-            $this->title = "Yousign : Procédure Accepté";
-        }
-        if($this->getYousignProcedureStatus() == "expired"){
-            $this->title = "Yousign : Procédure Expiré" ;
-        }
-        if($this->getYousignProcedureStatus() == "refused"){
-            $this->title = "Yousign : Procédure Refusé" ;
-        }
+        $status = $this->getYousignProcedureStatus();
 
-        return $this->title ?? "Envoyer à Yousign";
+        return $status ? __("yousign.procedure.statut.{$status}") : $this->getTitle() ?: __("yousign.procedure.statut.default");
     }
 
     public function getPolicy()
@@ -75,15 +64,17 @@ class YousignAction extends AbstractAction
             return $attributes;
         }
 
-        if($this->getYousignProcedureStatus() == "active"){
+        $status = $this->getYousignProcedureStatus();
+
+        if($status == "active"){
             $attributes["class"] .= "btn-info disabled";
             $attributes["disabled"] = "disabled";
         }
-        elseif($this->getYousignProcedureStatus() == "finished"){
+        elseif($status == "finished"){
             $attributes["class"] .= "btn-success";
         }
 
-        elseif(in_array($this->getYousignProcedureStatus(), ["refused", "expired"]) ){
+        elseif(in_array($status, ["refused", "expired"]) ){
             $attributes["class"] .= "btn-danger";
         }else{
             $attributes["class"] .= "btn-primary";

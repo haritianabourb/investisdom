@@ -1,5 +1,15 @@
 <?php
 return [
+    "procedure" =>  [
+        "statut" => [
+          "active" => "Yousign : Procédure en cours",
+          "finished" => "Yousign : Procédure Acceptée",
+          "expired" => "Yousign : Procédure Expirée",
+          "refused" => "Yousign : Procédure Refusée",
+          "default" => "Envoyer à Yousign",
+        ],
+    ],
+
     "file" => [
         "name" => "fichier"
     ],
