@@ -33,8 +33,14 @@
 
                 <div class="panel panel-bordered" style="padding-bottom:5px;">
                   <div class="panel-body" style="padding-top:10px;">
-                    <!-- form start -->
-                    @foreach($dataType->readRows as $row)
+                    <!-- View Start -->
+                    @foreach($dataType->readRows->filter(function($item, $key) use ($dataTypeContent){
+                            if(!$dataTypeContent->{$item->field}) {
+                                return false;
+                            }
+
+                            return  true;
+                        }) as $row)
                           @if(in_array($row->field, ["cgp_attached", "cgp_id", "investor_belongsto_cgp_relationship" ])&& !\Auth::user()->hasRole(['admin', 'investis', 'investisdom']))
                               @php
                                   continue;
