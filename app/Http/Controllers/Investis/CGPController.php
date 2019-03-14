@@ -169,7 +169,7 @@ class CGPController extends VoyagerBaseController
             ]);
 
         $tauxCGP = null;
-        $contact = Contact::ofUser(Auth::user())->firstOrFail();
+        $contact = Contact::ofUser(Auth::user())->first();
         if($contact){
             $cgp = CGP::ofContact($contact)->first();
 
