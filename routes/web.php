@@ -44,6 +44,11 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('/{cgp?}', 'Investis\CGPController@setDocument')->name('admin.documents.cgp.store');
     });
 
+    Route::group(['prefix' => 'mandat'], function(){
+      Route::get('/calculate/{field}', 'Investis\MandatController@calculate')->name('admin.mandat.api.calculate');
+      Route::get('/{mandat}/calculate/{field}', 'Investis\MandatController@calculate')->name('admin.mandat.edit.calculate');
+    });
+
     Route::group(['prefix' => 'reservations'], function(){
       Route::get('/{reservation}/generate-recherche', 'Investis\ReservationController@generatePDFRecherche')->name('admin.reservations.generate-recherche');
       Route::get('/{reservation}/generate-mandat', 'Investis\ReservationController@generatePDFMandat')->name('admin.reservations.generate-mandat');
@@ -55,9 +60,9 @@ Route::group(['prefix' => 'admin'], function () {
       Route::post('/bulk', 'Investis\SNCController@bulkCreate')->name('admin.sncs.bulk-add');
     });
 
-    Route::group(['prefix' => 'mandat'], function(){
-      Route::get('/calculate/{field}', 'Investis\MandatController@calculate')->name('admin.mandat.api.calculate');
-      Route::get('/{mandat}/calculate/{field}', 'Investis\MandatController@calculate')->name('admin.mandat.edit.calculate');
+    Route::group(['prefix' => 'simulateur'], function(){
+        Route::get("/", 'Investis\CGPController@simulator')->name('admin.cgps.simulator');
+        Route::post("/", 'Investis\CGPController@simulate')->name('admin.cgps.simulator.simulate');
     });
 
 });

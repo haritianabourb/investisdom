@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Investis;
 
 use App\Contact;
+use App\TauxCGP;
+use App\TypeContrat;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use \App\CGP;
 use Illuminate\Support\Facades\Auth;
@@ -142,6 +145,61 @@ class CGPController extends VoyagerBaseController
                 'message' => __('voyager::generic.successfully_updated') . " {$dataType->display_name_singular}",
                 'alert-type' => 'success',
             ]);
+
+    }
+
+    public function simulator(){
+        return view("investis.simulateur.simulator");
+    }
+
+    public function simulate(Request $request){
+        $contact = Contact::ofUser(Auth::user())->first();
+        $cgp = CGP::ofContact($contact)->first();
+
+        // FIXME the contract_type must be have a code section or an Id or a rate maybe
+        $contract_type = TypeContrat::where('slug', $request->input('contrat'))->first();
+
+        $tauxCGP = TauxCGP::ofYear(Carbon::now()->format('Y'))
+            ->where('cgps_id', $cgp->id)
+            ->where('type_contrat_id', $contract_type->id)
+            ->first();
+
+        if($tauxCGP){
+            $taux = $tauxCGP->mois{Carbon::now()->format('m')} ?? 26.4;
+        }else{
+            $taux = 26.60;
+        }
+
+        // TODO use the calculate builder
+        $renta=$taux-$request->input('com_cgp');
+        $taux2=($renta/100);
+        $taux_recalcule=1+$taux2;
+        $tot = 10000 - $request->input('montant_ri', 0);
+        $tot2=18000-$request->input('montant_ri');
+        $m=round(($tot2/0.44),2);
+        $m2=round(($m/$taux_recalcule),2);
+
+        // TODO set this request as 1st result
+
+        if($request->input('montant_souscription')){
+            $mri = $request->input('montant_souscription', 0) * $taux_recalcule; //montant réduction impôt
+            $ms = $request->input('montant_souscription', 0) / $taux_recalcule; //montant souscription
+            $gain = $mri - $request->input('montant_souscription', 0);
+            $gain2 = $request->input('montant_souscription', 0) - $ms;
+            if (old('mode_calcul', 0) == "souscription") {
+                $mri2 = round((($mri / 100) * 0.1), 1);
+
+            }else{
+                $mri2 = round((($request->input('montant_souscription', 0) / 100) * 0.1), 1);
+            }
+
+            $frais1 = (($request->input('nb_snc', 0) * 60) + ($request->input('nb_snc', 0) * 75) + $mri2);
+            $frais2 = (($request->input('nb_snc', 0) * 60) + $mri2);
+        }
+
+        session()->flashInput($request->toArray());
+
+        return response()->view("investis.simulateur.simulator", array_merge(compact('tot', 'tot2', 'm', 'renta', 'taux', 'taux2', 'taux_recalcule', 'm2', 'mri', 'mri2', 'ms', 'gain', 'gain2', 'frais1', 'frais2'), $request->toArray()));
 
     }
 
