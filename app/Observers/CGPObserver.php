@@ -11,6 +11,7 @@ use App\Services\Amortization;
 
 use App\User;
 use Log;
+use TCG\Voyager\Models\DataType;
 use TCG\Voyager\Models\Role;
 use Carbon\Carbon;
 
@@ -30,6 +31,7 @@ class CGPObserver
     {
         $cgp->identifiant = "ATTEMPTID";
         $this->setContactfor($cgp);
+
     }
 
     /**
@@ -48,12 +50,14 @@ class CGPObserver
         // FIXME little hack to not thrown the saving event for calculations
         DB::table($cgp->getTable())->where('id', $cgp->id)->update(['identifiant' => $identifiant]);
 
+        $this->fillRelatedWith($cgp, $cgp->contact);
 
     }
 
     public function belongsToManyAttached($relation, CGP $cgp, $id) {
         $contact = Contact::where("id", $id)->first();
         $this->fillUserWith($cgp, $contact);
+        $this->fillRelatedWith($cgp, $contact);
 
     }
 
@@ -67,6 +71,8 @@ class CGPObserver
             $user->roles()->detach();
             $user->save();
         }
+
+        $this->unsetRelatedWith($cgp, $contact);
 
 
     }
@@ -99,6 +105,27 @@ class CGPObserver
         return $user;
     }
 
+    private function fillRelatedWith(CGP $cgp, Contact $contact){
+        $dataType = DataType::where('model_name', CGP::class)->first();
+
+        DB::table('datatype_contacts')->insert([
+            'contact_id' => $contact->id,
+            'datatype_id' => $dataType->id,
+            'data_id' => $cgp->id,
+        ]);
+
+    }
+
+    private function unsetRelatedWith(CGP $cgp, Contact $contact){
+        $dataType = DataType::where('model_name', CGP::class)->first();
+
+        DB::table('datatype_contacts')->where([
+            'contact_id' => $contact->id,
+            'datatype_id' => $dataType->id,
+            'data_id' => $cgp->id,
+        ])->delete();
+    }
+
     private function setContactfor(CGP $cgp)
     {
         $contact = \App\Contact::find($cgp->contact_id);
@@ -110,6 +137,8 @@ class CGPObserver
 
         $contact->user_id = $user->id;
         $contact->save();
+
+        return $contact;
     }
 
 }

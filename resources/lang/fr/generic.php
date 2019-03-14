@@ -70,6 +70,7 @@ return [
     'procedure'              => 'procedure',
     'public_url'             => 'URL publique',
     'read'                   => 'Lire',
+    'related'                => "Rattachement",
     'rename'                 => 'renommer',
     'required'               => 'Obligatoire',
     'return_to_list'         => 'Retourner à la liste',

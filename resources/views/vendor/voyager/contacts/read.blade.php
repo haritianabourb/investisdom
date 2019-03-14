@@ -33,6 +33,16 @@
 
                 <div class="panel panel-bordered" style="padding-bottom:5px;">
                   <div class="panel-body" style="padding-top:10px;">
+                      @if($d_related = $dataTypeContent->data_type_related)
+                          <div class="row">
+                              <div class="col-md12 text-right">
+                                  <h3>
+                                    <span class="label label-primary">{{$dataTypeContent->data_type_related->display_name_singular}}</span>
+                                    <span class="label label-info">{{$dataTypeContent->entity_related->name}}</span>
+                                  </h3>
+                              </div>
+                          </div>
+                      @endif
                     <!-- form start -->
                     @foreach($dataType->readRows as $row)
                         @php $rowDetails = $row->details;
