@@ -167,18 +167,40 @@
                                                 @elseif($row->type == 'file')
                                                   @if(!empty($data->{$row->field}))
                                                     @include('voyager::multilingual.input-hidden-bread-browse')
-                                                    @if(json_decode($data->{$row->field}))
-                                                        @foreach(json_decode($data->{$row->field}) as $file)
-                                                            <a href="{{ Storage::disk(config('voyager.storage.disk'))->url($file->download_link) ?: '' }}" target="_blank">
-                                                                {{ $file->original_name ?: '' }}
-                                                            </a>
-                                                            <br/>
-                                                        @endforeach
-                                                    @else
-                                                        <a href="{{ Storage::disk(config('voyager.storage.disk'))->url($data->{$row->field}) }}" target="_blank">
-                                                            Download
-                                                        </a>
-                                                    @endif
+                                                      @if(json_decode($data->{$row->field}))
+                                                          @foreach(json_decode($data->{$row->field}) as $file)
+                                                              <a href="{{ Storage::disk(config('voyager.storage.disk'))->url($file->download_link) ?: '' }}">
+                                                                  {{ $file->original_name ?: '' }}
+                                                              </a>
+                                                              <br/>
+                                                          @endforeach
+                                                      @else
+                                                          <form role="form"
+                                                                class="form-edit-add"
+                                                                id="{{$dataType->name}}_edit_add"
+                                                                action="{{ route('admin.documents.cgp.store', ["cgp" => $data ])}}"
+                                                                method="POST" enctype="multipart/form-data">
+                                                              <input @if($row->required == 1 && !isset($data->{$row->field})) required @endif type="file" name="{{ $row->field }}[]" multiple="multiple">
+                                                              {{--<a href="{{ Storage::disk(config('voyager.storage.disk'))->url($row->field) ?: '' }}">--}}
+                                                              {{--{{ __('voyager::generic.download') }}--}}
+                                                              {{--</a>--}}
+                                                              <button type="submit" class="btn btn-primary save">{{ __('voyager::generic.save') }}</button>
+                                                              {{ csrf_field() }}
+                                                          </form>
+
+                                                      @endif
+                                                    {{--@if(json_decode($data->{$row->field}))--}}
+                                                        {{--@foreach(json_decode($data->{$row->field}) as $file)--}}
+                                                            {{--<a href="{{ Storage::disk(config('voyager.storage.disk'))->url($file->download_link) ?: '' }}" target="_blank">--}}
+                                                                {{--{{ $file->original_name ?: '' }}--}}
+                                                            {{--</a>--}}
+                                                            {{--<br/>--}}
+                                                        {{--@endforeach--}}
+                                                    {{--@else--}}
+                                                        {{--<a href="{{ Storage::disk(config('voyager.storage.disk'))->url($data->{$row->field}) }}" target="_blank">--}}
+                                                            {{--Download--}}
+                                                        {{--</a>--}}
+                                                    {{--@endif--}}
                                                   @else
                                                     <span class="label label-warning">En Attente</span>
                                                   @endif

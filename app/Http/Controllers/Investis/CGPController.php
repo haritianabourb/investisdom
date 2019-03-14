@@ -109,10 +109,12 @@ class CGPController extends VoyagerBaseController
         return view("voyager::cgps.documents.documents", compact('dataType', 'dataTypeContent'));
     }
 
-    public function setDocument(Request $request)
+    public function setDocument(Request $request, CGP $cgp = null)
     {
-        $contact = Contact::ofUser(Auth::user())->firstOrFail();
-        $cgp = CGP::ofContact($contact, true)->first();
+        if(!$cgp || ($cgp  && !Auth::user()->hasRole(['admin', 'investis', 'investisdom']))){
+            $contact = Contact::ofUser(Auth::user())->firstOrFail();
+            $cgp = CGP::ofContact($contact, true)->first();
+        }
 
         $dataType = Voyager::model('DataType')->where('slug', '=', "cgps")->first();
         $dataTypeContent = call_user_func([$dataType->model_name, 'findOrFail'], $cgp->id);
@@ -124,12 +126,23 @@ class CGPController extends VoyagerBaseController
 
         event(new BreadDataUpdated($dataType, $dataTypeContent));
 
+        if(!Auth::user()->hasRole(['admin', 'investis', 'investisdom'])){
+            return redirect()
+                ->route('admin.documents.cgp', compact('dataType', 'dataTypeContent'))
+                ->with([
+                    'message' => __('voyager::generic.successfully_updated') . " {$dataType->display_name_singular}",
+                    'alert-type' => 'success',
+                ]);
+
+        }
+
         return redirect()
-            ->route('admin.documents.cgp', compact('dataType', 'dataTypeContent'))
+            ->back()
             ->with([
                 'message' => __('voyager::generic.successfully_updated') . " {$dataType->display_name_singular}",
                 'alert-type' => 'success',
             ]);
+
     }
 
 }

@@ -41,7 +41,7 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::group(['prefix' => 'documents'], function(){
         Route::get('/', 'Investis\CGPController@getDocuments')->name('admin.documents.cgp');
-        Route::post('/', 'Investis\CGPController@setDocument')->name('admin.documents.cgp.store');
+        Route::post('/{cgp?}', 'Investis\CGPController@setDocument')->name('admin.documents.cgp.store');
     });
 
     Route::group(['prefix' => 'reservations'], function(){
