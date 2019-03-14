@@ -241,6 +241,7 @@ return [
         'https://cdn.datatables.net/rowgroup/1.1.0/css/rowGroup.dataTables.min.css',
         // 'css/now-ui-dashboard.css'
         'css/custom.css',
+        'css/flaticon.css'
 
     ],
 
