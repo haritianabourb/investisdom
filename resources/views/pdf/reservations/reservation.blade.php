@@ -601,7 +601,7 @@
 <DIV id="page_8">
     <DIV id="id8_1">
         <P class="p71 ft4">4. CONSENTEMENT DES EPOUX OU DES ENGAGES</P>
-        @if(!in_array($investor->regime_mat_invest, ["01", "05", "06"]))
+        @if(!in_array($investor->regime_mat_invest, ["01", "03", "05", "06"]))
         <P class="p58 ft3">Je soussigné(e) :</P>
         <P class="p29 ft3">Prénom : {{$investor->prenom_conjoint ?: "-"}} </P>
         <P class="p29 ft3">Nom : {{$investor->nom_conjoint ?: "-"}} </P>
