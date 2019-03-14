@@ -56,6 +56,19 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2018-08-23 17:14:58',
                 'updated_at' => '2018-08-23 17:14:58',
             ),
+            3 => 
+            array (
+                'id' => 5,
+                'role_id' => 4,
+                'name' => 'DURAND MARC',
+                'email' => 'rivard.johan@email.com',
+                'avatar' => 'users/default.png',
+                'password' => '$2y$10$VjDInBl7SlJ08ltaetJjdeKG3uJ44oX2kjjPmzPLEDmGU0vR9OIzq',
+                'remember_token' => NULL,
+                'settings' => NULL,
+                'created_at' => '2019-03-14 05:22:33',
+                'updated_at' => '2019-03-14 05:22:36',
+            ),
             4 => 
             array (
                 'id' => 1,
@@ -65,9 +78,48 @@ class UsersTableSeeder extends Seeder
                 'avatar' => 'users/August2018/KWQkYP2SxIktP9OUcmUk.jpeg',
                 'password' => '$2y$10$X9M..b2stIB0Xabmtbr5s.vQMEx0Ks58ypam1B9XH27Pwzx2rSbya',
                 'remember_token' => 'phATRzivlguhGRjtu2ra5QjnNPry8fvtj6DiEgcFvID0DSYz8RBdlrNXAEZT',
-                'settings' => '{"locale":"en"}',
+                'settings' => '{"locale":"fr"}',
                 'created_at' => '2018-08-12 14:28:45',
-                'updated_at' => '2019-02-15 08:28:56',
+                'updated_at' => '2019-03-14 05:38:33',
+            ),
+            5 => 
+            array (
+                'id' => 6,
+                'role_id' => 4,
+                'name' => 'ASSIST MéLODIE',
+                'email' => 'assist-melodir@test.email',
+                'avatar' => 'users/default.png',
+                'password' => '$2y$10$Iqb3/LEdM.rBfsmjjr3hm.GluKoXs0AiCW2WyH0trQLKbWjMvEH/y',
+                'remember_token' => NULL,
+                'settings' => NULL,
+                'created_at' => '2019-03-14 06:28:26',
+                'updated_at' => '2019-03-14 06:59:42',
+            ),
+            6 => 
+            array (
+                'id' => 8,
+                'role_id' => 4,
+                'name' => 'Test MODAL ON CGP',
+                'email' => 'support@test.email',
+                'avatar' => 'users/default.png',
+                'password' => '$2y$10$kU4.lSxcFOvd9Tu0M9PwxOe1gXk/47rWtI70xOqtvolkvGoNpToQu',
+                'remember_token' => NULL,
+                'settings' => NULL,
+                'created_at' => '2019-03-14 09:19:08',
+                'updated_at' => '2019-03-14 09:19:12',
+            ),
+            7 => 
+            array (
+                'id' => 9,
+                'role_id' => 4,
+                'name' => 'Consseily ALY',
+                'email' => 'conseil.aly@email.com',
+                'avatar' => 'users/default.png',
+                'password' => '$2y$10$Pyw0s6JWnoPGfadVKBiwIuqQvXsedkenhgX58/UujTOflwTJnxuny',
+                'remember_token' => NULL,
+                'settings' => NULL,
+                'created_at' => '2019-03-14 09:20:41',
+                'updated_at' => '2019-03-14 09:20:44',
             ),
         ));
         

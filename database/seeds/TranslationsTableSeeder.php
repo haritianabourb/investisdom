@@ -303,6 +303,17 @@ class TranslationsTableSeeder extends Seeder
                 'created_at' => '2019-03-12 11:51:55',
                 'updated_at' => '2019-03-12 11:51:55',
             ),
+            26 => 
+            array (
+                'id' => 28,
+                'table_name' => 'menu_items',
+                'column_name' => 'title',
+                'foreign_key' => 47,
+                'locale' => 'en',
+                'value' => '',
+                'created_at' => '2019-03-14 18:04:23',
+                'updated_at' => '2019-03-14 18:04:23',
+            ),
         ));
         
         

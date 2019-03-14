@@ -627,22 +627,6 @@ class MenuItemsTableSeeder extends Seeder
             ),
             38 => 
             array (
-                'id' => 44,
-                'menu_id' => 2,
-                'title' => 'Mes Documents',
-                'url' => '',
-                'target' => '_self',
-                'icon_class' => 'voyager-documentation',
-                'color' => '#000000',
-                'parent_id' => NULL,
-                'order' => 4,
-                'created_at' => '2019-03-12 11:47:12',
-                'updated_at' => '2019-03-12 11:52:04',
-                'route' => 'admin.documents.cgp',
-                'parameters' => 'null',
-            ),
-            39 => 
-            array (
                 'id' => 43,
                 'menu_id' => 2,
                 'title' => 'Mes Investisseurs',
@@ -657,7 +641,7 @@ class MenuItemsTableSeeder extends Seeder
                 'route' => 'voyager.investors.index',
                 'parameters' => 'null',
             ),
-            40 => 
+            39 => 
             array (
                 'id' => 45,
                 'menu_id' => 2,
@@ -673,6 +657,22 @@ class MenuItemsTableSeeder extends Seeder
                 'route' => 'voyager.investors.create',
                 'parameters' => NULL,
             ),
+            40 => 
+            array (
+                'id' => 44,
+                'menu_id' => 2,
+                'title' => 'Mes Documents',
+                'url' => '',
+                'target' => '_self',
+                'icon_class' => 'voyager-documentation',
+                'color' => '#000000',
+                'parent_id' => NULL,
+                'order' => 2,
+                'created_at' => '2019-03-12 11:47:12',
+                'updated_at' => '2019-03-14 10:19:00',
+                'route' => 'admin.documents.cgp',
+                'parameters' => 'null',
+            ),
             41 => 
             array (
                 'id' => 41,
@@ -683,9 +683,9 @@ class MenuItemsTableSeeder extends Seeder
                 'icon_class' => 'voyager-receipt',
                 'color' => '#000000',
                 'parent_id' => NULL,
-                'order' => 2,
+                'order' => 3,
                 'created_at' => '2019-02-19 10:21:25',
-                'updated_at' => '2019-03-12 12:09:21',
+                'updated_at' => '2019-03-14 10:19:00',
                 'route' => 'voyager.reservations.index',
                 'parameters' => 'null',
             ),
@@ -699,10 +699,26 @@ class MenuItemsTableSeeder extends Seeder
                 'icon_class' => NULL,
                 'color' => '#000000',
                 'parent_id' => NULL,
-                'order' => 3,
+                'order' => 4,
                 'created_at' => '2019-03-12 11:51:55',
-                'updated_at' => '2019-03-12 12:09:21',
+                'updated_at' => '2019-03-14 10:19:00',
                 'route' => 'voyager.reservations.create',
+                'parameters' => NULL,
+            ),
+            43 => 
+            array (
+                'id' => 47,
+                'menu_id' => 2,
+                'title' => 'Simulateur',
+                'url' => '',
+                'target' => '_self',
+                'icon_class' => 'flaticon-001-calculator',
+                'color' => '#000000',
+                'parent_id' => NULL,
+                'order' => 15,
+                'created_at' => '2019-03-14 18:04:23',
+                'updated_at' => '2019-03-14 18:04:23',
+                'route' => 'admin.cgps.simulator',
                 'parameters' => NULL,
             ),
         ));
