@@ -54,14 +54,6 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        $this->alertError(
-            "Erreur"
-            ."<br/>"
-            ."{$exception->getCode()} - {$exception->getMessage()}"
-            ."<br/>"
-            ."Veuillez contacter l'administrateur du site."
-        );
-        return redirect()->back()->with($this->alerts);
-//        return parent::render($request, $exception);
+        return parent::render($request, $exception);
     }
 }
