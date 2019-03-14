@@ -168,16 +168,20 @@ class CGPController extends VoyagerBaseController
 
             ]);
 
-        $contact = Contact::ofUser(Auth::user())->first();
-        $cgp = CGP::ofContact($contact)->first();
+        $tauxCGP = null;
+        $contact = Contact::ofUser(Auth::user())->firstOrFail();
+        if($contact){
+            $cgp = CGP::ofContact($contact)->first();
 
-        // FIXME the contract_type must be have a code section or an Id or a rate maybe
-        $contract_type = TypeContrat::where('slug', $request->input('contrat'))->first();
+            // FIXME the contract_type must be have a code section or an Id or a rate maybe
+            $contract_type = TypeContrat::where('slug', $request->input('contrat'))->first();
 
-        $tauxCGP = TauxCGP::ofYear(Carbon::now()->format('Y'))
-            ->where('cgps_id', $cgp->id)
-            ->where('type_contrat_id', $contract_type->id)
-            ->first();
+            $tauxCGP = TauxCGP::ofYear(Carbon::now()->format('Y'))
+                ->where('cgps_id', $cgp->id)
+                ->where('type_contrat_id', $contract_type->id)
+                ->first();
+        }
+
 
         if($tauxCGP){
             $taux = $tauxCGP->mois{Carbon::now()->format('m')} ?? 26.4;
