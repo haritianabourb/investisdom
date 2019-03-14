@@ -2,23 +2,22 @@
 
 namespace App\Http\Controllers\Investis;
 
+use PDF;
+
 use App\Contact;
+use \App\CGP;
 use App\TauxCGP;
 use App\TypeContrat;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
-use \App\CGP;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
-use PDF;
 use Illuminate\Foundation\Bus\DispatchesJobs;
-
-;
-
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use TCG\Voyager\Events\BreadDataUpdated;
 use TCG\Voyager\Facades\Voyager;
+
+use Carbon\Carbon;
 
 class CGPController extends VoyagerBaseController
 {
@@ -153,6 +152,22 @@ class CGPController extends VoyagerBaseController
     }
 
     public function simulate(Request $request){
+
+        $this->validate($request, [
+            'montant_ri' => "required|numeric",
+            'com_cgp' => "required|numeric",
+            'montant_souscription' => "sometimes|required|numeric",
+        ],
+            [
+                'montant_ri' => [
+                    'required' => "le montant souhaité doit être renseigné.",
+                ],
+                'comm_cgp' => [
+                    'required' => "la commission doit être renseigné.",
+                ],
+
+            ]);
+
         $contact = Contact::ofUser(Auth::user())->first();
         $cgp = CGP::ofContact($contact)->first();
 
@@ -174,8 +189,8 @@ class CGPController extends VoyagerBaseController
         $renta=$taux-$request->input('com_cgp');
         $taux2=($renta/100);
         $taux_recalcule=1+$taux2;
-        $tot = 10000 - $request->input('montant_ri', 0);
-        $tot2=18000-$request->input('montant_ri');
+        $tot = 10000 - $request->input('montant_ri', 10000);
+        $tot2 = 18000-$request->input('montant_ri', 18000);
         $m=round(($tot2/0.44),2);
         $m2=round(($m/$taux_recalcule),2);
 
