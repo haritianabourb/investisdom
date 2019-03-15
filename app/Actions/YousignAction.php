@@ -122,9 +122,6 @@ class YousignAction extends AbstractAction
             return false;
         }
 
-
-        dd($cgp->contact->toArray());
-
         $validator  = Validator::make(
             $cgp->contact->toArray(),
             DataType::where('name', 'contacts')->first()
