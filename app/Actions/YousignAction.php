@@ -169,9 +169,10 @@ class YousignAction extends AbstractAction
             $this->yousignProcedure = $yousignClient->request('GET', $yousignUrl.$yousignProcedureId);
             $this->yousignProcedure = json_decode($this->yousignProcedure->getBody()->getContents());
 
-            dd($this->yousignProcedure);
 
             $this->yousignProcedureStatus = $this->yousignProcedure->status;
+
+            dd($this->yousignProcedureStatus);
 
         }
 
