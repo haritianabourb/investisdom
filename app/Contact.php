@@ -52,7 +52,7 @@ class Contact extends Model
       'full_name_civ',
       'full_name_func',
       'full_name_func_civ',
-      'data_type_related',
+//      'data_type_related',
 //      'entity_related',
   ];
 
