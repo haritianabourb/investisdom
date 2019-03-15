@@ -118,12 +118,12 @@ class YousignAction extends AbstractAction
                 })->toArray()
         );
 
-        dd($validator);
 
         if($validator->fails()){
             return false;
         }
 
+        dd($validator->fails());
 
         $validator  = Validator::make(
             \App\Contact::find($cgp->contact_id)->toArray(),
