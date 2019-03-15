@@ -17,14 +17,13 @@ class YousignAction extends AbstractAction
 
     public function getTitle()
     {
-//        if(!$this->getYousignValidation()){
-//            return $this->title = "Yousign: Procédure impossible, <br/> Les champs Email et Téléphone Mobile <br/> de tous les contacts sont obligatoires";
-//        }
+        if(!$this->getYousignValidation()){
+            return $this->title = "Yousign: Procédure impossible, <br/> Les champs Email et Téléphone Mobile <br/> de tous les contacts sont obligatoires";
+        }
 
-//        $status = $this->getYousignProcedureStatus();
+        $status = $this->getYousignProcedureStatus();
 
-//        return ($status ? __("yousign.procedure.statut.{$status}") : ($this->title ?: __("yousign.procedure.statut.default")));
-        return "testing";
+        return ($status ? __("yousign.procedure.statut.{$status}") : ($this->title ?: __("yousign.procedure.statut.default")));
     }
 
     public function getPolicy()
@@ -62,26 +61,26 @@ class YousignAction extends AbstractAction
             'class' => 'btn ',
         ];
 
-//        if(!$this->getYousignValidation()){
-//            $attributes["class"] .= "btn-danger";
-//            return $attributes;
-//        }
-//
-//        $status = $this->getYousignProcedureStatus();
-//
-//        if($status == "active"){
-//            $attributes["class"] .= "btn-info disabled";
-//            $attributes["disabled"] = "disabled";
-//        }
-//        elseif($status == "finished"){
-//            $attributes["class"] .= "btn-success";
-//        }
-//
-//        elseif(in_array($status, ["refused", "expired"]) ){
-//            $attributes["class"] .= "btn-danger";
-//        }else{
-//            $attributes["class"] .= "btn-primary";
-//        }
+        if(!$this->getYousignValidation()){
+            $attributes["class"] .= "btn-danger";
+            return $attributes;
+        }
+
+        $status = $this->getYousignProcedureStatus();
+
+        if($status == "active"){
+            $attributes["class"] .= "btn-info disabled";
+            $attributes["disabled"] = "disabled";
+        }
+        elseif($status == "finished"){
+            $attributes["class"] .= "btn-success";
+        }
+
+        elseif(in_array($status, ["refused", "expired"]) ){
+            $attributes["class"] .= "btn-danger";
+        }else{
+            $attributes["class"] .= "btn-primary";
+        }
 
       return $attributes;
     }
@@ -124,7 +123,7 @@ class YousignAction extends AbstractAction
         }
 
 
-        dd($contact = $cgp->contact);
+        dd($cgp->contact->toArray());
 
         $validator  = Validator::make(
             $cgp->contact->toArray(),
