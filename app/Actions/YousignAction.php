@@ -124,7 +124,7 @@ class YousignAction extends AbstractAction
         }
 
 
-        dd($cgp->contact->values());
+        dd($contact = $cgp->contact, $contact->toArray());
 
         $validator  = Validator::make(
             $cgp->contact->toArray(),
