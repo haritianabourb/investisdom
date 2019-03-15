@@ -123,8 +123,6 @@ class YousignAction extends AbstractAction
             return false;
         }
 
-        dd($validator->fails());
-
         $validator  = Validator::make(
             \App\Contact::find($cgp->contact_id)->toArray(),
             DataType::where('name', 'contacts')->first()
@@ -146,6 +144,8 @@ class YousignAction extends AbstractAction
                     return  'nullable' ;
                 })->toArray()
         );
+
+        dd($validator->fails());
 
         if($validator->fails()){
             return false;
