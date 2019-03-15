@@ -49,8 +49,6 @@ class YousignAction extends AbstractAction
 
         $status = $this->getYousignProcedureStatus();
 
-        dd($status);
-
         if(!$status || !in_array($status, ["active","refused", "finished" ]) || $this->getYousignValidation()){
             return route('admin.'.$this->dataType->slug.'.yousign', ["reservation" => $this->data]);
         }
