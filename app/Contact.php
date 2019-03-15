@@ -53,7 +53,7 @@ class Contact extends Model
       'full_name_func',
       'full_name_func_civ',
       'data_type_related',
-      'entity_related',
+//      'entity_related',
   ];
 
   public function user(){
