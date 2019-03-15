@@ -145,40 +145,28 @@
                                 @include('voyager::multilingual.input-hidden-bread-read')
                                 <p>{!! $dataTypeContent->{$row->field} !!}</p>
                             @elseif($row->type == 'file')
-                                  @if(json_decode($dataTypeContent->{$row->field}))
-                                      @foreach(json_decode($dataTypeContent->{$row->field}) as $file)
-                                          <a href="{{ Storage::disk(config('voyager.storage.disk'))->url($file->download_link) ?: '' }}">
-                                              {{ $file->original_name ?: '' }}
-                                          </a>
-                                          <br/>
-                                      @endforeach
-                                  @else
-                                      <form role="form"
-                                            class="form-edit-add"
-                                            id="{{$dataType->name}}_edit_add"
-                                            action="{{ route('admin.documents.cgp.store', ["cgp" => $dataTypeContent ])}}"
-                                            method="POST" enctype="multipart/form-data">
-                                          <input @if($row->required == 1 && !isset($dataTypeContent->{$row->field})) required @endif type="file" name="{{ $row->field }}[]" multiple="multiple">
-                                          {{--<a href="{{ Storage::disk(config('voyager.storage.disk'))->url($row->field) ?: '' }}">--}}
-                                          {{--{{ __('voyager::generic.download') }}--}}
-                                          {{--</a>--}}
-                                          <button type="submit" class="btn btn-primary save">{{ __('voyager::generic.save') }}</button>
-                                          {{ csrf_field() }}
-                                      </form>
+                                  @if(!empty($dataTypeContent->{$row->field}))
+                                      @if(json_decode($dataTypeContent->{$row->field}))
+                                          @foreach(json_decode($dataTypeContent->{$row->field}) as $file)
+                                              <a href="{{ Storage::disk(config('voyager.storage.disk'))->url($file->download_link) ?: '' }}">
+                                                  {{ $file->original_name ?: '' }}
+                                              </a>
+                                              <br/>
+                                          @endforeach
+                                      @else
+                                          <form role="form"
+                                                class="form-edit-add"
+                                                id="{{$dataType->name}}_edit_add"
+                                                action="{{ route('admin.document.upload', ['slug'=>$dataType->slug , 'id' => $dataTypeContent->getKey()]) }}"
+                                                method="POST" enctype="multipart/form-data">
+                                              <input @if($row->required == 1 && !isset($dataTypeContent->{$row->field})) required @endif type="file" name="{{ $row->field }}[]" multiple="multiple">
+                                              <button type="submit" class="btn btn-primary save">{{ __('voyager::generic.save') }}</button>
+                                              {{ csrf_field() }}
+                                              {{ method_field("PUT") }}
+                                          </form>
 
+                                      @endif
                                   @endif
-                                {{--@if(json_decode($dataTypeContent->{$row->field}))--}}
-                                    {{--@foreach(json_decode($dataTypeContent->{$row->field}) as $file)--}}
-                                        {{--<a href="{{ Storage::disk(config('voyager.storage.disk'))->url($file->download_link) ?: '' }}">--}}
-                                            {{--{{ $file->original_name ?: '' }}--}}
-                                        {{--</a>--}}
-                                        {{--<br/>--}}
-                                    {{--@endforeach--}}
-                                {{--@else--}}
-                                    {{--<a href="{{ Storage::disk(config('voyager.storage.disk'))->url($row->field) ?: '' }}">--}}
-                                        {{--{{ __('voyager::generic.download') }}--}}
-                                    {{--</a>--}}
-                                {{--@endif--}}
                             @elseif($row->type == 'email')
                                   @include('voyager::formfields.custom.email', ["view" => "read"])
                             @elseif($row->type == 'money')
