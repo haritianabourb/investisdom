@@ -91,6 +91,8 @@ class YousignAction extends AbstractAction
         $investor = \App\Investor::find($this->data->getOriginal('investors_id'));
         $cgp = \App\CGP::find($this->data->getOriginal('cgps_id'));
 
+        dd($investor, $cgp);
+
         if(!$investor || !$cgp->contact_id){
             return false;
         }
