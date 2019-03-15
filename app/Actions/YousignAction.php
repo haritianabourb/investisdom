@@ -23,7 +23,8 @@ class YousignAction extends AbstractAction
 
         $status = $this->getYousignProcedureStatus();
 
-        return $status ? __("yousign.procedure.statut.{$status}") : ($this->title ?: __("yousign.procedure.statut.default"));
+//        return ($status ? __("yousign.procedure.statut.{$status}") : ($this->title ?: __("yousign.procedure.statut.default")));
+        return "testing";
     }
 
     public function getPolicy()
