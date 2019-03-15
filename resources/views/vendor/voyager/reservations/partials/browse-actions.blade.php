@@ -1,4 +1,4 @@
-@if (!ends_with($action, 'ViewAction'))  
+@if (!ends_with($action, ['ViewAction', 'YousignAction']))
   @php $action = new $action($dataType, $data); @endphp
   @if ($action->shouldActionDisplayOnDataType())
     @can($action->getPolicy(), $data)
