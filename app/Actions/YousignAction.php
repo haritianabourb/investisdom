@@ -151,7 +151,6 @@ class YousignAction extends AbstractAction
     }
 
     private function getYousignProcedureStatus(){
-        return false;
         // TODO show if a procedure already exist
         if($this->data->yousign_procedure_id && $this->data->yousign_procedure_id != "null"){
 
@@ -167,10 +166,10 @@ class YousignAction extends AbstractAction
 
             $yousignProcedureId = (json_decode($this->data->yousign_procedure_id))->id;
 
-
             $this->yousignProcedure = $yousignClient->request('GET', $yousignUrl.$yousignProcedureId);
             $this->yousignProcedure = json_decode($this->yousignProcedure->getBody()->getContents());
 
+            dd($this->yousignProcedure);
 
             $this->yousignProcedureStatus = $this->yousignProcedure->status;
 
