@@ -88,14 +88,14 @@
                             </div>
                             <div class="form-group col-md-6">
                                 <label class="col-md-8 control-label">Type de contrat souhaité :</label>
+                                {{--{{var_dump($typeContrat)}}--}}
                                 <div class="col-md-4">
                                     <select name="contrat" class="form-control">
-                                        <option value="confort" @if(old('contrat', '') == 'confort') selected @endif>
-                                            Confort
-                                        </option>
-                                        <option value="serenite" @if(old('contrat', '') == 'serenite') selected @endif>
-                                            Sérénité +
-                                        </option>
+                                        @foreach($typeContrat as $contrat)
+                                            <option value="confort" @if(old('contrat', '') == $contrat->slug) selected @endif title="{{$contrat->description}}">
+                                                {{ $contrat->nom }}
+                                            </option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -119,15 +119,17 @@
                                         <strong>{{$m2}}</strong>€
                                     @endif
                                     </span>
-                                    <div class="col-md-6">
+                                    <div class="col-md-8">
+                                        <label class="col-md-4 control-label">Indiquer le
                                         @if($mode_calcul == "souscription")
-                                            <label class="col-md-4 control-label">Montant de la souscription :</label>
+                                                montant de la souscription :
                                         @else
-                                            <label class="col-md-4 control-label">Montant de la réduction d'impôt :</label>
+                                                montant de la réduction d'impôt :
                                         @endif
+                                        </label>
                                         <div class="col-md-4">
                                             <input class="form-control" type="number" name="montant_souscription"
-                                                   value="{{ old('montant_souscription', (old('mode_calcul') == "souscription" ? $m2 : $m) ) }}" min="0" step="0.01">
+                                                   value="{{ old('montant_souscription', 0) }}" min="0" step="0.01">
                                         </div>
                                     </div>
                                 </div>
@@ -164,7 +166,7 @@
                             <td>Montant de réduction utilisé avant opération Girardin</td>
                             <td>{{old('montant_ri')}} €</td>
                             <td></td>
-                            <td class="active"><b>Type de contrat : {{old('contrat')}}</b></td>
+                            <td class="active"><strong>Type de contrat : {{ $contrat->nom ?? old('contrat') }}</strong></td>
                         </tr>
                         <tr>
                             <td>Total de réduction d'impôt possible disponible</td>

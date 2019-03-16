@@ -148,7 +148,10 @@ class CGPController extends VoyagerBaseController
     }
 
     public function simulator(){
-        return view("investis.simulateur.simulator");
+
+        $typeContrat = TypeContrat::all("slug", "nom", "description");
+
+        return view("investis.simulateur.simulator", compact('typeContrat'));
     }
 
     public function simulate(Request $request){
@@ -215,6 +218,8 @@ class CGPController extends VoyagerBaseController
             $results['frais1'] = (($request->input('nb_snc', 0) * 60) + ($request->input('nb_snc', 0) * 75) + $results['mri2']);
             $results['frais2'] = (($request->input('nb_snc', 0) * 60) + $results['mri2']);
         }
+
+        $results['typeContrat'] = $typeContrat = TypeContrat::all("slug", "nom", "description");
 
         session()->flashInput($request->toArray());
 
