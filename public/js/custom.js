@@ -183,39 +183,38 @@ function Task31_RegimeMatrimonal() {
 }
 
 function Task101_PVTECH() {
-    // if (!(window.location.href.indexOf("reservations") != -1))
-    //     return;
-    var elementsToHide = [
-        "[name=mode_paiement]"
-    ].join(", "); //getting selector string for jQuery
-
-    $("[name=paiement]").change(function() {
-        if (this.value == "unique")
-        {
-            $(elementsToHide).val("unique").parent().show("fast");
-
-            $("[name=type_contrats_id] option").prop("disabled", false);
-        } else { //otherwise, hide fields
-            $(elementsToHide).val("echelonne")
-                .parent().hide("fast");
-
-            $("[name=type_contrats_id] option[value='1'], [name=type_contrats_id] option[value='3']").prop("disabled", true);
-        }
-        $("[name=type_contrats_id]").select2();
-    });
 
     $("[name=type_contrats_id]").change(function(){
         if (this.value == "2" || this.value == "4")
         {
-            $("[name=paiement]").val("echelonne").trigger("change");
+            $("[name=paiement]").val("echelonne");
 
-        } else { //otherwise, hide fields
-            $("[name=paiement]").val("unique").trigger("change");
+            $("[name=paiement] option[value=unique]").prop("disabled", true);
+
+        }else{
+            $("[name=paiement] option[value=unique]").prop("disabled", false);
         }
+
+        $("[name=paiement]").trigger("change");
     });
 
+    $("[name=paiement]").change(function() {
+        if (this.value == "unique")
+        {
+            $("[name=mode_paiement]").parent().show("fast");
+
+        } else {
+
+            $("[name=mode_paiement]").val("prelevement");
+            $("[name=mode_paiement]").trigger("change");
+            $("[name=mode_paiement]").parent().hide("fast");
+
+        }
+        // $("[name=type_contrats_id]").select2();
+    });
+
+    $("[name=type_contrats_id]").trigger("change");
     $("[name=paiement]").trigger("change");
-    $("[name=type_contrats_id]").select2();
 }
 
 

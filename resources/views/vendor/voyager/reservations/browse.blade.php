@@ -92,7 +92,6 @@
                                 </thead>
                                 <tbody>
                                     @foreach($dataTypeContent as $data)
-                                    @can('read', $data)
                                     <tr>
                                         @can('delete',app($dataType->model_name))
                                             <td>
@@ -257,7 +256,6 @@
                                             @endforeach
                                         </td>
                                     </tr>
-                                    @endcan
                                     @endforeach
                                 </tbody>
                             </table>

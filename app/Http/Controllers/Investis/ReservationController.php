@@ -199,8 +199,6 @@ class ReservationController extends VoyagerBaseController
 
     }
 
-
-
     public function getYousignConfig(){
         return [
             // TODO make it as configurable
@@ -246,8 +244,6 @@ class ReservationController extends VoyagerBaseController
         ];
     }
 
-
-
     public function generatePDFMandat(Request $request, Reservation $reservation){
         $this->authorize('browse', $reservation);
         $investor = \App\Investor::find($reservation->investors_id);
@@ -273,12 +269,6 @@ class ReservationController extends VoyagerBaseController
     }
 
     public function yousign(Request $request, Reservation $reservation){
-//        dd(
-//            $investor = \App\Investor::find($reservation->investors_id),
-//            $cgp = \App\CGP::find($reservation->cgps_id),
-//            $cgp_contact = \App\Contact::find($cgp->contact_id)
-//        );
-
 
         if($yousignProcedure = $this->isExistingYousignProcedure($reservation->yousign_procedure_id)){
             $this->alertWarning(
