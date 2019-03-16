@@ -4,6 +4,7 @@ namespace App;
 
 use App\Scopes\SelfScope;
 use Illuminate\Database\Eloquent\Model;
+use Voyager;
 
 
 class Reservation extends Model
@@ -65,6 +66,10 @@ class Reservation extends Model
       return $this->belongsTo(Investor::class, 'investors_id', 'id');
   }
 
+    public function getIdentifiantBrowseAttribute(){
+        $dataType = Voyager::model('DataType')->where('model_name', '=', get_class($this))->first();
+        return view('voyager::reservations.partials.identifiant-browse', ["reservation" => $this, 'dataType' => $dataType])->render();
+    }
 
     public function getInvestorsIdBrowseAttribute(){
         return $this->investorsId()->first()->full_name;

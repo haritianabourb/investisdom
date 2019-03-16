@@ -30,4 +30,17 @@
 [data-first-row-in-group="no"] td:nth-of-type(2)
 {
     visibility: hidden;
-} 
+}
+
+.dataTables_wrapper.no-footer .dataTables_scrollBody {
+    border: none;
+}
+
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td,
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > th,
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > thead > tr > td,
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > thead > tr > th
+{
+    vertical-align: top;
+    text-align: justify;
+}

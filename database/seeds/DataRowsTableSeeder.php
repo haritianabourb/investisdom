@@ -1875,22 +1875,6 @@ class DataRowsTableSeeder extends Seeder
             ),
             116 => 
             array (
-                'id' => 189,
-                'data_type_id' => 17,
-                'field' => 'id',
-                'type' => 'text',
-                'display_name' => 'Id',
-                'required' => 1,
-                'browse' => 0,
-                'read' => 0,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => '{}',
-                'order' => 1,
-            ),
-            117 => 
-            array (
                 'id' => 337,
                 'data_type_id' => 15,
                 'field' => 'tresorery_convention_file',
@@ -1905,7 +1889,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 38,
             ),
-            118 => 
+            117 => 
             array (
                 'id' => 338,
                 'data_type_id' => 15,
@@ -1921,7 +1905,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 39,
             ),
-            119 => 
+            118 => 
             array (
                 'id' => 324,
                 'data_type_id' => 15,
@@ -1937,7 +1921,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"2"}}',
                 'order' => 25,
             ),
-            120 => 
+            119 => 
             array (
                 'id' => 158,
                 'data_type_id' => 14,
@@ -1953,7 +1937,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"default":2}',
                 'order' => 11,
             ),
-            121 => 
+            120 => 
             array (
                 'id' => 160,
                 'data_type_id' => 14,
@@ -1969,7 +1953,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"relationship":{"key":"id","label":"name"},"display":{"width":"3"}}',
                 'order' => 7,
             ),
-            122 => 
+            121 => 
             array (
                 'id' => 228,
                 'data_type_id' => 14,
@@ -1985,7 +1969,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => NULL,
                 'order' => 12,
             ),
-            123 => 
+            122 => 
             array (
                 'id' => 229,
                 'data_type_id' => 14,
@@ -2001,7 +1985,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => NULL,
                 'order' => 13,
             ),
-            124 => 
+            123 => 
             array (
                 'id' => 230,
                 'data_type_id' => 14,
@@ -2017,7 +2001,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => NULL,
                 'order' => 14,
             ),
-            125 => 
+            124 => 
             array (
                 'id' => 307,
                 'data_type_id' => 22,
@@ -2033,7 +2017,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"formfields_custom":"mandat_resultat","display":{"width":"4"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"R\\u00e9capitulatif"}}',
                 'order' => 68,
             ),
-            126 => 
+            125 => 
             array (
                 'id' => 414,
                 'data_type_id' => 8,
@@ -2049,7 +2033,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"01":"De plein droit","02":"Agrément","03":"Fermé"},"display":{"width":"3"}}',
                 'order' => 25,
             ),
-            127 => 
+            126 => 
             array (
                 'id' => 512,
                 'data_type_id' => 14,
@@ -2065,7 +2049,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"IN_STOCK":"En stock","ACTIVE":"Active","MARKETING_OFF":"Terminée non ouvertes à la commercialisation","MARKETING_ON":"Terminée ouvertes à la commercialisation","CLOSE":"Terminée"},"display":{"width":"4"}}',
                 'order' => 31,
             ),
-            128 => 
+            127 => 
             array (
                 'id' => 415,
                 'data_type_id' => 8,
@@ -2081,7 +2065,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 34,
             ),
-            129 => 
+            128 => 
             array (
                 'id' => 416,
                 'data_type_id' => 8,
@@ -2097,7 +2081,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 35,
             ),
-            130 => 
+            129 => 
             array (
                 'id' => 417,
                 'data_type_id' => 8,
@@ -2113,7 +2097,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 36,
             ),
-            131 => 
+            130 => 
             array (
                 'id' => 418,
                 'data_type_id' => 8,
@@ -2128,6 +2112,22 @@ class DataRowsTableSeeder extends Seeder
                 'delete' => 1,
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 37,
+            ),
+            131 => 
+            array (
+                'id' => 189,
+                'data_type_id' => 17,
+                'field' => 'id',
+                'type' => 'text',
+                'display_name' => 'Id',
+                'required' => 1,
+                'browse' => 0,
+                'read' => 0,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => '{}',
+                'order' => 1,
             ),
             132 => 
             array (
@@ -3395,22 +3395,6 @@ class DataRowsTableSeeder extends Seeder
             ),
             211 => 
             array (
-                'id' => 202,
-                'data_type_id' => 17,
-                'field' => 'apport',
-                'type' => 'money',
-                'display_name' => 'Apport',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => '{"display":{"width":"3"}}',
-                'order' => 22,
-            ),
-            212 => 
-            array (
                 'id' => 439,
                 'data_type_id' => 13,
                 'field' => 'fin_exercice',
@@ -3425,7 +3409,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 18,
             ),
-            213 => 
+            212 => 
             array (
                 'id' => 476,
                 'data_type_id' => 13,
@@ -3441,7 +3425,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 16,
             ),
-            214 => 
+            213 => 
             array (
                 'id' => 502,
                 'data_type_id' => 13,
@@ -3457,7 +3441,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"1"}}',
                 'order' => 28,
             ),
-            215 => 
+            214 => 
             array (
                 'id' => 341,
                 'data_type_id' => 15,
@@ -3473,7 +3457,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"on":"Oui","off":"Non","display":{"width":"3"}}',
                 'order' => 21,
             ),
-            216 => 
+            215 => 
             array (
                 'id' => 347,
                 'data_type_id' => 15,
@@ -3489,7 +3473,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"CMA":"Chambre des Métiers et de l\'Artisanat","RCS":"Registre des Commerces et des Société","SS":"Sécurité sociale"},"display":{"width":"3"},"modal":true}',
                 'order' => 12,
             ),
-            217 => 
+            216 => 
             array (
                 'id' => 348,
                 'data_type_id' => 15,
@@ -3505,7 +3489,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"modal":true}',
                 'order' => 10,
             ),
-            218 => 
+            217 => 
             array (
                 'id' => 400,
                 'data_type_id' => 15,
@@ -3521,7 +3505,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"relationship":{"key":"id","label":"full_name","modal":true},"display":{"width":"3"},"modal":true}',
                 'order' => 22,
             ),
-            219 => 
+            218 => 
             array (
                 'id' => 402,
                 'data_type_id' => 15,
@@ -3537,7 +3521,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"01":"Réunion - Saint-Denis ","02":"Réunion - Saint-Pierre","03":"Mayotte - Mamoudzou","04":"Guadeloupe - Pointe à Pitre","05":"Martinique - Fort de France","06":"Guyane - Cayenne","07":"Nouvelle Calédonie - Nouméa"},"display":{"width":"3"},"modal":true}',
                 'order' => 9,
             ),
-            220 => 
+            219 => 
             array (
                 'id' => 509,
                 'data_type_id' => 15,
@@ -3553,7 +3537,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"1"}}',
                 'order' => 28,
             ),
-            221 => 
+            220 => 
             array (
                 'id' => 510,
                 'data_type_id' => 15,
@@ -3569,7 +3553,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"1"}}',
                 'order' => 30,
             ),
-            222 => 
+            221 => 
             array (
                 'id' => 399,
                 'data_type_id' => 15,
@@ -3585,7 +3569,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"model":"App\\\\Contact","table":"contacts","type":"belongsTo","column":"contact_id","key":"id","label":"fistname","pivot_table":"addresses","pivot":"0","taggable":"0"}',
                 'order' => 23,
             ),
-            223 => 
+            222 => 
             array (
                 'id' => 265,
                 'data_type_id' => 22,
@@ -3601,7 +3585,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 1,
             ),
-            224 => 
+            223 => 
             array (
                 'id' => 266,
                 'data_type_id' => 22,
@@ -3617,7 +3601,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 2,
             ),
-            225 => 
+            224 => 
             array (
                 'id' => 55,
                 'data_type_id' => 6,
@@ -3633,7 +3617,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"modal":true}',
                 'order' => 3,
             ),
-            226 => 
+            225 => 
             array (
                 'id' => 80,
                 'data_type_id' => 7,
@@ -3649,7 +3633,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"},"format":"%d\\/%m\\/%Y"}',
                 'order' => 33,
             ),
-            227 => 
+            226 => 
             array (
                 'id' => 278,
                 'data_type_id' => 22,
@@ -3665,7 +3649,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"1":"V\\u00e9hicule particulier","2":"V\\u00e9hicule utilitaire","3":"Camion","4":"Remorque","5":"Remorque agricole","6":"Engin TP","7":"Engin agricole","8":"CES","9":"Bus","10":"Mat\\u00e9riel de boulangerie","11":"Grue","12":"Mat\\u00e9riel de production industrielle","13":"B\\u00e2timent industriel","14":"B\\u00e2timent \\u00e0 usage d\'habitation","15":"Autre"},"display":{"width":"3"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Description du materiel"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Description du materiel"}}',
                 'order' => 15,
             ),
-            228 => 
+            227 => 
             array (
                 'id' => 279,
                 'data_type_id' => 22,
@@ -3681,7 +3665,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"0":"Inf\\u00e9rieure \\u00e0 200 g\\/km","1":"Sup\\u00e9rieure \\u00e0 200 g\\/km"},"display":{"width":"3","id":"co2"}}',
                 'order' => 17,
             ),
-            229 => 
+            228 => 
             array (
                 'id' => 131,
                 'data_type_id' => 13,
@@ -3697,7 +3681,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"modal":true}',
                 'order' => 2,
             ),
-            230 => 
+            229 => 
             array (
                 'id' => 132,
                 'data_type_id' => 13,
@@ -3713,7 +3697,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"modal":true}',
                 'order' => 11,
             ),
-            231 => 
+            230 => 
             array (
                 'id' => 133,
                 'data_type_id' => 13,
@@ -3729,7 +3713,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"modal":true}',
                 'order' => 3,
             ),
-            232 => 
+            231 => 
             array (
                 'id' => 134,
                 'data_type_id' => 13,
@@ -3745,7 +3729,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"modal":true}',
                 'order' => 4,
             ),
-            233 => 
+            232 => 
             array (
                 'id' => 135,
                 'data_type_id' => 13,
@@ -3760,6 +3744,22 @@ class DataRowsTableSeeder extends Seeder
                 'delete' => 1,
                 'details' => '{"display":{"width":"3"},"modal":true}',
                 'order' => 5,
+            ),
+            233 => 
+            array (
+                'id' => 202,
+                'data_type_id' => 17,
+                'field' => 'apport',
+                'type' => 'money',
+                'display_name' => 'Apport',
+                'required' => 0,
+                'browse' => 1,
+                'read' => 1,
+                'edit' => 0,
+                'add' => 0,
+                'delete' => 0,
+                'details' => '{"display":{"width":"3"}}',
+                'order' => 22,
             ),
             234 => 
             array (
@@ -4099,22 +4099,6 @@ class DataRowsTableSeeder extends Seeder
             ),
             255 => 
             array (
-                'id' => 554,
-                'data_type_id' => 17,
-                'field' => 'user_created_id',
-                'type' => 'text',
-                'display_name' => 'User Created Id',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 0,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => '{}',
-                'order' => 28,
-            ),
-            256 => 
-            array (
                 'id' => 454,
                 'data_type_id' => 12,
                 'field' => 'country_invest',
@@ -4129,7 +4113,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 24,
             ),
-            257 => 
+            256 => 
             array (
                 'id' => 504,
                 'data_type_id' => 13,
@@ -4145,7 +4129,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"1"}}',
                 'order' => 31,
             ),
-            258 => 
+            257 => 
             array (
                 'id' => 397,
                 'data_type_id' => 13,
@@ -4161,7 +4145,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"model":"App\\\\Contact","table":"contacts","type":"belongsTo","column":"contact_id","key":"id","label":"fistname","pivot_table":"addresses","pivot":"0","taggable":"0"}',
                 'order' => 25,
             ),
-            259 => 
+            258 => 
             array (
                 'id' => 457,
                 'data_type_id' => 12,
@@ -4177,7 +4161,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 28,
             ),
-            260 => 
+            259 => 
             array (
                 'id' => 471,
                 'data_type_id' => 12,
@@ -4193,7 +4177,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 53,
             ),
-            261 => 
+            260 => 
             array (
                 'id' => 67,
                 'data_type_id' => 6,
@@ -4209,7 +4193,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => NULL,
                 'order' => 15,
             ),
-            262 => 
+            261 => 
             array (
                 'id' => 548,
                 'data_type_id' => 6,
@@ -4225,7 +4209,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => NULL,
                 'order' => 11,
             ),
-            263 => 
+            262 => 
             array (
                 'id' => 549,
                 'data_type_id' => 6,
@@ -4241,7 +4225,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => NULL,
                 'order' => 12,
             ),
-            264 => 
+            263 => 
             array (
                 'id' => 550,
                 'data_type_id' => 6,
@@ -4257,7 +4241,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => NULL,
                 'order' => 13,
             ),
-            265 => 
+            264 => 
             array (
                 'id' => 552,
                 'data_type_id' => 6,
@@ -4273,7 +4257,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => NULL,
                 'order' => 15,
             ),
-            266 => 
+            265 => 
             array (
                 'id' => 61,
                 'data_type_id' => 6,
@@ -4289,7 +4273,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => NULL,
                 'order' => 9,
             ),
-            267 => 
+            266 => 
             array (
                 'id' => 62,
                 'data_type_id' => 6,
@@ -4305,7 +4289,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => NULL,
                 'order' => 10,
             ),
-            268 => 
+            267 => 
             array (
                 'id' => 53,
                 'data_type_id' => 6,
@@ -4321,7 +4305,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => NULL,
                 'order' => 1,
             ),
-            269 => 
+            268 => 
             array (
                 'id' => 54,
                 'data_type_id' => 6,
@@ -4337,7 +4321,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"modal":true}',
                 'order' => 2,
             ),
-            270 => 
+            269 => 
             array (
                 'id' => 66,
                 'data_type_id' => 6,
@@ -4353,7 +4337,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => NULL,
                 'order' => 14,
             ),
-            271 => 
+            270 => 
             array (
                 'id' => 56,
                 'data_type_id' => 6,
@@ -4369,7 +4353,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"modal":true}',
                 'order' => 4,
             ),
-            272 => 
+            271 => 
             array (
                 'id' => 57,
                 'data_type_id' => 6,
@@ -4385,7 +4369,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"modal":true}',
                 'order' => 5,
             ),
-            273 => 
+            272 => 
             array (
                 'id' => 58,
                 'data_type_id' => 6,
@@ -4401,7 +4385,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"modal":true}',
                 'order' => 6,
             ),
-            274 => 
+            273 => 
             array (
                 'id' => 59,
                 'data_type_id' => 6,
@@ -4417,23 +4401,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"modal":true}',
                 'order' => 7,
             ),
-            275 => 
-            array (
-                'id' => 207,
-                'data_type_id' => 17,
-                'field' => 'updated_at',
-                'type' => 'timestamp',
-                'display_name' => 'Mis à jour le',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 0,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => '{"display":{"width":"3"}}',
-                'order' => 26,
-            ),
-            276 => 
+            274 => 
             array (
                 'id' => 252,
                 'data_type_id' => 7,
@@ -4449,23 +4417,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 2,
             ),
-            277 => 
-            array (
-                'id' => 474,
-                'data_type_id' => 17,
-                'field' => 'taux_ponctuel',
-                'type' => 'percentage',
-            'display_name' => 'Réduction Aj (%)',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"display":{"width":"2"}}',
-                'order' => 14,
-            ),
-            278 => 
+            275 => 
             array (
                 'id' => 282,
                 'data_type_id' => 22,
@@ -4481,7 +4433,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 23,
             ),
-            279 => 
+            276 => 
             array (
                 'id' => 284,
                 'data_type_id' => 22,
@@ -4497,7 +4449,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 25,
             ),
-            280 => 
+            277 => 
             array (
                 'id' => 208,
                 'data_type_id' => 19,
@@ -4513,7 +4465,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 1,
             ),
-            281 => 
+            278 => 
             array (
                 'id' => 209,
                 'data_type_id' => 19,
@@ -4529,7 +4481,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"relationship":{"key":"id","label":"name"},"display":{"width":"6"}}',
                 'order' => 2,
             ),
-            282 => 
+            279 => 
             array (
                 'id' => 210,
                 'data_type_id' => 19,
@@ -4545,7 +4497,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"relationship":{"key":"id","label":"nom"},"display":{"width":"6"}}',
                 'order' => 4,
             ),
-            283 => 
+            280 => 
             array (
                 'id' => 211,
                 'data_type_id' => 19,
@@ -4561,7 +4513,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 6,
             ),
-            284 => 
+            281 => 
             array (
                 'id' => 212,
                 'data_type_id' => 19,
@@ -4577,7 +4529,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 7,
             ),
-            285 => 
+            282 => 
             array (
                 'id' => 213,
                 'data_type_id' => 19,
@@ -4593,7 +4545,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 8,
             ),
-            286 => 
+            283 => 
             array (
                 'id' => 214,
                 'data_type_id' => 19,
@@ -4609,7 +4561,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 9,
             ),
-            287 => 
+            284 => 
             array (
                 'id' => 215,
                 'data_type_id' => 19,
@@ -4625,7 +4577,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 10,
             ),
-            288 => 
+            285 => 
             array (
                 'id' => 285,
                 'data_type_id' => 22,
@@ -4641,7 +4593,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 26,
             ),
-            289 => 
+            286 => 
             array (
                 'id' => 286,
                 'data_type_id' => 22,
@@ -4657,7 +4609,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 27,
             ),
-            290 => 
+            287 => 
             array (
                 'id' => 547,
                 'data_type_id' => 22,
@@ -4673,7 +4625,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 85,
             ),
-            291 => 
+            288 => 
             array (
                 'id' => 455,
                 'data_type_id' => 12,
@@ -4689,7 +4641,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
                 'order' => 26,
             ),
-            292 => 
+            289 => 
             array (
                 'id' => 456,
                 'data_type_id' => 12,
@@ -4705,7 +4657,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
                 'order' => 27,
             ),
-            293 => 
+            290 => 
             array (
                 'id' => 216,
                 'data_type_id' => 19,
@@ -4721,7 +4673,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 11,
             ),
-            294 => 
+            291 => 
             array (
                 'id' => 217,
                 'data_type_id' => 19,
@@ -4737,7 +4689,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 12,
             ),
-            295 => 
+            292 => 
             array (
                 'id' => 218,
                 'data_type_id' => 19,
@@ -4753,7 +4705,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 13,
             ),
-            296 => 
+            293 => 
             array (
                 'id' => 219,
                 'data_type_id' => 19,
@@ -4769,7 +4721,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 14,
             ),
-            297 => 
+            294 => 
             array (
                 'id' => 220,
                 'data_type_id' => 19,
@@ -4785,7 +4737,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 15,
             ),
-            298 => 
+            295 => 
             array (
                 'id' => 221,
                 'data_type_id' => 19,
@@ -4801,7 +4753,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 16,
             ),
-            299 => 
+            296 => 
             array (
                 'id' => 222,
                 'data_type_id' => 19,
@@ -4817,7 +4769,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 17,
             ),
-            300 => 
+            297 => 
             array (
                 'id' => 223,
                 'data_type_id' => 19,
@@ -4833,7 +4785,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"default":0,"display":{"width":"6"}}',
                 'order' => 18,
             ),
-            301 => 
+            298 => 
             array (
                 'id' => 544,
                 'data_type_id' => 22,
@@ -4849,7 +4801,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"calculate":true}',
                 'order' => 80,
             ),
-            302 => 
+            299 => 
             array (
                 'id' => 224,
                 'data_type_id' => 19,
@@ -4865,7 +4817,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"2019":"2019","2020":"2020","2021":"2021","2022":"2022","2023":"2023","2024":"2024","2025":"2025"},"display":{"width":"6"}}',
                 'order' => 19,
             ),
-            303 => 
+            300 => 
             array (
                 'id' => 225,
                 'data_type_id' => 19,
@@ -4881,7 +4833,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 20,
             ),
-            304 => 
+            301 => 
             array (
                 'id' => 226,
                 'data_type_id' => 19,
@@ -4897,7 +4849,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 21,
             ),
-            305 => 
+            302 => 
             array (
                 'id' => 245,
                 'data_type_id' => 19,
@@ -4913,7 +4865,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"model":"App\\\\CGP","table":"cgps","type":"belongsTo","column":"cgps_id","key":"id","label":"name","pivot_table":"addresses","pivot":"0","taggable":"0"}',
                 'order' => 3,
             ),
-            306 => 
+            303 => 
             array (
                 'id' => 246,
                 'data_type_id' => 19,
@@ -4929,7 +4881,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"model":"App\\\\TypeContrat","table":"type_contrats","type":"belongsTo","column":"type_contrat_id","key":"id","label":"nom","pivot_table":"addresses","pivot":"0","taggable":"0"}',
                 'order' => 5,
             ),
-            307 => 
+            304 => 
             array (
                 'id' => 342,
                 'data_type_id' => 22,
@@ -4945,7 +4897,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 20,
             ),
-            308 => 
+            305 => 
             array (
                 'id' => 343,
                 'data_type_id' => 22,
@@ -4961,7 +4913,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 21,
             ),
-            309 => 
+            306 => 
             array (
                 'id' => 561,
                 'data_type_id' => 20,
@@ -4977,7 +4929,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => 'null',
                 'order' => 4,
             ),
-            310 => 
+            307 => 
             array (
                 'id' => 112,
                 'data_type_id' => 12,
@@ -4993,7 +4945,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 1,
             ),
-            311 => 
+            308 => 
             array (
                 'id' => 447,
                 'data_type_id' => 12,
@@ -5009,7 +4961,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
                 'order' => 15,
             ),
-            312 => 
+            309 => 
             array (
                 'id' => 344,
                 'data_type_id' => 22,
@@ -5025,7 +4977,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 19,
             ),
-            313 => 
+            310 => 
             array (
                 'id' => 345,
                 'data_type_id' => 22,
@@ -5041,7 +4993,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 45,
             ),
-            314 => 
+            311 => 
             array (
                 'id' => 346,
                 'data_type_id' => 22,
@@ -5057,7 +5009,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 44,
             ),
-            315 => 
+            312 => 
             array (
                 'id' => 350,
                 'data_type_id' => 22,
@@ -5073,7 +5025,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"01":"Nouvelle activite de l\'entreprise","02":"Augmentation de la capacit\\u00e9 de production","03":"Augmentation de la productivite","04":"Augmentation du resultat d exploitation","05":"Augmentation de la qualite des produits finis"},"display":{"width":"3"}}',
                 'order' => 8,
             ),
-            316 => 
+            313 => 
             array (
                 'id' => 475,
                 'data_type_id' => 22,
@@ -5089,7 +5041,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 6,
             ),
-            317 => 
+            314 => 
             array (
                 'id' => 528,
                 'data_type_id' => 22,
@@ -5105,7 +5057,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"0":"Non","1":"Oui"},"display":{"width":"3"}}',
                 'order' => 16,
             ),
-            318 => 
+            315 => 
             array (
                 'id' => 478,
                 'data_type_id' => 22,
@@ -5121,7 +5073,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 38,
             ),
-            319 => 
+            316 => 
             array (
                 'id' => 480,
                 'data_type_id' => 22,
@@ -5137,71 +5089,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"relationship":{"key":"id","label":"name","modal":true},"display":{"width":"3"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Banque"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Banque"}}',
                 'order' => 52,
             ),
-            320 => 
-            array (
-                'id' => 197,
-                'data_type_id' => 17,
-                'field' => 'investors_id',
-                'type' => 'select_dropdown',
-                'display_name' => 'Investisseur',
-                'required' => 1,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"relationship":{"key":"id","label":"full_name"},"display":{"width":"4"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Nouvelle proposition de recherche"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
-                'order' => 3,
-            ),
-            321 => 
-            array (
-                'id' => 199,
-                'data_type_id' => 17,
-                'field' => 'assistance_juridique',
-                'type' => 'checkbox',
-                'display_name' => 'Assistance Juridique',
-                'required' => 1,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"on":"Oui","off":"Non","display":{"width":"2"}}',
-                'order' => 12,
-            ),
-            322 => 
-            array (
-                'id' => 203,
-                'data_type_id' => 17,
-                'field' => 'montant_commission_cgp',
-                'type' => 'money',
-                'display_name' => 'Montant Commission Cgp',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => '{"display":{"width":"3"}}',
-                'order' => 23,
-            ),
-            323 => 
-            array (
-                'id' => 204,
-                'data_type_id' => 17,
-                'field' => 'gain_brut',
-                'type' => 'money',
-                'display_name' => 'Gain Brut',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => '{"display":{"width":"3"}}',
-                'order' => 24,
-            ),
-            324 => 
+            317 => 
             array (
                 'id' => 354,
                 'data_type_id' => 4,
@@ -5217,7 +5105,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"4"},"modal":true}',
                 'order' => 12,
             ),
-            325 => 
+            318 => 
             array (
                 'id' => 268,
                 'data_type_id' => 22,
@@ -5233,7 +5121,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"SIMPLIFIE":"Simplifi\\u00e9","STANDARD":"Standard"},"default":"STANDARD","display":{"width":"3"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"R\\u00e9f\\u00e9rencement d\'une nouvelle proposition commerciale"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"R\\u00e9sum\\u00e9"}}',
                 'order' => 3,
             ),
-            326 => 
+            319 => 
             array (
                 'id' => 269,
                 'data_type_id' => 22,
@@ -5249,7 +5137,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"48":"48 Mois","60":"60 Mois","autre":"autre"},"default":"60","display":{"width":"3"}}',
                 'order' => 5,
             ),
-            327 => 
+            320 => 
             array (
                 'id' => 270,
                 'data_type_id' => 22,
@@ -5265,7 +5153,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"options":{"01":"D\\u00e9fiscalisation (199 undecies B)","02":"Cr\\u00e9dit d\'imp\\u00f4t (244 quater W)"},"display":{"width":"3"}}',
                 'order' => 4,
             ),
-            328 => 
+            321 => 
             array (
                 'id' => 271,
                 'data_type_id' => 22,
@@ -5281,7 +5169,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"formfields_custom":"taux_RI_dropdown","display":{"width":"3"}}',
                 'order' => 7,
             ),
-            329 => 
+            322 => 
             array (
                 'id' => 272,
                 'data_type_id' => 22,
@@ -5297,7 +5185,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"0":"Non","1":"Simple","2":"Motiv\\u00e9"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Prix"},"display":{"width":"3"}}',
                 'order' => 24,
             ),
-            330 => 
+            323 => 
             array (
                 'id' => 273,
                 'data_type_id' => 22,
@@ -5313,7 +5201,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"LOAN":"Pret","CASH":"Comptant","FAUX-CASH":"Auto-Financement"},"default":"LOAN","display":{"width":"3"}}',
                 'order' => 9,
             ),
-            331 => 
+            324 => 
             array (
                 'id' => 274,
                 'data_type_id' => 22,
@@ -5329,7 +5217,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"0":"Non Soumis","1":"Soumis"},"display":{"width":"3"}}',
                 'order' => 10,
             ),
-            332 => 
+            325 => 
             array (
                 'id' => 277,
                 'data_type_id' => 22,
@@ -5345,7 +5233,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"relationship":{"key":"id","label":"name","modal":true},"display":{"width":"3"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Fournisseur"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Fournisseur"}}',
                 'order' => 13,
             ),
-            333 => 
+            326 => 
             array (
                 'id' => 280,
                 'data_type_id' => 22,
@@ -5361,7 +5249,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 22,
             ),
-            334 => 
+            327 => 
             array (
                 'id' => 481,
                 'data_type_id' => 22,
@@ -5377,7 +5265,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"calculate":true}',
                 'order' => 46,
             ),
-            335 => 
+            328 => 
             array (
                 'id' => 482,
                 'data_type_id' => 22,
@@ -5393,7 +5281,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3","percent":true},"calculate":true}',
                 'order' => 48,
             ),
-            336 => 
+            329 => 
             array (
                 'id' => 498,
                 'data_type_id' => 12,
@@ -5409,23 +5297,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"1"}}',
                 'order' => 44,
             ),
-            337 => 
-            array (
-                'id' => 205,
-                'data_type_id' => 17,
-                'field' => 'taux_reservation',
-                'type' => 'percentage',
-                'display_name' => 'Taux Reservation',
-                'required' => 0,
-                'browse' => 1,
-                'read' => 1,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => '{"display":{"width":"3"}}',
-                'order' => 25,
-            ),
-            338 => 
+            330 => 
             array (
                 'id' => 117,
                 'data_type_id' => 12,
@@ -5441,7 +5313,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
                 'order' => 22,
             ),
-            339 => 
+            331 => 
             array (
                 'id' => 453,
                 'data_type_id' => 12,
@@ -5457,7 +5329,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"validation":{"rule":"required|email|unique:investors,email_invest","messages":{"required":"Le champ :attribute est obligatoire.","email":"Ce champs doit etre un email valide","unique":"Cette email est d\\u00e9ja existant en base"}}}',
                 'order' => 25,
             ),
-            340 => 
+            332 => 
             array (
                 'id' => 472,
                 'data_type_id' => 12,
@@ -5473,7 +5345,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"8"}}',
                 'order' => 54,
             ),
-            341 => 
+            333 => 
             array (
                 'id' => 494,
                 'data_type_id' => 12,
@@ -5489,7 +5361,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"2"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Coordonn\\u00e9e Banquaire de l\'Investisseur"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Coordonn\\u00e9e Banquaire de l\'Investisseur"}}',
                 'order' => 40,
             ),
-            342 => 
+            334 => 
             array (
                 'id' => 495,
                 'data_type_id' => 12,
@@ -5505,7 +5377,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"2"}}',
                 'order' => 41,
             ),
-            343 => 
+            335 => 
             array (
                 'id' => 496,
                 'data_type_id' => 12,
@@ -5521,7 +5393,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"1"}}',
                 'order' => 42,
             ),
-            344 => 
+            336 => 
             array (
                 'id' => 497,
                 'data_type_id' => 12,
@@ -5537,7 +5409,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"1"}}',
                 'order' => 43,
             ),
-            345 => 
+            337 => 
             array (
                 'id' => 545,
                 'data_type_id' => 22,
@@ -5553,7 +5425,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 81,
             ),
-            346 => 
+            338 => 
             array (
                 'id' => 290,
                 'data_type_id' => 22,
@@ -5569,7 +5441,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"0":"Non","1":"Oui"},"display":{"width":"3"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Valeur de Remplacement"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Valeur de Remplacement"}}',
                 'order' => 32,
             ),
-            347 => 
+            339 => 
             array (
                 'id' => 291,
                 'data_type_id' => 22,
@@ -5585,7 +5457,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"null":"Aucun Remplacement"}',
                 'order' => 33,
             ),
-            348 => 
+            340 => 
             array (
                 'id' => 292,
                 'data_type_id' => 22,
@@ -5601,7 +5473,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"0":"Non","1":"Oui"},"null":"Aucune Assurance Propos\\u00e9","display":{"width":"3"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Assurance Mat\\u00e9riel"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Assurance Mat\\u00e9riel"}}',
                 'order' => 34,
             ),
-            349 => 
+            341 => 
             array (
                 'id' => 295,
                 'data_type_id' => 22,
@@ -5617,7 +5489,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"format":"%d\\/%m\\/%Y","validation":{"rule":"required|date|after_or_equal:today","messages":{"required":"le champs :attribute est requis pour le calcul des \\u00e9ch\\u00e9anceq.","date":"le champs :attribute doit \\u00eatre une date valide.","after_or_equal":"le champs :attribute ne peut \\u00eatre inf\\u00e9rieur \\u00e0 a date d\'aujourd\'hui"}},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Date de Livraison"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Date de Livraison"}}',
                 'order' => 37,
             ),
-            350 => 
+            342 => 
             array (
                 'id' => 296,
                 'data_type_id' => 22,
@@ -5633,7 +5505,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Financement"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Financement"}}',
                 'order' => 40,
             ),
-            351 => 
+            343 => 
             array (
                 'id' => 530,
                 'data_type_id' => 22,
@@ -5649,7 +5521,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3","percent":true},"calculate":true}',
                 'order' => 82,
             ),
-            352 => 
+            344 => 
             array (
                 'id' => 298,
                 'data_type_id' => 22,
@@ -5665,7 +5537,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"0":"Non","1":"Oui"},"display":{"width":"3"}}',
                 'order' => 42,
             ),
-            353 => 
+            345 => 
             array (
                 'id' => 310,
                 'data_type_id' => 22,
@@ -5681,7 +5553,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{}',
                 'order' => 87,
             ),
-            354 => 
+            346 => 
             array (
                 'id' => 483,
                 'data_type_id' => 22,
@@ -5697,7 +5569,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"}}',
                 'order' => 58,
             ),
-            355 => 
+            347 => 
             array (
                 'id' => 484,
                 'data_type_id' => 22,
@@ -5713,23 +5585,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"0":"Non","1":"Oui"},"display":{"width":"3"}}',
                 'order' => 51,
             ),
-            356 => 
-            array (
-                'id' => 493,
-                'data_type_id' => 17,
-                'field' => 'paiement',
-                'type' => 'select_dropdown',
-                'display_name' => 'Paiement',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 1,
-                'edit' => 1,
-                'add' => 1,
-                'delete' => 1,
-                'details' => '{"options":{"unique":"Unique","echelonne":"Echelonn\\u00e9"},"display":{"width":"3"}}',
-                'order' => 15,
-            ),
-            357 => 
+            348 => 
             array (
                 'id' => 448,
                 'data_type_id' => 12,
@@ -5745,7 +5601,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
                 'order' => 14,
             ),
-            358 => 
+            349 => 
             array (
                 'id' => 485,
                 'data_type_id' => 22,
@@ -5761,7 +5617,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"display":{"width":"3"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Contrat de Location"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Contrat de Location"},"calculate":true}',
                 'order' => 59,
             ),
-            359 => 
+            350 => 
             array (
                 'id' => 486,
                 'data_type_id' => 22,
@@ -5777,7 +5633,7 @@ class DataRowsTableSeeder extends Seeder
                 'details' => '{"options":{"1":"Mensuelle","2":"Trimestrielle","3":"Annuelle"},"display":{"width":"3"}}',
                 'order' => 62,
             ),
-            360 => 
+            351 => 
             array (
                 'id' => 487,
                 'data_type_id' => 22,
@@ -5793,7 +5649,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"}}',
             'order' => 63,
         ),
-        361 => 
+        352 => 
         array (
             'id' => 488,
             'data_type_id' => 22,
@@ -5809,7 +5665,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"options":{"1":"Ch\\u00e8que","2":"Pr\\u00e9l\\u00e8vement","3":"Virement","4":"Cash"},"display":{"width":"3"}}',
             'order' => 60,
         ),
-        362 => 
+        353 => 
         array (
             'id' => 489,
             'data_type_id' => 22,
@@ -5825,7 +5681,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"}}',
             'order' => 64,
         ),
-        363 => 
+        354 => 
         array (
             'id' => 490,
             'data_type_id' => 22,
@@ -5841,7 +5697,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"}}',
             'order' => 65,
         ),
-        364 => 
+        355 => 
         array (
             'id' => 491,
             'data_type_id' => 22,
@@ -5857,7 +5713,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"calculate":true,"manual":true}',
             'order' => 66,
         ),
-        365 => 
+        356 => 
         array (
             'id' => 492,
             'data_type_id' => 22,
@@ -5873,7 +5729,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"}}',
             'order' => 67,
         ),
-        366 => 
+        357 => 
         array (
             'id' => 531,
             'data_type_id' => 22,
@@ -5889,7 +5745,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"calculate":true}',
             'order' => 69,
         ),
-        367 => 
+        358 => 
         array (
             'id' => 532,
             'data_type_id' => 22,
@@ -5905,7 +5761,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"R\\u00e9capitulatif"},"calculate":true}',
             'order' => 70,
         ),
-        368 => 
+        359 => 
         array (
             'id' => 533,
             'data_type_id' => 22,
@@ -5921,7 +5777,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"}}',
             'order' => 71,
         ),
-        369 => 
+        360 => 
         array (
             'id' => 534,
             'data_type_id' => 22,
@@ -5937,7 +5793,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"}}',
             'order' => 72,
         ),
-        370 => 
+        361 => 
         array (
             'id' => 535,
             'data_type_id' => 22,
@@ -5953,7 +5809,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3","percent":true},"calculate":true}',
             'order' => 49,
         ),
-        371 => 
+        362 => 
         array (
             'id' => 536,
             'data_type_id' => 22,
@@ -5969,7 +5825,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"calculate":true}',
             'order' => 73,
         ),
-        372 => 
+        363 => 
         array (
             'id' => 537,
             'data_type_id' => 22,
@@ -5985,7 +5841,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"calculate":true}',
             'order' => 74,
         ),
-        373 => 
+        364 => 
         array (
             'id' => 538,
             'data_type_id' => 22,
@@ -6001,7 +5857,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"}}',
             'order' => 75,
         ),
-        374 => 
+        365 => 
         array (
             'id' => 539,
             'data_type_id' => 22,
@@ -6017,7 +5873,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3","percent":true}}',
             'order' => 76,
         ),
-        375 => 
+        366 => 
         array (
             'id' => 465,
             'data_type_id' => 12,
@@ -6033,7 +5889,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"format":"%d\\/%m\\/%Y","validation":{"rule":"required_if:regime_mat_invest,2|required_if:regime_mat_invest,3|required_if:regime_mat_invest,4","messages":{"required_if":"le champs :attribute est obligatoire si l\'investisseur est mari\\u00e9 ou pacs\\u00e9."}}}',
             'order' => 37,
         ),
-        376 => 
+        367 => 
         array (
             'id' => 560,
             'data_type_id' => 12,
@@ -6049,7 +5905,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"model":"\\\\App\\\\CGP","table":"cgps","type":"belongsTo","column":"cgp_attached","key":"id","label":"name","pivot_table":"migrations","pivot":"0","taggable":"0"}',
             'order' => 7,
         ),
-        377 => 
+        368 => 
         array (
             'id' => 540,
             'data_type_id' => 22,
@@ -6065,7 +5921,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"calculate":true}',
             'order' => 47,
         ),
-        378 => 
+        369 => 
         array (
             'id' => 541,
             'data_type_id' => 22,
@@ -6081,7 +5937,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"calculate":true}',
             'order' => 77,
         ),
-        379 => 
+        370 => 
         array (
             'id' => 542,
             'data_type_id' => 22,
@@ -6097,7 +5953,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"}}',
             'order' => 78,
         ),
-        380 => 
+        371 => 
         array (
             'id' => 251,
             'data_type_id' => 7,
@@ -6113,7 +5969,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"options":{"CGP":"CGP","CIF":"CIF","Banque":"Banque","Expert comptable":"Expert comptable","Avocat":"Avocat"},"display":{"width":"3"}}',
             'order' => 14,
         ),
-        381 => 
+        372 => 
         array (
             'id' => 254,
             'data_type_id' => 7,
@@ -6129,7 +5985,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"formfields_custom":"file_convention","display":{"width":"8"}}',
             'order' => 23,
         ),
-        382 => 
+        373 => 
         array (
             'id' => 255,
             'data_type_id' => 7,
@@ -6145,7 +6001,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"8"}}',
             'order' => 24,
         ),
-        383 => 
+        374 => 
         array (
             'id' => 256,
             'data_type_id' => 7,
@@ -6161,7 +6017,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"8"}}',
             'order' => 25,
         ),
-        384 => 
+        375 => 
         array (
             'id' => 84,
             'data_type_id' => 7,
@@ -6177,7 +6033,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 13,
         ),
-        385 => 
+        376 => 
         array (
             'id' => 85,
             'data_type_id' => 7,
@@ -6193,7 +6049,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 11,
         ),
-        386 => 
+        377 => 
         array (
             'id' => 250,
             'data_type_id' => 7,
@@ -6209,7 +6065,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"options":{"EI":"EI","EURL":"EURL","SA":"SA","SARL":"SARL","SAS":"SAS","Autre":"Autre"},"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 8,
         ),
-        387 => 
+        378 => 
         array (
             'id' => 543,
             'data_type_id' => 22,
@@ -6225,7 +6081,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"}}',
             'order' => 79,
         ),
-        388 => 
+        379 => 
         array (
             'id' => 546,
             'data_type_id' => 22,
@@ -6241,7 +6097,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"formfields_custom":"mandat_van_paiement","calculate":true}',
             'order' => 84,
         ),
-        389 => 
+        380 => 
         array (
             'id' => 311,
             'data_type_id' => 22,
@@ -6257,7 +6113,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"model":"App\\\\Leaseholder","table":"leaseholders","type":"belongsTo","column":"leaseholder_id","key":"id","label":"name","pivot_table":"addresses","pivot":"0","taggable":"0"}',
             'order' => 12,
         ),
-        390 => 
+        381 => 
         array (
             'id' => 527,
             'data_type_id' => 22,
@@ -6273,7 +6129,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"model":"\\\\App\\\\Supplier","table":"suppliers","type":"belongsTo","column":"supplier_id","key":"id","label":"name","pivot_table":"addresses","pivot":"0","taggable":"0"}',
             'order' => 14,
         ),
-        391 => 
+        382 => 
         array (
             'id' => 450,
             'data_type_id' => 12,
@@ -6289,7 +6145,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 18,
         ),
-        392 => 
+        383 => 
         array (
             'id' => 451,
             'data_type_id' => 12,
@@ -6305,7 +6161,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 19,
         ),
-        393 => 
+        384 => 
         array (
             'id' => 452,
             'data_type_id' => 12,
@@ -6321,7 +6177,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"}}',
             'order' => 16,
         ),
-        394 => 
+        385 => 
         array (
             'id' => 499,
             'data_type_id' => 12,
@@ -6337,7 +6193,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"1"}}',
             'order' => 45,
         ),
-        395 => 
+        386 => 
         array (
             'id' => 500,
             'data_type_id' => 12,
@@ -6353,7 +6209,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"2"}}',
             'order' => 46,
         ),
-        396 => 
+        387 => 
         array (
             'id' => 501,
             'data_type_id' => 12,
@@ -6369,7 +6225,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"2"}}',
             'order' => 47,
         ),
-        397 => 
+        388 => 
         array (
             'id' => 565,
             'data_type_id' => 12,
@@ -6385,7 +6241,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"validation":{"rule":"required_if:regime_mat_invest,2,3,4","messages":{"required_if":"le champs :attribute est obligatoire si l\'investisseur est mari\\u00e9 ou pacs\\u00e9."}}}',
             'order' => 39,
         ),
-        398 => 
+        389 => 
         array (
             'id' => 566,
             'data_type_id' => 12,
@@ -6401,7 +6257,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"validation":{"rule":"required_if:regime_mat_invest,2,3,4|email|unique:investors,mail_conjoint|unique:investors,email_invest|nullable","messages":{"required_if":"le champs :attribute est obligatoire si l\'investisseur est mari\\u00e9 ou pacs\\u00e9.","unique":"cette email est d\\u00e9ja existant en base","email":"cette attribut doit \\u00eatre une adresse email valide"}}}',
             'order' => 38,
         ),
-        399 => 
+        390 => 
         array (
             'id' => 449,
             'data_type_id' => 12,
@@ -6417,7 +6273,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"format":"%d\\/%m\\/%Y","validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 17,
         ),
-        400 => 
+        391 => 
         array (
             'id' => 123,
             'data_type_id' => 12,
@@ -6433,7 +6289,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"options":{"1":"Individuel","2":"Soci\\u00e9t\\u00e9"},"display":{"width":"3"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Renseignements G\\u00e9neraux"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 5,
         ),
-        401 => 
+        392 => 
         array (
             'id' => 446,
             'data_type_id' => 12,
@@ -6449,7 +6305,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"options":{"monsieur":"Monsieur","madame":"Madame","mademoiselle":"Mademoiselle"},"display":{"width":"3"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Renseignements Personnels"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Renseignement Personnel"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 13,
         ),
-        402 => 
+        393 => 
         array (
             'id' => 115,
             'data_type_id' => 12,
@@ -6465,7 +6321,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 20,
         ),
-        403 => 
+        394 => 
         array (
             'id' => 253,
             'data_type_id' => 7,
@@ -6481,7 +6337,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"options":{"Commercial":"Commercial","Pr\\u00e9sident":"Pr\\u00e9sident","Directeur_commercial":"Directeur commercial","Fournisseur":"Fournisseur","G\\u00e9rant":"G\\u00e9rant","Informaticien":"Directeur g\\u00e9n\\u00e9ral","President":"Pr\\u00e9sident","Vice-President":"Vice-Pr\\u00e9sident","Secretaire":"Secr\\u00e9taire","Service_entreprise":"Service entreprise","Habilit\\u00e9":"Habilit\\u00e9","Autre_fonction":"Autre fonction"},"display":{"width":"3"}}',
             'order' => 21,
         ),
-        404 => 
+        395 => 
         array (
             'id' => 443,
             'data_type_id' => 7,
@@ -6497,7 +6353,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"validation":{"rule":"required_if:network,oui","messages":{"required_if":"ce champs est obligatoire si l\'investisseur fait partie d\'un r\\u00e9seau."}}}',
             'order' => 18,
         ),
-        405 => 
+        396 => 
         array (
             'id' => 4,
             'data_type_id' => 1,
@@ -6513,7 +6369,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{}',
             'order' => 4,
         ),
-        406 => 
+        397 => 
         array (
             'id' => 5,
             'data_type_id' => 1,
@@ -6529,7 +6385,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{}',
             'order' => 5,
         ),
-        407 => 
+        398 => 
         array (
             'id' => 12,
             'data_type_id' => 1,
@@ -6545,7 +6401,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{}',
             'order' => 12,
         ),
-        408 => 
+        399 => 
         array (
             'id' => 86,
             'data_type_id' => 7,
@@ -6561,7 +6417,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"4"}}',
             'order' => 30,
         ),
-        409 => 
+        400 => 
         array (
             'id' => 3,
             'data_type_id' => 1,
@@ -6577,7 +6433,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"validation":{"rule":"unique: users, email"}}',
             'order' => 3,
         ),
-        410 => 
+        401 => 
         array (
             'id' => 8,
             'data_type_id' => 1,
@@ -6593,7 +6449,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{}',
             'order' => 8,
         ),
-        411 => 
+        402 => 
         array (
             'id' => 6,
             'data_type_id' => 1,
@@ -6609,7 +6465,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{}',
             'order' => 6,
         ),
-        412 => 
+        403 => 
         array (
             'id' => 87,
             'data_type_id' => 7,
@@ -6625,7 +6481,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"8"}}',
             'order' => 31,
         ),
-        413 => 
+        404 => 
         array (
             'id' => 7,
             'data_type_id' => 1,
@@ -6641,7 +6497,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{}',
             'order' => 7,
         ),
-        414 => 
+        405 => 
         array (
             'id' => 9,
             'data_type_id' => 1,
@@ -6657,7 +6513,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"model":"TCG\\\\Voyager\\\\Models\\\\Role","table":"roles","type":"belongsTo","column":"role_id","key":"id","label":"display_name","pivot_table":"roles","pivot":"0","taggable":"0"}',
             'order' => 10,
         ),
-        415 => 
+        406 => 
         array (
             'id' => 113,
             'data_type_id' => 12,
@@ -6673,23 +6529,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"R\\u00e9sum\\u00e9"}}',
             'order' => 6,
         ),
-        416 => 
-        array (
-            'id' => 193,
-            'data_type_id' => 17,
-            'field' => 'mandat_start_at',
-            'type' => 'date',
-            'display_name' => 'Debut du mandat de recherche',
-            'required' => 1,
-            'browse' => 0,
-            'read' => 1,
-            'edit' => 1,
-            'add' => 1,
-            'delete' => 0,
-            'details' => '{"display":{"width":"3"},"format":"%d\\/%m\\/%Y","legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Date de recherche"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Date de recherche"},"validation":{"rule":"required|date","messages":{"required":"le champs :attribute est obligatoire."}}}',
-            'order' => 17,
-        ),
-        417 => 
+        407 => 
         array (
             'id' => 125,
             'data_type_id' => 12,
@@ -6705,7 +6545,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"validation":{"rule":"required_if:nature_entities_id,2","messages":{"required":"le champs :attribute est obligatoire si l\'investisseur est une soci\\u00e9t\\u00e9."}}}',
             'order' => 8,
         ),
-        418 => 
+        408 => 
         array (
             'id' => 126,
             'data_type_id' => 12,
@@ -6721,7 +6561,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"validation":{"rule":"required_if:nature_entities_id,2","messages":{"required":"le champs :attribute est obligatoire si l\'investisseur est une soci\\u00e9t\\u00e9."}}}',
             'order' => 11,
         ),
-        419 => 
+        409 => 
         array (
             'id' => 444,
             'data_type_id' => 12,
@@ -6737,7 +6577,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"relationship":{"key":"id","label":"name"},"display":{"width":"3"}}',
             'order' => 2,
         ),
-        420 => 
+        410 => 
         array (
             'id' => 445,
             'data_type_id' => 12,
@@ -6753,7 +6593,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"relationship":{"key":"id","label":"full_name"},"formfields_custom":"contact","display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 4,
         ),
-        421 => 
+        411 => 
         array (
             'id' => 114,
             'data_type_id' => 12,
@@ -6769,7 +6609,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"validation":{"rule":"required_if:nature_entities_id,2","messages":{"required":"le champs :attribute est obligatoire si l\'investisseur est une soci\\u00e9t\\u00e9."}}}',
             'order' => 9,
         ),
-        422 => 
+        412 => 
         array (
             'id' => 116,
             'data_type_id' => 12,
@@ -6785,7 +6625,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"}}',
             'order' => 21,
         ),
-        423 => 
+        413 => 
         array (
             'id' => 118,
             'data_type_id' => 12,
@@ -6801,7 +6641,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 23,
         ),
-        424 => 
+        414 => 
         array (
             'id' => 119,
             'data_type_id' => 12,
@@ -6817,7 +6657,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"format":"%d\\/%m\\/%Y","validation":{"rule":"required_if:nature_entities_id,2","messages":{"required":"le champs :attribute est obligatoire si l\'investisseur est une soci\\u00e9t\\u00e9."}}}',
             'order' => 12,
         ),
-        425 => 
+        415 => 
         array (
             'id' => 243,
             'data_type_id' => 12,
@@ -6833,7 +6673,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"null":"Aucune","display":{"width":"3"}}',
             'order' => 3,
         ),
-        426 => 
+        416 => 
         array (
             'id' => 120,
             'data_type_id' => 12,
@@ -6849,7 +6689,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{}',
             'order' => 55,
         ),
-        427 => 
+        417 => 
         array (
             'id' => 121,
             'data_type_id' => 12,
@@ -6865,7 +6705,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{}',
             'order' => 56,
         ),
-        428 => 
+        418 => 
         array (
             'id' => 122,
             'data_type_id' => 12,
@@ -6881,7 +6721,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"default":4}',
             'order' => 33,
         ),
-        429 => 
+        419 => 
         array (
             'id' => 124,
             'data_type_id' => 12,
@@ -6897,7 +6737,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"options":{"CMA":"Chambre des M\\u00e9tiers et de l\'Artisanat","RCS":"Registre des Commerces et des Soci\\u00e9t\\u00e9","SS":"S\\u00e9curit\\u00e9 sociale"},"display":{"width":"3"},"validation":{"rule":"required_if:nature_entities_id,2","messages":{"required":"le champs :attribute est obligatoire si l\'investisseur est une soci\\u00e9t\\u00e9."}}}',
             'order' => 10,
         ),
-        430 => 
+        420 => 
         array (
             'id' => 470,
             'data_type_id' => 12,
@@ -6913,7 +6753,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"8"}}',
             'order' => 52,
         ),
-        431 => 
+        421 => 
         array (
             'id' => 458,
             'data_type_id' => 12,
@@ -6929,7 +6769,7 @@ class DataRowsTableSeeder extends Seeder
         'details' => '{"options":{"01":"C\\u00e9libataire","02":"Mari\\u00e9 sous la communaut\\u00e9","03":"Mari\\u00e9 sous contrat","04":"Pacs\\u00e9","05":"Divorc\\u00e9(e)","06":"Veuf(ve)"},"display":{"width":"3"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"R\\u00e9gime Matrimonial"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"R\\u00e9gime Matrimonial"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 32,
         ),
-        432 => 
+        422 => 
         array (
             'id' => 459,
             'data_type_id' => 12,
@@ -6945,7 +6785,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"}}',
             'order' => 29,
         ),
-        433 => 
+        423 => 
         array (
             'id' => 460,
             'data_type_id' => 12,
@@ -6961,7 +6801,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"}}',
             'order' => 30,
         ),
-        434 => 
+        424 => 
         array (
             'id' => 461,
             'data_type_id' => 12,
@@ -6977,7 +6817,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"}}',
             'order' => 31,
         ),
-        435 => 
+        425 => 
         array (
             'id' => 462,
             'data_type_id' => 12,
@@ -6993,7 +6833,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"validation":{"rule":"required_if:regime_mat_invest,2,3,4","messages":{"required_if":"le champs :attribute est obligatoire si l\'investisseur est mari\\u00e9 ou pacs\\u00e9."}}}',
             'order' => 34,
         ),
-        436 => 
+        426 => 
         array (
             'id' => 463,
             'data_type_id' => 12,
@@ -7009,7 +6849,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"validation":{"rule":"required_if:regime_mat_invest,2,3,4","messages":{"required_if":"le champs :attribute est obligatoire si l\'investisseur est mari\\u00e9 ou pacs\\u00e9."}}}',
             'order' => 35,
         ),
-        437 => 
+        427 => 
         array (
             'id' => 464,
             'data_type_id' => 12,
@@ -7025,7 +6865,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"}}',
             'order' => 36,
         ),
-        438 => 
+        428 => 
         array (
             'id' => 466,
             'data_type_id' => 12,
@@ -7041,7 +6881,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"8"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Compl\\u00e9ment"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Compl\\u00e9ment"}}',
             'order' => 48,
         ),
-        439 => 
+        429 => 
         array (
             'id' => 467,
             'data_type_id' => 12,
@@ -7057,7 +6897,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"8"}}',
             'order' => 49,
         ),
-        440 => 
+        430 => 
         array (
             'id' => 468,
             'data_type_id' => 12,
@@ -7073,7 +6913,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"8"}}',
             'order' => 50,
         ),
-        441 => 
+        431 => 
         array (
             'id' => 469,
             'data_type_id' => 12,
@@ -7089,7 +6929,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"8"}}',
             'order' => 51,
         ),
-        442 => 
+        432 => 
         array (
             'id' => 23,
             'data_type_id' => 4,
@@ -7105,7 +6945,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{}',
             'order' => 1,
         ),
-        443 => 
+        433 => 
         array (
             'id' => 10,
             'data_type_id' => 1,
@@ -7121,7 +6961,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"model":"TCG\\\\Voyager\\\\Models\\\\Role","table":"roles","type":"belongsToMany","column":"id","key":"id","label":"display_name","pivot_table":"user_roles","pivot":"1","taggable":"0"}',
             'order' => 11,
         ),
-        444 => 
+        434 => 
         array (
             'id' => 24,
             'data_type_id' => 4,
@@ -7137,7 +6977,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"modal":true,"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 3,
         ),
-        445 => 
+        435 => 
         array (
             'id' => 25,
             'data_type_id' => 4,
@@ -7153,7 +6993,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"modal":true,"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 4,
         ),
-        446 => 
+        436 => 
         array (
             'id' => 26,
             'data_type_id' => 4,
@@ -7169,7 +7009,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"4"},"modal":true,"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Coordonn\\u00e9e"}}',
             'order' => 6,
         ),
-        447 => 
+        437 => 
         array (
             'id' => 27,
             'data_type_id' => 4,
@@ -7185,7 +7025,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"4"}}',
             'order' => 7,
         ),
-        448 => 
+        438 => 
         array (
             'id' => 28,
             'data_type_id' => 4,
@@ -7201,7 +7041,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"4"},"modal":true,"validation":{"rule":"required|digits:5","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 8,
         ),
-        449 => 
+        439 => 
         array (
             'id' => 29,
             'data_type_id' => 4,
@@ -7217,7 +7057,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"4"},"modal":true,"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 9,
         ),
-        450 => 
+        440 => 
         array (
             'id' => 30,
             'data_type_id' => 4,
@@ -7233,7 +7073,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"4"},"format":"%d\\/%m\\/%Y","modal":true}',
             'order' => 14,
         ),
-        451 => 
+        441 => 
         array (
             'id' => 31,
             'data_type_id' => 4,
@@ -7249,7 +7089,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"4"},"modal":true}',
             'order' => 15,
         ),
-        452 => 
+        442 => 
         array (
             'id' => 32,
             'data_type_id' => 4,
@@ -7265,7 +7105,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"4"},"validation":{"rule":"digits:5"}}',
             'order' => 16,
         ),
-        453 => 
+        443 => 
         array (
             'id' => 33,
             'data_type_id' => 4,
@@ -7281,7 +7121,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"4"},"format":"%d\\/%m\\/%Y"}',
             'order' => 17,
         ),
-        454 => 
+        444 => 
         array (
             'id' => 34,
             'data_type_id' => 4,
@@ -7297,7 +7137,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{}',
             'order' => 18,
         ),
-        455 => 
+        445 => 
         array (
             'id' => 351,
             'data_type_id' => 4,
@@ -7313,7 +7153,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"options":{"1":"Monsieur","2":"Madame"},"display":{"width":"2"},"modal":true,"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 2,
         ),
-        456 => 
+        446 => 
         array (
             'id' => 352,
             'data_type_id' => 4,
@@ -7329,7 +7169,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"options":{"Commercial":"Commercial","Conseiller":"Conseiller","Directeur commercial":"Directeur commercial","Fournisseur":"Fournisseur","G\\u00e9rant":"G\\u00e9rant","Informaticien":"Informaticien","Pr\\u00e9sident":"Pr\\u00e9sident","Vice-Pr\\u00e9sident":"Vice-Pr\\u00e9sident","Secr\\u00e9taire":"Secr\\u00e9taire","Service entreprise":"Service entreprise","Autre fonction":"Autre fonction"},"display":{"width":"4"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}},"modal":true}',
             'order' => 5,
         ),
-        457 => 
+        447 => 
         array (
             'id' => 353,
             'data_type_id' => 4,
@@ -7345,7 +7185,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"4"},"modal":true,"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 11,
         ),
-        458 => 
+        448 => 
         array (
             'id' => 355,
             'data_type_id' => 4,
@@ -7361,7 +7201,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"4"}}',
             'order' => 13,
         ),
-        459 => 
+        449 => 
         array (
             'id' => 356,
             'data_type_id' => 4,
@@ -7377,7 +7217,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"4"},"modal":true,"validation":{"rule":"required|email|unique:contacts,email","messages":{"required":"le champs :attribute est obligatoire.","unique":":attribute est d\\u00e9ja existante en base"}}}',
             'order' => 10,
         ),
-        460 => 
+        450 => 
         array (
             'id' => 564,
             'data_type_id' => 4,
@@ -7393,7 +7233,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => 'null',
             'order' => 19,
         ),
-        461 => 
+        451 => 
         array (
             'id' => 570,
             'data_type_id' => 4,
@@ -7409,7 +7249,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"slugify":"full_name","forceUpdate":true}',
             'order' => 20,
         ),
-        462 => 
+        452 => 
         array (
             'id' => 71,
             'data_type_id' => 7,
@@ -7425,7 +7265,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{}',
             'order' => 1,
         ),
-        463 => 
+        453 => 
         array (
             'id' => 72,
             'data_type_id' => 7,
@@ -7441,7 +7281,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 3,
         ),
-        464 => 
+        454 => 
         array (
             'id' => 74,
             'data_type_id' => 7,
@@ -7457,7 +7297,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 4,
         ),
-        465 => 
+        455 => 
         array (
             'id' => 76,
             'data_type_id' => 7,
@@ -7473,7 +7313,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"validation":{"rule":"required|digits:5","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 6,
         ),
-        466 => 
+        456 => 
         array (
             'id' => 77,
             'data_type_id' => 7,
@@ -7489,7 +7329,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 7,
         ),
-        467 => 
+        457 => 
         array (
             'id' => 78,
             'data_type_id' => 7,
@@ -7505,7 +7345,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"format":"%d\\/%m\\/%Y","validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 10,
         ),
-        468 => 
+        458 => 
         array (
             'id' => 79,
             'data_type_id' => 7,
@@ -7521,7 +7361,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"8"},"format":"%d\\/%m\\/%Y"}',
             'order' => 32,
         ),
-        469 => 
+        459 => 
         array (
             'id' => 88,
             'data_type_id' => 7,
@@ -7537,7 +7377,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"relationship":{"key":"id","label":"full_name_func_civ","modal":true},"view":"","display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 19,
         ),
-        470 => 
+        460 => 
         array (
             'id' => 257,
             'data_type_id' => 7,
@@ -7553,7 +7393,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"8"}}',
             'order' => 26,
         ),
-        471 => 
+        461 => 
         array (
             'id' => 258,
             'data_type_id' => 7,
@@ -7569,7 +7409,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"8"}}',
             'order' => 27,
         ),
-        472 => 
+        462 => 
         array (
             'id' => 357,
             'data_type_id' => 7,
@@ -7585,7 +7425,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"options":{"CMA":"Chambre des M\\u00e9tiers et de l\'Artisanat","RCS":"Registre des Commerces et des Soci\\u00e9t\\u00e9","SS":"S\\u00e9curit\\u00e9 sociale"},"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 9,
         ),
-        473 => 
+        463 => 
         array (
             'id' => 358,
             'data_type_id' => 7,
@@ -7601,7 +7441,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"8"}}',
             'order' => 28,
         ),
-        474 => 
+        464 => 
         array (
             'id' => 359,
             'data_type_id' => 7,
@@ -7617,7 +7457,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"8"}}',
             'order' => 29,
         ),
-        475 => 
+        465 => 
         array (
             'id' => 440,
             'data_type_id' => 7,
@@ -7633,7 +7473,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"options":{"variable":"variable","fixe":"fixe"},"display":{"width":"3"}}',
             'order' => 15,
         ),
-        476 => 
+        466 => 
         array (
             'id' => 441,
             'data_type_id' => 7,
@@ -7649,7 +7489,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"validation":{"rule":"required_if:remuneration,fixe","messages":{"required_if":"ce champs est obligatoire quand la remun\\u00e9ration est fixe."}}}',
             'order' => 16,
         ),
-        477 => 
+        467 => 
         array (
             'id' => 442,
             'data_type_id' => 7,
@@ -7665,7 +7505,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"options":{"non":"non","oui":"oui"},"display":{"width":"3"}}',
             'order' => 17,
         ),
-        478 => 
+        468 => 
         array (
             'id' => 244,
             'data_type_id' => 7,
@@ -7681,7 +7521,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"model":"App\\\\Contact","table":"contacts","type":"belongsTo","column":"contact_id","key":"id","label":"full_name_func_civ","pivot_table":"addresses","pivot":"0","taggable":"0"}',
             'order' => 20,
         ),
-        479 => 
+        469 => 
         array (
             'id' => 568,
             'data_type_id' => 7,
@@ -7697,39 +7537,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"model":"\\\\App\\\\Contact","table":"contacts","type":"belongsToMany","column":"id","key":"id","label":"full_name_func_civ","pivot_table":"cgp_contacts","pivot":"1","taggable":"0"}',
             'order' => 22,
         ),
-        480 => 
-        array (
-            'id' => 190,
-            'data_type_id' => 17,
-            'field' => 'identifiant',
-            'type' => 'text',
-            'display_name' => 'Identifiant',
-            'required' => 0,
-            'browse' => 1,
-            'read' => 1,
-            'edit' => 1,
-            'add' => 0,
-            'delete' => 1,
-            'details' => '{"display":{"width":"4"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"R\\u00e9sum\\u00e9"}}',
-            'order' => 2,
-        ),
-        481 => 
-        array (
-            'id' => 206,
-            'data_type_id' => 17,
-            'field' => 'created_at',
-            'type' => 'timestamp',
-            'display_name' => 'Date Création Mandat',
-            'required' => 0,
-            'browse' => 0,
-            'read' => 0,
-            'edit' => 0,
-            'add' => 0,
-            'delete' => 1,
-            'details' => 'null',
-            'order' => 20,
-        ),
-        482 => 
+        470 => 
         array (
             'id' => 73,
             'data_type_id' => 7,
@@ -7745,7 +7553,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 12,
         ),
-        483 => 
+        471 => 
         array (
             'id' => 75,
             'data_type_id' => 7,
@@ -7761,7 +7569,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"}}',
             'order' => 5,
         ),
-        484 => 
+        472 => 
         array (
             'id' => 1,
             'data_type_id' => 1,
@@ -7777,7 +7585,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{}',
             'order' => 1,
         ),
-        485 => 
+        473 => 
         array (
             'id' => 22,
             'data_type_id' => 1,
@@ -7793,7 +7601,7 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{}',
             'order' => 9,
         ),
-        486 => 
+        474 => 
         array (
             'id' => 2,
             'data_type_id' => 1,
@@ -7809,87 +7617,23 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{}',
             'order' => 2,
         ),
-        487 => 
+        475 => 
         array (
-            'id' => 195,
+            'id' => 190,
             'data_type_id' => 17,
-            'field' => 'type_contrats_id',
-            'type' => 'select_dropdown',
-            'display_name' => 'Choisir une formule',
-            'required' => 1,
-            'browse' => 0,
-            'read' => 0,
-            'edit' => 1,
-            'add' => 1,
-            'delete' => 1,
-            'details' => '{"relationship":{"key":"id","label":"nom"},"default":null,"display":{"width":"4"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Financement"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
-            'order' => 7,
-        ),
-        488 => 
-        array (
-            'id' => 196,
-            'data_type_id' => 17,
-            'field' => 'cgps_id',
-            'type' => 'select_dropdown',
-            'display_name' => 'CGP Affilié',
-            'required' => 1,
-            'browse' => 1,
-            'read' => 1,
-            'edit' => 1,
-            'add' => 1,
-            'delete' => 1,
-            'details' => '{"relationship":{"key":"id","label":"name"},"display":{"width":"4"}}',
-            'order' => 4,
-        ),
-        489 => 
-        array (
-            'id' => 198,
-            'data_type_id' => 17,
-            'field' => 'nbr_snc',
+            'field' => 'identifiant',
             'type' => 'text',
-            'display_name' => 'SNC Souscrit',
-            'required' => 1,
-            'browse' => 1,
-            'read' => 1,
-            'edit' => 1,
-            'add' => 1,
-            'delete' => 1,
-            'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}},"default":1}',
-            'order' => 11,
-        ),
-        490 => 
-        array (
-            'id' => 200,
-            'data_type_id' => 17,
-            'field' => 'secteurs_activite',
-            'type' => 'select_dropdown',
-            'display_name' => 'Secteurs d Activité',
-            'required' => 1,
-            'browse' => 1,
-            'read' => 1,
-            'edit' => 1,
-            'add' => 1,
-            'delete' => 1,
-            'details' => '{"options":{"industrie":"Industrie","artisanat":"Artisanat","tourisme":"Tourisme","energie":"Energie","tp, transport, construction":"TP, Transport, Construction","logement social":"Logement social","indifferent":"Indiff\\u00e9rent"},"display":{"width":"4"},"default":"indifferent"}',
-            'order' => 8,
-        ),
-        491 => 
-        array (
-            'id' => 201,
-            'data_type_id' => 17,
-            'field' => 'taux_rentabilite',
-            'type' => 'percentage',
-            'display_name' => 'Taux Rentabilité',
+            'display_name' => 'Identifiant',
             'required' => 0,
             'browse' => 1,
             'read' => 1,
-            'edit' => 0,
+            'edit' => 1,
             'add' => 0,
-            'delete' => 0,
-            'details' => '{"display":{"width":"3"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Resultat"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Resultat"}}',
-            'order' => 21,
+            'delete' => 1,
+            'details' => '{"display":{"width":"4"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"R\\u00e9sum\\u00e9"}}',
+            'order' => 2,
         ),
-        492 => 
+        476 => 
         array (
             'id' => 191,
             'data_type_id' => 17,
@@ -7905,7 +7649,87 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"4"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Financement"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 9,
         ),
-        493 => 
+        477 => 
+        array (
+            'id' => 197,
+            'data_type_id' => 17,
+            'field' => 'investors_id',
+            'type' => 'select_dropdown',
+            'display_name' => 'Investisseur',
+            'required' => 1,
+            'browse' => 0,
+            'read' => 1,
+            'edit' => 1,
+            'add' => 1,
+            'delete' => 1,
+            'details' => '{"relationship":{"key":"id","label":"full_name"},"display":{"width":"4"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Nouvelle proposition de recherche"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
+            'order' => 3,
+        ),
+        478 => 
+        array (
+            'id' => 198,
+            'data_type_id' => 17,
+            'field' => 'nbr_snc',
+            'type' => 'text',
+            'display_name' => 'SNC Souscrit',
+            'required' => 1,
+            'browse' => 0,
+            'read' => 1,
+            'edit' => 1,
+            'add' => 1,
+            'delete' => 1,
+            'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}},"default":1}',
+            'order' => 11,
+        ),
+        479 => 
+        array (
+            'id' => 199,
+            'data_type_id' => 17,
+            'field' => 'assistance_juridique',
+            'type' => 'checkbox',
+            'display_name' => 'Assistance Juridique',
+            'required' => 1,
+            'browse' => 0,
+            'read' => 1,
+            'edit' => 1,
+            'add' => 1,
+            'delete' => 1,
+            'details' => '{"on":"Oui","off":"Non","display":{"width":"2"}}',
+            'order' => 12,
+        ),
+        480 => 
+        array (
+            'id' => 200,
+            'data_type_id' => 17,
+            'field' => 'secteurs_activite',
+            'type' => 'select_dropdown',
+            'display_name' => 'Secteurs d Activité',
+            'required' => 1,
+            'browse' => 0,
+            'read' => 1,
+            'edit' => 1,
+            'add' => 1,
+            'delete' => 1,
+            'details' => '{"options":{"industrie":"Industrie","artisanat":"Artisanat","tourisme":"Tourisme","energie":"Energie","tp, transport, construction":"TP, Transport, Construction","logement social":"Logement social","indifferent":"Indiff\\u00e9rent"},"display":{"width":"4"},"default":"indifferent"}',
+            'order' => 8,
+        ),
+        481 => 
+        array (
+            'id' => 201,
+            'data_type_id' => 17,
+            'field' => 'taux_rentabilite',
+            'type' => 'percentage',
+            'display_name' => 'Taux Rentabilité',
+            'required' => 0,
+            'browse' => 1,
+            'read' => 1,
+            'edit' => 0,
+            'add' => 0,
+            'delete' => 0,
+            'details' => '{"display":{"width":"3"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Resultat"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Resultat"}}',
+            'order' => 21,
+        ),
+        482 => 
         array (
             'id' => 192,
             'data_type_id' => 17,
@@ -7921,7 +7745,23 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}},"default":0}',
             'order' => 10,
         ),
-        494 => 
+        483 => 
+        array (
+            'id' => 193,
+            'data_type_id' => 17,
+            'field' => 'mandat_start_at',
+            'type' => 'date',
+            'display_name' => 'Debut du mandat de recherche',
+            'required' => 1,
+            'browse' => 0,
+            'read' => 1,
+            'edit' => 1,
+            'add' => 1,
+            'delete' => 0,
+            'details' => '{"display":{"width":"3"},"format":"%d\\/%m\\/%Y","legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Date de recherche"},"section":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Date de recherche"},"validation":{"rule":"required|date","messages":{"required":"le champs :attribute est obligatoire."}}}',
+            'order' => 17,
+        ),
+        484 => 
         array (
             'id' => 194,
             'data_type_id' => 17,
@@ -7937,7 +7777,119 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"display":{"width":"3"},"format":"%d\\/%m\\/%Y","default":"12\\/15 this year","validation":{"rule":"required|date|after:mandat_start_at","messages":{"required":"le champs :attribute est obligatoire."}}}',
             'order' => 18,
         ),
-        495 => 
+        485 => 
+        array (
+            'id' => 195,
+            'data_type_id' => 17,
+            'field' => 'type_contrats_id',
+            'type' => 'select_dropdown',
+            'display_name' => 'Choisir une formule',
+            'required' => 1,
+            'browse' => 0,
+            'read' => 0,
+            'edit' => 1,
+            'add' => 1,
+            'delete' => 1,
+            'details' => '{"relationship":{"key":"id","label":"nom"},"default":null,"display":{"width":"4"},"legend":{"align":"left","bgcolor":"#333","color":"#CCC","text":"Financement"},"validation":{"rule":"required","messages":{"required":"le champs :attribute est obligatoire."}}}',
+            'order' => 7,
+        ),
+        486 => 
+        array (
+            'id' => 196,
+            'data_type_id' => 17,
+            'field' => 'cgps_id',
+            'type' => 'select_dropdown',
+            'display_name' => 'CGP Affilié',
+            'required' => 1,
+            'browse' => 1,
+            'read' => 1,
+            'edit' => 1,
+            'add' => 1,
+            'delete' => 1,
+            'details' => '{"relationship":{"key":"id","label":"name"},"display":{"width":"4"}}',
+            'order' => 4,
+        ),
+        487 => 
+        array (
+            'id' => 203,
+            'data_type_id' => 17,
+            'field' => 'montant_commission_cgp',
+            'type' => 'money',
+            'display_name' => 'Montant Commission Cgp',
+            'required' => 0,
+            'browse' => 1,
+            'read' => 1,
+            'edit' => 0,
+            'add' => 0,
+            'delete' => 0,
+            'details' => '{"display":{"width":"3"}}',
+            'order' => 23,
+        ),
+        488 => 
+        array (
+            'id' => 204,
+            'data_type_id' => 17,
+            'field' => 'gain_brut',
+            'type' => 'money',
+            'display_name' => 'Gain Brut',
+            'required' => 0,
+            'browse' => 0,
+            'read' => 1,
+            'edit' => 0,
+            'add' => 0,
+            'delete' => 0,
+            'details' => '{"display":{"width":"3"}}',
+            'order' => 24,
+        ),
+        489 => 
+        array (
+            'id' => 205,
+            'data_type_id' => 17,
+            'field' => 'taux_reservation',
+            'type' => 'percentage',
+            'display_name' => 'Taux Reservation',
+            'required' => 0,
+            'browse' => 1,
+            'read' => 1,
+            'edit' => 0,
+            'add' => 0,
+            'delete' => 0,
+            'details' => '{"display":{"width":"3"}}',
+            'order' => 25,
+        ),
+        490 => 
+        array (
+            'id' => 206,
+            'data_type_id' => 17,
+            'field' => 'created_at',
+            'type' => 'timestamp',
+            'display_name' => 'Date Création Mandat',
+            'required' => 0,
+            'browse' => 0,
+            'read' => 0,
+            'edit' => 0,
+            'add' => 0,
+            'delete' => 1,
+            'details' => 'null',
+            'order' => 20,
+        ),
+        491 => 
+        array (
+            'id' => 207,
+            'data_type_id' => 17,
+            'field' => 'updated_at',
+            'type' => 'timestamp',
+            'display_name' => 'Mis à jour le',
+            'required' => 0,
+            'browse' => 0,
+            'read' => 0,
+            'edit' => 0,
+            'add' => 0,
+            'delete' => 0,
+            'details' => '{"display":{"width":"3"}}',
+            'order' => 26,
+        ),
+        492 => 
         array (
             'id' => 473,
             'data_type_id' => 17,
@@ -7953,7 +7905,39 @@ class DataRowsTableSeeder extends Seeder
             'details' => '{"options":{"permanent":"Permanent","ponctuel":"Ponctuel"},"display":{"width":"2"}}',
             'order' => 13,
         ),
-        496 => 
+        493 => 
+        array (
+            'id' => 474,
+            'data_type_id' => 17,
+            'field' => 'taux_ponctuel',
+            'type' => 'percentage',
+        'display_name' => 'Réduction Aj (%)',
+            'required' => 0,
+            'browse' => 0,
+            'read' => 1,
+            'edit' => 1,
+            'add' => 1,
+            'delete' => 1,
+            'details' => '{"display":{"width":"2"}}',
+            'order' => 14,
+        ),
+        494 => 
+        array (
+            'id' => 493,
+            'data_type_id' => 17,
+            'field' => 'paiement',
+            'type' => 'select_dropdown',
+            'display_name' => 'Paiement',
+            'required' => 0,
+            'browse' => 0,
+            'read' => 1,
+            'edit' => 1,
+            'add' => 1,
+            'delete' => 1,
+            'details' => '{"options":{"unique":"Unique","echelonne":"Echelonn\\u00e9"},"display":{"width":"3"}}',
+            'order' => 15,
+        ),
+        495 => 
         array (
             'id' => 553,
             'data_type_id' => 17,
@@ -7968,6 +7952,22 @@ class DataRowsTableSeeder extends Seeder
             'delete' => 0,
             'details' => '{"display":{"width":"4"}}',
             'order' => 5,
+        ),
+        496 => 
+        array (
+            'id' => 554,
+            'data_type_id' => 17,
+            'field' => 'user_created_id',
+            'type' => 'text',
+            'display_name' => 'User Created Id',
+            'required' => 0,
+            'browse' => 0,
+            'read' => 0,
+            'edit' => 0,
+            'add' => 0,
+            'delete' => 0,
+            'details' => '{}',
+            'order' => 28,
         ),
         497 => 
         array (
@@ -7993,7 +7993,7 @@ class DataRowsTableSeeder extends Seeder
             'type' => 'select_dropdown',
             'display_name' => 'Mode de Paiement',
             'required' => 0,
-            'browse' => 1,
+            'browse' => 0,
             'read' => 1,
             'edit' => 1,
             'add' => 1,
@@ -8034,22 +8034,6 @@ class DataRowsTableSeeder extends Seeder
                 'delete' => 1,
                 'details' => '{"display":{"width":"3"},"format":"%d\\/%m\\/%Y","validation":{"rule":"required|date","messages":{"required":"le champs :attribute est obligatoire."}}}',
                 'order' => 19,
-            ),
-            1 => 
-            array (
-                'id' => 562,
-                'data_type_id' => 17,
-                'field' => 'reservation_belongsto_type_contrat_relationship',
-                'type' => 'relationship',
-                'display_name' => 'Formule',
-                'required' => 0,
-                'browse' => 0,
-                'read' => 0,
-                'edit' => 0,
-                'add' => 0,
-                'delete' => 0,
-                'details' => '{"model":"\\\\App\\\\TypeContrat","table":"type_contrats","type":"belongsTo","column":"type_contrats_id","key":"id","label":"nom","pivot_table":"migrations","pivot":"0","taggable":"0"}',
-                'order' => 6,
             ),
         ));
         

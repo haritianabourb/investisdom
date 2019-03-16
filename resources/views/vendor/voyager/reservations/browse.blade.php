@@ -61,7 +61,7 @@
                             </form>
                         @endif
                         <div class="table-responsive">
-                            <table id="dataTable" class="table table-hover">
+                            <table id="dataTable" class="table table-hover" style="table-layout: fixed;">
                                 <thead>
                                     <tr>
                                         @can('delete',app($dataType->model_name))
@@ -110,11 +110,6 @@
                                             $options = json_decode(json_encode($options));
                                             @endphp
                                             <td>
-                                                @if($loop->first)
-                                                  @can('read',app($dataType->model_name))
-                                                  <a href="{{ route('voyager.'.$dataType->slug.'.show', [$dataType->name => $data]) }}">
-                                                  @endcan
-                                                @endif
                                                 @if (isset($row->details->view))
                                                       @include($row->details->view, ['row' => $row, 'dataType' => $dataType, 'dataTypeContent' => $dataTypeContent, 'content' => $data->{$row->field}, 'action' => 'browse'])
                                                 @elseif ( isset($options->accessor) )
@@ -247,12 +242,6 @@
                                                         @include('voyager::multilingual.input-hidden-bread-browse')
                                                           {{ $data->{$row->field} }}
                                                 @endif
-
-                                                @if($loop->first)
-                                                  @can('read',app($dataType->model_name))
-                                                  </a>
-                                                  @endcan
-                                                @endif
                                             </td>
                                         @endforeach
                                         <td class="no-sort no-click" id="bread-actions">
@@ -331,21 +320,25 @@
             @if (!$dataType->server_side)
                 var datatableConfig = {!! json_encode(
                     array_merge([
-                        "autoWidth" => false,
                         "order" => [],
+                        "autoWidth" => false,
                         "rowGroup" => [
-                            "dataSrc" =>  4
+                            "dataSrc" =>  3
                         ],
                         "language" => __('voyager::datatable'),
                         "columnDefs" => [
-                            ['targets' => 0, 'width' => "200px"],
-                            ['targets' => -1, 'searchable' =>  false, 'orderable' => false],
-                        ]
+                            ['width' => "20px", 'targets' => 0 ],
+                            ['width' => "150px", 'targets' => 1 ],
+                            ['targets' => -1, 'searchable' =>  false, 'orderable' => false, 'width' => "200px"],
+                            ['width' => "72px", 'targets' => "_all" ],
+                        ],
+                        "scrollX"=> true
                     ],
                     config('voyager.dashboard.data_tables', []))
                 , true) !!};
 
                 console.log(datatableConfig);
+
                 var table = $('#dataTable').DataTable(datatableConfig);
             @else
                 $('#search-input select').select2({

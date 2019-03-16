@@ -307,24 +307,6 @@ class DataTypesTableSeeder extends Seeder
             ),
             16 => 
             array (
-                'id' => 17,
-                'name' => 'reservations',
-                'slug' => 'reservations',
-                'display_name_singular' => 'Réservation',
-                'display_name_plural' => 'Réservations',
-                'icon' => 'voyager-receipt',
-                'model_name' => 'App\\Reservation',
-                'policy_name' => 'App\\Policies\\ReservationPolicy',
-                'controller' => NULL,
-                'description' => NULL,
-                'generate_permissions' => 1,
-                'server_side' => 0,
-                'details' => '{"order_column":null,"order_display_column":null}',
-                'created_at' => '2018-09-19 17:13:08',
-                'updated_at' => '2019-03-12 18:45:34',
-            ),
-            17 => 
-            array (
                 'id' => 4,
                 'name' => 'contacts',
                 'slug' => 'contacts',
@@ -340,6 +322,24 @@ class DataTypesTableSeeder extends Seeder
                 'details' => '{"order_column":null,"order_display_column":null}',
                 'created_at' => '2018-08-23 17:18:48',
                 'updated_at' => '2019-03-12 06:53:29',
+            ),
+            17 => 
+            array (
+                'id' => 17,
+                'name' => 'reservations',
+                'slug' => 'reservations',
+                'display_name_singular' => 'Réservation',
+                'display_name_plural' => 'Réservations',
+                'icon' => 'voyager-receipt',
+                'model_name' => 'App\\Reservation',
+                'policy_name' => 'App\\Policies\\ReservationPolicy',
+                'controller' => NULL,
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null}',
+                'created_at' => '2018-09-19 17:13:08',
+                'updated_at' => '2019-03-16 14:17:46',
             ),
         ));
         
