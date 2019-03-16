@@ -100,9 +100,14 @@
                                         @endcan
                                         @foreach($dataType->browseRows as $row)
                                             @php
+                                            $options = (array)$row->details;
+
                                             if ($data->{$row->field.'_browse'}) {
                                                 $data->{$row->field} = $data->{$row->field.'_browse'};
+                                                $options['accessor'] = true;
                                             }
+
+                                            $options = json_decode(json_encode($options));
                                             @endphp
                                             <td>
                                                 @if($loop->first)
@@ -110,9 +115,10 @@
                                                   <a href="{{ route('voyager.'.$dataType->slug.'.show', [$dataType->name => $data]) }}">
                                                   @endcan
                                                 @endif
-                                                <?php $options = $row->details; ?>
                                                 @if (isset($row->details->view))
                                                       @include($row->details->view, ['row' => $row, 'dataType' => $dataType, 'dataTypeContent' => $dataTypeContent, 'content' => $data->{$row->field}, 'action' => 'browse'])
+                                                @elseif ( isset($options->accessor) )
+                                                      {!! $data->{$row->field} !!}
                                                 @elseif($row->type == 'email')
                                                           @include('voyager::formfields.custom.email', ['view' => 'browse'])
                                                 @elseif($row->type == 'image')
@@ -199,15 +205,15 @@
                                                             <img src="@if( !filter_var($image, FILTER_VALIDATE_URL)){{ Voyager::image( $image ) }}@else{{ $image }}@endif" style="width:50px">
                                                         @endforeach
                                                     @endif
-                                                      @elseif($row->type == 'media_picker')
-                                                          @php
-                                                              if (is_array($data->{$row->field})) {
-                                                                  $files = $data->{$row->field};
-                                                              } else {
-                                                                  $files = json_decode($data->{$row->field});
-                                                              }
-                                                          @endphp
-                                                          @if ($files)
+                                                @elseif($row->type == 'media_picker')
+                                                      @php
+                                                          if (is_array($data->{$row->field})) {
+                                                              $files = $data->{$row->field};
+                                                          } else {
+                                                              $files = json_decode($data->{$row->field});
+                                                          }
+                                                      @endphp
+                                                      @if ($files)
                                                               @if (property_exists($row->details, 'show_as_images') && $row->details->show_as_images)
                                                                   @foreach (array_slice($files, 0, 3) as $file)
                                                                       <img src="@if( !filter_var($file, FILTER_VALIDATE_URL)){{ Voyager::image( $file ) }}@else{{ $file }}@endif" style="width:50px">
@@ -222,25 +228,26 @@
                                                               @if (count($files) > 3)
                                                                   {{ __('voyager::media.files_more', ['count' => (count($files) - 3)]) }}
                                                               @endif
-                                                          @elseif (is_array($files) && count($files) == 0)
+                                                      @elseif (is_array($files) && count($files) == 0)
                                                               {{ trans_choice('voyager::media.files', 0) }}
-                                                          @elseif ($data->{$row->field} != '')
+                                                      @elseif ($data->{$row->field} != '')
                                                               @if (property_exists($row->details, 'show_as_images') && $row->details->show_as_images)
                                                                   <img src="@if( !filter_var($data->{$row->field}, FILTER_VALIDATE_URL)){{ Voyager::image( $data->{$row->field} ) }}@else{{ $data->{$row->field} }}@endif" style="width:50px">
                                                               @else
                                                                   {{ $data->{$row->field} }}
                                                               @endif
-                                                          @else
+                                                      @else
                                                               {{ trans_choice('voyager::media.files', 0) }}
-                                                          @endif
-                                                  @elseif($row->type == 'money')
+                                                      @endif
+                                                @elseif($row->type == 'money')
                                                       @include('voyager::partials.money')
-                                                  @elseif($row->type == 'percentage')
+                                                @elseif($row->type == 'percentage')
                                                       @include('voyager::partials.percentage')
-                                                  @else
+                                                @else
                                                         @include('voyager::multilingual.input-hidden-bread-browse')
-                                                        <span>{{ $data->{$row->field} }}</span>
+                                                          {{ $data->{$row->field} }}
                                                 @endif
+
                                                 @if($loop->first)
                                                   @can('read',app($dataType->model_name))
                                                   </a>
@@ -324,17 +331,21 @@
             @if (!$dataType->server_side)
                 var datatableConfig = {!! json_encode(
                     array_merge([
+                        "autoWidth" => false,
                         "order" => [],
                         "rowGroup" => [
                             "dataSrc" =>  4
                         ],
                         "language" => __('voyager::datatable'),
-                        "columnDefs" => [['targets' => -1, 'searchable' =>  false, 'orderable' => false]]
+                        "columnDefs" => [
+                            ['targets' => 0, 'width' => "200px"],
+                            ['targets' => -1, 'searchable' =>  false, 'orderable' => false],
+                        ]
                     ],
                     config('voyager.dashboard.data_tables', []))
                 , true) !!};
 
-
+                console.log(datatableConfig);
                 var table = $('#dataTable').DataTable(datatableConfig);
             @else
                 $('#search-input select').select2({
