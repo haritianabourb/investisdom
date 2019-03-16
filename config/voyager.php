@@ -240,8 +240,8 @@ return [
         'https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css',
         'https://cdn.datatables.net/rowgroup/1.1.0/css/rowGroup.dataTables.min.css',
         // 'css/now-ui-dashboard.css'
-        'css/custom.css',
-        'css/flaticon.css'
+        'css/flaticon.css',
+        'css/custom.css'
 
     ],
 
