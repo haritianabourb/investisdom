@@ -18,6 +18,10 @@
     width: 100%;
 }
 
+.dropdown.profile .dropdown-menu h6{
+    overflow:inherit;
+}
+
 .input-group-addon {
 	border-color:#e4eaec;
 }
