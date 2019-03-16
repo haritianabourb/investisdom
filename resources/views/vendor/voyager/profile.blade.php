@@ -21,45 +21,52 @@
                         <div class="media-left media-middle">
                             <div class="panel">
                                 <div class="panel-body">
-                                <a href="#">
-                                    <img src="@if( !filter_var(Auth::user()->avatar, FILTER_VALIDATE_URL)){{ Voyager::image( Auth::user()->avatar ) }}@else{{ Auth::user()->avatar }}@endif"
-                                         class="media-object avatar"
-                                         style="border-radius:50%; width:150px; height:150px; border:5px solid #fff;"
-                                         alt="{{ Auth::user()->name }} avatar">
-                                </a>
-                                <p>{{ Auth::user()->bio }}</p>
-                                <div class="user-email text-muted">{{ Auth::user()->email }}</div>
-                                <a href="{{ route('voyager.users.edit', Auth::user()->id) }}" class="btn btn-primary">{{ __('voyager::profile.edit') }}</a>
+                                    <a href="#">
+                                        <img src="@if( !filter_var(Auth::user()->avatar, FILTER_VALIDATE_URL)){{ Voyager::image( Auth::user()->avatar ) }}@else{{ Auth::user()->avatar }}@endif"
+                                             class="media-object avatar"
+                                             style="border-radius:50%; width:150px; height:150px; border:5px solid #fff;"
+                                             alt="{{ Auth::user()->name }} avatar">
+                                    </a>
+                                    <p>{{ Auth::user()->bio }}</p>
+                                    <div class="user-email text-muted">{{ Auth::user()->email }}</div>
+                                    <a href="{{ route('voyager.users.edit', Auth::user()->id) }}"
+                                       class="btn btn-primary">{{ __('voyager::profile.edit') }}</a>
                                 </div>
                             </div>
                         </div>
-                        <div class="media-body">
+                        <div class="media-body media-middle">
                             @isset($contact)
-                            <h3 class="media-heading text-center">{{ ucwords($contact->full_name_civ) }}</h3>
-                            <table class="table table-striped table-hover text-left">
-                                <tbody>
-                                <tr>
-                                    <td>{{ucfirst(__('profile.contact.function'))}}</td>
-                                    <td>{{$contact->function}}</td>
-                                </tr>
-                                <tr>
-                                    <td>{{ucfirst(__('profile.contact.phone'))}}</td>
-                                    <td>{{$contact->tel_fixe}}</td>
-                                </tr>
-                                <tr>
-                                    <td>{{ucfirst(__('profile.contact.mobile_phone'))}}</td>
-                                    <td>{{$contact->gsm}}</td>
-                                </tr>
-                                <tr>
-                                    <td>{{ucfirst(__('profile.contact.fax'))}}</td>
-                                    <td>{{$contact->fax}}</td>
-                                </tr>
-                                <tr>
-                                    <td>{{ucfirst(__('profile.contact.email'))}}</td>
-                                    <td><a href="mailto:{{$contact->email}}">{{$contact->email}}</a></td>
-                                </tr>
-                                </tbody>
-                            </table>
+                                <div class="panel panel-primary">
+                                    <div class="panel-heading">
+                                        <h3 class="panel-title text-center" style="font-size: 24px">{{ ucwords($contact->full_name_civ) }}</h3>
+                                    </div>
+                                    <div class="panel-body">
+                                        <table class="table table-striped table-hover text-left">
+                                            <tbody>
+                                            <tr>
+                                                <td>{{ucfirst(__('profile.contact.function'))}}</td>
+                                                <td>{{$contact->function}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>{{ucfirst(__('profile.contact.phone'))}}</td>
+                                                <td>{{$contact->tel_fixe}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>{{ucfirst(__('profile.contact.mobile_phone'))}}</td>
+                                                <td>{{$contact->gsm}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>{{ucfirst(__('profile.contact.fax'))}}</td>
+                                                <td>{{$contact->fax}}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>{{ucfirst(__('profile.contact.email'))}}</td>
+                                                <td><a href="mailto:{{$contact->email}}">{{$contact->email}}</a></td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             @endisset
                         </div>
                     </div>
