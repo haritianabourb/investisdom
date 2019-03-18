@@ -12,12 +12,12 @@ class TypeEntitiesTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('type_entities')->delete();
-        
+
         \DB::table('type_entities')->insert(array (
-            0 => 
+
             array (
                 'id' => 1,
                 'name' => 'Investis Dom',
@@ -25,7 +25,7 @@ class TypeEntitiesTableSeeder extends Seeder
                 'created_at' => '2018-09-19 17:29:04',
                 'updated_at' => '2018-09-19 17:29:04',
             ),
-            1 => 
+
             array (
                 'id' => 2,
                 'name' => 'SNC',
@@ -33,7 +33,7 @@ class TypeEntitiesTableSeeder extends Seeder
                 'created_at' => '2018-09-19 17:29:04',
                 'updated_at' => '2018-09-19 17:29:04',
             ),
-            2 => 
+
             array (
                 'id' => 3,
                 'name' => 'CGP',
@@ -41,7 +41,7 @@ class TypeEntitiesTableSeeder extends Seeder
                 'created_at' => '2018-09-19 17:29:04',
                 'updated_at' => '2018-09-19 17:29:04',
             ),
-            3 => 
+
             array (
                 'id' => 4,
                 'name' => 'Investisseur',
@@ -49,7 +49,7 @@ class TypeEntitiesTableSeeder extends Seeder
                 'created_at' => '2018-09-19 17:29:04',
                 'updated_at' => '2018-09-19 17:29:04',
             ),
-            4 => 
+
             array (
                 'id' => 5,
                 'name' => 'Apporteur Affaire',
@@ -57,7 +57,7 @@ class TypeEntitiesTableSeeder extends Seeder
                 'created_at' => '2018-09-19 17:29:04',
                 'updated_at' => '2018-09-19 17:29:04',
             ),
-            5 => 
+
             array (
                 'id' => 6,
                 'name' => 'Fournisseur',
@@ -65,7 +65,7 @@ class TypeEntitiesTableSeeder extends Seeder
                 'created_at' => '2018-09-19 17:29:04',
                 'updated_at' => '2018-09-19 17:29:04',
             ),
-            6 => 
+
             array (
                 'id' => 7,
                 'name' => 'Locataire',
@@ -73,7 +73,7 @@ class TypeEntitiesTableSeeder extends Seeder
                 'created_at' => '2018-09-19 17:29:04',
                 'updated_at' => '2018-09-19 17:29:04',
             ),
-            7 => 
+
             array (
                 'id' => 8,
                 'name' => 'Banque',
@@ -82,7 +82,7 @@ class TypeEntitiesTableSeeder extends Seeder
                 'updated_at' => '2018-09-19 17:29:04',
             ),
         ));
-        
-        
+
+
     }
 }

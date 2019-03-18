@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class NatureEntitiesTableSeeder extends Seeder
+class RegistrationEntitiesTableSeeder extends Seeder
 {
 
     /**
@@ -12,29 +12,37 @@ class NatureEntitiesTableSeeder extends Seeder
      */
     public function run()
     {
-        
 
-        \DB::table('nature_entities')->delete();
-        
-        \DB::table('nature_entities')->insert(array (
-            0 => 
+
+        \DB::table('registration_entities')->delete();
+
+        \DB::table('registration_entities')->insert(array (
+
             array (
                 'id' => 1,
-                'name' => 'Individuel',
+                'name' => 'CMA',
                 'description' => NULL,
                 'created_at' => '2018-09-19 17:29:05',
                 'updated_at' => '2018-09-19 17:29:05',
             ),
-            1 => 
+
             array (
                 'id' => 2,
-                'name' => 'Société',
+                'name' => 'RC',
+                'description' => NULL,
+                'created_at' => '2018-09-19 17:29:05',
+                'updated_at' => '2018-09-19 17:29:05',
+            ),
+
+            array (
+                'id' => 3,
+                'name' => 'Exploitant Agricole',
                 'description' => NULL,
                 'created_at' => '2018-09-19 17:29:05',
                 'updated_at' => '2018-09-19 17:29:05',
             ),
         ));
-        
-        
+
+
     }
 }

@@ -12,12 +12,12 @@ class RolesTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('roles')->delete();
-        
+
         \DB::table('roles')->insert(array (
-            0 => 
+
             array (
                 'id' => 1,
                 'name' => 'admin',
@@ -25,7 +25,7 @@ class RolesTableSeeder extends Seeder
                 'created_at' => '2018-08-12 14:26:04',
                 'updated_at' => '2018-08-12 14:26:04',
             ),
-            1 => 
+
             array (
                 'id' => 2,
                 'name' => 'user',
@@ -33,7 +33,7 @@ class RolesTableSeeder extends Seeder
                 'created_at' => '2018-08-12 14:26:04',
                 'updated_at' => '2018-08-12 14:26:04',
             ),
-            2 => 
+
             array (
                 'id' => 3,
                 'name' => 'investisdom',
@@ -41,7 +41,7 @@ class RolesTableSeeder extends Seeder
                 'created_at' => '2018-08-23 17:10:46',
                 'updated_at' => '2018-08-23 17:10:46',
             ),
-            3 => 
+
             array (
                 'id' => 5,
                 'name' => 'investors',
@@ -49,7 +49,7 @@ class RolesTableSeeder extends Seeder
                 'created_at' => '2019-01-05 06:22:09',
                 'updated_at' => '2019-01-05 06:22:09',
             ),
-            4 => 
+
             array (
                 'id' => 4,
                 'name' => 'cgp',
@@ -58,7 +58,7 @@ class RolesTableSeeder extends Seeder
                 'updated_at' => '2019-01-05 06:22:26',
             ),
         ));
-        
-        
+
+
     }
 }

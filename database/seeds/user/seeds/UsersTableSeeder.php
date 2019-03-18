@@ -12,12 +12,12 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         \DB::table('users')->delete();
-        
+
         \DB::table('users')->insert(array (
-            0 => 
+
             array (
                 'id' => 4,
                 'role_id' => 1,
@@ -30,7 +30,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2018-10-02 05:20:07',
                 'updated_at' => '2018-10-02 05:20:07',
             ),
-            1 => 
+
             array (
                 'id' => 2,
                 'role_id' => 1,
@@ -43,7 +43,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2018-08-13 13:25:50',
                 'updated_at' => '2018-08-13 13:25:50',
             ),
-            2 => 
+
             array (
                 'id' => 3,
                 'role_id' => 3,
@@ -56,7 +56,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2018-08-23 17:14:58',
                 'updated_at' => '2018-08-23 17:14:58',
             ),
-            3 => 
+
             array (
                 'id' => 5,
                 'role_id' => 4,
@@ -69,7 +69,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2019-03-14 05:22:33',
                 'updated_at' => '2019-03-14 05:22:36',
             ),
-            4 => 
+
             array (
                 'id' => 1,
                 'role_id' => 1,
@@ -82,7 +82,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2018-08-12 14:28:45',
                 'updated_at' => '2019-03-14 05:38:33',
             ),
-            5 => 
+
             array (
                 'id' => 6,
                 'role_id' => 4,
@@ -95,7 +95,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2019-03-14 06:28:26',
                 'updated_at' => '2019-03-14 06:59:42',
             ),
-            6 => 
+
             array (
                 'id' => 8,
                 'role_id' => 4,
@@ -108,7 +108,7 @@ class UsersTableSeeder extends Seeder
                 'created_at' => '2019-03-14 09:19:08',
                 'updated_at' => '2019-03-14 09:19:12',
             ),
-            7 => 
+
             array (
                 'id' => 9,
                 'role_id' => 4,
@@ -122,7 +122,7 @@ class UsersTableSeeder extends Seeder
                 'updated_at' => '2019-03-14 09:20:44',
             ),
         ));
-        
-        
+
+
     }
 }
