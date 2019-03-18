@@ -15,7 +15,7 @@ class InvestorObserver
 
 
     public function creating(Investor $investor){
-        $investor->user_id = \Auth::user()->id;
+//        $investor->user_id = \Auth::user()->id;
     }
 
     /**
@@ -27,7 +27,7 @@ class InvestorObserver
     public function saving(Investor $investor)
     {
 
-        if(\Auth::user()->hasRole(["cgps", "cgp"])){
+        if(\Auth::user() && \Auth::user()->hasRole(["cgps", "cgp"])){
 
             $contact = Contact::ofUser(\Auth::user())->first();
 
