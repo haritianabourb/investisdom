@@ -92,7 +92,7 @@
                                 <div class="col-md-4">
                                     <select name="contrat" class="form-control">
                                         @foreach($typeContrat as $contrat)
-                                            <option value="confort" @if(old('contrat', '') == $contrat->slug) selected @endif title="{{$contrat->description}}">
+                                            <option value="{{$contrat->slug}}" @if(old('contrat', '') == $contrat->slug) selected @endif title="{{$contrat->description}}">
                                                 {{ $contrat->nom }}
                                             </option>
                                         @endforeach
