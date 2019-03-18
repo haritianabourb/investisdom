@@ -17,7 +17,7 @@ class DataTypesTableSeeder extends Seeder
         \DB::table('data_types')->delete();
         
         \DB::table('data_types')->insert(array (
-            0 => 
+            
             array (
                 'id' => 2,
                 'name' => 'menus',
@@ -35,7 +35,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-08-12 14:26:04',
                 'updated_at' => '2018-08-12 14:26:04',
             ),
-            1 => 
+            
             array (
                 'id' => 3,
                 'name' => 'roles',
@@ -53,7 +53,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-08-12 14:26:04',
                 'updated_at' => '2018-08-12 14:26:04',
             ),
-            2 => 
+            
             array (
                 'id' => 5,
                 'name' => 'entities',
@@ -71,7 +71,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-10 15:30:20',
                 'updated_at' => '2018-09-10 15:30:20',
             ),
-            3 => 
+            
             array (
                 'id' => 9,
                 'name' => 'type_entities',
@@ -89,7 +89,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-10 15:42:35',
                 'updated_at' => '2018-09-10 15:42:35',
             ),
-            4 => 
+            
             array (
                 'id' => 14,
                 'name' => 'sncs',
@@ -107,7 +107,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-10 15:53:00',
                 'updated_at' => '2018-09-19 17:27:18',
             ),
-            5 => 
+            
             array (
                 'id' => 16,
                 'name' => 'registration_entities',
@@ -125,7 +125,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-10 16:45:25',
                 'updated_at' => '2018-09-10 16:45:25',
             ),
-            6 => 
+            
             array (
                 'id' => 13,
                 'name' => 'leaseholders',
@@ -143,7 +143,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-10 15:53:00',
                 'updated_at' => '2018-09-26 09:30:00',
             ),
-            7 => 
+            
             array (
                 'id' => 15,
                 'name' => 'suppliers',
@@ -161,7 +161,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-10 15:54:06',
                 'updated_at' => '2018-09-26 09:34:25',
             ),
-            8 => 
+            
             array (
                 'id' => 8,
                 'name' => 'intermediaries',
@@ -179,7 +179,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-10 15:38:45',
                 'updated_at' => '2018-09-26 09:36:38',
             ),
-            9 => 
+            
             array (
                 'id' => 6,
                 'name' => 'banks',
@@ -197,7 +197,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-10 15:38:44',
                 'updated_at' => '2018-12-27 06:30:38',
             ),
-            10 => 
+            
             array (
                 'id' => 19,
                 'name' => 'taux_cgp',
@@ -215,7 +215,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-19 17:21:21',
                 'updated_at' => '2019-01-14 07:27:33',
             ),
-            11 => 
+            
             array (
                 'id' => 20,
                 'name' => 'type_contrats',
@@ -233,7 +233,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-19 17:27:46',
                 'updated_at' => '2019-01-16 18:26:52',
             ),
-            12 => 
+            
             array (
                 'id' => 22,
                 'name' => 'mandat',
@@ -251,7 +251,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-26 06:30:26',
                 'updated_at' => '2019-02-26 06:34:55',
             ),
-            13 => 
+            
             array (
                 'id' => 12,
                 'name' => 'investors',
@@ -269,7 +269,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-10 15:53:00',
                 'updated_at' => '2019-02-26 07:21:48',
             ),
-            14 => 
+            
             array (
                 'id' => 7,
                 'name' => 'cgps',
@@ -287,7 +287,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-09-10 15:38:45',
                 'updated_at' => '2019-03-12 10:32:36',
             ),
-            15 => 
+            
             array (
                 'id' => 1,
                 'name' => 'users',
@@ -305,7 +305,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-08-12 14:26:04',
                 'updated_at' => '2019-03-12 16:30:12',
             ),
-            16 => 
+            
             array (
                 'id' => 4,
                 'name' => 'contacts',
@@ -323,7 +323,7 @@ class DataTypesTableSeeder extends Seeder
                 'created_at' => '2018-08-23 17:18:48',
                 'updated_at' => '2019-03-12 06:53:29',
             ),
-            17 => 
+            
             array (
                 'id' => 17,
                 'name' => 'reservations',

@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use TCG\Voyager\Traits\Seedable;
 
-class VoyagerDeploymentOrchestratorSeeder extends Seeder
+class BreadSeeder extends Seeder
 {
     use Seedable;
 
@@ -16,5 +16,6 @@ class VoyagerDeploymentOrchestratorSeeder extends Seeder
      */
     public function run()
     {
+
     }
 }
