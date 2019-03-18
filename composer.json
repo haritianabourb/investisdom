@@ -19,6 +19,7 @@
         "larapack/hooks": "^1.0",
         "larapack/voyager-hooks": "^1.0",
         "laravel/framework": "5.8.*",
+        "maatwebsite/excel": "^3.1",
         "markrogoyski/math-php": "0.*",
         "niklasravnsborg/laravel-pdf": "^2.0",
         "orangehill/iseed": "^2.6",
