@@ -20,8 +20,9 @@ class CSVContactSeeder extends Seeder
         $this->command->line("---");
         $this->command->comment('Seeding CSV Contact Core');
 
-
-        $this->call(ResetSequenceTableSeeder::class);
+        (new \App\Imports\Legacy\ContactImport)
+            ->withOutput($this->command->getOutput())
+            ->import(storage_path("csv/contacts_cgp.csv"), null, \Maatwebsite\Excel\Excel::CSV);
 
         $this->command->info('CSV Contacts Seeds');
         $this->command->line("---");
