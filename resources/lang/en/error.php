@@ -10,7 +10,11 @@ return [
     'symlink_missing_title'  => 'Missing storage symlink',
     'yousign'  => [
         "already_exist" => "Procedure already exist",
+        "missing_big_problem" => "We can't get all contacts information here, please call an administrator as soon as possible",
+        "missing_fields" => "Missing field for Electronic Signatures",
         "yousign" => "yousign",
+        "procedure_validation" => "Yousign Procedure Impossible",
+        "procedure_validation_message" => "Email and Mobile Phone Fields for all contacts is required and must be filled",
         "procedure_init" => [
             "context" => "Procedure initialized",
             "description" => "Initialization error, Please Contact an administrator"

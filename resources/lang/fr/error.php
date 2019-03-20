@@ -10,7 +10,11 @@ return [
     'symlink_missing_title'  => 'Le lien symbolique de stockage est manquant',
     'yousign'  => [
         "already_exist" => "Procédure Yousign Existante",
+        "missing_big_problem" => "Nous ne parvenons pas à récupérer les informations des contacts affilié à cette réservation, veuillez contacter un administrateur",
+        "missing_fields" => "Informations manquantes pour la signature électronique",
         "yousign" => "yousign",
+        "procedure_validation" => "Procédure Yousign Impossible",
+        "procedure_validation_message" => "Les champs Email et Téléphone Mobile <br/> de tous les contacts sont obligatoires",
         "procedure_init" => [
             "context" => "Initialisation de la procédure",
             "description" => "Yousign Initialisation de la procédure Impossible, veuillez contacter un administrateur."

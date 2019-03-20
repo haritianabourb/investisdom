@@ -14,11 +14,12 @@ class YousignAction extends AbstractAction
     protected $title;
     protected $yousignProcedure;
     protected $yousignProcedureStatus;
+    protected $yousignValidation;
 
     public function getTitle()
     {
-        if(!$this->getYousignValidation()){
-            return $this->title = "Yousign: Procédure impossible, <br/> Les champs Email et Téléphone Mobile <br/> de tous les contacts sont obligatoires";
+        if($this->getYousignValidation() !== true){
+            return $this->title = __("error.yousign.procedure_validation");
         }
 
         $status = $this->getYousignProcedureStatus();
@@ -48,7 +49,11 @@ class YousignAction extends AbstractAction
 
         $status = $this->getYousignProcedureStatus();
 
-        if(!$status || !in_array($status, ["active","refused", "finished" ]) || $this->getYousignValidation()){
+        if($this->getYousignValidation() !== true){
+            return "#";
+        }
+
+        if(!$status || !in_array($status, ["active","refused", "finished" ])){
             return route('admin.'.$this->dataType->slug.'.yousign', ["reservation" => $this->data]);
         }
 
@@ -61,8 +66,8 @@ class YousignAction extends AbstractAction
             'class' => 'btn ',
         ];
 
-        if(!$this->getYousignValidation()){
-            $attributes["class"] .= "btn-danger";
+        if($this->getYousignValidation() !== true){
+            $attributes["class"] .= "btn-danger disabled";
             return $attributes;
         }
 
@@ -85,71 +90,111 @@ class YousignAction extends AbstractAction
       return $attributes;
     }
 
-    private function getYousignValidation(){
+    public function getYousignValidation(){
 
-        $investor = \App\Investor::find($this->data->getOriginal('investors_id'));
-        $cgp = \App\CGP::find($this->data->getOriginal('cgps_id'));
+        if(is_null($this->yousignValidation)){
+
+            $investor = \App\Investor::find($this->data->getOriginal('investors_id'));
+            $cgp = \App\CGP::find($this->data->getOriginal('cgps_id'));
 
 
-        if(!$investor || !$cgp->contact_id){
-            return false;
-        }
+            if(!$investor || !$cgp->contact_id){
+                return $this->yousignValidation = false;
+            }
 
-        $validator  = Validator::make(
-            $investor->toArray(),
-            DataType::where('name', 'investors')->first()
-                ->rows()->whereIn('field', ['gsm_invest', 'email_invest', 'mail_conjoint', 'gsm_conjoint'])
-                ->pluck('details', 'field')->transform(function($item, $key){
-                    if (is_object($item) && isset($item->validation) && !is_null($item->validation)){
+            $this->yousignValidation = collect([]);
 
-                        $rules = explode("|", $item->validation->rule);
+            $validator  = Validator::make(
+                $investor->toArray(),
+                DataType::where('name', 'investors')->first()
+                    ->rows()->whereIn('field', ['gsm_invest', 'email_invest', 'mail_conjoint', 'gsm_conjoint'])
+                    ->pluck('details', 'field')->transform(function($item, $key){
+                        if (is_object($item) && isset($item->validation) && !is_null($item->validation)){
 
-                        foreach ($rules as $key => $rule){
-                            if (Str::startsWith($rule, "unique")){
-                                Arr::forget($rules, $key);
+                            $rules = explode("|", $item->validation->rule);
+
+                            foreach ($rules as $key => $rule){
+                                if (Str::startsWith($rule, "unique")){
+                                    Arr::forget($rules, $key);
+                                }
                             }
+
+                            return implode("|", $rules);
+
                         }
+                        return  'nullable' ;
+                    })->toArray(),
+                DataType::where('name', 'investors')->first()
+                    ->rows()->whereIn('field', ['gsm_invest', 'email_invest', 'mail_conjoint', 'gsm_conjoint'])
+                    ->pluck('details', 'field')->transform(function($item, $item_key){
+                        if (is_object($item) && isset($item->validation) && !is_null($item->validation)){
+                            if(isset($item->validation->messages) && !is_null($item->validation->messages)){
+                                $messages = [];
+                                foreach($item->validation->messages as $key => $message){
+                                    $messages[$item_key.".".$key]=$message;
+                                }
 
-                        return implode("|", $rules);
-
-                    }
-                    return  'nullable' ;
-                })->toArray()
-        );
-
-
-        if($validator->fails()){
-            return false;
-        }
-
-        $validator  = Validator::make(
-            $cgp->contact->toArray(),
-            DataType::where('name', 'contacts')->first()
-                ->rows()->whereIn('field', ['gsm', 'email'])
-                ->pluck('details', 'field')->transform(function($item, $key){
-                    if (is_object($item) && isset($item->validation) && !is_null($item->validation)){
-
-                        $rules = explode("|", $item->validation->rule);
-
-                        foreach ($rules as $key => $rule){
-                            if (Str::startsWith($rule, "unique")){
-                                Arr::forget($rules, $key);
+                                return $messages;
                             }
+
                         }
+                    })->flatten()->toArray()
+            );
 
-                        return implode("|", $rules);
 
-                    }
-                    return  'nullable' ;
-                })->toArray()
-        );
+            if($validator->fails()){
+                $this->yousignValidation->put("investors", $validator->getMessageBag()->toArray());
+            }
 
-        if($validator->fails()){
-            return false;
+            $validator  = Validator::make(
+                $cgp->contact->toArray(),
+                DataType::where('name', 'contacts')->first()
+                    ->rows()->whereIn('field', ['gsm', 'email'])
+                    ->pluck('details', 'field')->transform(function($item, $key){
+                        if (is_object($item) && isset($item->validation) && !is_null($item->validation)){
+
+                            $rules = explode("|", $item->validation->rule);
+
+                            foreach ($rules as $key => $rule){
+                                if (Str::startsWith($rule, "unique")){
+                                    Arr::forget($rules, $key);
+                                }
+                            }
+
+                            return implode("|", $rules);
+
+                        }
+                        return  'nullable' ;
+                    })->toArray(),
+                    DataType::where('name', 'contacts')->first()
+                    ->rows()->whereIn('field', ['gsm', 'email'])
+                        ->pluck('details', 'field')->transform(function($item, $item_key){
+                            if (is_object($item) && isset($item->validation) && !is_null($item->validation)){
+                                if(isset($item->validation->messages) && !is_null($item->validation->messages)){
+                                    $messages = [];
+                                    foreach($item->validation->messages as $key => $message){
+                                        $messages[$item_key.".".$key]=$message;
+                                    }
+
+                                    return $messages;
+                                }
+
+                            }
+                        })->flatten()->toArray()
+            );
+
+            if($validator->fails()){
+               $this->yousignValidation->put('cgp', $validator->failed());
+            }
+
+            if(!is_object($this->yousignValidation)){
+                $this->yousignValidation = true;
+            }
+
+
         }
 
-        return true;
-
+        return $this->yousignValidation;
     }
 
     private function getYousignProcedureStatus(){
