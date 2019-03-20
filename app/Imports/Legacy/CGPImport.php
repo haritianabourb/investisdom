@@ -30,9 +30,6 @@ class CGPImport implements ToModel, WithProgressBar, WithHeadingRow
     {
         $contact = Contact::where('email', $row['email_contact_attached'])->first();
 
-        if(env('MAIL_HOST') == "smtp.mailtrap.io"){
-            sleep(5);
-        }
 
         // TODO: Implement model() method.
         return new CGP([
