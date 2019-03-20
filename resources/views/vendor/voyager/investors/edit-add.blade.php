@@ -49,6 +49,9 @@
                             <!-- Adding / Editing -->
                             @php
                                 $dataTypeRows = $dataType->{(!is_null($dataTypeContent->getKey()) ? 'editRows' : 'addRows' )};
+
+                                //just for the loop
+                                $loopFirst = true;
                             @endphp
 
                             @foreach($dataTypeRows as $row)
@@ -66,22 +69,25 @@
                                     }
                                 @endphp
                                 @if ($options && isset($options->legend) && isset($options->legend->text))
-                                  @if(!$loop->first)
+                                  @if(!$loopFirst)
                                     </div>
+                                  @else
+                                      @php($loopFirst=false)
                                   @endif
                                     <div class="row">
                                       <div class="col-md-12">
+                                        <p class="alert alert-danger"> loop {{$loop->index}}</p>
                                         <legend class="text-{{$options->legend->align ?? 'center'}}" style="color: {{$options->legend->color ?? '#333'}};background-color: {{$options->legend->bgcolor ?? '#f0f0f0'}};padding: 5px; padding-left: 15px; display:inline-block">{{$options->legend->text}}</legend>
                                       </div>
                                 @endif
                                 <div class="form-group @if($row->type == 'hidden') hidden @endif col-md-{{ $display_options->width ?? 12 }}" @if(isset($display_options->id)){{ "id=$display_options->id" }}@endif>
                                 @if ($options && isset($options->formfields_custom))
                                     {{ $row->slugify }}
-                                    <label for="name">{{ $row->display_name }}</label>
+                                    <label class="control-label" for="{{ $row->field }}">{{ $row->display_name }}</label>
                                     @include('voyager::formfields.custom.' . $options->formfields_custom)
                                 @else
                                         {{ $row->slugify }}
-                                        <label class="control-label" for="name">{{ $row->display_name }}</label>
+                                        <label class="control-label" for="{{ $row->field }}">{{ $row->display_name }}</label>
                                         @include('voyager::multilingual.input-hidden-bread-edit-add')
                                         @if (isset($row->details->view))
                                             @include($row->details->view, ['row' => $row, 'dataType' => $dataType, 'dataTypeContent' => $dataTypeContent, 'content' => $dataTypeContent->{$row->field}, 'action' => ($edit ? 'edit' : 'add')])
@@ -101,6 +107,8 @@
                                     @endif
                                 @endif
                               </div>
+
+
                             @endforeach
 
                         </div><!-- panel-body -->

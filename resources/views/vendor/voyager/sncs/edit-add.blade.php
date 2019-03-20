@@ -52,6 +52,10 @@
                             <!-- Adding / Editing -->
                             @php
                                 $dataTypeRows = $dataType->{(!is_null($dataTypeContent->getKey()) ? 'editRows' : 'addRows' )};
+
+
+                                //just for the loop
+                                $loopFirst = true;
                             @endphp
 
                             @foreach($dataTypeRows as $row)
@@ -61,7 +65,15 @@
                                     $display_options = isset($options->display) ? $options->display : NULL;
                                 @endphp
                                 @if ($options && isset($options->legend) && isset($options->legend->text))
-                                    <legend class="text-{{$options->legend->align ?? 'center'}}" style="background-color: {{$options->legend->bgcolor ?? '#f0f0f0'}};padding: 5px;">{{$options->legend->text}}</legend>
+                                    @if(!$loopFirst)
+                                        </div>
+                                    @else
+                                        @php($loopFirst=false)
+                                    @endif
+                                    <div class="row">
+                                      <div class="col-md-12">
+                                        <legend class="text-{{$options->legend->align ?? 'center'}}" style="color: {{$options->legend->color ?? '#333'}};background-color: {{$options->legend->bgcolor ?? '#f0f0f0'}};padding: 5px; padding-left: 15px; display:inline-block">{{$options->legend->text}}</legend>
+                                      </div>
                                 @endif
                                 <div class="form-group @if($row->type == 'hidden') hidden @endif col-md-{{ $display_options->width ?? 12 }}" @if(isset($display_options->id)){{ "id=$display_options->id" }}@endif>
                                 @if ($options && isset($options->formfields_custom))
