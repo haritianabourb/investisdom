@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Actions\ActivateAction;
 use Illuminate\Support\ServiceProvider;
 use App\FormFields\EmailHandler;
 use App\FormFields\MoneyHandler;
@@ -35,6 +36,8 @@ class InvestisDomServiceProvider extends ServiceProvider
         Voyager::addFormField(EmailHandler::class);
         Voyager::addFormField(MoneyHandler::class);
         Voyager::addFormField(PercentageHandler::class);
+
+        Voyager::addAction(ActivateAction::class);
         Voyager::replaceAction(EditAction::class, \App\Actions\EditAction::class);
     }
 }

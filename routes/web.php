@@ -35,6 +35,8 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 
+    Route::put("/user/{id}/activate", 'Investis\VoyagerUserController@activate')->name('admin.users.activate');
+
     Route::put("/{slug}/{id}/upload", 'Investis\UploadController@upload')->name('admin.document.upload');
 
     Route::group(['prefix' => 'cgps'], function(){
