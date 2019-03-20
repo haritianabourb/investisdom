@@ -1,4 +1,4 @@
-<a class="btn btn-info" id="bulk_activate_btn"><i class="voyager-info"></i> <span>{{ __('voyager::generic.bulk_activate') }}</span></a>
+<a class="btn btn-info" id="bulk_activate_btn" style="margin-top: 2px;"><i class="voyager-people"></i> <span>{{ __('generic.bulk_activate') }}</span></a>
 
 {{-- Bulk Activate modal --}}
 <div class="modal modal-info fade" tabindex="-1" id="bulk_activate_modal" role="dialog">
@@ -8,7 +8,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title">
-                    <i class="voyager-info"></i> {{ __('voyager::generic.are_you_sure_activate') }} <span id="bulk_activate_count"></span> <span id="bulk_activate_display_name"></span>?
+                    <i class="voyager-info"></i> {{ __('generic.are_you_sure_activate') }} <span id="bulk_activate_count"></span> <span id="bulk_activate_display_name"></span>?
                 </h4>
             </div>
             <div class="modal-body" id="bulk_activate_modal_body">
@@ -20,10 +20,10 @@
                     <input type="hidden" name="ids" id="bulk_activate_input" value="">
                     <input type="hidden" name="activate" id="bulk_activate_input" value="activate">
                     <input type="submit" class="btn btn-info pull-right activate-confirm"
-                             value="{{ __('voyager::generic.bulk_activate_confirm') }} {{ strtolower($dataType->display_name_plural) }}">
+                             value="{{ __('generic.bulk_activate_confirm') }} {{ strtolower($dataType->display_name_plural) }}">
                 </form>
                 <button type="button" class="btn btn-default pull-right" data-dismiss="modal">
-                    {{ __('voyager::generic.cancel') }}
+                    {{ __('generic.cancel') }}
                 </button>
             </div>
         </div><!-- /.modal-content -->
@@ -64,7 +64,7 @@ window.addEventListener('load' ,  function () {
             $bulkActivateModal.modal('show');
         } else {
             // No row selected
-            toastr.warning('{{ __('voyager::generic.bulk_activate_nothing') }}');
+            toastr.warning('{{ __('generic.bulk_activate_nothing') }}');
         }
     });
 });

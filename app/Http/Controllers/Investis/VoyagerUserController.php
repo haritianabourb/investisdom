@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Investis;
 
+use App\Events\User\UserActivated;
 use Illuminate\Http\Request;
 use TCG\Voyager\Http\Controllers\VoyagerUserController as BaseVoyagerUserController;
 use Voyager;
@@ -68,26 +69,17 @@ class VoyagerUserController extends BaseVoyagerUserController
 
         $displayName = count($ids) > 1 ? $dataType->display_name_plural : $dataType->display_name_singular;
 
-        \Log::info("User Activated", ['User' => $data, "Model" => $model]);
-        \Log::info("activate action on user model", ['User' => $data, "Model" => $model]);
         $res = $data->turnOn($ids);
 
         $data = $res
             ? [
-                'message'    => __('voyager::generic.successfully_activated')." {$displayName}",
+                'message'    => __('generic.successfully_activated')." {$displayName}",
                 'alert-type' => 'success',
             ]
             : [
-                'message'    => __('voyager::generic.error_deleting')." {$displayName}",
+                'message'    => __('generic.error_activating')." {$displayName}",
                 'alert-type' => 'error',
             ];
-
-        if ($res) {
-            \Log::info("User Event Activated Thrown", ['User' => $data, "Model" => $model]);
-            \Log::info("TODO throw event action on user activated", ['User' => $data, "Model" => $model]);
-            // event(new UserActivated($dataType, $data));
-
-        }
 
         return redirect()->route("voyager.{$dataType->slug}.index")->with($data);
     }

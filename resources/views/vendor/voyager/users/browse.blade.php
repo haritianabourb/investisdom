@@ -252,13 +252,13 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="{{ __('voyager::generic.close') }}"><span
                                 aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title"><i class="voyager-trash"></i> {{ __('voyager::generic.activate_question') }} {{ strtolower($dataType->display_name_singular) }}?</h4>
+                    <h4 class="modal-title"><i class="voyager-person"></i> {{ __('generic.activate_question') }} {{ strtolower($dataType->display_name_singular) }}?</h4>
                 </div>
                 <div class="modal-footer">
                     <form action="#" id="activate_form" method="POST">
                         {{ method_field("PUT") }}
                         {{ csrf_field() }}
-                        <input type="submit" class="btn btn-info pull-right activate-confirm" value="{{ __('voyager::generic.activate_confirm') }}">
+                        <input type="submit" class="btn btn-info pull-right activate-confirm" value="{{ __('generic.activate_confirm') }}">
                     </form>
                     <button type="button" class="btn btn-default pull-right" data-dismiss="modal">{{ __('voyager::generic.cancel') }}</button>
                 </div>

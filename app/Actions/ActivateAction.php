@@ -8,12 +8,12 @@ class ActivateAction extends AbstractAction
 {
     public function getTitle()
     {
-        return __('voyager::generic.activate');
+        return __('generic.activate');
     }
 
     public function getIcon()
     {
-        return 'voyager-info';
+        return 'voyager-person';
     }
 
     public function getDataType()

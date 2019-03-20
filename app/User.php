@@ -89,6 +89,10 @@ class User extends \TCG\Voyager\Models\User
             return;
         }
 
+        if($this->activate_at){
+            return false;
+        }
+
         if ($this->fireModelEvent('activating') === false) {
             return false;
         }
