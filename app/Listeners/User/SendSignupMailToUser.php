@@ -17,7 +17,6 @@ use App\Notifications\UserSignup;
 class SendSignupMailToUser
 {
         public function handle(UserActivated $event){
-//            dd($event->getUser());
             $user = $event->getUser();
 
             $signup = null;

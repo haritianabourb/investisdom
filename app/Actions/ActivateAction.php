@@ -16,6 +16,11 @@ class ActivateAction extends AbstractAction
         return 'voyager-info';
     }
 
+    public function getDataType()
+    {
+        return 'users';
+    }
+
     public function getPolicy()
     {
         return $this->data->activated_at ? false : 'edit';
