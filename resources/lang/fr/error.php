@@ -11,6 +11,22 @@ return [
     'yousign'  => [
         "already_exist" => "Procédure Yousign Existante",
         "yousign" => "yousign",
+        "procedure_init" => [
+            "context" => "Initialisation de la procédure",
+            "description" => "Yousign Initialisation de la procédure Impossible, veuillez contacter un administrateur."
+        ],
+        "procedure_members" => [
+            "context" => "Procédure Yousigne: Ajout de membres",
+            "description" => "Procédure impossible, vérifiez les champ email et téléphone de tous les contacts. si tous les champs sont renseignés, veuillez contacter un administrateur."
+        ],
+        "procedure_signatures" => [
+            "context" => "Yousign: Ajout des Signatures",
+            "description" => "Ajout des signature impossible, Veuillez contacter un administrateur."
+        ],
+        "procedure_start" => [
+            "context" => "Yousign: Début de la procédure",
+            "description" => "Début de la procédure impossible, Veuillez contacter un administrateur."
+        ]
 
     ]
 ];

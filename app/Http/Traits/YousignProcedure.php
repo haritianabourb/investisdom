@@ -55,10 +55,25 @@ trait YousignProcedure
                 $yousignProcedure = $this->getYousignClient()->request('POST', "{$this->yousignUrl}/procedures",
                     ['json' => $request]);
 
-            } catch (\GuzzleHttp\Exception\ClientException $e) {
+            } catch (\GuzzleHttp\Exception\GuzzleException $e) {
 
+                $context = [
+                    "context" => __("error.yousign.procedure_init.context"),
+                    "description" => __("error.yousign.procedure_start.description"),
+                    "request" => collect($request)->except("config")->toArray(),
+                    "response" => [
+                        "reason" => $e->getResponse()->getReasonPhrase(),
+                        "message" => $e->getResponse()->getBody()->getContents(),
+                        "code" => $e->getResponse()->getStatusCode(),
+                    ],
+                    "error" => [
+                        'code' => $e->getCode(),
+                        'message' => $e->getMessage()
+                    ]
 
-                dd($request, $e->getResponse()->getBody()->getContents());
+                ];
+
+                throw new \Error(json_encode($context));
 
             }
             $this->yousignProcedure = json_decode($yousignProcedure->getBody()->getContents());
@@ -76,14 +91,14 @@ trait YousignProcedure
             // Ok it exist,
             foreach ($files = $this->getFiles() as $name => $file) {
                 $encoded_pdf = base64_encode($file);
-                $file_request_body = [
+                $request = [
                     'procedure' => $this->getYousignProcedure()->id,
                     'name' => $name,
                     'content' => $encoded_pdf,
                     'type' => 'signable'
                 ];
 
-                $response_file = $this->getYousignClient()->request('POST', "{$this->yousignUrl}/files", ['json' => $file_request_body]);
+                $response_file = $this->getYousignClient()->request('POST', "{$this->yousignUrl}/files", ['json' => $request]);
                 $response_file_decoded[] = json_decode($response_file->getBody()->getContents());
 
             }
@@ -102,30 +117,48 @@ trait YousignProcedure
             $yousignMembers = [];
             $yousignClient = $this->getYousignClient();
 
-            $this->getMembers()->transform(function ($user, $key) use (&$yousignMembers, $yousignClient){
+            $this->getMembers()->transform(function ($user) use (&$yousignMembers, $yousignClient) {
                 $user->put("procedure", $this->getYousignProcedure()->id);
 
                 try {
+                    $request = $user->except('fileObjects')->toArray();
 
                     $yousignProcedure = $yousignClient->request('POST', "{$this->yousignUrl}/members", [
-                        'json' => $user->except('fileObjects')->toArray()
+                        'json' => $request
                     ]);
 
-                    $yousignUser = json_decode($yousignProcedure->getBody()->getContents());
+                } catch (\GuzzleHttp\Exception\GuzzleException $e) {
+                    $context = [
+                        "context" => __("error.yousign.procedure_members.context"),
+                        "description" => __("error.yousign.procedure_members.description"),
+                        "additional" => [
+                            "user" => $user,
+                        ],
+                        "request" => collect($request)->except("config")->toArray(),
+                        "response" => [
+                            "reason" => $e->getResponse()->getReasonPhrase(),
+                            "message" => $e->getResponse()->getBody()->getContents(),
+                            "code" => $e->getResponse()->getStatusCode(),
+                        ],
+                        "error" => [
+                            'code' => $e->getCode(),
+                            'message' => $e->getMessage()
+                        ]
 
-                    $user->put('id', $yousignUser->id);
+                    ];
 
-                } catch (\GuzzleHttp\Exception\ClientException $e) {
-
-                    dd("Member", $user, $e->getResponse()->getBody()->getContents());
-
+                    throw new \Error(json_encode($context));
                 }
 
-                if($user->get("fileObjects")){
+                $yousignUser = json_decode($yousignProcedure->getBody()->getContents());
 
-                    $user->get("fileObjects")->transform(function($fileObject, $fileName) use ($user){
+                $user->put('id', $yousignUser->id);
+
+                if ($user->get("fileObjects")) {
+
+                    $user->get("fileObjects")->transform(function ($fileObject, $fileName) use ($user) {
                         foreach ($files = $this->getYousignFile() as $file) {
-                            if($fileName == $file->name){
+                            if ($fileName == $file->name) {
                                 foreach ($fileObject as $key => $fo) {
                                     $fo["member"] = $user->get("id");
                                     $fo["file"] = $file->id;
@@ -160,20 +193,37 @@ trait YousignProcedure
         if (!$this->yousignSignatures) {
             $this->yousignSignatures = [];
 
-                foreach ($users = $this->getYousignMembers() as $user) {
-                    foreach ($user->fileObjects as $fileObjects){
+            foreach ($users = $this->getYousignMembers() as $user) {
+                foreach ($user->fileObjects as $fileObjects) {
 
-                        try {
-                            $yousignProcedure = $this->getYousignClient()->request('POST', "{$this->yousignUrl}/file_objects", [
-                                'json' => $fileObjects
-                            ]);
-                        } catch (\GuzzleHttp\Exception\ClientException $e) {
-                            dd($user, $fileObjects, $e->getResponse()->getBody()->getContents());
-                        }
+                    try {
+                        $request = $fileObjects;
+                        $yousignProcedure = $this->getYousignClient()->request('POST', "{$this->yousignUrl}/file_objects", [
+                            'json' => $request
+                        ]);
+                    } catch (\GuzzleHttp\Exception\GuzzleException $e) {
+                        $context = [
+                            "context" => __("error.yousign.procedure_signatures.context"),
+                            "description" => __("error.yousign.procedure_signatures.description"),
+                            "request" => collect($request)->except("config")->toArray(),
+                            "response" => [
+                                "reason" => $e->getResponse()->getReasonPhrase(),
+                                "message" => $e->getResponse()->getBody()->getContents(),
+                                "code" => $e->getResponse()->getStatusCode(),
+                            ],
+                            "error" => [
+                                'code' => $e->getCode(),
+                                'message' => $e->getMessage()
+                            ]
+
+                        ];
+
+                        throw new \Error(json_encode($context));
+                    }
 
                     $this->yousignSignatures [] = json_decode($yousignProcedure->getBody()->getContents());
-                    }
                 }
+            }
         }
 
         return $this->yousignSignatures;
@@ -222,8 +272,6 @@ trait YousignProcedure
     public function yousignStartProcedure()
     {
 
-        $member = $this->member;
-
         // Step 1: create the procedure
         $this->getYousignProcedure();
 
@@ -236,23 +284,39 @@ trait YousignProcedure
         // Step 4: signatures objects files
         $this->getYousignSignatures();
 
-
         try {
-            $yousignProcedure = $this->getYousignClient()->request('PUT', $this->yousignUrl . $this->getYousignProcedure()->id,
-                ['json' => [
-                    "start" => true
-                ]
-                ]
-            );
-        } catch (\GuzzleHttp\Exception\ClientException $e) {
 
-            dd($e->getResponse()->getBody()->getContents());
+            $request = [
+                "start" => true
+            ];
 
+            $yousignProcedure = $this->getYousignClient()
+                ->request('PUT', $this->yousignUrl . $this->getYousignProcedure()->id, ['json' => $request]);
+
+        } catch (\GuzzleHttp\Exception\GuzzleException $e) {
+            $context = [
+                "context" => __("error.yousign.procedure_start.context"),
+                "description" => __("error.yousign.procedure_start.description"),
+                "request" => collect($request)->except("config")->toArray(),
+                "response" => [
+                    "reason" => $e->getResponse()->getReasonPhrase(),
+                    "message" => $e->getResponse()->getBody()->getContents(),
+                    "code" => $e->getResponse()->getStatusCode(),
+                ],
+                "error" => [
+                    'code' => $e->getCode(),
+                    'message' => $e->getMessage()
+                ]
+
+            ];
+
+            throw new \Error(json_encode($context));
         }
+
 
         $this->yousignProcedure = json_decode($yousignProcedure->getBody()->getContents());
 
-        return  $this->yousignReturnView();
+        return $this->yousignReturnView();
     }
 
     public function yousignReturnView()
@@ -283,8 +347,9 @@ trait YousignProcedure
         ];
     }
 
-    public function isExistingYousignProcedure($yousignProcedure){
-        if($yousignProcedure && $yousignProcedure != "null") {
+    public function isExistingYousignProcedure($yousignProcedure)
+    {
+        if ($yousignProcedure && $yousignProcedure != "null") {
             return json_decode($yousignProcedure);
         }
 

@@ -281,8 +281,17 @@ class ReservationController extends VoyagerBaseController
         $this->setFile($reservation);
         $this->setMember($reservation);
 
+        try{
+            $response = $this->yousignStartProcedure();
+        }catch(\Error $e){
+            $context = json_decode($e->getMessage());
 
-        $response = $this->yousignStartProcedure();
+            \Log::error("Yousign: Procedure {{$request["name"]}} initialization send an error ", collect($context)->toArray());
+
+            $this->alertError("{$context->context} <br> {$context->description} <br><br> <small>{$context->response->reason}<small></small>");
+
+            return redirect()->back()->with($this->alerts);
+        }
 
 
         // FIXME do an event, please!!!!
