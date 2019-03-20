@@ -19,6 +19,8 @@ class LegacySeeder extends Seeder
         $this->call(CSVContactSeeder::class);
         // CGP
         $this->call(CSVCGPSeeder::class);
+        // Taux CGP
+        $this->call(CSVTauxCGPSeeder::class);
         // Investors
         $this->call(CSVInvestorsSeeder::class);
 
