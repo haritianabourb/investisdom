@@ -28,6 +28,18 @@ class User extends \TCG\Voyager\Models\User
     ];
 
     /**
+     * User exposed observable events.
+     *
+     * These are extra user-defined events observers may subscribe to.
+     *
+     * @var array
+     */
+    protected $observables = [
+        'activating',
+        'activated'
+    ];
+
+    /**
      * Activate the users for the given IDs.
      *
      * @param  \Illuminate\Support\Collection|array|int  $ids

@@ -90,7 +90,7 @@ class CGPObserver
 
             // FIXME throw me on user observer when created
             $user->save();
-            event(new CGPUserCreated($user, $cgp, $contact, $password));
+//            event(new CGPUserCreated($user, $cgp, $contact, $password));
 
         }
 
