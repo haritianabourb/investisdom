@@ -16,48 +16,48 @@ use TCG\Voyager\Http\Controllers\VoyagerBaseController as BaseVoyagerBaseControl
 
 class VoyagerBaseController extends BaseVoyagerBaseController
 {
-  /**
-   * POST BRE(A)D - Store data.
-   *
-   * @param \Illuminate\Http\Request $request
-   *
-   * @return \Illuminate\Http\RedirectResponse
-   */
-  public function store(Request $request)
-  {
-      $slug = $this->getSlug($request);
+    /**
+     * POST BRE(A)D - Store data.
+     *
+     * @param \Illuminate\Http\Request $request
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function store(Request $request)
+    {
+        $slug = $this->getSlug($request);
 
-      $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
+        $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
 
-      // Check permission
-      $this->authorize('add', app($dataType->model_name));
+        // Check permission
+        $this->authorize('add', app($dataType->model_name));
 
-      // Validate fields with ajax
-      $val = $this->validateBread($request->all(), $dataType->addRows);
+        // Validate fields with ajax
+        $val = $this->validateBread($request->all(), $dataType->addRows);
 
-      if ($val->fails()) {
-          return redirect()->back()->with($this->alertError(
-              $val->messages()
-          ));
-      }
+        if ($val->fails()) {
+            return redirect()->back()->with($this->alertError(
+                $val->messages()
+            ));
+        }
 
-      if (!$request->has('_validate')) {
-          $data = $this->insertUpdateData($request, $slug, $dataType->addRows, new $dataType->model_name());
+        if (!$request->has('_validate')) {
+            $data = $this->insertUpdateData($request, $slug, $dataType->addRows, new $dataType->model_name());
 
-          event(new BreadDataAdded($dataType, $data));
+            event(new BreadDataAdded($dataType, $data));
 
-          if ($request->ajax()) {
-              return response()->json(['success' => true, 'data' => $data]);
-          }
+            if ($request->ajax()) {
+                return response()->json(['success' => true, 'data' => $data]);
+            }
 
-          return redirect()
-              ->route('voyager.'.$dataType->slug.'.show', [$dataType->name => $data])
-              ->with([
-                      'message'    => __('voyager::generic.successfully_added_new')." {$dataType->display_name_singular}",
-                      'alert-type' => 'success',
-                  ]);
-      }
-  }
+            return redirect()
+                ->route('voyager.' . $dataType->slug . '.show', [$dataType->name => $data])
+                ->with([
+                    'message' => __('voyager::generic.successfully_added_new') . " {$dataType->display_name_singular}",
+                    'alert-type' => 'success',
+                ]);
+        }
+    }
 
     //***************************************
     //                _____
@@ -86,13 +86,13 @@ class VoyagerBaseController extends BaseVoyagerBaseController
             if ($model && in_array(SoftDeletes::class, class_uses($model))) {
                 $model = $model->withTrashed();
             }
-            if ($dataType->scope && $dataType->scope != '' && method_exists($model, 'scope'.ucfirst($dataType->scope))) {
+            if ($dataType->scope && $dataType->scope != '' && method_exists($model, 'scope' . ucfirst($dataType->scope))) {
                 $model = $model->{$dataType->scope}();
             }
 
-            if( method_exists($model, 'sluggable')){
+            if (method_exists($model, 'sluggable')) {
                 $dataTypeContent = (call_user_func([$model, 'findBySlugOrFail'], $id));
-            }else{
+            } else {
                 $dataTypeContent = call_user_func([$model, 'findOrFail'], $id);
             }
 
@@ -150,13 +150,13 @@ class VoyagerBaseController extends BaseVoyagerBaseController
             if ($model && in_array(SoftDeletes::class, class_uses($model))) {
                 $model = $model->withTrashed();
             }
-            if ($dataType->scope && $dataType->scope != '' && method_exists($model, 'scope'.ucfirst($dataType->scope))) {
+            if ($dataType->scope && $dataType->scope != '' && method_exists($model, 'scope' . ucfirst($dataType->scope))) {
                 $model = $model->{$dataType->scope}();
             }
 
-            if( method_exists($model, 'sluggable')){
+            if (method_exists($model, 'sluggable')) {
                 $dataTypeContent = call_user_func([$model, 'findBySlugOrFail'], $id);
-            }else{
+            } else {
                 $dataTypeContent = call_user_func([$model, 'findOrFail'], $id);
             }
 
@@ -187,41 +187,43 @@ class VoyagerBaseController extends BaseVoyagerBaseController
         return Voyager::view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable'));
     }
 
-  // POST BR(E)AD
-  public function update(Request $request, $id)
-  {
-      $slug = $this->getSlug($request);
+    // POST BR(E)AD
+    public function update(Request $request, $id)
+    {
+        $slug = $this->getSlug($request);
 
-      $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
+        $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
 
-      // Compatibility with Model binding.
-      $id = $id instanceof Model ? $id->{$id->getKeyName()} : $id;
+        // Compatibility with Model binding.
+        $id = $id instanceof Model ? $id->{$id->getKeyName()} : $id;
 
-      $data = call_user_func([$dataType->model_name, 'findOrFail'], $id);
+        $model = app($dataType->model_name);
+        if ($dataType->scope && $dataType->scope != '' && method_exists($model, 'scope' . ucfirst($dataType->scope))) {
+            $model = $model->{$dataType->scope}();
+        }
+        if ($model && in_array(SoftDeletes::class, class_uses($model))) {
+            $data = $model->withTrashed()->findOrFail($id);
+        } else {
+            $data = call_user_func([$dataType->model_name, 'findOrFail'], $id);
+        }
 
-      // Check permission
-      $this->authorize('edit', $data);
+        // Check permission
+        $this->authorize('edit', $data);
 
-      // Validate fields with ajax
-      $val = $this->validateBread($request->all(), $dataType->editRows, $dataType->name, $id);
+        // Validate fields with ajax
+        $this->validateBread($request->all(), $dataType->editRows, $dataType->name, $id)->validate();
+        $this->insertUpdateData($request, $slug, $dataType->editRows, $data);
 
-      if ($val->fails()) {
-          return response()->json(['errors' => $val->messages()]);
-      }
+        event(new BreadDataUpdated($dataType, $data));
 
-      if (!$request->ajax()) {
-          $this->insertUpdateData($request, $slug, $dataType->editRows, $data);
+        return redirect()
+            ->route('voyager.' . $dataType->slug . '.show', [$dataType->name => $data])
+            ->with([
+                'message' => __('voyager::generic.successfully_updated') . " {$dataType->display_name_singular}",
+                'alert-type' => 'success',
+            ]);
+    }
 
-          event(new BreadDataUpdated($dataType, $data));
-
-          return redirect()
-              ->route('voyager.'.$dataType->slug.'.show', [$dataType->name => $data])
-              ->with([
-                  'message'    => __('voyager::generic.successfully_updated')." {$dataType->display_name_singular}",
-                  'alert-type' => 'success',
-              ]);
-      }
-  }
 
     public function insertUpdateData($request, $slug, $rows, $data)
     {
@@ -254,7 +256,7 @@ class VoyagerBaseController extends BaseVoyagerBaseController
             /*
              * merge ex_images and upload images
              */
-            if (in_array($row->type , ['multiple_images']) && !is_null($content)) {
+            if (in_array($row->type, ['multiple_images']) && !is_null($content)) {
                 if (isset($data->{$row->field})) {
                     $ex_files = json_decode($data->{$row->field}, true);
                     if (!is_null($ex_files)) {
@@ -266,8 +268,8 @@ class VoyagerBaseController extends BaseVoyagerBaseController
             /*
              * upload images
              */
-            if (in_array($row->type , ['file']) && !is_null($content)) {
-                if(is_array(json_decode($content)) && !count(json_decode($content))){
+            if (in_array($row->type, ['file']) && !is_null($content)) {
+                if (is_array(json_decode($content)) && !count(json_decode($content))) {
                     $content = null;
                 }
             }
@@ -322,18 +324,18 @@ class VoyagerBaseController extends BaseVoyagerBaseController
         }
 
         // Rename folders for newly created data through media-picker
-        if ($request->session()->has($slug.'_path') || $request->session()->has($slug.'_uuid')) {
-            $old_path = $request->session()->get($slug.'_path');
-            $uuid = $request->session()->get($slug.'_uuid');
+        if ($request->session()->has($slug . '_path') || $request->session()->has($slug . '_uuid')) {
+            $old_path = $request->session()->get($slug . '_path');
+            $uuid = $request->session()->get($slug . '_uuid');
             $new_path = str_replace($uuid, $data->getKey(), $old_path);
-            $folder_path = substr($old_path, 0, strpos($old_path, $uuid)).$uuid;
+            $folder_path = substr($old_path, 0, strpos($old_path, $uuid)) . $uuid;
 
             $rows->where('type', 'media_picker')->each(function ($row) use ($data, $uuid) {
                 $data->{$row->field} = str_replace($uuid, $data->getKey(), $data->{$row->field});
             });
             $data->save();
             if ($old_path != $new_path && !Storage::disk(config('voyager.storage.disk'))->exists($new_path)) {
-                $request->session()->forget([$slug.'_path', $slug.'_uuid']);
+                $request->session()->forget([$slug . '_path', $slug . '_uuid']);
                 Storage::disk(config('voyager.storage.disk'))->move($old_path, $new_path);
                 Storage::disk(config('voyager.storage.disk'))->deleteDirectory($folder_path);
             }

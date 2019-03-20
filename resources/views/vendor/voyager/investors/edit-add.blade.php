@@ -61,6 +61,9 @@
                                 @php
                                     $options = $row->details;
                                     $display_options = isset($options->display) ? $options->display : NULL;
+                                    if ($dataTypeContent->{$row->field.'_'.($dataTypeContent->getKey() ? 'edit' : 'add')}) {
+                                        $dataTypeContent->{$row->field} = $dataTypeContent->{$row->field.'_'.($dataTypeContent->getKey() ? 'edit' : 'add')};
+                                    }
                                 @endphp
                                 @if ($options && isset($options->legend) && isset($options->legend->text))
                                   @if(!$loop->first)
@@ -78,10 +81,12 @@
                                     @include('voyager::formfields.custom.' . $options->formfields_custom)
                                 @else
                                         {{ $row->slugify }}
-                                        <label for="name">{{ $row->display_name }}</label>
+                                        <label class="control-label" for="name">{{ $row->display_name }}</label>
                                         @include('voyager::multilingual.input-hidden-bread-edit-add')
-                                        @if($row->type == 'relationship')
-                                            @include('voyager::formfields.relationship')
+                                        @if (isset($row->details->view))
+                                            @include($row->details->view, ['row' => $row, 'dataType' => $dataType, 'dataTypeContent' => $dataTypeContent, 'content' => $dataTypeContent->{$row->field}, 'action' => ($edit ? 'edit' : 'add')])
+                                        @elseif ($row->type == 'relationship')
+                                        @include('voyager::formfields.relationship', ['options' => $row->details])
                                         @else
                                             {!! app('voyager')->formField($row, $dataType, $dataTypeContent) !!}
                                         @endif
@@ -89,6 +94,11 @@
                                         @foreach (app('voyager')->afterFormFields($row, $dataType, $dataTypeContent) as $after)
                                             {!! $after->handle($row, $dataType, $dataTypeContent) !!}
                                         @endforeach
+                                    @if ($errors->has($row->field))
+                                        @foreach ($errors->get($row->field) as $error)
+                                            <span class="help-block">{{ $error }}</span>
+                                        @endforeach
+                                    @endif
                                 @endif
                               </div>
                             @endforeach
@@ -141,8 +151,26 @@
 
 @section('javascript')
     <script>
-        var params = {}
-        var $image
+        var params = {};
+        var $file;
+        var $image;
+        function deleteHandler(tag, isMulti) {
+            return function() {
+                $file = $(this).siblings(tag);
+
+                params = {
+                    slug:   '{{ $dataType->slug }}',
+                    filename:  $file.data('file-name'),
+                    id:     $file.data('id'),
+                    field:  $file.parent().data('field-name'),
+                    multi: isMulti,
+                    _token: '{{ csrf_token() }}'
+                }
+
+                $('.confirm_delete_name').text(params.filename);
+                $('#confirm_delete_modal').modal('show');
+            };
+        }
 
         $('document').ready(function () {
             $('.toggleswitch').bootstrapToggle();
@@ -164,21 +192,10 @@
                 $(el).slugify();
             });
 
-            $('.form-group').on('click', '.remove-multi-image', function (e) {
-                e.preventDefault();
-                $image = $(this).siblings('img');
-
-                params = {
-                    slug:   '{{ $dataType->slug }}',
-                    image:  $image.data('image'),
-                    id:     $image.data('id'),
-                    field:  $image.parent().data('field-name'),
-                    _token: '{{ csrf_token() }}'
-                }
-
-                $('.confirm_delete_name').text($image.data('image'));
-                $('#confirm_delete_modal').modal('show');
-            });
+            $('.form-group').on('click', '.remove-multi-image', deleteHandler('img', true));
+            $('.form-group').on('click', '.remove-single-image', deleteHandler('img', false));
+            $('.form-group').on('click', '.remove-multi-file', deleteHandler('a', true));
+            $('.form-group').on('click', '.remove-single-file', deleteHandler('a', false));
 
             $('#confirm_delete').on('click', function(){
                 $.post('{{ route('voyager.media.remove') }}', params, function (response) {
@@ -188,9 +205,9 @@
                         && response.data.status == 200 ) {
 
                         toastr.success(response.data.message);
-                        $image.parent().fadeOut(300, function() { $(this).remove(); })
+                        $file.parent().fadeOut(300, function() { $(this).remove(); })
                     } else {
-                        toastr.error("Error removing image.");
+                        toastr.error("Error removing file.");
                     }
                 });
 

@@ -34,7 +34,11 @@
                 <div class="panel panel-bordered" style="padding-bottom:5px;">
                   <div class="panel-body" style="padding-top:10px;">
                     <!-- View Start -->
-                    @foreach($dataType->readRows->filter(function($item, $key) use ($dataTypeContent){
+                    @foreach($dataType->readRows->filter(function($item) use ($dataTypeContent){
+                            if($item->type == 'file'){
+                                return true;
+                            }
+
                             if(!$dataTypeContent->{$item->field}) {
                                 return false;
                             }
@@ -135,19 +139,19 @@
                                               </a>
                                               <br/>
                                           @endforeach
-                                      @else
-                                          <form role="form"
-                                                class="form-edit-add"
-                                                id="{{$dataType->name}}_edit_add"
-                                                action="{{ route('admin.document.upload', ['slug'=>$dataType->slug , 'id' => $dataTypeContent->getKey()]) }}"
-                                                method="POST" enctype="multipart/form-data">
-                                              <input @if($row->required == 1 && !isset($dataTypeContent->{$row->field})) required @endif type="file" name="{{ $row->field }}[]" multiple="multiple">
-                                              <button type="submit" class="btn btn-primary save">{{ __('voyager::generic.save') }}</button>
-                                              {{ csrf_field() }}
-                                              {{ method_field("PUT") }}
-                                          </form>
-
                                       @endif
+                                  @else
+                                      <form role="form"
+                                            class="form-edit-add"
+                                            id="{{$dataType->name}}_edit_add"
+                                            action="{{ route('admin.document.upload', ['slug'=>$dataType->slug , 'id' => $dataTypeContent->getKey()]) }}"
+                                            method="POST" enctype="multipart/form-data">
+                                          <input @if($row->required == 1 && !isset($dataTypeContent->{$row->field})) required @endif type="file" name="{{ $row->field }}[]" multiple="multiple">
+                                          <button type="submit" class="btn btn-primary save">{{ __('voyager::generic.save') }}</button>
+                                          {{ csrf_field() }}
+                                          {{ method_field("PUT") }}
+                                      </form>
+
                                   @endif
                             @elseif($row->type == 'money')
                                   @include('voyager::partials.money')
