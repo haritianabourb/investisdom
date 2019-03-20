@@ -28,6 +28,7 @@ class UsersTableSeeder extends Seeder
                 'remember_token' => '92Nf9hQnfcL3A8CL4ro3HJVUXyJVwYVcLgqYc09WdoIjyDhu9Dc1OmSpmjK4',
                 'settings' => NULL,
                 'created_at' => '2018-08-13 13:25:50',
+                'activated_at' => '2018-08-13 13:25:50',
                 'updated_at' => '2018-08-13 13:25:50',
             ),
 
@@ -41,6 +42,7 @@ class UsersTableSeeder extends Seeder
                 'remember_token' => null,
                 'settings' => '{"locale":"fr"}',
                 'created_at' => '2018-08-23 17:14:58',
+                'activated_at' => '2018-08-23 17:14:58',
                 'updated_at' => '2018-08-23 17:14:58',
             ),
 
@@ -55,6 +57,7 @@ class UsersTableSeeder extends Seeder
                 'settings' => '{"locale":"fr"}',
                 'created_at' => '2018-08-12 14:28:45',
                 'updated_at' => '2019-03-14 05:38:33',
+                'activated_at' => '2019-03-14 05:38:33',
             ),
 
         ));
