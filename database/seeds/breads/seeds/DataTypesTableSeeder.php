@@ -307,24 +307,6 @@ class DataTypesTableSeeder extends Seeder
             ),
             
             array (
-                'id' => 1,
-                'name' => 'users',
-                'slug' => 'users',
-                'display_name_singular' => 'User',
-                'display_name_plural' => 'Users',
-                'icon' => 'voyager-person',
-                'model_name' => 'App\\User',
-                'policy_name' => 'TCG\\Voyager\\Policies\\UserPolicy',
-                'controller' => 'App\\Http\\Controllers\\Investis\\VoyagerUserController',
-                'description' => NULL,
-                'generate_permissions' => 1,
-                'server_side' => 0,
-                'details' => '{"order_column":null,"order_display_column":null}',
-                'created_at' => '2018-08-12 14:26:04',
-                'updated_at' => '2019-03-20 20:42:24',
-            ),
-            
-            array (
                 'id' => 12,
                 'name' => 'investors',
                 'slug' => 'investors',
@@ -340,6 +322,24 @@ class DataTypesTableSeeder extends Seeder
                 'details' => '{"order_column":null,"order_display_column":null}',
                 'created_at' => '2018-09-10 15:53:00',
                 'updated_at' => '2019-03-20 20:49:21',
+            ),
+            
+            array (
+                'id' => 1,
+                'name' => 'users',
+                'slug' => 'users',
+                'display_name_singular' => 'User',
+                'display_name_plural' => 'Users',
+                'icon' => 'voyager-person',
+                'model_name' => 'App\\User',
+                'policy_name' => 'TCG\\Voyager\\Policies\\UserPolicy',
+                'controller' => 'App\\Http\\Controllers\\Investis\\VoyagerUserController',
+                'description' => NULL,
+                'generate_permissions' => 1,
+                'server_side' => 0,
+                'details' => '{"order_column":null,"order_display_column":null}',
+                'created_at' => '2018-08-12 14:26:04',
+                'updated_at' => '2019-03-20 21:37:43',
             ),
         ));
         
