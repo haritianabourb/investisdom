@@ -11,7 +11,7 @@
             <?php $selected_value = old($row->field); ?>
         @endif
 
-        <select class="form-control select2" name="{{ $row->field }}">
+        <select class="form-control select2" name="{{ $row->field }}" id="{{ $row->field }}">
             <?php $default = (isset($options->default) && !isset($dataTypeContent->{$row->field})) ? $options->default : null; ?>
 
             @if(isset($options->options))
@@ -54,7 +54,7 @@
             @endforeach
             </optgroup>
         </select>
-        @if(isset($options->relationship->modal) && $options->relationship->modal)
+        @if(isset($options->relationship->modal) && $options->relationship->modal && \Auth::user()->hasRole(["admin", "investis", "investisdom"]))
           @php
             $relationshipDataType = app('voyager')->model('DataType')->where('model_name', '=', get_class($relationshipClass))->first();
             $relationshipDataTypeRows = $relationshipDataType->addRows->filter(function($item, $key){
@@ -76,13 +76,13 @@
           @endpush
         @endif
     @else
-        <select class="form-control select2" name="{{ $row->field }}"></select>
+        <select class="form-control select2" name="{{ $row->field }}" id="{{ $row->field }}"></select>
     @endif
 
 
 @else
     <?php $selected_value = (isset($dataTypeContent->{$row->field}) && !is_null(old($row->field, $dataTypeContent->{$row->field}))) ? old($row->field, $dataTypeContent->{$row->field}) : old($row->field); ?>
-    <select class="form-control select2" name="{{ $row->field }}">
+    <select class="form-control select2" name="{{ $row->field }}" id="{{ $row->field }}">
         <?php $default = (isset($options->default) && !isset($dataTypeContent->{$row->field})) ? $options->default : null; ?>
         @if(isset($options->options))
             @foreach($options->options as $key => $option)

@@ -16,11 +16,12 @@
             @include('voyager::partials.bulk-delete')
         @endcan
         @can('edit',app($dataType->model_name))
-        @if(isset($dataType->order_column) && isset($dataType->order_display_column))
-            <a href="{{ route('voyager.'.$dataType->slug.'.order') }}" class="btn btn-primary">
-                <i class="voyager-list"></i> <span>{{ __('voyager::bread.order') }}</span>
-            </a>
-        @endif
+            @if(isset($dataType->order_column) && isset($dataType->order_display_column))
+                <a href="{{ route('voyager.'.$dataType->slug.'.order') }}" class="btn btn-primary">
+                    <i class="voyager-list"></i> <span>{{ __('voyager::bread.order') }}</span>
+                </a>
+            @endif
+            @include('voyager::partials.users.bulk-activate')
         @endcan
         @include('voyager::multilingual.language-selector')
     </div>
@@ -88,7 +89,7 @@
                                 </thead>
                                 <tbody>
                                     @foreach($dataTypeContent->filter(function($item, $key){
-                                      if($item->role->name == 'admin'){
+                                      if($item->role && $item->role->name == 'admin'){
                                         return auth()->user()->role->name == 'admin';
                                       }
                                       return true;
@@ -129,7 +130,7 @@
                                                     @if($data->{$row->field . '_page_slug'})
                                                         <a href="{{ $data->{$row->field . '_page_slug'} }}">{!! $options->options->{$data->{$row->field}} !!}</a>
                                                     @else
-                                                        {!! $options->options->{$data->{$row->field}} or '' !!}
+                                                        {!! $options->options->{$data->{$row->field}} ?? '' !!}
                                                     @endif
 
 
@@ -243,6 +244,27 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
+
+    {{-- Single activate modal --}}
+    <div class="modal modal-info fade" tabindex="-1" id="activate_modal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="{{ __('voyager::generic.close') }}"><span
+                                aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title"><i class="voyager-person"></i> {{ __('generic.activate_question') }} {{ strtolower($dataType->display_name_singular) }}?</h4>
+                </div>
+                <div class="modal-footer">
+                    <form action="#" id="activate_form" method="POST">
+                        {{ method_field("PUT") }}
+                        {{ csrf_field() }}
+                        <input type="submit" class="btn btn-info pull-right activate-confirm" value="{{ __('generic.activate_confirm') }}">
+                    </form>
+                    <button type="button" class="btn btn-default pull-right" data-dismiss="modal">{{ __('voyager::generic.cancel') }}</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 @stop
 
 @section('css')
@@ -290,6 +312,12 @@
         $('td').on('click', '.delete', function (e) {
             $('#delete_form')[0].action = '{{ route('voyager.'.$dataType->slug.'.destroy', ['id' => '__id']) }}'.replace('__id', $(this).data('id'));
             $('#delete_modal').modal('show');
+        });
+
+        var activateFormAction;
+        $('td').on('click', '.activate', function (e) {
+            $('#activate_form')[0].action = '{{ route('admin.'.$dataType->slug.'.activate', ['id' => '__id']) }}'.replace('__id', $(this).data('id'));
+            $('#activate_modal').modal('show');
         });
     </script>
 @stop

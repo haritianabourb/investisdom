@@ -4,6 +4,7 @@ namespace App;
 
 use App\Scopes\SelfScope;
 use Illuminate\Database\Eloquent\Model;
+use Voyager;
 
 
 class Reservation extends Model
@@ -47,7 +48,8 @@ class Reservation extends Model
   }
 
   public function investorsId(){
-    return $this->belongsTo(Investor::class, 'investors_id', 'id');
+    return $this->investor();
+//    return $this->belongsTo(Investor::class, 'investors_id', 'id');
   }
 
   public function cgpsId(){
@@ -59,5 +61,46 @@ class Reservation extends Model
 
       $this->fireModelEvent('afterGeneratePdf');
   }
+
+  public function investor(){
+      return $this->belongsTo(Investor::class, 'investors_id', 'id');
+  }
+
+    public function getIdentifiantBrowseAttribute(){
+        $dataType = Voyager::model('DataType')->where('model_name', '=', get_class($this))->first();
+        return view('voyager::reservations.partials.identifiant-browse', ["reservation" => $this, 'dataType' => $dataType])->render();
+    }
+
+    public function getInvestorsIdBrowseAttribute(){
+        return $this->investorsId()->first()->full_name;
+    }
+
+    public function getInvestorsIdReadAttribute(){
+        return $this->investorsId()->first()->full_name;
+    }
+
+    public function getCgpsIdBrowseAttribute(){
+        return $this->cgpsId()->first()->name;
+    }
+
+    public function getCgpsIdReadAttribute(){
+        return $this->cgpsId()->first()->name;
+    }
+
+    public function getUserIdBrowseAttribute(){
+        return $this->getContact();
+    }
+
+    public function getUserIdReadAttribute(){
+        return $this->getContact('full_name_func_civ');
+    }
+
+    private function getContact($item = 'full_name_civ'){
+        if($contact = Contact::ofUser(User::find($this->user_id))->first()){
+            return $contact->$item;
+        }
+
+        return User::find($this->user_id)->name;
+    }
 
 }

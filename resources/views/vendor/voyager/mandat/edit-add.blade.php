@@ -49,6 +49,10 @@
                             <!-- Adding / Editing -->
                             @php
                                 $dataTypeRows = $dataType->{(!is_null($dataTypeContent->getKey()) ? 'editRows' : 'addRows' )};
+
+
+                                //just for the loop
+                                $loopFirst = true;
                             @endphp
                             @foreach($dataTypeRows as $row)
                                 <!-- GET THE DISPLAY OPTIONS -->
@@ -57,15 +61,17 @@
                                     $display_options = isset($options->display) ? $options->display : NULL;
                                 @endphp
                                 @if ($options && isset($options->legend) && isset($options->legend->text))
-                                  @if(!$loop->first)
+                                    @if(!$loopFirst)
                                     </div>
+                                    @else
+                                        @php($loopFirst=false)
                                   @endif
                                     <div class="row">
                                       <div class="col-md-12">
-                                        <legend class="text-{{$options->legend->align or 'center'}}" style="color: {{$options->legend->color or '#333'}};background-color: {{$options->legend->bgcolor or '#f0f0f0'}};padding: 5px; padding-left: 15px; display:inline-block">{{$options->legend->text}}</legend>
+                                        <legend class="text-{{$options->legend->align ?? 'center'}}" style="color: {{$options->legend->color ?? '#333'}};background-color: {{$options->legend->bgcolor ?? '#f0f0f0'}};padding: 5px; padding-left: 15px; display:inline-block">{{$options->legend->text}}</legend>
                                       </div>
                                 @endif
-                                <div class="form-group @if($row->type == 'hidden') hidden @endif col-md-{{ $display_options->width or 12 }}" @if(isset($display_options->id)){{ "id=$display_options->id" }}@endif>
+                                <div class="form-group @if($row->type == 'hidden') hidden @endif col-md-{{ $display_options->width ?? 12 }}" @if(isset($display_options->id)){{ "id=$display_options->id" }}@endif>
                                 @if ($options && isset($options->formfields_custom))
                                     {{ $row->slugify }}
                                     <label for="name">{{ $row->display_name }}</label>
@@ -148,7 +154,7 @@
             $('.toggleswitch').bootstrapToggle();
 
             //Init datepicker for date fields if data-datepicker attribute defined
-            //or if browser does not handle date inputs
+            //?? if browser does not handle date inputs
             $('.form-group input[type=date]').each(function (idx, elt) {
                 if (elt.type != 'date' || elt.hasAttribute('data-datepicker')) {
                     elt.type = 'text';

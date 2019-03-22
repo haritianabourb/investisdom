@@ -17,9 +17,11 @@
             $item = $item->translate($options->locale);
         }
 
-        $isActive = null;
+        $listItemClass = null;
+        $linkAttributes =  null;
         $styles = null;
         $icon = null;
+        $caret = null;
 
         // Background Color or Color
         if (isset($options->color) && $options->color == true) {
@@ -29,9 +31,16 @@
             $styles = 'background-color:'.$item->color;
         }
 
-        // Check if link is current
+        // With Children Attributes
+        if(!$originalItem->children->isEmpty()) {
+            $linkAttributes =  'class="dropdown-toggle" data-toggle="dropdown"';
+            $caret = '<span class="caret"></span>';
+
         if(url($item->link()) == url()->current()){
-            $isActive = 'active';
+                $listItemClass = 'dropdown active';
+            }else{
+                $listItemClass = 'dropdown';
+            }
         }
 
         // Set Icon
@@ -41,13 +50,13 @@
 
     @endphp
 
-    <li class="{{ $isActive }}">
-        <a href="{{ url($item->link()) }}" target="{{ $item->target }}" style="{{ $styles }}">
+    <li class="{{ $listItemClass }}">
+        <a href="{{ url($item->link()) }}" target="{{ $item->target }}" style="{{ $styles }}" {!! $linkAttributes ?? '' !!}>
             {!! $icon !!}
             <span>{{ $item->title }}</span>
         </a>
         @if(!$originalItem->children->isEmpty())
-            @include('voyager::menu.default', ['items' => $originalItem->children, 'options' => $options])
+        @include('voyager::menu.bootstrap', ['items' => $originalItem->children, 'options' => $options, 'innerLoop' => true])
         @endif
     </li>
 @endforeach

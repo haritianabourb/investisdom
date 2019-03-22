@@ -25,6 +25,6 @@ class processCalculationMontantTTC
     public function handle(CalculateMontantTTC $event)
     {
         // Access the order using $event->order...
-        dd($event->mandat);
+        //dd($event->mandat);
     }
 }

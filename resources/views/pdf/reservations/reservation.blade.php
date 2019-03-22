@@ -322,10 +322,10 @@
 @section('body')
 <DIV id="page_1">
     <DIV id="id1_1">
-        <P class="p0 ft0">DEMANDE DE RESERVATION PRODUIT {{strtoupper(in_array($formulae->slug, ['confort', 'confort-echelonne']) ? "Confort" : "Serenite")}}</P>
+        <P class="p0 ft0">DEMANDE DE RESERVATION PRODUIT {{strtoupper(in_array($formulae->slug, ['confort', 'confort-echelonne']) ? "Confort" : "Serenite")}}<br/> {{$reservation->identifiant}}</P>
         <TABLE cellpadding=0 cellspacing=0 class="t0">
             <TR>
-                <TD class="tr0 td0"><P class="p2 ft2">Dossier : {{$reservation->identifiant}}</P></TD>
+                <TD class="tr0 td0"><P class="p2 ft2">&nbsp;</TD>
                 <TD class="tr0 td0"><P class="p2 ft2">Date : <NOBR>{{\Carbon\Carbon::now()->format('d-m-Y')}}</NOBR></P></TD>
             </TR>
             <TR>
@@ -513,7 +513,7 @@
                 <TD class="tr5 td6">
                     <P class="p0 ft3">
                         {{ $investor->prenom_invest }} {{ strtoupper($investor->name_invest) }}<br>
-                        Mention « Bon pour réservation »<br>
+                        Mention « Lu et approuvé, Bon pour réservation »<br>
                         signature
                     </P>
                 </TD>
@@ -601,7 +601,7 @@
 <DIV id="page_8">
     <DIV id="id8_1">
         <P class="p71 ft4">4. CONSENTEMENT DES EPOUX OU DES ENGAGES</P>
-        @if(!in_array($investor->regime_mat_invest, ["01", "04", "05", "06"]))
+        @if(!in_array($investor->regime_mat_invest, ["01", "03", "05", "06"]))
         <P class="p58 ft3">Je soussigné(e) :</P>
         <P class="p29 ft3">Prénom : {{$investor->prenom_conjoint ?: "-"}} </P>
         <P class="p29 ft3">Nom : {{$investor->nom_conjoint ?: "-"}} </P>

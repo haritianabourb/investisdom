@@ -2,10 +2,13 @@
 
 namespace App\Providers;
 
+use App\Actions\ActivateAction;
 use Illuminate\Support\ServiceProvider;
-use App\FormFields\MoneyFormField;
-use App\FormFields\PercentageFormField;
+use App\FormFields\EmailHandler;
+use App\FormFields\MoneyHandler;
+use App\FormFields\PercentageHandler;
 
+use TCG\Voyager\Actions\EditAction;
 use Validator;
 use Voyager;
 
@@ -30,8 +33,11 @@ class InvestisDomServiceProvider extends ServiceProvider
     public function register()
     {
         //Custom Form Fields
-        Voyager::addFormField(MoneyFormField::class);
-        Voyager::addFormField(PercentageFormField::class);
+        Voyager::addFormField(EmailHandler::class);
+        Voyager::addFormField(MoneyHandler::class);
+        Voyager::addFormField(PercentageHandler::class);
 
+        Voyager::addAction(ActivateAction::class);
+        Voyager::replaceAction(EditAction::class, \App\Actions\EditAction::class);
     }
 }

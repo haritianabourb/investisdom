@@ -11,26 +11,20 @@ function Task6_HideFieldsForInvestorsAndIntermediaries() {
         "[name=registered_key]",
         "[name=etablishment_code]"
     ].join(", "); //getting selector string for jQuery
+
     $("[name=nature_entities_id]").change(function() {
 
         if (this.value == "2") { //Société, show fields
             $(elementsToHide)
                 .parent().show("fast");
-            // $("[name=capital]").prop("required", true);
         } else { //otherwise, hide fields
             $(elementsToHide).val("")
                 .parent().hide("fast");
-            // $("[name=capital]").prop("required", false);
         }
     });
 
-    if ($("[name=nature_entities_id]").val() == "2") { //setting default visibility
-        $("#option-nature-entities-id-1").click();
-        $("#option-nature-entities-id-2").click();
-    } else {
-        $("#option-nature-entities-id-2").click();
-        $("#option-nature-entities-id-1").click();
-    }
+    $("[name=nature_entities_id]").val($("[name=nature_entities_id]").val() === null ? "1" : $("[name=nature_entities_id]").val()).trigger('change');
+
 }
 function Task4_IsReplacement() {
     if (!(window.location.href.indexOf("mandat") != -1))
@@ -171,15 +165,10 @@ function Task24_Network() {
 function Task31_RegimeMatrimonal() {
     if (!(window.location.href.indexOf("investors") != -1))
         return;
-    var elementsToHide = [
-        "[name=prenom_conjoint]",
-        "[name=nom_conjoint]",
-        "[name=nom_jeunefille_conjoint]",
-        "[name=birth_conjoint]"
-    ].join(", "); //getting selector string for jQuery
+
+    var elementsToHide = "[name$=_conjoint]";
 
     $("[name=regime_mat_invest]").change(function() {
-        console.log(this.value);
         if ((this.value == "02") || (this.value=="03") || (this.value=="04"))
         {//show fields
             $(elementsToHide)
@@ -194,30 +183,38 @@ function Task31_RegimeMatrimonal() {
 }
 
 function Task101_PVTECH() {
-    // if (!(window.location.href.indexOf("reservations") != -1))
-    //     return;
-    var elementsToHide = [
-        "[name=mode_paiement]"
-    ].join(", "); //getting selector string for jQuery
 
-    $("[name=paiement]").change(function() {
-        console.log(this.value);
-        if (this.value == "unique")
+    $("[name=type_contrats_id]").change(function(){
+        if (this.value == "2" || this.value == "4")
         {
-            $(elementsToHide).val("unique").parent().show("fast");
+            $("[name=paiement]").val("echelonne");
 
-            $("[name=type_contrats_id] option").prop("disabled", false);
-        } else { //otherwise, hide fields
-            $(elementsToHide).val("echelonne")
-                .parent().hide("fast");
+            $("[name=paiement] option[value=unique]").prop("disabled", true);
 
-            $("[name=type_contrats_id] option[value='1'], [name=type_contrats_id] option[value='2']").prop("disabled", true);
+        }else{
+            $("[name=paiement] option[value=unique]").prop("disabled", false);
         }
-        $("[name=type_contrats_id]").select2();
+
+        $("[name=paiement]").trigger("change");
     });
 
-    $("[name=regime_mat_invest]").trigger("change");
-    $("[name=type_contrats_id]").select2();
+    $("[name=paiement]").change(function() {
+        if (this.value == "unique")
+        {
+            $("[name=mode_paiement]").parent().show("fast");
+
+        } else {
+
+            $("[name=mode_paiement]").val("prelevement");
+            $("[name=mode_paiement]").trigger("change");
+            $("[name=mode_paiement]").parent().hide("fast");
+
+        }
+        // $("[name=type_contrats_id]").select2();
+    });
+
+    $("[name=type_contrats_id]").trigger("change");
+    $("[name=paiement]").trigger("change");
 }
 
 
@@ -251,6 +248,20 @@ $(document).ready(function() {
         setTimeout(function() {
             $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
         }, 0);
+    });
+
+    $('.panel-collapse').unbind('hide.bs.collapse');
+
+    $('.panel-collapse').on('hide.bs.collapse', function(e) {
+        var target = $(e.target);
+        if (!target.is('a')) {
+            target = target.parent();
+        }
+        if (!target.hasClass('collapsed')) {
+            return;
+        }
+        e.stopPropagation();
+        e.preventDefault();
     });
 
 });

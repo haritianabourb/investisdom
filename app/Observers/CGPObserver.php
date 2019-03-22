@@ -3,13 +3,15 @@
 namespace App\Observers;
 
 use App\CGP;
+use App\Contact;
 use App\Events\User\CGPUserCreated;
-use App\Mandat;
+
 // use App\TauxCGP;
 use App\Services\Amortization;
-use \App\Http\Traits\HasFieldsToCalculate;
 
 use App\User;
+use Log;
+use TCG\Voyager\Models\DataType;
 use TCG\Voyager\Models\Role;
 use Carbon\Carbon;
 
@@ -28,6 +30,8 @@ class CGPObserver
     public function creating(CGP $cgp)
     {
         $cgp->identifiant = "ATTEMPTID";
+        $this->setContactfor($cgp);
+
     }
 
     /**
@@ -43,30 +47,97 @@ class CGPObserver
             . substr(preg_replace('/\s/', '', stripAccents($cgp->registered_key)), -3)
             . "/" . $cgp->id;
 
-        // XXX little hack to not thrown the saving event for calculations
+        // FIXME little hack to not thrown the saving event for calculations
         DB::table($cgp->getTable())->where('id', $cgp->id)->update(['identifiant' => $identifiant]);
 
-        // TODO contact creation cgp:
-        $contact = \App\Contact::find($cgp->contact_id);
+        $this->fillRelatedWith($cgp, $cgp->contact);
+
+    }
+
+    public function belongsToManyAttached($relation, CGP $cgp, $id) {
+        $contact = Contact::where("id", $id)->first();
+        $this->fillUserWith($cgp, $contact);
+        $this->fillRelatedWith($cgp, $contact);
+
+    }
+
+    public function belongsToManyDetached($relation, CGP $cgp, $id) {
+        $contact = Contact::where("id", $id)->first();
+
         $user = User::find($contact->user_id);
+
+        if($user){
+            $user->role_id = null;
+            $user->roles()->detach();
+            $user->save();
+        }
+
+        $this->unsetRelatedWith($cgp, $contact);
+
+
+    }
+
+    private function fillUserWith(CGP $cgp, Contact $contact, Role $role = null)
+    {
+        $user = User::find($contact->user_id);
+
         if (!$user) {
-            $role = Role::where('name', 'cgp')->firstOrFail();
             $password = substr(md5($contact->email), random_int(0,5), 8);
             $user = new User;
             $user->name = $contact->full_name;
             $user->email = $contact->email;
             $user->password = bcrypt($password);
-            $user->role_id = $role->id;
+
+            // FIXME throw me on user observer when created
             $user->save();
 
-            $contact->user_id = $user->id;
-            $contact->save();
-
-            event(new CGPUserCreated($user, $cgp, $contact, $password));
         }
 
-        // TODO create default rate for cgp
+        $role = Role::where('name', $role ?? 'cgp')->firstOrFail();
+        $user->role_id = $role->id;
+
+        $user->save();
+
+        $contact->user_id = $user->id;
+        $contact->save();
+
+        return $user;
     }
 
+    private function fillRelatedWith(CGP $cgp, Contact $contact){
+        $dataType = DataType::where('model_name', CGP::class)->first();
+
+        DB::table('datatype_contacts')->insert([
+            'contact_id' => $contact->id,
+            'datatype_id' => $dataType->id,
+            'data_id' => $cgp->id,
+        ]);
+
+    }
+
+    private function unsetRelatedWith(CGP $cgp, Contact $contact){
+        $dataType = DataType::where('model_name', CGP::class)->first();
+
+        DB::table('datatype_contacts')->where([
+            'contact_id' => $contact->id,
+            'datatype_id' => $dataType->id,
+            'data_id' => $cgp->id,
+        ])->delete();
+    }
+
+    private function setContactfor(CGP $cgp)
+    {
+        $contact = \App\Contact::find($cgp->contact_id);
+
+        // FIXME Fastest resolving for pdf action and cgp profile, need to resolve this.
+        $cgp->contact_status = $contact->function;
+
+        $user = $this->fillUserWith($cgp, $contact);
+
+        $contact->user_id = $user->id;
+        $contact->save();
+
+        return $contact;
+    }
 
 }

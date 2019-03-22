@@ -2,6 +2,8 @@
 
 namespace App\Observers;
 
+use App\CGP;
+use App\Contact;
 use App\Reservation;
 use App\TauxCGP;
 use Carbon\Carbon;
@@ -25,7 +27,9 @@ class ReservationObserver
      */
       public function creating(Reservation $reservation)
     {
+        $reservation->user_id = \Auth::user()->id;
         $reservation->identifiant = "ATTEMPTID";
+
     }
 
     /**
@@ -75,7 +79,12 @@ class ReservationObserver
             }
         });
 
-        $reservation->user_id = \Auth::user()->id;
+        if(\Auth::user()->hasRole(["cgps", "cgp"])){
+            $contact = Contact::ofUser(\Auth::user())->firstOrFail();
+            $cgp = CGP::ofContact($contact)->firstOrFail();
+            $reservation->cgps_id = $cgp->id;
+        }
+
         // TODO make this for better fill, maybe had a log too
         $reservation->user_updated_id = \Auth::user()->id;
 

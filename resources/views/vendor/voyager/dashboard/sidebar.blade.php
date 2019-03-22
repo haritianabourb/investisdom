@@ -17,19 +17,25 @@
 
             <div class="panel widget center bgimage"
                  style="background-image:url({{ Voyager::image( Voyager::setting('admin.bg_image'), voyager_asset('images/bg.jpg') ) }}); background-size: cover; background-position: 0px;">
+                <a href="{{ route('voyager.profile') }}" class="profile-link">
+
                 <div class="dimmer"></div>
                 <div class="panel-content">
-                    <img src="{{ $user_avatar }}" class="avatar" alt="{{ Auth::user()->name }} avatar">
-                    <h4>{{ ucwords(Auth::user()->name) }}</h4>
-                    <p>{{ Auth::user()->email }}</p>
-
-                    <a href="{{ route('voyager.profile') }}" class="btn btn-primary">{{ __('voyager::generic.profile') }}</a>
+                    <img src="{{ $user_avatar }}" class="avatar" alt="{{ app('VoyagerAuth')->user()->name }} avatar">
+                    <h4>{{ ucwords(app('VoyagerAuth')->user()->name) }}</h4>
+                    <p>{{ app('VoyagerAuth')->user()->email }}</p>
                     <div style="clear:both"></div>
                 </div>
+                </a>
             </div>
 
         </div>
-
-        {!! menu('admin', 'admin_menu') !!}
+        <div id="adminmenu">
+            @if(\Auth::user()->hasRole(['admin', 'investis', "investisdom"]))
+                <admin-menu :items="{{ investis_menu('admin', '_json') }}"></admin-menu>
+            @else
+                <admin-menu :items="{{ investis_menu('user', '_json') }}"></admin-menu>
+            @endif
+        </div>
     </nav>
 </div>

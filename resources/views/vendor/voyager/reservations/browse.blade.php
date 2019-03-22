@@ -38,7 +38,7 @@
                                 <div id="search-input">
                                     <select id="search_key" name="key">
                                         @foreach($searchable as $key)
-                                                <option value="{{ $key }}" @if($search->key == $key){{ 'selected' }}@endif>{{ ucwords(str_replace('_', ' ', $key)) }}</option>
+                                            <option value="{{ $key }}" @if($search->key == $key || $key == $defaultSearchKey){{ 'selected' }}@endif>{{ ucwords(str_replace('_', ' ', $key)) }}</option>
                                         @endforeach
                                     </select>
                                     <select id="filter" name="filter">
@@ -54,10 +54,14 @@
                                         </span>
                                     </div>
                                 </div>
+                                @if (Request::has('sort_order') && Request::has('order_by'))
+                                    <input type="hidden" name="sort_order" value="{{ Request::get('sort_order') }}">
+                                    <input type="hidden" name="order_by" value="{{ Request::get('order_by') }}">
+                                @endif
                             </form>
                         @endif
                         <div class="table-responsive">
-                            <table id="dataTable" class="table table-hover">
+                            <table id="dataTable" class="table table-hover" style="table-layout: fixed;">
                                 <thead>
                                     <tr>
                                         @can('delete',app($dataType->model_name))
@@ -68,12 +72,12 @@
                                         @foreach($dataType->browseRows as $row)
                                         <th>
                                             @if ($isServerSide)
-                                                <a href="{{ $row->sortByUrl() }}">
+                                                <a href="{{ $row->sortByUrl($orderBy, $sortOrder) }}">
                                             @endif
                                             {{ $row->display_name }}
                                             @if ($isServerSide)
-                                                @if ($row->isCurrentSortField())
-                                                    @if (!isset($_GET['sort_order']) || $_GET['sort_order'] == 'asc')
+                                                @if ($row->isCurrentSortField($orderBy))
+                                                    @if ($sortOrder == 'asc')
                                                         <i class="voyager-angle-up pull-right"></i>
                                                     @else
                                                         <i class="voyager-angle-down pull-right"></i>
@@ -88,7 +92,6 @@
                                 </thead>
                                 <tbody>
                                     @foreach($dataTypeContent as $data)
-                                    @can('read', $data)
                                     <tr>
                                         @can('delete',app($dataType->model_name))
                                             <td>
@@ -96,14 +99,24 @@
                                             </td>
                                         @endcan
                                         @foreach($dataType->browseRows as $row)
+                                            @php
+                                            $options = (array)$row->details;
+
+                                            if ($data->{$row->field.'_browse'}) {
+                                                $data->{$row->field} = $data->{$row->field.'_browse'};
+                                                $options['accessor'] = true;
+                                            }
+
+                                            $options = json_decode(json_encode($options));
+                                            @endphp
                                             <td>
-                                                @if($loop->first)
-                                                  @can('read',app($dataType->model_name))
-                                                  <a href="{{ route('voyager.'.$dataType->slug.'.show', [$dataType->name => $data]) }}">
-                                                  @endcan
-                                                @endif
-                                                <?php $options = $row->details; ?>
-                                                @if($row->type == 'image')
+                                                @if (isset($row->details->view))
+                                                      @include($row->details->view, ['row' => $row, 'dataType' => $dataType, 'dataTypeContent' => $dataTypeContent, 'content' => $data->{$row->field}, 'action' => 'browse'])
+                                                @elseif ( isset($options->accessor) )
+                                                      {!! $data->{$row->field} !!}
+                                                @elseif($row->type == 'email')
+                                                          @include('voyager::formfields.custom.email', ['view' => 'browse'])
+                                                @elseif($row->type == 'image')
                                                     <img src="@if( !filter_var($data->{$row->field}, FILTER_VALIDATE_URL)){{ Voyager::image( $data->{$row->field} ) }}@else{{ $data->{$row->field} }}@endif" style="width:100px">
                                                 @elseif($row->type == 'relationship')
                                                     @include('voyager::formfields.relationship', ['view' => 'browse'])
@@ -130,7 +143,7 @@
                                                     @if($data->{$row->field . '_page_slug'})
                                                         <a href="{{ $data->{$row->field . '_page_slug'} }}">{!! $options->options->{$data->{$row->field}} !!}</a>
                                                     @else
-                                                        {!! $options->options->{$data->{$row->field}} or '' !!}
+                                                        {!! $options->options->{$data->{$row->field}} ?? '' !!}
                                                     @endif
 
 
@@ -187,24 +200,58 @@
                                                             <img src="@if( !filter_var($image, FILTER_VALIDATE_URL)){{ Voyager::image( $image ) }}@else{{ $image }}@endif" style="width:50px">
                                                         @endforeach
                                                     @endif
+                                                @elseif($row->type == 'media_picker')
+                                                      @php
+                                                          if (is_array($data->{$row->field})) {
+                                                              $files = $data->{$row->field};
+                                                          } else {
+                                                              $files = json_decode($data->{$row->field});
+                                                          }
+                                                      @endphp
+                                                      @if ($files)
+                                                              @if (property_exists($row->details, 'show_as_images') && $row->details->show_as_images)
+                                                                  @foreach (array_slice($files, 0, 3) as $file)
+                                                                      <img src="@if( !filter_var($file, FILTER_VALIDATE_URL)){{ Voyager::image( $file ) }}@else{{ $file }}@endif" style="width:50px">
+                                                                  @endforeach
+                                                              @else
+                                                                  <ul>
+                                                                      @foreach (array_slice($files, 0, 3) as $file)
+                                                                          <li>{{ $file }}</li>
+                                                                      @endforeach
+                                                                  </ul>
+                                                              @endif
+                                                              @if (count($files) > 3)
+                                                                  {{ __('voyager::media.files_more', ['count' => (count($files) - 3)]) }}
+                                                              @endif
+                                                      @elseif (is_array($files) && count($files) == 0)
+                                                              {{ trans_choice('voyager::media.files', 0) }}
+                                                      @elseif ($data->{$row->field} != '')
+                                                              @if (property_exists($row->details, 'show_as_images') && $row->details->show_as_images)
+                                                                  <img src="@if( !filter_var($data->{$row->field}, FILTER_VALIDATE_URL)){{ Voyager::image( $data->{$row->field} ) }}@else{{ $data->{$row->field} }}@endif" style="width:50px">
+                                                              @else
+                                                                  {{ $data->{$row->field} }}
+                                                              @endif
+                                                      @else
+                                                              {{ trans_choice('voyager::media.files', 0) }}
+                                                      @endif
+                                                @elseif($row->type == 'money')
+                                                      @include('voyager::partials.money')
+                                                @elseif($row->type == 'percentage')
+                                                      @include('voyager::partials.percentage')
                                                 @else
-                                                    @include('voyager::multilingual.input-hidden-bread-browse')
-                                                    <span>{{ $data->{$row->field} }}</span>
-                                                @endif
-                                                @if($loop->first)
-                                                  @can('read',app($dataType->model_name))
-                                                  </a>
-                                                  @endcan
+                                                        @include('voyager::multilingual.input-hidden-bread-browse')
+                                                          {{ $data->{$row->field} }}
                                                 @endif
                                             </td>
                                         @endforeach
                                         <td class="no-sort no-click" id="bread-actions">
                                             @foreach(Voyager::actions() as $action)
+                                                @if (!method_exists($action, 'massAction'))
                                                 @include('voyager::reservations.partials.browse-actions', ['action' => $action])
+                                                @endif
                                             @endforeach
                                         </td>
                                     </tr>
-                                    @endcan
                                     @endforeach
                                 </tbody>
                             </table>
@@ -224,7 +271,8 @@
                                     'filter' => $search->filter,
                                     'key' => $search->key,
                                     'order_by' => $orderBy,
-                                    'sort_order' => $sortOrder
+                                    'sort_order' => $sortOrder,
+                                    'showSoftDeleted' => $showSoftDeleted,
                                 ])->links() }}
                             </div>
                         @endif
@@ -270,14 +318,28 @@
     <script>
         $(document).ready(function () {
             @if (!$dataType->server_side)
-                var table = $('#dataTable').DataTable({!! json_encode(
+                var datatableConfig = {!! json_encode(
                     array_merge([
                         "order" => [],
+                        "autoWidth" => false,
+                        "rowGroup" => [
+                            "dataSrc" =>  3
+                        ],
                         "language" => __('voyager::datatable'),
-                        "columnDefs" => [['targets' => -1, 'searchable' =>  false, 'orderable' => false]],
+                        "columnDefs" => [
+                            ['width' => "20px", 'targets' => 0 ],
+                            ['width' => "150px", 'targets' => 1 ],
+                            ['targets' => -1, 'searchable' =>  false, 'orderable' => false, 'width' => "200px"],
+                            ['width' => "72px", 'targets' => "_all" ],
+                        ],
+                        "scrollX"=> true
                     ],
                     config('voyager.dashboard.data_tables', []))
-                , true) !!});
+                , true) !!};
+
+                console.log(datatableConfig);
+
+                var table = $('#dataTable').DataTable(datatableConfig);
             @else
                 $('#search-input select').select2({
                     minimumResultsForSearch: Infinity
@@ -301,6 +363,38 @@
         $('td').on('click', '.delete', function (e) {
             $('#delete_form')[0].action = '{{ route('voyager.'.$dataType->slug.'.destroy', ['id' => '__id']) }}'.replace('__id', $(this).data('id'));
             $('#delete_modal').modal('show');
+        });
+
+        @if($usesSoftDeletes)
+            @php
+                $params = [
+                    's' => $search->value,
+                    'filter' => $search->filter,
+                    'key' => $search->key,
+                    'order_by' => $orderBy,
+                    'sort_order' => $sortOrder,
+                ];
+            @endphp
+            $(function() {
+                $('#show_soft_deletes').change(function() {
+                    if ($(this).prop('checked')) {
+                        $('#dataTable').before('<a id="redir" href="{{ (route('voyager.'.$dataType->slug.'.index', array_merge($params, ['showSoftDeleted' => 1]), true)) }}"></a>');
+                    }else{
+                        $('#dataTable').before('<a id="redir" href="{{ (route('voyager.'.$dataType->slug.'.index', array_merge($params, ['showSoftDeleted' => 0]), true)) }}"></a>');
+                    }
+
+                    $('#redir')[0].click();
+                })
+            })
+        @endif
+        $('input[name="row_id"]').on('change', function () {
+            var ids = [];
+            $('input[name="row_id"]').each(function() {
+                if ($(this).is(':checked')) {
+                    ids.push($(this).val());
+                }
+            });
+            $('.selected_ids').val(ids);
         });
     </script>
 @stop

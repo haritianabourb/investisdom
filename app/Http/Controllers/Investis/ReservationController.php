@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Investis;
 
+use App\Contact;
 use App\Http\Traits\YousignProcedure;
 use Illuminate\Http\Request;
 use \App\Reservation;
@@ -39,54 +40,56 @@ class ReservationController extends VoyagerBaseController
         $cgp = \App\CGP::find($reservation->cgps_id);
         $cgp_contact = \App\Contact::find($cgp->contact_id);
 
-        $this->member = collect([
-            collect([
-                'user' => "/users/" . env('YOUSIGN_APP_USER'),
-                'type' => "signer",
-                'position' => 2,
-                'fileObjects' => collect([
-                    'Demande_de_Reservation'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf' =>
+        // Create author (Investis)
+        $author = collect([
+            'user' => "/users/" . env('YOUSIGN_APP_USER'),
+            'type' => "signer",
+            'position' => 2,
+            'fileObjects' => collect([
+                'Demande_de_Reservation'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf' =>
                     [
                         [
                             "page" => 5,
                             "position" => "419,172,557,227",
-                            "mention" => "Bon pour accord",
-                            "mention2" => "Signé par InvestisDOM."
+                            "mention" => ucfirst(__('yousign.fileObjects.author.approval')).", ".__('yousign.fileObjects.author.aggrement'),
+                            "mention2" => ucfirst(__("yousign.fileObjects.author.signature"))." Investis DOM."
                         ],
                         [
                             "page" => 12,
                             "position" => "415,72,553,127",
-                            "mention" => "Lu et approuvé",
-                            "mention2" => "Signé par INVESTIS DOM."
+                            "mention" => ucfirst(__('yousign.fileObjects.author.approval')),
+                            "mention2" => ucfirst(__("yousign.fileObjects.author.signature"))." Investis DOM."
                         ],
 
                     ],
-                    'Mandat_de_Recherche'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf' => [
-                        [
-                            "page" => 1,
-                            "position" => "430,56,551,110",
-                            "mention" => "Lu et approuvé, bon pour acceptation de mandat",
-                            "mention2" => "Signé par InvestisDOM."
-                        ]
+                'Mandat_de_Recherche'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf' => [
+                    [
+                        "page" => 1,
+                        "position" => "430,56,551,110",
+                        "mention" => ucfirst(__('yousign.fileObjects.author.approval')).", ".ucfirst(__('yousign.fileObjects.author.mandate_signature')),
+                        "mention2" => ucfirst(__("yousign.fileObjects.author.signature"))." Investis DOM."
                     ]
-                ])
+                ]
+            ])
 
 
-            ]),
-            collect([
-                "firstname" => $investor->name_invest,
-                "lastname" => $investor->prenom_invest,
-                "phone" => '+262692448152',
-                "email" => 'monelchristophe@gmail.com',
-                "type" => "signer",
-                "position" => 2,
-                'fileObjects' => collect([
-                    'Demande_de_Reservation'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf' =>
+        ]);
+
+        // Create the investor
+        $contact = collect([
+            "firstname" => $investor->name_invest,
+            "lastname" => $investor->prenom_invest,
+            "phone" => $investor->gsm_invest,
+            "email" => $investor->email_invest,
+            "type" => "signer",
+            "position" => 1,
+            'fileObjects' => collect([
+                'Demande_de_Reservation'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf' =>
                     [
                         [
                             "page" => 5,
                             "position" => "124,187,222,226",
-                            "mention" => "Bon pour réservation",
+                            "mention" => "Lu et approuvé, Bon pour réservation",
                             "mention2" => "Signé par {$investor->name_invest} {$investor->prenom_invest}."
                         ],
                         [
@@ -111,7 +114,7 @@ class ReservationController extends VoyagerBaseController
                         ],
 
                     ],
-                    'Mandat_de_Recherche'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf' =>
+                'Mandat_de_Recherche'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf' =>
                     [
                         [
                             "page" => 1,
@@ -120,41 +123,61 @@ class ReservationController extends VoyagerBaseController
                             "mention2" => "Signé par {$investor->name_invest} {$investor->prenom_invest}."
                         ]
                     ]
-                ])
             ])
         ]);
 
+        // create the CGP
+        $validator = collect([
+            "firstname" => $cgp_contact->fistname,
+            "lastname" => $cgp_contact->lastname,
+            "phone" => $cgp_contact->gsm,
+            "email" => $cgp_contact->email,
+            "type" => "validator",
+            "position" => 3,
+        ]);
+
+        $conjoint = null;
         if(in_array($investor->regime_mat_invest, ["02", "04"])){
-            $this->member->push(collect([
+            // Create investor's husband/wife if exist
+            $conjoint = collect([
                 "firstname" => $investor->nom_conjoint,
                 "lastname" => $investor->prenom_conjoint,
-                "phone" => '+262692448152',
-                "email" => 'monelchristophe@gmail.com',
+                "phone" => $investor->phone_conjoint,
+                "email" => $investor->mail_conjoint,
                 "type" => "signer",
-                "position" => 1,
+                "position" => 2,
                 'fileObjects' => collect([
                     'Demande_de_Reservation'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf' =>
-                    [
                         [
-                            "page" => 8,
-                            "position" => "117,197,255,252",
-                            "mention2" => "Signé par {$investor->nom_conjoint} {$investor->prenom_conjoint}."
+                            [
+                                "page" => 8,
+                                "position" => "117,197,255,252",
+                                "mention2" => "Signé par {$investor->nom_conjoint} {$investor->prenom_conjoint}."
+                            ],
                         ],
-                    ],
 
                 ])
-            ]));
+            ]);
+
+            $contact->put('position', 1);
+            $author->put('position', 3);
+            $validator->put('position', 4);
+
         }
 
+        // Push all
+        $this->member = collect([
+            $author,
+            $contact,
+            $validator,
+        ]);
 
-        $this->member->push(collect([
-            "firstname" => $cgp_contact->firstname,
-            "lastname" => $cgp_contact->lastname,
-            "phone" => '+262692448152',
-            "email" => 'monelchristophe@gmail.com',
-            "type" => "validator",
-            "position" => 3
-        ]));
+        // Add Conjoint if exist
+        if($conjoint){
+            $this->member->push($conjoint);
+        }
+
+        $this->member = $this->member->sortBy('position', SORT_REGULAR)->values();
     }
 
     public function setFile(Reservation $reservation)
@@ -173,54 +196,53 @@ class ReservationController extends VoyagerBaseController
         $this->yousignFileName = 'Mandat_de_Recherche'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf';
         $this->yousignName = "{$reservation->identifiant} - {$investor->name_invest} {$investor->prenom_invest}";
         $this->yousignDescription = "Reservation d'un Mandat de Recherche pour {$investor->name_invest} {$investor->prenom_invest} - Dossier n° {$reservation->identifiant}";
+
     }
-
-
 
     public function getYousignConfig(){
         return [
-            //TODO make it as configurable
+            // TODO make it as configurable
+            // TODO remove all string inner
+            // TODO better better BETTER messages
             "email" => [
                 "member.started" => [
                     [
-                        "subject" => "Vous êtes invités à signer votre contrat sur Yousign!",
-                        "message" => "Bonjour <tag data-tag-type='string' data-tag-name='recipient.firstname'></tag> <tag data-tag-type='string' data-tag-name='recipient.lastname'></tag>, <br><br> Votre Contrat de Reservation est prêt, Veuillez cliquer ici pour être redirigé: <tag data-tag-type='button' data-tag-name='url' data-tag-title='Access to documents'>Accés à la Réservation</tag>",
-                        "to" => ["@members.auto"],
+                        "subject" => __("yousign.email.member.started.subject"),
+                        "message" => __("yousign.email.member.started.message"),
+                        "to" => ["@member"],
                     ]
                 ],
                 "member.finished" => [
                     [
-                        "subject" => "Votre contrat sur Yousign a été signé!",
-                        "message" => "Bonjour <tag data-tag-type='string' data-tag-name='recipient.firstname'></tag> <tag data-tag-type='string' data-tag-name='recipient.lastname'></tag>, <br><br> Votre Contrat de Reservation est prêt, Veuillez cliquer ici pour être redirigé: <tag data-tag-type='button' data-tag-name='url' data-tag-title='Access to documents'>Accés à la Réservation</tag>",
-                        "to" => ["@creator"],
+                        "subject" => __("yousign.email.member.finnished.subject"),
+                        "message" => __("yousign.email.member.finnished.message"),
+                        "to" => ["@member"],
                     ]
                 ],
                 "procedure.started" => [
                     [
-                        "subject" => "Une Nouvelle procedure de Réservation est en cours",
-                        "message" => "Bonjour <tag data-tag-type='string' data-tag-name='recipient.firstname'></tag> <tag data-tag-type='string' data-tag-name='recipient.lastname'></tag>, <br><br> Votre Contrat de Reservation est prêt, Veuillez cliquer ici pour être redirigé: <tag data-tag-type='button' data-tag-name='url' data-tag-title='Access to documents'>Accés à la Réservation</tag>",
+                        "subject" => __("yousign.email.procedure.started.subject"),
+                        "message" => __("yousign.email.procedure.started.message"),
                         "to" => ["@creator"],
                     ]
                 ],
                 "procedure.finished" => [
                     [
-                        "subject" => "La procedure de Réservation est terminée!",
-                        "message" => "Bonjour <tag data-tag-type='string' data-tag-name='recipient.firstname'></tag> <tag data-tag-type='string' data-tag-name='recipient.lastname'></tag>, <br><br> Votre Contrat de Reservation est validé, Veuillez cliquer ici pour être redirigé: <tag data-tag-type='button' data-tag-name='url' data-tag-title='Access to documents'>Accés à la Réservation</tag>",
+                        "subject" => __("yousign.email.procedure.finnished.subject"),
+                        "message" => __("yousign.email.procedure.finnished.message"),
                         "to" => ["@creator"],
                     ]
                 ],
                 "procedure.refused" => [
                     [
-                        "subject" => "La procedure de Réservation est refusée",
-                        "message" => "Bonjour <tag data-tag-type='string' data-tag-name='recipient.firstname'></tag> <tag data-tag-type='string' data-tag-name='recipient.lastname'></tag>, <br><br> Votre Contrat de Reservation est refusé, Veuillez cliquer ici pour être redirigé: <tag data-tag-type='button' data-tag-name='url' data-tag-title='Access to documents'>Accés à la Réservation</tag>",
+                        "subject" => __("yousign.email.procedure.refused.subject"),
+                        "message" => __("yousign.email.procedure.refused.message"),
                         "to" => ["@creator"],
                     ]
                 ]
             ]
         ];
     }
-
-
 
     public function generatePDFMandat(Request $request, Reservation $reservation){
         $this->authorize('browse', $reservation);
@@ -247,26 +269,29 @@ class ReservationController extends VoyagerBaseController
     }
 
     public function yousign(Request $request, Reservation $reservation){
-//        dd(
-//            $investor = \App\Investor::find($reservation->investors_id),
-//            $cgp = \App\CGP::find($reservation->cgps_id),
-//            $cgp_contact = \App\Contact::find($cgp->contact_id)
-//        );
-
 
         if($yousignProcedure = $this->isExistingYousignProcedure($reservation->yousign_procedure_id)){
             $this->alertWarning(
-                "Procédure Yousign Existante"
+                __("error.yousign.already_exist")
                 ."<br/>"
-                ."Procédure numéro: {$yousignProcedure->id}");
+                .ucfirst(__("generic.procedure"))." ".__("generic.number").": {$yousignProcedure->id}");
             return redirect()->back()->with($this->alerts);
         }
 
         $this->setFile($reservation);
         $this->setMember($reservation);
 
+        try{
+            $response = $this->yousignStartProcedure();
+        }catch(\Error $e){
+            $context = json_decode($e->getMessage());
 
-        $response = $this->yousignStartProcedure();
+            \Log::error("Yousign: Procedure {{$request["name"]}} initialization send an error ", collect($context)->toArray());
+
+            $this->alertError("{$context->context} <br> {$context->description} <br><br> <small>{$context->response->reason}<small></small>");
+
+            return redirect()->back()->with($this->alerts);
+        }
 
 
         // FIXME do an event, please!!!!

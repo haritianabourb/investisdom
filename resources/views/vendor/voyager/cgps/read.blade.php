@@ -4,18 +4,24 @@
 
 @section('page_header')
     <h1 class="page-title">
-        <i class="{{ $dataType->icon }}"></i> {{ __('voyager::generic.viewing') }} {{ ucfirst($dataType->display_name_singular) }} &nbsp;
+        <i class="{{ $dataType->icon }}"></i>  {{$dataTypeContent->name}} <small>- {{$dataTypeContent->identifiant}}</small>
 
         @can('edit', $dataTypeContent)
-        <a href="{{ route('voyager.'.$dataType->slug.'.edit', $dataTypeContent->getKey()) }}" class="btn btn-info">
+        <a href="{{ route('voyager.'.$dataType->slug.'.edit', $dataTypeContent->getRouteKey()) }}" class="btn btn-info">
             <span class="glyphicon glyphicon-pencil"></span>&nbsp;
             {{ __('voyager::generic.edit') }}
         </a>
         @endcan
         @can('delete', $dataTypeContent)
+            @if($isSoftDeleted)
+                <a href="{{ route('voyager.'.$dataType->slug.'.restore', $dataTypeContent->getKey()) }}" title="{{ __('voyager::generic.restore') }}" class="btn btn-default restore" data-id="{{ $dataTypeContent->getKey() }}" id="restore-{{ $dataTypeContent->getKey() }}">
+                    <i class="voyager-trash"></i> <span class="hidden-xs hidden-sm">{{ __('voyager::generic.restore') }}</span>
+                </a>
+            @else
             <a href="javascript:;" title="{{ __('voyager::generic.delete') }}" class="btn btn-danger delete" data-id="{{ $dataTypeContent->getKey() }}" id="delete-{{ $dataTypeContent->getKey() }}">
                 <i class="voyager-trash"></i> <span class="hidden-xs hidden-sm">{{ __('voyager::generic.delete') }}</span>
             </a>
+            @endif
         @endcan
 
         <a href="{{ route('voyager.'.$dataType->slug.'.index') }}" class="btn btn-warning">
@@ -37,6 +43,11 @@
                   <div class="panel-body" style="padding-top:10px;">
                     <!-- form start -->
                     @foreach($dataType->readRows as $row)
+                      @php
+                          if ($dataTypeContent->{$row->field.'_read'}) {
+                              $dataTypeContent->{$row->field} = $dataTypeContent->{$row->field.'_read'};
+                          }
+                      @endphp
                         @php $rowDetails = $row->details;
                          if($rowDetails === null){
                                 $rowDetails=new stdClass();
@@ -55,12 +66,20 @@
                           @endif
                             <div class="row">
                           <div class="col-md-12" style="border-bottom:0;">
-                            <h3 class="text-{{$rowDetails->section->align or 'center'}}" style="color: {{$rowDetails->section->color or '#333'}};background-color: {{$rowDetails->section->bgcolor or '#f0f0f0'}};padding: 5px; padding-left: 15px;">{{$rowDetails->section->text}}</h3>
+                            <h3 class="text-{{$rowDetails->section->align ?? 'center'}}" style="color: {{$rowDetails->section->color ?? '#333'}};background-color: {{$rowDetails->section->bgcolor ?? '#f0f0f0'}};padding: 5px; padding-left: 15px;">{{$rowDetails->section->text}}</h3>
                           </div>
                         @endif
-                          <div class="col-md-{{ $display_options->width or 12 }}" @if(isset($display_options->id)){{ "id=$display_options->id" }}@endif>
+                        @if($row->field == "cgp_belongsto_contact_relationship")
+                                    <div class="col-sm-6">
+                        @else
+                          <div class="col-md-{{ $display_options->width ?? 12 }}" @if(isset($display_options->id)){{ "id=$display_options->id" }}@endif>
+                        @endif
                             <h5>{{ $row->display_name }}</h5>
-                            @if($row->type == "image")
+                            @if (isset($row->details->view))
+                                  @include($row->details->view, ['row' => $row, 'dataType' => $dataType, 'dataTypeContent' => $dataTypeContent, 'content' => $dataTypeContent->{$row->field}, 'action' => 'read'])
+                            @elseif($row->field == "cgp_belongsto_contact_relationship")
+                                  @include('voyager::partials.contact', ['contact' => $dataTypeContent->contact])
+                            @elseif($row->type == "image")
                                 <img class="img-responsive"
                                      src="{{ filter_var($dataTypeContent->{$row->field}, FILTER_VALIDATE_URL) ? $dataTypeContent->{$row->field} : Voyager::image($dataTypeContent->{$row->field}) }}">
                             @elseif($row->type == 'multiple_images')
@@ -74,7 +93,15 @@
                                          src="{{ filter_var($dataTypeContent->{$row->field}, FILTER_VALIDATE_URL) ? $dataTypeContent->{$row->field} : Voyager::image($dataTypeContent->{$row->field}) }}">
                                 @endif
                             @elseif($row->type == 'relationship')
-                                 @include('voyager::formfields.relationship', ['view' => 'read', 'options' => $rowDetails])
+                                  @if($row->field == "cgp_belongstomany_contact_relationship")
+                                      {{--
+                                          TODO remove this and make it more configurable
+                                          For now, it's here, but I really want a custom attribute, like money or percent customs fields
+                                       --}}
+                                      @include("voyager::formfields.custom.cgps.contacts", ['view' => 'read', 'options' => $rowDetails])
+                                  @else
+                                      @include('voyager::formfields.relationship', ['view' => 'read', 'options' => $rowDetails])
+                                  @endif
                             @elseif($row->type == 'select_dropdown' && property_exists($rowDetails, 'options') &&
                                     !empty($rowDetails->options->{$dataTypeContent->{$row->field}})
                             )
@@ -99,13 +126,13 @@
                                     @endforeach
                                 @endif
                             @elseif($row->type == 'date' || $row->type == 'timestamp')
-                                {{ $rowDetails && property_exists($rowDetails, 'format') ? \Carbon\Carbon::parse($dataTypeContent->{$row->field})->formatLocalized($rowDetails->format) : $dataTypeContent->{$row->field} }}
+                                {{ property_exists($row->details, 'format') ? \Carbon\Carbon::parse($dataTypeContent->{$row->field})->formatLocalized($row->details->format) : $dataTypeContent->{$row->field} }}
                             @elseif($row->type == 'checkbox')
-                                @if($rowDetails && property_exists($rowDetails, 'on') && property_exists($rowDetails, 'off'))
+                                @if(property_exists($row->details, 'on') && property_exists($row->details, 'off'))
                                     @if($dataTypeContent->{$row->field})
-                                    <span class="label label-info">{{ $rowDetails->on }}</span>
+                                    <span class="label label-info">{{ $row->details->on }}</span>
                                     @else
-                                    <span class="label label-primary">{{ $rowDetails->off }}</span>
+                                    <span class="label label-primary">{{ $row->details->off }}</span>
                                     @endif
                                 @else
                                 {{ $dataTypeContent->{$row->field} }}
@@ -118,18 +145,30 @@
                                 @include('voyager::multilingual.input-hidden-bread-read')
                                 <p>{!! $dataTypeContent->{$row->field} !!}</p>
                             @elseif($row->type == 'file')
-                                @if(json_decode($dataTypeContent->{$row->field}))
-                                    @foreach(json_decode($dataTypeContent->{$row->field}) as $file)
-                                        <a href="{{ Storage::disk(config('voyager.storage.disk'))->url($file->download_link) ?: '' }}">
-                                            {{ $file->original_name ?: '' }}
-                                        </a>
-                                        <br/>
-                                    @endforeach
-                                @else
-                                    <a href="{{ Storage::disk(config('voyager.storage.disk'))->url($row->field) ?: '' }}">
-                                        {{ __('voyager::generic.download') }}
-                                    </a>
-                                @endif
+                                  @if(!empty($dataTypeContent->{$row->field}))
+                                      @if(json_decode($dataTypeContent->{$row->field}))
+                                          @foreach(json_decode($dataTypeContent->{$row->field}) as $file)
+                                              <a href="{{ Storage::disk(config('voyager.storage.disk'))->url($file->download_link) ?: '' }}">
+                                                  {{ $file->original_name ?: '' }}
+                                              </a>
+                                              <br/>
+                                          @endforeach
+                                      @else
+                                          <form role="form"
+                                                class="form-edit-add"
+                                                id="{{$dataType->name}}_edit_add"
+                                                action="{{ route('admin.document.upload', ['slug'=>$dataType->slug , 'id' => $dataTypeContent->getKey()]) }}"
+                                                method="POST" enctype="multipart/form-data">
+                                              <input @if($row->required == 1 && !isset($dataTypeContent->{$row->field})) required @endif type="file" name="{{ $row->field }}[]" multiple="multiple">
+                                              <button type="submit" class="btn btn-primary save">{{ __('voyager::generic.save') }}</button>
+                                              {{ csrf_field() }}
+                                              {{ method_field("PUT") }}
+                                          </form>
+
+                                      @endif
+                                  @endif
+                            @elseif($row->type == 'email')
+                                  @include('voyager::formfields.custom.email', ["view" => "read"])
                             @elseif($row->type == 'money')
                                   @include('voyager::partials.money')
                             @elseif($row->type == 'percentage')
@@ -164,7 +203,7 @@
                 </div>
                 <div class="modal-footer">
                     <form action="{{ route('voyager.'.$dataType->slug.'.index') }}" id="delete_form" method="POST">
-                        {{ method_field("DELETE") }}
+                        {{ method_field('DELETE') }}
                         {{ csrf_field() }}
                         <input type="submit" class="btn btn-danger pull-right delete-confirm"
                                value="{{ __('voyager::generic.delete_confirm') }} {{ strtolower($dataType->display_name_singular) }}">

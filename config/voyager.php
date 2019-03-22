@@ -61,7 +61,7 @@ return [
     |
     */
 
-    'assets_path' => '/vendor/tcg/voyager/assets',
+//    'assets_path' => '/vendor/tcg/voyager/assets',
 
     /*
     |--------------------------------------------------------------------------
@@ -73,7 +73,7 @@ return [
     */
 
     'storage' => [
-        'disk' => 'public',
+        'disk' => env('FILESYSTEM_DRIVER', 'public'),
     ],
 
     /*
@@ -84,8 +84,28 @@ return [
     | Here you can specify if media manager can show hidden files like(.gitignore)
     |
     */
-
     'hidden_files' => false,
+    'media' => [
+        // The allowed mimetypes to be uploaded through the media-manager.
+        'allowed_mimetypes' => '*', //All types can be uploaded
+
+        /*'allowed_mimetypes' => [
+            'image/jpeg',
+            'image/png',
+            'image/gif',
+            'image/bmp',
+            'video/mp4',
+        ],*/
+
+        //Path for media-manager. Relative to the filesystem.
+        'path'                => '/',
+        'show_folders'        => true,
+        'allow_upload'        => true,
+        'allow_move'          => true,
+        'allow_delete'        => true,
+        'allow_create_folder' => true,
+        'allow_rename'        => true,
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -100,6 +120,7 @@ return [
         'tables' => [
             'hidden' => ['migrations', 'data_rows', 'data_types', 'menu_items', 'password_resets', 'permission_role', 'settings'],
         ],
+        'autoload_migrations' => false,
     ],
 
     /*
@@ -149,17 +170,17 @@ return [
     'dashboard' => [
         // Add custom list items to navbar's dropdown
         'navbar_items' => [
-            'Profil' => [
+            'generic.profile' => [
                 'route'      => 'voyager.profile',
                 'classes'    => 'class-full-of-rum',
                 'icon_class' => 'voyager-person',
             ],
-            'Accueil' => [
+            'generic.home' => [
                 'route'        => '/',
                 'icon_class'   => 'voyager-home',
                 'target_blank' => true,
             ],
-            'Déconnexion' => [
+            'generic.logout' => [
                 'route'      => 'voyager.logout',
                 'icon_class' => 'voyager-power',
             ],
@@ -217,8 +238,11 @@ return [
     // Here you can specify additional assets you would like to be included in the master.blade
     'additional_css' => [
         'https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/e8bddc60e73c1ec2475f827be36e1957af72e2ea/build/css/bootstrap-datetimepicker.css',
+        'https://cdn.datatables.net/rowgroup/1.1.0/css/rowGroup.dataTables.min.css',
         // 'css/now-ui-dashboard.css'
+        'css/flaticon.css',
         'css/custom.css'
+
     ],
 
     'additional_js' => [
@@ -230,7 +254,8 @@ return [
         // 'js/now-ui-dashboard.js',
         'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment-with-locales.js',
         'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js',
-        'https://cdn.jsdelivr.net/npm/formdata-polyfill@3.0.12/formdata.min.js'
+        'https://cdn.jsdelivr.net/npm/formdata-polyfill@3.0.12/formdata.min.js',
+        'https://cdn.datatables.net/rowgroup/1.1.0/js/dataTables.rowGroup.min.js'
     ],
 
     'googlemaps' => [
@@ -242,4 +267,21 @@ return [
          'zoom' => env('GOOGLE_MAPS_DEFAULT_ZOOM', 11),
      ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Model specific settings
+    |--------------------------------------------------------------------------
+    |
+    | Here you change some model specific settings
+    |
+    */
+
+    'settings' => [
+        // Enables Laravel cache method for
+        // storing cache values between requests
+        'cache' => false,
+    ],
+
+    // Activate compass when environment is NOT local
+    'compass_in_production' => false,
 ];

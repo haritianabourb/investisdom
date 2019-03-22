@@ -4,8 +4,11 @@ namespace App\Providers;
 
 
 use App\CGP;
+use App\Events\User\UserActivated;
 use App\Investor;
+use App\Listeners\User\SendSignupMailToUser;
 use App\Mandat;
+use App\Observers\UserObserver;
 use App\Reservation;
 use App\SNC;
 use App\Events\User\CGPUserCreated;
@@ -16,6 +19,7 @@ use App\Observers\MandatObserver;
 use App\Observers\ReservationObserver;
 use App\Observers\SNCObserver;
 
+use App\User;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
 class EventServiceProvider extends ServiceProvider
@@ -26,8 +30,7 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-//        UserCreated::class => [SendSignupMailToUser::class],
-        CGPUserCreated::class => [SendSignupMailToCGPUser::class],
+        UserActivated::class => [SendSignupMailToUser::class],
     ];
 
     /**
@@ -38,10 +41,12 @@ class EventServiceProvider extends ServiceProvider
     public function boot()
     {
         parent::boot();
+
         CGP::observe(CGPObserver::class);
         Investor::observe(InvestorObserver::class);
         Mandat::observe(MandatObserver::class);
         Reservation::observe(ReservationObserver::class);
         SNC::observe(SNCObserver::class);
+        User::observe(UserObserver::class);
     }
 }

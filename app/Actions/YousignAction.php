@@ -2,7 +2,11 @@
 
 namespace App\Actions;
 
+use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 use TCG\Voyager\Actions\AbstractAction;
+use TCG\Voyager\Models\DataType;
 
 class YousignAction extends AbstractAction
 {
@@ -10,23 +14,17 @@ class YousignAction extends AbstractAction
     protected $title;
     protected $yousignProcedure;
     protected $yousignProcedureStatus;
+    protected $yousignValidation;
 
     public function getTitle()
     {
-        if($this->getYousignProcedureStatus() == "active"){
-            $this->title = "Yousign : Procédure en cours";
-        }
-        if($this->getYousignProcedureStatus() == "finished"){
-            $this->title = "Yousign : Procédure Accepté";
-        }
-        if($this->getYousignProcedureStatus() == "expired"){
-            $this->title = "Yousign : Procédure Expiré" ;
-        }
-        if($this->getYousignProcedureStatus() == "refused"){
-            $this->title = "Yousign : Procédure Refusé" ;
+        if($this->getYousignValidation() !== true){
+            return $this->title = __("error.yousign.procedure_validation");
         }
 
-        return $this->title ?? "Envoyer à Yousign";
+        $status = $this->getYousignProcedureStatus();
+
+        return ($status ? __("yousign.procedure.statut.{$status}") : ($this->title ?: __("yousign.procedure.statut.default")));
     }
 
     public function getPolicy()
@@ -49,7 +47,13 @@ class YousignAction extends AbstractAction
     public function getDefaultRoute()
     {
 
-        if(!$this->getYousignProcedureStatus() || !in_array($this->getYousignProcedureStatus(), ["active","refused", "finished" ])){
+        $status = $this->getYousignProcedureStatus();
+
+        if($this->getYousignValidation() !== true){
+            return "#";
+        }
+
+        if(!$status || !in_array($status, ["active","refused", "finished" ])){
             return route('admin.'.$this->dataType->slug.'.yousign', ["reservation" => $this->data]);
         }
 
@@ -62,21 +66,135 @@ class YousignAction extends AbstractAction
             'class' => 'btn ',
         ];
 
-        if($this->getYousignProcedureStatus() == "active"){
+        if($this->getYousignValidation() !== true){
+            $attributes["class"] .= "btn-danger disabled";
+            return $attributes;
+        }
+
+        $status = $this->getYousignProcedureStatus();
+
+        if($status == "active"){
             $attributes["class"] .= "btn-info disabled";
             $attributes["disabled"] = "disabled";
         }
-        elseif($this->getYousignProcedureStatus() == "finished"){
+        elseif($status == "finished"){
             $attributes["class"] .= "btn-success";
         }
 
-        elseif(in_array($this->getYousignProcedureStatus(), ["refused", "expired"]) ){
+        elseif(in_array($status, ["refused", "expired"]) ){
             $attributes["class"] .= "btn-danger";
         }else{
             $attributes["class"] .= "btn-primary";
         }
 
       return $attributes;
+    }
+
+    public function getYousignValidation(){
+
+        if(is_null($this->yousignValidation)){
+
+            $investor = \App\Investor::find($this->data->getOriginal('investors_id'));
+            $cgp = \App\CGP::find($this->data->getOriginal('cgps_id'));
+
+
+            if(!$investor || !$cgp->contact_id){
+                return $this->yousignValidation = false;
+            }
+
+            $this->yousignValidation = collect([]);
+
+            $validator  = Validator::make(
+                $investor->toArray(),
+                DataType::where('name', 'investors')->first()
+                    ->rows()->whereIn('field', ['gsm_invest', 'email_invest', 'mail_conjoint', 'gsm_conjoint'])
+                    ->pluck('details', 'field')->transform(function($item, $key){
+                        if (is_object($item) && isset($item->validation) && !is_null($item->validation)){
+
+                            $rules = explode("|", $item->validation->rule);
+
+                            foreach ($rules as $key => $rule){
+                                if (Str::startsWith($rule, "unique")){
+                                    Arr::forget($rules, $key);
+                                }
+                            }
+
+                            return implode("|", $rules);
+
+                        }
+                        return  'nullable' ;
+                    })->toArray(),
+                DataType::where('name', 'investors')->first()
+                    ->rows()->whereIn('field', ['gsm_invest', 'email_invest', 'mail_conjoint', 'gsm_conjoint'])
+                    ->pluck('details', 'field')->transform(function($item, $item_key){
+                        if (is_object($item) && isset($item->validation) && !is_null($item->validation)){
+                            if(isset($item->validation->messages) && !is_null($item->validation->messages)){
+                                $messages = [];
+                                foreach($item->validation->messages as $key => $message){
+                                    $messages[$item_key.".".$key]=$message;
+                                }
+
+                                return $messages;
+                            }
+
+                        }
+                    })->flatten()->toArray()
+            );
+
+
+            if($validator->fails()){
+                $this->yousignValidation->put("investors", $validator->getMessageBag()->toArray());
+            }
+
+            $validator  = Validator::make(
+                $cgp->contact->toArray(),
+                DataType::where('name', 'contacts')->first()
+                    ->rows()->whereIn('field', ['gsm', 'email'])
+                    ->pluck('details', 'field')->transform(function($item, $key){
+                        if (is_object($item) && isset($item->validation) && !is_null($item->validation)){
+
+                            $rules = explode("|", $item->validation->rule);
+
+                            foreach ($rules as $key => $rule){
+                                if (Str::startsWith($rule, "unique")){
+                                    Arr::forget($rules, $key);
+                                }
+                            }
+
+                            return implode("|", $rules);
+
+                        }
+                        return  'nullable' ;
+                    })->toArray(),
+                    DataType::where('name', 'contacts')->first()
+                    ->rows()->whereIn('field', ['gsm', 'email'])
+                        ->pluck('details', 'field')->transform(function($item, $item_key){
+                            if (is_object($item) && isset($item->validation) && !is_null($item->validation)){
+                                if(isset($item->validation->messages) && !is_null($item->validation->messages)){
+                                    $messages = [];
+                                    foreach($item->validation->messages as $key => $message){
+                                        $messages[$item_key.".".$key]=$message;
+                                    }
+
+                                    return $messages;
+                                }
+
+                            }
+                        })->flatten()->toArray()
+            );
+
+            if($validator->fails()){
+               $this->yousignValidation->put('cgp', $validator->failed());
+            }
+
+            if(!is_object($this->yousignValidation)){
+                $this->yousignValidation = true;
+            }
+
+
+        }
+
+        return $this->yousignValidation;
     }
 
     private function getYousignProcedureStatus(){
@@ -94,7 +212,6 @@ class YousignAction extends AbstractAction
             );
 
             $yousignProcedureId = (json_decode($this->data->yousign_procedure_id))->id;
-
 
             $this->yousignProcedure = $yousignClient->request('GET', $yousignUrl.$yousignProcedureId);
             $this->yousignProcedure = json_decode($this->yousignProcedure->getBody()->getContents());

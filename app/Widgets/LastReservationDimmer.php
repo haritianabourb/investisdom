@@ -11,7 +11,7 @@ use App\Reservation;
 class LastReservationDimmer extends BaseDimmer
 {
 
-    public $reloadTimeout = 5;
+//    public $reloadTimeout = 5;
 
     /**
      * The configuration array.
@@ -30,16 +30,18 @@ class LastReservationDimmer extends BaseDimmer
       $lasts = Reservation::latest()->get()->take(10);
 
 
-      $text = "<ul class='text-left text-info'>";
-      foreach ($lasts as $last){
-            $text.= "<li><a href='".route('voyager.reservations.show', $last)."' class='text-info'><strong>{$last->identifiant} : ".($last->investorsId()->find($last->investors_id) ? $last->investorsId()->find($last->investors_id)->name: '')." - ".number_format($last->taux_rentabilite, 2, '.', " ")."%</strong></a></li>";
+      if($lasts){
+        $text = "<ul class='text-left text-info'>";
+          foreach ($lasts as $last){
+                $text.= "<li><a href='".route('voyager.reservations.show', $last)."' class='text-info'><strong>{$last->identifiant} : ".($last->investorsId()->find($last->investors_id) ? $last->investorsId()->find($last->investors_id)->name: '')." - ".number_format($last->taux_rentabilite*100, 2, '.', " ")."%</strong></a></li>";
+          }
+        $text .= "</ul>";
       }
-      $text .= "</ul>";
 
       return view('voyager::dimmer', array_merge($this->config, [
           'icon'   => 'voyager-receipt',
           'title'  => "Dernieres Réservations",
-          'text'   => $text,
+          'text'   => $text ?? "Aucune réservation pour le moment.",
           'button' => [
             'text' => "Voir mes Réservations",
             'link' => route('voyager.reservations.index'),
@@ -56,7 +58,7 @@ class LastReservationDimmer extends BaseDimmer
      */
     public function shouldBeDisplayed()
     {
-         return Auth::user()->can('browse', app(Reservation::class));
+         return Reservation::count() && Auth::user()->can('browse', app(Reservation::class));
     }
 
 }

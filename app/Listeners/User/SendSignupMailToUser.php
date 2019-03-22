@@ -9,16 +9,27 @@
 namespace App\Listeners\User;
 
 
-use App\Events\User\UserCreated;
+use App\CGP;
+use App\Events\User\UserActivated;
+use App\Notifications\CGPUserSignup;
 use App\Notifications\UserSignup;
 
 class SendSignupMailToUser
 {
-        public function handle(UserCreated $event){
-//            dd($event->getUser());
+        public function handle(UserActivated $event){
             $user = $event->getUser();
-            $user->password = bcrypt($event->getpassword());
-            $user->save();
-            $user->notify(new UserSignup($user, $event->getpassword()));
+
+            $signup = null;
+
+            if($contact = $event->getContact()){
+                $cgp = CGP::ofContact($contact)->first();
+                if($cgp){
+                    $signup = new CGPUserSignup($user, $cgp, $contact, $event->getpassword());
+                }
+            }
+
+            $user->notify($signup ?? new UserSignup($user, $event->getpassword()));
+
+
         }
 }
