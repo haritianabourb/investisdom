@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('theme::index');
+    return redirect()->to("/admin");
 });
 
 // All of these are pdf for snc!!!
