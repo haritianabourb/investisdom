@@ -322,9 +322,7 @@
                     array_merge([
                         "order" => [],
                         "autoWidth" => false,
-                        "rowGroup" => [
-                            "dataSrc" =>  3
-                        ],
+
                         "language" => __('voyager::datatable'),
                         "columnDefs" => [
                             ['width' => "20px", 'targets' => 0 ],
@@ -337,9 +335,19 @@
                     config('voyager.dashboard.data_tables', []))
                 , true) !!};
 
+
+            datatableConfig.rowGroup = {
+                "dataSrc": function (row) {
+                    console.log([ row[3], (moment(row[6], "DD/MM/YYYY").format(`YYYY`)) ]);
+                    return moment(row[6], "DD/MM/YYYY").format(`YYYY`);
+                }
+            };
+
                 console.log(datatableConfig);
 
                 var table = $('#dataTable').DataTable(datatableConfig);
+
+                table.rowGroup().dataSrc()
             @else
                 $('#search-input select').select2({
                     minimumResultsForSearch: Infinity
