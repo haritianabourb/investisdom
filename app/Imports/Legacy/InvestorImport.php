@@ -35,6 +35,9 @@ class InvestorImport implements ToModel, WithProgressBar, WithHeadingRow
             dd($row);
         }
 
+        $naissance_conjoint = \DateTime::createFromFormat('d/m/Y',$row['naissance_conjoint']);
+        $investisseur_naissance = \DateTime::createFromFormat('d/m/Y',$row['investisseur_naissance']);
+
         // TODO: Implement model() method.
         return new Investor([
             "nature_entities_id" => 1,
@@ -63,8 +66,8 @@ class InvestorImport implements ToModel, WithProgressBar, WithHeadingRow
             "prenom_conjoint" => $row['prenom_conjoint'],
             "nom_conjoint" => $row['nom_conjoint'],
             "nom_jeunefille_conjoint" => $row['nom_fille_conjoint'],
-            "birth_conjoint" => $row['naissance_conjoint'],
-            "birth_date" => $row['investisseur_naissance'],
+            "birth_conjoint" => $naissance_conjoint ? $naissance_conjoint ->format('Y-m-d'): null,
+            "birth_date" => $investisseur_naissance ? $investisseur_naissance ->format('Y-m-d') : null,
         ]);
     }
 }
