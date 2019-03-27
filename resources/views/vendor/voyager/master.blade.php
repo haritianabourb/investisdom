@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ config('app.locale') }}" @if (config('voyager.multilingual.rtl')) dir="rtl" @endif>
+<html lang="{{ config('app.locale') }}" dir="{{ __('voyager::generic.is_rtl') == 'true' ? 'rtl' : 'ltr' }}">
 <head>
     <title>@yield('page_title', setting('admin.title') . " - " . setting('admin.description'))</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,6 +37,10 @@
         .voyager .breadcrumb a{
             color:{{ config('voyager.primary_color','#22A7F0') }};
         }
+
+        .app-container .side-menu .panel.widget a.profile-link{
+            display: inline;
+        }
     </style>
 
     @if(!empty(config('voyager.additional_css')))<!-- Additional CSS -->
@@ -58,10 +62,10 @@
 </div>
 
 <?php
-if (starts_with(Auth::user()->avatar, 'http://') || starts_with(Auth::user()->avatar, 'https://')) {
-    $user_avatar = Auth::user()->avatar;
+if (starts_with(app('VoyagerAuth')->user()->avatar, 'http://') || starts_with(app('VoyagerAuth')->user()->avatar, 'https://')) {
+    $user_avatar = app('VoyagerAuth')->user()->avatar;
 } else {
-    $user_avatar = Voyager::image(Auth::user()->avatar);
+    $user_avatar = Voyager::image(app('VoyagerAuth')->user()->avatar);
 }
 ?>
 
@@ -101,13 +105,18 @@ if (starts_with(Auth::user()->avatar, 'http://') || starts_with(Auth::user()->av
             <div class="side-body padding-top">
                 @yield('page_header')
                 <div id="voyager-notifications"></div>
-                @yield('content')
+                <div class="row">
+                    <div class="col-md-12">
+                        @yield('content')
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 @include('voyager::partials.app-footer')
-
+@yield('footer')
+@stack('footer')
 <!-- Javascript Libs -->
 
 
@@ -135,7 +144,16 @@ if (starts_with(Auth::user()->avatar, 'http://') || starts_with(Auth::user()->av
 
     @endif
 </script>
+@include('voyager::media.manager')
+
+@include('voyager::menu.admin_menu')
+<script>
+    new Vue({
+        el: '#adminmenu',
+    });
+</script>
 @yield('javascript')
+@stack('javascript')
 
 @if(!empty(config('voyager.additional_js')))<!-- Additional Javascript -->
     @foreach(config('voyager.additional_js') as $js)<script type="text/javascript" src="{{ asset($js) }}"></script>@endforeach

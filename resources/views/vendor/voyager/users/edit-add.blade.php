@@ -16,6 +16,7 @@
 @section('content')
     <div class="page-content container-fluid">
         <form class="form-edit-add" role="form"
+              id="{{$dataType->name}}_edit_add"
               action="{{ (isset($dataTypeContent->id)) ? route('voyager.'.$dataType->slug.'.update', $dataTypeContent->id) : route('voyager.'.$dataType->slug.'.store') }}"
               method="POST" enctype="multipart/form-data" autocomplete="off">
             <!-- PUT Method if we are editing -->
@@ -42,13 +43,13 @@
                             <div class="form-group">
                                 <label for="name">{{ __('voyager::generic.name') }}</label>
                                 <input type="text" class="form-control" id="name" name="name" placeholder="{{ __('voyager::generic.name') }}"
-                                       value="@if(isset($dataTypeContent->name)){{ $dataTypeContent->name }}@endif">
+                                       value="{{ $dataTypeContent->name ?? '' }}">
                             </div>
 
                             <div class="form-group">
                                 <label for="email">{{ __('voyager::generic.email') }}</label>
                                 <input type="email" class="form-control" id="email" name="email" placeholder="{{ __('voyager::generic.email') }}"
-                                       value="@if(isset($dataTypeContent->email)){{ $dataTypeContent->email }}@endif">
+                                       value="{{ $dataTypeContent->email ?? '' }}">
                             </div>
 
                             <div class="form-group">
@@ -67,17 +68,17 @@
                                         $dataTypeRows = $dataType->{(isset($dataTypeContent->id) ? 'editRows' : 'addRows' )};
 
                                         $row     = $dataTypeRows->where('field', 'user_belongsto_role_relationship')->first();
-                                        $options = json_decode($row->details);
+                                        $options = $row->details;
                                     @endphp
-                                    @include('voyager::formfields.relationship')
+                                    @include('voyager::users.relationship')
                                 </div>
                                 <div class="form-group">
                                     <label for="additional_roles">{{ __('voyager::profile.roles_additional') }}</label>
                                     @php
                                         $row     = $dataTypeRows->where('field', 'user_belongstomany_role_relationship')->first();
-                                        $options = json_decode($row->details);
+                                        $options = $row->details;
                                     @endphp
-                                    @include('voyager::formfields.relationship')
+                                    @include('voyager::users.relationship')
                                 </div>
                             @endcan
                             @php

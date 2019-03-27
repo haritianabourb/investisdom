@@ -1,0 +1,46 @@
+.navbar .dropdown.profile .dropdown-menu{
+    width: 305px !important;
+}
+
+.navbar .dropdown.profile .dropdown-menu li.profile-img img.profile-img{
+    height:auto;
+    width:108px;
+    float:none;
+    padding-bottom: 5px;
+}
+
+.navbar .dropdown.profile .dropdown-menu .profile-body{
+    width: 100%;
+}
+
+.navbar .dropdown.profile .dropdown-menu .profile-body *{
+    display: inline-block;
+    width: 100%;
+}
+
+.dropdown.profile .dropdown-menu h6{
+    overflow:inherit;
+}
+
+.input-group-addon {
+	border-color:#e4eaec;
+}
+
+[data-first-row-in-group="no"] td:nth-of-type(1),
+[data-first-row-in-group="no"] td:nth-of-type(2)
+{
+    visibility: hidden;
+}
+
+.dataTables_wrapper.no-footer .dataTables_scrollBody {
+    border: none;
+}
+
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td,
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > th,
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > thead > tr > td,
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > thead > tr > th
+{
+    vertical-align: top;
+    text-align: justify;
+}

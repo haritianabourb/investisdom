@@ -6,6 +6,7 @@ use TCG\Voyager\Widgets\BaseDimmer;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use TCG\Voyager\Facades\Voyager;
+use \App\CGP;
 
 class CGPDimmer extends BaseDimmer
 {
@@ -23,16 +24,16 @@ class CGPDimmer extends BaseDimmer
     public function run()
     {
 
-      $count = rand('0', '10');
+      $count = CGP::count();
       $string = ' CGP';
 
       return view('voyager::dimmer', array_merge($this->config, [
           'icon'   => 'voyager-group',
           'title'  => "{$count} {$string}",
-          'text'   => 'en cours de développement',
+          'text'   => '&nbsp',
           'button' => [
             'text' => "Voir mes {$string}",
-            'link' => '#',
+            'link' => route('voyager.cgps.index'),
           ],
           // 'text'   => __('voyager::dimmer.user_text', ['count' => $count, 'string' => Str::lower($string)]),
           // 'button' => [
@@ -51,7 +52,6 @@ class CGPDimmer extends BaseDimmer
      */
     public function shouldBeDisplayed()
     {
-        return true;
-        // return Auth::user()->can('browse', \App\Contact::class );
+         return Auth::user()->can('browse', app(\App\CGP::class ));
     }
 }

@@ -58,9 +58,60 @@
                             <a href="#" class="permission-select-all">{{ __('voyager::generic.select_all') }}</a> / <a href="#"  class="permission-deselect-all">{{ __('voyager::generic.deselect_all') }}</a>
                             <ul class="permissions checkbox">
                                 <?php
-                                    $role_permissions = (isset($dataTypeContent)) ? $dataTypeContent->permissions->pluck('key')->toArray() : [];
+                                    $role_permissions =
+                                    (isset($dataTypeContent)) ?
+                                    $dataTypeContent->permissions->filter(function($item , $key){
+                                      if(in_array($item->key, [
+                                        "browse_bread",
+                                        "browse_database",
+                                        "browse_media",
+                                        "browse_compass",
+                                        "browse_menus",
+                                        "read_menus",
+                                        "edit_menus",
+                                        "add_menus",
+                                        "delete_menus",
+                                        "browse_settings",
+                                        "read_settings",
+                                        "edit_settings",
+                                        "add_settings",
+                                        "delete_settings",
+                                        "browse_hooks",
+                                        "browse_themes"
+                                      ])){
+                                        return auth()->user()->role->name == 'admin';
+                                      }
+                                      return true;
+                                    })
+                                    ->pluck('key')
+                                    ->toArray()
+                                    :
+                                    [];
+                                    // dd($role_permissions, TCG\Voyager\Models\Permission::all());
                                 ?>
-                                @foreach(TCG\Voyager\Models\Permission::all()->groupBy('table_name') as $table => $permission)
+                                @foreach(TCG\Voyager\Models\Permission::all()->filter(function($item , $key){
+                                  if(in_array($item->key, [
+                                    "browse_bread",
+                                    "browse_database",
+                                    "browse_media",
+                                    "browse_compass",
+                                    "browse_menus",
+                                    "read_menus",
+                                    "edit_menus",
+                                    "add_menus",
+                                    "delete_menus",
+                                    "browse_settings",
+                                    "read_settings",
+                                    "edit_settings",
+                                    "add_settings",
+                                    "delete_settings",
+                                    "browse_hooks",
+                                    "browse_themes"
+                                  ])){
+                                    return auth()->user()->role->name == 'admin';
+                                  }
+                                  return true;
+                                })->groupBy('table_name') as $table => $permission)
                                     <li>
                                         <input type="checkbox" id="{{$table}}" class="permission-group">
                                         <label for="{{$table}}"><strong>{{title_case(str_replace('_',' ', $table))}}</strong></label>

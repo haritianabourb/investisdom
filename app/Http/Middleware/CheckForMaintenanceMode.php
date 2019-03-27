@@ -11,9 +11,5 @@ class CheckForMaintenanceMode extends Middleware
      *
      * @var array
      */
-    protected $except = [
-        "/test",
-        "/admin",
-        "/admin/*",
-    ];
+    protected $except = [];
 }

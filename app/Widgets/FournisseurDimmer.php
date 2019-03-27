@@ -6,6 +6,7 @@ use TCG\Voyager\Widgets\BaseDimmer;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use TCG\Voyager\Facades\Voyager;
+use App\Supplier;
 
 class FournisseurDimmer extends BaseDimmer
 {
@@ -23,7 +24,7 @@ class FournisseurDimmer extends BaseDimmer
     public function run()
     {
 
-      $count = rand('0', '10');
+      $count = Supplier::count();
       $string = ' Fournisseurs';
 
       return view('voyager::dimmer', array_merge($this->config, [
@@ -32,7 +33,7 @@ class FournisseurDimmer extends BaseDimmer
           'text'   => 'en cours de développement',
           'button' => [
             'text' => "Voir mes {$string}",
-            'link' => '#',
+            'link' => route('voyager.suppliers.index'),
           ],
           // 'text'   => __('voyager::dimmer.user_text', ['count' => $count, 'string' => Str::lower($string)]),
           // 'button' => [
@@ -51,7 +52,6 @@ class FournisseurDimmer extends BaseDimmer
      */
     public function shouldBeDisplayed()
     {
-        return true;
-        // return Auth::user()->can('browse', \App\Contact::class );
+         return Auth::user()->can('browse', app(\App\Supplier::class) );
     }
 }

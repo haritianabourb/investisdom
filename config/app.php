@@ -78,7 +78,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'fr',
 
     /*
     |--------------------------------------------------------------------------
@@ -148,17 +148,18 @@ return [
         Illuminate\View\ViewServiceProvider::class,
 
         /*
-         * Package Service Providers...
-         */
-
-        /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
+        App\Providers\HelperServiceProvider::class,
+        App\Providers\InvestisDomServiceProvider::class,
+        App\Providers\InvestisDomPDFServiceProvider::class,
+        App\Providers\InvestisDomYousignServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
 
     ],
 

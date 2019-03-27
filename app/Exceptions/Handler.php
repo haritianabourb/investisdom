@@ -4,9 +4,13 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use TCG\Voyager\Traits\AlertsMessages;
 
 class Handler extends ExceptionHandler
 {
+
+    use AlertsMessages;
+
     /**
      * A list of the exception types that are not reported.
      *
@@ -34,6 +38,10 @@ class Handler extends ExceptionHandler
      */
     public function report(Exception $exception)
     {
+        if (app()->bound('sentry') && $this->shouldReport($exception)){
+            app('sentry')->captureException($exception);
+        }
+
         parent::report($exception);
     }
 

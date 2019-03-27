@@ -1,5 +1,4 @@
 @if(isset($options->relationship))
-
     {{-- If this is a relationship and the method does not exist, show a warning message --}}
     @if( !method_exists( $dataType->model_name, camel_case($row->field) ) )
         <p class="label label-warning"><i class="voyager-warning"></i> {{ __('voyager::form.field_select_dd_relationship', ['method' => camel_case($row->field).'()', 'class' => $dataType->model_name]) }}</p>
@@ -12,7 +11,7 @@
             <?php $selected_value = old($row->field); ?>
         @endif
 
-        <select class="form-control select2" name="{{ $row->field }}">
+        <select class="form-control select2" name="{{ $row->field }}" id="{{ $row->field }}">
             <?php $default = (isset($options->default) && !isset($dataTypeContent->{$row->field})) ? $options->default : null; ?>
 
             @if(isset($options->options))
@@ -55,12 +54,35 @@
             @endforeach
             </optgroup>
         </select>
+        @if(isset($options->relationship->modal) && $options->relationship->modal && \Auth::user()->hasRole(["admin", "investis", "investisdom"]))
+          @php
+            $relationshipDataType = app('voyager')->model('DataType')->where('model_name', '=', get_class($relationshipClass))->first();
+            $relationshipDataTypeRows = $relationshipDataType->addRows->filter(function($item, $key){
+              $details = $item->details;
+              return isset($details->modal) && $details->modal;
+            });
+            // TODO make this configurable in option later with an id in a display modal BREAD configuration.
+            $modal_id = "{$relationshipDataType->name}_edit_add_".random_int(100000, 999999);
+          @endphp
+          <button type="button" id="modal_{{$modal_id}}" class="btn btn-default btn-block"> Ajouter un {{$row->display_name}} </button>
+
+
+          @push('footer')
+            @include('voyager::partials.custom.modal')
+          @endpush
+
+          @push('javascript')
+            @include('voyager::partials.custom.modal-script')
+          @endpush
+        @endif
     @else
-        <select class="form-control select2" name="{{ $row->field }}"></select>
+        <select class="form-control select2" name="{{ $row->field }}" id="{{ $row->field }}"></select>
     @endif
+
+
 @else
     <?php $selected_value = (isset($dataTypeContent->{$row->field}) && !is_null(old($row->field, $dataTypeContent->{$row->field}))) ? old($row->field, $dataTypeContent->{$row->field}) : old($row->field); ?>
-    <select class="form-control select2" name="{{ $row->field }}">
+    <select class="form-control select2" name="{{ $row->field }}" id="{{ $row->field }}">
         <?php $default = (isset($options->default) && !isset($dataTypeContent->{$row->field})) ? $options->default : null; ?>
         @if(isset($options->options))
             @foreach($options->options as $key => $option)
