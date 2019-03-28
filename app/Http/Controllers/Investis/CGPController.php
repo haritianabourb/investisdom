@@ -183,11 +183,12 @@ class CGPController extends VoyagerBaseController
                 ->where('cgps_id', $cgp->id)
                 ->where('type_contrat_id', $contract_type->id)
                 ->first();
+
         }
 
 
         if($tauxCGP){
-            $results['taux'] = $tauxCGP->mois{Carbon::now()->format('m')} ?? 26.4;
+            $results['taux'] = $tauxCGP->{"mois_".Carbon::now()->format('n')} ?? 26.4;
         }else{
             $results['taux'] = 26.60;
         }
