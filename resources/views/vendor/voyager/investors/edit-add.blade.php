@@ -76,7 +76,6 @@
                                   @endif
                                     <div class="row">
                                       <div class="col-md-12">
-                                        <p class="alert alert-danger"> loop {{$loop->index}}</p>
                                         <legend class="text-{{$options->legend->align ?? 'center'}}" style="color: {{$options->legend->color ?? '#333'}};background-color: {{$options->legend->bgcolor ?? '#f0f0f0'}};padding: 5px; padding-left: 15px; display:inline-block">{{$options->legend->text}}</legend>
                                       </div>
                                 @endif
