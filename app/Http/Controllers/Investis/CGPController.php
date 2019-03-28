@@ -179,10 +179,14 @@ class CGPController extends VoyagerBaseController
             // FIXME the contract_type must be have a code section or an Id or a rate maybe
             $contract_type = TypeContrat::where('slug', $request->input('contrat'))->first();
 
-            $tauxCGP = TauxCGP::ofYear(Carbon::now()->format('Y'))
-                ->where('cgps_id', $cgp->id)
-                ->where('type_contrat_id', $contract_type->id)
-                ->first();
+            if($contract_type){
+                $tauxCGP = TauxCGP::ofYear(Carbon::now()->format('Y'))
+                    ->where('cgps_id', $cgp->id)
+                    ->where('type_contrat_id', $contract_type->id)
+                    ->first();
+
+//                $results["contrat"] = $contract_type;
+            }
 
         }
 

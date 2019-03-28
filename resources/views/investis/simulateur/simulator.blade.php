@@ -166,7 +166,7 @@
                             <td>Montant de réduction utilisé avant opération Girardin</td>
                             <td>{{old('montant_ri')}} €</td>
                             <td></td>
-                            <td class="active"><strong>Type de contrat : {{ $contrat->nom ?? old('contrat') }}</strong></td>
+                            <td class="active"><strong>Type de contrat : {{ $typeContrat->where("slug", old('contrat'))->first()->nom }}</strong></td>
                         </tr>
                         <tr>
                             <td>Total de réduction d'impôt possible disponible</td>
