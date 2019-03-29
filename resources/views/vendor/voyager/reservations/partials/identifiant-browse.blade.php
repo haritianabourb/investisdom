@@ -1,8 +1,10 @@
 <a href="{{ route('voyager.'.$dataType->slug.'.show', [$dataType->name => $reservation]) }}">
-{{$reservation->identifiant}}
+    {{$reservation->identifiant}}
 </a>
 <br>
-{{$reservation->investor->full_name}}<br>
+<a href="{{ route('voyager.investors.show', ["id" => $reservation->investor->id]) }}" target="_blank">
+    {{$reservation->investor->full_name}}
+</a><br>
 <span class="label label-primary">
     {{$reservation->typeContratsId->nom}}
 </span><br><br>
