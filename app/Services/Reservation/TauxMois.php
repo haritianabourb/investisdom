@@ -22,8 +22,9 @@ class TauxMois extends AbstractField
     public function process()
     {
 
-        $mandat_mois = $this->parameters->get('reservation_start')->month;
+        $mandat_mois = $this->parameters->get('reservation_start')->format('n');
         $mandat_mois = "mois_$mandat_mois";
+
 
 
         $tauxCGP = TauxCGP::ofYear($this->parameters->get('reservation_start')->year)
@@ -34,8 +35,11 @@ class TauxMois extends AbstractField
         // FIXME the contract_type must be have a code section or an Id or a rate maybe
         $contract_type = TypeContrat::find($this->parameters->get('type_contrat_id'));
 
+        if($tauxCGP){
+            return $tauxCGP->$mandat_mois/100;
+        }
 
-        return $tauxCGP ? $tauxCGP->$mandat_mois/100 : self::TAUX_CONFORT ;
+        return null;
     }
 
 
