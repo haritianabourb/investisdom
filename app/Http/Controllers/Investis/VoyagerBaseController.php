@@ -36,6 +36,7 @@ class VoyagerBaseController extends BaseVoyagerBaseController
         $val = $this->validateBread($request->all(), $dataType->addRows);
 
         if ($val->fails()) {
+            session()->flashInput($request->toArray());
             return redirect()->back()->with(
                 ["errors" => $val->messages()]
             );
