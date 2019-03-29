@@ -8,9 +8,12 @@
 
 namespace App\Services\Reservation;
 
+use App\Contact;
+use App\CGP;
 use App\TauxCGP;
 use App\TypeContrat;
 use App\Services\AbstractField;
+use Illuminate\Support\Facades\Auth;
 
 class TauxMois extends AbstractField
 {
@@ -26,8 +29,20 @@ class TauxMois extends AbstractField
         $mandat_mois = "mois_$mandat_mois";
 
 
+        $cgp_id = null;
+
+        //TODO enter this as new calculation fields: CGP's ID;
+        if(Auth::user()->hasRole(["cgps", "cgp"])){
+            $contact = Contact::ofUser(Auth::user())->first();
+            $cgp = CGP::ofContact($contact)->first();
+
+            $cgp_id = $cgp->id;
+        }else{
+            $cgp_id = $this->parameters->get('cgps_id');
+        }
+
         $tauxCGP = TauxCGP::ofYear($this->parameters->get('reservation_start')->year)
-            ->where('cgps_id', $this->parameters->get('cgps_id'))
+            ->where('cgps_id', $cgp_id)
             ->where('type_contrat_id', $this->parameters->get('type_contrats_id'))
             ->first();
 
@@ -39,6 +54,7 @@ class TauxMois extends AbstractField
         }
 
         return 0;
+
     }
 
 
