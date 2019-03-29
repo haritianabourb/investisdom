@@ -26,7 +26,6 @@ class TauxMois extends AbstractField
         $mandat_mois = "mois_$mandat_mois";
 
 
-
         $tauxCGP = TauxCGP::ofYear($this->parameters->get('reservation_start')->year)
             ->where('cgps_id', $this->parameters->get('cgps_id'))
             ->where('type_contrat_id', $this->parameters->get('type_contrats_id'))

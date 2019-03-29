@@ -46,8 +46,12 @@
                     <!-- form start -->
                     @foreach($dataType->readRows as $row)
                           @php
+                                //TODO just for please you for now
+
+                                $options = [];
                               if ($dataTypeContent->{$row->field.'_read'}) {
                                   $dataTypeContent->{$row->field} = $dataTypeContent->{$row->field.'_read'};
+                                  $options['accessor'] = true;
                               }
                           @endphp
                         @php $rowDetails = $row->details;
@@ -73,6 +77,8 @@
                             <h5>{{ $row->display_name }}</h5>
                             @if (isset($row->details->view))
                                 @include($row->details->view, ['row' => $row, 'dataType' => $dataType, 'dataTypeContent' => $dataTypeContent, 'content' => $dataTypeContent->{$row->field}, 'action' => 'read'])
+                          @elseif ( isset($options["accessor"]) )
+                              {!! $dataTypeContent->{$row->field} !!}
                             @elseif($row->type == "image")
                                 <img class="img-responsive"
                                      src="{{ filter_var($dataTypeContent->{$row->field}, FILTER_VALIDATE_URL) ? $dataTypeContent->{$row->field} : Voyager::image($dataTypeContent->{$row->field}) }}">
