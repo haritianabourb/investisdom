@@ -38,10 +38,7 @@ class CGPController extends VoyagerBaseController
             $validator = Validator::make($request->all(), $rules['rules'], $rules['messages']);
 
             if ($validator->fails()) {
-                $this->alertError(
-                    $validator->messages()->all()
-                );
-                return redirect()->back()->with($this->alerts);
+                return redirect()->back()->with(["errors" => $val->messages()]);
             }
         }
 
@@ -62,10 +59,7 @@ class CGPController extends VoyagerBaseController
             $validator = Validator::make($request->all(), $rules['rules'], $rules['messages']);
 
             if ($validator->fails()) {
-                $this->alertError(
-                    $validator->messages()->all()
-                );
-                return redirect()->back()->with($this->alerts);
+                return redirect()->back()->with(["errors" => $val->messages()]);
             }
         }
 
