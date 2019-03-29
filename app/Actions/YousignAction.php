@@ -187,7 +187,7 @@ class YousignAction extends AbstractAction
                $this->yousignValidation->put('cgp', $validator->failed());
             }
 
-            if(!is_object($this->yousignValidation)){
+            if(!$this->yousignValidation->count()){
                 $this->yousignValidation = true;
             }
 
