@@ -36,9 +36,9 @@ class VoyagerBaseController extends BaseVoyagerBaseController
         $val = $this->validateBread($request->all(), $dataType->addRows);
 
         if ($val->fails()) {
-            return redirect()->back()->with($this->alertError(
-                $val->messages()
-            ));
+            return redirect()->back()->with(
+                ["errors" => $val->messages()]
+            );
         }
 
         if (!$request->has('_validate')) {
