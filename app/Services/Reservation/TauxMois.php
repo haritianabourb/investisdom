@@ -39,7 +39,7 @@ class TauxMois extends AbstractField
             return $tauxCGP->$mandat_mois/100;
         }
 
-        return null;
+        return 0;
     }
 
 
