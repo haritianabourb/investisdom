@@ -45,7 +45,7 @@
                                 </a>
                                 <a href="{{ route('voyager.bread.edit', $table->name) }}"
                                    class="btn btn-primary btn-sm edit">
-                                    <i class="voyager-edit"></i> {{ __('voyager::generic.edit') }}
+                                    <i class="voyager-edit"></i> {{ __('generic.edit') }}
                                 </a>
                                 <a href="#delete-bread" data-id="{{ $table->dataTypeId }}" data-name="{{ $table->name }}"
                                      class="btn btn-danger btn-sm delete">
