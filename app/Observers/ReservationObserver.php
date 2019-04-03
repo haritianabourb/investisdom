@@ -90,6 +90,8 @@ class ReservationObserver
             $reservation->cgps_id = $cgp->id;
         }
 
+        $reservation->user_id = $request['user_id']?? \Auth::user()->id;
+
         // TODO make this for better fill, maybe had a log too
         $reservation->user_updated_id = \Auth::user() ? \Auth::user()->id : 1;
 
