@@ -55,9 +55,32 @@
 
                             @foreach($dataTypeRows as $row)
                                 @if(in_array($row->field,  ["cgps_id"]) && !\Auth::user()->hasRole(['admin', 'investis', 'investisdom']))
+
+                                    @php
+                                        $mois = \Carbon\Carbon::now()->format('n');
+                                        $mois = "mois_".$mois;
+                                        $typeContrats = \App\TauxCGP::ofYear(\Carbon\Carbon::now()->year)
+                                            ->where('cgps_id', \App\Contact::ofUser(\Auth::user())->first()->entity_related->id)->get();
+                                    @endphp
+
+                                    <div class="col-md-2 col-md-offset-6">
+                                        <ul class="list-group">
+                                            @foreach($typeContrats as $typeContrat)
+
+                                                @php
+                                                    $t = \App\TypeContrat::find($typeContrat->type_contrat_id);
+                                                @endphp
+
+                                                <li class="list-group-item">{{$t->nom}} <span class="badge">{{$typeContrat->$mois}} %</span></li>
+                                            @endforeach
+
+                                        </ul>
+                                    </div>
+
                                     @php
                                         continue;
                                     @endphp
+
                                 @elseif(in_array($row->field,  ["type_aj", "taux_ponctuel"]) && !\Auth::user()->hasRole(['admin', 'investis', 'investisdom']))
                                     @php
                                         continue;
