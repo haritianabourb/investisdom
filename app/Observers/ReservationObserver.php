@@ -27,7 +27,7 @@ class ReservationObserver
      */
       public function creating(Reservation $reservation)
     {
-        $reservation->user_id = \Auth::user()->id;
+        $reservation->user_id = $reservation->user_id ?: \Auth::user()->id;
         $reservation->identifiant = "ATTEMPTID";
 
     }
@@ -40,7 +40,6 @@ class ReservationObserver
      */
       public function created(Reservation $reservation)
     {
-        // dd($reservation);;
         $date = (new Carbon($reservation->created_at))->format("Ymd");
         $identifiant =
           substr(preg_replace('/\s/', '', stripAccents($reservation->investorsId->name)), 0, 3)
@@ -49,7 +48,12 @@ class ReservationObserver
           ."/".$reservation->id;
 
         // XXX little hack to not thrown the saving event for calculations
-        DB::table($reservation->getTable())->where('id', $reservation->id)->update(['identifiant' => $identifiant, "user_created_id" => \Auth::user()->id]);
+        DB::table($reservation->getTable())
+            ->where('id', $reservation->id)
+            ->update([
+                'identifiant' => $identifiant,
+                "user_created_id" => \Auth::user() ? \Auth::user()->id : 1
+            ]);
 
         // TODO Pdf process
         $reservation->generatePdf();
@@ -67,9 +71,10 @@ class ReservationObserver
     public function saving(Reservation $reservation)
     {
 
-        $request = request()->all();
+        $request = count(request()->all()) ? request()->all() : $reservation->toArray();
 
         $results = $this->calculateField($request, 'all');
+
 
         $columns = Schema::getColumnListing($reservation->getTable());
 
@@ -79,14 +84,14 @@ class ReservationObserver
             }
         });
 
-        if(\Auth::user()->hasRole(["cgps", "cgp"])){
+        if(\Auth::user() && \Auth::user()->hasRole(["cgps", "cgp"])){
             $contact = Contact::ofUser(\Auth::user())->firstOrFail();
             $cgp = CGP::ofContact($contact)->firstOrFail();
             $reservation->cgps_id = $cgp->id;
         }
 
         // TODO make this for better fill, maybe had a log too
-        $reservation->user_updated_id = \Auth::user()->id;
+        $reservation->user_updated_id = \Auth::user() ? \Auth::user()->id : 1;
 
 //        $reservation->generatePdf();
 
