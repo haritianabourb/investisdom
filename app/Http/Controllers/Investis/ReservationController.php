@@ -193,7 +193,7 @@ class ReservationController extends VoyagerBaseController
 
         if($reservation->paiement == "echelonne" || $reservation->mode_paiement == "prelevement"){
             $sepa_pdf =  PDF::loadView('pdf.reservations.sepa', ['reservation' => $reservation, 'investor' => $investor, 'formulae' => $formulae]);
-            $this->pdf['Mandat_SEPA'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf'] = $sepa_pdf->output;
+            $this->pdf['Mandat_SEPA'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf'] = $sepa_pdf->output();
         }
 
 
