@@ -558,12 +558,12 @@
         <P class="p29 ft3">Mobile : {{$investor->gsm_invest ?: "-"}}</P>
         <P class="p29 ft3">Email : {{$investor->email_invest ?: "-"}}</P>
         <P class="p28 ft3">Situation matrimoniale :</P>
-        <LABEL class="p60 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "01" )checked="checked"@endif> Célibataire</LABEL><br>
-        <LABEL class="p29 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "02" )checked="checked"@endif> Marié(e) sous le régime de la communauté</LABEL><br>
-        <LABEL class="p29 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "03" )checked="checked"@endif> Marié(e) sous contrat</LABEL><br>
-        <LABEL class="p29 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "04" )checked="checked"@endif> Pacsé(e)</LABEL><br>
-        <LABEL class="p29 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "05" )checked="checked"@endif> Divrocé(e)</LABEL><br>
-        <LABEL class="p29 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "06" )checked="checked"@endif> Veuf(ve)</LABEL>
+        <LABEL class="p60 ft3"><input type="checkbox" @if(in_array($investor->regime_mat_invest, ["01", "célibataire"] ) )checked="checked"@endif> Célibataire</LABEL><br>
+        <LABEL class="p29 ft3"><input type="checkbox" @if(in_array($investor->regime_mat_invest, ["02", "marié sous la communauté"] ) )checked="checked"@endif> Marié(e) sous le régime de la communauté</LABEL><br>
+        <LABEL class="p29 ft3"><input type="checkbox" @if(in_array($investor->regime_mat_invest, ["03", "marié sous contrat"] ) )checked="checked"@endif> Marié(e) sous contrat</LABEL><br>
+        <LABEL class="p29 ft3"><input type="checkbox" @if(in_array($investor->regime_mat_invest, ["04", "pacsé"] ) )checked="checked"@endif> Pacsé(e)</LABEL><br>
+        <LABEL class="p29 ft3"><input type="checkbox" @if(in_array($investor->regime_mat_invest, ["05", "divorcé(e)"] ) )checked="checked"@endif> Divrocé(e)</LABEL><br>
+        <LABEL class="p29 ft3"><input type="checkbox" @if(in_array($investor->regime_mat_invest, ["06", "veuf(ve)"] ) )checked="checked"@endif> Veuf(ve)</LABEL>
         <P class="p28 ft3">Si marié(e) ou engagé(e) dans les liens d'un Pacte Civil de Solidarité (P.A.C.S) :</P>
         <P class="p35 ft3">Renonciation du conjoint à la qualité d'associé</P>
         <P class="p28 ft3">Le soussigné(e) déclare acquérir les parts de SNC au moyen de ses deniers propres.</P>
@@ -601,7 +601,7 @@
 <DIV id="page_8">
     <DIV id="id8_1">
         <P class="p71 ft4">4. CONSENTEMENT DES EPOUX OU DES ENGAGES</P>
-        @if(!in_array($investor->regime_mat_invest, ["01", "03", "05", "06"]))
+        @if(!in_array($investor->regime_mat_invest, ["01", "03", "05", "06", "célibataire", "marié sous contrat", "divorcé(e)", "veuf(ve)"]))
         <P class="p58 ft3">Je soussigné(e) :</P>
         <P class="p29 ft3">Prénom : {{$investor->prenom_conjoint ?: "-"}} </P>
         <P class="p29 ft3">Nom : {{$investor->nom_conjoint ?: "-"}} </P>
@@ -609,9 +609,9 @@
         <P class="p29 ft3">Né(e) le : <NOBR>{{isset($investor->birth_conjoint) ? $investor->birth_conjoint->format('d/m/Y') : "-"}}</NOBR></P>
         <P class="p59 ft3">Marié(e) ou engagé(e) à {{ $investor->prenom_invest }} {{ strtoupper($investor->name_invest) }}</P>
         <P class="p72 ft3">
-            @if($investor->regime_mat_invest == "02" )Marié(e) sous le régime de la communauté légale @endif
-            @if($investor->regime_mat_invest == "03" )Marié(e) sous le régime de la séparation de biens @endif
-            @if($investor->regime_mat_invest == "04" )Engagé(e) dans les liens d'un Pacte Civil de Solidarité (P.A.C.S)@endif
+            @if(in_array($investor->regime_mat_invest, ["02", "marié sous la communauté"]) )Marié(e) sous le régime de la communauté légale @endif
+            @if(in_array($investor->regime_mat_invest, ["03", "marié sous contrat"] ) )Marié(e) sous le régime de la séparation de biens @endif
+            @if(in_array($investor->regime_mat_invest, ["04", "pacsé"] ) )Engagé(e) dans les liens d'un Pacte Civil de Solidarité (P.A.C.S) @endif
         </P>
         <P class="p27 ft3">Déclare par la présente,</P>
         <P class="p73 ft12"><SPAN class="ft16">°</SPAN><SPAN class="ft17">Avoir été informé(e) conformément aux dispositions de l'article </SPAN><NOBR>1832-2</NOBR> du Code Civil, de la demande de souscription effectuée par mon conjoint pour un montant de réduction d'impôt de {{$reservation->montant_reduction}} euros</P>
