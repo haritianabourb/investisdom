@@ -32,7 +32,7 @@ class TauxMois extends AbstractField
         $cgp_id = null;
 
         //TODO enter this as new calculation fields: CGP's ID;
-        if(Auth::user()->hasRole(["cgps", "cgp"])){
+        if(Auth::user() && Auth::user()->hasRole(["cgps", "cgp"])){
             $contact = Contact::ofUser(Auth::user())->first();
             $cgp = CGP::ofContact($contact)->first();
 
@@ -54,6 +54,7 @@ class TauxMois extends AbstractField
         }
 
         return 0;
+
     }
 
 

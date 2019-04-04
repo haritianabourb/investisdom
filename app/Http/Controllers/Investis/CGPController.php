@@ -99,7 +99,7 @@ class CGPController extends VoyagerBaseController
     public function getDocuments()
     {
         $contact = Contact::ofUser(Auth::user())->firstOrFail();
-        $cgp = CGP::ofContact($contact, true)->first();
+        $cgp = CGP::ofContact($contact)->first();
 
         $dataType = Voyager::model('DataType')->where('slug', '=', "cgps")->first();
         $dataTypeContent = call_user_func([$dataType->model_name, 'findOrFail'], $cgp->id);
