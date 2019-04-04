@@ -326,11 +326,11 @@
         <TABLE cellpadding=0 cellspacing=0 class="t0">
             <TR>
                 <TD class="tr0 td0"><P class="p2 ft2">&nbsp;</TD>
-                <TD class="tr0 td0"><P class="p2 ft2">Date : <NOBR>{{\Carbon\Carbon::now()->format('d-m-Y')}}</NOBR></P></TD>
+                <TD class="tr0 td0"><P class="p2 ft2">Date : <NOBR>{{\Carbon\Carbon::createFromFormat("Y-m-d",$reservation->mandat_reserved_at)->format('d-m-Y')}}</NOBR></P></TD>
             </TR>
             <TR>
-                <TD class="tr1 td0"><P class="p1 ft3">Par réception numérique : Valable jusqu'au <NOBR>{{\Carbon\Carbon::now()->addDay(7)->format('d-m-Y')}}</NOBR></P></TD>
-                <TD class="tr1 td0"><P class="p1 ft3">Par réception courrier : Valable jusqu'au <NOBR>{{\Carbon\Carbon::now()->addDay(10)->format('d-m-Y')}}</NOBR></P></TD>
+                <TD class="tr1 td0"><P class="p1 ft3">Par réception numérique : Valable jusqu'au <NOBR>{{\Carbon\Carbon::createFromFormat("Y-m-d",$reservation->mandat_reserved_at)->addDay(7)->format('d-m-Y')}}</NOBR></P></TD>
+                <TD class="tr1 td0"><P class="p1 ft3">Par réception courrier : Valable jusqu'au <NOBR>{{\Carbon\Carbon::createFromFormat("Y-m-d",$reservation->mandat_reserved_at)->addDay(10)->format('d-m-Y')}}</NOBR></P></TD>
             </TR>
         </TABLE>
         <P class="p3 ft4">{{ucfirst($investor->civilite ?? "M.")}} {{ $investor->full_name ?? "" }}</P>
@@ -504,7 +504,7 @@
             <TR>
                 <TD class="tr4 td6">
                     <P class="p0 ft3">Fait à : {{$investor->postal_code}} {{$investor->city}}, le
-                        <NOBR>{{date('d-m-Y')}}</NOBR>
+                        <NOBR>{{\Carbon\Carbon::createFromFormat("Y-m-d",$reservation->mandat_reserved_at)->locale('FR_FR')->isoFormat('LL')}}</NOBR>
                     </P>
                 </TD>
                 <TD class="tr4 td7"><P class="p0 ft0">&nbsp;</P></TD>
@@ -558,17 +558,17 @@
         <P class="p29 ft3">Mobile : {{$investor->gsm_invest ?: "-"}}</P>
         <P class="p29 ft3">Email : {{$investor->email_invest ?: "-"}}</P>
         <P class="p28 ft3">Situation matrimoniale :</P>
-        <LABEL class="p60 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "01" )checked="checked"@endif> Célibataire</LABEL><br>
-        <LABEL class="p29 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "02" )checked="checked"@endif> Marié(e) sous le régime de la communauté</LABEL><br>
-        <LABEL class="p29 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "03" )checked="checked"@endif> Marié(e) sous contrat</LABEL><br>
-        <LABEL class="p29 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "04" )checked="checked"@endif> Pacsé(e)</LABEL><br>
-        <LABEL class="p29 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "05" )checked="checked"@endif> Divrocé(e)</LABEL><br>
-        <LABEL class="p29 ft3"><input type="checkbox" @if($investor->regime_mat_invest == "06" )checked="checked"@endif> Veuf(ve)</LABEL>
+        <LABEL class="p60 ft3"><input type="checkbox" @if(in_array($investor->regime_mat_invest, ["01", "célibataire"] ) )checked="checked"@endif> Célibataire</LABEL><br>
+        <LABEL class="p29 ft3"><input type="checkbox" @if(in_array($investor->regime_mat_invest, ["02", "marié sous la communauté"] ) )checked="checked"@endif> Marié(e) sous le régime de la communauté</LABEL><br>
+        <LABEL class="p29 ft3"><input type="checkbox" @if(in_array($investor->regime_mat_invest, ["03", "marié sous contrat"] ) )checked="checked"@endif> Marié(e) sous contrat</LABEL><br>
+        <LABEL class="p29 ft3"><input type="checkbox" @if(in_array($investor->regime_mat_invest, ["04", "pacsé"] ) )checked="checked"@endif> Pacsé(e)</LABEL><br>
+        <LABEL class="p29 ft3"><input type="checkbox" @if(in_array($investor->regime_mat_invest, ["05", "divorcé(e)"] ) )checked="checked"@endif> Divrocé(e)</LABEL><br>
+        <LABEL class="p29 ft3"><input type="checkbox" @if(in_array($investor->regime_mat_invest, ["06", "veuf(ve)"] ) )checked="checked"@endif> Veuf(ve)</LABEL>
         <P class="p28 ft3">Si marié(e) ou engagé(e) dans les liens d'un Pacte Civil de Solidarité (P.A.C.S) :</P>
         <P class="p35 ft3">Renonciation du conjoint à la qualité d'associé</P>
         <P class="p28 ft3">Le soussigné(e) déclare acquérir les parts de SNC au moyen de ses deniers propres.</P>
         <P class="p28 ft3">Fait à : {{$investor->postal_code}} {{$investor->city}}</P>
-        <P class="p59 ft3">Le : <NOBR>{{\Carbon\Carbon::now()->format('d-m-Y')}}</NOBR></P>
+        <P class="p59 ft3">Le : <NOBR>{{\Carbon\Carbon::createFromFormat("Y-m-d",$reservation->mandat_reserved_at)->locale('FR_FR')->isoFormat('LL')}}</NOBR></P>
         <P class="p61 ft3">signature</P>
         <P class="p62 ft14">Les Informations recueillies par INVESTIS DOM font l'objet d'un traitement informatique destiné à traiter votre souscription dans nos opérations d'investissements au titre de l'article 199 undecies B du Code Général des Impôts. Vos opérations et données personnelles sont couvertes par le secret professionnel auquel nous sommes tenus.</P>
         <P class="p63 ft16">Conformément â la loi « Informatique et libertés » du 6 janvier 1978 modifiée en 2004, vous bénéficiez d'un droit d'accès, de rectification et d'opposition pour motifs légitimes aux informations qui vous concernent, que vous pouvez exercer par courrier électronique à <NOBR>contact@investis-dom.com</NOBR> ou par courrier postal à INVESTIS DOM - Centre d'affaires CADJEE - 62 boulevard du Chaudron - 97490 Sainte Clotilde.</P>
@@ -589,7 +589,7 @@
         <P class="p67 ft3"><SPAN class="ft16">°</SPAN><SPAN class="ft5">Soit d'exercer une activité commerciale</SPAN></P>
         <P class="p29 ft3"><SPAN class="ft16">°</SPAN><SPAN class="ft5">Soit de gérer, d'administrer ou de diriger une personne morale.</SPAN></P>
         <P class="p68 ft3">Fait à : {{$investor->postal_code}} {{$investor->city}}</P>
-        <P class="p29 ft3">Le : <NOBR>{{\Carbon\Carbon::now()->format('d-m-Y')}}</NOBR></P>
+        <P class="p29 ft3">Le : <NOBR>{{\Carbon\Carbon::createFromFormat("Y-m-d",$reservation->mandat_reserved_at)->locale('FR_FR')->isoFormat('LL')}}</NOBR></P>
         <P class="p61 ft3">signature</P>
         <P class="p69 ft15">Rappel : Article L <NOBR>123-5</NOBR> du Code de Commerce</P>
         <P class="p9 ft16">(Ordonnance n° <NOBR>2000-916</NOBR> du 19 septembre 2000 art. 3 Journal Officiel du 22 septembre 2000 en vigueur le 1er janvier 2002).</P>
@@ -601,7 +601,7 @@
 <DIV id="page_8">
     <DIV id="id8_1">
         <P class="p71 ft4">4. CONSENTEMENT DES EPOUX OU DES ENGAGES</P>
-        @if(!in_array($investor->regime_mat_invest, ["01", "03", "05", "06"]))
+        @if(!in_array($investor->regime_mat_invest, ["01", "03", "05", "06", "célibataire", "marié sous contrat", "divorcé(e)", "veuf(ve)"]))
         <P class="p58 ft3">Je soussigné(e) :</P>
         <P class="p29 ft3">Prénom : {{$investor->prenom_conjoint ?: "-"}} </P>
         <P class="p29 ft3">Nom : {{$investor->nom_conjoint ?: "-"}} </P>
@@ -609,15 +609,15 @@
         <P class="p29 ft3">Né(e) le : <NOBR>{{isset($investor->birth_conjoint) ? $investor->birth_conjoint->format('d/m/Y') : "-"}}</NOBR></P>
         <P class="p59 ft3">Marié(e) ou engagé(e) à {{ $investor->prenom_invest }} {{ strtoupper($investor->name_invest) }}</P>
         <P class="p72 ft3">
-            @if($investor->regime_mat_invest == "02" )Marié(e) sous le régime de la communauté légale @endif
-            @if($investor->regime_mat_invest == "03" )Marié(e) sous le régime de la séparation de biens @endif
-            @if($investor->regime_mat_invest == "04" )Engagé(e) dans les liens d'un Pacte Civil de Solidarité (P.A.C.S)@endif
+            @if(in_array($investor->regime_mat_invest, ["02", "marié sous la communauté"]) )Marié(e) sous le régime de la communauté légale @endif
+            @if(in_array($investor->regime_mat_invest, ["03", "marié sous contrat"] ) )Marié(e) sous le régime de la séparation de biens @endif
+            @if(in_array($investor->regime_mat_invest, ["04", "pacsé"] ) )Engagé(e) dans les liens d'un Pacte Civil de Solidarité (P.A.C.S) @endif
         </P>
         <P class="p27 ft3">Déclare par la présente,</P>
         <P class="p73 ft12"><SPAN class="ft16">°</SPAN><SPAN class="ft17">Avoir été informé(e) conformément aux dispositions de l'article </SPAN><NOBR>1832-2</NOBR> du Code Civil, de la demande de souscription effectuée par mon conjoint pour un montant de réduction d'impôt de {{$reservation->montant_reduction}} euros</P>
         <P class="p67 ft3"><SPAN class="ft16">°</SPAN><SPAN class="ft5">Renoncer, en application de l'article </SPAN><NOBR>1832-2</NOBR> du Code Civil, à revendiquer la qualité d'associé de la SNC et reconnais cette qualité à mon conjoint.</P>
         <P class="p68 ft3">Fait à : {{$investor->postal_code}} {{$investor->city}}</P>
-        <P class="p29 ft3">Le : <NOBR>{{\Carbon\Carbon::now()->format('d-m-Y')}}</NOBR></P>
+        <P class="p29 ft3">Le : <NOBR>{{\Carbon\Carbon::createFromFormat("Y-m-d",$reservation->mandat_reserved_at)->locale('FR_FR')->isoFormat('LL')}}</NOBR></P>
         <P class="p61 ft3">signature</P>
         @else
             <P class="p72 ft3">Aucun consentement n'est nécessaire</P>
@@ -649,7 +649,7 @@
         <P class="p85 ft3"><SPAN class="ft3">-</SPAN><SPAN class="ft5">De signer en mes lieux et places les </SPAN><NOBR>procès-verbaux</NOBR> ainsi que tous autres documents se rapportant à ces assemblées.</P>
         <P class="p86 ft12">Je suis informé(e) que je pourrai disposer prochainement sur mon compte personnel INVESTIS DOM (accessible depuis <NOBR>www.investis-dom.com)</NOBR> de l'ensemble de mes dossiers de souscription, ainsi qu'aux dossiers des pièces contractuelles.</P>
         <P class="p87 ft3">Fait à : {{$investor->postal_code}} {{$investor->city}}</P>
-        <P class="p29 ft3">Le : <NOBR>{{\Carbon\Carbon::now()->format('d-m-Y')}}</NOBR></P>
+        <P class="p29 ft3">Le : <NOBR>{{\Carbon\Carbon::createFromFormat("Y-m-d",$reservation->mandat_reserved_at)->locale('FR_FR')->isoFormat('LL')}}</NOBR></P>
         <P class="p67 ft16">Faire précéder la signature de la mention manuscrite</P>
         <P class="p88 ft16">« Bon pour pouvoir »</P>
         <P class="p89 ft3">signature</P>
@@ -707,7 +707,7 @@
         <P class="p28 ft3">Code postal : {{$investor->postal_code}}</P>
         <P class="p28 ft3">Ville : {{$investor->city}}</P>
         <P class="p100 ft3">Fait à : {{$investor->postal_code}} {{$investor->city}}</P>
-        <P class="p29 ft3">Le : <NOBR>{{\Carbon\Carbon::now()->format('d-m-Y')}}</NOBR></P>
+        <P class="p29 ft3">Le : <NOBR>{{\Carbon\Carbon::createFromFormat("Y-m-d",$reservation->mandat_reserved_at)->locale('FR_FR')->isoFormat('LL')}}</NOBR></P>
         <P class="p61 ft3">signature</P>
 
     </DIV>

@@ -381,12 +381,12 @@
         dans la même proportion lui sera proposé. Il est admis par le MANDANT que le MANDATAIRE est tenu à une
         obligation de moyens qui ne saurait en aucun cas être considérée comme une obligation de résultats.</P>
     <P class="p12 ft4">Le MANDANT souhaite réduire le montant de son imposition à hauteur de : {{$reservation->montant_reduction}} euros.<br>
-        Le présent mandat est consenti jusqu'au 15 décembre {{date('Y')}}.</P>
+        Le présent mandat est consenti jusqu'au {{\Carbon\Carbon::createFromFormat("Y-m-d",$reservation->mandat_finnish_at)->locale('FR_FR')->isoFormat('LL')}}.</P>
     <TABLE cellpadding=0 cellspacing=0 class="t3">
         <TR>
             <TD class="tr4 td6">
                 <P class="p0 ft3">Fait à : PARIS, le
-                    <NOBR>{{date('d-m-Y')}}</NOBR>
+                    <NOBR>{{\Carbon\Carbon::createFromFormat("Y-m-d",$reservation->mandat_reserved_at)->locale('FR_FR')->isoFormat('LL')}}</NOBR>
                 </P>
             </TD>
             <TD class="tr4 td7"><P class="p0 ft0">&nbsp;</P></TD>
