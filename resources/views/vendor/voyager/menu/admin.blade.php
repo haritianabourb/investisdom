@@ -17,7 +17,7 @@
                      data-route="{{ $item->route }}"
                      data-parameters="{{ json_encode($item->parameters) }}"
                 >
-                    <i class="voyager-edit"></i> {{ __('voyager::generic.edit') }}
+                    <i class="voyager-edit"></i> {{ __('generic.edit') }}
                 </div>
             </div>
             <div class="dd-handle">

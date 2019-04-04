@@ -13,7 +13,8 @@ trait HasFieldsToCalculate {
   }
 
  public function calculateField($parameters = null, $field) {
-   if(!is_null($parameters))$this->calculation()->setParameters($parameters);
+   if(!is_null($parameters))
+        $this->calculation()->setParameters($parameters);
      try{
          $this->validateField($field);
         return $this->calculation()->processCalculation($field);
