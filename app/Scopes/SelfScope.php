@@ -26,7 +26,7 @@ class SelfScope implements Scope
      */
     public function apply(Builder $builder, Model $model)
     {
-        if(!Auth::user()->hasRole(['admin', 'investisdom', 'investis'])){
+        if(Auth::user() && !Auth::user()->hasRole(['admin', 'investisdom', 'investis'])){
 
             $this->contact = Contact::ofUser(Auth::user())->firstOrFail();
 

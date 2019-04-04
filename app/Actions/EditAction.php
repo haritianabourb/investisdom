@@ -8,7 +8,7 @@ class EditAction extends AbstractAction
 {
     public function getTitle()
     {
-        return __('voyager::generic.edit');
+        return __('generic.edit');
     }
 
     public function getIcon()
