@@ -68,7 +68,7 @@
                             </a>
                             <a href="{{ route('voyager.database.edit', $table->name) }}"
                                class="btn btn-sm btn-primary pull-right" style="display:inline; margin-right:10px;">
-                               <i class="voyager-edit"></i> {{ __('voyager::generic.edit') }}
+                               <i class="voyager-edit"></i> {{ __('generic.edit') }}
                             </a>
                             <a href="{{ route('voyager.database.show', $table->name) }}"
                                data-name="{{ $table->name }}"

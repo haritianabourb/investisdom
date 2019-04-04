@@ -49,14 +49,39 @@
                             <!-- Adding / Editing -->
                             @php
                                 $dataTypeRows = $dataType->{(!is_null($dataTypeContent->getKey()) ? 'editRows' : 'addRows' )};
-
-
                                 //just for the loop
                                 $loopFirst = true;
                             @endphp
 
                             @foreach($dataTypeRows as $row)
-                                @if(in_array($row->field,  ["cgps_id", "type_aj", "taux_ponctuel"]) && !\Auth::user()->hasRole(['admin', 'investis', 'investisdom']))
+                                @if(in_array($row->field,  ["cgps_id"]) && !\Auth::user()->hasRole(['admin', 'investis', 'investisdom']))
+
+                                    @php
+                                        $mois = \Carbon\Carbon::now()->format('n');
+                                        $mois = "mois_".$mois;
+                                        $typeContrats = \App\TauxCGP::ofYear(\Carbon\Carbon::now()->year)
+                                            ->where('cgps_id', \App\Contact::ofUser(\Auth::user())->first()->entity_related->id)->get();
+                                    @endphp
+
+                                    <div class="col-md-2 col-md-offset-6">
+                                        <ul class="list-group">
+                                            @foreach($typeContrats as $typeContrat)
+
+                                                @php
+                                                    $t = \App\TypeContrat::find($typeContrat->type_contrat_id);
+                                                @endphp
+
+                                                <li class="list-group-item">{{$t->nom}} <span class="badge">{{$typeContrat->$mois}} %</span></li>
+                                            @endforeach
+
+                                        </ul>
+                                    </div>
+
+                                    @php
+                                        continue;
+                                    @endphp
+
+                                @elseif(in_array($row->field,  ["type_aj", "taux_ponctuel"]) && !\Auth::user()->hasRole(['admin', 'investis', 'investisdom']))
                                     @php
                                         continue;
                                     @endphp
@@ -97,6 +122,19 @@
                                         @endforeach
                                 @endif
                               </div>
+                                @if(in_array($row->field,  ["cgps_id"]) && \Auth::user()->hasRole(['admin', 'investis', 'investisdom']))
+                                    <div class="col-md-4">
+                                        <label for="user_id">Utilisateur affilié</label>
+                                        <select class="form-control select2" name="user_id" id="user_id">
+                                            @php($role = \Voyager::model("Role")->where("name", "cgp")->first())
+
+                                            @foreach(\App\User::where("role_id", $role->id)->get() as $user)
+                                                <option value="{{$user->id}}" @if($dataTypeContent->user_id == $user->id || (old("user_id") && old("user_id") == $user->id)) selected="selected" @endif>{{$user->contact->full_name}} <small>({{$user->contact->entityRelatedBrowse}})</small></option>
+                                            @endforeach
+
+                                        </select>
+                                    </div>
+                                @endif
                             @endforeach
 
                         </div><!-- panel-body -->

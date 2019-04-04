@@ -4,14 +4,13 @@ namespace App\Http\Controllers\Investis;
 
 use App\Contact;
 use App\Http\Traits\YousignProcedure;
+use App\User;
 use Illuminate\Http\Request;
 use \App\Reservation;
 use DB;
+use Validator;
 use PDF;
-use TCG\Voyager\Traits\AlertsMessages;
-use Voyager;
 use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
@@ -22,6 +21,66 @@ class ReservationController extends VoyagerBaseController
 
     protected $yousignName = "Signing Procedure with trait";
     protected $yousignDescription = "New!!! now it's with trait, viva la dynamica!!!";
+
+    public function store(Request $request){
+
+        $validator = Validator::make($request->all(), [
+            'user_id' => [
+                'sometimes',
+                'exists:users,id',
+                function ($attribute, $value, $fail) use ($request) {
+                    $user = User::find($value);
+                    $contact = Contact::ofUser($user)->first();
+                    if($contact){
+                        if($contact->entity_related->id != $request->input("cgps_id")){
+                            $fail("L'utilisateur {$contact->full_name} n'est pas affilié à la CGP Choisi");
+                        }
+                    }else{
+                        $fail("Utilisateur non enregistré comme CGP");
+                    }
+                },
+            ],
+        ]);
+
+        if ($validator->fails()) {
+            session()->flashInput($request->toArray());
+            return redirect()->back()->with(
+                ["errors" => $validator->messages()]
+            );
+        }
+
+
+        return parent::store($request);
+    }
+
+    public function update(Request $request, $id){
+        $validator = Validator::make($request->all(), [
+            'user_id' => [
+                'sometimes',
+                'exists:users,id',
+                function ($attribute, $value, $fail) use ($request) {
+                    $user = User::find($value);
+                    $contact = Contact::ofUser($user)->first();
+                    if($contact){
+                        if($contact->entity_related->id != $request->input("cgps_id")){
+                            $fail("L'utilisateur {$contact->full_name} n'est pas affilié à la CGP Choisi");
+                        }
+                    }else{
+                        $fail("Utilisateur non enregistré comme CGP");
+                    }
+                },
+            ],
+        ]);
+
+        if ($validator->fails()) {
+            session()->flashInput($request->toArray());
+            return redirect()->back()->with(
+                ["errors" => $validator->messages()]
+            );
+        }
+
+        return parent::update($request, $id);
+    }
 
     public function getFiles()
     {
@@ -186,12 +245,16 @@ class ReservationController extends VoyagerBaseController
         $formulae = \App\TypeContrat::find($reservation->type_contrats_id);
 
         $pdf = PDF::loadView('pdf.reservations.reservation', ['reservation' => $reservation, 'investor' => $investor, 'formulae' => $formulae]);
-
         $this->pdf ['Demande_de_Reservation'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf'] = $pdf->output();
 
         $another_pdf = PDF::loadView('pdf.reservations.mandat_recherche', ['reservation' => $reservation, 'investor' => $investor, 'formulae' => $formulae]);
-
         $this->pdf ['Mandat_de_Recherche'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf'] = $another_pdf->output();
+
+        if($reservation->paiement == "echelonne" || $reservation->mode_paiement == "prelevement"){
+            $sepa_pdf =  PDF::loadView('pdf.reservations.sepa', ['reservation' => $reservation, 'investor' => $investor, 'formulae' => $formulae]);
+            $this->pdf['Mandat_SEPA'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf'] = $sepa_pdf->output();
+        }
+
 
         $this->yousignFileName = 'Mandat_de_Recherche'.$investor->name_invest.'_'.$investor->prenom_invest.'_'.date('m-d-Y').'.pdf';
         $this->yousignName = "{$reservation->identifiant} - {$investor->name_invest} {$investor->prenom_invest}";

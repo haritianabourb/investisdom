@@ -42,7 +42,7 @@ return [
     'descending'             => 'Descendant',
     'deselect_all'           => 'Tout désélectionner',
     'download'               => 'Télécharger',
-    'edit'                   => 'Editer',
+    'edit'                   => 'Modifier',
     'email'                  => 'Adresse email',
     'error_activating'         => 'Désolé, il semble qu\'il y ait eu un problème d\'activation',
     'error_deleting'         => 'Désolé, il semble qu\'il y ait eu un problème de suppression',
