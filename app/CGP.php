@@ -11,17 +11,23 @@ class CGP extends Entity
     use CGPContacts,HasBelongsToManyEvents, HasRelationshipObservables;
 
     protected $additional_attributes = [
-        "all_contacts"
+        "all_contacts",
+        "current_taux_cgp"
     ];
 
     protected $appends = [
-        "all_contacts"
+        "all_contacts",
+        "current_taux_cgp"
     ];
 
     protected $table = 'cgps';
 
     public function tauxCGP(){
       return $this->hasMany(TauxCGP::class, 'cgps_id', 'id');
+    }
+
+    function getCurrentTauxCGPAttribute(){
+        return $this->tauxCGP()->where("year", date("Y"))->get();
     }
 
     public function contactId()
