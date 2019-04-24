@@ -59,6 +59,13 @@
     .row {
         overflow: auto;
     }
+
+    th, td {
+        font-size: 13px;
+    }
+
+    tr:nth-child(even) {background-color: #f2f2f2;}
+
 </style>
 @endpush
 @section('body')
@@ -79,7 +86,7 @@
     </p>
 
     <p class="text">
-        {{ $nom }}, {{ $forme_juridique }} au capital de $capital euros, ayant son siège social
+        {{ $nom }}, {{ $forme_juridique }} au capital de {{ $capital }} euros, ayant son siège social
         {{ $adresse }} - {{ $cgpcp }} - {{ $cgpville }}, immatriculée {{ $immatriculation }}  sous le
         numéro {{ $siret }}, immatriculée à {{ $lieu_immatriculation }}.<br>Représentée par
         {{ $civilite }} {{ $prenom }} {{ $nom_representant }}, en qualité de {{ $fonction }},<br>D'autre part,
@@ -105,6 +112,9 @@
         au titre des souscriptions de ses clients dans les opérations de financement mises au point par INVESTIS DOM.
     </p>
 
+    <pagebreak>
+    </pagebreak>
+
     <h2 class="sub-title">IL A ETE CONVENU CE QUI SUIT :</h2>
 
     <h2 class="sub-title">ARTICLE 1 : DEFINITIONS</h2>
@@ -114,7 +124,7 @@
         dont les coordonnées seront communiquées à INVESTIS DOM par le Gestionnaire de Patrimoine, susceptible d'être
         intéressée pour souscrire au capital et apporter des sommes en compte courant de SNC dans les DOM-COM,
         pour l'acquisition de matériel professionnel neuf dans le cadre des dispositions fiscales des articles 199
-        indécies A ou B du CGI.<br><br><br><br>
+        indécies A ou B du CGI.<br><br>
         Opérations : Désigne l'ensemble des SNC ayant pour objet d’acquérir des investissements dans
         le cadre des dispositions fiscales relatives à l'article 199 undécies B du CGI.<br><br>
         Investissements : Désigne l'ensemble
@@ -151,6 +161,10 @@
         modification dans la répartition majoritaire de son capital, par écrit, avant la réalisation de l'opération.
     </p>
 
+    <pagebreak>
+    </pagebreak>
+
+    <br>
     <h2 class="sub-title">ARTICLE 4 : DOCUMENTS CONTRACTUELS</h2>
 
     <p class="text">
@@ -158,7 +172,7 @@
         - Le présent contrat<br>
         - Ses annexes ou avenants.<br><br>
         Aucune modification ne pourra intervenir sans la signature d'un avenant signé par les représentants habilités
-        des deux parties.<br><br><br><br>
+        des deux parties.
     <p>
 
     <h2 class="sub-title">ARTICLE 5 : COMMUNICATION DE DOCUMENTS ET D'INFORMATIONS</h2>
@@ -170,6 +184,9 @@
         potentiels lui ayant confié un mandat.<br><br>
         Il s'interdit de modifier ces documents ou de les reprendre sous son nom.
     </p>
+
+    <pagebreak>
+    </pagebreak>
 
     <h2 class="sub-title">
         ARTICLE 6 : MODALITES DE TRANSMISSION DES DEMANDES D'INVESTISSEMENT SOUSCRIPTIONS AUX OPERATIONS
@@ -200,6 +217,9 @@
         souscription dûment rempli et signé.<br><br>
         Les chèques de souscription devront notamment être libellés à l'ordre de : INVESTIS DOM COLLECTE.
     </p>
+
+    <pagebreak>
+    </pagebreak>
 
     <h2 class="sub-title">ARTICLE 7 : REMUNERATION</h2>
 
@@ -238,12 +258,14 @@
         cette dernière qui pourra se les faire restituer sur simple demande.
     </p>
 
-    <div class="break-8"></div>
+
+    <pagebreak>
+    </pagebreak>
 
     <h2 class="sub-title">ARTICLE 9 : DUREE</h2>
 
     <p class="text">
-        Le présent accord est conclu pour une durée initiale allant de sa date de dernière signature jusqu'au 31 décembre $annee.<br>
+        Le présent accord est conclu pour une durée initiale allant de sa date de dernière signature jusqu'au 31 décembre {{ $annee }}.<br>
         A l'issue de cette durée, les parties se rencontreront afin de décider des modalités de poursuite de leurs relations.<br>
         En cas de poursuite de leurs relations sans signature d'un nouveau contrat, les parties sont convenues que les dispositions
         de la présente convention seront prorogées pour une durée indéterminée.<br>
@@ -271,14 +293,16 @@
 
     <p class="text">
         FAIT A : {{ $cgpville }}, LE {{ $madate }}<br>
-        En deux exemplaires originaux<br><br><br>
+        En deux exemplaires originaux<br><br>
     </p>
     <div class="row text">
         <div class="col">Pour {{ $nom }}</div>
         <div class="col text-right">Pour INVESTIS DOM</div>
     </div>
 
-    <div class="break-20"></div>
+
+    <pagebreak>
+    </pagebreak>
 
     <div class="cell-border">ANNEXE 1</div>
 
@@ -288,21 +312,163 @@
         Rentabilité investisseur et honoraires de commercialisation attribuée par INVESTIS DOM au
         cabinet {{ $nom }} pour présentation d'investisseurs :
     </div>
-
+    
     <p class="text">
     Offre CONFORT sur des dossiers de plein droit :<br><br>
-    - De janvier à fin mars, le taux de commercialisation sera de 25% incluant la rentabilité offerte aux investisseurs et votre rémunération plafonnée à 7%.<br>
-    - D'avril à fin juin, le taux de commercialisation sera de 23% incluant la rentabilité offerte aux investisseurs et votre rémunération plafonnée à 7%.<br>
-    - De juillet à fin septembre, le taux de commercialisation sera de 21% incluant la rentabilité offerte aux investisseurs et votre rémunération plafonnée à 7%.<br>
-    - D'octobre à fin décembre, le taux de commercialisation sera de 19% incluant la rentabilité offerte aux investisseurs et votre rémunération plafonnée à 7%.
     </p>
+
+        
+    @for ($i = 0; $i < $nb_contrat_confort ; $i++)
+        <h4>Offre {{ $contrat_confort_name[$i] }}</h4>
+        <table style="width:80%">
+            <tr>
+                <th>Mois</th>
+                <th>Taux de Commercialisation </th>
+                <th>Plafond de Rémuneration </th>
+            </tr>
+            <tr>
+                <td>Janvier</td>
+                <td>{{ $contrat_confort_value[$i]->mois_1 }}% </td>
+                <td>7%</td>
+            </tr>
+            <tr>
+                <td>Février</td>
+                <td>{{ $contrat_confort_value[$i]->mois_2 }}% </td>
+                <td>7%</td>
+            </tr>
+            <tr>
+                <td>Mars</td>
+                <td>{{ $contrat_confort_value[$i]->mois_3 }}% </td>
+                <td>7%</td>
+            </tr>
+            <tr>
+                <td>Avril</td>
+                <td>{{ $contrat_confort_value[$i]->mois_4 }}% </td>
+                <td>7%</td>
+            </tr>
+            <tr>
+                <td>Mai</td>
+                <td>{{ $contrat_confort_value[$i]->mois_5 }}% </td>
+                <td>7%</td>
+            </tr>
+            <tr>
+                <td>Juin</td>
+                <td>{{ $contrat_confort_value[$i]->mois_6 }}% </td>
+                <td>7%</td>
+            </tr>
+            <tr>
+                <td>Juillet</td>
+                <td>{{ $contrat_confort_value[$i]->mois_7 }}% </td>
+                <td>7%</td>
+            </tr>
+            <tr>
+                <td>Aout</td>
+                <td>{{ $contrat_confort_value[$i]->mois_8 }}% </td>
+                <td>7%</td>
+            </tr>
+            <tr>
+                <td>Septembre</td>
+                <td>{{ $contrat_confort_value[$i]->mois_9 }}% </td>
+                <td>7%</td>
+            </tr>
+            <tr>
+                <td>Octobre</td>
+                <td>{{ $contrat_confort_value[$i]->mois_10 }}% </td>
+                <td>7%</td>
+            </tr>
+            <tr>
+                <td>Novembre</td>
+                <td>{{ $contrat_confort_value[$i]->mois_11 }}% </td>
+                <td>7%</td>
+            </tr>
+            <tr>
+                <td>Decembre</td>
+                <td>{{ $contrat_confort_value[$i]->mois_12 }}% </td>
+                <td>7%</td>
+            </tr>
+        </table>
+    @endfor
+
+    <pagebreak>
+    </pagebreak>
 
     <p class="text">
     Offre SERENITE + sur des dossiers de plein droit : (produit mutualisé sur 3 à 5 SNC, avec assurance garantissant la perte
     financière et fiscale)<br><br>
-    - De janvier à fin mars, le taux de commercialisation sera de 21% incluant la rentabilité offerte
-    aux investisseurs et votre rémunération plafonnée à 7%.<br>
-    - D'avril à fin juin, le taux de commercialisation sera de 19% incluant la rentabilité offerte aux investisseurs et votre rémunération plafonnée à 7%.<br>- De juillet à fin septembre, le taux de commercialisation sera de 17% incluant la rentabilité offerte aux investisseurs et votre rémunération plafonnée à 7%.<br>- D'octobre à fin décembre, le taux de commercialisation sera de 15% incluant la rentabilité offerte aux investisseurs et votre rémunération plafonnée à 7%.
     </p>
+        
+    @for ($i = 0; $i < $nb_contrat_serenite ; $i++)
+        <h4>Offre {{ $contrat_serenite_name[$i] }}</h4>
+        <table style="width:80%">
+            <tr>
+                <th>Mois</th>
+                <th>Taux de Commercialisation </th>
+                <th>Plafond de Rémuneration </th>
+            </tr>
+            <tr>
+                <td>Janvier</td>
+                <td>{{ $contrat_serenite_value[$i]->mois_1 }}% </td>
+                <td>7%</td>
+            </tr>
+            <tr>
+                <td>Février</td>
+                <td>{{ $contrat_serenite_value[$i]->mois_2 }}% </td>
+                <td>7%</td>
+            </tr>
+            <tr>
+                <td>Mars</td>
+                <td>{{ $contrat_serenite_value[$i]->mois_3 }}% </td>
+                <td>7%</td>
+            </tr>
+            <tr>
+                <td>Avril</td>
+                <td>{{ $contrat_serenite_value[$i]->mois_4 }}% </td>
+                <td>7%</td>
+            </tr>
+            <tr>
+                <td>Mai</td>
+                <td>{{ $contrat_serenite_value[$i]->mois_5 }}% </td>
+                <td>7%</td>
+            </tr>
+            <tr>
+                <td>Juin</td>
+                <td>{{ $contrat_serenite_value[$i]->mois_6 }}% </td>
+                <td>7%</td>
+            </tr>
+            <tr>
+                <td>Juillet</td>
+                <td>{{ $contrat_serenite_value[$i]->mois_7 }}% </td>
+                <td>7%</td>
+            </tr>
+            <tr>
+                <td>Aout</td>
+                <td>{{ $contrat_serenite_value[$i]->mois_8 }}% </td>
+                <td>7%</td>
+            </tr>
+            <tr>
+                <td>Septembre</td>
+                <td>{{ $contrat_serenite_value[$i]->mois_9 }}% </td>
+                <td>7%</td>
+            </tr>
+            <tr>
+                <td>Octobre</td>
+                <td>{{ $contrat_serenite_value[$i]->mois_10 }}% </td>
+                <td>7%</td>
+            </tr>
+            <tr>
+                <td>Novembre</td>
+                <td>{{ $contrat_serenite_value[$i]->mois_11 }}% </td>
+                <td>7%</td>
+            </tr>
+            <tr>
+                <td>Decembre</td>
+                <td>{{ $contrat_serenite_value[$i]->mois_12 }}% </td>
+                <td>7%</td>
+            </tr>
+        </table>
+    @endfor
+
+
+
 </div>
 @endsection
