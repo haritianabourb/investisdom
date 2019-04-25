@@ -6,23 +6,43 @@
     <h1 class="page-title">
         <i class="{{ $dataType->icon }}"></i> {{$dataTypeContent->identifiant}} - {{$dataTypeContent->typeContratsId()->first()->nom}}
 
-        @can('edit', $dataTypeContent)
-        <a href="{{ route('voyager.'.$dataType->slug.'.edit', $dataTypeContent->getKey()) }}" class="btn btn-info">
-            <span class="glyphicon glyphicon-pencil"></span>&nbsp;
-            {{ __('generic.edit') }}
-        </a>
-        @endcan
-        @can('delete', $dataTypeContent)
-            @if($isSoftDeleted)
-                <a href="{{ route('voyager.'.$dataType->slug.'.restore', $dataTypeContent->getKey()) }}" title="{{ __('voyager::generic.restore') }}" class="btn btn-default restore" data-id="{{ $dataTypeContent->getKey() }}" id="restore-{{ $dataTypeContent->getKey() }}">
-                    <i class="voyager-trash"></i> <span class="hidden-xs hidden-sm">{{ __('voyager::generic.restore') }}</span>
-                </a>
-            @else
-            <a href="javascript:;" title="{{ __('voyager::generic.delete') }}" class="btn btn-danger delete" data-id="{{ $dataTypeContent->getKey() }}" id="delete-{{ $dataTypeContent->getKey() }}">
-                <i class="voyager-trash"></i> <span class="hidden-xs hidden-sm">{{ __('voyager::generic.delete') }}</span>
+        @php
+            $can_edit_and_del = false;
+            if (!is_null($dataTypeContent->yousign_procedure_id)){
+
+                $yousignProcedureStatus = (json_decode($dataTypeContent->yousign_procedure_id)->status);
+
+                if(in_array($yousignProcedureStatus, ['active', 'finished', 'expired', 'refused', 'canceled'])){
+                    $can_edit_and_del = false;
+                }else{
+                    $can_edit_and_del =  true;
+                }
+            }else{
+                $can_edit_and_del =  true;
+            }
+        @endphp
+
+        @if($can_edit_and_del)
+
+            @can('edit', $dataTypeContent)
+            <a href="{{ route('voyager.'.$dataType->slug.'.edit', $dataTypeContent->getKey()) }}" class="btn btn-info">
+                <span class="glyphicon glyphicon-pencil"></span>&nbsp;
+                {{ __('generic.edit') }}
             </a>
-            @endif
-        @endcan
+            @endcan
+
+            @can('delete', $dataTypeContent)
+                @if($isSoftDeleted)
+                    <a href="{{ route('voyager.'.$dataType->slug.'.restore', $dataTypeContent->getKey()) }}" title="{{ __('voyager::generic.restore') }}" class="btn btn-default restore" data-id="{{ $dataTypeContent->getKey() }}" id="restore-{{ $dataTypeContent->getKey() }}">
+                        <i class="voyager-trash"></i> <span class="hidden-xs hidden-sm">{{ __('voyager::generic.restore') }}</span>
+                    </a>
+                @else
+                <a href="javascript:;" title="{{ __('voyager::generic.delete') }}" class="btn btn-danger delete" data-id="{{ $dataTypeContent->getKey() }}" id="delete-{{ $dataTypeContent->getKey() }}">
+                    <i class="voyager-trash"></i> <span class="hidden-xs hidden-sm">{{ __('voyager::generic.delete') }}</span>
+                </a>
+                @endif
+            @endcan
+        @endif
 
         <a href="{{ route('voyager.'.$dataType->slug.'.index') }}" class="btn btn-warning">
             <span class="glyphicon glyphicon-list"></span>&nbsp;

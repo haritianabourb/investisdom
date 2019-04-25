@@ -37,7 +37,7 @@
               <div class="panel-body">
                 @php
                   $dataTypeRow = $dataType->editRows->where('field', 'status')->first();
-                  $options = json_decode($dataTypeRow->details);
+                  $options = ($dataTypeRow->details);
                   $display_options = isset($options->display) ? $options->display : NULL;
 
                   $option_value = "";

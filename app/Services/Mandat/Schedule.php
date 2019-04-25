@@ -71,7 +71,7 @@ class Schedule extends AbstractField
         $this->terms = 12;
         $this->term_years = $this->parameters->get('duree_pret') / $this->terms;
         $this->nbr_period = $this->terms * $this->term_years;
-        $this->date = $this->start_date = Carbon::createFromFormat("m/d/Y h:i A",$this->parameters->get("prevision_livraison"));
+        $this->date = $this->start_date = Carbon::createFromFormat("Y-m-d",$this->parameters->get("prevision_livraison"));
         $this->taux_pret = $this->parameters->get('taux_pret');
         $this->montant_compl_fin = $this->parameters->get('montant_compl_fin');
         $this->echeance_loyer = $this->parameters->get('echeance_loyer');

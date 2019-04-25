@@ -68,7 +68,9 @@
                                     @if(!$loopFirst)
                                         </div>
                                     @else
-                                        @php($loopFirst=false)
+                                        @php
+                                            $loopFirst=false;
+                                        @endphp
                                     @endif
                                     <div class="row">
                                       <div class="col-md-12">

@@ -8,6 +8,7 @@ use App\FormFields\EmailHandler;
 use App\FormFields\MoneyHandler;
 use App\FormFields\PercentageHandler;
 
+use TCG\Voyager\Actions\DeleteAction;
 use TCG\Voyager\Actions\EditAction;
 use Validator;
 use Voyager;
@@ -39,5 +40,6 @@ class InvestisDomServiceProvider extends ServiceProvider
 
         Voyager::addAction(ActivateAction::class);
         Voyager::replaceAction(EditAction::class, \App\Actions\EditAction::class);
+        Voyager::replaceAction(DeleteAction::class, \App\Actions\DeleteAction::class);
     }
 }
