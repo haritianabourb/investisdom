@@ -242,12 +242,27 @@
                                                               action="{{ route('admin.document.upload', ['slug'=>$dataType->slug , 'id' => $data->getKey()]) }}"
                                                               method="POST"
                                                               enctype="multipart/form-data">
-                                                            <input @if($row->required == 1 && !isset($data->{$row->field})) required
+
+                                                            <div class="btn btn-default"
+                                                                 onclick="myFunction('{{$dataType->name}}_{{ $row->field }}_upload_{{ $data->getKey()}}', '{{$dataType->name}}_{{ $row->field }}_document_{{ $data->getKey()}}')"
+                                                                 title=""
+                                                                 id="{{$dataType->name}}_{{ $row->field }}_document_{{ $data->getKey()}}"
+                                                            >
+                                                                <i class="voyager-documentation"></i>
+                                                            </div>
+
+                                                            <input class="download2" @if($row->required == 1 && !isset($data->{$row->field})) required
                                                                    @endif type="file"
+                                                                   id="{{$dataType->name}}_{{ $row->field }}_upload_{{ $data->getKey()}}"
                                                                    name="{{ $row->field }}[]"
-                                                                   multiple="multiple">
+                                                                   multiple="multiple"
+                                                                   style="display: none;"
+                                                                   onchange="documentUploaded('{{$dataType->name}}_{{ $row->field }}_upload_{{ $data->getKey()}}', '{{$dataType->name}}_{{ $row->field }}_document_{{ $data->getKey()}}')"
+                                                            >
                                                             <button type="submit"
-                                                                    class="btn btn-primary save">{{ __('voyager::generic.save') }}</button>
+                                                                    class="btn btn-primary save" title="{{ __('voyager::generic.save') }}">
+                                                                <i class="voyager-upload"></i>
+                                                            </button>
                                                             {{ csrf_field() }}
                                                             {{ method_field("PUT") }}
                                                         </form>
@@ -456,5 +471,16 @@
             });
             $('.selected_ids').val(ids);
         });
+    </script>
+
+    <script>
+        function myFunction(id, doc) {
+            elem=document.getElementById(id);
+            elem.click();
+        }
+
+        function documentUploaded(id, doc){
+            document.getElementById(doc).title = document.getElementById(id).value;
+        }
     </script>
 @stop
