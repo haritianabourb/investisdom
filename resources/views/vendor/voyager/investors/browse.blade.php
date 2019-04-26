@@ -238,31 +238,27 @@
                                                     @else
                                                         <form role="form"
                                                               class="form-edit-add"
-                                                              id="{{$dataType->name}}_edit_add"
+                                                              id="{{ $row->field }}_edit_add_{{ $data->getKey()}}"
                                                               action="{{ route('admin.document.upload', ['slug'=>$dataType->slug , 'id' => $data->getKey()]) }}"
                                                               method="POST"
                                                               enctype="multipart/form-data">
 
-                                                            <div class="btn btn-default"
+                                                            <div class="btn btn-danger"
                                                                  onclick="myFunction('{{$dataType->name}}_{{ $row->field }}_upload_{{ $data->getKey()}}', '{{$dataType->name}}_{{ $row->field }}_document_{{ $data->getKey()}}')"
                                                                  title=""
                                                                  id="{{$dataType->name}}_{{ $row->field }}_document_{{ $data->getKey()}}"
                                                             >
-                                                                <i class="voyager-documentation"></i>
+                                                                <i class="voyager-upload"></i>
                                                             </div>
 
-                                                            <input class="download2" @if($row->required == 1 && !isset($data->{$row->field})) required
+                                                            <input @if($row->required == 1 && !isset($data->{$row->field})) required
                                                                    @endif type="file"
                                                                    id="{{$dataType->name}}_{{ $row->field }}_upload_{{ $data->getKey()}}"
                                                                    name="{{ $row->field }}[]"
                                                                    multiple="multiple"
                                                                    style="display: none;"
-                                                                   onchange="documentUploaded('{{$dataType->name}}_{{ $row->field }}_upload_{{ $data->getKey()}}', '{{$dataType->name}}_{{ $row->field }}_document_{{ $data->getKey()}}')"
+                                                                   onchange="documentUploaded('{{$dataType->name}}_{{ $row->field }}_upload_{{ $data->getKey()}}', '{{$dataType->name}}_{{ $row->field }}_document_{{ $data->getKey()}}', '{{ $row->field }}_edit_add_{{ $data->getKey()}}')"
                                                             >
-                                                            <button type="submit"
-                                                                    class="btn btn-primary save" title="{{ __('voyager::generic.save') }}">
-                                                                <i class="voyager-upload"></i>
-                                                            </button>
                                                             {{ csrf_field() }}
                                                             {{ method_field("PUT") }}
                                                         </form>
@@ -479,8 +475,9 @@
             elem.click();
         }
 
-        function documentUploaded(id, doc){
+        function documentUploaded(id, doc, form){
             document.getElementById(doc).title = document.getElementById(id).value;
+            document.getElementById(form).submit();
         }
     </script>
 @stop
