@@ -229,8 +229,8 @@
                                                         @if(json_decode($data->{$row->field}))
                                                             @foreach(json_decode($data->{$row->field}) as $file)
                                                                 <a href="{{ Storage::disk(config('voyager.storage.disk'))->url($file->download_link) ?: '' }}"
-                                                                   target="_blank">
-                                                                    {{ $file->original_name ?: '' }}
+                                                                   target="_blank" class="btn btn-success" title="{{ $file->original_name ?: '' }}">
+                                                                    <i class="voyager-cloud-download"></i>
                                                                 </a>
                                                                 <br/>
                                                             @endforeach
