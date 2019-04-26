@@ -229,8 +229,8 @@
                                                         @if(json_decode($data->{$row->field}))
                                                             @foreach(json_decode($data->{$row->field}) as $file)
                                                                 <a href="{{ Storage::disk(config('voyager.storage.disk'))->url($file->download_link) ?: '' }}"
-                                                                   target="_blank">
-                                                                    {{ $file->original_name ?: '' }}
+                                                                   target="_blank" class="btn btn-success" title="{{ $file->original_name ?: '' }}">
+                                                                    <i class="voyager-cloud-download"></i>
                                                                 </a>
                                                                 <br/>
                                                             @endforeach
@@ -238,16 +238,27 @@
                                                     @else
                                                         <form role="form"
                                                               class="form-edit-add"
-                                                              id="{{$dataType->name}}_edit_add"
+                                                              id="{{ $row->field }}_edit_add_{{ $data->getKey()}}"
                                                               action="{{ route('admin.document.upload', ['slug'=>$dataType->slug , 'id' => $data->getKey()]) }}"
                                                               method="POST"
                                                               enctype="multipart/form-data">
+
+                                                            <div class="btn btn-danger"
+                                                                 onclick="myFunction('{{$dataType->name}}_{{ $row->field }}_upload_{{ $data->getKey()}}', '{{$dataType->name}}_{{ $row->field }}_document_{{ $data->getKey()}}')"
+                                                                 title=""
+                                                                 id="{{$dataType->name}}_{{ $row->field }}_document_{{ $data->getKey()}}"
+                                                            >
+                                                                <i class="voyager-upload"></i>
+                                                            </div>
+
                                                             <input @if($row->required == 1 && !isset($data->{$row->field})) required
                                                                    @endif type="file"
+                                                                   id="{{$dataType->name}}_{{ $row->field }}_upload_{{ $data->getKey()}}"
                                                                    name="{{ $row->field }}[]"
-                                                                   multiple="multiple">
-                                                            <button type="submit"
-                                                                    class="btn btn-primary save">{{ __('voyager::generic.save') }}</button>
+                                                                   multiple="multiple"
+                                                                   style="display: none;"
+                                                                   onchange="documentUploaded('{{$dataType->name}}_{{ $row->field }}_upload_{{ $data->getKey()}}', '{{$dataType->name}}_{{ $row->field }}_document_{{ $data->getKey()}}', '{{ $row->field }}_edit_add_{{ $data->getKey()}}')"
+                                                            >
                                                             {{ csrf_field() }}
                                                             {{ method_field("PUT") }}
                                                         </form>
@@ -456,5 +467,17 @@
             });
             $('.selected_ids').val(ids);
         });
+    </script>
+
+    <script>
+        function myFunction(id, doc) {
+            elem=document.getElementById(id);
+            elem.click();
+        }
+
+        function documentUploaded(id, doc, form){
+            document.getElementById(doc).title = document.getElementById(id).value;
+            document.getElementById(form).submit();
+        }
     </script>
 @stop

@@ -183,24 +183,46 @@
                                                 @elseif($row->type == 'text_area')
                                                     @include('voyager::multilingual.input-hidden-bread-browse')
                                                     <div class="readmore">{{ mb_strlen( $data->{$row->field} ) > 200 ? mb_substr($data->{$row->field}, 0, 200) . ' ...' : $data->{$row->field} }}</div>
-                                                @elseif($row->type == 'file')
-                                                  @if(!empty($data->{$row->field}))
-                                                    @include('voyager::multilingual.input-hidden-bread-browse')
-                                                    @if(json_decode($data->{$row->field}))
-                                                        @foreach(json_decode($data->{$row->field}) as $file)
-                                                            <a href="{{ Storage::disk(config('voyager.storage.disk'))->url($file->download_link) ?: '' }}" target="_blank">
-                                                                {{ $file->original_name ?: '' }}
-                                                            </a>
-                                                            <br/>
-                                                        @endforeach
-                                                    @else
-                                                        <a href="{{ Storage::disk(config('voyager.storage.disk'))->url($data->{$row->field}) }}" target="_blank">
-                                                            Download
-                                                        </a>
-                                                    @endif
-                                                  @else
-                                                    <span class="label label-warning">En Attente</span>
-                                                  @endif
+                                                      @elseif($row->type == 'file')
+                                                          @include('voyager::multilingual.input-hidden-bread-browse')
+                                                          @if(!empty($data->{$row->field}))
+                                                              @if(json_decode($data->{$row->field}))
+                                                                  @foreach(json_decode($data->{$row->field}) as $file)
+                                                                      <a href="{{ Storage::disk(config('voyager.storage.disk'))->url($file->download_link) ?: '' }}"
+                                                                         target="_blank" class="btn btn-success" title="{{ $file->original_name ?: '' }}">
+                                                                          <i class="voyager-cloud-download"></i>
+                                                                      </a>
+                                                                      <br/>
+                                                                  @endforeach
+                                                              @endif
+                                                          @else
+                                                              <form role="form"
+                                                                    class="form-edit-add"
+                                                                    id="{{ $row->field }}_edit_add_{{ $data->getKey()}}"
+                                                                    action="{{ route('admin.document.upload', ['slug'=>$dataType->slug , 'id' => $data->getKey()]) }}"
+                                                                    method="POST"
+                                                                    enctype="multipart/form-data">
+
+                                                                  <div class="btn btn-danger"
+                                                                       onclick="myFunction('{{$dataType->name}}_{{ $row->field }}_upload_{{ $data->getKey()}}', '{{$dataType->name}}_{{ $row->field }}_document_{{ $data->getKey()}}')"
+                                                                       title=""
+                                                                       id="{{$dataType->name}}_{{ $row->field }}_document_{{ $data->getKey()}}"
+                                                                  >
+                                                                      <i class="voyager-upload"></i>
+                                                                  </div>
+
+                                                                  <input @if($row->required == 1 && !isset($data->{$row->field})) required
+                                                                         @endif type="file"
+                                                                         id="{{$dataType->name}}_{{ $row->field }}_upload_{{ $data->getKey()}}"
+                                                                         name="{{ $row->field }}[]"
+                                                                         multiple="multiple"
+                                                                         style="display: none;"
+                                                                         onchange="documentUploaded('{{$dataType->name}}_{{ $row->field }}_upload_{{ $data->getKey()}}', '{{$dataType->name}}_{{ $row->field }}_document_{{ $data->getKey()}}', '{{ $row->field }}_edit_add_{{ $data->getKey()}}')"
+                                                                  >
+                                                                  {{ csrf_field() }}
+                                                                  {{ method_field("PUT") }}
+                                                              </form>
+                                                          @endif
                                                 @elseif($row->type == 'rich_text_box')
                                                     @include('voyager::multilingual.input-hidden-bread-browse')
                                                     <div class="readmore">{{ mb_strlen( strip_tags($data->{$row->field}, '<b><i><u>') ) > 200 ? mb_substr(strip_tags($data->{$row->field}, '<b><i><u>'), 0, 200) . ' ...' : strip_tags($data->{$row->field}, '<b><i><u>') }}</div>
@@ -398,4 +420,17 @@
             $('.selected_ids').val(ids);
         });
     </script>
+
+    <script>
+        function myFunction(id, doc) {
+            elem=document.getElementById(id);
+            elem.click();
+        }
+
+        function documentUploaded(id, doc, form){
+            document.getElementById(doc).title = document.getElementById(id).value;
+            document.getElementById(form).submit();
+        }
+    </script>
+
 @stop
