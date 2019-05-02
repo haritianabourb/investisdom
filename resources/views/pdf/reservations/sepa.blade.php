@@ -330,7 +330,7 @@
             <TD class="tr8 td23"><P class="p30 ft23">{{number_format($reservation->apport, 2, ',', " ")}}</P></TD>
             <TD class="tr8 td24"><P class="p30 ft23">{{number_format($reservation->nbr_snc*60+$reservation->montant_reduction/1000, 2, ',', " ")}}</P></TD>
             <TD class="tr8 td24"><P class="p30 ft23">
-                    @if($reservation->assistance_juridique && in_array($formulae->slug, ["confort", "confort-echelonne"]))
+                    @if($reservation->assistance_juridique && \Illuminate\Support\Str::startsWith($formulae->slug, "confort"))
                     {{number_format($reservation->nbr_snc*75, 2, ',', " ")}}</P>
                     @else
                         {{number_format(0, 2, ",", " ")}}
@@ -339,17 +339,23 @@
         </TR>
         @else
             <?php
-            $diffInMonth = $reservation->created_at->DiffInMonths('2019-11-01 00:00:00');
             $start = $reservation->apport *40/100;
 
+            if(\Illuminate\Support\Str::endsWith($formulae->slug, "differe")){
+                $diffInMonth = 1;
+            }else{
+                $diffInMonth = $reservation->created_at->DiffInMonths((($reservation->created_at->year)).'-11-01 00:00:00');
+            }
+
             $rest = ($reservation->apport - $start)/($diffInMonth);
+
             ?>
         <TR>
             <TD><P>{{$reservation->created_at->format('d/m/Y')}}</P></TD>
             <TD><P>{{number_format($start, 2, ',', " ")}}</P></TD>
             <TD><P>{{number_format($reservation->nbr_snc*60+$reservation->montant_reduction/1000, 2, ',', " ")}}</P></TD>
             <TD><P>
-                    @if($reservation->assistance_juridique && in_array($formulae->slug, ["confort", "confort-echelonne"]))
+                    @if($reservation->assistance_juridique && \Illuminate\Support\Str::startsWith($formulae->slug, "confort"))
 
                     {{number_format($reservation->nbr_snc*75, 2, ',', " ")}}
 
@@ -362,7 +368,13 @@
             </TD>
         </TR>
             <?php
+
+                if(\Illuminate\Support\Str::endsWith($formulae->slug, "differe")){
+                    $loopDate = \Carbon\Carbon::createFromDate($reservation->created_at->year, 9, $reservation->created_at->day);
+                }else{
                     $loopDate = $reservation->created_at->addMonth()->copy()->startOfMonth();
+                }
+
             ?>
             @for ($i = 1; $i <= $diffInMonth; $i++)
                     <TR>

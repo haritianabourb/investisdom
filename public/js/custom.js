@@ -185,7 +185,7 @@ function Task31_RegimeMatrimonal() {
 function Task101_PVTECH() {
 
     $("[name=type_contrats_id]").change(function(){
-        if (this.value == "2" || this.value == "4")
+        if (this.value == "2" || this.value == "4" || this.value == "5" || this.value == "6")
         {
             $("[name=paiement]").val("echelonne");
 
@@ -216,8 +216,6 @@ function Task101_PVTECH() {
     $("[name=type_contrats_id]").trigger("change");
     $("[name=paiement]").trigger("change");
 }
-
-
 
 
 
