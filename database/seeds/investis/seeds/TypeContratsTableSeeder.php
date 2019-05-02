@@ -35,7 +35,6 @@ class TypeContratsTableSeeder extends Seeder
                 'updated_at' => '2019-01-16 18:27:39',
                 'slug' => 'confort-echelonne',
             ),
-
             array (
                 'id' => 3,
                 'nom' => 'Serenité',
@@ -53,6 +52,23 @@ class TypeContratsTableSeeder extends Seeder
                 'updated_at' => '2019-01-16 18:27:20',
                 'slug' => 'serenite-echelonne',
             ),
+            array (
+                'id' => 5,
+                'nom' => 'Confort  Différé',
+                'description' => 'Formule Confort, avec prelevement différé',
+                'created_at' => '2019-01-14 00:48:00',
+                'updated_at' => '2019-01-16 18:27:39',
+                'slug' => 'confort-differe',
+            ),
+            array (
+                'id' => 6,
+                'nom' => 'Serenité Différé',
+                'description' => 'Formule Serenité, avec prelevement',
+                'created_at' => '2019-01-14 00:48:00',
+                'updated_at' => '2019-01-16 18:27:20',
+                'slug' => 'serenite-differe',
+            ),
+
         ));
 
 
