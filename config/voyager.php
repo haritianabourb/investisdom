@@ -255,7 +255,10 @@ return [
         'https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment-with-locales.js',
         'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js',
         'https://cdn.jsdelivr.net/npm/formdata-polyfill@3.0.12/formdata.min.js',
-        'https://cdn.datatables.net/rowgroup/1.1.0/js/dataTables.rowGroup.min.js'
+        'https://cdn.datatables.net/rowgroup/1.1.0/js/dataTables.rowGroup.min.js',
+        'https://cdn.datatables.net/plug-ins/1.10.19/sorting/datetime-moment.js',
+        'https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.fr,Intl.~locale.en',
+        'https://cdnjs.cloudflare.com/ajax/libs/intl-messageformat/2.2.0/intl-messageformat-with-locales.min.js',
     ],
 
     'googlemaps' => [

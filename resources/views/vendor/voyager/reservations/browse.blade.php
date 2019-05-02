@@ -278,6 +278,28 @@
                                 </tbody>
                             </table>
                         </div>
+                        <hr>
+                        <select id="yearChange">
+                            <option value="">Choose a year</option>
+                        </select>
+                        <hr>
+                        <div class="table-responsive summary">
+                            <table id="summaryReservation" class="table">
+                                <tfoot>
+                                <tr>
+                                    <th colspan="2" style="text-align:right"></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                                </tfoot>
+                            </table>
+                            <table id="totalSumarry" style="display:none;">
+                                <tr>
+                                    <td>ici mon total</td>
+                                </tr>
+                            </table>
+                        </div>
+
                         @if ($isServerSide)
                             <div class="pull-left">
                                 <div role="status" class="show-res" aria-live="polite">{{ trans_choice(
@@ -338,11 +360,22 @@
         <script src="{{ voyager_asset('lib/js/dataTables.responsive.min.js') }}"></script>
     @endif
     <script>
+        var filterDate = function(data) {
+            var year = parseInt( $('#yearChange').val(), 10 );
+
+            if(isNaN(year)) {
+                return true;
+            }
+            var date =  moment(data[6], "DD/MM/YYYY").format("YYYY"); // use data for the age column
+            return date == year;
+        };
+
         $(document).ready(function () {
+            $.fn.dataTable.moment( 'DD/MM/YYYY' );
+
             @if (!$dataType->server_side)
                 var datatableConfig = {!! json_encode(
                     array_merge([
-                        "order" => [],
                         "autoWidth" => false,
 
                         "language" => __('voyager::datatable'),
@@ -357,19 +390,197 @@
                     config('voyager.dashboard.data_tables', []))
                 , true) !!};
 
+            datatableConfig.order = [[6, "desc"]];
 
             datatableConfig.rowGroup = {
-                "dataSrc": function (row) {
-                    console.log([ row[3], (moment(row[6], "DD/MM/YYYY").format(`YYYY`)) ]);
-                    return moment(row[6], "DD/MM/YYYY").format(`YYYY`);
-                }
+                    "dataSrc":  function (row) {
+
+                        return moment(row[6], "DD/MM/YYYY").format(`YYYY`);
+
+                    }
+
             };
 
-                console.log(datatableConfig);
 
-                var table = $('#dataTable').DataTable(datatableConfig);
 
-                table.rowGroup().dataSrc()
+            var table = $('#dataTable').DataTable(datatableConfig);
+
+            table.rowGroup().dataSrc();
+
+            var example = $("#summaryReservation").DataTable({
+                columns: [
+                    { title : "Year", visible: false},
+                    @if( Auth::user()->hasRole(['admin', 'investis', 'investisdom'])){ title : "CGP", visible: false}, @endif
+                    { title: "Contact" },
+                    { title: "Nombre de Réservation"},
+                    { title: "Total comission par Contact" },
+                    { title: "Total reduction d'impots" },
+                ],
+                "order": [[ 1, 'asc' ]],
+                rowGroup: {
+                    startRender: function ( rows, group, level ) {
+                        return group;
+                    },
+                    endRender: function ( rows, group, level ) {
+                        if(level === 1 ) {
+                            var nbReservation = rows
+                                .data()
+                                .pluck(3)
+                                .reduce( function (a, b) {
+                                    return a + b;
+                                }, 0);
+
+                            var totalCommi = rows
+                                .data()
+                                .pluck(4)
+                                .reduce( function (a, b) {
+
+                                    b = parseFloat(b.replace(/\s|€/g,'').replace(/,/g,'.'));
+
+                                    return a + b;
+                                }, 0);
+
+                            totalCommi = $.fn.dataTable.render.number(' ', ',', 2, ' Total Commission: ', '€').display( totalCommi );
+
+                            var totalRI = rows
+                                .data()
+                                .pluck(5)
+                                .reduce( function (a, b) {
+
+                                    b = parseFloat(b.replace(/\s|€/g,'').replace(/,/g,'.'));
+
+                                    return a + b;
+                                }, 0);
+
+                            totalRI = $.fn.dataTable.render.number(' ', ',', 2, ' Total RI: ', '€').display( totalRI );
+
+                            return $("<tr></tr>")
+                                .append('<td>&nbsp;</td>')
+                                .append('<td><strong> Nombre de réservations: '+nbReservation+'</strong></td>')
+                                .append('<td>'+totalCommi+'</td>')
+                                .append('<td>'+totalRI+'</td>');
+                        }
+                    },
+                    dataSrc: [ 0 @if( Auth::user()->hasRole(['admin', 'investis', 'investisdom'])), 1 @endif ]
+                }
+
+            });
+
+            var dates = table.rows().data().pluck(6).toArray();
+
+            dates = dates.map(function(date) {return moment(date, "DD/MM/YYYY").format("YYYY")}).filter(function(value, index, self) {
+                return self.indexOf(value) === index;
+            });
+
+            for(date of dates){
+                $('#yearChange').append('<option value="'+date+'">'+date+'</option>');
+            }
+
+            // Event listener to the two range filtering inputs to redraw on input
+            $('#yearChange').change( function() {
+
+                var year = parseInt( $('#yearChange').val(), 10 );
+
+                if(!isNaN(year)){
+                    var datas = [];
+                    var myData = table.rows().data();
+                    myData = myData.filter(filterDate);
+                    datas = aggregateUsersByYear(myData, year);
+
+                    example.rows().remove();
+                    example.rows.add(datas);
+
+                    example.draw();
+                    $(".summary").show();
+
+                    //show new table with sum off datas
+                    show();
+
+                }else{
+
+                    $(".summary").hide();
+
+                    //remove table with sum off datas
+                    hide();
+                }
+
+                table.column(6).search(isNaN(year)? "" : year).draw();
+
+            } );
+
+            var aggregateUsersByYear = function (myData, year){
+                datas = [];
+
+                myData.column(3).data().unique().each(function(name, index){
+                    var sumNBReservations = myData.filter(function(data){
+                        if(name == data[3]) return true;
+                        return false;
+                    }).reduce( function ( total) {
+                        return total+1 ;
+                    },0 );
+
+                    if(sumNBReservations > 0){
+                        var sumRM = myData.filter(function(data){
+                            if(name == data[3]) return true;
+                            return false;
+                        }).reduce( function ( total, value) {
+
+                            var convertMontantResa = value[4].replace(/\s|€/g,'');
+                            convertMontantResa = convertMontantResa.replace(/,/g,'.');
+
+                            return total + parseFloat(convertMontantResa) ;
+                        },0 );
+
+                        var sumMC = myData.filter(function(data){
+                            if(name == data[3]) return true;
+                            return false;
+                        }).reduce( function ( total, value) {
+
+                            var convertMontantComi = value[9].replace(/\s|€/g,'');
+                            convertMontantComi = convertMontantComi.replace(/,/g,'.');
+
+                            return total + parseFloat(convertMontantComi) ;
+                        },0 );
+
+                        @if( Auth::user()->hasRole(['admin', 'investis', 'investisdom']))
+                            var CGP = myData.filter(function(data){
+                                if(name == data[3]) return true;
+                                return false;
+                            }).toArray()[0][2];
+                        @endif
+
+                            sumMCFormat = new IntlMessageFormat('{sumMC, number, EUR}', 'fr-FR', {
+                                number: {
+                                    EUR: {
+                                        style   : 'currency',
+                                        currency: 'EUR'
+                                    }
+                            }});
+
+                            sumRMFormat = new IntlMessageFormat('{sumRM, number, EUR}', 'fr-FR', {
+                                number: {
+                                    EUR: {
+                                        style   : 'currency',
+                                        currency: 'EUR'
+                                    }
+                            }});
+
+                        datas.push([year, @if( Auth::user()->hasRole(['admin', 'investis', 'investisdom']))CGP, @endif name, sumNBReservations, sumMCFormat.format({"sumMC" : sumMC}), sumRMFormat.format({"sumRM" : sumRM})]);
+                    }
+
+                });
+
+                return datas;
+            }
+
+            function show() {
+                document.getElementById('totalSumarry').style.display = 'block';
+            }
+
+            function hide() {
+                document.getElementById('totalSumarry').style.display = 'none';
+            }
+
             @else
                 $('#search-input select').select2({
                     minimumResultsForSearch: Infinity
@@ -426,6 +637,8 @@
             });
             $('.selected_ids').val(ids);
         });
+
+
     </script>
 
     <script>
