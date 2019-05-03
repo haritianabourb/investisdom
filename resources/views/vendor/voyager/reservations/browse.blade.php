@@ -279,10 +279,6 @@
                             </table>
                         </div>
                         <hr>
-                        <select id="yearChange">
-                            <option value="">Choose a year</option>
-                        </select>
-                        <hr>
                         <div class="table-responsive summary">
                             <table id="summaryReservation" class="table">
                                 <tfoot>
@@ -410,7 +406,7 @@
             var example = $("#summaryReservation").DataTable({
                 columns: [
                     { title : "Year", visible: false},
-                    @if( Auth::user()->hasRole(['admin', 'investis', 'investisdom'])){ title : "CGP", visible: false}, @endif
+                    { title : "CGP", visible: false},
                     { title: "Contact" },
                     { title: "Nombre de Réservation"},
                     { title: "Total comission par Contact" },
@@ -454,17 +450,49 @@
 
                             totalRI = $.fn.dataTable.render.number(' ', ',', 2, ' Total RI: ', '€').display( totalRI );
 
-                            return $("<tr></tr>")
-                                .append('<td>&nbsp;</td>')
-                                .append('<td><strong> Nombre de réservations: '+nbReservation+'</strong></td>')
-                                .append('<td>'+totalCommi+'</td>')
-                                .append('<td>'+totalRI+'</td>');
+
+
+                            return $("<tr style='font-weight: bolder'></tr>")
+                                .append('<td width="25%" style="background-color: #e0e0e0;\n' +
+                                    'padding-top: 0.25em;\n' +
+                                    'padding-bottom: 0.25em;\n' +
+                                    'padding-left: 2em;\n' +
+                                    'font-size: 1em;\n' +
+                                    'font-weight: bold;' +
+                                    'border-bottom: 1px solid #b9acac"> resultat de '+ group +' :  </strong></td>')
+
+                                .append('<td style="background-color: #e0e0e0;\n' +
+                                    'padding-top: 0.25em;\n' +
+                                    'padding-bottom: 0.25em;\n' +
+                                    'padding-left: 2em;\n' +
+                                    'font-size: 1em;\n' +
+                                    'font-weight: bold;' +
+                                    'border-bottom: 1px solid #b9acac"> Nombre de réservations: '+nbReservation+'</td>')
+
+                                .append('<td style="background-color: #e0e0e0;\n' +
+                                    'padding-top: 0.25em;\n' +
+                                    'padding-bottom: 0.25em;\n' +
+                                    'padding-left: 2em;\n' +
+                                    'font-size: 1em;\n' +
+                                    'font-weight: bold;' +
+                                    'border-bottom: 1px solid #b9acac">'+totalCommi+'</td>')
+                                .append('<td style="background-color: #e0e0e0;\n' +
+                                    'padding-top: 0.25em;\n' +
+                                    'padding-bottom: 0.25em;\n' +
+                                    'padding-left: 2em;\n' +
+                                    'font-size: 1em;\n' +
+                                    'font-weight: bold;' +
+                                    'border-bottom: 1px solid #b9acac">'+totalRI+'</td>');
                         }
                     },
-                    dataSrc: [ 0 @if( Auth::user()->hasRole(['admin', 'investis', 'investisdom'])), 1 @endif ]
+                    dataSrc: [ 0 , 1 ]
                 }
 
             });
+
+            var yearChange = $('<select id="yearChange" class="form-control input-sm">\n' +
+                '<option value="">Choose a year</option>\n' +
+                '</select>');
 
             var dates = table.rows().data().pluck(6).toArray();
 
@@ -473,8 +501,22 @@
             });
 
             for(date of dates){
-                $('#yearChange').append('<option value="'+date+'">'+date+'</option>');
+                var elem = $('<option value="'+date+'">'+date+'</option>');
+                if(date == "{{date('Y')}}"){
+                    elem.prop("selected", "selected");
+                }
+                yearChange.append(elem);
+
             }
+
+
+
+
+            $("#dataTable_filter ").prepend('<br>');
+            $("#dataTable_filter ").prepend(
+                $('<label for="yearChange">Choisir une ann&eacute;e: </label>').append(yearChange)
+            );
+
 
             // Event listener to the two range filtering inputs to redraw on input
             $('#yearChange').change( function() {
@@ -493,15 +535,10 @@
                     example.draw();
                     $(".summary").show();
 
-                    //show new table with sum off datas
-                    show();
-
                 }else{
 
                     $(".summary").hide();
 
-                    //remove table with sum off datas
-                    hide();
                 }
 
                 table.column(6).search(isNaN(year)? "" : year).draw();
@@ -542,12 +579,10 @@
                             return total + parseFloat(convertMontantComi) ;
                         },0 );
 
-                        @if( Auth::user()->hasRole(['admin', 'investis', 'investisdom']))
                             var CGP = myData.filter(function(data){
                                 if(name == data[3]) return true;
                                 return false;
                             }).toArray()[0][2];
-                        @endif
 
                             sumMCFormat = new IntlMessageFormat('{sumMC, number, EUR}', 'fr-FR', {
                                 number: {
@@ -565,7 +600,7 @@
                                     }
                             }});
 
-                        datas.push([year, @if( Auth::user()->hasRole(['admin', 'investis', 'investisdom']))CGP, @endif name, sumNBReservations, sumMCFormat.format({"sumMC" : sumMC}), sumRMFormat.format({"sumRM" : sumRM})]);
+                        datas.push([year,CGP, name, sumNBReservations, sumMCFormat.format({"sumMC" : sumMC}), sumRMFormat.format({"sumRM" : sumRM})]);
                     }
 
                 });
@@ -573,13 +608,8 @@
                 return datas;
             }
 
-            function show() {
-                document.getElementById('totalSumarry').style.display = 'block';
-            }
 
-            function hide() {
-                document.getElementById('totalSumarry').style.display = 'none';
-            }
+            $('#yearChange').trigger("change");
 
             @else
                 $('#search-input select').select2({
