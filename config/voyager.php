@@ -237,7 +237,7 @@ return [
 
     // Here you can specify additional assets you would like to be included in the master.blade
     'additional_css' => [
-        'plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.css',
+        'plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.css',
         'plugins/datatable-rowgroup/rowGroup.dataTables.min.css',
         'css/flaticon.css',
         'css/custom.css'
