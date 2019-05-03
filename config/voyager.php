@@ -249,7 +249,10 @@ return [
         'plugins/moment-locales/moment-with-locales.js',
         'plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js',
         'plugins/formdata/formdata.min.js',
-        'plugins/datatable-rowgroup/dataTables.rowGroup.min.js'
+        'plugins/datatable-rowgroup/dataTables.rowGroup.min.js',
+        'https://cdn.datatables.net/plug-ins/1.10.19/sorting/datetime-moment.js',
+        'https://cdn.polyfill.io/v2/polyfill.min.js?features=Intl.~locale.fr,Intl.~locale.en',
+        'https://cdnjs.cloudflare.com/ajax/libs/intl-messageformat/2.2.0/intl-messageformat-with-locales.min.js'
     ],
 
     'googlemaps' => [

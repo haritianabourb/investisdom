@@ -27,7 +27,7 @@ class ReservationDimmer extends BaseDimmer
     public function run()
     {
 
-      $count = Reservation::count();
+      $count = Reservation::ofYear()->count();
       $string = ' Réservations';
 
       $montant_reductions  = 0;
@@ -36,7 +36,7 @@ class ReservationDimmer extends BaseDimmer
       $min_taux = ["taux" => 100];
 
       // Sum, Min and Max
-      Reservation::latest()->each(function ($item, $key) use (&$montant_reductions, &$taux_rentabilite, &$max_taux, &$min_taux) {
+      Reservation::ofYear()->latest()->each(function ($item, $key) use (&$montant_reductions, &$taux_rentabilite, &$max_taux, &$min_taux) {
           $montant_reductions += $item->montant_reduction;
           $taux_rentabilite += $item->taux_rentabilite;
 
@@ -55,9 +55,7 @@ class ReservationDimmer extends BaseDimmer
           }
       });
 
-
-
-          $last = Reservation::latest()->first();
+        $last = collect(Reservation::ofYear()->get())->sortByDesc('mandat_reserved_at')->values()->first();
 
       if($count){
           $taux_rentabilite = $taux_rentabilite / $count;
