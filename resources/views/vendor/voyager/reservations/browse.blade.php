@@ -365,7 +365,6 @@
                 }
             };
 
-                console.log(datatableConfig);
 
                 var table = $('#dataTable').DataTable(datatableConfig);
 
