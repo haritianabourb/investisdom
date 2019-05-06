@@ -2,7 +2,7 @@
     {{$reservation->identifiant}}
 </a>
 <br>
-git s
+
 <span class="label label-primary">
     {{$reservation->typeContratsId->nom}}
 </span><br><br>
