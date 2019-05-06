@@ -2,9 +2,7 @@
     {{$reservation->identifiant}}
 </a>
 <br>
-<a href="{{ route('voyager.investors.show', ["id" => $reservation->investor->id]) }}" target="_blank">
-    {{$reservation->investor->full_name}}
-</a><br>
+git s
 <span class="label label-primary">
     {{$reservation->typeContratsId->nom}}
 </span><br><br>
