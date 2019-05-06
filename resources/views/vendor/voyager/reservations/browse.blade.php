@@ -362,7 +362,7 @@
             if(isNaN(year)) {
                 return true;
             }
-            var date =  moment(data[6], "DD/MM/YYYY").format("YYYY"); // use data for the age column
+            var date =  moment(data[7], "DD/MM/YYYY").format("YYYY"); // use data for the age column
             return date == year;
         };
 
@@ -386,12 +386,12 @@
                     config('voyager.dashboard.data_tables', []))
                 , true) !!};
 
-            datatableConfig.order = [[6, "desc"]];
+            datatableConfig.order = [[7, "desc"]];
 
             datatableConfig.rowGroup = {
                     "dataSrc":  function (row) {
 
-                        return moment(row[6], "DD/MM/YYYY").format(`YYYY`);
+                        return moment(row[7], "DD/MM/YYYY").format(`YYYY`);
 
                     }
 
@@ -494,7 +494,7 @@
                 '<option value="">Choose a year</option>\n' +
                 '</select>');
 
-            var dates = table.rows().data().pluck(6).toArray();
+            var dates = table.rows().data().pluck(7).toArray();
 
             dates = dates.map(function(date) {return moment(date, "DD/MM/YYYY").format("YYYY")}).filter(function(value, index, self) {
                 return self.indexOf(value) === index;
@@ -541,16 +541,16 @@
 
                 }
 
-                table.column(6).search(isNaN(year)? "" : year).draw();
+                table.column(7).search(isNaN(year)? "" : year).draw();
 
             } );
 
             var aggregateUsersByYear = function (myData, year){
                 datas = [];
 
-                myData.column(3).data().unique().each(function(name, index){
+                myData.column(4).data().unique().each(function(name, index){
                     var sumNBReservations = myData.filter(function(data){
-                        if(name == data[3]) return true;
+                        if(name == data[4]) return true;
                         return false;
                     }).reduce( function ( total) {
                         return total+1 ;
@@ -558,31 +558,31 @@
 
                     if(sumNBReservations > 0){
                         var sumRM = myData.filter(function(data){
-                            if(name == data[3]) return true;
+                            if(name == data[4]) return true;
                             return false;
                         }).reduce( function ( total, value) {
 
-                            var convertMontantResa = value[4].replace(/\s|€/g,'');
+                            var convertMontantResa = value[5].replace(/\s|€/g,'');
                             convertMontantResa = convertMontantResa.replace(/,/g,'.');
 
                             return total + parseFloat(convertMontantResa) ;
                         },0 );
 
                         var sumMC = myData.filter(function(data){
-                            if(name == data[3]) return true;
+                            if(name == data[4]) return true;
                             return false;
                         }).reduce( function ( total, value) {
 
-                            var convertMontantComi = value[9].replace(/\s|€/g,'');
+                            var convertMontantComi = value[10].replace(/\s|€/g,'');
                             convertMontantComi = convertMontantComi.replace(/,/g,'.');
 
                             return total + parseFloat(convertMontantComi) ;
                         },0 );
 
                             var CGP = myData.filter(function(data){
-                                if(name == data[3]) return true;
+                                if(name == data[4]) return true;
                                 return false;
-                            }).toArray()[0][2];
+                            }).toArray()[0][3];
 
                             sumMCFormat = new IntlMessageFormat('{sumMC, number, EUR}', 'fr-FR', {
                                 number: {
