@@ -72,7 +72,7 @@ class Reservation extends Model
     }
 
     public function getInvestorsIdBrowseAttribute(){
-        return $this->investorsId()->first()->full_name;
+        return '<a href="'.route('voyager.investors.show', ["id" => $this->investorsId]).'" target="_blank">'.$this->investorsId()->first()->full_name.'</a>';
     }
 
     public function getInvestorsIdReadAttribute(){

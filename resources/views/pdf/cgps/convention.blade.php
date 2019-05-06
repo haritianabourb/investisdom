@@ -323,7 +323,7 @@
         <table style="width:80%">
             <tr>
                 <th>Mois</th>
-                <th>Taux de Commercialisation </th>
+                <th>Enveloppe globale </th>
                 <th>Plafond de Rémuneration </th>
             </tr>
             <tr>
@@ -402,7 +402,7 @@
         <table style="width:80%">
             <tr>
                 <th>Mois</th>
-                <th>Taux de Commercialisation </th>
+                <th>Enveloppe globale </th>
                 <th>Plafond de Rémuneration </th>
             </tr>
             <tr>
