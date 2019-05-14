@@ -23,7 +23,7 @@ use Maatwebsite\Excel\Concerns\WithCustomCsvSettings;
 use Maatwebsite\Excel\Concerns\WithProgressBar;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class ArchivesReservationImport implements ToModel, WithProgressBar, WithHeadingRow, WithCustomCsvSettings
+class ArchivesReservationImport implements ToModel, WithProgressBar, WithHeadingRow
 {
     use Importable, SkipsErrors, SkipsFailures;
 
@@ -49,8 +49,6 @@ class ArchivesReservationImport implements ToModel, WithProgressBar, WithHeading
         // also i prepared the flow in order to save it correctly ;)
 
 
-
-
         // FIXME adding missing columns to csv
         if (!is_null($cgp) && !is_null($investors) && !is_null($formulae)){
             // obligation for id to be generate here don't worry ;)
@@ -59,7 +57,7 @@ class ArchivesReservationImport implements ToModel, WithProgressBar, WithHeading
                 substr(preg_replace('/\s/', '', stripAccents($investors->name)), 0, 3)
                 .substr(preg_replace('/\s/', '', stripAccents($cgp->name)), -3)
                 ."-".$date
-                ."/".$row['iid_contrat'];
+                ."/".$row['id_contrat'];
             $reservation = new Reservation([
                 "identifiant" => $identifiant,
                 "montant_reduction" => $row["montant_reduction_impot"],
@@ -85,38 +83,36 @@ class ArchivesReservationImport implements ToModel, WithProgressBar, WithHeading
                 "mandat_reserved_at" => $row["date_reservation"],
                 "mandat_start_at" =>    $row["date_mandat"],
                 "mandat_finnish_at" =>  $row["date_fin_mandat"],
+                //"yousign_procedure_id" => "archive",
             ]);
 
-            if (!is_null($row["folder"])){
+            if (!is_null($row["investisseur_doc_reservation"])){
+                $reservation->mr = json_encode([[
+                    "download_link" => "reservations\\archives\\".$row["id_contrat"]."\\".$row["investisseur_doc_reservation"],
+                    "original_name" => $row["investisseur_doc_reservation"],
+                ]]);
 
-                if (!is_null($row["investisseur_doc_reservation"])){
-                    $reservation->mr = json_encode([[
-                        "download_link" => "reservations\\archives\\".$row["iid_contrat"]."\\".$row["investisseur_doc_reservation"],
-                        "original_name" => $row["investisseur_doc_reservation"],
-                    ]]);
+            }
 
-                }
+            if (!is_null($row["investisseur_doc_souscription"])){
+                $reservation->res = json_encode([[
+                    "download_link" => "reservations\\archives\\".$row["id_contrat"]."\\".$row["investisseur_doc_souscription"],
+                    "original_name" => $row["investisseur_doc_souscription"],
+                ]]);
+            }
 
-                if (!is_null($row["investisseur_doc_souscription"])){
-                    $reservation->res = json_encode([[
-                        "download_link" => "reservations\\archives\\".$row["iid_contrat"]."\\".$row["investisseur_doc_souscription"],
-                        "original_name" => $row["investisseur_doc_souscription"],
-                    ]]);
-                }
+            if (!is_null($row["cheque_resa"])){
+                $reservation->cr = json_encode([[
+                    "download_link" => "reservations\\archives\\".$row["id_contrat"]."\\".$row["cheque_resa"],
+                    "original_name" => $row["cheque_resa"],
+                ]]);
+            }
 
-                if (!is_null($row["cheque_resa"])){
-                    $reservation->cr = json_encode([[
-                        "download_link" => "reservations\\archives\\".$row["iid_contrat"]."\\".$row["cheque_resa"],
-                        "original_name" => $row["cheque_resa"],
-                    ]]);
-                }
-
-                if (!is_null($row["remise_cheque"])){
-                    $reservation->rc = json_encode([[
-                        "download_link" => "reservations\\archives\\".$row["iid_contrat"]."\\".$row["remise_cheque"],
-                        "original_name" => $row["remise_cheque"],
-                    ]]);
-                }
+            if (!is_null($row["remise_cheque"])){
+                $reservation->rc = json_encode([[
+                    "download_link" => "reservations\\archives\\".$row["id_contrat"]."\\".$row["remise_cheque"],
+                    "original_name" => $row["remise_cheque"],
+                ]]);
             }
 
 
@@ -125,15 +121,4 @@ class ArchivesReservationImport implements ToModel, WithProgressBar, WithHeading
         return null;
     }
 
-    /**
-     * @return array
-     */
-    public function getCsvSettings(): array
-    {
-        // TODO: Implement getCsvSettings() method.
-        return [
-            'input_encoding' => 'ISO-8859-1',
-            'delimiter' => ';',
-        ];
-    }
 }
