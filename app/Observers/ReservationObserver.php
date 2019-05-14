@@ -73,17 +73,20 @@ class ReservationObserver
 
         $request = count(request()->all()) ? request()->all() : $reservation->toArray();
 
+//        dd($request);
         $results = $this->calculateField($request, 'all');
 
+//        dd($results, $results->has("error"));
 
-        $columns = Schema::getColumnListing($reservation->getTable());
+        if(!$results->has("error")){
+            $columns = Schema::getColumnListing($reservation->getTable());
 
-        $results->each(function ($item, $key) use ($reservation, $columns){
-            if(in_array($key, $columns)){
-                $reservation->$key = $item;
-            }
-        });
-
+            $results->each(function ($item, $key) use ($reservation, $columns){
+                if(in_array($key, $columns)){
+                    $reservation->$key = $item;
+                }
+            });
+        }
         if(\Auth::user() && \Auth::user()->hasRole(["cgps", "cgp"])){
             $contact = Contact::ofUser(\Auth::user())->firstOrFail();
             $cgp = CGP::ofContact($contact)->firstOrFail();
@@ -94,7 +97,6 @@ class ReservationObserver
 
         // TODO make this for better fill, maybe had a log too
         $reservation->user_updated_id = \Auth::user() ? \Auth::user()->id : 1;
-
 //        $reservation->generatePdf();
 
     }
