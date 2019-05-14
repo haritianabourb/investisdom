@@ -34,7 +34,7 @@ class ArchivesReservationImport implements ToModel, WithProgressBar, WithHeading
      */
     public function model(array $row)
     {
-        dd($row);
+
         $contact = Contact::where('email', $row['id_contact'])->first();
         $investors = Investor::where('email_invest', $row['id_investisseur_rattache'])->first();
         $cgp = CGP::ofContact($contact)->first();
@@ -44,24 +44,24 @@ class ArchivesReservationImport implements ToModel, WithProgressBar, WithHeading
 //        $mandat_start_at = \DateTime::createFromFormat('d/m/Y',$row['date_mandat']);
 //        $mandat_finnish_at = \DateTime::createFromFormat('d/m/Y',$row['date_fin_mandat']);
 
-
-
-        //Reservation::truncate();
-
         // FIXME Formulae cannot work here, because we havent got CGP rate a this time,
         // I removed the calculate observer for the execution (see CSVArchivesReservationSeeder:21)
         // also i prepared the flow in order to save it correctly ;)
-        $date = (new Carbon($row["date_reservation"]))->format("Ymd");
-        $identifiant =
-            substr(preg_replace('/\s/', '', stripAccents($investors->name)), 0, 3)
-            .substr(preg_replace('/\s/', '', stripAccents($cgp->name)), -3)
-            ."-".$date
-            ."/".$row['iid_contrat'];
+
+
 
 
         // FIXME adding missing columns to csv
         if (!is_null($cgp) && !is_null($investors) && !is_null($formulae)){
+            // obligation for id to be generate here don't worry ;)
+            $date = (new Carbon($row["date_reservation"]))->format("Ymd");
+            $identifiant =
+                substr(preg_replace('/\s/', '', stripAccents($investors->name)), 0, 3)
+                .substr(preg_replace('/\s/', '', stripAccents($cgp->name)), -3)
+                ."-".$date
+                ."/".$row['iid_contrat'];
             $reservation = new Reservation([
+                "identifiant" => $identifiant,
                 "montant_reduction" => $row["montant_reduction_impot"],
                 "commission_cgp" => $row["taux_commission_cgp"]/100,
                 "type_contrats_id" => $formulae->id,
@@ -74,6 +74,14 @@ class ArchivesReservationImport implements ToModel, WithProgressBar, WithHeading
                 "type_aj" => "permanent",
                 "paiement" => "unique",
                 "mode_paiement" => "cheque",
+                "taux_rentabilite" => $row['rentabilite']/100.0,
+                "apport" => $row['apport_calcule'],
+                "montant_commission_cgp" => $row['calcul_com_cgp'],
+                "gain_brut" => str_replace(",",".",$row['gain_brut']),
+                "taux_reservation" => $row['taux_souscription']/100.0,
+                "created_at" => \Carbon\Carbon::now(),
+                "updated_at" => \Carbon\Carbon::now(),
+                "part" => $row['nombre_part'],
                 "mandat_reserved_at" => $row["date_reservation"],
                 "mandat_start_at" =>    $row["date_mandat"],
                 "mandat_finnish_at" =>  $row["date_fin_mandat"],
@@ -87,7 +95,6 @@ class ArchivesReservationImport implements ToModel, WithProgressBar, WithHeading
                         "original_name" => $row["investisseur_doc_reservation"],
                     ]]);
 
-                    //[{"download_link":"investors\\April2019\\l3tfbUgNr64q2zEIqu3m.pdf","original_name":"Contrat_de_partenariat_FINANCIERE DES LYS(6).pdf"}]
                 }
 
                 if (!is_null($row["investisseur_doc_souscription"])){

@@ -1,5 +1,6 @@
 <?php
 
+use App\Reservation;
 use Illuminate\Database\Seeder;
 
 class CSVArchivesReservationSeeder extends Seeder
@@ -15,10 +16,11 @@ class CSVArchivesReservationSeeder extends Seeder
      */
     public function run()
     {
-
+        Reservation::truncate();
         $this->command->line("---");
         $this->command->comment('Seeding Reservation CGP Core');
-        \App\Reservation::unsetEventDispatcher();
+        Reservation::unsetEventDispatcher();
+
         (new \App\Imports\Legacy\ArchivesReservationImport)
             ->withOutput($this->command->getOutput())
             ->import(storage_path("csv/archives_reservations.csv"), null, \Maatwebsite\Excel\Excel::CSV);
