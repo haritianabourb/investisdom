@@ -47,20 +47,23 @@ class ArchivesReservationImport implements ToModel, WithProgressBar, WithHeading
 //        $mandat_finnish_at = \DateTime::createFromFormat('d/m/Y',$row['date_fin_mandat']);
 
 
-
 //        TODO create log of missing reservation
         if(is_null($cgp)){
 
             $this->count++;
 
-            var_dump(is_null($investors)?$investors:$row['id_contact']);
+//            var_dump(is_null($investors)?$investors:$row['id_contact']);
 
             $error_Log = [
               "msg" => "erreur sur la reservation :" .$row["id_contrat"],
               "contact" => "le contacte id  :" .$row['id_contact'],
+                "count" => $this->count
             ];
-            var_dump($error_Log , $this->count);
+            var_dump($error_Log);
+            return null;
         }
+
+
 
         // FIXME Formulae cannot work here, because we havent got CGP rate a this time,
         // I removed the calculate observer for the execution (see CSVArchivesReservationSeeder:21)
@@ -68,6 +71,31 @@ class ArchivesReservationImport implements ToModel, WithProgressBar, WithHeading
 
         // FIXME adding missing columns to csv
         if (!is_null($cgp) && !is_null($investors) && !is_null($formulae)){
+
+            if($reservation = Reservation::where([
+                "type_contrats_id" => $formulae->id,
+                "cgps_id" => $cgp->id,
+                "investors_id" => $investors->id,
+                "user_id" => $contact->user_id,
+                "mandat_reserved_at" => $row["date_reservation"],
+                "mandat_start_at" =>    $row["date_mandat"],
+                "mandat_finnish_at" =>  $row["date_fin_mandat"],
+                "yousign_procedure_id" => "archive",
+            ])->get()->first()){
+
+                $error_Log = [
+                    "msg" => "erreur sur la reservation :" .$row["id_contrat"],
+                    "reservation" => "Reservation :" .$reservation->identifiant,
+                    "count" => $this->count
+                ];
+
+                var_dump($error_Log);
+
+                return null;
+
+            }
+
+
             // obligation for id to be generate here don't worry ;)
             $date = (new Carbon($row["date_reservation"]))->format("Ymd");
             $identifiant =
