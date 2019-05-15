@@ -2,6 +2,7 @@
 
 namespace App\Actions;
 
+use Illuminate\Support\Facades\Auth;
 use TCG\Voyager\Actions\AbstractAction;
 
 class DeleteAction extends AbstractAction
@@ -23,7 +24,9 @@ class DeleteAction extends AbstractAction
     {
 
         if($this->dataType->slug == "reservations" ){
-
+            if(!Auth::user()->hasRole(["admin", "administrator", "investis", "investisdom"]) && $this->data->yousign_procedure_id == "archive") {
+                return false;
+            }
             return $this->getYousignProcedureStatus();
         }
 
@@ -55,6 +58,7 @@ class DeleteAction extends AbstractAction
     }
 
     private function getYousignProcedureStatus(){
+        if(Auth::user()->hasRole(["admin", "administrator", "investis", "investisdom"])) return "delete";
         // TODO show if a procedure already exist
         if($this->data->yousign_procedure_id && $this->data->yousign_procedure_id != "null"){
 

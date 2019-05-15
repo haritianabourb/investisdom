@@ -23,7 +23,9 @@ class EditAction extends AbstractAction
     {
 
         if($this->dataType->slug == "reservations" ){
-
+            if($this->data->yousign_procedure_id == "archive") {
+                return false;
+            }
             return $this->getYousignProcedureStatus();
         }
         return 'edit';

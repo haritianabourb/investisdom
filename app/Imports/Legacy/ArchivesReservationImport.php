@@ -48,7 +48,6 @@ class ArchivesReservationImport implements ToModel, WithProgressBar, WithHeading
         // I removed the calculate observer for the execution (see CSVArchivesReservationSeeder:21)
         // also i prepared the flow in order to save it correctly ;)
 
-
         // FIXME adding missing columns to csv
         if (!is_null($cgp) && !is_null($investors) && !is_null($formulae)){
             // obligation for id to be generate here don't worry ;)
@@ -83,7 +82,7 @@ class ArchivesReservationImport implements ToModel, WithProgressBar, WithHeading
                 "mandat_reserved_at" => $row["date_reservation"],
                 "mandat_start_at" =>    $row["date_mandat"],
                 "mandat_finnish_at" =>  $row["date_fin_mandat"],
-                //"yousign_procedure_id" => "archive",
+                "yousign_procedure_id" => "archive",
             ]);
 
             if (!is_null($row["investisseur_doc_reservation"])){
