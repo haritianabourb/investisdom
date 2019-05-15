@@ -10,7 +10,7 @@
             $can_edit_and_del = false;
             if (!is_null($dataTypeContent->yousign_procedure_id)){
 
-                if($dataTypeContent->yousign_procedure_id != "archive"){
+                if($dataTypeContent->yousign_procedure_id == "archive"){
                     $can_edit_and_del = false;
                 }else{
                     $yousignProcedureStatus = (json_decode($dataTypeContent->yousign_procedure_id)->status);
