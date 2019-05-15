@@ -10,13 +10,18 @@
             $can_edit_and_del = false;
             if (!is_null($dataTypeContent->yousign_procedure_id)){
 
-                $yousignProcedureStatus = (json_decode($dataTypeContent->yousign_procedure_id)->status);
-
-                if(in_array($yousignProcedureStatus, ['active', 'finished', 'expired', 'refused', 'canceled'])){
+                if($dataTypeContent->yousign_procedure_id != "archive"){
                     $can_edit_and_del = false;
                 }else{
-                    $can_edit_and_del =  true;
+                    $yousignProcedureStatus = (json_decode($dataTypeContent->yousign_procedure_id)->status);
+
+                    if(in_array($yousignProcedureStatus, ['active', 'finished', 'expired', 'refused', 'canceled'])){
+                        $can_edit_and_del = false;
+                    }else{
+                        $can_edit_and_del =  true;
+                    }
                 }
+
             }else{
                 $can_edit_and_del =  true;
             }
