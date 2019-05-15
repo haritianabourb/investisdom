@@ -23,9 +23,11 @@ use Maatwebsite\Excel\Concerns\WithCustomCsvSettings;
 use Maatwebsite\Excel\Concerns\WithProgressBar;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class ArchivesReservationImport implements ToModel, WithProgressBar, WithHeadingRow
+class ArchivesReservationImport implements ToModel, WithProgressBar, WithHeadingRow, WithCustomCsvSettings
 {
     use Importable, SkipsErrors, SkipsFailures;
+
+    private $count=0;
 
     /**
      * @param array $row
@@ -43,6 +45,22 @@ class ArchivesReservationImport implements ToModel, WithProgressBar, WithHeading
 //        $mandat_reserved_at = \DateTime::createFromFormat('d/m/Y',$row['date_reservation']);
 //        $mandat_start_at = \DateTime::createFromFormat('d/m/Y',$row['date_mandat']);
 //        $mandat_finnish_at = \DateTime::createFromFormat('d/m/Y',$row['date_fin_mandat']);
+
+
+
+//        TODO create log of missing reservation
+        if(is_null($cgp)){
+
+            $this->count++;
+
+            var_dump(is_null($investors)?$investors:$row['id_contact']);
+
+            $error_Log = [
+              "msg" => "erreur sur la reservation :" .$row["id_contrat"],
+              "contact" => "le contacte id  :" .$row['id_contact'],
+            ];
+            var_dump($error_Log , $this->count);
+        }
 
         // FIXME Formulae cannot work here, because we havent got CGP rate a this time,
         // I removed the calculate observer for the execution (see CSVArchivesReservationSeeder:21)
@@ -120,4 +138,15 @@ class ArchivesReservationImport implements ToModel, WithProgressBar, WithHeading
         return null;
     }
 
+
+    /**
+     * @return array
+     */
+    public function getCsvSettings(): array
+    {
+        // TODO: Implement getCsvSettings() method.
+        return [
+          'delimiter' => ';',
+        ];
+    }
 }
