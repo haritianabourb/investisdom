@@ -76,12 +76,12 @@ table.dataTable tr.dtrg-group.dtrg-end.dtrg-level-1 td {
     border-bottom: 1px solid #b9acac;
 }
 
-table.dataTable  thead tr[role=row] th:not(:first-child){
+#summaryReservation  thead tr[role=row] th:not(:first-child){
     text-align: right !important;
 }
-table.dataTable  tbody tr[role=row] td:not(:first-child){
+#summaryReservation  tbody tr[role=row] td:not(:first-child){
     text-align: right !important;
 }
-table.dataTable tr.dtrg-group.dtrg-end.dtrg-level-1 td:not(:first-child) {
+#summaryReservation tr.dtrg-group.dtrg-end.dtrg-level-1 td:not(:first-child) {
     text-align: right !important;
 }
