@@ -397,8 +397,6 @@
 
             };
 
-
-
             var table = $('#dataTable').DataTable(datatableConfig);
 
             table.rowGroup().dataSrc();
@@ -436,7 +434,7 @@
                                     return a + b;
                                 }, 0);
 
-                            totalCommi = $.fn.dataTable.render.number(' ', ',', 2, ' Total Commission: ', '€').display( totalCommi );
+                            totalCommi = $.fn.dataTable.render.number(' ', ',', 2, '', '€').display( totalCommi );
 
                             var totalRI = rows
                                 .data()
@@ -448,41 +446,15 @@
                                     return a + b;
                                 }, 0);
 
-                            totalRI = $.fn.dataTable.render.number(' ', ',', 2, ' Total RI: ', '€').display( totalRI );
-
-
+                            totalRI = $.fn.dataTable.render.number(' ', ',', 2, '', '€').display( totalRI );
 
                             return $("<tr style='font-weight: bolder'></tr>")
-                                .append('<td width="25%" style="background-color: #e0e0e0;\n' +
-                                    'padding-top: 0.25em;\n' +
-                                    'padding-bottom: 0.25em;\n' +
-                                    'padding-left: 2em;\n' +
-                                    'font-size: 1em;\n' +
-                                    'font-weight: bold;' +
-                                    'border-bottom: 1px solid #b9acac"> resultat de '+ group +' :  </strong></td>')
 
-                                .append('<td style="background-color: #e0e0e0;\n' +
-                                    'padding-top: 0.25em;\n' +
-                                    'padding-bottom: 0.25em;\n' +
-                                    'padding-left: 2em;\n' +
-                                    'font-size: 1em;\n' +
-                                    'font-weight: bold;' +
-                                    'border-bottom: 1px solid #b9acac"> Nombre de réservations: '+nbReservation+'</td>')
+                                .append('<td width="25%"> Total :</strong></td>')
+                                .append('<td>'+nbReservation+'</td>')
+                                .append('<td>'+totalCommi+'</td>')
+                                .append('<td>'+totalRI+'</td>');
 
-                                .append('<td style="background-color: #e0e0e0;\n' +
-                                    'padding-top: 0.25em;\n' +
-                                    'padding-bottom: 0.25em;\n' +
-                                    'padding-left: 2em;\n' +
-                                    'font-size: 1em;\n' +
-                                    'font-weight: bold;' +
-                                    'border-bottom: 1px solid #b9acac">'+totalCommi+'</td>')
-                                .append('<td style="background-color: #e0e0e0;\n' +
-                                    'padding-top: 0.25em;\n' +
-                                    'padding-bottom: 0.25em;\n' +
-                                    'padding-left: 2em;\n' +
-                                    'font-size: 1em;\n' +
-                                    'font-weight: bold;' +
-                                    'border-bottom: 1px solid #b9acac">'+totalRI+'</td>');
                         }
                     },
                     dataSrc: [ 0 , 1 ]

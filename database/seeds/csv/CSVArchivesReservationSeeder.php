@@ -16,7 +16,7 @@ class CSVArchivesReservationSeeder extends Seeder
      */
     public function run()
     {
-        //Reservation::truncate();
+//        Reservation::truncate();
         $this->command->line("---");
         $this->command->comment('Seeding Reservation CGP Core');
         Reservation::unsetEventDispatcher();
