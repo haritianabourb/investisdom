@@ -160,6 +160,20 @@ class ArchivesReservationImport implements ToModel, WithProgressBar, WithHeading
                 ]]);
             }
 
+            if (!is_null($row["investisseur_doc_cessionpart"])){
+                $reservation->acp = json_encode([[
+                    "download_link" => "reservations\\archives\\".$row["id_contrat"]."\\".$row["investisseur_doc_cessionpart"],
+                    "original_name" => $row["investisseur_doc_cessionpart"],
+                ]]);
+            }
+
+            if (!is_null($row["investisseur_dossier_souscription"])){
+                $reservation->sousc = json_encode([[
+                    "download_link" => "reservations\\archives\\".$row["id_contrat"]."\\".$row["investisseur_dossier_souscription"],
+                    "original_name" => $row["investisseur_dossier_souscription"],
+                ]]);
+            }
+
 
             return $reservation;
         }
