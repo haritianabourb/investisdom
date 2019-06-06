@@ -12,7 +12,7 @@ class ContractAction extends AbstractAction
 
     public function getTitle()
     {
-        return $this->title ?? "Generer le Contrat";
+        return $this->title ?? "Generer le Contrat de Reservation";
     }
 
     public function getPolicy()
