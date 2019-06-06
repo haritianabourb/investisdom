@@ -17,6 +17,11 @@ class SepaAction extends AbstractAction
 
     public function getPolicy()
     {
+
+        if($this->data->yousign_procedure_id == "archive") {
+            return false;
+        }
+
         //TODO Change policy when it come
         //TODO check with yousign the pdf status
         if($this->data->paiement == "echelonne" || $this->data->mode_paiement == "prelevement"){

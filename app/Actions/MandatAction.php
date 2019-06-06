@@ -19,6 +19,9 @@ class MandatAction extends AbstractAction
     {
         //TODO Change policy when it come
         //TODO check with yousign the pdf status
+        if($this->data->yousign_procedure_id == "archive") {
+            return false;
+        }
         return 'browse';
     }
 
