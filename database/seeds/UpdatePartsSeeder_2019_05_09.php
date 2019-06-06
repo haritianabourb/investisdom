@@ -13,7 +13,9 @@ class UpdatePartsSeeder_2019_05_09 extends Seeder
      */
     public function run()
     {
-        $reservations = Reservation::all();
+        $reservations = Reservation::all()->filter(function($item){
+            return \Carbon\Carbon::createFromFormat("Y-m-d", $item->mandat_reserved_at)->year >= date('Y');
+        });
 
         foreach ($reservations as $reservation) {
             $reservation->save();
