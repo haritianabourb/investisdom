@@ -19,7 +19,7 @@ trait HasFieldsToCalculate {
          $this->validateField($field);
         return $this->calculation()->processCalculation($field);
      }catch(\Exception $e){
-         return collect(json_decode($e->getMessage()) ?? $e->getMessage());
+         return collect(["error" => json_decode($e->getMessage()) ?? $e->getMessage()]);
      }
  }
 

@@ -156,6 +156,7 @@ return [
             "taux_rentabilite" => \App\Services\Reservation\TauxRentabilite::class,
             "taux_mois" => \App\Services\Reservation\TauxMois::class,
             "taux_reservation" => \App\Services\Reservation\TauxReservation::class,
+            "part" => \App\Services\Reservation\Part::class,
         ],
         "queues" => [
             "all" => [
@@ -166,6 +167,7 @@ return [
                 "taux_rentabilite",
                 "taux_mois",
                 "taux_reservation",
+                "part",
             ],
             "apport" => [
                 "taux_rentabilite",

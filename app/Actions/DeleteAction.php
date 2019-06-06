@@ -2,53 +2,63 @@
 
 namespace App\Actions;
 
+use Illuminate\Support\Facades\Auth;
 use TCG\Voyager\Actions\AbstractAction;
 
-class EditAction extends AbstractAction
+class DeleteAction extends AbstractAction
 {
 
     protected $yousignProcedureStatus;
 
     public function getTitle()
     {
-        return __('generic.edit');
+        return __('voyager::generic.delete');
     }
 
     public function getIcon()
     {
-        return 'voyager-edit';
+        return 'voyager-trash';
     }
 
     public function getPolicy()
     {
 
         if($this->dataType->slug == "reservations" ){
-            if($this->data->yousign_procedure_id == "archive") {
+            if(!Auth::user()->hasRole(["admin", "administrator", "investis", "investisdom"]) && $this->data->yousign_procedure_id == "archive") {
                 return false;
             }
             return $this->getYousignProcedureStatus();
         }
-        return 'edit';
+
+        return 'delete';
     }
 
     public function getAttributes()
     {
         return [
-            'class' => 'btn btn-sm btn-primary pull-right edit',
+            'class'   => 'btn btn-sm btn-danger pull-right delete',
+            'data-id' => $this->data->{$this->data->getKeyName()},
+            'id'      => 'delete-'.$this->data->{$this->data->getKeyName()},
         ];
     }
 
     public function getDefaultRoute()
     {
-        return route('voyager.'.$this->dataType->slug.'.edit', $this->data->{$this->data->getKeyName()});
+        return 'javascript:;';
     }
 
-    public function getContactsRoute()
+    public function shouldActionDisplayOnDataType()
     {
-        return route('voyager.'.$this->dataType->slug.'.edit', $this->data->{$this->data->getRouteKeyName()});
+        $model = $this->data->getModel();
+        if ($model && in_array(\Illuminate\Database\Eloquent\SoftDeletes::class, class_uses($model)) && $this->data->deleted_at) {
+            return false;
+        }
+
+        return parent::shouldActionDisplayOnDataType();
     }
 
     private function getYousignProcedureStatus(){
+        if(Auth::user()->hasRole(["admin", "administrator", "investis", "investisdom"])) return "delete";
         // TODO show if a procedure already exist
         if($this->data->yousign_procedure_id && $this->data->yousign_procedure_id != "null"){
 
@@ -77,8 +87,7 @@ class EditAction extends AbstractAction
             return false;
         }
 
-        return 'edit';
+        return 'delete';
 
     }
-
 }

@@ -36,6 +36,8 @@
                 } else {
                     $relationshipOptions = $relationshipClass::all();
                 }
+
+                $relationshipOptions = $relationshipOptions->sortBy($options->relationship->label);
             }
 
             // Try to get default value for the relationship

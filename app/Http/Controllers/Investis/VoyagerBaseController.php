@@ -29,6 +29,8 @@ class VoyagerBaseController extends BaseVoyagerBaseController
 
         $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
 
+
+
         // Check permission
         $this->authorize('add', app($dataType->model_name));
 
@@ -312,7 +314,6 @@ class VoyagerBaseController extends BaseVoyagerBaseController
                 }
             }
         }
-
         $data->save();
 
         // Save translations

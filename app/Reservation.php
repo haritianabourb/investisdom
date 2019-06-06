@@ -72,7 +72,7 @@ class Reservation extends Model
     }
 
     public function getInvestorsIdBrowseAttribute(){
-        return $this->investorsId()->first()->full_name;
+        return '<a href="'.route('voyager.investors.show', ["id" => $this->investorsId]).'" target="_blank">'.$this->investorsId()->first()->full_name.'</a>';
     }
 
     public function getInvestorsIdReadAttribute(){
@@ -101,6 +101,16 @@ class Reservation extends Model
         }
 
         return User::find($this->user_id)->name;
+    }
+
+    public function scopeOfYear($query)
+    {
+
+        $from = date(date("Y")."-01-01");
+        $to = date(date("Y")."-12-31");
+
+        return $query->whereBetween('mandat_reserved_at', [$from, $to]);
+
     }
 
 }

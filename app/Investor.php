@@ -31,12 +31,12 @@ class Investor extends Entity
 
     public function getFullNameAttribute()
     {
-        return "{$this->prenom_invest} ".strtoupper($this->name_invest);
+        return strtoupper($this->name_invest)." {$this->prenom_invest}";
     }
 
     public function getConjointFullNameAttribute()
     {
-        return "{$this->prenom_conjoint} ".strtoupper($this->nom_conjoint);
+        return strtoupper($this->nom_conjoint)." {$this->prenom_conjoint}";
     }
 
      public function cgpAttached(){

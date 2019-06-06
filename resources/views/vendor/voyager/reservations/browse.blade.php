@@ -170,23 +170,45 @@
                                                     @include('voyager::multilingual.input-hidden-bread-browse')
                                                     <div class="readmore">{{ mb_strlen( $data->{$row->field} ) > 200 ? mb_substr($data->{$row->field}, 0, 200) . ' ...' : $data->{$row->field} }}</div>
                                                 @elseif($row->type == 'file')
-                                                  @if(!empty($data->{$row->field}))
                                                     @include('voyager::multilingual.input-hidden-bread-browse')
-                                                    @if(json_decode($data->{$row->field}))
-                                                        @foreach(json_decode($data->{$row->field}) as $file)
-                                                            <a href="{{ Storage::disk(config('voyager.storage.disk'))->url($file->download_link) ?: '' }}" target="_blank">
-                                                                {{ $file->original_name ?: '' }}
-                                                            </a>
-                                                            <br/>
-                                                        @endforeach
+                                                    @if(!empty($data->{$row->field}))
+                                                        @if(json_decode($data->{$row->field}))
+                                                            @foreach(json_decode($data->{$row->field}) as $file)
+                                                                <a href="{{ Storage::disk(config('voyager.storage.disk'))->url($file->download_link) ?: '' }}"
+                                                                   target="_blank" class="btn btn-success" title="{{ $file->original_name ?: '' }}">
+                                                                    <i class="voyager-cloud-download"></i>
+                                                                </a>
+                                                                <br/>
+                                                            @endforeach
+                                                        @endif
                                                     @else
-                                                        <a href="{{ Storage::disk(config('voyager.storage.disk'))->url($data->{$row->field}) }}" target="_blank">
-                                                            Download
-                                                        </a>
+                                                        <form role="form"
+                                                              class="form-edit-add"
+                                                              id="{{ $row->field }}_edit_add_{{ $data->getKey()}}"
+                                                              action="{{ route('admin.document.upload', ['slug'=>$dataType->slug , 'id' => $data->getKey()]) }}"
+                                                              method="POST"
+                                                              enctype="multipart/form-data">
+
+                                                            <div class="btn btn-danger"
+                                                                 onclick="myFunction('{{$dataType->name}}_{{ $row->field }}_upload_{{ $data->getKey()}}', '{{$dataType->name}}_{{ $row->field }}_document_{{ $data->getKey()}}')"
+                                                                 title=""
+                                                                 id="{{$dataType->name}}_{{ $row->field }}_document_{{ $data->getKey()}}"
+                                                            >
+                                                                <i class="voyager-upload"></i>
+                                                            </div>
+
+                                                            <input @if($row->required == 1 && !isset($data->{$row->field})) required
+                                                                   @endif type="file"
+                                                                   id="{{$dataType->name}}_{{ $row->field }}_upload_{{ $data->getKey()}}"
+                                                                   name="{{ $row->field }}[]"
+                                                                   multiple="multiple"
+                                                                   style="display: none;"
+                                                                   onchange="documentUploaded('{{$dataType->name}}_{{ $row->field }}_upload_{{ $data->getKey()}}', '{{$dataType->name}}_{{ $row->field }}_document_{{ $data->getKey()}}', '{{ $row->field }}_edit_add_{{ $data->getKey()}}')"
+                                                            >
+                                                            {{ csrf_field() }}
+                                                            {{ method_field("PUT") }}
+                                                        </form>
                                                     @endif
-                                                  @else
-                                                    <span class="label label-warning">En Attente</span>
-                                                  @endif
                                                 @elseif($row->type == 'rich_text_box')
                                                     @include('voyager::multilingual.input-hidden-bread-browse')
                                                     <div class="readmore">{{ mb_strlen( strip_tags($data->{$row->field}, '<b><i><u>') ) > 200 ? mb_substr(strip_tags($data->{$row->field}, '<b><i><u>'), 0, 200) . ' ...' : strip_tags($data->{$row->field}, '<b><i><u>') }}</div>
@@ -256,6 +278,24 @@
                                 </tbody>
                             </table>
                         </div>
+                        <hr>
+                        <div class="table-responsive summary">
+                            <table id="summaryReservation" class="table">
+                                <tfoot>
+                                <tr>
+                                    <th colspan="2" style="text-align:right"></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                                </tfoot>
+                            </table>
+                            <table id="totalSumarry" style="display:none;">
+                                <tr>
+                                    <td>ici mon total</td>
+                                </tr>
+                            </table>
+                        </div>
+
                         @if ($isServerSide)
                             <div class="pull-left">
                                 <div role="status" class="show-res" aria-live="polite">{{ trans_choice(
@@ -316,11 +356,22 @@
         <script src="{{ voyager_asset('lib/js/dataTables.responsive.min.js') }}"></script>
     @endif
     <script>
+        var filterDate = function(data) {
+            var year = parseInt( $('#yearChange').val(), 10 );
+
+            if(isNaN(year)) {
+                return true;
+            }
+            var date =  moment(data[7], "DD/MM/YYYY").format("YYYY"); // use data for the age column
+            return date == year;
+        };
+
         $(document).ready(function () {
+            $.fn.dataTable.moment( 'DD/MM/YYYY' );
+
             @if (!$dataType->server_side)
                 var datatableConfig = {!! json_encode(
                     array_merge([
-                        "order" => [],
                         "autoWidth" => false,
 
                         "language" => __('voyager::datatable'),
@@ -335,19 +386,203 @@
                     config('voyager.dashboard.data_tables', []))
                 , true) !!};
 
+            datatableConfig.order = [[7, "desc"]];
 
             datatableConfig.rowGroup = {
-                "dataSrc": function (row) {
-                    console.log([ row[3], (moment(row[6], "DD/MM/YYYY").format(`YYYY`)) ]);
-                    return moment(row[6], "DD/MM/YYYY").format(`YYYY`);
-                }
+                    "dataSrc":  function (row) {
+
+                        return moment(row[7], "DD/MM/YYYY").format(`YYYY`);
+
+                    }
+
             };
 
-                console.log(datatableConfig);
+            var table = $('#dataTable').DataTable(datatableConfig);
 
-                var table = $('#dataTable').DataTable(datatableConfig);
+            table.rowGroup().dataSrc();
 
-                table.rowGroup().dataSrc()
+            var example = $("#summaryReservation").DataTable({
+                columns: [
+                    { title : "Year", visible: false},
+                    { title : "CGP", visible: false},
+                    { title: "Contact" },
+                    { title: "Nombre de Réservation"},
+                    { title: "Total comission par Contact" },
+                    { title: "Total reduction d'impots" },
+                ],
+                "order": [[ 1, 'asc' ]],
+                rowGroup: {
+                    startRender: function ( rows, group, level ) {
+                        return group;
+                    },
+                    endRender: function ( rows, group, level ) {
+                        if(level === 1 ) {
+                            var nbReservation = rows
+                                .data()
+                                .pluck(3)
+                                .reduce( function (a, b) {
+                                    return a + b;
+                                }, 0);
+
+                            var totalCommi = rows
+                                .data()
+                                .pluck(4)
+                                .reduce( function (a, b) {
+
+                                    b = parseFloat(b.replace(/\s|€/g,'').replace(/,/g,'.'));
+
+                                    return a + b;
+                                }, 0);
+
+                            totalCommi = $.fn.dataTable.render.number(' ', ',', 2, '', '€').display( totalCommi );
+
+                            var totalRI = rows
+                                .data()
+                                .pluck(5)
+                                .reduce( function (a, b) {
+
+                                    b = parseFloat(b.replace(/\s|€/g,'').replace(/,/g,'.'));
+
+                                    return a + b;
+                                }, 0);
+
+                            totalRI = $.fn.dataTable.render.number(' ', ',', 2, '', '€').display( totalRI );
+
+                            return $("<tr style='font-weight: bolder'></tr>")
+
+                                .append('<td width="25%"> Total :</strong></td>')
+                                .append('<td>'+nbReservation+'</td>')
+                                .append('<td>'+totalCommi+'</td>')
+                                .append('<td>'+totalRI+'</td>');
+
+                        }
+                    },
+                    dataSrc: [ 0 , 1 ]
+                }
+
+            });
+
+            var yearChange = $('<select id="yearChange" class="form-control input-sm">\n' +
+                '<option value="">Choose a year</option>\n' +
+                '</select>');
+
+            var dates = table.rows().data().pluck(7).toArray();
+
+            dates = dates.map(function(date) {return moment(date, "DD/MM/YYYY").format("YYYY")}).filter(function(value, index, self) {
+                return self.indexOf(value) === index;
+            });
+
+            for(date of dates){
+                var elem = $('<option value="'+date+'">'+date+'</option>');
+                if(date == "{{date('Y')}}"){
+                    elem.prop("selected", "selected");
+                }
+                yearChange.append(elem);
+
+            }
+
+
+
+
+            $("#dataTable_filter ").prepend('<br>');
+            $("#dataTable_filter ").prepend(
+                $('<label for="yearChange">Choisir une ann&eacute;e: </label>').append(yearChange)
+            );
+
+
+            // Event listener to the two range filtering inputs to redraw on input
+            $('#yearChange').change( function() {
+
+                var year = parseInt( $('#yearChange').val(), 10 );
+
+                if(!isNaN(year)){
+                    var datas = [];
+                    var myData = table.rows().data();
+                    myData = myData.filter(filterDate);
+                    datas = aggregateUsersByYear(myData, year);
+
+                    example.rows().remove();
+                    example.rows.add(datas);
+
+                    example.draw();
+                    $(".summary").show();
+
+                }else{
+
+                    $(".summary").hide();
+
+                }
+
+                table.column(7).search(isNaN(year)? "" : year).draw();
+
+            } );
+
+            var aggregateUsersByYear = function (myData, year){
+                datas = [];
+
+                myData.column(4).data().unique().each(function(name, index){
+                    var sumNBReservations = myData.filter(function(data){
+                        if(name == data[4]) return true;
+                        return false;
+                    }).reduce( function ( total) {
+                        return total+1 ;
+                    },0 );
+
+                    if(sumNBReservations > 0){
+                        var sumRM = myData.filter(function(data){
+                            if(name == data[4]) return true;
+                            return false;
+                        }).reduce( function ( total, value) {
+
+                            var convertMontantResa = value[5].replace(/\s|€/g,'');
+                            convertMontantResa = convertMontantResa.replace(/,/g,'.');
+
+                            return total + parseFloat(convertMontantResa) ;
+                        },0 );
+
+                        var sumMC = myData.filter(function(data){
+                            if(name == data[4]) return true;
+                            return false;
+                        }).reduce( function ( total, value) {
+
+                            var convertMontantComi = value[10].replace(/\s|€/g,'');
+                            convertMontantComi = convertMontantComi.replace(/,/g,'.');
+
+                            return total + parseFloat(convertMontantComi) ;
+                        },0 );
+
+                            var CGP = myData.filter(function(data){
+                                if(name == data[4]) return true;
+                                return false;
+                            }).toArray()[0][3];
+
+                            sumMCFormat = new IntlMessageFormat('{sumMC, number, EUR}', 'fr-FR', {
+                                number: {
+                                    EUR: {
+                                        style   : 'currency',
+                                        currency: 'EUR'
+                                    }
+                            }});
+
+                            sumRMFormat = new IntlMessageFormat('{sumRM, number, EUR}', 'fr-FR', {
+                                number: {
+                                    EUR: {
+                                        style   : 'currency',
+                                        currency: 'EUR'
+                                    }
+                            }});
+
+                        datas.push([year,CGP, name, sumNBReservations, sumMCFormat.format({"sumMC" : sumMC}), sumRMFormat.format({"sumRM" : sumRM})]);
+                    }
+
+                });
+
+                return datas;
+            }
+
+
+            $('#yearChange').trigger("change");
+
             @else
                 $('#search-input select').select2({
                     minimumResultsForSearch: Infinity
@@ -404,5 +639,19 @@
             });
             $('.selected_ids').val(ids);
         });
+
+
+    </script>
+
+    <script>
+        function myFunction(id, doc) {
+            elem=document.getElementById(id);
+            elem.click();
+        }
+
+        function documentUploaded(id, doc, form){
+            document.getElementById(doc).title = document.getElementById(id).value;
+            document.getElementById(form).submit();
+        }
     </script>
 @stop

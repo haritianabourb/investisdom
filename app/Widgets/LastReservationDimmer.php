@@ -27,7 +27,8 @@ class LastReservationDimmer extends BaseDimmer
     public function run()
     {
 
-      $lasts = Reservation::latest()->get()->take(10);
+
+        $lasts = collect(Reservation::ofYear()->get())->sortByDesc('mandat_reserved_at')->values()->take(10);
 
 
       if($lasts){
@@ -40,7 +41,7 @@ class LastReservationDimmer extends BaseDimmer
 
       return view('voyager::dimmer', array_merge($this->config, [
           'icon'   => 'voyager-receipt',
-          'title'  => "Dernieres Réservations",
+          'title'  => "Dernieres Réservations de ".date("Y"),
           'text'   => $text ?? "Aucune réservation pour le moment.",
           'button' => [
             'text' => "Voir mes Réservations",

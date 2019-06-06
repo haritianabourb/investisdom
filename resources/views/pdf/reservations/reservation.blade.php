@@ -322,7 +322,7 @@
 @section('body')
 <DIV id="page_1">
     <DIV id="id1_1">
-        <P class="p0 ft0">DEMANDE DE RESERVATION PRODUIT {{strtoupper(in_array($formulae->slug, ['confort', 'confort-echelonne']) ? "Confort" : "Serenite")}}<br/> {{$reservation->identifiant}}</P>
+        <P class="p0 ft0">DEMANDE DE RESERVATION PRODUIT {{strtoupper(\Illuminate\Support\Str::startsWith($formulae->slug, "confort") ? "Confort" : "Serenite")}}<br/> {{$reservation->identifiant}}</P>
         <TABLE cellpadding=0 cellspacing=0 class="t0">
             <TR>
                 <TD class="tr0 td0"><P class="p2 ft2">&nbsp;</TD>
@@ -444,7 +444,7 @@
         <P class="p29 ft3">Apport en compte courant d'associé de {{number_format($reservation->apport, 2, ","," ")}} euros</P>
         <?php
         //        $total = ($reservation->nbr_snc*60)+($reservation->montant_reduction/1000)+($reservation->assistance_juridique && in_array($formulae->slug, ["confort", "confort-echelonne"]) ? $reservation->nbr_snc*75 : 0);
-        $total = ($reservation->nbr_snc*60)+($reservation->montant_reduction/1000)+($reservation->assistance_juridique && in_array($formulae->slug, ["confort", "confort-echelonne"]) ? $reservation->nbr_snc*75 : 0);
+        $total = ($reservation->nbr_snc*60)+($reservation->montant_reduction/1000)+($reservation->assistance_juridique && \Illuminate\Support\Str::startsWith($formulae->slug, "confort") ? $reservation->nbr_snc*75 : 0);
         ?>
         <P class="p29 ft3">Frais d'enregistrement : {{ number_format($total, 2, ","," ") }} euros</P>
         <TABLE cellpadding=0 cellspacing=0 class="t5">
@@ -458,7 +458,7 @@
             </TR>
             <TR>
                 <TD class="tr5 td12"><P class="p1 ft3">- Assistance juridique</P></TD>
-                <TD class="tr5 td13"><P class="p13 ft2">@if($reservation->assistance_juridique && in_array($formulae->slug, ["confort", "confort-echelonne"])) {{number_format($reservation->nbr_snc*75, 2, ","," ")}} @else 0 @endif euros, (75.00 euros par SNC)</P></TD>
+                <TD class="tr5 td13"><P class="p13 ft2">@if($reservation->assistance_juridique && \Illuminate\Support\Str::startsWith($formulae->slug, "confort")) {{number_format($reservation->nbr_snc*75, 2, ","," ")}} @else 0 @endif euros, (75.00 euros par SNC)</P></TD>
             </TR>
         </TABLE>
     </DIV>
@@ -492,8 +492,8 @@
         <P class="p47 ft11">Je donne pouvoir à INVESTIS DOM pour signer en mon nom et pour mon compte les dossiers de souscription et effectuer toutes les formalités y afférant. Dans l'hypothèse où tout ou partie de mes souscriptions ne seraient pas réalisées avant le 31/12/{{\Carbon\Carbon::now()->format('Y')}}, INVESTIS DOM s'engage â me rembourser le montant des sommes non utilisées hors écart d'ajustement qui sera porté au crédit de mon compte.</P>
         <P class="p48 ft12">Pendant la durée de détention des parts sociales à minima de 5 années, @if($reservation->assistance_juridique) je souhaite @else je ne souhaite pas @endif bénéficier de l'assistance juridique d'INVESTIS DOM @if($reservation->assistance_juridique && in_array($formulae->nom, ['confort', 'confort-echelonne'])) d'un montant de  75,00 euros par SNC, soit un montant annuel de {{number_format($reservation->nbr_snc*75/5, 2, ","," ")}} euros @endif.</P>
         <?php
-//        $total = ($reservation->nbr_snc*60)+($reservation->montant_reduction/1000)+($reservation->assistance_juridique && in_array($formulae->slug, ["confort", "confort-echelonne"]) ? $reservation->nbr_snc*75 : 0);
-        $total = ($reservation->nbr_snc*60)+($reservation->montant_reduction/1000)+($reservation->assistance_juridique && in_array($formulae->slug, ["confort", "confort-echelonne"]) ? $reservation->nbr_snc*75 : 0);
+//        $total = ($reservation->nbr_snc*60)+($reservation->montant_reduction/1000)+($reservation->assistance_juridique && \Illuminate\Support\Str::startsWith($formulae->slug, "confort") ? $reservation->nbr_snc*75 : 0);
+        $total = ($reservation->nbr_snc*60)+($reservation->montant_reduction/1000)+($reservation->assistance_juridique && \Illuminate\Support\Str::startsWith($formulae->slug, "confort") ? $reservation->nbr_snc*75 : 0);
         ?>
         <P class="p28 ft3">Je suis informé(e) que les formalités d'enregistrement s'élèvent à {{ number_format($total) }} euros que je m'engage à payer au gérant des SNC.</P>
         <P class="p49 ft12">Pour cette réservation, je suis averti que conformément à l'article <NOBR>L.121-20-12</NOBR> du code de la consommation. Je dispose d'un délai de 14 jours révolu pour exercer mon droit de rétractation.</P>
@@ -674,12 +674,12 @@
             </TR>
             <TR>
                 <TD class="tr0 td14"><P class="p1 ft3">- Assistance juridique</P></TD>
-                <TD class="tr0 td15"><P class="p1 ft2">@if($reservation->assistance_juridique && in_array($formulae->slug, ["confort", "confort-echelonne"])) {{number_format($reservation->nbr_snc*75, 2, ","," ")}} @else 0 @endif euros (75.00 euros par SNC)</P></TD>
+                <TD class="tr0 td15"><P class="p1 ft2">@if($reservation->assistance_juridique && \Illuminate\Support\Str::startsWith($formulae->slug, "confort")) {{number_format($reservation->nbr_snc*75, 2, ","," ")}} @else 0 @endif euros (75.00 euros par SNC)</P></TD>
             </TR>
             <TR>
                 <TD class="tr6 td14"><P class="p1 ft3">Total</P></TD>
                 <?php
-                    $total = ($reservation->nbr_snc*60)+($reservation->montant_reduction/1000)+($reservation->assistance_juridique && in_array($formulae->slug, ["confort", "confort-echelonne"]) ? $reservation->nbr_snc*75 : 0);
+                    $total = ($reservation->nbr_snc*60)+($reservation->montant_reduction/1000)+($reservation->assistance_juridique && \Illuminate\Support\Str::startsWith($formulae->slug, "confort") ? $reservation->nbr_snc*75 : 0);
                 ?>
                 <TD class="tr6 td15"><P class="p94 ft3">{{number_format($total, 2, ",", " ")}} euros</P></TD>
             </TR>
@@ -722,8 +722,8 @@
         <P class="p33 ft3">Règlements :</P>
         <P class="p29 ft3">Un chèque pour l'apport en compte courant : {{ number_format($reservation->apport, 2, ","," ") }} euros libellé à l'ordre de : INVESTIS DOM COLLECTE.</P>
         <?php
-        //        $total = ($reservation->nbr_snc*60)+($reservation->montant_reduction/1000)+($reservation->assistance_juridique && in_array($formulae->slug, ["confort", "confort-echelonne"]) ? $reservation->nbr_snc*75 : 0);
-        $total = ($reservation->nbr_snc*60)+($reservation->montant_reduction/1000)+($reservation->assistance_juridique && in_array($formulae->slug, ["confort", "confort-echelonne"]) ? $reservation->nbr_snc*75 : 0);
+        //        $total = ($reservation->nbr_snc*60)+($reservation->montant_reduction/1000)+($reservation->assistance_juridique && \Illuminate\Support\Str::startsWith($formulae->slug, "confort") ? $reservation->nbr_snc*75 : 0);
+        $total = ($reservation->nbr_snc*60)+($reservation->montant_reduction/1000)+($reservation->assistance_juridique && \Illuminate\Support\Str::startsWith($formulae->slug, "confort") ? $reservation->nbr_snc*75 : 0);
         ?>
         <P class="p29 ft3">Un chèque pour les formalités et les frais d'enregistrement : {{ number_format($total) }} euros libellé à l'ordre de : INVESTIS DOM</P>
         <P class="p28 ft3">Documents à nous adresser :</P>

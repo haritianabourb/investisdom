@@ -44,3 +44,44 @@
     vertical-align: top;
     text-align: justify;
 }
+
+
+/* for year separator*/
+table.dataTable tr.dtrg-group.dtrg-level-0 td {
+    background-color: #921813;
+    color: white;
+    border-color: #600d09;
+}
+
+/* for CGP separator*/
+table.dataTable tr.dtrg-group.dtrg-start.dtrg-level-1 td {
+    border-color: #600d09;
+    background-color: #e0e0e0;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    padding-left: 2em;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-bottom: 1px solid #b9acac;
+}
+
+/* for results separator*/
+table.dataTable tr.dtrg-group.dtrg-end.dtrg-level-1 td {
+    background-color: #f8fafc;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
+    padding-left: 2em;
+    font-size: 1em;
+    font-weight: bold;
+    border-bottom: 1px solid #b9acac;
+}
+
+#summaryReservation  thead tr[role=row] th:not(:first-child){
+    text-align: right !important;
+}
+#summaryReservation  tbody tr[role=row] td:not(:first-child){
+    text-align: right !important;
+}
+#summaryReservation tr.dtrg-group.dtrg-end.dtrg-level-1 td:not(:first-child) {
+    text-align: right !important;
+}

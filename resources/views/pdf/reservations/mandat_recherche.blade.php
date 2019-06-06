@@ -366,8 +366,8 @@
     <P class="p6 ft3">Le MANDANT souhaite souscrire un produit :</P>
     <TABLE cellpadding=0 cellspacing=0 class="t2">
         <TR>
-            <TD class="tr4 td2"><label class="p0 ft4"><input type="checkbox" @if(in_array($formulae->slug, ['confort', 'confort-echelonne'])) checked="checked" @endif> CONFORT</label></TD>
-            <TD class="tr4 td5"><label class="p0 ft4"><input type="checkbox" @if(in_array($formulae->slug,['serenite', 'serenite-echelonne'])) checked="checked" @endif> SERENITE + (garanti à 100% financièrement et fiscalement</label></TD>
+            <TD class="tr4 td2"><label class="p0 ft4"><input type="checkbox" @if(\Illuminate\Support\Str::startsWith($formulae->slug, "confort")) checked="checked" @endif> CONFORT</label></TD>
+            <TD class="tr4 td5"><label class="p0 ft4"><input type="checkbox" @if(\Illuminate\Support\Str::startsWith($formulae->slug, "serenite")) checked="checked" @endif> SERENITE + (garanti à 100% financièrement et fiscalement</label></TD>
         </TR>                                                                                                                                          
         <TR>
             <TD class="tr5 td2"><label class="p0 ft4"><input type="checkbox"> Assistance juridique</label></TD>

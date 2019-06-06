@@ -8,6 +8,7 @@ use App\Contact;
 use \App\CGP;
 use App\TauxCGP;
 use App\TypeContrat;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -90,6 +91,27 @@ class CGPController extends VoyagerBaseController
         $data['lieu_immatriculation'] = $cgp->registration_city;
         $data['madate'] = date("d-m-Y");
         $data['annee'] = date("Y", strtotime(date("d-m-Y")));
+
+
+        $data['nb_contrat_confort'] = 0;
+        $data['nb_contrat_serenite'] = 0;
+
+
+        // split, count serenite and confort contrat
+        foreach ($cgp->current_taux_cgp as $c){
+
+            if (Str::contains(TypeContrat::find($c->type_contrat_id)->slug, 'confort')){
+              $data['contrat_confort_name'][] = TypeContrat::find($c->type_contrat_id)->nom ;
+              $data['contrat_confort_value'][] = $c;
+              $data['nb_contrat_confort']++ ;
+            }
+
+            if (Str::contains(TypeContrat::find($c->type_contrat_id)->slug, 'serenite')){
+              $data['contrat_serenite_name'][] = TypeContrat::find($c->type_contrat_id)->nom ;
+              $data['contrat_serenite_value'][] = $c;
+              $data['nb_contrat_serenite']++;
+            }
+        }
 
         $pdf = PDF::loadView('pdf.cgps.convention', $data);
 

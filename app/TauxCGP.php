@@ -10,6 +10,15 @@ class TauxCGP extends Model
 {
   protected $table="taux_cgp";
 
+    protected $additional_attributes = [
+        "name"
+    ];
+
+    protected $appends = [
+        "name"
+    ];
+
+
     /**
      * The "booting" method of the model.
      *

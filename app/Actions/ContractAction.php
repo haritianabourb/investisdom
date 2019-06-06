@@ -12,11 +12,14 @@ class ContractAction extends AbstractAction
 
     public function getTitle()
     {
-        return $this->title ?? "Generer le Contrat";
+        return $this->title ?? "Generer le Contrat de Reservation";
     }
 
     public function getPolicy()
     {
+        if($this->data->yousign_procedure_id == "archive") {
+            return false;
+        }
         //TODO Change policy when it come
         //TODO check with yousign the pdf status
         return 'browse';
