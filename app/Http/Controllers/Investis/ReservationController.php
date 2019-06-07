@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Investis;
 use App\Contact;
 use App\Http\Traits\YousignProcedure;
 use App\User;
+use Auth;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use \App\Reservation;
 use DB;
@@ -13,6 +15,7 @@ use PDF;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Voyager;
 
 class ReservationController extends VoyagerBaseController
 {
@@ -49,7 +52,6 @@ class ReservationController extends VoyagerBaseController
             );
         }
 
-
         return parent::store($request);
     }
 
@@ -77,6 +79,21 @@ class ReservationController extends VoyagerBaseController
             return redirect()->back()->with(
                 ["errors" => $validator->messages()]
             );
+        }
+
+        $slug = $this->getSlug($request);
+
+        $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
+
+        // Compatibility with Model binding.
+        $id = $id instanceof Model ? $id->{$id->getKeyName()} : $id;
+
+        $model = app($dataType->model_name);
+
+        $data = $model->findOrFail($id);
+
+        if($data->yousign_procedure_id == "archive"){
+            Reservation::unsetEventDispatcher();
         }
 
         return parent::update($request, $id);

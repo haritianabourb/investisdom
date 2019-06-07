@@ -2,6 +2,7 @@
 
 namespace App\Actions;
 
+use Auth;
 use TCG\Voyager\Actions\AbstractAction;
 
 class EditAction extends AbstractAction
@@ -24,7 +25,7 @@ class EditAction extends AbstractAction
 
         if($this->dataType->slug == "reservations" ){
             if($this->data->yousign_procedure_id == "archive") {
-                return false;
+                return Auth::user()->hasRole(["admin", "administrator", "investis", "investisdom"])? 'edit' : false;
             }
             return $this->getYousignProcedureStatus();
         }

@@ -3,6 +3,7 @@
 namespace App\Policies;
 
 use App\Reservation;
+use Auth;
 use TCG\Voyager\Contracts\User;
 use TCG\Voyager\Policies\BasePolicy;
 
@@ -37,6 +38,12 @@ class ReservationPolicy extends BasePolicy
 //        $current = $user->id === $model->user_id;
 //        if(is_null($model->user_id)) return false;
 //        return $current || ($this->checkPermission($user, $model, 'edit') && $this->checkIfAdmin($user));
+
+        if($model->yousign_procedure_id == "archive"){
+            return Auth::user()->hasRole(["admin", "administrator", "investis", "investisdom"]);
+        }
+
+
         return true;
     }
 

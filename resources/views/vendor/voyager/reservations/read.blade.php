@@ -11,7 +11,7 @@
             if (!is_null($dataTypeContent->yousign_procedure_id)){
 
                 if($dataTypeContent->yousign_procedure_id == "archive"){
-                    $can_edit_and_del = false;
+                    $can_edit_and_del = auth()->user()->hasRole(["admin", "administrator", "investis", "investisdom"]);
                 }else{
                     $yousignProcedureStatus = (json_decode($dataTypeContent->yousign_procedure_id)->status);
 
