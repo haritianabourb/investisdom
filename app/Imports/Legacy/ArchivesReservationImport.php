@@ -135,7 +135,7 @@ class ArchivesReservationImport implements ToModel, WithProgressBar, WithHeading
                 if (!is_null($row[$name]) && is_null($reservation->$prop)){
                     $reservation->$prop = json_encode([[
                         "download_link" => "reservations\\archives\\".$row["id_contrat"]."\\".$row[$name],
-                        "original_name" => $row["investisseur_doc_reservation"],
+                        "original_name" => $row[$name],
                     ]]);
 
                 }
