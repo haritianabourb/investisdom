@@ -26,7 +26,7 @@
         "php-http/curl-client": "^1.7",
         "sentry/sentry-laravel": "^1.0.0",
         "tcg/voyager": "^1.2.1",
-        "voyager-themes": "^0.13.0"
+        "voyager-themes": "^0.15.0"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "dev-master",
