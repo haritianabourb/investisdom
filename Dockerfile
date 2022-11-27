@@ -9,7 +9,7 @@ RUN mkdir -p /app
 COPY . /app
 
 #RUN rm /app/.env
-
+#
 #RUN cp /app/.env.docker /app/.env
 
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
