@@ -15,7 +15,7 @@ COPY . /app
 ADD https://github.com/mlocati/docker-php-extension-installer/releases/latest/download/install-php-extensions /usr/local/bin/
 
 RUN chmod +x /usr/local/bin/install-php-extensions && \
-    install-php-extensions gd zip pgsql pdo_pgsql
+    install-php-extensions gd zip pgsql pdo_pgsql pdo json
 
 COPY docker/nginx.conf /etc/nginx/nginx.conf
 
